@@ -44,11 +44,21 @@
             padding: 0 10px;
         }
 
+        /* La Imagen del Logo adaptable con efecto Neón */
         .logo-img {
             width: 100%;      
             height: auto;     
             max-height: 140px; 
             object-fit: contain;
+            /* Efecto de fusión y brillo cyberpunk */
+            filter: drop-shadow(0px 0px 15px rgba(138, 43, 226, 0.5)); /* Brillo morado a juego con tu logo */
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Efecto al pasar el mouse por el logo */
+        .logo-container:hover .logo-img {
+            transform: scale(1.05); /* Se hace un poquito más grande */
+            filter: drop-shadow(0px 0px 25px rgba(0, 240, 255, 0.8)); /* Cambia a brillo cian */
         }
 
         .nav-menu {
