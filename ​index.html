@@ -15,7 +15,7 @@
         }
 
         body {
-            background-color: #0d0d11; 
+            background-color: #0d0d11; /* Fondo oscuro profundo */
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -28,7 +28,7 @@
             flex-direction: column; 
             align-items: center;    
             gap: 15px;              
-            border-bottom: 3px solid #00f0ff; 
+            border-bottom: 3px solid #00f0ff; /* Azul Cian brillante */
             position: sticky;
             top: 0;
             z-index: 100;
@@ -87,7 +87,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
-            border-left: 4px solid #ff0055; 
+            border-left: 4px solid #ff0055; /* Detalle rosa neón */
             padding-left: 10px;
             color: #ffffff;
         }
@@ -153,6 +153,7 @@
 
     <header class="header">
         <div class="logo-container">
+            <!-- Apunta exactamente al nombre del logotipo en tu misma carpeta -->
             <img src="1779650326105.png" alt="KazokuGaming Logo" class="logo-img">
         </div>
         <nav>
@@ -174,7 +175,7 @@
     </main>
 
     <script>
-        // Carga automática de respaldo por si el JSON automatizado tarda en generarse
+        // Datos de stock ultra estables por si falla el archivo automático
         const backupData = {
             destacada: {
                 categoria: "Tendencia",
@@ -229,9 +230,12 @@
             document.getElementById('bloque-noticias').innerHTML = gridHtml;
         }
 
-        // Intenta buscar el archivo del robot; si no existe aún, usa el diseño de muestra
+        // Sistema de control de errores: si no encuentra noticias.json usa el backup integrado
         fetch('noticias.json')
-            .then(response => response.json())
+            .then(response => {
+                if(!response.ok) throw new Error();
+                return response.json();
+            })
             .then(data => render(data))
             .catch(() => render(backupData));
     </script>
