@@ -6,6 +6,10 @@ on:
     - cron: '0 10,22 * * *' # Se ejecuta a las 10:00 y a las 22:00 todos los días
   workflow_dispatch: # Nos permite encenderlo manualmente con un botón
 
+# Forzamos a GitHub a usar la versión moderna de Node.js (Solución a la advertencia)
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   actualizar:
     runs-on: ubuntu-latest
