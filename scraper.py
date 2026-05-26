@@ -1,26 +1,23 @@
 import os
 import feedparser
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
-# 1. Conectar con la bóveda secreta de GitHub
+# 1. Conectar con la bóveda secreta usando el NUEVO sistema de Google
 api_key = os.environ.get("GEMINI_API_KEY")
-genai.configure(api_key=api_key)
+client = genai.Client(api_key=api_key)
 
-# Usamos la versión más rápida y especializada en datos de Gemini
-model = genai.GenerativeModel('gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
-
-# 2. Leer las noticias internacionales (Ejemplo: IGN)
+# 2. Leer las noticias internacionales
 print("Buscando noticias...")
 feed_url = "https://feeds.feedburner.com/ign/games-all"
 feed = feedparser.parse(feed_url)
 
-# Tomamos las 3 noticias más recientes
 entradas = feed.entries[:3]
 textos_noticias = ""
 for i, entry in enumerate(entradas):
     textos_noticias += f"Noticia {i+1}:\nTítulo: {entry.title}\nResumen: {entry.summary}\nEnlace original: {entry.link}\n\n"
 
-# 3. Instrucciones estrictas para la IA (Tu Redactor Jefe)
+# 3. Instrucciones estrictas para la IA
 prompt = f"""
 Eres un periodista experto en videojuegos para la revista hispanohablante KazokuGaming.
 Aquí tienes 3 noticias recientes en inglés. Tu trabajo es:
@@ -60,10 +57,16 @@ Noticias a procesar:
 {textos_noticias}
 """
 
-# 4. Generar y guardar
+# 4. Generar y guardar usando el modelo más reciente (Gemini 2.5 Flash)
 print("Enviando a Gemini para traducción y adaptación...")
 try:
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+        )
+    )
     with open('noticias.json', 'w', encoding='utf-8') as f:
         f.write(response.text)
     print("¡Éxito! noticias.json creado correctamente.")
