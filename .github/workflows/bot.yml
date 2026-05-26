@@ -1,0 +1,38 @@
+name: Bot Redactor KazokuGaming
+
+# ¿Cuándo se activa este robot?
+on:
+  schedule:
+    - cron: '0 10,22 * * *' # Se ejecuta a las 10:00 y a las 22:00 todos los días
+  workflow_dispatch: # Nos permite encenderlo manualmente con un botón
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permiso vital para guardar el archivo final
+
+    steps:
+    - name: 1. Descargar la web
+      uses: actions/checkout@v4
+
+    - name: 2. Preparar el servidor Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: 3. Instalar herramientas
+      run: pip install feedparser google-generativeai
+
+    - name: 4. Despertar a KazokuBot (Ejecutar IA)
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python scraper.py
+
+    - name: 5. Publicar en la revista (Guardar cambios)
+      run: |
+        git config --global user.name 'KazokuBot'
+        git config --global user.email 'bot@kazokugaming.com'
+        git add noticias.json
+        git commit -m "🤖 Actualización automática de noticias" || echo "No hay noticias nuevas"
+        git push
