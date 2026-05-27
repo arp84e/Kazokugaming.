@@ -20,15 +20,18 @@
             overflow-x: hidden;
         }
 
-        /* 2. DISEÑO DEL HEADER CENTRADO */
+        /* 2. NUEVO DISEÑO DEL HEADER HORIZONTAL CYBERPUNK */
         .header {
-            background-color: #141419;
-            padding: 20px 10px; 
+            background-color: rgba(20, 20, 25, 0.85); /* Fondo oscuro semitransparente */
+            backdrop-filter: blur(12px); /* Efecto cristal tecnológico */
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 40px; /* Barra más delgada con espacio a los lados */
             display: flex;
-            flex-direction: column; 
+            flex-direction: row; /* Coloca todo en una línea horizontal */
+            justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
             align-items: center;    
-            gap: 15px;              
-            border-bottom: 3px solid #00f0ff; /* Azul Cian brillante */
+            border-bottom: 2px solid #00f0ff;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15); /* Resplandor inferior tenue */
             position: sticky;
             top: 0;
             z-index: 100;
@@ -37,52 +40,69 @@
 
         .logo-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 100%;
-            max-width: 450px; 
-            padding: 0 10px;
+            width: 160px; /* Tamaño del logo mucho más controlado y sutil */
         }
 
-        /* La Imagen del Logo adaptable con efecto Neón */
         .logo-img {
             width: 100%;      
             height: auto;     
-            max-height: 140px; 
+            max-height: 50px; /* Altura máxima para no ensanchar la barra */
             object-fit: contain;
-            /* Efecto de fusión y brillo cyberpunk */
-            filter: drop-shadow(0px 0px 15px rgba(138, 43, 226, 0.5)); /* Brillo morado a juego con tu logo */
+            filter: drop-shadow(0px 0px 8px rgba(138, 43, 226, 0.6));
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        /* Efecto al pasar el mouse por el logo */
         .logo-container:hover .logo-img {
-            transform: scale(1.05); /* Se hace un poquito más grande */
-            filter: drop-shadow(0px 0px 25px rgba(0, 240, 255, 0.8)); /* Cambia a brillo cian */
+            transform: scale(1.05); 
+            filter: drop-shadow(0px 0px 15px rgba(0, 240, 255, 0.8)); 
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px; 
-            flex-wrap: wrap; 
-            justify-content: center;
+            gap: 20px; 
+            align-items: center;
         }
 
         .nav-menu a {
             color: #a1a1aa; 
             text-decoration: none;
-            font-size: 14px; 
+            font-size: 13px; 
             font-weight: 700;
             text-transform: uppercase; 
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            padding: 5px 10px; 
+            padding: 8px 16px; 
+            border-radius: 6px;
+            border: 1px solid transparent; /* Preparación para el borde neón */
         }
 
+        /* El toque Gaming: Efecto de botón interactivo al pasar el mouse */
         .nav-menu a:hover {
-            color: #00f0ff;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+            border: 1px solid #00f0ff;
+            background-color: rgba(0, 240, 255, 0.1);
+            box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+
+        /* AJUSTE RESPONSIVO PARA MÓVILES */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; /* En celulares vuelve a apilarse para caber en pantalla */
+                padding: 15px;
+                gap: 15px;
+            }
+            .nav-menu {
+                flex-wrap: wrap; 
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-menu a {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
         }
 
         /* CONTENEDOR PRINCIPAL */
