@@ -1,15 +1,45 @@
 {
   "destacada": {
-    "categoria": "Deportes",
-    "titulo": "EXCLUSIVA: Primer Vistazo a la Actualización \"The World's Game\" de EA Sports FC 26",
-    "resumen": "A pocas semanas del inicio del Mundial, IGN desvela la esperada actualización \"The World's Game\" para EA Sports FC 26 y EA Sports FC Mobile, acompañada de capturas de pantalla y detalles exclusivos.",
-    "contenido_completo": "<p>En una exclusiva mundial, tenemos el honor de presentar los primeros detalles y capturas de pantalla de la inminente actualización \"The World's Game\" para EA Sports FC 26 y su versión móvil. Con el Mundial a la vuelta de la esquina, esta actualización promete sumergir a los jugadores en la atmósfera del torneo con nuevas características, modos de juego y mejoras visuales que redefinirán la experiencia del fútbol virtual. Los fans pueden esperar un nivel de inmersión sin precedentes, acercándose aún más a la emoción del deporte rey.</p>",
-    "imagen": "https://source.unsplash.com/featured/?football-game,soccer-game,ea-sports-fc",
-    "enlace": "https://www.ign.com/articles/exclusive-first-look-at-ea-sports-fc-26-the-worlds-game-update",
-    "fecha": "2026-05-27T20:58:40.784970",
-    "id": "not_1779915520_0"
+    "categoria": "Actualizaciones",
+    "titulo": "Los Requisitos Mínimos de The Witcher 3: Wild Hunt Cambiarán Ante la Expansión Songs of the Past",
+    "resumen": "CD Projekt ha indicado que los requisitos mínimos del sistema para The Witcher 3: Wild Hunt experimentarán cambios antes del lanzamiento de su recién anunciada tercera expansión, Songs of the Past.",
+    "contenido_completo": "<p>Prepárense, brujos. CD Projekt Red ha confirmado que los jugadores de PC deberán revisar sus configuraciones, ya que los requisitos mínimos para ejecutar The Witcher 3: Wild Hunt se actualizarán. Este movimiento precede al esperado lanzamiento de \"Songs of the Past\", la tercera expansión del aclamado RPG, que promete llevar nuevas aventuras y desafíos a los jugadores. Más detalles sobre los requisitos específicos se esperan en las próximas semanas, lo que subraya la ambición del estudio por mejorar la experiencia gráfica y de juego.</p>",
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38148e64c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-minimum-requirements-set-to-change-ahead-of-songs-of-the-past-expansion",
+    "fecha": "2026-05-27T21:04:32.765056",
+    "id": "not_1779915872_0"
   },
   "secundarias": [
+    {
+      "categoria": "DLC",
+      "titulo": "Anunciada la Expansión \"Songs of the Past\" para The Witcher 3: Wild Hunt, Primeros Detalles Confirmados",
+      "resumen": "CD Projekt ha anunciado la tercera expansión para The Witcher 3: Wild Hunt, titulada \"Songs of the Past\", confirmando los primeros detalles de este esperado DLC.",
+      "contenido_completo": "<p>¡Geralt de Rivia regresa con nuevas aventuras! CD Projekt Red ha desvelado oficialmente \"Songs of the Past\", la tercera expansión principal para The Witcher 3: Wild Hunt. Aunque los detalles son escasos, se espera que esta nueva historia profundice en el lore del mundo y ofrezca una experiencia tan rica y envolvente como las anteriores \"Hearts of Stone\" y \"Blood and Wine\". Los fans ya están especulando sobre qué nuevos personajes, tramas y regiones exploraremos en esta prometedora adición al universo del brujo.</p>",
+      "imagen": "https://images.unsplash.com/photo-1588691500412-421731bba9f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-songs-of-the-past-expansion-dlc-announced-first-details-confirmed",
+      "fecha": "2026-05-27T21:04:32.765067",
+      "id": "not_1779915872_1"
+    },
+    {
+      "categoria": "Próximos Lanzamientos",
+      "titulo": "El Desarrollador de Kingdom Come: Deliverance Anticipa su RPG de Mundo Abierto de El Señor de los Anillos",
+      "resumen": "Warhorse Studios, el equipo detrás del aclamado Kingdom Come: Deliverance, ha ofrecido un adelanto de su próximo juego basado en El Señor de los Anillos, y suena realmente prometedor.",
+      "contenido_completo": "<p>Los creadores del inmersivo Kingdom Come: Deliverance, Warhorse Studios, han encendido la chispa de la expectación entre los fans al insinuar los primeros detalles de su ambicioso RPG de mundo abierto ambientado en el universo de El Señor de los Anillos. Aunque la información es limitada, la reputación del estudio por su atención al detalle, su realismo histórico y su narrativa profunda sugiere que esta adaptación de la Tierra Media podría ser verdaderamente única y ofrecer una experiencia inmersiva sin precedentes. Los amantes de Tolkien y los RPG tienen razones de sobra para ilusionarse.</p>",
+      "imagen": "https://images.unsplash.com/photo-1547843075-cf0095a04473?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "enlace": "https://www.ign.com/articles/kingdom-come-deliverance-developer-teases-its-lord-of-the-rings-open-world-rpg",
+      "fecha": "2026-05-27T21:04:32.765070",
+      "id": "not_1779915872_2"
+    },
+    {
+      "categoria": "Deportes",
+      "titulo": "EXCLUSIVA: Primer Vistazo a la Actualización \"The World's Game\" de EA Sports FC 26",
+      "resumen": "A pocas semanas del inicio del Mundial, IGN desvela la esperada actualización \"The World's Game\" para EA Sports FC 26 y EA Sports FC Mobile, acompañada de capturas de pantalla y detalles exclusivos.",
+      "contenido_completo": "<p>En una exclusiva mundial, tenemos el honor de presentar los primeros detalles y capturas de pantalla de la inminente actualización \"The World's Game\" para EA Sports FC 26 y su versión móvil. Con el Mundial a la vuelta de la esquina, esta actualización promete sumergir a los jugadores en la atmósfera del torneo con nuevas características, modos de juego y mejoras visuales que redefinirán la experiencia del fútbol virtual. Los fans pueden esperar un nivel de inmersión sin precedentes, acercándose aún más a la emoción del deporte rey.</p>",
+      "imagen": "https://source.unsplash.com/featured/?football-game,soccer-game,ea-sports-fc",
+      "enlace": "https://www.ign.com/articles/exclusive-first-look-at-ea-sports-fc-26-the-worlds-game-update",
+      "fecha": "2026-05-27T20:58:40.784970",
+      "id": "not_1779915520_0"
+    },
     {
       "categoria": "Survival Horror",
       "titulo": "Resident Evil Requiem Lanza su Demo, Tres Meses Después de su Estreno",
