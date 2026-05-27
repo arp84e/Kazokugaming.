@@ -47,15 +47,15 @@
         .logo-img {
             width: 100%;      
             height: auto;     
-            max-height: 50px; /* Altura máxima para no ensanchar la barra */
+            max-height: 50px; /* Altura máxima controlada */
             object-fit: contain;
-            filter: drop-shadow(0px 0px 8px rgba(138, 43, 226, 0.6));
-            transition: transform 0.3s ease, filter 0.3s ease;
+            /* Efectos eliminados para una fusión 100% natural con el fondo */
+            transition: transform 0.3s ease;
         }
 
+        /* Efecto al pasar el mouse (solo un sutil acercamiento, sin luces) */
         .logo-container:hover .logo-img {
             transform: scale(1.05); 
-            filter: drop-shadow(0px 0px 15px rgba(0, 240, 255, 0.8)); 
         }
 
         .nav-menu {
