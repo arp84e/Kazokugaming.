@@ -2,46 +2,46 @@
   "mes": "Mayo 2026",
   "lanzamientos": [
     {
-      "titulo": "The Elder Scrolls VII: Starfall",
-      "fecha": "15 de Mayo",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "imagen": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Sumérgete en un vasto y místico mundo de fantasía, explorando nuevas tierras y desentrañando una antigua conspiración.\nUn RPG de mundo abierto con libertad sin precedentes y una narrativa épica."
-    },
-    {
-      "titulo": "Quantum Rift",
+      "titulo": "Chronicles of Aethelgard: The Fading Light",
       "fecha": "08 de Mayo",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "imagen": "https://images.unsplash.com/photo-1593340546194-e3c7d6c6d04d?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Un shooter de ciencia ficción en primera persona que redefine el combate con mecánicas de manipulación temporal.\nLucha a través de dimensiones fracturadas para salvar la realidad del colapso."
+      "plataformas": "PS5, Xbox Series X/S, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronicles+of+Aethelgard:+The+Fading+Light",
+      "descripcion": "Un épico RPG de acción con un vasto mundo abierto, combates dinámicos y una profunda narrativa. Explora un reino al borde de la oscuridad, donde antiguas profecías resurgen para desafiar a los héroes."
     },
     {
-      "titulo": "Metroid Prime 4: Echoes of the Void",
-      "fecha": "22 de Mayo",
-      "plataformas": "Nintendo Switch 2",
-      "imagen": "https://images.unsplash.com/photo-1518770660439-4636190af170?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Samus Aran regresa en una nueva aventura galáctica, explorando planetas alienígenas y combatiendo amenazas cósmicas.\nUna reimaginación del aclamado género de acción y aventura en primera persona."
+      "titulo": "Nova Genesis: Last Frontier",
+      "fecha": "15 de Mayo",
+      "plataformas": "PC, PS5, Xbox Series X/S",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nova+Genesis:+Last+Frontier",
+      "descripcion": "Adéntrate en un frenético shooter espacial en primera persona, ambientado en los confines de la galaxia. Lucha contra hordas alienígenas y descubre los secretos de un planeta misterioso que amenaza la existencia humana."
     },
     {
-      "titulo": "Chronos Legacy",
-      "fecha": "19 de Mayo",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "imagen": "https://images.unsplash.com/photo-1596541223130-5d31a783b092?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Forja tu destino en un mundo abierto dinámico donde las decisiones importan y el tiempo es tu aliado.\nUn RPG de acción con un sistema de combate innovador y una historia ramificada."
-    },
-    {
-      "titulo": "Spider-Man 3: Web of Shadows",
-      "fecha": "05 de Mayo",
+      "titulo": "Echoes of the Void",
+      "fecha": "20 de Mayo",
       "plataformas": "PS5, PC",
-      "imagen": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Peter Parker y Miles Morales se enfrentan a una amenaza sin precedentes que pone a toda la ciudad en peligro.\nVuela por Nueva York con nuevas habilidades y trajes icónicos."
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Echoes+of+the+Void",
+      "descripcion": "Un aterrador juego de supervivencia y horror psicológico en primera persona. Atrapado en una estación espacial abandonada, deberás resolver enigmas y evitar horrores indescriptibles para escapar con vida y tu cordura intacta."
     },
     {
-      "titulo": "Silent Hill: Reborn",
-      "fecha": "29 de Mayo",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "imagen": "https://images.unsplash.com/photo-1579297669588-46781206f6b5?auto=format&fit=crop&w=500&q=80",
-      "descripcion": "Un retorno escalofriante a la icónica ciudad de Silent Hill, con una historia completamente nueva y terrores psicológicos profundos.\nSumérgete en una atmósfera de horror inigualable."
+      "titulo": "Arcane Kingdoms: Empires Reborn",
+      "fecha": "22 de Mayo",
+      "plataformas": "PC, Xbox Series X/S",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Arcane+Kingdoms:+Empires+Reborn",
+      "descripcion": "Gestiona tu propio reino de fantasía en este complejo juego de estrategia 4X. Construye ciudades, forma ejércitos poderosos y usa magia para dominar a tus rivales y reclamar el trono del mundo."
+    },
+    {
+      "titulo": "Whiskers & Wonders: The Crystal Quest",
+      "fecha": "27 de Mayo",
+      "plataformas": "Nintendo Switch, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Whiskers+&+Wonders:+The+Crystal+Quest",
+      "descripcion": "Embárcate en una encantadora aventura de plataformas en 3D con un adorable héroe felino. Resuelve puzles, salta por entornos coloridos y rescata los cristales mágicos antes de que caigan en las manos equivocadas."
+    },
+    {
+      "titulo": "Apex Velocity 2026",
+      "fecha": "30 de Mayo",
+      "plataformas": "PS5, Xbox Series X/S, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Apex+Velocity+2026",
+      "descripcion": "El simulador de carreras definitivo regresa con gráficos hiperrealistas y física avanzada. Compite en circuitos icónicos y personaliza tus vehículos para dominar cada carrera y convertirte en el campeón absoluto."
     }
   ]
 }
