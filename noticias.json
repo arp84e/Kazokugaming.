@@ -1,25 +1,31 @@
 {
   "destacada": {
-    "categoria": "Lanzamiento",
-    "titulo": "¡Marathon Desata el Horror Cósmico! Bungie Nos Sumerge en su Segunda Temporada",
-    "resumen": "Bungie, los cerebros detrás de Marathon, nos han soltado un adelanto brutal de lo que nos espera en la segunda temporada de su shooter. Prepárense para una dosis extra de terror sci-fi con atmósferas opresivas y misterios que te pondrán los pelos de punta. ¿Listos para la inmersión total el próximo mes?",
+    "id": "destacada",
+    "categoria": "Oferta",
+    "titulo": "¡Best Buy Desata Descuentos Épicos en Magic: The Gathering por Tiempo Limitado!",
+    "resumen": "Los aficionados de Magic: The Gathering están de enhorabuena. Best Buy ha lanzado una venta flash con descuentos brutales en barajas Commander, cajas de sobres y más, pero solo por hoy. ¡No te quedes sin tus cartas!",
+    "contenido_completo": "<p>¡Atención, planeswalkers! Best Buy ha lanzado una ofensiva de ofertas que ningún fan de Magic: The Gathering querrá perderse. Por un tiempo increíblemente limitado, y estamos hablando de \"solo por hoy\", la cadena de minoristas ha rebajado significativamente el precio de una vasta selección de productos de MTG. Esta es una oportunidad de oro para expandir tu colección, mejorar tus mazos o simplemente aprovechar precios imbatibles antes de que se desvanezcan.</p><p>Entre los tesoros que esperan ser descubiertos en esta promoción, encontramos descuentos jugosos en las codiciadas Barajas de Commander, perfectas para aquellos que buscan adentrarse en uno de los formatos más populares del juego o potenciar sus estrategias actuales. Pero eso no es todo: las cajas de sobres también forman parte de la ecuación, ofreciendo la emoción de abrir nuevos paquetes a un coste reducido. Y para aquellos que buscan darle un toque especial a sus partidas, incluso los playmats con motivos de Final Fantasy están disponibles a precios de derribo, añadiendo un extra de estilo a tus duelos.</p><p>Ya seas un veterano del multiverso de Magic o un recién llegado buscando una entrada asequible, estas ofertas de Best Buy son un claro \"must-have\". La naturaleza efímera de estas \"Ofertas del Día\" significa que la ventana para hacerse con estos chollos es extremadamente estrecha. Nuestro consejo desde KazokuGaming es claro: no dejes pasar esta oportunidad. Revisa la tienda online de Best Buy o acércate a tu sucursal más cercana para asegurar tus productos favoritos antes de que las existencias se agoten o los precios vuelvan a la normalidad. ¡El Mana te espera!</p>",
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
-    "enlace": "https://www.ign.com/articles/marathon-developer-bungie-drops-season-2-cinematic-with-big-horror-vibes"
+    "enlace": "https://www.ign.com/articles/best-buys-daily-deals-just-dropped-the-price-on-a-load-of-magic-the-gathering-products"
   },
   "secundarias": [
     {
-      "categoria": "PC Gaming",
-      "titulo": "¡Atención PC Gamers! The Witcher 3 Actualiza Requisitos con 'Songs of the Past'",
-      "resumen": "CD Projekt RED ha lanzado una señal importante: los requisitos mínimos de The Witcher 3: Wild Hunt cambiarán. ¡Prepara tu equipo, que la tercera expansión, 'Songs of the Past', viene con todo y exigirá más de tu rig!",
+      "id": "sec1",
+      "categoria": "Desarrollo",
+      "titulo": "El Secreto del Sonido de 007 First Light: La Única Regla para su Banda Sonora",
+      "resumen": "Los compositores de 007 First Light, The Flight, revelan la estricta directriz de IO Interactive para la música del juego y cómo un icónico tema de Lana del Rey influenció su creación.",
+      "contenido_completo": "<p>La anticipación por 007 First Light, el nuevo videojuego de James Bond a cargo de IO Interactive, es palpable. Y ahora, los genios detrás de su banda sonora, el dúo The Flight (conocido por su trabajo en Horizon Forbidden West), han levantado el telón sobre un detalle fascinante de su proceso creativo. Al parecer, IO Interactive les impuso una única, pero crucial, regla para componer la música del título, una directriz que moldeó profundamente el paisaje sonoro que experimentaremos.</p><p>Según The Flight, la regla era simple pero profunda: \"Haz que suene a Bond, pero a tu manera\". Este mandato les otorgó la libertad de innovar sin perder la esencia icónica del agente 007. Para lograr este equilibrio, los compositores revelaron una inspiración inesperada: la melodía del tema principal de Lana del Rey para la película de James Bond que nunca fue, \"24\", sirvió como punto de partida. Incorporar ese tipo de elegancia y dramatismo fue clave para crear una banda sonora que se siente fresca, pero inconfundiblemente Bond, prometiendo una inmersión auditiva digna del espía más famoso del mundo.</p>",
       "imagen": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
-      "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-minimum-requirements-set-to-change-ahead-of-songs-of-the-past-expansion"
+      "enlace": "https://www.ign.com/articles/007-first-light-composers-music-rule"
     },
     {
-      "categoria": "DLC",
-      "titulo": "¡Geralt Regresa! The Witcher 3 Confirma Nueva Expansión: 'Songs of the Past'",
-      "resumen": "CD Projekt RED ha soltado la bomba: una tercera expansión para The Witcher 3, titulada 'Songs of the Past', está en camino. Prepárense para sumergirse de nuevo en el Continente y vivir nuevas aventuras épicas con Geralt de Rivia.",
+      "id": "sec2",
+      "categoria": "Comunidad",
+      "titulo": "¡Revuelta en el Crisol! Fans de Destiny 2 Planean un Boicot Masivo para 'Colapsar Servidores'",
+      "resumen": "Enfurecidos por el fin de soporte, los guardianes de Destiny 2 se organizan para un ambicioso boicot. Su objetivo: \"colapsar\" los servidores y superar el récord de Marathon para demostrar a Bungie el interés que aún existe.",
+      "contenido_completo": "<p>La comunidad de Destiny 2 está en pie de guerra. Tras el anuncio de Bungie de poner fin al soporte para el aclamado juego de disparos, miles de guardianes han manifestado su descontento de la manera más drástica posible: planean una protesta masiva para intentar \"colapsar los servidores\" del juego. Esta iniciativa no busca simplemente causar un caos técnico, sino enviar un mensaje contundente a los desarrolladores sobre el profundo interés y la base de jugadores que Destiny 2 todavía posee.</p><p>El plan de los fans es ambicioso: no solo intentarán sobrecargar los sistemas de Bungie, sino que también aspiran a superar el récord histórico de jugadores simultáneos del clásico shooter Marathon, un título seminal también creado por Bungie. Con esta audaz maniobra, la comunidad espera demostrar que la decisión de finalizar el soporte es prematura y que aún hay una pasión vibrante por el universo de Destiny 2. Será fascinante observar si esta ola de indignación comunitaria logra sus objetivos y qué impacto tendrá en las futuras decisiones de Bungie.</p>",
       "imagen": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=500&q=80",
-      "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-songs-of-the-past-expansion-dlc-announced-first-details-confirmed"
+      "enlace": "https://www.ign.com/articles/destiny-2-fans-plan-mass-protest-to-crash-the-servers-and-beat-marathons-all-time-player-record"
     }
   ]
 }
