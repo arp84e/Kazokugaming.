@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- El título que aparecerá en la pestaña del navegador -->
+    <title>Radar de Precios | KazokuGaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; margin: 0; color: #ffffff;}
+        .gamer-font { font-family: 'Orbitron', sans-serif; }
+        .neon-border { box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); border: 1px solid rgba(139, 92, 246, 0.5); }
+        .neon-glow-cyan { text-shadow: 0 0 10px rgba(6, 182, 212, 0.6); }
+
+        /* Barra Superior KazokuGaming */
+        .header-kz { background-color: rgba(20, 20, 25, 0.85); backdrop-filter: blur(12px); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00f0ff; position: sticky; top: 0; z-index: 100; }
+        .logo-img { max-height: 50px; transition: transform 0.3s ease; }
+        .logo-img:hover { transform: scale(1.05); }
+        .nav-menu { display: flex; list-style: none; gap: 20px; align-items: center; margin: 0; padding: 0; }
+        .nav-menu a { color: #a1a1aa; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; padding: 8px 16px; border-radius: 6px; border: 1px solid transparent; }
+        .nav-menu a:hover { color: #ffffff; text-shadow: 0 0 8px rgba(0, 240, 255, 0.8); border: 1px solid #00f0ff; background-color: rgba(0, 240, 255, 0.1); box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2); }
+        
+        @media (max-width: 768px) { .header-kz { flex-direction: column; gap: 15px; padding: 15px; } .nav-menu { flex-wrap: wrap; justify-content: center; gap: 10px; } }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <!-- Header KazokuGaming Oficial -->
+    <header class="header-kz">
+        <a href="index.html" class="logo-container">
+            <img src="1779650326105.png" alt="KazokuGaming Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="lanzamientos.html" target="_blank">Lanzamientos</a></li>
+                <!-- Botón activo resaltado con el nuevo nombre -->
+                <li><a href="radar.html" style="color: #ffffff; border: 1px solid #00f0ff; background-color: rgba(0, 240, 255, 0.1);">Radar de Precios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="max-w-6xl mx-auto px-4 mt-8">
+        
+        <!-- Título Élite -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-purple-900/50 pb-4">
+            <h1 class="gamer-font text-3xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+                🎮 RADAR DE PRECIOS
+            </h1>
+            <span class="mt-3 md:mt-0 text-xs bg-purple-900/60 border border-purple-500 text-purple-300 px-3 py-1 rounded-full uppercase tracking-widest font-semibold">
+                Búsqueda en Tiempo Real
+            </span>
+        </div>
+        
+        <!-- Panel de Configuración -->
+        <section class="bg-slate-950 p-6 rounded-2xl border border-slate-800 shadow-2xl mb-8">
+            <h2 class="gamer-font text-lg font-semibold text-cyan-400 mb-4 flex items-center gap-2">
+                📡 CONFIGURAR BÚSQUEDA
+            </h2>
+            
+            <form id="searchForm" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Videojuego</label>
+                    <input type="text" id="gameInput" required placeholder="Ej: Elden Ring, Cyberpunk 2077..." 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Plataforma</label>
+                    <select id="platformSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition-colors">
+                        <option value="PC">PC (Steam / Epic)</option>
+                        <option value="PS5">PlayStation 5</option>
+                        <option value="Xbox">Xbox Series X/S</option>
+                        <option value="Nintendo">Nintendo Switch</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Región</label>
+                    <select id="regionSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition-colors">
+                        <option value="EU">España / Europa (EUR)</option>
+                        <option value="US">Estados Unidos (USD)</option>
+                        <option value="LATAM">Latinoamérica (USD)</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button type="submit" class="w-full gamer-font bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold py-2.5 px-4 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                        🔥 ESCANEAR RED
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Loading -->
+        <div id="loadingState" class="hidden text-center py-12">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+            <p class="gamer-font text-cyan-400 animate-pulse tracking-widest">OBTENIENDO PRECIOS DESDE LAS TIENDAS...</p>
+        </div>
+
+        <!-- Resultados -->
+        <section id="resultsSection" class="hidden">
+            <h2 id="resultsTitle" class="gamer-font text-xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"></h2>
+            <div id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6"></div>
+        </section>
+    </main>
+
+    <script>
+        const gameImageRouter = {
+            "elden ring": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
+            "cyberpunk 2077": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
+            "portal": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/header.jpg",
+            "portal 2": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/header.jpg",
+            "gta v": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg",
+            "the witcher 3": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg",
+            "hades": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg"
+        };
+
+        const baseOffers = [
+            { rank: "🥇 TOP 1", store: "Steam (Oficial)", basePrice: 59.99, promo: "-40%", fee: 0.00, finalPrice: 35.99, type: "Oficial", url: "https://store.steampowered.com" },
+            { rank: "🥈 TOP 2", store: "Instant Gaming", basePrice: 33.50, promo: "Key", fee: 2.68, finalPrice: 36.18, type: "Verificada", url: "https://www.instant-gaming.com" },
+            { rank: "🥉 TOP 3", store: "Epic Games Store", basePrice: 59.99, promo: "-35%", fee: 0.00, finalPrice: 38.99, type: "Oficial", url: "https://store.epicgames.com" },
+            { rank: "🏅 TOP 4", store: "Eneba", basePrice: 35.10, promo: "Key", fee: 3.95, finalPrice: 39.05, type: "Verificada", url: "https://www.eneba.com" },
+            { rank: "🏅 TOP 5", store: "CDKeys", basePrice: 38.50, promo: "Key", fee: 1.00, finalPrice: 39.50, type: "Verificada", url: "https://www.cdkeys.com" }
+        ];
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const gameSearch = document.getElementById('gameInput').value.trim();
+            const platform = document.getElementById('platformSelect').value;
+            const region = document.getElementById('regionSelect').value;
+            
+            const loadingState = document.getElementById('loadingState');
+            const resultsSection = document.getElementById('resultsSection');
+            const cardsContainer = document.getElementById('cardsContainer');
+            const resultsTitle = document.getElementById('resultsTitle');
+
+            resultsSection.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            setTimeout(() => {
+                loadingState.classList.add('hidden');
+                resultsSection.classList.remove('hidden');
+                
+                const gameKey = gameSearch.toLowerCase();
+                
+                const realStoreImage = gameImageRouter[gameKey] 
+                    ? gameImageRouter[gameKey] 
+                    : `https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400&auto=format&fit=crop`; 
+
+                let currencySymbol = region === "EU" ? "€" : "$";
+
+                resultsTitle.innerHTML = `⚔️ TOP 5 MEJORES PRECIOS PARA: <span class="text-white uppercase font-black">${gameSearch}</span> (${platform})`;
+                cardsContainer.innerHTML = "";
+
+                baseOffers.forEach(offer => {
+                    let rankBadgeColor = "bg-slate-800 text-gray-400 border-slate-700";
+                    let cardHighlight = "border-slate-800 bg-slate-950";
+                    
+                    if(offer.rank.includes("🥇")) {
+                        rankBadgeColor = "bg-yellow-500/20 text-yellow-400 border-yellow-500";
+                        cardHighlight = "neon-border bg-gradient-to-b from-purple-950/40 to-slate-950";
+                    } else if(offer.rank.includes("🥈")) {
+                        rankBadgeColor = "bg-slate-300/20 text-slate-300 border-slate-400";
+                    } else if(offer.rank.includes("🥉")) {
+                        rankBadgeColor = "bg-amber-700/20 text-amber-500 border-amber-600";
+                    }
+
+                    const cardHtml = `
+                        <div class="rounded-xl overflow-hidden border flex flex-col justify-between transition-all transform hover:-translate-y-1 hover:shadow-xl ${cardHighlight}">
+                            <div class="p-4 pb-2">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded border ${rankBadgeColor} gamer-font">${offer.rank}</span>
+                                    <span class="text-[10px] uppercase font-semibold text-gray-400 tracking-wider">${offer.type}</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-white tracking-wide truncate">${offer.store}</h3>
+                            </div>
+
+                            <div class="h-28 w-full bg-slate-900 relative overflow-hidden border-y border-slate-800/60">
+                                <img src="${realStoreImage}" alt="Portada oficial" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-300">
+                                <div class="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-bold text-cyan-400 border border-cyan-500/30">
+                                    ${offer.promo}
+                                </div>
+                            </div>
+
+                            <div class="p-4 space-y-2 bg-slate-900/40">
+                                <div class="flex justify-between text-xs text-gray-400">
+                                    <span>Precio base:</span>
+                                    <span>${offer.basePrice.toFixed(2)}${currencySymbol}</span>
+                                </div>
+                                <hr class="border-slate-800 my-2">
+                                <div class="flex justify-between items-end">
+                                    <span class="text-xs uppercase font-bold text-gray-400">Total final:</span>
+                                    <span class="text-xl font-black text-cyan-400 gamer-font neon-glow-cyan">
+                                        ${offer.finalPrice.toFixed(2)}${currencySymbol}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 pt-0">
+                                <a href="${offer.url}" target="_blank" class="block w-full text-center text-xs gamer-font uppercase font-bold tracking-wider bg-slate-800 hover:bg-purple-600 hover:text-white text-purple-400 py-2.5 rounded-lg border border-purple-500/30 transition-all">
+                                    🎮 VER EN TIENDA
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    cardsContainer.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            }, 1000); 
+        });
+    </script>
+</body>
+</html>
