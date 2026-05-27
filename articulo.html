@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazokuGaming | Leyendo Artículo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0d0d11; color: #ffffff; overflow-x: hidden; }
+
+        /* Barra Superior (Glassmorphism Limpio) */
+        .header { background-color: rgba(20, 20, 25, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 10px 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; border-bottom: 2px solid #00f0ff; box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15); position: sticky; top: 0; z-index: 100; width: 100%; }
+        .logo-container { display: flex; align-items: center; width: 160px; }
+        .logo-img { width: 100%; height: auto; max-height: 50px; object-fit: contain; transition: transform 0.3s ease; }
+        .logo-container:hover .logo-img { transform: scale(1.05); }
+        .nav-menu { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .nav-menu a { color: #a1a1aa; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; padding: 8px 16px; border-radius: 6px; border: 1px solid transparent; }
+        .nav-menu a:hover { color: #ffffff; text-shadow: 0 0 8px rgba(0, 240, 255, 0.8); border: 1px solid #00f0ff; background-color: rgba(0, 240, 255, 0.1); box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2); }
+
+        /* Contenedor del Artículo */
+        .article-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .btn-volver { display: inline-block; margin-bottom: 20px; color: #00f0ff; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; border: 1px solid #00f0ff; padding: 8px 15px; border-radius: 4px; transition: all 0.3s ease; }
+        .btn-volver:hover { background-color: #00f0ff; color: #000; box-shadow: 0 0 15px rgba(0, 240, 255, 0.5); }
+        
+        .article-badge { background-color: #ff0055; color: #fff; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
+        .article-title { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+        .article-img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; border: 1px solid #27272a; }
+        .article-content { font-size: 18px; color: #d4d4d8; line-height: 1.8; }
+        .article-content p { margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .header { flex-direction: column; padding: 15px; gap: 15px; }
+            .nav-menu { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .article-title { font-size: 28px; }
+            .article-img { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="1779650326105.png" alt="KazokuGaming Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
+        <div id="cuerpo-articulo">
+            <h1 style="color: #a1a1aa; text-align: center; margin-top: 50px;">Cargando contenido clasificado...</h1>
+        </div>
+    </main>
+
+    <script>
+        // 1. Obtenemos el ID de la noticia desde la URL (ej: articulo.html?id=sec1)
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('id');
+
+        // 2. Buscamos el archivo JSON
+        fetch('noticias.json')
+            .then(response => response.json())
+            .then(data => {
+                let articuloEncontrado = null;
+
+                // Buscamos cuál es la noticia correcta
+                if (articleId === 'destacada' || articleId === data.destacada.id) {
+                    articuloEncontrado = data.destacada;
+                } else {
+                    articuloEncontrado = data.secundarias.find(n => n.id === articleId);
+                }
+
+                // 3. Pintamos el artículo en pantalla
+                if (articuloEncontrado) {
+                    document.getElementById('cuerpo-articulo').innerHTML = `
+                        <span class="article-badge">${articuloEncontrado.categoria}</span>
+                        <h1 class="article-title">${articuloEncontrado.titulo}</h1>
+                        <img src="${articuloEncontrado.imagen}" alt="Imagen del artículo" class="article-img">
+                        <div class="article-content">
+                            ${articuloEncontrado.contenido_completo || `<p>${articuloEncontrado.resumen}</p><p><i>El contenido completo se está generando, vuelve pronto...</i></p>`}
+                        </div>
+                        <div style="margin-top: 40px; border-top: 1px solid #27272a; padding-top: 20px;">
+                            <a href="${articuloEncontrado.enlace}" target="_blank" style="color: #a1a1aa;">Fuente original</a>
+                        </div>
+                    `;
+                    document.title = `${articuloEncontrado.titulo} | KazokuGaming`;
+                } else {
+                    document.getElementById('cuerpo-articulo').innerHTML = `<h1>Error 404: Noticia no encontrada en los servidores.</h1>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('cuerpo-articulo').innerHTML = `<h1>Hubo un error cargando los datos.</h1>`;
+            });
+    </script>
+</body>
+</html>
