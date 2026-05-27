@@ -43,11 +43,19 @@ nuevas_entradas = [e for e in feed.entries if e.link not in enlaces_guardados][:
 noticias_totales = noticias_validas
 
 if nuevas_entradas:
-    textos = "".join([f"Título: {e.title}\nResumen: {e.summary}\nEnlace: {e.link}\n\n" for e in nuevas_entradas])
-    prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español.
-    Genera un JSON con una lista "nuevas_noticias".
-    Formato: {{"nuevas_noticias": [ {{"categoria": "...", "titulo": "...", "resumen": "...", "contenido_completo": "<p>...</p>", "imagen": "URL de unsplash gaming", "enlace": "..."}} ] }}
-    Noticias:\n{textos}"""
+    textos = ""
+    for e in nuevas_entradas:
+        img = ""
+        if 'media_content' in e and len(e.media_content) > 0: img = e.media_content[0]['url']
+        elif 'media_thumbnail' in e and len(e.media_thumbnail) > 0: img = e.media_thumbnail[0]['url']
+        textos += f"Título: {e.title}\nResumen: {e.summary}\nEnlace: {e.link}\nImagen oficial: {img}\n\n"
+        
+    prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español de forma detallada.
+    Genera un JSON con una lista llamada "nuevas_noticias".
+    REGLA DE IMÁGENES: Usa la URL de la "Imagen oficial" que te doy. Si está vacía o no hay enlace, usa ESTA URL OBLIGATORIAMENTE: https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80
+    
+    Formato: {{"nuevas_noticias": [ {{"categoria": "...", "titulo": "...", "resumen": "...", "contenido_completo": "<p>...</p>", "imagen": "AQUI LA URL", "enlace": "..."}} ] }}
+    Noticias a procesar:\n{textos}"""
     
     try:
         response = client.models.generate_content(
@@ -66,28 +74,31 @@ if noticias_totales:
         json.dump({"destacada": noticias_totales[0], "secundarias": noticias_totales[1:]}, f, ensure_ascii=False, indent=2)
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (NUEVO)
+# TAREA 2: SISTEMA DE LANZAMIENTOS
 # ==========================================
+meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 mes_actual = datetime.now().month
 anio_actual = datetime.now().year
-print(f"Generando calendario de lanzamientos para {mes_actual}/{anio_actual}...")
+nombre_mes = f"{meses[mes_actual-1]} {anio_actual}"
+
+print(f"Generando calendario de lanzamientos para {nombre_mes}...")
 
 prompt_lanzamientos = f"""
-Eres un analista de la industria de los videojuegos.
-Busca y genera una lista de los 6 a 8 lanzamientos de videojuegos más importantes y esperados para el mes actual ({mes_actual}/{anio_actual}).
-Devuelve ESTRICTAMENTE un archivo JSON con esta estructura:
+Eres un experto en videojuegos. Genera una lista de los 6 lanzamientos más importantes para {nombre_mes}.
+Devuelve un JSON estrictamente con esta estructura:
 {{
-  "mes": "Nombre del mes actual en español (ej: Mayo 2026)",
+  "mes": "{nombre_mes}",
   "lanzamientos": [
     {{
       "titulo": "Nombre del Juego",
-      "fecha": "Día exacto (ej: 15 de Mayo)",
+      "fecha": "Día exacto",
       "plataformas": "PS5, Xbox Series, PC",
-      "imagen": "URL de Unsplash sobre videojuegos, consolas o cyberpunk",
-      "descripcion": "Breve descripción de 2 líneas sobre de qué trata el juego."
+      "imagen": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
+      "descripcion": "Descripción corta de 2 líneas."
     }}
   ]
 }}
+IMPORTANTE: Para "imagen", usa fotos genéricas de Unsplash sobre tecnología (ej: https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=500&q=80). Nunca dejes esto vacío.
 """
 try:
     resp_lanzamientos = client.models.generate_content(
