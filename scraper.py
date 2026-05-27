@@ -1,4 +1,7 @@
 import os
+import json
+import time
+from datetime import datetime, timedelta
 import feedparser
 from google import genai
 from google.genai import types
@@ -6,77 +9,119 @@ from google.genai import types
 api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
-print("Buscando noticias...")
-feed_url = "https://feeds.feedburner.com/ign/games-all"
-feed = feedparser.parse(feed_url)
+archivo_json = 'noticias.json'
+historial = []
 
-entradas = feed.entries[:3]
-textos_noticias = ""
-for i, entry in enumerate(entradas):
-    # ¡NUEVO! Intentamos extraer la imagen real y oficial de la noticia
-    imagen_original = ""
-    if 'media_content' in entry and len(entry.media_content) > 0:
-        imagen_original = entry.media_content[0]['url']
-    elif 'media_thumbnail' in entry and len(entry.media_thumbnail) > 0:
-        imagen_original = entry.media_thumbnail[0]['url']
+# 1. Leer el historial guardado para no borrarlo
+if os.path.exists(archivo_json):
+    try:
+        with open(archivo_json, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            if 'destacada' in data:
+                historial.append(data['destacada'])
+            if 'secundarias' in data:
+                historial.extend(data['secundarias'])
+    except Exception as e:
+        print("No se pudo leer el archivo anterior.", e)
+
+# 2. Filtrar el historial (Eliminar las que tengan más de 3 días)
+fecha_limite = datetime.now() - timedelta(days=3)
+noticias_validas = []
+enlaces_guardados = set()
+
+for noticia in historial:
+    # Si la noticia es antigua y no tiene fecha, le ponemos la de hoy para no perderla
+    fecha_str = noticia.get('fecha', datetime.now().isoformat())
+    try:
+        fecha_obj = datetime.fromisoformat(fecha_str)
+    except:
+        fecha_obj = datetime.now()
+        
+    if fecha_obj > fecha_limite:
+        noticia['fecha'] = fecha_obj.isoformat()
+        noticias_validas.append(noticia)
+        enlaces_guardados.add(noticia.get('enlace', ''))
+
+# 3. Buscar noticias nuevas en IGN
+print("Buscando noticias nuevas...")
+feed = feedparser.parse("https://feeds.feedburner.com/ign/games-all")
+nuevas_entradas = []
+
+for entry in feed.entries:
+    # Solo tomamos la noticia si no la habíamos guardado antes
+    if entry.link not in enlaces_guardados:
+        nuevas_entradas.append(entry)
+    if len(nuevas_entradas) >= 3: # Tomar un máximo de 3 nuevas por ejecución
+        break
+
+# 4. Procesar con IA si hay contenido nuevo
+noticias_totales = noticias_validas
+
+if len(nuevas_entradas) > 0:
+    textos = ""
+    for i, entry in enumerate(nuevas_entradas):
+        imagen = ""
+        if 'media_content' in entry and len(entry.media_content) > 0:
+            imagen = entry.media_content[0]['url']
+        elif 'media_thumbnail' in entry and len(entry.media_thumbnail) > 0:
+            imagen = entry.media_thumbnail[0]['url']
+            
+        textos += f"Noticia {i+1}:\nTitulo: {entry.title}\nResumen: {entry.summary}\nEnlace: {entry.link}\nImagen: {imagen}\n\n"
+
+    prompt = f"""
+    Eres un periodista de videojuegos para KazokuGaming.
+    Reescribe estas noticias al español con un tono gamer, analítico y profesional.
+    Genera un JSON con una lista (array) llamada "nuevas_noticias".
     
-    textos_noticias += f"Noticia {i+1}:\nTítulo: {entry.title}\nResumen: {entry.summary}\nEnlace original: {entry.link}\nImagen oficial: {imagen_original}\n\n"
-
-# Instrucciones actualizadas para artículos largos e imágenes reales
-prompt = f"""
-Eres un periodista experto y analista de videojuegos para KazokuGaming.
-Lee estas 3 noticias en inglés y haz lo siguiente:
-1. Usa la Noticia 1 como "destacada" y las Noticias 2 y 3 como "secundarias".
-2. Reescribe y traduce al español con un tono gamer profesional, analítico y profundo.
-3. CONTENIDO MÁS COMPLETO: En el campo "contenido_completo", redacta un artículo extenso (de 4 a 6 párrafos). No solo resumas; incluye el contexto de la noticia, por qué es importante para la comunidad, y detalles clave. Usa etiquetas HTML <p> para separar párrafos, y usa <strong> para resaltar los nombres de los juegos o datos importantes.
-4. IMÁGENES EXACTAS: En el campo "imagen", DEBES poner exactamente la URL que dice "Imagen oficial" en la información que te paso. Si por algún motivo está vacía, solo entonces inventa una URL de Unsplash.
-
-Estructura JSON requerida ESTRICTAMENTE:
-{{
-  "destacada": {{
-    "id": "destacada",
-    "categoria": "Categoría (ej: RPG, Shooter, Industria)",
-    "titulo": "Título atractivo y adaptado",
-    "resumen": "Resumen detallado de 3 líneas",
-    "contenido_completo": "<p>Primer párrafo introductorio...</p><p>Segundo párrafo con <strong>detalles clave</strong>...</p><p>Tercer párrafo de contexto...</p><p>Párrafo final y conclusiones...</p>",
-    "imagen": "URL de la Imagen oficial",
-    "enlace": "Enlace original"
-  }},
-  "secundarias": [
     {{
-      "id": "sec1",
-      "categoria": "Categoría",
-      "titulo": "Título de noticia 2",
-      "resumen": "Resumen detallado",
-      "contenido_completo": "<p>Párrafo 1...</p><p>Párrafo 2...</p><p>Párrafo 3...</p><p>Párrafo 4...</p>",
-      "imagen": "URL de la Imagen oficial de la noticia 2",
-      "enlace": "Enlace original"
-    }},
-    {{
-      "id": "sec2",
-      "categoria": "Categoría",
-      "titulo": "Título de noticia 3",
-      "resumen": "Resumen detallado",
-      "contenido_completo": "<p>Párrafo 1...</p><p>Párrafo 2...</p><p>Párrafo 3...</p><p>Párrafo 4...</p>",
-      "imagen": "URL de la Imagen oficial de la noticia 3",
-      "enlace": "Enlace original"
+      "nuevas_noticias": [
+         {{
+            "categoria": "Categoría (Ej: RPG, Hardware)",
+            "titulo": "Título adaptado",
+            "resumen": "Resumen de 3 líneas",
+            "contenido_completo": "<p>Párrafo 1...</p><p>Párrafo 2...</p><p>Párrafo 3...</p><p>Párrafo 4...</p>",
+            "imagen": "URL de la imagen proporcionada",
+            "enlace": "Enlace original"
+         }}
+      ]
     }}
-  ]
-}}
+    
+    Noticias a procesar:
+    {textos}
+    """
+    
+    try:
+        print("Traduciendo y redactando artículos...")
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(response_mime_type="application/json")
+        )
+        resultado_ia = json.loads(response.text)
+        noticias_ia = resultado_ia.get("nuevas_noticias", [])
+        
+        # Generar IDs únicos y estampar la hora exacta de publicación
+        fecha_actual = datetime.now().isoformat()
+        marca_tiempo = str(int(time.time()))
+        
+        for i, n in enumerate(noticias_ia):
+            n['fecha'] = fecha_actual
+            n['id'] = f"not_{marca_tiempo}_{i}"
+            
+        # Unir las nuevas (que irán arriba del todo) con el historial válido
+        noticias_totales = noticias_ia + noticias_validas
+        print(f"¡Se agregaron {len(noticias_ia)} noticias nuevas al catálogo!")
+    except Exception as e:
+        print("Error al procesar con IA:", e)
+else:
+    print("No hay noticias nuevas en este momento. Se mantiene el historial intacto.")
 
-Noticias a procesar:
-{textos_noticias}
-"""
-
-print("Enviando a Gemini para redacción completa y extracción de imágenes...")
-try:
-    response = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=prompt,
-        config=types.GenerateContentConfig(response_mime_type="application/json")
-    )
+# 5. Guardar el archivo final estructurado para la web
+if len(noticias_totales) > 0:
+    json_final = {
+        "destacada": noticias_totales[0], # La más nueva de todas va en el Banner Principal
+        "secundarias": noticias_totales[1:] # Todo el resto (nuevas y antiguas) van a las tarjetas
+    }
     with open('noticias.json', 'w', encoding='utf-8') as f:
-        f.write(response.text)
-    print("¡Éxito! noticias.json creado correctamente con imágenes reales y textos largos.")
-except Exception as e:
-    print(f"Error crítico en la IA: {e}")
+        json.dump(json_final, f, ensure_ascii=False, indent=2)
+    print(f"Éxito: Archivo guardado con {len(noticias_totales)} artículos en total.")
