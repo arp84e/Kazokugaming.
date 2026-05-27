@@ -35,6 +35,6 @@ jobs:
       run: |
         git config --global user.name 'KazokuBot'
         git config --global user.email 'bot@kazokugaming.com'
-        git add.
+        git add .
         git commit -m "🤖 Actualización automática de noticias" || echo "No hay noticias nuevas"
         git push
