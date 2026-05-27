@@ -52,7 +52,7 @@ if nuevas_entradas:
         
     prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español de forma detallada.
     Genera un JSON con una lista llamada "nuevas_noticias".
-    REGLA DE IMÁGENES: Usa la URL de la "Imagen oficial" que te doy. Si está vacía o no hay enlace, usa ESTA URL OBLIGATORIAMENTE: https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80
+    REGLA DE IMÁGENES: Usa la URL de la "Imagen oficial" que te doy. Si está vacía, usa obligatoriamente esta URL: https://placehold.co/1200x600/141419/00f0ff.png?text=Noticia+Gaming
     
     Formato: {{"nuevas_noticias": [ {{"categoria": "...", "titulo": "...", "resumen": "...", "contenido_completo": "<p>...</p>", "imagen": "AQUI LA URL", "enlace": "..."}} ] }}
     Noticias a procesar:\n{textos}"""
@@ -74,7 +74,7 @@ if noticias_totales:
         json.dump({"destacada": noticias_totales[0], "secundarias": noticias_totales[1:]}, f, ensure_ascii=False, indent=2)
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Arreglado)
 # ==========================================
 meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 mes_actual = datetime.now().month
@@ -92,13 +92,14 @@ Devuelve un JSON estrictamente con esta estructura:
     {{
       "titulo": "Nombre del Juego",
       "fecha": "Día exacto",
-      "plataformas": "PS5, Xbox Series, PC",
-      "imagen": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
+      "plataformas": "PS5, PC, etc.",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nombre+Del+Juego",
       "descripcion": "Descripción corta de 2 líneas."
     }}
   ]
 }}
-IMPORTANTE: Para "imagen", usa fotos genéricas de Unsplash sobre tecnología (ej: https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=500&q=80). Nunca dejes esto vacío.
+REGLA VITAL PARA LA IMAGEN: Debes crear un cartel dinámico. Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'.
+Ejemplo: Si el juego es "Silent Hill 2", la imagen DEBE SER "https://placehold.co/600x400/141419/00f0ff.png?text=Silent+Hill+2". No inventes otras URLs.
 """
 try:
     resp_lanzamientos = client.models.generate_content(
