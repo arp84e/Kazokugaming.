@@ -234,8 +234,11 @@
 
         function render(data) {
             const de = data.destacada;
+            // Usamos el ID del JSON para enlazar a la sub-página
+            const idDestacada = de.id || 'destacada';
+            
             document.getElementById('noticia-destacada').innerHTML = `
-                <a href="${de.enlace}" class="hero-section">
+                <a href="articulo.html?id=${idDestacada}" class="hero-section">
                     <div class="hero-banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(13,13,17,0.95)), url('${de.imagen}');">
                         <div>
                             <span class="hero-badge">${de.categoria}</span>
@@ -246,9 +249,10 @@
                 </a>`;
 
             let gridHtml = '';
-            data.secundarias.forEach(noticia => {
+            data.secundarias.forEach((noticia, index) => {
+                const idSec = noticia.id || 'sec' + (index + 1);
                 gridHtml += `
-                    <a href="${noticia.enlace}" class="card">
+                    <a href="articulo.html?id=${idSec}" class="card">
                         <div class="card-img-holder" style="background-image: url('${noticia.imagen}');"></div>
                         <div class="card-content">
                             <span class="card-badge">${noticia.categoria}</span>
