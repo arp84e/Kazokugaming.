@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos Lanzamientos | KazokuGaming</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0d0d11; color: #ffffff; overflow-x: hidden; }
+
+        /* Barra Superior */
+        .header { background-color: rgba(20, 20, 25, 0.85); backdrop-filter: blur(12px); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00f0ff; position: sticky; top: 0; z-index: 100; }
+        .logo-img { max-height: 50px; }
+        
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .page-title { font-size: 32px; text-transform: uppercase; margin-bottom: 30px; border-left: 4px solid #00f0ff; padding-left: 15px; }
+        .mes-badge { color: #00f0ff; font-weight: bold; }
+
+        .grid-lanzamientos { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        
+        .game-card { background: #141419; border-radius: 8px; border: 1px solid #27272a; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s; }
+        .game-card:hover { transform: translateY(-5px); border-color: #00f0ff; box-shadow: 0 5px 15px rgba(0, 240, 255, 0.1); }
+        
+        .game-img { height: 200px; width: 100%; object-fit: cover; border-bottom: 2px solid #27272a; }
+        .game-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        
+        .game-date { background: #ff0055; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; align-self: flex-start; }
+        .game-title { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+        .game-platforms { color: #00f0ff; font-size: 13px; font-weight: bold; margin-bottom: 10px; }
+        .game-desc { color: #a1a1aa; font-size: 14px; line-height: 1.5; }
+
+        @media (max-width: 768px) { .header { flex-direction: column; gap: 15px; } }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="1779650326105.png" alt="Logo" class="logo-img">
+        </a>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Lanzamientos de <span id="mes-titulo" class="mes-badge">Cargando...</span></h1>
+        <div class="grid-lanzamientos" id="lista-juegos">
+            <p style="color: #a1a1aa;">Buscando en la base de datos de KazokuGaming...</p>
+        </div>
+    </div>
+
+    <script>
+        fetch('lanzamientos.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('mes-titulo').innerText = data.mes;
+                let html = '';
+                data.lanzamientos.forEach(juego => {
+                    html += `
+                    <div class="game-card">
+                        <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
+                        <div class="game-info">
+                            <span class="game-date">📅 ${juego.fecha}</span>
+                            <h2 class="game-title">${juego.titulo}</h2>
+                            <p class="game-platforms">🕹️ ${juego.plataformas}</p>
+                            <p class="game-desc">${juego.descripcion}</p>
+                        </div>
+                    </div>`;
+                });
+                document.getElementById('lista-juegos').innerHTML = html;
+            })
+            .catch(error => {
+                document.getElementById('lista-juegos').innerHTML = '<p>No se pudieron cargar los lanzamientos en este momento. Intenta más tarde.</p>';
+            });
+    </script>
+</body>
+</html>
