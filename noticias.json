@@ -1,25 +1,25 @@
 {
   "destacada": {
-    "categoria": "Clásicos que vuelven",
-    "titulo": "¡Solid Snake Vuelve Mejor que Nunca! MGS4 Remaster Confirma Fidelidad a sus Gags y Marcas Clásicas",
-    "resumen": "Prepárense, fans: Metal Gear Solid 4 está de regreso en consolas de nueva generación este agosto, como parte de la Master Collection Vol. 2.\nLas primeras imágenes de gameplay no solo nos han dejado boquiabiertos con sus gráficos mejorados, sino que también confirman que el humor meta y las icónicas marcas del original de 2008 seguirán intactas.\n¡La guerra nunca cambia, y la esencia de MGS4 tampoco!",
-    "imagen": "https://images.unsplash.com/photo-1593305841991-05c297ba3093?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjY4Mzh8MHwxfHNlYXJjaHw3fHxnYW1pbmclMjBzZXR1cHxlbnwwfHx8fDE3MjEyNTI0OTZ8MA&ixlib=rb-4.0.3&q=80&w=1200",
-    "enlace": "https://www.ign.com/articles/official-metal-gear-solid-4-remaster-retains-classic-real-world-brands-and-meta-jokes"
+    "categoria": "Lanzamiento",
+    "titulo": "¡Marathon Desata el Horror Cósmico! Bungie Nos Sumerge en su Segunda Temporada",
+    "resumen": "Bungie, los cerebros detrás de Marathon, nos han soltado un adelanto brutal de lo que nos espera en la segunda temporada de su shooter. Prepárense para una dosis extra de terror sci-fi con atmósferas opresivas y misterios que te pondrán los pelos de punta. ¿Listos para la inmersión total el próximo mes?",
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
+    "enlace": "https://www.ign.com/articles/marathon-developer-bungie-drops-season-2-cinematic-with-big-horror-vibes"
   },
   "secundarias": [
     {
-      "categoria": "Análisis de la Industria",
-      "titulo": "¿Pudieron Vender Más? El CEO de Remedy Cuestiona el Rendimiento de Alan Wake y Control",
-      "resumen": "El nuevo CEO de Remedy, el estudio detrás de joyas como Alan Wake y Control, ha encendido la polémica al afirmar que sus aclamadas franquicias 'debieron haber vendido más'.\nUna declaración que abre el debate sobre el verdadero potencial comercial de estas sagas.",
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjY4Mzh8MHwxfHNlYXJjaHwxNXx8Z2FtaW5nJTIwa2V5Ym9hcmR8ZW58MHx8fHwxNzIxMjUyNzAwfDA&ixlib=rb-4.0.3&q=80&w=500",
-      "enlace": "https://www.ign.com/articles/alan-wake-and-control-should-have-sold-more-new-remedy-ceo-says-as-he-accepts-skepticism-of-his-former-ea-background"
+      "categoria": "PC Gaming",
+      "titulo": "¡Atención PC Gamers! The Witcher 3 Actualiza Requisitos con 'Songs of the Past'",
+      "resumen": "CD Projekt RED ha lanzado una señal importante: los requisitos mínimos de The Witcher 3: Wild Hunt cambiarán. ¡Prepara tu equipo, que la tercera expansión, 'Songs of the Past', viene con todo y exigirá más de tu rig!",
+      "imagen": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
+      "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-minimum-requirements-set-to-change-ahead-of-songs-of-the-past-expansion"
     },
     {
-      "categoria": "Noticias Insólitas",
-      "titulo": "¡Atención Coleccionistas! Un 'Hombre de Florida' Roba 12.000 Dólares en Cartas Pokémon... ¡Con una Motosierra!",
-      "resumen": "Un individuo de Florida ha sido arrestado tras perpetrar un robo valorado en $12,000 en cartas Pokémon de una tienda local.\nLo más alucinante del suceso es el método: ¡utilizó una motosierra a batería para entrar al establecimiento!",
-      "imagen": "https://images.unsplash.com/photo-1627958641498-f58c4992484f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjY4Mzh8MHwxfHNlYXJjaHwxMnx8cG9rZW1vbiUyMGNhcmRzfGVufDB8fHx8MTcyMTI1Mjg0MXww&ixlib=rb-4.0.3&q=80&w=500",
-      "enlace": "https://www.ign.com/articles/florida-man-accused-of-using-chainsaw-to-steal-12000-of-pokemon-cards"
+      "categoria": "DLC",
+      "titulo": "¡Geralt Regresa! The Witcher 3 Confirma Nueva Expansión: 'Songs of the Past'",
+      "resumen": "CD Projekt RED ha soltado la bomba: una tercera expansión para The Witcher 3, titulada 'Songs of the Past', está en camino. Prepárense para sumergirse de nuevo en el Continente y vivir nuevas aventuras épicas con Geralt de Rivia.",
+      "imagen": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=500&q=80",
+      "enlace": "https://www.ign.com/articles/the-witcher-3-wild-hunt-songs-of-the-past-expansion-dlc-announced-first-details-confirmed"
     }
   ]
 }
