@@ -3,69 +3,120 @@
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Chronos Gate 2: Echoes of Eternity",
-        "fecha": "08 de Abril",
+        "titulo": "Stellaris Odyssey",
+        "fecha": "7 de Abril",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronos+Gate+2:+Echoes+of+Eternity",
-        "descripcion": "La esperada secuela de la aclamada saga de RPG de ciencia ficción. Viaja a través del tiempo y el espacio para evitar la aniquilación universal."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Stellaris+Odyssey",
+        "descripcion": "Una épica aventura espacial de rol que te sumerge en una galaxia vasta y desconocida, donde tus decisiones forjarán el destino de civilizaciones enteras.\nExplora mundos alienígenas, lidera tu tripulación y enfréntate a amenazas cósmicas."
+      },
+      {
+        "titulo": "Eldoria: The Forsaken Lands",
+        "fecha": "14 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Eldoria:+The+Forsaken+Lands",
+        "descripcion": "Un RPG de acción de mundo abierto que redefine el género con una narrativa profunda y un sistema de combate dinámico.\nDescubre los secretos de Eldoria mientras luchas contra criaturas míticas y antiguos males."
       },
       {
         "titulo": "Cybernetic Uprising",
-        "fecha": "15 de Abril",
-        "plataformas": "PC, PS5, Xbox Series X/S",
+        "fecha": "21 de Abril",
+        "plataformas": "PC",
         "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cybernetic+Uprising",
-        "descripcion": "Un shooter en primera persona distópico que redefine la acción futurista. Lucha contra corporaciones opresoras en una metrópolis tecnificada."
+        "descripcion": "Un trepidante shooter en primera persona ambientado en un futuro distópico dominado por corporaciones y androides rebeldes.\nLucha por la libertad en una metrópolis de neón, utilizando un arsenal futurista y habilidades cibernéticas."
       },
       {
-        "titulo": "Mystic Realms: Whispering Woods",
-        "fecha": "22 de Abril",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Mystic+Realms:+Whispering+Woods",
-        "descripcion": "Una aventura de fantasía de mundo abierto con un arte impresionante y una historia inmersiva. Explora bosques encantados y descubre antiguos secretos."
+        "titulo": "Whispering Woods Resort",
+        "fecha": "24 de Abril",
+        "plataformas": "PC, Nintendo Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Whispering+Woods+Resort",
+        "descripcion": "Un encantador simulador de gestión donde construyes y administras tu propio resort de montaña.\nAtrae turistas, mejora instalaciones y descubre los misterios ocultos del bosque circundante."
       },
       {
-        "titulo": "Apex Rally Championship 2026",
-        "fecha": "29 de Abril",
+        "titulo": "Apex Legends: Season 20",
+        "fecha": "28 de Abril",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Apex+Rally+Championship+2026",
-        "descripcion": "La última entrega del simulador de rally definitivo con gráficos de nueva generación. Compite en circuitos globales y domina terrenos extremos."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Apex+Legends:+Season+20",
+        "descripcion": "La nueva temporada del popular battle royale introduce una leyenda inédita, un nuevo mapa rediseñado y emocionantes cambios en el meta.\nPrepárate para la acción y domina la arena con nuevas tácticas."
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Vanguard Protocol: Last Stand",
-        "fecha": "06 de Mayo",
+        "titulo": "Shadowbound: Legacy of the Ancients",
+        "fecha": "5 de Mayo",
+        "plataformas": "PS5, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Shadowbound:+Legacy+of+the+Ancients",
+        "descripcion": "Un oscuro juego de rol de acción con combates desafiantes y un mundo gótico impresionante.\nDesentierra un antiguo legado maldito y decide el destino de un reino al borde de la desesperación."
+      },
+      {
+        "titulo": "Quantum Rift",
+        "fecha": "8 de Mayo",
+        "plataformas": "PC, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Quantum+Rift",
+        "descripcion": "Un innovador shooter en tercera persona que fusiona la manipulación del tiempo con intensos tiroteos tácticos.\nViaja entre dimensiones para resolver puzles y derrotar a enemigos que desafían la física."
+      },
+      {
+        "titulo": "Galactic Harvest",
+        "fecha": "15 de Mayo",
+        "plataformas": "PC, Nintendo Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Galactic+Harvest",
+        "descripcion": "Un relajante simulador de agricultura espacial donde colonizas planetas exóticos y cultivas cosechas alienígenas.\nConstruye tu granja intergaláctica y descubre nuevas especies botánicas."
+      },
+      {
+        "titulo": "Project Phoenix: Rebirth",
+        "fecha": "19 de Mayo",
+        "plataformas": "PS5",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Project+Phoenix:+Rebirth",
+        "descripcion": "Una exclusiva de PlayStation 5 que promete gráficos de vanguardia y una historia emotiva sobre la resiliencia humana en un mundo post-apocalíptico.\nExperimenta un viaje inolvidable de supervivencia y esperanza."
+      },
+      {
+        "titulo": "Drive Club 2027",
+        "fecha": "22 de Mayo",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Vanguard+Protocol:+Last+Stand",
-        "descripcion": "El cierre épico de la trilogía de acción y aventura espacial. Lidera una última resistencia contra una amenaza alienígena intergaláctica."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Drive+Club+2027",
+        "descripcion": "La próxima entrega de la aclamada saga de carreras, con un realismo gráfico sin precedentes y una selección masiva de vehículos.\nCompite en circuitos globales y forja tu leyenda en el asfalto."
       },
       {
-        "titulo": "Eternal Horizon",
-        "fecha": "13 de Mayo",
-        "plataformas": "PC, PS5",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Eternal+Horizon",
-        "descripcion": "Un innovador RPG japonés que fusiona fantasía y elementos cyberpunk. Descubre un mundo dividido y forja tu propio destino legendario."
-      },
+        "titulo": "Fabletown Mysteries",
+        "fecha": "26 de Mayo",
+        "plataformas": "PC, Nintendo Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Fabletown+Mysteries",
+        "descripcion": "Una encantadora aventura gráfica point-and-click con un estilo artístico único y una trama llena de humor y misterio.\nResuelve enigmas y desvela los secretos de un pintoresco pueblo habitado por personajes de cuentos de hadas."
+      }
+    ],
+    "Mayo 2026": [
       {
-        "titulo": "Shadows of Eldoria",
-        "fecha": "20 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Shadows+of+Eldoria",
-        "descripcion": "Un juego de sigilo y acción ambientado en un universo gótico oscuro. Domina el arte de la infiltración y el combate en las sombras."
-      },
-      {
-        "titulo": "Galactic Empires IV",
-        "fecha": "27 de Mayo",
+        "titulo": "World of Warcraft: Echoes of the Void",
+        "fecha": "12 de Mayo",
         "plataformas": "PC",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Galactic+Empires+IV",
-        "descripcion": "La cuarta entrega del aclamado juego de estrategia 4X en el espacio. Construye tu imperio estelar, investiga tecnologías y domina la galaxia."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=World+of+Warcraft:+Echoes+of+the+Void",
+        "descripcion": "La nueva expansión del icónico MMORPG, introduciendo una nueva clase heroica, nuevas zonas por explorar y una amenaza cósmica que pone en peligro a Azeroth.\nPrepárate para una aventura masiva."
       },
       {
-        "titulo": "Project: Phoenix Rising",
-        "fecha": "30 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Project:+Phoenix+Rising",
-        "descripcion": "Un vibrante juego de plataformas en 3D con mecánicas innovadoras. Despierta un poder ancestral y salva un reino de fantasía de la oscuridad."
+        "titulo": "Silent Peaks",
+        "fecha": "19 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Silent+Peaks",
+        "descripcion": "Un escalofriante juego de terror psicológico que te sumerge en una remota estación de investigación polar, donde un experimento salió terriblemente mal.\nLucha por tu cordura mientras descubres una verdad aterradora."
+      },
+      {
+        "titulo": "Chrono Trigger Remastered",
+        "fecha": "22 de Mayo",
+        "plataformas": "PC, Nintendo Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chrono+Trigger+Remastered",
+        "descripcion": "La legendaria obra maestra del RPG regresa con gráficos modernizados, audio regrabado y nuevas características de calidad de vida.\nRevive la atemporal aventura de viajes en el tiempo para salvar el futuro."
+      },
+      {
+        "titulo": "Vanguard Ops: Global Conflict",
+        "fecha": "29 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Vanguard+Ops:+Global+Conflict",
+        "descripcion": "Un intenso shooter multijugador con enfoque en la estrategia táctica y el juego en equipo.\nParticipa en escenarios de guerra globales, personaliza tu armamento y domina el campo de batalla."
+      },
+      {
+        "titulo": "Mythos Arena",
+        "fecha": "26 de Mayo",
+        "plataformas": "PC, PS5",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Mythos+Arena",
+        "descripcion": "Un nuevo fighting game que reúne a deidades y héroes de diversas mitologías en combates épicos.\nDomina las habilidades de los dioses y conviértete en el campeón del panteón."
       }
     ]
   }
