@@ -80,23 +80,27 @@ async function cargarTopOfertas() {
             const section = document.getElementById('resultsSection');
 
             try {
-                // Descargamos 4 páginas en paralelo (380 ofertas potenciales) para tener suficiente materia prima
-                const [req1, req2, req3, req4] = await Promise.all([
+                // Descargamos 6 páginas en paralelo (360 ofertas) para garantizar materia prima de sobra
+                const [req1, req2, req3, req4, req5, req6] = await Promise.all([
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=0&sortBy=Metacritic'),
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=1&sortBy=Metacritic'),
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=2&sortBy=Metacritic'),
-                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=3&sortBy=Metacritic')
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=3&sortBy=Metacritic'),
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=4&sortBy=Metacritic'),
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=5&sortBy=Metacritic')
                 ]);
 
-                if (!req1.ok || !req2.ok || !req3.ok || !req4.ok) throw new Error("Error de red");
+                if (!req1.ok || !req2.ok || !req3.ok || !req4.ok || !req5.ok || !req6.ok) throw new Error("Error de red");
 
                 const ofertas1 = await req1.json();
                 const ofertas2 = await req2.json();
                 const ofertas3 = await req3.json();
                 const ofertas4 = await req4.json();
+                const ofertas5 = await req5.json();
+                const ofertas6 = await req6.json();
                 
-                // Fusionamos todas las páginas en una megacolección
-                const ofertas = [...ofertas1, ...ofertas2, ...ofertas3, ...ofertas4];
+                // Fusionamos las 6 páginas en una megacolección
+                const ofertas = [...ofertas1, ...ofertas2, ...ofertas3, ...ofertas4, ...ofertas5, ...ofertas6];
 
                 loading.classList.add('hidden');
                 section.classList.remove('hidden');
