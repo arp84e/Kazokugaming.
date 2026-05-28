@@ -1,0 +1,72 @@
+{
+  "meses_disponibles": ["Abril 2026", "Mayo 2026", "Mayo 2026"],
+  "catalogo": {
+    "Abril 2026": [
+      {
+        "titulo": "Chronos Gate 2: Echoes of Eternity",
+        "fecha": "08 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronos+Gate+2:+Echoes+of+Eternity",
+        "descripcion": "La esperada secuela de la aclamada saga de RPG de ciencia ficción. Viaja a través del tiempo y el espacio para evitar la aniquilación universal."
+      },
+      {
+        "titulo": "Cybernetic Uprising",
+        "fecha": "15 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cybernetic+Uprising",
+        "descripcion": "Un shooter en primera persona distópico que redefine la acción futurista. Lucha contra corporaciones opresoras en una metrópolis tecnificada."
+      },
+      {
+        "titulo": "Mystic Realms: Whispering Woods",
+        "fecha": "22 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Mystic+Realms:+Whispering+Woods",
+        "descripcion": "Una aventura de fantasía de mundo abierto con un arte impresionante y una historia inmersiva. Explora bosques encantados y descubre antiguos secretos."
+      },
+      {
+        "titulo": "Apex Rally Championship 2026",
+        "fecha": "29 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Apex+Rally+Championship+2026",
+        "descripcion": "La última entrega del simulador de rally definitivo con gráficos de nueva generación. Compite en circuitos globales y domina terrenos extremos."
+      }
+    ],
+    "Mayo 2026": [
+      {
+        "titulo": "Vanguard Protocol: Last Stand",
+        "fecha": "06 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Vanguard+Protocol:+Last+Stand",
+        "descripcion": "El cierre épico de la trilogía de acción y aventura espacial. Lidera una última resistencia contra una amenaza alienígena intergaláctica."
+      },
+      {
+        "titulo": "Eternal Horizon",
+        "fecha": "13 de Mayo",
+        "plataformas": "PC, PS5",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Eternal+Horizon",
+        "descripcion": "Un innovador RPG japonés que fusiona fantasía y elementos cyberpunk. Descubre un mundo dividido y forja tu propio destino legendario."
+      },
+      {
+        "titulo": "Shadows of Eldoria",
+        "fecha": "20 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Shadows+of+Eldoria",
+        "descripcion": "Un juego de sigilo y acción ambientado en un universo gótico oscuro. Domina el arte de la infiltración y el combate en las sombras."
+      },
+      {
+        "titulo": "Galactic Empires IV",
+        "fecha": "27 de Mayo",
+        "plataformas": "PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Galactic+Empires+IV",
+        "descripcion": "La cuarta entrega del aclamado juego de estrategia 4X en el espacio. Construye tu imperio estelar, investiga tecnologías y domina la galaxia."
+      },
+      {
+        "titulo": "Project: Phoenix Rising",
+        "fecha": "30 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Project:+Phoenix+Rising",
+        "descripcion": "Un vibrante juego de plataformas en 3D con mecánicas innovadoras. Despierta un poder ancestral y salva un reino de fantasía de la oscuridad."
+      }
+    ]
+  }
+}
