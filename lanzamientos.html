@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Próximos Lanzamientos | KazokuGaming</title>
+    <title>lanzamientos | kazokugaming</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #0d0d11; color: #ffffff; overflow-x: hidden; }
 
-        /* Barra Superior */
+        /* barra superior */
         .header { background-color: rgba(20, 20, 25, 0.85); backdrop-filter: blur(12px); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00f0ff; position: sticky; top: 0; z-index: 100; }
         .logo-img { max-height: 50px; }
+        .nav-menu { display: flex; list-style: none; gap: 20px; }
+        .nav-menu a { color: #a1a1aa; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; padding: 8px 16px; transition: all 0.3s; }
+        .nav-menu a:hover { color: #ffffff; text-shadow: 0 0 8px #00f0ff; }
         
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .page-title { font-size: 32px; text-transform: uppercase; margin-bottom: 30px; border-left: 4px solid #00f0ff; padding-left: 15px; }
-        .mes-badge { color: #00f0ff; font-weight: bold; }
+        .page-title { font-size: 32px; text-transform: uppercase; margin-bottom: 20px; border-left: 4px solid #00f0ff; padding-left: 15px; }
+        
+        /* pestañas para cambiar de mes */
+        .tabs-container { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { background-color: #141419; color: #a1a1aa; border: 1px solid #27272a; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: all 0.3s; }
+        .tab-btn:hover { color: #ffffff; border-color: #00f0ff; }
+        .tab-btn.active { background-color: rgba(0, 240, 255, 0.1); color: #00f0ff; border-color: #00f0ff; box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
 
+        /* rejilla de juegos */
         .grid-lanzamientos { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
         .game-card { background: #141419; border-radius: 8px; border: 1px solid #27272a; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s; }
-        .game-card:hover { transform: translateY(-5px); border-color: #00f0ff; box-shadow: 0 5px 15px rgba(0, 240, 255, 0.1); }
-        
+        .game-card:hover { transform: translateY(-5px); border-color: #00f0ff; }
         .game-img { height: 200px; width: 100%; object-fit: cover; border-bottom: 2px solid #27272a; }
         .game-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        
         .game-date { background: #ff0055; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; align-self: flex-start; }
         .game-title { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
         .game-platforms { color: #00f0ff; font-size: 13px; font-weight: bold; margin-bottom: 10px; }
@@ -35,38 +41,82 @@
 <body>
 
     <header class="header">
-        <a href="index.html" class="logo-container">
+        <a href="index.html">
             <img src="1779650326105.png" alt="Logo" class="logo-img">
         </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">inicio</a></li>
+                <li><a href="lanzamientos.html">lanzamientos</a></li>
+                <li><a href="radar.html">radar de precios</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
-        <h1 class="page-title">Lanzamientos de <span id="mes-titulo" class="mes-badge">Cargando...</span></h1>
+        <h1 class="page-title">calendario de lanzamientos</h1>
+        
+        <!-- aquí se generarán los botones de los meses dinámicamente -->
+        <div class="tabs-container" id="tabsMenu"></div>
+
+        <!-- aquí se mostrarán los juegos del mes seleccionado -->
         <div class="grid-lanzamientos" id="lista-juegos">
-            <p style="color: #a1a1aa;">Buscando en la base de datos de KazokuGaming...</p>
+            <p style="color: #a1a1aa;">sincronizando calendario con el bot...</p>
         </div>
     </div>
 
     <script>
-        // Esta función intenta cargar los datos y nos avisa si algo falla
-        async function cargarLanzamientos() {
-            const contenedor = document.getElementById('lista-juegos');
+        let datosCatalogo = null;
+
+        // función principal que lee el archivo json
+        async function iniciarCalendario() {
             try {
-                const response = await fetch('lanzamientos.json');
-                if (!response.ok) throw new Error('No se pudo acceder al archivo JSON');
+                // añadimos un número aleatorio al final para obligar a vercel a no usar datos viejos
+                const respuesta = await fetch('lanzamientos.json?v=' + Date.now());
+                if (!respuesta.ok) throw new Error('el archivo json aún no está disponible en la red');
                 
-                const data = await response.json();
-                console.log("Datos recibidos:", data); // Esto nos ayudará a ver qué está llegando
+                datosCatalogo = await respuesta.json();
+                
+                // creamos los botones de navegación basados en los meses que generó la ia
+                generarBotonesMeses(datosCatalogo.meses_disponibles);
+                
+                // por defecto, mostramos el segundo mes (que corresponde al mes en curso)
+                mostrarMes(datosCatalogo.meses_disponibles[1]);
 
-                // Si no hay datos, mostramos error
-                if (!data.catalogo) throw new Error('El archivo JSON no tiene la estructura esperada');
+            } catch (error) {
+                console.error(error);
+                document.getElementById('lista-juegos').innerHTML = `
+                    <p style="color: #a1a1aa; grid-column: 1/-1; text-align: center; padding: 20px; border: 1px dashed #ff0055; border-radius: 6px;">
+                        ⚠️ el bot está procesando el catálogo de 3 meses por primera vez. activa el bot en la pestaña "actions" de github para sincronizar los datos.
+                    </p>`;
+            }
+        }
 
-                // Vamos a mostrar el primer mes disponible por defecto
-                const primerMes = data.meses_disponibles[0];
-                document.getElementById('mes-titulo').innerText = primerMes;
+        // función para pintar los botones de los meses en pantalla
+        function generarBotonesMeses(meses) {
+            const menu = document.getElementById('tabsMenu');
+            menu.innerHTML = '';
+            meses.forEach((mes, index) => {
+                // el index 1 es el mes actual, le ponemos la clase active por defecto
+                const claseActiva = index === 1 ? 'active' : '';
+                menu.innerHTML += `<button class="tab-btn ${claseActiva}" onclick="cambiarMes(this, '${mes}')">${mes}</button>`;
+            });
+        }
 
-                let html = '';
-                data.catalogo[primerMes].forEach(juego => {
+        // función para cambiar de pestaña al hacer clic
+        function cambiarMes(boton, mes) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            boton.classList.add('active');
+            mostrarMes(mes);
+        }
+
+        // función para rellenar la rejilla con los juegos del mes seleccionado
+        function mostrarMes(mes) {
+            const contenedor = document.getElementById('lista-juegos');
+            let html = '';
+            
+            if (datosCatalogo && datosCatalogo.catalogo[mes]) {
+                datosCatalogo.catalogo[mes].forEach(juego => {
                     html += `
                     <div class="game-card">
                         <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
@@ -79,13 +129,10 @@
                     </div>`;
                 });
                 contenedor.innerHTML = html;
-
-            } catch (error) {
-                console.error("Error detectado:", error);
-                contenedor.innerHTML = `<p style="color: red;">Error al cargar: ${error.message}. Revisa la consola (F12).</p>`;
             }
         }
 
-        // Ejecutar al cargar
-        cargarLanzamientos();
+        iniciarCalendario();
     </script>
+</body>
+</html>
