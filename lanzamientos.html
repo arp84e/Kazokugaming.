@@ -48,12 +48,25 @@
     </div>
 
     <script>
-        fetch('lanzamientos.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('mes-titulo').innerText = data.mes;
+        // Esta función intenta cargar los datos y nos avisa si algo falla
+        async function cargarLanzamientos() {
+            const contenedor = document.getElementById('lista-juegos');
+            try {
+                const response = await fetch('lanzamientos.json');
+                if (!response.ok) throw new Error('No se pudo acceder al archivo JSON');
+                
+                const data = await response.json();
+                console.log("Datos recibidos:", data); // Esto nos ayudará a ver qué está llegando
+
+                // Si no hay datos, mostramos error
+                if (!data.catalogo) throw new Error('El archivo JSON no tiene la estructura esperada');
+
+                // Vamos a mostrar el primer mes disponible por defecto
+                const primerMes = data.meses_disponibles[0];
+                document.getElementById('mes-titulo').innerText = primerMes;
+
                 let html = '';
-                data.lanzamientos.forEach(juego => {
+                data.catalogo[primerMes].forEach(juego => {
                     html += `
                     <div class="game-card">
                         <img src="${juego.imagen}" alt="${juego.titulo}" class="game-img">
@@ -65,11 +78,14 @@
                         </div>
                     </div>`;
                 });
-                document.getElementById('lista-juegos').innerHTML = html;
-            })
-            .catch(error => {
-                document.getElementById('lista-juegos').innerHTML = '<p>No se pudieron cargar los lanzamientos en este momento. Intenta más tarde.</p>';
-            });
+                contenedor.innerHTML = html;
+
+            } catch (error) {
+                console.error("Error detectado:", error);
+                contenedor.innerHTML = `<p style="color: red;">Error al cargar: ${error.message}. Revisa la consola (F12).</p>`;
+            }
+        }
+
+        // Ejecutar al cargar
+        cargarLanzamientos();
     </script>
-</body>
-</html>
