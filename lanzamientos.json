@@ -2,46 +2,46 @@
   "mes": "Mayo 2026",
   "lanzamientos": [
     {
-      "titulo": "Horizon: Echoes of the Past",
-      "fecha": "6 de Mayo",
-      "plataformas": "PS5, PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Horizon:+Echoes+of+the+Past",
-      "descripcion": "Aloy se embarca en una nueva y peligrosa aventura para descubrir secretos ancestrales que amenazan con destruir su mundo.\nEnfrenta máquinas colosales y facciones desconocidas en esta emocionante entrega."
+      "titulo": "Chronicles of Aethel: Rebirth",
+      "fecha": "12 de Mayo de 2026",
+      "plataformas": "PS5, Xbox Series X|S, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronicles+of+Aethel%3A+Rebirth",
+      "descripcion": "Un épico RPG de acción con un vasto mundo abierto, narrativas ramificadas y combates desafiantes.\nDescubre los secretos de un reino olvidado y forja tu propio destino."
     },
     {
-      "titulo": "The Elder Scrolls VI: Skyfall",
-      "fecha": "13 de Mayo",
-      "plataformas": "PC, Xbox Series X/S",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=The+Elder+Scrolls+VI:+Skyfall",
-      "descripcion": "Regresa al mundo de Tamriel en una nueva entrega épica, explorando vastas tierras desconocidas y enfrentando amenazas que desafían el destino.\nSumérgete en una narrativa profunda y personalizable para forjar tu leyenda."
+      "titulo": "Nebula Dawn 2: Galactic Frontier",
+      "fecha": "05 de Mayo de 2026",
+      "plataformas": "PC, PS5, Xbox Series X|S",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nebula+Dawn+2%3A+Galactic+Frontier",
+      "descripcion": "Vuelve la aclamada saga de disparos en primera persona con intensas batallas espaciales y una historia que te llevará a los confines de la galaxia.\nPrepárate para una aventura intergaláctica sin igual."
     },
     {
-      "titulo": "Cyberpunk 2077: Neo-Kyoto Uprising",
-      "fecha": "20 de Mayo",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cyberpunk+2077:+Neo-Kyoto+Uprising",
-      "descripcion": "Explora la vibrante y peligrosa ciudad de Neo-Kyoto, donde nuevas corporaciones luchan por el poder en un futuro distópico y tecnológicamente avanzado.\nDesvela conspiraciones y forja tu propio camino."
+      "titulo": "Whispering Woods: The Eldoria Prophecy",
+      "fecha": "20 de Mayo de 2026",
+      "plataformas": "Nintendo Switch 2, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Whispering+Woods%3A+The+Eldoria+Prophecy",
+      "descripcion": "Una encantadora aventura de exploración y puzles en un vibrante mundo de fantasía animado.\nDesentraña los misterios de una antigua profecía para salvar el bosque encantado."
     },
     {
-      "titulo": "Marvel's Spider-Man 3",
-      "fecha": "22 de Mayo",
-      "plataformas": "PS5",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Marvel's+Spider-Man+3",
-      "descripcion": "Peter Parker y Miles Morales se unen para enfrentar una amenaza sin precedentes que pone a prueba los límites de su alianza en Nueva York.\nNuevos villanos y desafíos aguardan a nuestros héroes arácnidos."
+      "titulo": "Descent into Madness: Chapter 3",
+      "fecha": "27 de Mayo de 2026",
+      "plataformas": "PS5, Xbox Series X|S, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Descent+into+Madness%3A+Chapter+3",
+      "descripcion": "El aterrador final de la trilogía de horror psicológico que te mantendrá al borde de tu asiento.\nExplora una mente distorsionada y enfrenta tus peores miedos."
     },
     {
-      "titulo": "Assassin's Creed: Celestial Dawn",
-      "fecha": "27 de Mayo",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Assassin's+Creed:+Celestial+Dawn",
-      "descripcion": "Viaja a una era mítica y poco explorada, donde los Asesinos deben desentrañar secretos divinos y luchar contra una antigua orden.\nDescubre el origen de un poder ancestral y altera el curso de la historia."
+      "titulo": "Velocity Rush: Adrenaline",
+      "fecha": "07 de Mayo de 2026",
+      "plataformas": "PS5, Xbox Series X|S, PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Velocity+Rush%3A+Adrenaline",
+      "descripcion": "Experimenta la emoción de las carreras callejeras de mundo abierto con gráficos de nueva generación y una personalización sin límites.\nDomina las calles y conviértete en la leyenda."
     },
     {
-      "titulo": "Grand Theft Auto VI Online: Vice City Stories",
-      "fecha": "29 de Mayo",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Grand+Theft+Auto+VI+Online:+Vice+City+Stories",
-      "descripcion": "Expande tu imperio criminal en Vice City con nuevas actividades, vehículos y misiones cooperativas en este masivo DLC online.\nLa vida de gánster nunca había sido tan emocionante ni peligrosa."
+      "titulo": "Aetheria Colonies: New Beginnings",
+      "fecha": "23 de Mayo de 2026",
+      "plataformas": "PC",
+      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Aetheria+Colonies%3A+New+Beginnings",
+      "descripcion": "Un innovador juego de estrategia y gestión de colonias en un planeta alienígena hostil.\nConstruye, investiga y protege a tus colonos de amenazas inimaginables."
     }
   ]
 }
