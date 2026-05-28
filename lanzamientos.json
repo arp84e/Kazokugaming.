@@ -1,47 +1,79 @@
 {
-  "mes": "Mayo 2026",
-  "lanzamientos": [
-    {
-      "titulo": "Chronicles of Aethel: Rebirth",
-      "fecha": "12 de Mayo de 2026",
-      "plataformas": "PS5, Xbox Series X|S, PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronicles+of+Aethel%3A+Rebirth",
-      "descripcion": "Un épico RPG de acción con un vasto mundo abierto, narrativas ramificadas y combates desafiantes.\nDescubre los secretos de un reino olvidado y forja tu propio destino."
-    },
-    {
-      "titulo": "Nebula Dawn 2: Galactic Frontier",
-      "fecha": "05 de Mayo de 2026",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nebula+Dawn+2%3A+Galactic+Frontier",
-      "descripcion": "Vuelve la aclamada saga de disparos en primera persona con intensas batallas espaciales y una historia que te llevará a los confines de la galaxia.\nPrepárate para una aventura intergaláctica sin igual."
-    },
-    {
-      "titulo": "Whispering Woods: The Eldoria Prophecy",
-      "fecha": "20 de Mayo de 2026",
-      "plataformas": "Nintendo Switch 2, PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Whispering+Woods%3A+The+Eldoria+Prophecy",
-      "descripcion": "Una encantadora aventura de exploración y puzles en un vibrante mundo de fantasía animado.\nDesentraña los misterios de una antigua profecía para salvar el bosque encantado."
-    },
-    {
-      "titulo": "Descent into Madness: Chapter 3",
-      "fecha": "27 de Mayo de 2026",
-      "plataformas": "PS5, Xbox Series X|S, PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Descent+into+Madness%3A+Chapter+3",
-      "descripcion": "El aterrador final de la trilogía de horror psicológico que te mantendrá al borde de tu asiento.\nExplora una mente distorsionada y enfrenta tus peores miedos."
-    },
-    {
-      "titulo": "Velocity Rush: Adrenaline",
-      "fecha": "07 de Mayo de 2026",
-      "plataformas": "PS5, Xbox Series X|S, PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Velocity+Rush%3A+Adrenaline",
-      "descripcion": "Experimenta la emoción de las carreras callejeras de mundo abierto con gráficos de nueva generación y una personalización sin límites.\nDomina las calles y conviértete en la leyenda."
-    },
-    {
-      "titulo": "Aetheria Colonies: New Beginnings",
-      "fecha": "23 de Mayo de 2026",
-      "plataformas": "PC",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Aetheria+Colonies%3A+New+Beginnings",
-      "descripcion": "Un innovador juego de estrategia y gestión de colonias en un planeta alienígena hostil.\nConstruye, investiga y protege a tus colonos de amenazas inimaginables."
-    }
-  ]
+  "meses_disponibles": ["Abril 2026", "Mayo 2026", "Mayo 2026"],
+  "catalogo": {
+    "Abril 2026": [
+      {
+        "titulo": "Cyberpunk 2077: Neo-Tokyo Uprising",
+        "fecha": "08 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cyberpunk+2077%3A+Neo-Tokyo+Uprising",
+        "descripcion": "La esperada expansión que te lleva a los distritos subterráneos de Night City. Nuevas misiones, facciones y el regreso de personajes queridos en una trama oscura."
+      },
+      {
+        "titulo": "Fable: The Whispering Woods",
+        "fecha": "15 de Abril",
+        "plataformas": "Xbox Series X|S, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Fable%3A+The+Whispering+Woods",
+        "descripcion": "El renacimiento del RPG de fantasía de culto. Explora Albion con nuevas mecánicas de elección y consecuencia que afectan el mundo de formas inesperadas."
+      },
+      {
+        "titulo": "Project Ares",
+        "fecha": "22 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Project+Ares",
+        "descripcion": "Un innovador shooter en primera persona que combina parkour fluido con combate táctico en entornos futuristas. Prepárate para la nueva generación de eSports."
+      },
+      {
+        "titulo": "Stellaris: Galactic Empire",
+        "fecha": "29 de Abril",
+        "plataformas": "PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Stellaris%3A+Galactic+Empire",
+        "descripcion": "La próxima gran expansión para el aclamado juego de estrategia espacial. Introduce mecánicas de guerra total, diplomacia compleja y nuevas civilizaciones alienígenas."
+      },
+      {
+        "titulo": "Super Mario Odyssey 2",
+        "fecha": "10 de Abril",
+        "plataformas": "Nintendo Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Super+Mario+Odyssey+2",
+        "descripcion": "La tan esperada secuela de la aventura de plataformas en 3D de Mario. Nuevos mundos creativos, habilidades de captura y desafíos sorprendentes te esperan."
+      }
+    ],
+    "Mayo 2026": [
+      {
+        "titulo": "The Elder Scrolls VI: Shadowfen",
+        "fecha": "05 de Mayo",
+        "plataformas": "PC, Xbox Series X|S, PS5",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=The+Elder+Scrolls+VI%3A+Shadowfen",
+        "descripcion": "La siguiente entrega de la legendaria saga de RPG de fantasía. Explora la pantanosa y misteriosa región de Shadowfen con una libertad sin precedentes."
+      },
+      {
+        "titulo": "Horizon: Echoes of the Old World",
+        "fecha": "12 de Mayo",
+        "plataformas": "PS5, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Horizon%3A+Echoes+of+the+Old+World",
+        "descripcion": "Aloy regresa en una nueva y emocionante aventura, desvelando secretos de una civilización olvidada. Descubre nuevas máquinas y desafíos ambientales."
+      },
+      {
+        "titulo": "Grand Theft Auto VI",
+        "fecha": "19 de Mayo",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Grand+Theft+Auto+VI",
+        "descripcion": "La entrega más ambiciosa de la icónica serie de mundo abierto. Sumérgete en una Vice City moderna con una narrativa expansiva y un sinfín de posibilidades."
+      },
+      {
+        "titulo": "Overwatch 3",
+        "fecha": "26 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X|S, Nintendo Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Overwatch+3",
+        "descripcion": "La próxima evolución del hero shooter, con nuevos héroes, mapas y modos de juego. Experimenta un sistema de progresión renovado y una historia expandida."
+      },
+      {
+        "titulo": "Hades II",
+        "fecha": "07 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X|S, Nintendo Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Hades+II",
+        "descripcion": "El aclamado roguelike de acción sale de acceso anticipado con contenido final. Lidera a Melínoe en su épica lucha contra el Titán del Tiempo."
+      }
+    ]
+  }
 }
