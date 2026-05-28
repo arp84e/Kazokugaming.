@@ -80,8 +80,8 @@
             const section = document.getElementById('resultsSection');
 
             try {
-                // Consultamos a la API por los 12 mejores descuentos globales activos en PC del día
-                const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?pageSize=12&sortBy=Metacritic');
+                // Pedimos un volumen alto de ofertas (60) para tener suficiente variedad tras filtrar
+                const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?pageSize=60&sortBy=Metacritic');
                 if (!respuesta.ok) throw new Error("Error de red");
                 const ofertas = await respuesta.json();
 
@@ -89,18 +89,34 @@
                 section.classList.remove('hidden');
                 container.innerHTML = "";
 
-                ofertas.forEach((item, index) => {
-                    // Nombre de la tienda formateado o genérico en caso de no estar en la lista
-                    const tiendaNombre = ID_TIENDAS[item.storeID] || "Tienda Digital";
+                // FILTRO DE DUPLICADOS: Guardaremos los nombres que ya se mostraron
+                const juegosMostrados = new Set();
+                let ofertasContadas = 0;
+
+                for (let i = 0; i < ofertas.length; i++) {
+                    const item = ofertas[i];
                     
-                    // Calculamos el porcentaje de descuento real
+                    // Limpiamos el título para detectar duplicados base (ej: quita "Deluxe Edition", "GOTY", etc.)
+                    // Esto ayuda a que si ya está "The Witcher 3", no se repita "The Witcher 3 GOTY"
+                    const tituloBase = item.title.split('-')[0].split('(')[0].trim().toLowerCase();
+
+                    // Si el juego ya está en nuestra lista de mostrados, nos lo saltamos
+                    if (juegosMostrados.has(tituloBase)) {
+                        continue; 
+                    }
+
+                    // Si no está duplicado, lo registramos en el filtro
+                    juegosMostrados.add(tituloBase);
+                    ofertasContadas++;
+
+                    // Formateamos los datos visuales
+                    const tiendaNombre = ID_TIENDAS[item.storeID] || "Tienda Digital";
                     const descuento = Math.round(parseFloat(item.savings));
                     
-                    // Definimos si lleva la insignia de TOP 3
-                    let badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700 bg-slate-800 text-gray-400 gamer-font">RANK #${index + 1}</span>`;
+                    let badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700 bg-slate-800 text-gray-400 gamer-font">RANK #${ofertasContadas}</span>`;
                     let highlightCard = "border-slate-800 bg-slate-950/60";
                     
-                    if (index < 3) {
+                    if (ofertasContadas <= 3) {
                         badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-cyan-400 bg-cyan-950 text-cyan-400 gamer-font">🔥 TOP DEL DÍA</span>`;
                         highlightCard = "neon-border-cyan bg-gradient-to-b from-cyan-950/20 to-slate-950";
                     }
@@ -144,7 +160,12 @@
                         </div>
                     `;
                     container.insertAdjacentHTML('beforeend', cardHtml);
-                });
+
+                    # Frenamos cuando logremos llenar exactamente las 12 mejores ofertas únicas
+                    if (ofertasContadas >= 12) {
+                        break;
+                    }
+                }
 
             } catch (error) {
                 console.error(error);
@@ -152,8 +173,6 @@
             }
         }
 
-        // Ejecutar inmediatamente al cargar la página
         cargarTopOfertas();
-    </script>
-</body>
+    </script></body>
 </html>
