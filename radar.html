@@ -80,51 +80,61 @@ async function cargarTopOfertas() {
             const section = document.getElementById('resultsSection');
 
             try {
-                // Descargamos la página 0 y la página 1 en paralelo (120 ofertas en total)
-                const [req1, req2] = await Promise.all([
+                // Descargamos 4 páginas en paralelo (240 ofertas potenciales) para tener suficiente materia prima
+                const [req1, req2, req3, req4] = await Promise.all([
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=0&sortBy=Metacritic'),
-                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=1&sortBy=Metacritic')
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=1&sortBy=Metacritic'),
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=2&sortBy=Metacritic'),
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=3&sortBy=Metacritic')
                 ]);
 
-                if (!req1.ok || !req2.ok) throw new Error("Error de red");
+                if (!req1.ok || !req2.ok || !req3.ok || !req4.ok) throw new Error("Error de red");
 
                 const ofertas1 = await req1.json();
                 const ofertas2 = await req2.json();
+                const ofertas3 = await req3.json();
+                const ofertas4 = await req4.json();
                 
-                // Fusionamos ambas páginas en una sola lista gigante de 120 elementos
-                const ofertas = [...ofertas1, ...ofertas2];
+                // Fusionamos todas las páginas en una megacolección
+                const ofertas = [...ofertas1, ...ofertas2, ...ofertas3, ...ofertas4];
 
                 loading.classList.add('hidden');
                 section.classList.remove('hidden');
                 container.innerHTML = "";
 
-                // FILTRO DE DUPLICADOS
+                // FILTROS CONTROLADOS
                 const juegosMostrados = new Set();
                 let ofertasContadas = 0;
 
                 for (let i = 0; i < ofertas.length; i++) {
                     const item = ofertas[i];
                     
-                    // Limpieza estricta de nombres para consolidar ediciones especiales
+                    // 1. FILTRO DE PORCENTAJE: Calculamos el descuento real
+                    const descuento = Math.round(parseFloat(item.savings));
+
+                    // REGLA DE ORO: Si el descuento es menor al 50%, lo descartamos de inmediato
+                    if (descuento < 50) {
+                        continue; 
+                    }
+
+                    // 2. FILTRO DE DUPLICADOS: Consolidamos ediciones especiales
                     const tituloBase = item.title.split('-')[0].split('(')[0].split('–')[0].trim().toLowerCase();
 
-                    // Si ya existe en la lista, lo ignoramos para evitar clones
                     if (juegosMostrados.has(tituloBase)) {
                         continue; 
                     }
 
-                    // Registramos en el filtro e incrementamos contador
+                    // Si pasa ambas pruebas, registramos el juego
                     juegosMostrados.add(tituloBase);
                     ofertasContadas++;
 
                     const tiendaNombre = ID_TIENDAS[item.storeID] || "Tienda Digital";
-                    const descuento = Math.round(parseFloat(item.savings));
                     
                     let badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700 bg-slate-800 text-gray-400 gamer-font">RANK #${ofertasContadas}</span>`;
                     let highlightCard = "border-slate-800 bg-slate-950/60";
                     
                     if (ofertasContadas <= 3) {
-                        badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-cyan-400 bg-cyan-950 text-cyan-400 gamer-font">🔥 TOP DEL DÍA</span>`;
+                        badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded border border-cyan-400 bg-cyan-950 text-cyan-400 gamer-font">💥 SUPER OFERTA</span>`;
                         highlightCard = "neon-border-cyan bg-gradient-to-b from-cyan-950/20 to-slate-950";
                     }
 
@@ -168,7 +178,7 @@ async function cargarTopOfertas() {
                     `;
                     container.insertAdjacentHTML('beforeend', cardHtml);
 
-                    // Ponemos el freno definitivo en 24 ofertas de juegos únicos
+                    // Frenamos estrictamente al alcanzar las 24 súper ofertas únicas
                     if (ofertasContadas >= 24) {
                         break;
                     }
@@ -179,7 +189,6 @@ async function cargarTopOfertas() {
                 loading.innerHTML = `<p style="color: #ef4444;" class="gamer-font text-xs">⚠️ FALLÓ EL ESCANEO DE TIENDAS. INTENTA MÁS TARDE.</p>`;
             }
         }
-
         cargarTopOfertas();
     </script></body>
 </html>
