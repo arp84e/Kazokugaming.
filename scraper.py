@@ -10,7 +10,7 @@ api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
 # ==========================================
-# TAREA 1: SISTEMA DE NOTICIAS
+# TAREA 1: SISTEMA DE NOTICIAS (Se mantiene igual)
 # ==========================================
 archivo_json = 'noticias.json'
 historial = []
@@ -73,33 +73,45 @@ if noticias_totales:
     with open('noticias.json', 'w', encoding='utf-8') as f:
         json.dump({"destacada": noticias_totales[0], "secundarias": noticias_totales[1:]}, f, ensure_ascii=False, indent=2)
 
-# ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Arreglado)
-# ==========================================
-meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-mes_actual = datetime.now().month
-anio_actual = datetime.now().year
-nombre_mes = f"{meses[mes_actual-1]} {anio_actual}"
 
-print(f"Generando calendario de lanzamientos para {nombre_mes}...")
+# ==========================================
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Expansión a 3 Meses)
+# ==========================================
+hoy = datetime.now()
+meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+# Función para calcular los meses evitando errores de cambio de año
+def obtener_mes_anio(mes_offset):
+    fecha_calculada = hoy.replace(day=1) + timedelta(days=30 * mes_offset)
+    return f"{meses_nombres[fecha_calculada.month - 1]} {fecha_calculada.year}"
+
+mes_pasado_str = obtener_mes_anio(-1)
+mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
+mes_siguiente_str = obtener_mes_anio(1)
+
+print(f"Generando calendario interactivo para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
 prompt_lanzamientos = f"""
-Eres un experto en videojuegos. Genera una lista de los 6 lanzamientos más importantes para {nombre_mes}.
-Devuelve un JSON estrictamente con esta estructura:
+Eres un analista experto de la industria de los videojuegos.
+Genera una lista de los 4 a 6 lanzamientos de videojuegos más importantes para CADA UNO de estos tres meses: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
+Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
 {{
-  "mes": "{nombre_mes}",
-  "lanzamientos": [
-    {{
-      "titulo": "Nombre del Juego",
-      "fecha": "Día exacto",
-      "plataformas": "PS5, PC, etc.",
-      "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nombre+Del+Juego",
-      "descripcion": "Descripción corta de 2 líneas."
-    }}
-  ]
+  "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
+  "catalogo": {{
+    "{mes_pasado_str}": [
+      {{
+        "titulo": "Nombre del Juego",
+        "fecha": "Día exacto",
+        "plataformas": "PC, PS5, etc.",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nombre+Del+Juego",
+        "descripcion": "Descripción de 2 líneas."
+      }}
+    ],
+    "{mes_actual_str}": [ ... ],
+    "{mes_siguiente_str}": [ ... ]
+  }}
 }}
-REGLA VITAL PARA LA IMAGEN: Debes crear un cartel dinámico. Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'.
-Ejemplo: Si el juego es "Silent Hill 2", la imagen DEBE SER "https://placehold.co/600x400/141419/00f0ff.png?text=Silent+Hill+2". No inventes otras URLs.
+REGLA VITAL PARA LA IMAGEN: Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'. Ejemplo: 'https://placehold.co/600x400/141419/00f0ff.png?text=Gears+of+War'. No inventes otras URLs.
 """
 try:
     resp_lanzamientos = client.models.generate_content(
@@ -109,6 +121,6 @@ try:
     )
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         f.write(resp_lanzamientos.text)
-    print("¡Éxito! lanzamientos.json creado correctamente.")
+    print("¡Éxito! lanzamientos.json de 3 meses creado correctamente.")
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
