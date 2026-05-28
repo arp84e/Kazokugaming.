@@ -80,8 +80,8 @@
             const section = document.getElementById('resultsSection');
 
             try {
-                // Pedimos un volumen alto de ofertas (60) para tener suficiente variedad tras filtrar
-                const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?pageSize=60&sortBy=Metacritic');
+                // Pedimos un volumen alto de ofertas (120) para tener suficiente variedad tras filtrar
+                const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?pageSize=120&sortBy=Metacritic');
                 if (!respuesta.ok) throw new Error("Error de red");
                 const ofertas = await respuesta.json();
 
