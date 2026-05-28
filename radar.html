@@ -80,7 +80,7 @@ async function cargarTopOfertas() {
             const section = document.getElementById('resultsSection');
 
             try {
-                // Descargamos 4 páginas en paralelo (240 ofertas potenciales) para tener suficiente materia prima
+                // Descargamos 4 páginas en paralelo (380 ofertas potenciales) para tener suficiente materia prima
                 const [req1, req2, req3, req4] = await Promise.all([
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=0&sortBy=Metacritic'),
                     fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=1&sortBy=Metacritic'),
