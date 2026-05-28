@@ -74,42 +74,49 @@
             "34": "Eneba / Keys"
         };
 
-        async function cargarTopOfertas() {
+async function cargarTopOfertas() {
             const container = document.getElementById('cardsContainer');
             const loading = document.getElementById('loadingState');
             const section = document.getElementById('resultsSection');
 
             try {
-                // Reemplaza la línea del fetch por esta exacta:
-const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?sortBy=Metacritic&limit=100');
-                if (!respuesta.ok) throw new Error("Error de red");
-                const ofertas = await respuesta.json();
+                // Descargamos la página 0 y la página 1 en paralelo (120 ofertas en total)
+                const [req1, req2] = await Promise.all([
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=0&sortBy=Metacritic'),
+                    fetch('https://www.cheapshark.com/api/1.0/deals?pageNumber=1&sortBy=Metacritic')
+                ]);
+
+                if (!req1.ok || !req2.ok) throw new Error("Error de red");
+
+                const ofertas1 = await req1.json();
+                const ofertas2 = await req2.json();
+                
+                // Fusionamos ambas páginas en una sola lista gigante de 120 elementos
+                const ofertas = [...ofertas1, ...ofertas2];
 
                 loading.classList.add('hidden');
                 section.classList.remove('hidden');
                 container.innerHTML = "";
 
-                // FILTRO DE DUPLICADOS: Guardaremos los nombres que ya se mostraron
+                // FILTRO DE DUPLICADOS
                 const juegosMostrados = new Set();
                 let ofertasContadas = 0;
 
                 for (let i = 0; i < ofertas.length; i++) {
                     const item = ofertas[i];
                     
-                    // Limpiamos el título para detectar duplicados base (ej: quita "Deluxe Edition", "GOTY", etc.)
-                    // Esto ayuda a que si ya está "The Witcher 3", no se repita "The Witcher 3 GOTY"
-                    const tituloBase = item.title.split('-')[0].split('(')[0].trim().toLowerCase();
+                    // Limpieza estricta de nombres para consolidar ediciones especiales
+                    const tituloBase = item.title.split('-')[0].split('(')[0].split('–')[0].trim().toLowerCase();
 
-                    // Si el juego ya está en nuestra lista de mostrados, nos lo saltamos
+                    // Si ya existe en la lista, lo ignoramos para evitar clones
                     if (juegosMostrados.has(tituloBase)) {
                         continue; 
                     }
 
-                    // Si no está duplicado, lo registramos en el filtro
+                    // Registramos en el filtro e incrementamos contador
                     juegosMostrados.add(tituloBase);
                     ofertasContadas++;
 
-                    // Formateamos los datos visuales
                     const tiendaNombre = ID_TIENDAS[item.storeID] || "Tienda Digital";
                     const descuento = Math.round(parseFloat(item.savings));
                     
@@ -132,7 +139,7 @@ const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?sortBy=M
                             </div>
 
                             <div class="h-28 w-full bg-slate-900 relative overflow-hidden border-y border-slate-800/60">
-                                <img src="${item.thumb}" alt="Portada de ${item.title}" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-300" onerror="this.src='https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400&auto=format&fit=crop'">
+                                <img src="${item.thumb}" alt="Portada" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-300" onerror="this.src='https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400&auto=format&fit=crop'">
                                 <div class="absolute bottom-2 right-2 bg-rose-600 px-2 py-0.5 rounded text-xs font-black text-white border border-rose-500">
                                     -${descuento}%
                                 </div>
@@ -161,7 +168,7 @@ const respuesta = await fetch('https://www.cheapshark.com/api/1.0/deals?sortBy=M
                     `;
                     container.insertAdjacentHTML('beforeend', cardHtml);
 
-                    // Frenamos cuando logremos llenar exactamente las 24 mejores ofertas únicas
+                    // Ponemos el freno definitivo en 24 ofertas de juegos únicos
                     if (ofertasContadas >= 24) {
                         break;
                     }
