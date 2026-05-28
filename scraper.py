@@ -75,25 +75,39 @@ if noticias_totales:
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Expansión a 3 Meses)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Arreglado sin duplicados)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 
-# Función para calcular los meses evitando errores de cambio de año
-def obtener_mes_anio(mes_offset):
-    fecha_calculada = hoy.replace(day=1) + timedelta(days=30 * mes_offset)
-    return f"{meses_nombres[fecha_calculada.month - 1]} {fecha_calculada.year}"
+# Lógica matemática exacta para obtener mes y año sin importar los días del mes
+def calcular_mes_exacto(offset):
+    # Calculamos el año y mes basándonos en el offset
+    mes_calculado = hoy.month + offset
+    anio_calculado = hoy.year
+    
+    # Si retrocedemos del mes 1 (Enero), pasamos al año anterior
+    while mes_calculado < 1:
+        mes_calculado += 12
+        anio_calculado -= 1
+        
+    # Si avanzamos del mes 12 (Diciembre), pasamos al año siguiente
+    while mes_calculado > 12:
+        mes_calculado -= 12
+        anio_calculado += 1
+        
+    return f"{meses_nombres[mes_calculado - 1]} {anio_calculado}"
 
-mes_pasado_str = obtener_mes_anio(-1)
+mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
-mes_siguiente_str = obtener_mes_anio(1)
+mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Generando calendario interactivo para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Generando calendario interactivo real para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
 prompt_lanzamientos = f"""
 Eres un analista experto de la industria de los videojuegos.
-Genera una lista de los 4 a 6 lanzamientos de videojuegos más importantes para CADA UNO de estos tres meses: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
+Genera una lista de los 4 a 6 lanzamientos de videojuegos más importantes para CADA UNO de estos tres meses distintos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
+
 Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
 {{
   "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
@@ -107,11 +121,27 @@ Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
         "descripcion": "Descripción de 2 líneas."
       }}
     ],
-    "{mes_actual_str}": [ ... ],
-    "{mes_siguiente_str}": [ ... ]
+    "{mes_actual_str}": [
+      {{
+        "titulo": "Nombre del Juego Actual",
+        "fecha": "Día exacto",
+        "plataformas": "PC, Xbox, etc.",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Juego",
+        "descripcion": "Descripción..."
+      }}
+    ],
+    "{mes_siguiente_str}": [
+      {{
+        "titulo": "Nombre del Juego Futuro",
+        "fecha": "Día exacto",
+        "plataformas": "Switch, PC, etc.",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Juego",
+        "descripcion": "Descripción..."
+      }}
+    ]
   }}
 }}
-REGLA VITAL PARA LA IMAGEN: Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'. Ejemplo: 'https://placehold.co/600x400/141419/00f0ff.png?text=Gears+of+War'. No inventes otras URLs.
+REGLA VITAL PARA LA IMAGEN: Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'. Ejemplo: 'https://placehold.co/600x400/141419/00f0ff.png?text=Minecraft'. No inventes otras URLs.
 """
 try:
     resp_lanzamientos = client.models.generate_content(
@@ -121,6 +151,6 @@ try:
     )
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         f.write(resp_lanzamientos.text)
-    print("¡Éxito! lanzamientos.json de 3 meses creado correctamente.")
+    print("¡Éxito! lanzamientos.json sin duplicados creado correctamente.")
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
