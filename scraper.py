@@ -99,7 +99,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Modificado para traer lista completa)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Forzando lista larga con Schema)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -119,75 +119,107 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Generando calendario para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Generando calendario masivo para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
-# Se modificó la instrucción para pedir TODOS los lanzamientos sin límite numérico
+# 1. Definimos el esquema estricto usando Types de la SDK de Google GenAI
+# Esto le dice a Gemini la estructura exacta pero NO le pone límites a la cantidad de elementos en la lista
+esquema_lanzamientos = types.Schema(
+    type=types.Type.OBJECT,
+    properties={
+        "meses_disponibles": types.Schema(
+            type=types.Type.ARRAY,
+            items=types.Schema(type=types.Type.STRING)
+        ),
+        "catalogo": types.Schema(
+            type=types.Type.OBJECT,
+            properties={
+                mes_pasado_str: types.Schema(
+                    type=types.Type.ARRAY,
+                    items=types.Schema(
+                        type=types.Type.OBJECT,
+                        properties={
+                            "titulo": types.Schema(type=types.Type.STRING),
+                            "fecha": types.Schema(type=types.Type.STRING),
+                            "plataformas": types.Schema(type=types.Type.STRING),
+                            "descripcion": types.Schema(type=types.Type.STRING)
+                        },
+                        required=["titulo", "fecha", "plataformas", "descripcion"]
+                    )
+                ),
+                mes_actual_str: types.Schema(
+                    type=types.Type.ARRAY,
+                    items=types.Schema(
+                        type=types.Type.OBJECT,
+                        properties={
+                            "titulo": types.Schema(type=types.Type.STRING),
+                            "fecha": types.Schema(type=types.Type.STRING),
+                            "plataformas": types.Schema(type=types.Type.STRING),
+                            "descripcion": types.Schema(type=types.Type.STRING)
+                        },
+                        required=["titulo", "fecha", "plataformas", "descripcion"]
+                    )
+                ),
+                mes_siguiente_str: types.Schema(
+                    type=types.Type.ARRAY,
+                    items=types.Schema(
+                        type=types.Type.OBJECT,
+                        properties={
+                            "titulo": types.Schema(type=types.Type.STRING),
+                            "fecha": types.Schema(type=types.Type.STRING),
+                            "plataformas": types.Schema(type=types.Type.STRING),
+                            "descripcion": types.Schema(type=types.Type.STRING)
+                        },
+                        required=["titulo", "fecha", "plataformas", "descripcion"]
+                    )
+                )
+            },
+            required=[mes_pasado_str, mes_actual_str, mes_siguiente_str]
+        )
+    },
+    required=["meses_disponibles", "catalogo"]
+)
+
+# 2. Simplificamos el prompt enfocándolo ÚNICAMENTE en la orden de cantidad
 prompt_lanzamientos = f"""
-Eres un analista experto de la industria de los videojuegos.
-Genera una lista exhaustiva que incluya TODOS los lanzamientos de videojuegos importantes (tanto triples A como juegos indie destacados) para CADA UNO de estos tres meses distintos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'. No te limites a un número pequeño, incluye la lista completa disponible en tu base de conocimiento.
+Eres un analista experto de la industria de los videojuegos con acceso a un registro histórico completo.
+Genera una lista extremadamente detallada, masiva y completa con TODOS los videojuegos importantes que se hayan lanzado o se vayan a lanzar en los siguientes meses: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
 
-Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
-{{
-  "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
-  "catalogo": {{
-    "{mes_pasado_str}": [
-      {{
-        "titulo": "Nombre del Juego Real",
-        "fecha": "Día exacto",
-        "plataformas": "PC, PS5, etc.",
-        "descripcion": "Descripción de 2 líneas."
-      }}
-    ],
-    "{mes_actual_str}": [
-      {{
-        "titulo": "Nombre del Juego Actual Real",
-        "fecha": "Día exacto",
-        "plataformas": "PC, Xbox, etc.",
-        "descripcion": "Descripción..."
-      }}
-    ],
-    "{mes_siguiente_str}": [
-      {{
-        "titulo": "Nombre del Juego Futuro Real",
-        "fecha": "Día exacto",
-        "plataformas": "Switch, PC, etc.",
-        "descripcion": "Descripción..."
-      }}
-    ]
-  }}
-}}
-Nota: No agregues el campo imagen en este prompt, el sistema de Python se encargará de inyectarlo mediante API externa.
+REGLAS OBLIGATORIAS:
+1. Debes incluir un mínimo de 15 a 25 juegos por cada uno de los tres meses. No dejes ningún mes con pocos títulos.
+2. Si un mes no tiene tantos juegos Triple A (AAA), completa la lista obligatoriamente incluyendo juegos independientes (indies) destacados, expansiones grandes o ports importantes a otras consolas (como Nintendo Switch, PS5, Xbox Series X/S, PC).
+3. Asegúrate de que las propiedades del catálogo sigan los nombres exactos de los meses provistos.
 """
 
 try:
+    # 3. Hacemos la petición enviando el config con el response_schema estricto
     resp_lanzamientos = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_lanzamientos,
-        config=types.GenerateContentConfig(response_mime_type="application/json")
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=esquema_lanzamientos # Forzamos el molde estructurado aquí
+        )
     )
     
-    # Convertimos la respuesta de Gemini en un diccionario manipulable de Python
     estructura_json = json.loads(resp_lanzamientos.text)
     
     # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
     for mes in estructura_json["meses_disponibles"]:
         if mes in estructura_json["catalogo"]:
+            print(f">> Detectados {len(estructura_json['catalogo'][mes])} juegos para el mes de {mes}.")
             for juego in estructura_json["catalogo"][mes]:
                 titulo = juego["titulo"]
                 print(f"Buscando arte oficial para: {titulo}...")
                 
-                # Llamada a la API de imágenes
                 url_imagen_real = buscar_portada_juego(titulo)
-                
-                # Inyectamos el campo dinámicamente
                 juego["imagen"] = url_imagen_real
-                time.sleep(0.2) # Pausa de cortesía para la API
+                time.sleep(0.25) # Pausa de cortesía para evitar baneos de la API de RAWG
                 
     # Guardamos el archivo final enriquecido
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         json.dump(estructura_json, f, ensure_ascii=False, indent=2)
         
-    print("¡Éxito! lanzamientos.json con portadas reales y verificadas creado correctamente.")
+    print("¡Éxito! lanzamientos.json creado correctamente con una lista expandida.")
 
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
