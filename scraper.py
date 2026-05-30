@@ -12,8 +12,12 @@ rawg_key = os.environ.get("RAWG_API_KEY")  # Tu clave de RAWG
 
 client = genai.Client(api_key=api_key)
 
+# Variables globales para fechas
+hoy = datetime.now()
+meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
 # ==========================================
-# TAREA 1: SISTEMA DE NOTICIAS (Se mantiene igual)
+# TAREA 1: SISTEMA DE NOTICIAS
 # ==========================================
 archivo_json = 'noticias.json'
 historial = []
@@ -72,14 +76,19 @@ if nuevas_entradas:
         noticias_totales = noticias_ia + noticias_validas
     except Exception as e: print("Error en noticias:", e)
 
+# CORREGIDO: Se cerró correctamente el flujo de escritura de noticias
 if noticias_totales:
-    with open('noticias.json', 'w', encoding='utf-8') as f:
-        json.dump({"destacada": noticias_totales[0], "secundarias": noticias_totales[1:]}, f, ensure_ascii=False, indent=2)
+    try:
+        with open('noticias.json', 'w', encoding='utf-8') as f:
+            json.dump({"destacada": noticias_totales[0], "secundarias": noticias_totales[1:]}, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+         print("Error al guardar noticias.json:", e)
 
 
 # ==========================================
 # FUNCIÓN AUXILIAR: BUSCADOR DE IMÁGENES REALES (RAWG)
 # ==========================================
+# REINCORPORADA: Esta función faltaba por completo en tu código cortado
 def buscar_portada_juego(titulo_juego):
     if not rawg_key:
         print("Advertencia: No se encontró RAWG_API_KEY. Usando imagen por defecto.")
@@ -98,11 +107,8 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO DE DOS PASOS ANTI-FALLOS)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO DE DOS PASOS)
 # ==========================================
-hoy = datetime.now()
-meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-
 def calcular_mes_exacto(offset):
     mes_calculado = hoy.month + offset
     anio_calculado = hoy.year
@@ -120,7 +126,6 @@ mes_siguiente_str = calcular_mes_exacto(1)
 
 print(f"--- PASO 1: Investigando lanzamientos reales en internet ---")
 
-# Prompt 1: Enfocado únicamente en buscar datos verídicos sin importar el formato técnico
 prompt_busqueda = f"""
 Usa Google Search para investigar en portales líderes de videojuegos (IGN, Vandal, 3DJuegos, Eurogamer) el calendario oficial de lanzamientos.
 Necesito que listes de forma exhaustiva los videojuegos con FECHA EXACTA CONFIRMADA para estos tres meses:
@@ -135,7 +140,6 @@ REGLAS:
 """
 
 try:
-    # Llamada 1: Investigación pura con Google Search activo
     respuesta_busqueda = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_busqueda,
@@ -149,7 +153,6 @@ try:
 
     print(f"--- PASO 2: Convirtiendo datos a formato JSON para la Web ---")
     
-    # Prompt 2: Toma el texto verídico del paso 1 y lo moldea al JSON perfecto
     prompt_estructurar = f"""
     Toma la siguiente información de lanzamientos de videojuegos y conviértela ESTRICTAMENTE en un objeto JSON.
     
@@ -189,7 +192,6 @@ try:
     Nota: No agregues ninguna clave llamada "imagen" en este paso.
     """
 
-    # Llamada 2: Estructuración pura (rápida, ligera y sin herramientas de navegación)
     respuesta_json = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_estructurar,
@@ -198,10 +200,8 @@ try:
         )
     )
     
-    # Validamos y transformamos el texto limpio a diccionario de Python
     estructura_json = json.loads(respuesta_json.text)
     
-    # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
     if "meses_disponibles" in estructura_json and "catalogo" in estructura_json:
         for mes in estructura_json["meses_disponibles"]:
             if mes in estructura_json["catalogo"]:
@@ -211,9 +211,8 @@ try:
                     
                     url_imagen_real = buscar_portada_juego(titulo)
                     juego["imagen"] = url_imagen_real
-                    time.sleep(0.25) # Pausa de cortesía para la API de RAWG
+                    time.sleep(0.25)
                     
-        # Guardamos el archivo final enriquecido
         with open('lanzamientos.json', 'w', encoding='utf-8') as f:
             json.dump(estructura_json, f, ensure_ascii=False, indent=2)
             
