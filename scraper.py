@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 
 api_key = os.environ.get("GEMINI_API_KEY")
-rawg_key = os.environ.get("RAWG_API_KEY")  # Tu nueva clave de RAWG
+rawg_key = os.environ.get("RAWG_API_KEY")  # Tu clave de RAWG
 
 client = genai.Client(api_key=api_key)
 
@@ -91,7 +91,6 @@ def buscar_portada_juego(titulo_juego):
         if response.status_code == 200:
             data = response.json()
             if data.get("results"):
-                # Extrae la imagen de fondo oficial del juego (background_image)
                 return data["results"][0].get("background_image", "")
     except Exception as e:
         print(f"Error al buscar imagen para {titulo_juego}:", e)
@@ -99,7 +98,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Forzando lista larga con Schema)
+# TAREA 2: SISTEMA DE LANZAMIENTOS CON BÚSQUEDA WEB EN VIVO (CONFIABLE)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -119,17 +118,13 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Generando calendario masivo para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Buscando en internet lanzamientos reales para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
-# 1. Definimos el esquema estricto usando Types de la SDK de Google GenAI
-# Esto le dice a Gemini la estructura exacta pero NO le pone límites a la cantidad de elementos en la lista
+# Definición del esquema JSON estricto
 esquema_lanzamientos = types.Schema(
     type=types.Type.OBJECT,
     properties={
-        "meses_disponibles": types.Schema(
-            type=types.Type.ARRAY,
-            items=types.Schema(type=types.Type.STRING)
-        ),
+        "meses_disponibles": types.Schema(type=types.Type.ARRAY, items=types.Schema(type=types.Type.STRING)),
         "catalogo": types.Schema(
             type=types.Type.OBJECT,
             properties={
@@ -179,47 +174,47 @@ esquema_lanzamientos = types.Schema(
     required=["meses_disponibles", "catalogo"]
 )
 
-# 2. Simplificamos el prompt enfocándolo ÚNICAMENTE en la orden de cantidad
+# Instrucciones estrictas de verificación periodística
 prompt_lanzamientos = f"""
-Eres un analista experto de la industria de los videojuegos con acceso a un registro histórico completo.
-Genera una lista extremadamente detallada, masiva y completa con TODOS los videojuegos importantes que se hayan lanzado o se vayan a lanzar en los siguientes meses: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
+Usa la herramienta de búsqueda integrada de Google para consultar sitios web especializados y de alta reputación en la industria de los videojuegos (como IGN, GameSpot, Vandal, 3DJuegos o Eurogamer) para obtener los calendarios de lanzamientos reales de los siguientes meses: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
 
-REGLAS OBLIGATORIAS:
-1. Debes incluir un mínimo de 15 a 25 juegos por cada uno de los tres meses. No dejes ningún mes con pocos títulos.
-2. Si un mes no tiene tantos juegos Triple A (AAA), completa la lista obligatoriamente incluyendo juegos independientes (indies) destacados, expansiones grandes o ports importantes a otras consolas (como Nintendo Switch, PS5, Xbox Series X/S, PC).
-3. Asegúrate de que las propiedades del catálogo sigan los nombres exactos de los meses provistos.
+REGLAS CRÍTICAS DE VERACIDAD:
+1. SOLO incluye videojuegos cuya fecha exacta de lanzamiento esté 100% CONFIRMADA oficialmente por sus desarrolladores para esos meses específicos.
+2. Queda ESTRICTAMENTE PROHIBIDO inventar nombres de juegos, especular o incluir títulos que tengan fechas estimadas como "Q3 2026", "Finales de año" o "Por confirmar". Si la fecha no es un día exacto confirmado, descarta el juego.
+3. Intenta recopilar de forma exhaustiva todos los juegos que cumplan los filtros anteriores (tanto grandes producciones como indies populares).
+4. Traduce los nombres de las plataformas y descripciones de forma fidedigna al español.
 """
 
 try:
-    # 3. Hacemos la petición enviando el config con el response_schema estricto
+    # Ejecutamos la petición activando el Google Search Grounding
     resp_lanzamientos = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_lanzamientos,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
-            response_schema=esquema_lanzamientos # Forzamos el molde estructurado aquí
+            response_schema=esquema_lanzamientos,
+            # ESTA LÍNEA ACTIVA LA BÚSQUEDA WEB REAL PARA EVITAR ALUCINACIONES:
+            tools=[types.Tool(google_search=types.GoogleSearch())]
         )
     )
     
     estructura_json = json.loads(resp_lanzamientos.text)
     
-    # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
     for mes in estructura_json["meses_disponibles"]:
         if mes in estructura_json["catalogo"]:
-            print(f">> Detectados {len(estructura_json['catalogo'][mes])} juegos para el mes de {mes}.")
+            print(f">> Encontrados {len(estructura_json['catalogo'][mes])} juegos verificados para {mes}.")
             for juego in estructura_json["catalogo"][mes]:
                 titulo = juego["titulo"]
                 print(f"Buscando arte oficial para: {titulo}...")
                 
                 url_imagen_real = buscar_portada_juego(titulo)
                 juego["imagen"] = url_imagen_real
-                time.sleep(0.25) # Pausa de cortesía para evitar baneos de la API de RAWG
+                time.sleep(0.25)
                 
-    # Guardamos el archivo final enriquecido
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         json.dump(estructura_json, f, ensure_ascii=False, indent=2)
         
-    print("¡Éxito! lanzamientos.json creado correctamente con una lista expandida.")
+    print("¡Éxito! lanzamientos.json verificado con Google Search y guardado correctamente.")
 
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
