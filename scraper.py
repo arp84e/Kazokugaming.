@@ -125,7 +125,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO BLINDADO)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO BLINDADO + DOBLE INTENTO)
 # ==========================================
 print("\n--- EJECUTANDO TAREA 2: LANZAMIENTOS ---")
 
@@ -151,26 +151,41 @@ estructura_final = {
 }
 
 try:
-    print(">> Paso 1: Investigando internet (Búsqueda Libre)...")
+    print(">> Paso 1: Buscando información de lanzamientos...")
+    # Flexibilizamos el prompt para que NO devuelva listas vacías
     prompt_busqueda = f"""
-    Investiga en sitios de videojuegos los lanzamientos confirmados para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
-    Haz una lista clara con: Mes correspondiente, Título del juego, Fecha exacta, Plataformas y Descripción breve en español.
+    Haz una lista exhaustiva de los lanzamientos de videojuegos más importantes para estos meses: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
+    Reglas:
+    1. Incluye tanto juegos Triple A como juegos Indies destacados.
+    2. ¡OBLIGATORIO! Si un juego importante se lanza ese mes pero no tiene el día exacto confirmado, pon "Por confirmar" en la fecha, PERO INCLÚYELO EN LA LISTA. No dejes ningún mes vacío.
     """
-    respuesta_busqueda = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=prompt_busqueda,
-        config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())],
-            safety_settings=seguridad_permisiva # Añadido filtro
+    
+    try:
+        # Intento A: Con búsqueda en Internet en tiempo real
+        respuesta_busqueda = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt_busqueda,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+                safety_settings=seguridad_permisiva
+            )
         )
-    )
+        print("✅ Búsqueda web completada.")
+    except Exception as e_search:
+        # Intento B: Si la búsqueda web falla por restricciones de la API, usa la base de datos interna de Gemini
+        print(f"⚠️ La búsqueda web falló o está restringida en tu API Key: {e_search}")
+        print(">> Intentando método alternativo (Memoria interna de la IA)...")
+        respuesta_busqueda = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt_busqueda,
+            config=types.GenerateContentConfig(safety_settings=seguridad_permisiva)
+        )
+        print("✅ Búsqueda interna completada.")
     
     texto_investigacion = respuesta_busqueda.text
-    print("✅ Búsqueda exitosa. Transformando a JSON...")
-    
     time.sleep(2) 
     
-    print(">> Paso 2: Estructurando los datos encontrados...")
+    print(">> Paso 2: Estructurando los datos a JSON...")
     prompt_estructurar = f"""
     Convierte la siguiente información en un objeto JSON estricto:
     {texto_investigacion}
@@ -180,7 +195,7 @@ try:
       "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
       "catalogo": {{
         "{mes_pasado_str}": [ {{"titulo": "Juego A", "fecha": "12 de X", "plataformas": "PC", "descripcion": "..."}} ],
-        "{mes_actual_str}": [ {{"titulo": "Juego B", "fecha": "15 de Y", "plataformas": "PS5", "descripcion": "..."}} ],
+        "{mes_actual_str}": [ {{"titulo": "Juego B", "fecha": "Por confirmar", "plataformas": "PS5", "descripcion": "..."}} ],
         "{mes_siguiente_str}": []
       }}
     }}
@@ -190,7 +205,7 @@ try:
         contents=prompt_estructurar,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
-            safety_settings=seguridad_permisiva # Añadido filtro
+            safety_settings=seguridad_permisiva
         )
     )
     
@@ -206,11 +221,11 @@ try:
             juegos_del_mes = estructura_final.get("catalogo", {}).get(mes, [])
             for juego in juegos_del_mes:
                 juego["imagen"] = buscar_portada_juego(juego.get("titulo", ""))
-                time.sleep(0.2)
+                time.sleep(0.25)
         print("✅ Imágenes sincronizadas.")
 
 except Exception as e:
-    print(f"⚠️ ERROR DETECTADO EN LANZAMIENTOS: {e}")
+    print(f"⚠️ ERROR DETECTADO EN EL PROCESO GLOBAL: {e}")
     print("Se usará la estructura vacía de emergencia.")
 
 # Escribir en disco
