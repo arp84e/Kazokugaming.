@@ -3,10 +3,13 @@ import json
 import time
 from datetime import datetime, timedelta
 import feedparser
+import requests  # Asegúrate de que tu entorno/workflow tenga 'requests' instalado
 from google import genai
 from google.genai import types
 
 api_key = os.environ.get("GEMINI_API_KEY")
+rawg_key = os.environ.get("RAWG_API_KEY")  # Tu nueva clave de RAWG
+
 client = genai.Client(api_key=api_key)
 
 # ==========================================
@@ -50,7 +53,7 @@ if nuevas_entradas:
         elif 'media_thumbnail' in e and len(e.media_thumbnail) > 0: img = e.media_thumbnail[0]['url']
         textos += f"Título: {e.title}\nResumen: {e.summary}\nEnlace: {e.link}\nImagen oficial: {img}\n\n"
         
-    prompt = f"""Eres un journalist de videojuegos. Reescribe estas noticias al español de forma detallada.
+    prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español de forma detallada.
     Genera un JSON con una lista llamada "nuevas_noticias".
     REGLA DE IMÁGENES: Usa la URL de la "Imagen oficial" que te doy. Si está vacía, usa obligatoriamente esta URL: https://placehold.co/1200x600/141419/00f0ff.png?text=Noticia+Gaming
     
@@ -75,7 +78,28 @@ if noticias_totales:
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Con imágenes reales/referenciales)
+# FUNCIÓN AUXILIAR: BUSCADOR DE IMÁGENES REALES (RAWG)
+# ==========================================
+def buscar_portada_juego(titulo_juego):
+    if not rawg_key:
+        print("Advertencia: No se encontró RAWG_API_KEY. Usando imagen por defecto.")
+        return ""
+    
+    try:
+        url = f"https://api.rawg.io/api/games?key={rawg_key}&search={titulo_juego}&page_size=1"
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("results"):
+                # Extrae la imagen de fondo oficial del juego (background_image)
+                return data["results"][0].get("background_image", "")
+    except Exception as e:
+        print(f"Error al buscar imagen para {titulo_juego}:", e)
+    return ""
+
+
+# ==========================================
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Con enriquecimiento de API)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -83,22 +107,19 @@ meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 def calcular_mes_exacto(offset):
     mes_calculado = hoy.month + offset
     anio_calculado = hoy.year
-    
     while mes_calculado < 1:
         mes_calculado += 12
         anio_calculado -= 1
-        
     while mes_calculado > 12:
         mes_calculado -= 12
         anio_calculado += 1
-        
     return f"{meses_nombres[mes_calculado - 1]} {anio_calculado}"
 
 mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Generando calendario interactivo real con imágenes para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Generando calendario para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
 prompt_lanzamientos = f"""
 Eres un analista experto de la industria de los videojuegos.
@@ -110,37 +131,31 @@ Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
   "catalogo": {{
     "{mes_pasado_str}": [
       {{
-        "titulo": "Nombre del Juego",
+        "titulo": "Nombre del Juego Real",
         "fecha": "Día exacto",
         "plataformas": "PC, PS5, etc.",
-        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción de 2 líneas."
       }}
     ],
     "{mes_actual_str}": [
       {{
-        "titulo": "Nombre del Juego Actual",
+        "titulo": "Nombre del Juego Actual Real",
         "fecha": "Día exacto",
         "plataformas": "PC, Xbox, etc.",
-        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción..."
       }}
     ],
     "{mes_siguiente_str}": [
       {{
-        "titulo": "Nombre del Juego Futuro",
+        "titulo": "Nombre del Juego Futuro Real",
         "fecha": "Día exacto",
         "plataformas": "Switch, PC, etc.",
-        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción..."
       }}
     ]
   }}
 }}
-
-REGLA CRÍTICA PARA EL CAMPO "imagen": 
-Para cada juego que selecciones, busca en tu base de datos o conocimiento y proporciona una URL REAL, directa y válida de su carátula oficial, poster promocional, arte conceptual de alta fidelidad o captura de pantalla (screenshoot) del juego. 
-Asegúrate de que sean enlaces estables de internet (por ejemplo, imágenes procedentes de wikis de videojuegos, servidores oficiales de prensa, tiendas públicas o servicios de imágenes que no caduquen).
+Nota: No agregues el campo imagen en este prompt, el sistema de Python se encargará de inyectarlo mediante API externa.
 """
 
 try:
@@ -149,8 +164,29 @@ try:
         contents=prompt_lanzamientos,
         config=types.GenerateContentConfig(response_mime_type="application/json")
     )
+    
+    # Convertimos la respuesta de Gemini en un diccionario manipulable de Python
+    estructura_json = json.loads(resp_lanzamientos.text)
+    
+    # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
+    for mes in estructura_json["meses_disponibles"]:
+        if mes in estructura_json["catalogo"]:
+            for juego in estructura_json["catalogo"][mes]:
+                titulo = juego["titulo"]
+                print(f"Buscando arte oficial para: {titulo}...")
+                
+                # Llamada a la API de imágenes
+                url_imagen_real = buscar_portada_juego(titulo)
+                
+                # Inyectamos el campo dinámicamente
+                juego["imagen"] = url_imagen_real
+                time.sleep(0.2) # Pausa de cortesía para la API
+                
+    # Guardamos el archivo final enriquecido
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
-        f.write(resp_lanzamientos.text)
-    print("¡Éxito! lanzamientos.json con imágenes reales creado correctamente.")
+        json.dump(estructura_json, f, ensure_ascii=False, indent=2)
+        
+    print("¡Éxito! lanzamientos.json con portadas reales y verificadas creado correctamente.")
+
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
