@@ -99,7 +99,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Con enriquecimiento de API)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Modificado para traer lista completa)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -121,9 +121,10 @@ mes_siguiente_str = calcular_mes_exacto(1)
 
 print(f"Generando calendario para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
+# Se modificó la instrucción para pedir TODOS los lanzamientos sin límite numérico
 prompt_lanzamientos = f"""
 Eres un analista experto de la industria de los videojuegos.
-Genera una lista de los 4 a 6 lanzamientos de videojuegos más importantes para CADA UNO de estos tres meses distintos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
+Genera una lista exhaustiva que incluya TODOS los lanzamientos de videojuegos importantes (tanto triples A como juegos indie destacados) para CADA UNO de estos tres meses distintos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'. No te limites a un número pequeño, incluye la lista completa disponible en tu base de conocimiento.
 
 Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
 {{
