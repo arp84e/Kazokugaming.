@@ -5,14 +5,11 @@ on:
     - cron: '0 10,22 * * *' 
   workflow_dispatch: 
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     permissions:
-      contents: write 
+      contents: write  # Permite al bot guardar y subir el archivo lanzamientos.json
 
     steps:
     - name: 1. Descargar la web
@@ -21,22 +18,23 @@ jobs:
     - name: 2. Preparar el servidor Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.11' # Versión ultra-estable y compatible para GitHub Actions
 
     - name: 3. Instalar herramientas
-      # Se agrega 'requests' para permitir la comunicación con la API de RAWG
-      run: pip install feedparser google-genai requests
+      run: |
+        python -m pip install --upgrade pip
+        pip install feedparser google-genai requests
 
     - name: 4. Despertar a KazokuBot (Ejecutar IA e Imágenes)
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }} # Mapeo de tu nueva API Key de imágenes
+        RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
       run: python scraper.py
 
     - name: 5. Publicar en la revista (Guardar cambios)
       run: |
         git config --global user.name 'KazokuBot'
         git config --global user.email 'bot@kazokugaming.com'
-        git add .
+        git add lanzamientos.json noticias.json || true
         git commit -m "🤖 Actualización automática de contenido e imágenes" || echo "No hay cambios nuevos que guardar"
         git push
