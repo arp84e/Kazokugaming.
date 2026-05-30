@@ -7,113 +7,92 @@
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Astra Nova: Echoes of the Void",
+        "titulo": "Chronicles of Aethelgard: The Sundered Veil",
         "fecha": "15 de Abril",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un RPG de ciencia ficción de mundo abierto que redefine la exploración espacial. Descubre civilizaciones olvidadas y forja tu propio destino entre las estrellas.",
-        "imagen": "https://media.rawg.io/media/screenshots/860/860fc86395fc57c9f7be7fc57545ecd6.jpg"
+        "descripcion": "Una épica aventura de acción y rol ambientada en un reino de fantasía dividido por un cataclismo ancestral.\nExplora vastos territorios, domina la magia rúnica y forja tu destino contra fuerzas primordiales.",
+        "imagen": "https://media.rawg.io/media/games/5cd/5cd15af407f7a7385dcae71b30acacc6.jpg"
       },
       {
-        "titulo": "Shadow's Edge: Revenant",
-        "fecha": "22 de Abril",
-        "plataformas": "PC, PS5",
-        "descripcion": "La esperada secuela del aclamado juego de sigilo y acción. Vuelve a las sombras para desentrañar una conspiración global antes de que sea demasiado tarde.",
-        "imagen": "https://media.rawg.io/media/games/786/7869cda09a22c92cd5a6f5d00f447246.jpg"
-      },
-      {
-        "titulo": "Chrono Rift: Nexus",
-        "fecha": "08 de Abril",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "descripcion": "Una innovadora aventura de rompecabezas que manipula el tiempo y el espacio. Resuelve intrincados desafíos para restaurar el flujo temporal y salvar la realidad.",
-        "imagen": "https://media.rawg.io/media/screenshots/295/2956734ea5cb3ba3ea5c3c5bc3185271.jpg"
-      },
-      {
-        "titulo": "Wasteland Drifters 2",
-        "fecha": "29 de Abril",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "Regresa al páramo post-apocalíptico en esta secuela de rol táctico. Construye tu equipo y lucha por la supervivencia en un mundo implacable y lleno de peligros.",
-        "imagen": "https://media.rawg.io/media/games/4f4/4f4c0c0d2127fd67b1e894204029468b.jpg"
-      },
-      {
-        "titulo": "Mythos Unleashed",
+        "titulo": "Echoes of the Starlight Core",
         "fecha": "03 de Abril",
-        "plataformas": "PC, PS5",
-        "descripcion": "Un nuevo MMO de fantasía épica donde la mitología cobra vida. Elige tu facción y participa en batallas masivas por el control del mundo.",
-        "imagen": "https://media.rawg.io/media/screenshots/db0/db020ea37b41fca2f88000c0a99e8abe.jpg"
+        "plataformas": "PC, Nintendo Switch",
+        "descripcion": "Un encantador juego de rol indie con estética pixel art y una profunda narrativa sobre la exploración espacial.\nDescubre secretos de civilizaciones perdidas mientras navegas por un universo vibrante lleno de misterio.",
+        "imagen": "https://media.rawg.io/media/screenshots/534/53473c7313afe1de022cef9864b421c9.jpg"
+      },
+      {
+        "titulo": "Velocity Surge 2026",
+        "fecha": "22 de Abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "La nueva entrega de la aclamada serie de carreras futuristas, con vehículos personalizables y pistas de alta velocidad.\nDomina la gravedad cero y compite en ligas globales para alzarte como el campeón definitivo.",
+        "imagen": "https://media.rawg.io/media/screenshots/7bf/7bf6a532fa4e6ba6b2c31da6e098aa8d.jpg"
+      },
+      {
+        "titulo": "The Last Bastion: Reclamation",
+        "fecha": "29 de Abril",
+        "plataformas": "PC",
+        "descripcion": "Un desafiante RTS de ciencia ficción donde debes reconstruir una civilización tras un apocalipsis robótico.\nGestiona recursos, defiende tus asentamientos y lanza contraataques estratégicos contra la amenaza mecánica.",
+        "imagen": "https://media.rawg.io/media/games/f99/f9979698c43fd84c3ab69280576dd3af.jpg"
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Zenith Ascendant",
-        "fecha": "12 de Mayo",
+        "titulo": "Cosmic Nexus: Breach Point",
+        "fecha": "07 de Mayo",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un frenético shooter en primera persona con elementos de parkour y combate futurista. Lucha en arenas gravitatorias y domina habilidades únicas para alzarte como campeón.",
-        "imagen": "https://media.rawg.io/media/screenshots/fba/fba84b23d7750e7871472edf331e6635.jpg"
+        "descripcion": "Un shooter en primera persona de ciencia ficción que te transporta a un futuro donde la humanidad lucha por sobrevivir.\nLucha contra hordas alienígenas y descubre la verdad detrás de una invasión intergaláctica sin precedentes.",
+        "imagen": "https://media.rawg.io/media/screenshots/5f5/5f5090d9072a4d970aa52f55b445528a.jpg"
       },
       {
-        "titulo": "Fable: Legacy of Albion",
-        "fecha": "20 de Mayo",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "La nueva entrega de la querida saga RPG de fantasía, ahora con un mundo más grande y decisiones con peso. Crea tu héroe y forja tu leyenda en la tierra de Albion.",
-        "imagen": "https://media.rawg.io/media/screenshots/9ee/9ee8657dc2d2386f600e8a9bff408abb.jpg"
-      },
-      {
-        "titulo": "Crimson Shores",
-        "fecha": "05 de Mayo",
-        "plataformas": "PC, PS5",
-        "descripcion": "Un RPG de acción inmersivo ambientado en un oscuro mundo gótico. Explora ruinas malditas y enfréntate a monstruos terroríficos para descubrir antiguos secretos.",
-        "imagen": "https://media.rawg.io/media/screenshots/387/3873e4dad2efab0da657e6df50739f5f.jpg"
-      },
-      {
-        "titulo": "Sonic Frontiers 2",
-        "fecha": "27 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "descripcion": "Sonic regresa con una aventura de mundo abierto aún más rápida y emocionante. Explora nuevas zonas y detén al Dr. Eggman de una vez por todas.",
-        "imagen": "https://media.rawg.io/media/games/f2b/f2bc84509d92c95a8ad22caa8c8afa06.jpg"
-      },
-      {
-        "titulo": "Apex Racers 2026",
+        "titulo": "Whispers in the Gloom",
         "fecha": "19 de Mayo",
+        "plataformas": "PC, PS5",
+        "descripcion": "Un thriller psicológico de terror que explora los límites de la mente humana en un entorno opresivo y misterioso.\nResuelve acertijos complejos y evade horrores indescriptibles mientras buscas la verdad en la oscuridad.",
+        "imagen": "https://media.rawg.io/media/games/cfd/cfdfaaddca4f351b27f965a2f97af0f4.jpg"
+      },
+      {
+        "titulo": "Emberfall Saga: Path of the Dragon",
+        "fecha": "26 de Mayo",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "La nueva iteración del simulador de carreras definitivo, con gráficos ultrarrealistas y una vasta colección de vehículos. Compite en circuitos legendarios y conviértete en el campeón mundial.",
-        "imagen": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg"
+        "descripcion": "Un ambicioso RPG de mundo abierto con un vasto continente para explorar, lleno de criaturas míticas y antiguas leyendas.\nForja tu propio camino, interactúa con facciones diversas y decide el destino de un reino asediado.",
+        "imagen": "https://media.rawg.io/media/screenshots/f91/f91644bb4d1db3c22627c0b3da80d33c.jpg"
+      },
+      {
+        "titulo": "Neon Drift: Cyber Streets",
+        "fecha": "12 de Mayo",
+        "plataformas": "PC",
+        "descripcion": "Un juego de carreras arcade con un estilo cyberpunk vibrante y controles de derrape precisos.\nCompite en las calles iluminadas con neón de una metrópolis distópica y conviértete en el rey de la velocidad.",
+        "imagen": "https://media.rawg.io/media/screenshots/eb9/eb96a110f3140e82f0e2ce9b811caefe.jpg"
       }
     ],
     "Junio 2026": [
       {
-        "titulo": "Metroid Prime 4",
-        "fecha": "18 de Junio",
-        "plataformas": "Switch",
-        "descripcion": "La largamente esperada continuación de la aclamada serie Metroid Prime. Sumérgete en una nueva y misteriosa aventura espacial con Samus Aran.",
-        "imagen": "https://media.rawg.io/media/screenshots/a4d/a4d4c220ad3c7731c4624d12b7adb9d4.jpg"
-      },
-      {
-        "titulo": "Stellaris 2",
-        "fecha": "03 de Junio",
-        "plataformas": "PC",
-        "descripcion": "La secuela del gran estratega espacial que expande el universo conocido. Conquista galaxias, negocia con alienígenas y lidera tu imperio hacia la dominación cósmica.",
-        "imagen": "https://media.rawg.io/media/games/5c1/5c1bf751ed0db8f26fb9fbaffe8f51c0.jpg"
-      },
-      {
-        "titulo": "Street Fighter VII",
-        "fecha": "10 de Junio",
+        "titulo": "Mythos Ascendant: Realm's Dawn",
+        "fecha": "04 de Junio",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "El próximo capítulo en la legendaria serie de lucha, con nuevos personajes y mecánicas de combate pulidas. Domina el ring y demuestra que eres el mejor luchador.",
-        "imagen": "https://media.rawg.io/media/screenshots/c46/c4651576bdaf1f184119f8eecf521d28.jpg"
+        "descripcion": "Un masivo RPG de fantasía que te sumerge en un mundo rico en mitología y magia ancestral.\nPersonaliza tu héroe, únete a poderosas facciones y desafía a dioses olvidados en una épica lucha por la supremacia.",
+        "imagen": "https://media.rawg.io/media/games/d7e/d7ede540b2033faa82f68fdc0df8adde.jpg"
       },
       {
-        "titulo": "Horizon: Sunken Echoes",
-        "fecha": "25 de Junio",
-        "plataformas": "PS5, PC",
-        "descripcion": "Una nueva entrega en el universo post-apocalíptico de Horizon, explorando vastos biomas submarinos y terrestres. Descubre nuevas máquinas y desentraña los secretos de un mundo olvidado.",
-        "imagen": "https://media.rawg.io/media/screenshots/dad/dad956d9b23747ec9da23e30b18ea0a3.jpg"
-      },
-      {
-        "titulo": "Echoes of Valhalla",
+        "titulo": "Quantum Leap: Paradox Path",
         "fecha": "16 de Junio",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "Un épico RPG de acción basado en la mitología nórdica, con un combate brutal y un mundo expansivo. Forja tu leyenda como un verdadero guerrero vikingo y enfréntate a los dioses.",
-        "imagen": "https://media.rawg.io/media/games/cb8/cb8cc051fa5d65e424fd829fbd838649.jpg"
+        "plataformas": "PC, Nintendo Switch",
+        "descripcion": "Un ingenioso juego de plataformas y puzles donde manipulas el tiempo y el espacio para superar obstáculos.\nDomina la mecánica de salto cuántico y desentraña los misterios de una realidad fragmentada.",
+        "imagen": "https://media.rawg.io/media/screenshots/78c/78c1801e6b49c215784357cc42218a1f.jpg"
+      },
+      {
+        "titulo": "Apex Soccer League 2026",
+        "fecha": "25 de Junio",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "La nueva entrega del simulador de fútbol más realista, con gráficos mejorados y mecánicas de juego innovadoras.\nConstruye tu equipo de ensueño, compite en ligas y torneos, y lleva a tu club a la gloria mundial.",
+        "imagen": "https://media.rawg.io/media/games/876/8764efc52fba503a00af64a2cd51f66c.jpg"
+      },
+      {
+        "titulo": "Dungeon Crawler Extreme: Shadow Depths",
+        "fecha": "11 de Junio",
+        "plataformas": "PC",
+        "descripcion": "Un roguelike de exploración de mazmorras con generación procedural y combate desafiante.\nAdéntrate en las profundidades, recoge botines legendarios y enfréntate a monstruosidades ancestrales.",
+        "imagen": "https://media.rawg.io/media/screenshots/c78/c78453e86b9c8b7c658949fab983bdd0.jpg"
       }
     ]
   }
