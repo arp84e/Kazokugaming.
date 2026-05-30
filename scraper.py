@@ -98,7 +98,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (CORREGIDO CON FILTROS DE SEGURIDAD RELAJADOS)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO DE DOS PASOS ANTI-FALLOS)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -118,98 +118,108 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Buscando en tiempo real y generando lanzamientos para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"--- PASO 1: Investigando lanzamientos reales en internet ---")
 
-prompt_lanzamientos = f"""
-Usa la herramienta de búsqueda de Google para consultar sitios web de alta reputación periodística (IGN, Vandal, 3DJuegos, Eurogamer o GameSpot) y genera el calendario de lanzamientos de videojuegos reales para estos tres meses específicos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
+# Prompt 1: Enfocado únicamente en buscar datos verídicos sin importar el formato técnico
+prompt_busqueda = f"""
+Usa Google Search para investigar en portales líderes de videojuegos (IGN, Vandal, 3DJuegos, Eurogamer) el calendario oficial de lanzamientos.
+Necesito que listes de forma exhaustiva los videojuegos con FECHA EXACTA CONFIRMADA para estos tres meses:
+- {mes_pasado_str}
+- {mes_actual_str}
+- {mes_siguiente_str}
 
-REGLAS CRÍTICAS DE CALIDAD Y VERACIDAD:
-1. SOLO incluye videojuegos que tengan una fecha exacta de lanzamiento (Día y Mes) 100% CONFIRMADA oficialmente por sus desarrolladores para esos meses. 
-2. Está ESTRICTAMENTE PROHIBIDO inventar nombres o añadir títulos que estén listados como "Por confirmar", "2026" sin día, o aproximaciones de trimestres ("Q3"). Si la fecha exacta no está confirmada en las noticias, ignora el juego.
-3. Intenta listar de forma exhaustiva la mayor cantidad de juegos posibles que cumplan la regla anterior (tanto juegos AAA como Indies conocidos).
-
-Devuelve ESTRICTAMENTE un objeto JSON que siga exactamente esta estructura:
-{{
-  "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
-  "catalogo": {{
-    "{mes_pasado_str}": [
-      {{
-        "titulo": "Nombre Real del Juego",
-        "fecha": "Día exacto",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "descripcion": "Descripción en español fidedigna de 2 o 3 líneas."
-      }}
-    ],
-    "{mes_actual_str}": [
-      {{
-        "titulo": "Nombre Real del Juego",
-        "fecha": "Día exacto",
-        "plataformas": "Plataformas",
-        "descripcion": "Descripción..."
-      }}
-    ],
-    "{mes_siguiente_str}": [
-      {{
-        "titulo": "Nombre Real del Juego",
-        "fecha": "Día exacto",
-        "plataformas": "Plataformas",
-        "descripcion": "Descripción..."
-      }}
-    ]
-  }}
-}}
-Nota: No inventes ni agregues claves llamadas "imagen" en este paso.
+REGLAS:
+1. Solo incluye juegos con día y mes confirmados. Descarta rumores o aproximaciones ("Q3", "2026", etc.).
+2. Incluye tanto títulos AAA como juegos indies importantes.
+3. Devuelve la información organizada en texto claro, detallando para cada juego: Título, Fecha exacta, Plataformas y una breve descripción en español.
 """
 
-# Definimos configuraciones de seguridad permisivas para evitar bloqueos por falsos positivos de violencia en videojuegos
-configuracion_seguridad = [
-    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
-    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
-    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
-    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
-]
-
 try:
-    # Hacemos la consulta inyectando las herramientas de búsqueda y los nuevos umbrales de seguridad
-    resp_lanzamientos = client.models.generate_content(
+    # Llamada 1: Investigación pura con Google Search activo
+    respuesta_busqueda = client.models.generate_content(
         model='gemini-2.5-flash',
-        contents=prompt_lanzamientos,
+        contents=prompt_busqueda,
         config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            tools=[types.Tool(google_search=types.GoogleSearch())],
-            safety_settings=configuracion_seguridad
+            tools=[types.Tool(google_search=types.GoogleSearch())]
         )
     )
     
-    # === IMPRESIÓN DE CONTROL (DEBUG) ===
-    # Esto te permitirá ver en la terminal exactamente qué te respondió la API si hay fallos
-    print("--- RESPUESTA CRUDA DE LA IA ---")
-    print(resp_lanzamientos.text)
-    print("--------------------------------")
+    texto_investigacion = respuesta_busqueda.text
+    print(">> Investigación completada con éxito. Procesando estructura...")
+
+    print(f"--- PASO 2: Convirtiendo datos a formato JSON para la Web ---")
     
-    # Validamos y transformamos la respuesta de texto a un diccionario de Python
-    estructura_json = json.loads(resp_lanzamientos.text)
+    # Prompt 2: Toma el texto verídico del paso 1 y lo moldea al JSON perfecto
+    prompt_estructurar = f"""
+    Toma la siguiente información de lanzamientos de videojuegos y conviértela ESTRICTAMENTE en un objeto JSON.
+    
+    Información a procesar:
+    {texto_investigacion}
+    
+    Estructura JSON exacta requerida:
+    {{
+      "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
+      "catalogo": {{
+        "{mes_pasado_str}": [
+          {{
+            "titulo": "Nombre del Juego",
+            "fecha": "Día exacto",
+            "plataformas": "Plataformas",
+            "descripcion": "Descripción corta de 2-3 líneas en español."
+          }}
+        ],
+        "{mes_actual_str}": [
+          {{
+            "titulo": "Nombre del Juego",
+            "fecha": "Día exacto",
+            "plataformas": "Plataformas",
+            "descripcion": "Descripción..."
+          }}
+        ],
+        "{mes_siguiente_str}": [
+          {{
+            "titulo": "Nombre del Juego",
+            "fecha": "Día exacto",
+            "plataformas": "Plataformas",
+            "descripcion": "Descripción..."
+          }}
+        ]
+      }}
+    }}
+    Nota: No agregues ninguna clave llamada "imagen" en este paso.
+    """
+
+    # Llamada 2: Estructuración pura (rápida, ligera y sin herramientas de navegación)
+    respuesta_json = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=prompt_estructurar,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json"
+        )
+    )
+    
+    # Validamos y transformamos el texto limpio a diccionario de Python
+    estructura_json = json.loads(respuesta_json.text)
     
     # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
     if "meses_disponibles" in estructura_json and "catalogo" in estructura_json:
         for mes in estructura_json["meses_disponibles"]:
             if mes in estructura_json["catalogo"]:
-                print(f">> Encontrados {len(estructura_json['catalogo'][mes])} juegos verificados para {mes}.")
+                print(f">> Insertando imágenes para {len(estructura_json['catalogo'][mes])} juegos de {mes}.")
                 for juego in estructura_json["catalogo"][mes]:
                     titulo = juego["titulo"]
-                    print(f"Buscando arte oficial para: {titulo}...")
                     
                     url_imagen_real = buscar_portada_juego(titulo)
                     juego["imagen"] = url_imagen_real
-                    time.sleep(0.25)
+                    time.sleep(0.25) # Pausa de cortesía para la API de RAWG
                     
         # Guardamos el archivo final enriquecido
         with open('lanzamientos.json', 'w', encoding='utf-8') as f:
             json.dump(estructura_json, f, ensure_ascii=False, indent=2)
             
-        print("¡Éxito! El archivo lanzamientos.json con datos reales y actualizados se ha creado correctamente.")
+        print("¡Éxito absoluto! El archivo lanzamientos.json se ha creado correctamente.")
     else:
-        print("Error: La estructura devuelta por la IA no contiene las claves esperadas.")
+        print("Error: El formateador no devolvió las llaves esperadas.")
 
 except Exception as e:
-    print("Error crítico al generar o guardar los lanzamientos:", e)
+    print("Error crítico en el proceso de lanzamientos:", e)
