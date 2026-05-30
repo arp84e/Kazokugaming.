@@ -98,7 +98,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS CON BÚSQUEDA WEB EN VIVO (CONFIABLE)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (CORREGIDO Y SIN CONFLICTOS)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -118,103 +118,84 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Buscando en internet lanzamientos reales para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Buscando en tiempo real y generando lanzamientos para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
-# Definición del esquema JSON estricto
-esquema_lanzamientos = types.Schema(
-    type=types.Type.OBJECT,
-    properties={
-        "meses_disponibles": types.Schema(type=types.Type.ARRAY, items=types.Schema(type=types.Type.STRING)),
-        "catalogo": types.Schema(
-            type=types.Type.OBJECT,
-            properties={
-                mes_pasado_str: types.Schema(
-                    type=types.Type.ARRAY,
-                    items=types.Schema(
-                        type=types.Type.OBJECT,
-                        properties={
-                            "titulo": types.Schema(type=types.Type.STRING),
-                            "fecha": types.Schema(type=types.Type.STRING),
-                            "plataformas": types.Schema(type=types.Type.STRING),
-                            "descripcion": types.Schema(type=types.Type.STRING)
-                        },
-                        required=["titulo", "fecha", "plataformas", "descripcion"]
-                    )
-                ),
-                mes_actual_str: types.Schema(
-                    type=types.Type.ARRAY,
-                    items=types.Schema(
-                        type=types.Type.OBJECT,
-                        properties={
-                            "titulo": types.Schema(type=types.Type.STRING),
-                            "fecha": types.Schema(type=types.Type.STRING),
-                            "plataformas": types.Schema(type=types.Type.STRING),
-                            "descripcion": types.Schema(type=types.Type.STRING)
-                        },
-                        required=["titulo", "fecha", "plataformas", "descripcion"]
-                    )
-                ),
-                mes_siguiente_str: types.Schema(
-                    type=types.Type.ARRAY,
-                    items=types.Schema(
-                        type=types.Type.OBJECT,
-                        properties={
-                            "titulo": types.Schema(type=types.Type.STRING),
-                            "fecha": types.Schema(type=types.Type.STRING),
-                            "plataformas": types.Schema(type=types.Type.STRING),
-                            "descripcion": types.Schema(type=types.Type.STRING)
-                        },
-                        required=["titulo", "fecha", "plataformas", "descripcion"]
-                    )
-                )
-            },
-            required=[mes_pasado_str, mes_actual_str, mes_siguiente_str]
-        )
-    },
-    required=["meses_disponibles", "catalogo"]
-)
-
-# Instrucciones estrictas de verificación periodística
+# Integra el esquema estructurado directamente en las instrucciones de texto
 prompt_lanzamientos = f"""
-Usa la herramienta de búsqueda integrada de Google para consultar sitios web especializados y de alta reputación en la industria de los videojuegos (como IGN, GameSpot, Vandal, 3DJuegos o Eurogamer) para obtener los calendarios de lanzamientos reales de los siguientes meses: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
+Usa la herramienta de búsqueda de Google para consultar sitios web de alta reputación periodística (IGN, Vandal, 3DJuegos, Eurogamer o GameSpot) y genera el calendario de lanzamientos de videojuegos reales para estos tres meses específicos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
 
-REGLAS CRÍTICAS DE VERACIDAD:
-1. SOLO incluye videojuegos cuya fecha exacta de lanzamiento esté 100% CONFIRMADA oficialmente por sus desarrolladores para esos meses específicos.
-2. Queda ESTRICTAMENTE PROHIBIDO inventar nombres de juegos, especular o incluir títulos que tengan fechas estimadas como "Q3 2026", "Finales de año" o "Por confirmar". Si la fecha no es un día exacto confirmado, descarta el juego.
-3. Intenta recopilar de forma exhaustiva todos los juegos que cumplan los filtros anteriores (tanto grandes producciones como indies populares).
-4. Traduce los nombres de las plataformas y descripciones de forma fidedigna al español.
+REGLAS CRÍTICAS DE CALIDAD Y VERACIDAD:
+1. SOLO incluye videojuegos que tengan una fecha exacta de lanzamiento (Día y Mes) 100% CONFIRMADA oficialmente por sus desarrolladores para esos meses. 
+2. Está ESTRICTAMENTE PROHIBIDO inventar nombres o añadir títulos que estén listados como "Por confirmar", "2026" sin día, o aproximaciones de trimestres ("Q3"). Si la fecha exacta no está confirmada en las noticias, ignora el juego.
+3. Intenta listar de forma exhaustiva la mayor cantidad de juegos posibles que cumplan la regla anterior (tanto juegos AAA como Indies conocidos).
+
+Devuelve ESTRICTAMENTE un objeto JSON que siga exactamente esta estructura:
+{{
+  "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
+  "catalogo": {{
+    "{mes_pasado_str}": [
+      {{
+        "titulo": "Nombre Real del Juego",
+        "fecha": "Día exacto",
+        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
+        "descripcion": "Descripción en español fidedigna de 2 o 3 líneas."
+      }}
+    ],
+    "{mes_actual_str}": [
+      {{
+        "titulo": "Nombre Real del Juego",
+        "fecha": "Día exacto",
+        "plataformas": "Plataformas",
+        "descripcion": "Descripción..."
+      }}
+    ],
+    "{mes_siguiente_str}": [
+      {{
+        "titulo": "Nombre Real del Juego",
+        "fecha": "Día exacto",
+        "plataformas": "Plataformas",
+        "descripcion": "Descripción..."
+      }}
+    ]
+  }}
+}}
+Nota: No inventes ni agregues claves llamadas "imagen" en este paso.
 """
 
 try:
-    # Ejecutamos la petición activando el Google Search Grounding
+    # Hacemos la consulta activando Google Search de forma segura
     resp_lanzamientos = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_lanzamientos,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
-            response_schema=esquema_lanzamientos,
-            # ESTA LÍNEA ACTIVA LA BÚSQUEDA WEB REAL PARA EVITAR ALUCINACIONES:
             tools=[types.Tool(google_search=types.GoogleSearch())]
         )
     )
     
+    # Validamos y transformamos la respuesta de texto a un diccionario de Python
     estructura_json = json.loads(resp_lanzamientos.text)
     
-    for mes in estructura_json["meses_disponibles"]:
-        if mes in estructura_json["catalogo"]:
-            print(f">> Encontrados {len(estructura_json['catalogo'][mes])} juegos verificados para {mes}.")
-            for juego in estructura_json["catalogo"][mes]:
-                titulo = juego["titulo"]
-                print(f"Buscando arte oficial para: {titulo}...")
-                
-                url_imagen_real = buscar_portada_juego(titulo)
-                juego["imagen"] = url_imagen_real
-                time.sleep(0.25)
-                
-    with open('lanzamientos.json', 'w', encoding='utf-8') as f:
-        json.dump(estructura_json, f, ensure_ascii=False, indent=2)
-        
-    print("¡Éxito! lanzamientos.json verificado con Google Search y guardado correctamente.")
+    # Sincronizamos las imágenes reales usando la API de RAWG juego por juego
+    if "meses_disponibles" in estructura_json and "catalogo" in estructura_json:
+        for mes in estructura_json["meses_disponibles"]:
+            if mes in estructura_json["catalogo"]:
+                print(f">> Encontrados {len(estructura_json['catalogo'][mes])} juegos verificados para {mes}.")
+                for juego in estructura_json["catalogo"][mes]:
+                    titulo = juego["titulo"]
+                    print(f"Buscando arte oficial para: {titulo}...")
+                    
+                    url_imagen_real = buscar_portada_juego(titulo)
+                    juego["imagen"] = url_imagen_real
+                    time.sleep(0.25) # Pausa para respetar límites de la API externa
+                    
+        # Guardamos el archivo final enriquecido una vez completado el bucle
+        with open('lanzamientos.json', 'w', encoding='utf-8') as f:
+            json.dump(estructura_json, f, ensure_ascii=False, indent=2)
+            
+        print("¡Éxito! El archivo lanzamientos.json con datos reales y actualizados se ha creado correctamente.")
+    else:
+        print("Error: La respuesta de la IA no generó los campos clave requeridos.")
 
 except Exception as e:
-    print("Error al generar los lanzamientos:", e)
+    print("Error crítico al generar o guardar los lanzamientos:", e)
