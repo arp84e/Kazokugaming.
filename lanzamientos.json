@@ -7,113 +7,106 @@
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Aethelgard Chronicles: El Velo Quebrado",
+        "titulo": "Chronos Rift: Echoes of Eternity",
         "fecha": "15 de Abril de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un épico RPG de acción de mundo abierto que te sumerge en un reino fracturado por una antigua catástrofe.\nDomina el combate desafiante y explora paisajes míticos llenos de secretos y bestias legendarias.",
-        "imagen": "https://media.rawg.io/media/games/0d4/0d4e5446db732e2fcce34d1dcb4dd914.jpg"
+        "descripcion": "Un épico ARPG de fantasía que entrelaza viajes en el tiempo con un vasto mundo abierto. Desvela los secretos de una civilización perdida y reescribe el destino del universo.",
+        "imagen": "https://media.rawg.io/media/games/cb8/cb8cc051fa5d65e424fd829fbd838649.jpg"
       },
       {
-        "titulo": "Neo-Genesis: Ecos del Pasado",
+        "titulo": "Cyberweave: Neo-Shinjuku",
         "fecha": "22 de Abril de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un RPG de ciencia ficción ambientado en una metrópolis distópica, donde tus decisiones forjan el destino de la humanidad.\nExplora vastos distritos, personaliza tu personaje y desvela una conspiración milenaria.",
+        "descripcion": "Sumérgete en un distrito de neón y sombras como un hábil mercenario en un futurista Japón distópico. Hackea sistemas y combate facciones rivales en una conspiración urbana.",
         "imagen": "https://media.rawg.io/media/screenshots/64a/64ac7a963984ad53df24511717a5040b.jpg"
       },
       {
-        "titulo": "Shadows of Elysium",
-        "fecha": "9 de Abril de 2026",
+        "titulo": "Abyssal Whispers",
+        "fecha": "08 de Abril de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un survival horror psicológico que te lleva a un hospital psiquiátrico abandonado con un pasado oscuro.\nResuelve enigmas retorcidos y huye de presencias terroríficas que acechan en cada esquina.",
-        "imagen": null
+        "descripcion": "Un escalofriante juego de terror psicológico ambientado en una estación de investigación submarina abandonada. Enfréntate a horrores inefables y a la locura en las profundidades.",
+        "imagen": "https://media.rawg.io/media/screenshots/371/37159b8281642af6611f30e1cee59c44.jpg"
       },
       {
-        "titulo": "Crimson Echoes: Saga del Polvo Estelar",
+        "titulo": "Terra Nova: Frontiers",
         "fecha": "29 de Abril de 2026",
-        "plataformas": "PS5, PC, Xbox Series X/S",
-        "descripcion": "Un JRPG clásico con un sistema de combate innovador por turnos y una historia conmovedora de amistad y destino.\nExplora mundos flotantes y desvela la verdad detrás de una profecía estelar.",
-        "imagen": "https://media.rawg.io/media/screenshots/ba2/ba20c4157e116b7545b66b5fa844cfd5.jpg"
-      },
-      {
-        "titulo": "Vanguard Ascendant",
-        "fecha": "18 de Abril de 2026",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un frenético shooter multijugador con clases personalizables y modos de juego dinámicos.\nLucha en arenas futuristas y domina la estrategia de equipo para alcanzar la victoria global.",
-        "imagen": "https://media.rawg.io/media/screenshots/8f4/8f4ccefd9849cc0ad08fc151ecc728a6.jpg"
+        "plataformas": "PC",
+        "descripcion": "Lidera la colonización de un planeta virgen en este complejo simulador de gestión y estrategia. Construye ciudades y gestiona recursos frente a un entorno alienígena implacable.",
+        "imagen": "https://media.rawg.io/media/screenshots/038/0381e0715094f806fb491ae87b14496f.jpg"
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Horizon: Ecos de los Antiguos",
-        "fecha": "10 de Mayo de 2026",
-        "plataformas": "PS5",
-        "descripcion": "La esperada secuela que profundiza en el vasto mundo post-apocalíptico de Aloy, enfrentándola a nuevas y colosales máquinas.\nDesvela los misterios de una civilización olvidada y protege el futuro de la humanidad.",
-        "imagen": "https://media.rawg.io/media/screenshots/dad/dad956d9b23747ec9da23e30b18ea0a3.jpg"
-      },
-      {
-        "titulo": "The Legend of Zelda: Susurros del Bosque Atemporal",
-        "fecha": "20 de Mayo de 2026",
-        "plataformas": "Nintendo Switch",
-        "descripcion": "Una nueva aventura de Link en un Hyrule inexplorado, donde los secretos de un bosque ancestral amenazan con desatar un poder olvidado.\nResuelve complejos puzles y domina nuevas habilidades para restaurar la paz.",
-        "imagen": "https://media.rawg.io/media/games/884/884d12f527a9a12b5e486ee1b79ecf7f.jpeg"
-      },
-      {
-        "titulo": "Fable: Albion Renacido",
-        "fecha": "27 de Mayo de 2026",
-        "plataformas": "Xbox Series X/S, PC",
-        "descripcion": "El regreso de la icónica saga de rol, ambientada en un Albion más mágico y peligroso que nunca.\nTus elecciones morales forjarán el destino de tu héroe y del mundo que te rodea.",
-        "imagen": "https://media.rawg.io/media/games/705/7052ebf19b7b57ada5eeb21dea59f0e7.jpg"
-      },
-      {
-        "titulo": "Project Nova: Protocolo Génesis",
-        "fecha": "5 de Mayo de 2026",
+        "titulo": "Vanguard Protocol",
+        "fecha": "07 de Mayo de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un innovador juego de estrategia en tiempo real donde construyes y gestionas tu propia colonia espacial.\nLucha contra facciones rivales y sobrevive a los desafíos de la exploración intergaláctica.",
-        "imagen": "https://media.rawg.io/media/screenshots/e99/e99da1b16357f0051fa0517df924d2a0.jpg"
+        "descripcion": "Una intensa experiencia FPS militar que te pone al frente de operaciones encubiertas globales. Disfruta de una campaña narrativa cinematográfica y un multijugador táctico de alta octanaje.",
+        "imagen": "https://media.rawg.io/media/games/605/605e0c04ba48ece4b4ae7825473477f6.jpg"
       },
       {
-        "titulo": "Sparky la Ardilla: Aventuras Traviesas",
-        "fecha": "14 de Mayo de 2026",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch",
-        "descripcion": "Un encantador plataformas 3D con un ardilla carismática como protagonista.\nCorre, salta y deslízate a través de coloridos mundos para recuperar la bellota dorada robada por el malvado zorro.",
-        "imagen": "https://media.rawg.io/media/games/a1b/a1b4791714063c7c6793a68b3e25827a.jpg"
+        "titulo": "Starforged Legacy",
+        "fecha": "20 de Mayo de 2026",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "Embárcate en una odisea interestelar para forjar tu propio legado en una galaxia vasta y misteriosa. Explora planetas, comercia, combate y moldea tu imperio espacial.",
+        "imagen": "https://media.rawg.io/media/screenshots/30d/30d8c4f8758c01724b143cd0555ecc63.jpg"
+      },
+      {
+        "titulo": "Mythos Unleashed",
+        "fecha": "13 de Mayo de 2026",
+        "plataformas": "PC, PS5, Xbox Series X/S, Nintendo Switch",
+        "descripcion": "La esperada secuela del aclamado ARPG de mitología oscura, con nuevas criaturas, dioses y un sistema de combate renovado. Sumérgete en un mundo donde el panteón de los antiguos cobra vida.",
+        "imagen": "https://media.rawg.io/media/screenshots/db0/db020ea37b41fca2f88000c0a99e8abe.jpg"
+      },
+      {
+        "titulo": "Aetheria: Whispering Isles",
+        "fecha": "27 de Mayo de 2026",
+        "plataformas": "PC, Nintendo Switch, PS5",
+        "descripcion": "Explora un archipiélago flotante encantado en esta relajante aventura de mundo abierto con elementos de farmeo y crafteo. Descubre secretos y restaura la magia de las islas.",
+        "imagen": "https://media.rawg.io/media/screenshots/bca/bca26f6a8d42f59f8c23456ae9f731ce.jpg"
+      },
+      {
+        "titulo": "Road Rage Revolution",
+        "fecha": "21 de Mayo de 2026",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "Regresa al caos de las carreras de combate con armas destructivas y vehículos personalizables. Compite en arenas postapocalípticas y conviértete en el rey de la carretera en este frenético título.",
+        "imagen": "https://media.rawg.io/media/screenshots/65d/65d4dfd81f21d3d82dacae8210cc7911.jpg"
       }
     ],
     "Junio 2026": [
       {
-        "titulo": "Marea Carmesí: El Legado del Rey Pirata",
-        "fecha": "12 de Junio de 2026",
+        "titulo": "Apex Legends: Titanfall Resurgence",
+        "fecha": "03 de Junio de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un vasto juego de rol de piratas de mundo abierto donde comandas tu propio navío y exploras un archipiélago traicionero.\nBusca tesoros, enfréntate a monstruos marinos y forja tu reputación como el pirata más temido.",
-        "imagen": "https://media.rawg.io/media/screenshots/800/800698e1cc783035d63e75365d5e9974.jpg"
+        "descripcion": "Una expansión masiva o spin-off que trae de vuelta a los Titanes al universo de Apex Legends. Lucha en batallas a gran escala con mechs y leyendas icónicas.",
+        "imagen": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg"
       },
       {
-        "titulo": "Hojas del Olimpo: El Fin del Ragnarok",
+        "titulo": "Legend of Eldoria: Echoes of the Sunstone",
+        "fecha": "18 de Junio de 2026",
+        "plataformas": "Nintendo Switch, PC",
+        "descripcion": "La próxima gran aventura épica de un mundo de fantasía lleno de puzles ingeniosos y un vasto reino por explorar. Descubre una antigua reliquia y salva al mundo de una amenaza inminente.",
+        "imagen": "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg"
+      },
+      {
+        "titulo": "Quantum Breakpoint",
+        "fecha": "11 de Junio de 2026",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "Un thriller psicológico de ciencia ficción donde tus decisiones afectan la realidad y el tiempo mismo. Desentraña una compleja trama donde la tecnología de salto cuántico salió mal.",
+        "imagen": "https://media.rawg.io/media/games/858/8588039ed3ddb3eae2311c26a95d3980.jpg"
+      },
+      {
+        "titulo": "Rumbleverse 2",
         "fecha": "25 de Junio de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un brutal juego de acción hack-and-slash inspirado en la mitología nórdica.\nDesata combos devastadores y enfréntate a dioses y bestias gigantescas en tu búsqueda de venganza ancestral.",
-        "imagen": "https://media.rawg.io/media/screenshots/800/800698e1cc783035d63e75365d5e9974.jpg"
+        "descripcion": "La esperada secuela del popular battle royale de lucha libre, con nuevas mecánicas, personajes y un vibrante nuevo mundo. Conviértete en el campeón definitivo de Grapital City.",
+        "imagen": "https://media.rawg.io/media/screenshots/9e3/9e384d1aa6ef809dfb738e177b9365ca.jpg"
       },
       {
-        "titulo": "Forza Horizon 7",
-        "fecha": "18 de Junio de 2026",
-        "plataformas": "Xbox Series X/S, PC",
-        "descripcion": "La nueva entrega de la aclamada saga de carreras de mundo abierto, llevándonos a un exótico destino global.\nCompite en festivales vibrantes, personaliza cientos de coches y explora paisajes impresionantes.",
-        "imagen": "https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg"
-      },
-      {
-        "titulo": "Stellaris: Dominio Cósmico",
-        "fecha": "6 de Junio de 2026",
-        "plataformas": "PC",
-        "descripcion": "Una gigantesca expansión para el aclamado juego de estrategia espacial 4X, introduciendo nuevas facciones, mecánicas de diplomacia avanzada y eventos galácticos sin precedentes.\nConquista la galaxia o forma alianzas duraderas.",
-        "imagen": "https://media.rawg.io/media/screenshots/5f5/5f5090d9072a4d970aa52f55b445528a.jpg"
-      },
-      {
-        "titulo": "Protocolo Omega: Primer Contacto",
-        "fecha": "21 de Junio de 2026",
+        "titulo": "Arcane Ascendant",
+        "fecha": "19 de Junio de 2026",
         "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un intenso shooter cooperativo en tercera persona donde equipos de élite combaten una amenaza alienígena interdimensional.\nPersonaliza tu armamento y coordina con tus compañeros para sobrevivir a oleadas de enemigos implacables.",
-        "imagen": "https://media.rawg.io/media/screenshots/ff7/ff785432c62fcb273cc064c33656b2ff.jpg"
+        "descripcion": "Un RPG de fantasía oscura centrado en la cooperación, donde hasta cuatro magos combinan hechizos para superar desafíos mortales. Domina la magia elemental y enfréntate a la plaga corruptora.",
+        "imagen": "https://media.rawg.io/media/screenshots/8f4/8f4ccefd9849cc0ad08fc151ecc728a6.jpg"
       }
     ]
   }
