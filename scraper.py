@@ -98,7 +98,7 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (CORREGIDO Y SIN CONFLICTOS)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (CORREGIDO CON FILTROS DE SEGURIDAD RELAJADOS)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -120,7 +120,6 @@ mes_siguiente_str = calcular_mes_exacto(1)
 
 print(f"Buscando en tiempo real y generando lanzamientos para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
-# Integra el esquema estructurado directamente en las instrucciones de texto
 prompt_lanzamientos = f"""
 Usa la herramienta de búsqueda de Google para consultar sitios web de alta reputación periodística (IGN, Vandal, 3DJuegos, Eurogamer o GameSpot) y genera el calendario de lanzamientos de videojuegos reales para estos tres meses específicos: '{mes_pasado_str}', '{mes_actual_str}' y '{mes_siguiente_str}'.
 
@@ -162,16 +161,31 @@ Devuelve ESTRICTAMENTE un objeto JSON que siga exactamente esta estructura:
 Nota: No inventes ni agregues claves llamadas "imagen" en este paso.
 """
 
+# Definimos configuraciones de seguridad permisivas para evitar bloqueos por falsos positivos de violencia en videojuegos
+configuracion_seguridad = [
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+]
+
 try:
-    # Hacemos la consulta activando Google Search de forma segura
+    # Hacemos la consulta inyectando las herramientas de búsqueda y los nuevos umbrales de seguridad
     resp_lanzamientos = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_lanzamientos,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
-            tools=[types.Tool(google_search=types.GoogleSearch())]
+            tools=[types.Tool(google_search=types.GoogleSearch())],
+            safety_settings=configuracion_seguridad
         )
     )
+    
+    # === IMPRESIÓN DE CONTROL (DEBUG) ===
+    # Esto te permitirá ver en la terminal exactamente qué te respondió la API si hay fallos
+    print("--- RESPUESTA CRUDA DE LA IA ---")
+    print(resp_lanzamientos.text)
+    print("--------------------------------")
     
     # Validamos y transformamos la respuesta de texto a un diccionario de Python
     estructura_json = json.loads(resp_lanzamientos.text)
@@ -187,15 +201,15 @@ try:
                     
                     url_imagen_real = buscar_portada_juego(titulo)
                     juego["imagen"] = url_imagen_real
-                    time.sleep(0.25) # Pausa para respetar límites de la API externa
+                    time.sleep(0.25)
                     
-        # Guardamos el archivo final enriquecido una vez completado el bucle
+        # Guardamos el archivo final enriquecido
         with open('lanzamientos.json', 'w', encoding='utf-8') as f:
             json.dump(estructura_json, f, ensure_ascii=False, indent=2)
             
         print("¡Éxito! El archivo lanzamientos.json con datos reales y actualizados se ha creado correctamente.")
     else:
-        print("Error: La respuesta de la IA no generó los campos clave requeridos.")
+        print("Error: La estructura devuelta por la IA no contiene las claves esperadas.")
 
 except Exception as e:
     print("Error crítico al generar o guardar los lanzamientos:", e)
