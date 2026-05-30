@@ -1,0 +1,143 @@
+{
+    "steam-deck": {
+        "title": "Steam Deck OLED",
+        "brand": "Valve",
+        "desc": "La madurez absoluta de las consolas portátiles de PC. Valve optimiza la experiencia de usuario gracias a su sistema operativo dedicado SteamOS.",
+        "priceUS": "$549 USD",
+        "priceEU": "569 € (IVA incl.)",
+        "specs": [
+            {
+                "label": "Procesador / APU",
+                "value": "AMD Sephiroth custom (6nm Zen 2 + RDNA 2)"
+            },
+            {
+                "label": "Pantalla",
+                "value": "7.4\" OLED HDR, 90Hz, 1,000 nits de brillo pico"
+            },
+            {
+                "label": "Memoria RAM",
+                "value": "16GB LPDDR5 a 6400 MT/s"
+            },
+            {
+                "label": "Batería",
+                "value": "50 Wh (Aprox. 3 a 12 horas de uso)"
+            },
+            {
+                "label": "Sistema Operativo",
+                "value": "SteamOS 3.5 (Basado en Arch Linux)"
+            }
+        ],
+        "pros": [
+            "Pantalla OLED HDR con negros perfectos y colores vibrantes.",
+            "Eficiencia energética estelar y duración de batería líder.",
+            "SteamOS ofrece una experiencia limpia e intuitiva.",
+            "Trackpads hápticos integrados ideales para estrategia."
+        ],
+        "contras": [
+            "Potencia gráfica menor comparada con los procesadores Ryzen Z1E actuales.",
+            "Incompatibilidad nativa con algunos juegos competitivos que usan Anti-Cheat estricto."
+        ]
+    },
+    "rog-ally-x": {
+        "title": "ROG Ally X",
+        "brand": "ASUS",
+        "desc": "La evolución definitiva de la portátil original de ASUS. Corrige flaquezas añadiendo una batería masiva de 80Wh y rediseñando su ergonomía interna.",
+        "priceUS": "$749 USD",
+        "priceEU": "849 € (IVA incl.)",
+        "specs": [
+            {
+                "label": "Procesador / APU",
+                "value": "AMD Ryzen Z1 Extreme (Zen 4 + RDNA 3)"
+            },
+            {
+                "label": "Pantalla",
+                "value": "7\" IPS Full HD (1080p), 120Hz con VRR"
+            },
+            {
+                "label": "Memoria RAM",
+                "value": "24GB LPDDR5X a 7500 MT/s"
+            },
+            {
+                "label": "Batería",
+                "value": "80 Wh (Doble de capacidad que la original)"
+            },
+            {
+                "label": "Sistema Operativo",
+                "value": "Windows 11 Home + Armoury Crate SE"
+            }
+        ],
+        "pros": [
+            "Batería colosal de 80Wh que mitiga por completo el fallo del modelo anterior.",
+            "24GB de RAM de alta velocidad que salvan cuellos de botella.",
+            "Pantalla con Variable Refresh Rate (VRR) que suaviza caídas de rendimiento.",
+            "Compatibilidad total con cualquier tienda de juegos de PC."
+        ],
+        "contras": [
+            "Windows 11 sigue sin estar adaptado al 100% para pantallas táctiles de este tamaño.",
+            "No cuenta con un panel OLED, quedándose en tecnología IPS."
+        ]
+    },
+    "ps5-pro": {
+        "title": "PlayStation 5 Pro",
+        "brand": "Sony",
+        "desc": "La revisión de mitad de generación enfocada en dar el salto gráfico definitivo a consolas de ecosistema cerrado apoyada en el reescalado inteligente PSSR.",
+        "priceUS": "$699 USD",
+        "priceEU": "799 € (Precio Oficial)",
+        "specs": [
+            {
+                "label": "GPU / Co-Procesador",
+                "value": "Arquitectura avanzada con PSSR AI reescalado y 67% más Compute Units"
+            },
+            {
+                "label": "Almacenamiento",
+                "value": "2TB Custom NVMe SSD de súper alta velocidad"
+            },
+            {
+                "label": "Tecnología Clave",
+                "value": "PlayStation Spectral Super Resolution (IA upscaling)"
+            }
+        ],
+        "pros": [
+            "Permite jugar a 60FPS estables manteniendo modos de alta fidelidad visual.",
+            "El reescalado por IA (PSSR) es sorprendentemente limpio y superior al FSR tradicional."
+        ],
+        "contras": [
+            "Precio oficial elevado de lanzamiento ($699 / 799€).",
+            "No incluye lector de discos físico ni base vertical de serie."
+        ]
+    },
+    "switch-2": {
+        "title": "Nintendo Switch 2",
+        "brand": "Nintendo",
+        "desc": "Lanzamiento confirmado oficialmente en el mes de mayo. La esperadísima sucesora de la consola híbrida incorpora hardware personalizado de Nvidia con soporte de reescalado DLSS y trazado de rayos por hardware.",
+        "priceUS": "$399 USD (Precio Lanzamiento)",
+        "priceEU": "429 € (Precio Oficial Europa)",
+        "specs": [
+            {
+                "label": "Procesador / SoC",
+                "value": "Nvidia Drake T239 personalizado (arquitectura Ampere)"
+            },
+            {
+                "label": "Pantalla",
+                "value": "8\" LCD Premium con soporte HDR de baja latencia"
+            },
+            {
+                "label": "Tecnología Gráfica",
+                "value": "Nvidia DLSS 3.5 con Ray Reconstruction integrado"
+            },
+            {
+                "label": "Almacenamiento",
+                "value": "256GB NVMe de alta velocidad expandible"
+            }
+        ],
+        "pros": [
+            "Retrocompatibilidad física y digital completa con el catálogo de la consola original.",
+            "Salto gráfico masivo gracias a los núcleos Tensor y el uso de inteligencia artificial en modo televisión.",
+            "Ecosistema híbrido optimizado con mandos de alta precisión ergonómica."
+        ],
+        "contras": [
+            "Panel inicial LCD en lugar de OLED para mitigar costes en la ventana de lanzamiento.",
+            "Autonomía reducida bajo perfiles de rendimiento gráfico exigente de nueva generación."
+        ]
+    }
+}

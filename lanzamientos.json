@@ -7,106 +7,127 @@
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Aethelgard Chronicles: The Sunken City",
-        "fecha": "8 de Abril",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Sumérgete en un vasto mundo de fantasía medieval y descubre los secretos de una civilización perdida bajo las olas. Una épica aventura de rol con combate estratégico y decisiones ramificadas.",
-        "imagen": "https://media.rawg.io/media/screenshots/a51/a51c5a51bad77a75884939bea47085e1.jpg"
+        "titulo": "Nova Chronicles: Echoes of Eternity",
+        "fecha": "8 de abril",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "descripcion": "Un RPG de acción épico con un vasto mundo abierto, sistemas de combate innovadores y una narrativa profunda.\nLos jugadores explorarán civilizaciones antiguas y forjarán su destino entre dioses y monstruos.",
+        "imagen": "https://media.rawg.io/media/screenshots/be9/be95b300157bd51d38e2a59c373cbd6a.jpg"
       },
       {
-        "titulo": "Vanguard Protocol Zero",
-        "fecha": "15 de Abril",
-        "plataformas": "PC, PS5",
-        "descripcion": "Un shooter en primera persona futurista que redefine la guerra cibernética con innovadoras mecánicas de hackeo y combate dinámico. Lucha por la libertad en un futuro distópico controlado por megacorporaciones.",
-        "imagen": "https://media.rawg.io/media/games/605/605e0c04ba48ece4b4ae7825473477f6.jpg"
+        "titulo": "Cybernetic Frontier 2",
+        "fecha": "15 de abril",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "La esperada secuela del aclamado shooter de ciencia ficción. Sumérgete en una metrópolis distópica,\nmejorando tu arsenal cibernético y desentrañando una conspiración global.",
+        "imagen": "https://media.rawg.io/media/screenshots/94b/94be41cd69630e96169ef4a349ef8c3e.jpg"
       },
       {
-        "titulo": "Emberlight Isles",
-        "fecha": "22 de Abril",
-        "plataformas": "Switch (Próxima Generación), PC",
-        "descripcion": "Explora un archipiélago mágico lleno de misterios y criaturas fantásticas en esta aventura de mundo abierto. Recoge recursos, construye tu hogar y descubre los secretos ancestrales de las islas.",
-        "imagen": "https://media.rawg.io/media/screenshots/a9d/a9d494c3789952790470cfbcf0f8e367.jpg"
+        "titulo": "Blossom Tale: The Whispering Woods",
+        "fecha": "22 de abril",
+        "plataformas": "Switch, PC",
+        "descripcion": "Una encantadora aventura de puzles y plataformas con un estilo artístico dibujado a mano.\nAyuda a un espíritu del bosque a restaurar el equilibrio natural y a desvelar los secretos de un bosque mágico.",
+        "imagen": "https://media.rawg.io/media/screenshots/622/6224b079648d9dbf7f20a819ea682001.jpg"
       },
       {
-        "titulo": "Project: Chimera",
-        "fecha": "29 de Abril",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "Un intenso thriller de ciencia ficción donde la biotecnología ha salido horriblemente mal. Resuelve puzles complejos y evade horrores mutados en una instalación de investigación abandonada.",
-        "imagen": "https://media.rawg.io/media/screenshots/034/034c68d3460b50aa9e12ebac6bab4f05.jpg"
+        "titulo": "Grand Prix Legends: Apex Edition",
+        "fecha": "29 de abril",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "El simulador de carreras definitivo, ofreciendo gráficos fotorrealistas y físicas avanzadas para una experiencia inmersiva.\nCompete en circuitos legendarios con una amplia gama de vehículos personalizables.",
+        "imagen": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg"
+      },
+      {
+        "titulo": "Starfall Odyssey",
+        "fecha": "24 de abril",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "descripcion": "Una ambiciosa aventura espacial de exploración y comercio. Los jugadores construirán su propia flota,\ndescubrirán nuevos planetas y se enfrentarán a facciones alienígenas en una galaxia expansiva.",
+        "imagen": "https://media.rawg.io/media/games/ff6/ff64f7b2a47d8b90987b5ceb530958e0.jpg"
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Starbound Odyssey",
-        "fecha": "7 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Embárcate en una odisea espacial sin precedentes, explorando galaxias inexploradas y forjando alianzas intergalácticas. Un juego de rol de ciencia ficción con una libertad inmensa y combates estelares.",
-        "imagen": "https://media.rawg.io/media/games/6d9/6d92d50affeebf2eb3894d178eb1117e.jpg"
+        "titulo": "Eldoria's Legacy: The Sunken Kingdom",
+        "fecha": "7 de mayo",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "descripcion": "Un oscuro RPG de fantasía con un combate desafiante y un lore profundo.\nExplora las ruinas de un reino olvidado bajo las olas, enfrentando horrores lovecraftianos y desentrañando antiguas maldiciones.",
+        "imagen": "https://media.rawg.io/media/screenshots/ecd/ecd99a4560b5c56bbe72aa6c721d81ad.jpg"
       },
       {
-        "titulo": "Grim Harvest",
-        "fecha": "14 de Mayo",
+        "titulo": "Neon City Drift",
+        "fecha": "14 de mayo",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "Un arcade de carreras callejeras futurista con una banda sonora synthwave vibrante.\nDomina las calles iluminadas por neón, personaliza tus vehículos y conviértete en el rey de la ciudad.",
+        "imagen": "https://media.rawg.io/media/screenshots/be8/be8b872c00c25b32d359427c436636da.jpg"
+      },
+      {
+        "titulo": "Project Chimera (Título Provisional)",
+        "fecha": "21 de mayo",
         "plataformas": "PC, PS5",
-        "descripcion": "Un juego de terror psicológico en primera persona ambientado en una granja apartada con un oscuro pasado. Desentraña el misterio y sobrevive a las fuerzas sobrenaturales que acechan en las sombras.",
-        "imagen": "https://media.rawg.io/media/screenshots/604/604c6698c440fb67819a318e816ac30c.jpg"
+        "descripcion": "Un innovador juego de estrategia en tiempo real con elementos de rol y construcción de bases.\nComanda ejércitos mutantes y defiende tu territorio en un mundo post-apocalíptico lleno de peligros.",
+        "imagen": "https://media.rawg.io/media/screenshots/034/034c68d3460b50aa9e12ebac6bab4f05.jpg"
       },
       {
-        "titulo": "Urban Legends: Tokyo Ghost",
-        "fecha": "21 de Mayo",
-        "plataformas": "PS5, Xbox Series X/S",
-        "descripcion": "Investiga sucesos paranormales en las vibrantes y enigmáticas calles de un Tokio moderno. Un juego de acción y aventura con una profunda narrativa y elementos de sigilo sobrenatural.",
-        "imagen": "https://media.rawg.io/media/games/e85/e851f527ab0658519436342ee73da191.jpg"
+        "titulo": "Fablewood Adventures",
+        "fecha": "28 de mayo",
+        "plataformas": "Switch, PC",
+        "descripcion": "Un encantador juego de rol y exploración con un mundo de fantasía lleno de criaturas míticas y puzles.\nÚnete a un grupo de héroes improbables en una misión para salvar su tierra natal de una oscura amenaza.",
+        "imagen": "https://media.rawg.io/media/screenshots/4d0/4d09d1dca4054e295fe3304920d368c6.jpg"
       },
       {
-        "titulo": "Runic Forged",
-        "fecha": "28 de Mayo",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "Domina el arte de la forja rúnica y el combate en este desafiante RPG de acción con elementos 'soulslike'. Lucha contra bestias míticas y antiguos dioses para restaurar el equilibrio en un mundo devastado.",
-        "imagen": "https://media.rawg.io/media/games/2c1/2c1984e128ac48b89953ed4de4904a3b.jpg"
+        "titulo": "Chrono Rift: Paradox",
+        "fecha": "19 de mayo",
+        "plataformas": "Xbox Series X|S, PC",
+        "descripcion": "Un shooter táctico con elementos de manipulación del tiempo.\nCoordina ataques con tu equipo, rebobina momentos clave y altera el flujo de la batalla para asegurar la victoria.",
+        "imagen": "https://media.rawg.io/media/screenshots/78c/78c1801e6b49c215784357cc42218a1f.jpg"
       },
       {
-        "titulo": "Infinite Drift: Grand Prix",
-        "fecha": "30 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Siente la velocidad y la adrenalina en el simulador de carreras definitivo con gráficos fotorrealistas. Personaliza tu coche, domina circuitos legendarios y compite por el campeonato mundial.",
-        "imagen": "https://media.rawg.io/media/games/437/437d576f3137d1e72f86a17c77e81533.jpg"
+        "titulo": "Hearthstone: Whispers of the Old Gods Returns",
+        "fecha": "5 de mayo",
+        "plataformas": "PC, iOS, Android",
+        "descripcion": "Una gran expansión para el popular juego de cartas digital, trayendo de vuelta mecánicas queridas y una gran cantidad de cartas nuevas.\nSumérgete en el lore de los Dioses Antiguos con nuevas estrategias y desafíos.",
+        "imagen": "https://media.rawg.io/media/games/1db/1dbc3d0c9de2709e21326cdcb91468ae.jpg"
       }
     ],
     "Junio 2026": [
       {
-        "titulo": "Nexus Ascendant",
-        "fecha": "4 de Junio",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Un ambicioso MMORPG de fantasía que ofrece un mundo dinámico, asedios masivos y un sistema de clases innovador. Forja tu leyenda en un reino en constante evolución.",
-        "imagen": "https://media.rawg.io/media/screenshots/295/2956734ea5cb3ba3ea5c3c5bc3185271.jpg"
-      },
-      {
-        "titulo": "Wasteland Sovereigns",
-        "fecha": "11 de Junio",
-        "plataformas": "PC, Xbox Series X/S",
-        "descripcion": "Construye y defiende tu asentamiento en un desolado páramo post-apocalíptico en este juego de estrategia y supervivencia. Gestiona recursos, recluta supervivientes y lucha contra facciones rivales.",
-        "imagen": "https://media.rawg.io/media/screenshots/5ad/5adb88d1c6b9fc4fde1f372c9b6e451b.jpg"
-      },
-      {
-        "titulo": "Echoes of the Void",
-        "fecha": "18 de Junio",
+        "titulo": "Horizon: Echoes of the Forbidden West",
+        "fecha": "10 de junio",
         "plataformas": "PS5, PC",
-        "descripcion": "Una aventura narrativa cinemática que te lleva a los confines del espacio y la psique humana. Desentraña un misterio cósmico que desafiará tu percepción de la realidad.",
-        "imagen": "https://media.rawg.io/media/screenshots/6ca/6ca611290e253a96c3aff011a7e82aaf.jpg"
+        "descripcion": "La esperada tercera entrega de la aclamada saga de acción y rol.\nAloy se enfrenta a una nueva y devastadora amenaza que pone en peligro la existencia de toda la vida en la Tierra.",
+        "imagen": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg"
       },
       {
-        "titulo": "Terra Incognita VR",
-        "fecha": "25 de Junio",
-        "plataformas": "PC VR, PS VR2",
-        "descripcion": "Explora mundos alienígenas completamente inmersivos en esta épica aventura de exploración en realidad virtual. Descubre ecosistemas únicos, resuelve puzles ambientales y sobrevive a entornos hostiles.",
-        "imagen": "https://media.rawg.io/media/screenshots/bdf/bdf580b107e90af69fc360d5af119a8b.jpg"
+        "titulo": "Galactic Vanguard: Genesis",
+        "fecha": "17 de junio",
+        "plataformas": "PC, Xbox Series X|S",
+        "descripcion": "Un MMO espacial masivo que ofrece exploración ilimitada, combates de naves intensos y comercio dinámico.\nForma alianzas, conquista sistemas estelares y escribe tu propia leyenda en la galaxia.",
+        "imagen": "https://media.rawg.io/media/screenshots/6be/6be4cd415b47078ccf78c0128baed0dd.jpg"
       },
       {
-        "titulo": "Blade & Fury: Ronin's Path",
-        "fecha": "29 de Junio",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Conviértete en un samurái errante en un Japón feudal oscuro y místico. Domina el arte del kenjutsu en intensos combates de espada y forja tu propio camino de honor o venganza.",
-        "imagen": "https://media.rawg.io/media/screenshots/59c/59ca8b91bce7d9aa3d41d11654e4739a.jpg"
+        "titulo": "Mystic Forge",
+        "fecha": "24 de junio",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "Un innovador juego de construcción de ciudades y gestión con un toque de magia.\nCrea tu propio reino flotante, explora ruinas antiguas y domina la alquimia para potenciar tu civilización.",
+        "imagen": "https://media.rawg.io/media/games/860/860171b6bd79446299832e53c15e6888.jpg"
+      },
+      {
+        "titulo": "Spiritbloom Island",
+        "fecha": "13 de junio",
+        "plataformas": "Switch",
+        "descripcion": "Una relajante aventura de vida y simulación en una isla tropical misteriosa.\nCultiva, pesca, hazte amigo de los habitantes y desvela los secretos que esconde la isla.",
+        "imagen": "https://media.rawg.io/media/screenshots/30f/30fff44f0c2b97ebf68106ba8a307d6c.jpg"
+      },
+      {
+        "titulo": "Titanfall: Ascendant",
+        "fecha": "26 de junio",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "La largamente esperada continuación de la franquicia de disparos en primera persona.\nVuelve a la acción con pilotos ágiles y titanes masivos en combates frenéticos y espectaculares.",
+        "imagen": "https://media.rawg.io/media/games/979/979155841412068e7adf8c83dee94a4a.jpg"
+      },
+      {
+        "titulo": "Shadowbound: Crimson Pact",
+        "fecha": "30 de junio",
+        "plataformas": "PC, PS5, Xbox Series X|S",
+        "descripcion": "Un RPG de acción gótico con un enfoque en la narrativa oscura y la toma de decisiones difíciles.\nAdéntrate en un mundo plagado de horrores y elige tu destino en medio de una guerra ancestral.",
+        "imagen": "https://media.rawg.io/media/screenshots/b5f/b5f638dd66ce932f4f3a1a8a7d35bcf0.jpg"
       }
     ]
   }
