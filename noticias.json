@@ -1,15 +1,45 @@
 {
   "destacada": {
-    "categoria": "Videojuegos",
-    "titulo": "Bungie Sorprende a los Fans con el Primer Vistazo a la Monumental Actualización de Destiny 2: \"Monumento al Triunfo\"",
-    "resumen": "Bungie ha desvelado los primeros detalles de \"Monumento al Triunfo\", la que será su última gran actualización de contenido para Destiny 2. A pesar de ser el capítulo final de un ciclo, los jugadores y la crítica la califican ya como \"la mejor actualización singular en años\" gracias a las innovaciones y mejoras que promete.",
-    "contenido_completo": "<p>En un gesto de agradecimiento hacia su dedicada comunidad, Bungie ha compartido un adelanto exclusivo de \"Monumento al Triunfo\", una actualización que promete ser un hito en la historia de Destiny 2. Aunque se ha confirmado que esta será la última gran oleada de contenido antes de una nueva era para el juego, la expectación es máxima, con muchos fans considerándola la actualización más significativa y ambiciosa que el título ha recibido en mucho tiempo.</p><p>Los desarrolladores han puesto un énfasis especial en revitalizar aspectos clave del juego, introduciendo nuevas actividades, desafíos y recompensas que buscan tanto satisfacer a los veteranos como atraer a nuevos Guardianes. Aunque los detalles específicos aún se mantienen bajo cierto velo de misterio, las pincelaciones mostradas hasta ahora sugieren una reinvención de la experiencia de juego, enfocada en la narrativa y en la conclusión épica de arcos argumentales que llevan años desarrollándose. La comunidad de Destiny 2 ha acogido estas noticias con entusiasmo, con foros y redes sociales llenos de teorías y análisis sobre lo que podría significar este \"Monumento al Triunfo\" para el futuro del universo de Destiny.</p>",
-    "imagen": "https://assets-prd.ignimgs.com/2024/05/23/destiny2thumb-1716471330076.png",
-    "enlace": "https://www.ign.com/articles/bungie-thanks-fans-with-first-look-at-monumental-destiny-2-update",
-    "fecha": "2026-05-30T14:40:55.689840",
-    "id": "not_1780152055_0"
+    "categoria": "Carreras",
+    "titulo": "IGN30: Las 30 Obras Maestras de los Juegos de Carreras que Debes Experimentar",
+    "resumen": "Desde la pura adrenalina de los simuladores más realistas hasta la diversión arcade más explosiva, IGN30 te presenta un recorrido imperdible por los 30 títulos de carreras que han marcado un antes y un después en la historia del gaming. ¡Prepárate para pisar el acelerador!",
+    "contenido_completo": "<p>En el vibrante universo de los videojuegos, pocas sensaciones igualan la velocidad y la emoción de un buen juego de carreras. Para celebrar este género tan querido, IGN30 ha compilado una lista definitiva de las 30 obras maestras que todo aficionado, y aquellos que buscan iniciarse, deberían jugar. Esta selección no solo abarca los pesos pesados de la simulación de automovilismo que te ponen al volante de vehículos reales con físicas ultraprecisas, sino que también rinde homenaje a esos sultanes del arcade que priorizan la diversión instantánea y la acción desenfrenada. Desde clásicos atemporales que definieron una generación hasta joyas modernas que empujan los límites gráficos y jugables, esta lista es un testimonio de la diversidad y la evolución del género. Prepárate para quemar rueda en circuitos legendarios, desafiar la gravedad en pistas futuristas o simplemente disfrutar de la libertad de la carretera abierta. ¿Estás listo para descubrir tu próxima obsesión sobre ruedas?</p>",
+    "imagen": "https://assets-prd.ignimgs.com/2026/05/28/racing-masterpieces-blog-1779966743694.jpg",
+    "enlace": "https://www.ign.com/articles/30-racing-game-masterpieces-you-need-to-play-ign30",
+    "fecha": "2026-05-30T14:45:42.501205",
+    "id": "not_1780152342_0"
   },
   "secundarias": [
+    {
+      "categoria": "Aventura",
+      "titulo": "¡Confirmado! Hollow Knight: Silksong Recibirá una Edición Física, Pre-Reservas Ya Disponibles",
+      "resumen": "La espera ha terminado para los coleccionistas y fans de Silksong. Team Cherry y su distribuidora han confirmado oficialmente el lanzamiento de una edición física para el muy anticipado metroidvania, con pre-reservas que ya han comenzado a nivel mundial.",
+      "contenido_completo": "<p>Después de años de ferviente anticipación y un silencio casi ensordecedor que alimentó tanto la esperanza como la incertidumbre, la comunidad de jugadores de Hollow Knight finalmente tiene una noticia concreta que celebrar: ¡Hollow Knight: Silksong tendrá una edición física! Team Cherry, en colaboración con su distribuidor, ha roto el silencio para confirmar que la muy esperada secuela de su aclamado metroidvania indie no solo verá la luz en formato digital, sino que los fans podrán añadir una copia física a sus colecciones. Esta confirmación viene acompañada de la emocionante noticia de que las pre-reservas para esta edición ya están activas, ofreciendo a los entusiastas la oportunidad de asegurar su copia antes del lanzamiento. Se espera que esta edición física incluya, además del juego, posibles extras para coleccionistas, como manuales de arte o contenido exclusivo. Este anuncio ha provocado una oleada de emoción, reavivando el entusiasmo por el misterioso y hermoso mundo de Pharloom que nos espera.</p>",
+      "imagen": "https://assets-prd.ignimgs.com/2026/03/26/hollowknightsilksong-review-blogroll-1757024063307-1774567801276.jpg",
+      "enlace": "https://www.ign.com/articles/hollow-knight-silksong-physical-edition-where-to-buy",
+      "fecha": "2026-05-30T14:45:42.501214",
+      "id": "not_1780152342_1"
+    },
+    {
+      "categoria": "Eventos",
+      "titulo": "Xbox Games Showcase 2026: Todo lo que Podemos Esperar de 'Gears of War E-Day', 'Fable' y 'Project Helix'",
+      "resumen": "El próximo 7 de junio, el mundo del gaming centrará su atención en el Xbox Games Showcase 2026. Preparamos un análisis exhaustivo de los posibles anuncios, tráilers y sorpresas que Microsoft podría tener guardados, incluyendo detalles sobre 'Gears of War E-Day', el esperado 'Fable' y el misterioso 'Project Helix'.",
+      "contenido_completo": "<p>La expectación está en su punto álgido mientras la comunidad de Xbox se prepara para el Games Showcase del 7 de junio de 2026. Este evento anual se ha consolidado como la plataforma principal para que Microsoft desvele sus próximos grandes lanzamientos, y este año promete ser uno de los más trascendentales. Los focos estarán puestos en tres nombres clave que han generado un enorme murmullo: 'Gears of War E-Day', que nos llevaría de vuelta a los orígenes del conflicto contra los Locust; el tan anhelado reinicio de 'Fable', que promete restaurar la magia y el encanto del universo de Albion; y el enigmático 'Project Helix', del que apenas conocemos detalles pero que podría ser la próxima gran apuesta de la compañía. Se especula con que podríamos ver impresionantes gameplays, conocer las fechas de lanzamiento definitivas e incluso descubrir nuevas IP que definan el futuro de la marca Xbox. Además de estos titanes, se esperan sorpresas de estudios first-party y third-party, así como actualizaciones de títulos ya anunciados. Este Showcase no es solo una vitrina de juegos, sino una declaración de intenciones por parte de Xbox sobre su visión para el futuro del gaming.</p>",
+      "imagen": "https://assets-prd.ignimgs.com/2026/05/29/xbox-expect-blog-1780062782720.jpg",
+      "enlace": "https://www.ign.com/articles/gears-of-war-e-day-fable-and-project-helix-what-to-expect-from-xboxs-games-showcase-2026",
+      "fecha": "2026-05-30T14:45:42.501216",
+      "id": "not_1780152342_2"
+    },
+    {
+      "categoria": "Videojuegos",
+      "titulo": "Bungie Sorprende a los Fans con el Primer Vistazo a la Monumental Actualización de Destiny 2: \"Monumento al Triunfo\"",
+      "resumen": "Bungie ha desvelado los primeros detalles de \"Monumento al Triunfo\", la que será su última gran actualización de contenido para Destiny 2. A pesar de ser el capítulo final de un ciclo, los jugadores y la crítica la califican ya como \"la mejor actualización singular en años\" gracias a las innovaciones y mejoras que promete.",
+      "contenido_completo": "<p>En un gesto de agradecimiento hacia su dedicada comunidad, Bungie ha compartido un adelanto exclusivo de \"Monumento al Triunfo\", una actualización que promete ser un hito en la historia de Destiny 2. Aunque se ha confirmado que esta será la última gran oleada de contenido antes de una nueva era para el juego, la expectación es máxima, con muchos fans considerándola la actualización más significativa y ambiciosa que el título ha recibido en mucho tiempo.</p><p>Los desarrolladores han puesto un énfasis especial en revitalizar aspectos clave del juego, introduciendo nuevas actividades, desafíos y recompensas que buscan tanto satisfacer a los veteranos como atraer a nuevos Guardianes. Aunque los detalles específicos aún se mantienen bajo cierto velo de misterio, las pincelaciones mostradas hasta ahora sugieren una reinvención de la experiencia de juego, enfocada en la narrativa y en la conclusión épica de arcos argumentales que llevan años desarrollándose. La comunidad de Destiny 2 ha acogido estas noticias con entusiasmo, con foros y redes sociales llenos de teorías y análisis sobre lo que podría significar este \"Monumento al Triunfo\" para el futuro del universo de Destiny.</p>",
+      "imagen": "https://assets-prd.ignimgs.com/2024/05/23/destiny2thumb-1716471330076.png",
+      "enlace": "https://www.ign.com/articles/bungie-thanks-fans-with-first-look-at-monumental-destiny-2-update",
+      "fecha": "2026-05-30T14:40:55.689840",
+      "id": "not_1780152055_0"
+    },
     {
       "categoria": "Entretenimiento",
       "titulo": "Emilia Clarke Revela su Falta de Control sobre el Destino de Daenerys en 'Juego de Tronos'",
