@@ -1,122 +1,126 @@
 {
-  "meses_disponibles": ["Abril 2026", "Mayo 2026", "Junio 2026"],
+  "meses_disponibles": [
+    "Abril 2026",
+    "Mayo 2026",
+    "Junio 2026"
+  ],
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Eldoria: Legacy of the Ancients",
+        "titulo": "Elden Ring: Shadowfall",
         "fecha": "15 de Abril",
         "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Eldoria:+Legacy+of+the+Ancients",
-        "descripcion": "La esperada secuela del aclamado RPG de fantasía oscura.\nExplora un vasto mundo abierto, desentraña misterios ancestrales y forja tu propio destino."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Elden+Ring+Shadowfall",
+        "descripcion": "La esperada expansión del aclamado juego de rol de acción. Explora nuevas tierras sombrías y enfrenta desafíos ancestrales."
       },
       {
-        "titulo": "Cybernetic Dawn",
+        "titulo": "Assassin's Creed: Pantheon",
         "fecha": "22 de Abril",
         "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cybernetic+Dawn",
-        "descripcion": "Un thriller de acción cyberpunk ambientado en una metrópolis futurista distópica.\nSumérgete en un mundo de intriga corporativa y rebelión digital."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Assassins+Creed+Pantheon",
+        "descripcion": "Un nuevo capítulo de la saga Assassin's Creed ambientado en el misticismo del Imperio Romano. Descubre una conspiración que amenaza a la propia divinidad."
       },
       {
-        "titulo": "Whispering Wilds",
-        "fecha": "8 de Abril",
-        "plataformas": "PC, Switch, PS5",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Whispering+Wilds",
-        "descripcion": "Una aventura de exploración y supervivencia con un estilo artístico único.\nDescubre los secretos de un bosque mágico y enigmático, donde cada criatura esconde una historia."
+        "titulo": "Mario's Cosmic Odyssey",
+        "fecha": "08 de Abril",
+        "plataformas": "Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Marios+Cosmic+Odyssey",
+        "descripcion": "Únete a Mario en una aventura intergaláctica para salvar el universo. Nuevos poderes y mundos esperan en esta epopeya espacial."
       },
       {
-        "titulo": "Galaxy Gladiators 2026",
-        "fecha": "29 de Abril",
+        "titulo": "Cyberpunk 2077: Phantom Liberty 2",
+        "fecha": "04 de Abril",
         "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Galaxy+Gladiators+2026",
-        "descripcion": "La nueva entrega de la popular serie de combate espacial multijugador.\nPilota naves estelares personalizables en batallas épicas a través de la galaxia."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Cyberpunk+2077+Phantom+Liberty+2",
+        "descripcion": "Expansión que profundiza en los bajos fondos de Night City. Nuevas misiones, personajes y zonas por explorar."
       },
       {
-        "titulo": "Echoes of Seraphim",
-        "fecha": "1 de Abril",
-        "plataformas": "PC, PS5",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Echoes+of+Seraphim",
-        "descripcion": "Un JRPG con un profundo sistema de combate por turnos y una narrativa conmovedora.\nÚnete a un grupo de héroes improbables en una misión para salvar un mundo devastado."
+        "titulo": "Fable: Albion Reborn",
+        "fecha": "29 de Abril",
+        "plataformas": "PC, Xbox Series X|S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Fable+Albion+Reborn",
+        "descripcion": "Regresa al encantador mundo de Albion en esta nueva entrega de la mítica serie de rol. Tus decisiones forjarán tu destino."
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Crimson Tide",
-        "fecha": "6 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Crimson+Tide",
-        "descripcion": "Un intenso shooter en primera persona con elementos de terror psicológico.\nAtrapado en una base submarina aislada, lucha contra horrores indescriptibles."
+        "titulo": "Grand Theft Auto VI",
+        "fecha": "10 de Mayo",
+        "plataformas": "PS5, Xbox Series X|S",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Grand+Theft+Auto+VI",
+        "descripcion": "El regreso de la saga de mundo abierto más influyente. Explora Vice City como nunca antes, con una narrativa dual impactante."
       },
       {
-        "titulo": "Mythos Unleashed",
+        "titulo": "The Legend of Zelda: Echoes of Time",
+        "fecha": "27 de Mayo",
+        "plataformas": "Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=The+Legend+of+Zelda+Echoes+of+Time",
+        "descripcion": "Link viaja a través del tiempo en una nueva aventura épica. Desvela los secretos de un Hyrule en diferentes eras."
+      },
+      {
+        "titulo": "Call of Duty: Vanguardia Oculta",
+        "fecha": "05 de Mayo",
+        "plataformas": "PC, PS5, Xbox Series X|S, PS4, Xbox One",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Call+of+Duty+Vanguardia+Oculta",
+        "descripcion": "La nueva entrega de la franquicia de acción bélica. Prepárate para intensos combates en un conflicto global futurista."
+      },
+      {
+        "titulo": "Horizon: Nexus",
+        "fecha": "19 de Mayo",
+        "plataformas": "PS5, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Horizon+Nexus",
+        "descripcion": "Aloy se embarca en una nueva y peligrosa misión. Descubre los misterios de una facción oculta y sus máquinas nunca vistas."
+      },
+      {
+        "titulo": "Starfield: Galactic Frontier",
         "fecha": "13 de Mayo",
         "plataformas": "PC, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Mythos+Unleashed",
-        "descripcion": "Un ambicioso juego de rol de acción basado en mitologías de todo el mundo.\nInvoca a dioses y monstruos para luchar a tu lado, explorando reinos fantásticos."
-      },
-      {
-        "titulo": "Orbital Frontier",
-        "fecha": "20 de Mayo",
-        "plataformas": "PC, PS5",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Orbital+Frontier",
-        "descripcion": "Un simulador de construcción y gestión espacial donde colonizas lunas y planetas distantes.\nEstablece tu imperio intergaláctico y sobrevive a los peligros del espacio profundo."
-      },
-      {
-        "titulo": "Neon Shadows",
-        "fecha": "27 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S, Switch",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Neon+Shadows",
-        "descripcion": "Un juego de sigilo y plataformas con estética neo-noir y mecánicas innovadoras.\nNavega por una ciudad corrupta controlada por corporaciones, utilizando tus habilidades para infiltrarte."
-      },
-      {
-        "titulo": "Chronos Rebirth",
-        "fecha": "7 de Mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Chronos+Rebirth",
-        "descripcion": "La muy esperada secuela de un aclamado juego de acción y aventura con viajes en el tiempo.\nDesvela una nueva paradoja temporal que amenaza con borrar la realidad."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Starfield+Galactic+Frontier",
+        "descripcion": "Expansión que te lleva a los confines de la galaxia. Nuevas facciones, sistemas solares y amenazas alienígenas aguardan."
       }
     ],
     "Junio 2026": [
       {
-        "titulo": "Apex Predators",
-        "fecha": "4 de Junio",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Apex+Predators",
-        "descripcion": "Un dinámico juego de caza multijugador donde te enfrentas a bestias colosales.\nColabora con tu equipo para rastrear y derribar a los depredadores más grandes del planeta."
+        "titulo": "God of War: Ragnarok Ascendant",
+        "fecha": "18 de Junio",
+        "plataformas": "PS5",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=God+of+War+Ragnarok+Ascendant",
+        "descripcion": "Kratos y Atreus enfrentan un nuevo panteón de dioses en una saga más allá de los reinos nórdicos. La épica continúa con desafíos colosales."
       },
       {
-        "titulo": "Astral Drift",
+        "titulo": "Final Fantasy XVI-2: Echoes of Eikons",
+        "fecha": "03 de Junio",
+        "plataformas": "PS5, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Final+Fantasy+XVI-2+Echoes+of+Eikons",
+        "descripcion": "La continuación de la aclamada historia de Valisthea. Explora el destino de los Eikons y el legado de Clive Rosfield."
+      },
+      {
+        "titulo": "Metroid Prime 4",
+        "fecha": "25 de Junio",
+        "plataformas": "Switch 2",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Metroid+Prime+4",
+        "descripcion": "Samus Aran regresa para una nueva aventura en primera persona. Desentraña un misterio cósmico y combate amenazas alienígenas."
+      },
+      {
+        "titulo": "The Sims 5: World Connect",
         "fecha": "11 de Junio",
         "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Astral+Drift",
-        "descripcion": "Un emocionante juego de carreras de ciencia ficción con naves antigravedad y circuitos imposibles.\nDomina la velocidad y la gravedad en emocionantes competiciones galácticas."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=The+Sims+5+World+Connect",
+        "descripcion": "La próxima generación de simulación de vida con más opciones de personalización. Crea historias ilimitadas en un mundo interconectado."
       },
       {
-        "titulo": "Lumina Legacy",
-        "fecha": "18 de Junio",
-        "plataformas": "PC, Switch",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Lumina+Legacy",
-        "descripcion": "Un encantador juego de plataformas 3D con puzles y un estilo artístico vibrante.\nGuía a un pequeño espíritu de luz a través de un mundo de ensueño para restaurar la luz."
-      },
-      {
-        "titulo": "Ironclad Dominion",
-        "fecha": "25 de Junio",
-        "plataformas": "PC",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Ironclad+Dominion",
-        "descripcion": "Un profundo juego de estrategia en tiempo real ambientado en un universo steampunk alternativo.\nConstruye fortalezas, entrena ejércitos mecanizados y conquista territorios en batallas masivas."
-      },
-      {
-        "titulo": "Veil of the Forgotten",
-        "fecha": "12 de Junio",
+        "titulo": "Battlefield: Global Conflict",
+        "fecha": "07 de Junio",
         "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Veil+of+the+Forgotten",
-        "descripcion": "Un RPG de horror cósmico con énfasis en la exploración y la narrativa ramificada.\nDesciende a los abismos de la locura mientras investigas una secta olvidada."
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Battlefield+Global+Conflict",
+        "descripcion": "Intensos combates a gran escala en un nuevo escenario de guerra moderna. Destrucción masiva y estrategia en equipo."
       },
       {
-        "titulo": "Project Zenith",
-        "fecha": "2 de Junio",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Project+Zenith",
-        "descripcion": "Un shooter looter de mundo abierto con elementos de ciencia ficción.\nForma equipo con amigos, explora un planeta alienígena hostil y lucha por el botín más raro."
+        "titulo": "Persona 6: Zenith",
+        "fecha": "20 de Junio",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Persona+6+Zenith",
+        "descripcion": "La esperada sexta entrega de la aclamada serie de RPG. Sumérgete en un nuevo misterio con elementos de combate por turnos y simulación social."
       }
     ]
   }
