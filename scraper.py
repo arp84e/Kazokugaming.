@@ -50,7 +50,7 @@ if nuevas_entradas:
         elif 'media_thumbnail' in e and len(e.media_thumbnail) > 0: img = e.media_thumbnail[0]['url']
         textos += f"Título: {e.title}\nResumen: {e.summary}\nEnlace: {e.link}\nImagen oficial: {img}\n\n"
         
-    prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español de forma detallada.
+    prompt = f"""Eres un journalist de videojuegos. Reescribe estas noticias al español de forma detallada.
     Genera un JSON con una lista llamada "nuevas_noticias".
     REGLA DE IMÁGENES: Usa la URL de la "Imagen oficial" que te doy. Si está vacía, usa obligatoriamente esta URL: https://placehold.co/1200x600/141419/00f0ff.png?text=Noticia+Gaming
     
@@ -75,23 +75,19 @@ if noticias_totales:
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (Arreglado sin duplicados)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (Con imágenes reales/referenciales)
 # ==========================================
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 
-# Lógica matemática exacta para obtener mes y año sin importar los días del mes
 def calcular_mes_exacto(offset):
-    # Calculamos el año y mes basándonos en el offset
     mes_calculado = hoy.month + offset
     anio_calculado = hoy.year
     
-    # Si retrocedemos del mes 1 (Enero), pasamos al año anterior
     while mes_calculado < 1:
         mes_calculado += 12
         anio_calculado -= 1
         
-    # Si avanzamos del mes 12 (Diciembre), pasamos al año siguiente
     while mes_calculado > 12:
         mes_calculado -= 12
         anio_calculado += 1
@@ -102,7 +98,7 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-print(f"Generando calendario interactivo real para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
+print(f"Generando calendario interactivo real con imágenes para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}...")
 
 prompt_lanzamientos = f"""
 Eres un analista experto de la industria de los videojuegos.
@@ -117,7 +113,7 @@ Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
         "titulo": "Nombre del Juego",
         "fecha": "Día exacto",
         "plataformas": "PC, PS5, etc.",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Nombre+Del+Juego",
+        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción de 2 líneas."
       }}
     ],
@@ -126,7 +122,7 @@ Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
         "titulo": "Nombre del Juego Actual",
         "fecha": "Día exacto",
         "plataformas": "PC, Xbox, etc.",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Juego",
+        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción..."
       }}
     ],
@@ -135,14 +131,18 @@ Devuelve ESTRICTAMENTE un archivo JSON con esta estructura exacta:
         "titulo": "Nombre del Juego Futuro",
         "fecha": "Día exacto",
         "plataformas": "Switch, PC, etc.",
-        "imagen": "https://placehold.co/600x400/141419/00f0ff.png?text=Juego",
+        "imagen": "URL_DE_LA_IMAGEN_O_CARATULA",
         "descripcion": "Descripción..."
       }}
     ]
   }}
 }}
-REGLA VITAL PARA LA IMAGEN: Usa EXACTAMENTE el enlace base 'https://placehold.co/600x400/141419/00f0ff.png?text=' y agrégale el nombre del juego al final, cambiando los espacios por signos '+'. Ejemplo: 'https://placehold.co/600x400/141419/00f0ff.png?text=Minecraft'. No inventes otras URLs.
+
+REGLA CRÍTICA PARA EL CAMPO "imagen": 
+Para cada juego que selecciones, busca en tu base de datos o conocimiento y proporciona una URL REAL, directa y válida de su carátula oficial, poster promocional, arte conceptual de alta fidelidad o captura de pantalla (screenshoot) del juego. 
+Asegúrate de que sean enlaces estables de internet (por ejemplo, imágenes procedentes de wikis de videojuegos, servidores oficiales de prensa, tiendas públicas o servicios de imágenes que no caduquen).
 """
+
 try:
     resp_lanzamientos = client.models.generate_content(
         model='gemini-2.5-flash',
@@ -151,6 +151,6 @@ try:
     )
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         f.write(resp_lanzamientos.text)
-    print("¡Éxito! lanzamientos.json sin duplicados creado correctamente.")
+    print("¡Éxito! lanzamientos.json con imágenes reales creado correctamente.")
 except Exception as e:
     print("Error al generar los lanzamientos:", e)
