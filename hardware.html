@@ -40,42 +40,163 @@
         
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
-                Guía de Hardware Automatizada 2026
+                Guía de Hardware 2026
             </span>
             <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mt-4 mb-4">
                 💻 Gadgets & Hardware
             </h1>
             <p class="text-lg text-slate-400">
-                Análisis técnico, pros, contras y precios oficiales comparativos sincronizados de forma directa por el bot.
+                Análisis técnico, especificaciones, pros y contras de las plataformas y portátiles gaming con mejor reputación del ecosistema.
             </p>
         </div>
 
         <section class="mb-16">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-slate-800/60 pb-4">
-                <div class="flex items-center space-x-3">
-                    <div class="h-8 w-1 bg-emerald-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold text-white tracking-tight">Laptops Gaming (Portátiles Tradicionales)</h2>
-                </div>
-                <div class="flex bg-slate-950/60 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
-                    <button onclick="filtrarGama('all')" id="btn-gama-all" class="px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 transition cursor-pointer">Todas</button>
-                    <button onclick="filtrarGama('baja')" id="btn-gama-baja" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Gama Entrada</button>
-                    <button onclick="filtrarGama('media')" id="btn-gama-media" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Gama Media</button>
-                    <button onclick="filtrarGama('alta')" id="btn-gama-alta" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Gama Alta</button>
-                </div>
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="h-8 w-1 bg-cyan-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Plataformas, Ecosistemas y Consolas</h2>
             </div>
             
-            <div id="container-laptops" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-slate-500 text-sm animate-pulse">Sincronizando laptops de alto rendimiento...</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div onclick="showDetails('steam-deck')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">Steam Deck OLED</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Valve</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">La reina de la optimización portátil. Su pantalla OLED y la eficiencia de SteamOS la convierten en la opción más equilibrada.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">Consola Portátil</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('rog-ally-x')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">ROG Ally X</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">ASUS</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">Potencia bruta bajo Windows 11. Corrige los problemas de batería de su predecesora duplicando su capacidad a 80Wh.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">Consola Portátil</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('ps5-pro')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">PlayStation 5 Pro</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Sony</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">Diseñada para jugar a 60FPS estables manteniendo modos de alta fidelidad visual gracias al reescalado por inteligencia artificial PSSR.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">Sobremesa</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('switch-2')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">Nintendo Switch 2</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Nintendo</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">La esperadísima sucesora híbrida incorpora hardware personalizado de Nvidia con soporte DLSS y trazado de rayos avanzado en modo Dock.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">Consola Híbrida</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('ayaneo-3')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">AYANEO 3</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-rose-950/50 text-rose-400 border-rose-900/50 shrink-0">AYANEO</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">El titán de las consolas boutique chinas. Ofrece acabados ultra premium, joysticks magnéticos de efecto Hall y pantallas OLED de gran brillo.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">China Handheld</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('xbox-series-x')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-cyan-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">Xbox Series X (Digital)</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Microsoft</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">El monolito de rendimiento de Microsoft, optimizado por completo para un ecosistema enfocado a Game Pass Ultimate.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                        <span class="font-semibold text-slate-400">Sobremesa</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="mb-16">
-            <div class="flex items-center space-x-3 mb-8">
-                <div class="h-8 w-1 bg-cyan-500 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Plataformas, Ecosistemas y Consolas Híbridas</h2>
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-800/60 pb-4">
+                <div class="h-8 w-1 bg-emerald-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Laptops Gaming Destacadas</h2>
             </div>
-            <div id="container-handhelds" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-slate-500 text-sm animate-pulse">Sincronizando plataformas portátiles...</div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div onclick="showDetails('lenovo-loq-15')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">Lenovo LOQ 15</h3>
+                                <span class="text-[10px] px-2 py-0.5 rounded border font-bold uppercase bg-slate-800 text-slate-400 border-slate-700 mt-1 inline-block">Gama Entrada</span>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Lenovo</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">El nuevo rey de la gama de entrada. Hereda la excelente distribución térmica y teclado de la línea Legion, recortando sutilmente en el chasis.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('rog-strix-g16')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">ROG Strix G16</h3>
+                                <span class="text-[10px] px-2 py-0.5 rounded border font-bold uppercase bg-blue-950/40 text-blue-400 border-blue-900/40 mt-1 inline-block">Gama Media</span>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">ASUS</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">Pura estética eSports. Incorpora refrigeración de tres ventiladores y metal líquido para asegurar tasas de refresco altísimas.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                    </div>
+                </div>
+
+                <div onclick="showDetails('legion-pro-7i')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/50 hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">Legion Pro 7i</h3>
+                                <span class="text-[10px] px-2 py-0.5 rounded border font-bold uppercase bg-amber-950/40 text-amber-400 border-amber-900/40 mt-1 inline-block">Gama Alta</span>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">Lenovo</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">La laptop definitiva para sustituir un ordenador de escritorio. Diseñada para exprimir al máximo el TGP de las tarjetas RTX.</p>
+                    </div>
+                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
+                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -89,106 +210,117 @@
 
     <footer class="bg-slate-950 border-t border-slate-900 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm text-slate-500">
-                &copy; 2026 KazokuGaming. Inteligencia de Mercado Automatizada.
-            </p>
+            <p class="text-sm text-slate-500">&copy; 2026 KazokuGaming. Análisis técnico e independiente de hardware.</p>
         </div>
     </footer>
 
     <script>
-        let hardwareData = {};
-        let gamaActual = 'all';
-
-        async function inicializarCatalogoAutomatizado() {
-            try {
-                // Se genera un timestamp limpio anti-caché sin caracteres corruptos
-                const timestamp = new Date().getTime();
-                const respuesta = await fetch('hardware.json?v=' + timestamp);
-                hardwareData = await respuesta.json();
-                renderizarTarjetas();
-            } catch (error) {
-                console.error("Error al sincronizar con el JSON del bot:", error);
-                document.getElementById('container-laptops').innerHTML = `<div class="text-slate-400 text-sm py-4">Error al cargar datos. Asegúrate de haber ejecutado el script de Python para generar hardware.json.</div>`;
+        const hardwareData = {
+            'steam-deck': {
+                title: 'Steam Deck OLED',
+                brand: 'Valve',
+                desc: 'La madurez de las consolas portátiles de PC. Valve prioriza la optimización y la experiencia de usuario gracias a su sistema operativo dedicado SteamOS.',
+                specs: [
+                    { label: 'Procesador / APU', value: 'AMD Sephiroth custom (6nm Zen 2 + RDNA 2)' },
+                    { label: 'Pantalla', value: '7.4" OLED HDR, 90Hz, 1,000 nits' },
+                    { label: 'Sistema Operativo', value: 'SteamOS (Basado en Linux)' }
+                ],
+                pros: ['Pantalla OLED con contraste infinito.', 'Autonomía líder en su tipo.', 'Ecosistema SteamOS muy fluido.'],
+                contras: ['Menor potencia bruta que competidores.', 'Incompatibilidad con algunos Anti-Cheat de Windows.']
+            },
+            'rog-ally-x': {
+                title: 'ROG Ally X',
+                brand: 'ASUS',
+                desc: 'Evolución directa bajo Windows 11. Soluciona las carencias del modelo anterior duplicando la capacidad de la batería y mejorando la ventilación.',
+                specs: [
+                    { label: 'Procesador / APU', value: 'AMD Ryzen Z1 Extreme (Zen 4)' },
+                    { label: 'Pantalla', value: '7" IPS FHD, 120Hz con VRR' },
+                    { label: 'Batería', value: '80 Wh (Capacidad duplicada)' }
+                ],
+                pros: ['Batería masiva de excelente rendimiento.', '24GB de memoria RAM rápida.', 'Pantalla VRR estable.'],
+                contras: ['Windows 11 requiere configuraciones manuales.', 'Panel IPS en lugar de OLED.']
+            },
+            'ps5-pro': {
+                title: 'PlayStation 5 Pro',
+                brand: 'Sony',
+                desc: 'La revisión enfocada en dar el salto gráfico definitivo a consolas de sobremesa, permitiendo jugar a altas tasas de frames sin perder resolución.',
+                specs: [
+                    { label: 'Tecnología Clave', value: 'PSSR (AI Upscaling) & Ray Tracing Avanzado' },
+                    { label: 'Almacenamiento', value: '2TB Custom NVMe SSD' }
+                ],
+                pros: ['60 FPS estables en modos de alta calidad.', 'El reescalado por IA (PSSR) es sumamente limpio.'],
+                contras: ['Inversión inicial elevada.', 'No incluye lector de discos físico de serie.']
+            },
+            'switch-2': {
+                title: 'Nintendo Switch 2',
+                brand: 'Nintendo',
+                desc: 'La esperada consola híbrida que renueva por completo el catálogo técnico de Nintendo manteniendo la versatilidad portátil.',
+                specs: [
+                    { label: 'Procesador / SoC', value: 'Nvidia Drake T239' },
+                    { label: 'Tecnología Gráfica', value: 'Nvidia DLSS con Ray Reconstruction' }
+                ],
+                pros: ['Retrocompatibilidad física y digital completa.', 'Salto gráfico masivo gracias al DLSS de Nvidia.'],
+                contras: ['Panel inicial LCD para contener costes.', 'Autonomía ajustada bajo cargas complejas.']
+            },
+            'ayaneo-3': {
+                title: 'AYANEO 3',
+                brand: 'AYANEO',
+                desc: 'Consola portátil boutique de origen chino enfocada al mercado entusiasta premium con acabados y joysticks magnéticos de alta gama.',
+                specs: [
+                    { label: 'Procesador', value: 'AMD Ryzen 7 de última generación' },
+                    { label: 'Controles', value: 'Joysticks de Efecto Hall anti-drift' }
+                ],
+                pros: ['Calidad de construcción y materiales impecables.', 'Gatillos y joysticks magnéticos sin desgaste.'],
+                contras: ['Precio elevado de importación.', 'Soporte internacional complejo.']
+            },
+            'xbox-series-x': {
+                title: 'Xbox Series X (Digital)',
+                brand: 'Microsoft',
+                desc: 'La consola tradicional más potente de Microsoft enfocada por completo al mercado digital y las descargas de suscripción.',
+                specs: [
+                    { label: 'Rendimiento', value: '12 Teraflops RDNA 2' },
+                    { label: 'Funciones', value: 'Quick Resume instantáneo' }
+                ],
+                pros: ['Silenciosa incluso bajo estrés.', 'Quick Resume gestiona juegos en suspensión de maravilla.'],
+                contras: ['Dependencia absoluta del ecosistema y tienda digital.']
+            },
+            'lenovo-loq-15': {
+                title: 'Lenovo LOQ 15',
+                brand: 'Lenovo',
+                desc: 'El nuevo estándar económico de Lenovo. Ofrece refrigeración avanzada y la robustez técnica de la línea Legion a coste contenido.',
+                specs: [
+                    { label: 'Gráfica', value: 'NVIDIA GeForce RTX 4050 Laptop' },
+                    { label: 'Pantalla', value: '15.6" FHD IPS, 144Hz' }
+                ],
+                pros: ['Relación calidad-precio indiscutible.', 'Excelente gestión de temperaturas.'],
+                contras: ['Chasis completo de plástico.', 'Batería algo justa.']
+            },
+            'rog-strix-g16': {
+                title: 'ROG Strix G16',
+                brand: 'ASUS',
+                desc: 'Diseñada específicamente para jugadores competitivos de eSports que necesitan exprimir pantallas de altos hercios.',
+                specs: [
+                    { label: 'Procesador', value: 'Intel Core i7 de alto rendimiento' },
+                    { label: 'Gráfica', value: 'NVIDIA GeForce RTX 4060 Laptop' }
+                ],
+                pros: ['Disipación con compuesto térmico de metal líquido.', 'Estética RGB gaming muy cuidada.'],
+                contras: ['Grosor y peso elevados.', 'Estética llamativa no apta para todos.']
+            },
+            'legion-pro-7i': {
+                title: 'Legion Pro 7i',
+                brand: 'Lenovo',
+                desc: 'El buque insignia tradicional para jugar en calidad ultra sin compromisos de potencia gráfica o caídas de rendimiento.',
+                specs: [
+                    { label: 'Procesador', value: 'Intel Core i9 Grado Entusiasta' },
+                    { label: 'Gráfica', value: 'NVIDIA GeForce RTX 4080 (TGP al máximo)' }
+                ],
+                pros: ['Rendimiento extremo sin estrangulamiento térmico.', 'Chasis y acabados de aluminio rígido.'],
+                contras: ['Cargador de corriente de gran tamaño.', 'Autonomía reducida sin conexión a red.']
             }
-        }
+        };
 
-        function renderizarTarjetas() {
-            document.getElementById('container-laptops').innerHTML = '';
-            document.getElementById('container-handhelds').innerHTML = '';
-
-            Object.keys(hardwareData).forEach(id => {
-                const equipo = hardwareData[id];
-                const cat = equipo.category ? equipo.category.toLowerCase().trim() : 'handheld';
-                const tier = equipo.tier ? equipo.tier.toLowerCase().trim() : 'baja';
-
-                if (cat === 'laptop') {
-                    if (gamaActual === 'all' || gamaActual === tier) {
-                        document.getElementById('container-laptops').innerHTML += crearTarjetaHTML(id, equipo);
-                    }
-                } else {
-                    document.getElementById('container-handhelds').innerHTML += crearTarjetaHTML(id, equipo);
-                }
-            });
-
-            // Si el JSON se leyó bien pero la sección laptops quedó vacía, mostramos aviso amigable
-            if (document.getElementById('container-laptops').innerHTML === '') {
-                document.getElementById('container-laptops').innerHTML = `<div class="text-slate-500 text-sm col-span-3 py-4 text-center border border-dashed border-slate-800 rounded-xl">No hay laptops registradas en el JSON actual bajo esta categoría.</div>`;
-            }
-        }
-
-        function filtrarGama(gama) {
-            gamaActual = gama;
-            const botones = ['all', 'baja', 'media', 'alta'];
-            botones.forEach(b => {
-                const btn = document.getElementById(`btn-gama-${b}`);
-                if (btn) {
-                    if (b === gama) {
-                        btn.className = "px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 transition cursor-pointer";
-                    } else {
-                        btn.className = "px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer";
-                    }
-                }
-            });
-            renderizarTarjetas();
-        }
-
-        function crearTarjetaHTML(id, equipo) {
-            let colorBorde = 'hover:border-cyan-500/50';
-            let tierBadge = '';
-
-            if (equipo.category === 'laptop') {
-                colorBorde = 'hover:border-emerald-500/50';
-                const coloresTier = {
-                    'baja': 'bg-slate-800 text-slate-400 border-slate-700',
-                    'media': 'bg-blue-950/40 text-blue-400 border-blue-900/40',
-                    'alta': 'bg-amber-950/40 text-amber-400 border-amber-900/40'
-                };
-                const tierName = equipo.tier === 'baja' ? 'Entrada' : equipo.tier === 'media' ? 'Media' : 'Alta';
-                tierBadge = `<span class="text-[10px] px-2 py-0.5 rounded border font-bold uppercase ${coloresTier[equipo.tier] || coloresTier['baja']}">${tierName}</span>`;
-            }
-
-            return `
-                <div onclick="showDetails('${id}')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm ${colorBorde} hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between animate-fade-in">
-                    <div class="p-6 space-y-4">
-                        <div class="flex justify-between items-start gap-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">${equipo.title}</h3>
-                                <div class="mt-1 flex gap-1.5 items-center">${tierBadge}</div>
-                            </div>
-                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 text-slate-300 border-slate-700 shrink-0">${equipo.brand}</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">${equipo.desc}</p>
-                    </div>
-                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400">
-                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
-                        <span class="font-extrabold text-white text-right">${equipo.priceUS} / ${equipo.priceEU}</span>
-                    </div>
-                </div>
-            `;
-        }
-
-        function showDetails(hardwareId) {
-            const data = hardwareData[hardwareId];
+        function showDetails(id) {
+            const data = hardwareData[id];
             if (!data) return;
 
             let specsHTML = '';
@@ -213,24 +345,12 @@
 
             const template = `
                 <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-6 md:p-10 backdrop-blur-md space-y-8 animate-fade-in">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-800 pb-6">
-                        <div>
-                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 mb-2 inline-block">${data.brand} Hardware</span>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">${data.title}</h2>
-                        </div>
-                        <div class="flex gap-4 md:gap-8 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 w-full lg:w-auto justify-between lg:justify-start">
-                            <div>
-                                <span class="text-[10px] text-slate-500 block font-bold uppercase tracking-wider">🇺🇸 Mercado América</span>
-                                <span class="text-lg font-black text-emerald-400">${data.priceUS}</span>
-                            </div>
-                            <div class="border-l border-slate-800 pl-4">
-                                <span class="text-[10px] text-slate-500 block font-bold uppercase tracking-wider">🇪🇺 Mercado Europa</span>
-                                <span class="text-lg font-black text-cyan-400">${data.priceEU}</span>
-                            </div>
-                        </div>
+                    <div class="border-b border-slate-800 pb-6">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 mb-2 inline-block">${data.brand} Hardware</span>
+                        <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">${data.title}</h2>
                     </div>
                     <div class="space-y-3">
-                        <h4 class="text-sm font-bold tracking-wider uppercase text-slate-400">Análisis Técnico y Contexto</h4>
+                        <h4 class="text-sm font-bold tracking-wider uppercase text-slate-400">Análisis Técnico</h4>
                         <p class="text-slate-300 leading-relaxed text-base">${data.desc}</p>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
@@ -263,8 +383,6 @@
             document.getElementById('catalog-view').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        window.onload = inicializarCatalogoAutomatizado;
     </script>
 </body>
 </html>
