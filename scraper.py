@@ -16,13 +16,24 @@ rawg_key = os.environ.get("RAWG_API_KEY")
 
 if not api_key:
     print("❌ ERROR CRÍTICO: No se encontró GEMINI_API_KEY. Verifica los Secrets de GitHub.")
-    sys.exit(1) # Esto fuerza a GitHub Actions a mostrar error en rojo
+    sys.exit(1)
 
 client = genai.Client(api_key=api_key)
 
 # Variables globales para fechas
 hoy = datetime.now()
 meses_nombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+# ==========================================
+# FILTROS DE SEGURIDAD GLOBALES (CRÍTICO PARA JUEGOS)
+# Evita que la IA se bloquee al leer sobre juegos de acción o shooters
+# ==========================================
+seguridad_permisiva = [
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+    types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+]
 
 # ==========================================
 # TAREA 1: SISTEMA DE NOTICIAS
@@ -53,7 +64,7 @@ for noticia in historial:
         noticias_validas.append(noticia)
         enlaces_guardados.add(noticia.get('enlace', ''))
 
-feed = feedparser.parse("[https://feeds.feedburner.com/ign/games-all](https://feeds.feedburner.com/ign/games-all)")
+feed = feedparser.parse("https://feeds.feedburner.com/ign/games-all")
 nuevas_entradas = [e for e in feed.entries if e.link not in enlaces_guardados][:3]
 noticias_totales = noticias_validas
 
@@ -73,10 +84,12 @@ if nuevas_entradas:
     try:
         response = client.models.generate_content(
             model='gemini-2.5-flash', contents=prompt,
-            config=types.GenerateContentConfig(response_mime_type="application/json")
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                safety_settings=seguridad_permisiva # Añadido filtro
+            )
         )
         
-        # Limpieza de seguridad por si la IA añade markdown
         texto_limpio = response.text.replace('```json', '').replace('```', '').strip()
         noticias_ia = json.loads(texto_limpio).get("nuevas_noticias", [])
         
@@ -102,7 +115,7 @@ if noticias_totales:
 def buscar_portada_juego(titulo_juego):
     if not rawg_key: return ""
     try:
-        url = f"[https://api.rawg.io/api/games?key=](https://api.rawg.io/api/games?key=){rawg_key}&search={titulo_juego}&page_size=1"
+        url = f"https://api.rawg.io/api/games?key={rawg_key}&search={titulo_juego}&page_size=1"
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             data = response.json()
@@ -131,73 +144,82 @@ mes_pasado_str = calcular_mes_exacto(-1)
 mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
 mes_siguiente_str = calcular_mes_exacto(1)
 
-# Estructura de seguridad (Fallback). Si todo explota, se guarda esto para que la web no colapse.
+# Estructura de seguridad (Fallback). 
 estructura_final = {
     "meses_disponibles": [mes_pasado_str, mes_actual_str, mes_siguiente_str],
     "catalogo": { mes_pasado_str: [], mes_actual_str: [], mes_siguiente_str: [] }
 }
 
-print(">> Paso 1: Investigando internet...")
-prompt_busqueda = f"""
-Busca en internet el calendario de lanzamientos de videojuegos confirmados (Día exacto) para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
-Devuelve un listado de juegos indicando: Título, Fecha exacta, Plataformas y Descripción corta. Incluye juegos AAA e Indies. Ignora rumores.
-"""
-
 try:
+    print(">> Paso 1: Investigando internet (Búsqueda Libre)...")
+    prompt_busqueda = f"""
+    Investiga en sitios de videojuegos los lanzamientos confirmados para: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
+    Haz una lista clara con: Mes correspondiente, Título del juego, Fecha exacta, Plataformas y Descripción breve en español.
+    """
     respuesta_busqueda = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_busqueda,
-        config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
+        config=types.GenerateContentConfig(
+            tools=[types.Tool(google_search=types.GoogleSearch())],
+            safety_settings=seguridad_permisiva # Añadido filtro
+        )
     )
     
-    time.sleep(2) # Pausa obligatoria para no saturar la API
-    print(">> Paso 2: Estructurando JSON...")
+    texto_investigacion = respuesta_busqueda.text
+    print("✅ Búsqueda exitosa. Transformando a JSON...")
     
+    time.sleep(2) 
+    
+    print(">> Paso 2: Estructurando los datos encontrados...")
     prompt_estructurar = f"""
-    Convierte esta información en JSON:
-    {respuesta_busqueda.text}
+    Convierte la siguiente información en un objeto JSON estricto:
+    {texto_investigacion}
     
-    Formato EXACTO:
+    Formato EXACTO y OBLIGATORIO:
     {{
       "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
       "catalogo": {{
-        "{mes_pasado_str}": [ {{"titulo": "A", "fecha": "12 de X", "plataformas": "PC", "descripcion": "..."}} ],
-        "{mes_actual_str}": [],
+        "{mes_pasado_str}": [ {{"titulo": "Juego A", "fecha": "12 de X", "plataformas": "PC", "descripcion": "..."}} ],
+        "{mes_actual_str}": [ {{"titulo": "Juego B", "fecha": "15 de Y", "plataformas": "PS5", "descripcion": "..."}} ],
         "{mes_siguiente_str}": []
       }}
     }}
     """
-
     respuesta_json = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt_estructurar,
-        config=types.GenerateContentConfig(response_mime_type="application/json")
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            safety_settings=seguridad_permisiva # Añadido filtro
+        )
     )
     
-    # LIMPIEZA EXTREMA: Quitamos backticks (```) por si Gemini los devuelve ignorando el mime_type
     texto_json_limpio = respuesta_json.text.replace('```json', '').replace('```', '').strip()
     datos_extraidos = json.loads(texto_json_limpio)
     
-    # Si todo fue bien, sobreescribimos la estructura de emergencia con los datos reales
     if "catalogo" in datos_extraidos:
         estructura_final = datos_extraidos
+        print("✅ JSON estructurado correctamente.")
+        
         print(">> Paso 3: Sincronizando portadas de RAWG...")
         for mes in estructura_final.get("meses_disponibles", []):
             juegos_del_mes = estructura_final.get("catalogo", {}).get(mes, [])
             for juego in juegos_del_mes:
                 juego["imagen"] = buscar_portada_juego(juego.get("titulo", ""))
-                time.sleep(0.2) # Pausa RAWG
+                time.sleep(0.2)
+        print("✅ Imágenes sincronizadas.")
 
 except Exception as e:
-    print(f"⚠️ Hubo un error procesando los lanzamientos ({e}). Se guardará un catálogo vacío de prevención.")
+    print(f"⚠️ ERROR DETECTADO EN LANZAMIENTOS: {e}")
+    print("Se usará la estructura vacía de emergencia.")
 
-# GARANTÍA TOTAL: Esto se ejecuta SÍ O SÍ pase lo que pase, creando el archivo.
+# Escribir en disco
 try:
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-    print("✅ lanzamientos.json creado con éxito y guardado en disco.")
+    print("\n✅ lanzamientos.json guardado en disco con éxito.")
 except Exception as e:
-    print("❌ ERROR FATAL AL ESCRIBIR EN DISCO:", e)
+    print("\n❌ ERROR FATAL AL ESCRIBIR EN DISCO:", e)
     sys.exit(1)
 
 print("=== KAZOKUBOT FINALIZADO CORRECTAMENTE ===")
