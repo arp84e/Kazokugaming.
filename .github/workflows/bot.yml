@@ -21,14 +21,16 @@ jobs:
     - name: 2. Preparar el servidor Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12' # ¡Actualizado a Python 3.12!
+        python-version: '3.12'
 
     - name: 3. Instalar herramientas
-      run: pip install feedparser google-genai # ¡Actualizado al nuevo paquete de Google!
+      # Se agrega 'requests' para permitir la comunicación con la API de RAWG
+      run: pip install feedparser google-genai requests
 
-    - name: 4. Despertar a KazokuBot (Ejecutar IA)
+    - name: 4. Despertar a KazokuBot (Ejecutar IA e Imágenes)
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }} # Mapeo de tu nueva API Key de imágenes
       run: python scraper.py
 
     - name: 5. Publicar en la revista (Guardar cambios)
@@ -36,5 +38,5 @@ jobs:
         git config --global user.name 'KazokuBot'
         git config --global user.email 'bot@kazokugaming.com'
         git add .
-        git commit -m "🤖 Actualización automática de noticias" || echo "No hay noticias nuevas"
+        git commit -m "🤖 Actualización automática de contenido e imágenes" || echo "No hay cambios nuevos que guardar"
         git push
