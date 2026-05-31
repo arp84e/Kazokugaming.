@@ -210,10 +210,21 @@ for juego in juegos_manuales:
                 safety_settings=seguridad_permisiva
             )
         )
-        texto_limpio = respuesta_ia.text.replace('```json', '').replace('```', '').strip()
-        datos_ia = json.loads(texto_limpio)
+        
+        texto_crudo = respuesta_ia.text
+        
+        # Método robusto: Busca exactamente dónde empieza y termina el diccionario JSON
+        inicio = texto_crudo.find('{')
+        fin = texto_crudo.rfind('}') + 1
+        
+        if inicio != -1 and fin > 0:
+            texto_json = texto_crudo[inicio:fin]
+            datos_ia = json.loads(texto_json)
+        else:
+            print(f"⚠️ El texto devuelto no contenía un formato JSON válido.")
+            
     except Exception as e:
-        print(f"⚠️ Error con la IA para {titulo}: {e}")
+        print(f"⚠️ Error al procesar la respuesta para {titulo}: {e}")
 
     # Buscar la carátula oficial
     imagen_url = buscar_portada_juego(titulo)
