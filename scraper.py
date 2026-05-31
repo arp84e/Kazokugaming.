@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import re
 from datetime import datetime, timedelta
 import feedparser
 import requests
@@ -198,7 +199,7 @@ for juego in juegos_manuales:
         "requisitos": {"minimos": [], "recomendados": []}
     }
     
-    try:
+try:
         respuesta_ia = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt_telemetria,
@@ -208,23 +209,22 @@ for juego in juegos_manuales:
             )
         )
         
-        # Limpieza extrema de Markdown por si la IA se equivoca
-        texto = respuesta_ia.text.strip()
-        if texto.startswith("
-```json"):
-            texto = texto[7:]
-        if texto.startswith("```"):
-            texto = texto[3:]
-        if texto.endswith("
-```"):
-            texto = texto[:-3]
-            
-        texto = texto.strip()
-        datos_ia = json.loads(texto)
-        print(f"   [+] Análisis de IA generado correctamente.")
+        texto_crudo = respuesta_ia.text
         
+        # MÉTODO BLINDADO: Buscar solo el diccionario JSON usando Regex
+        # Esto escanea todo el texto y extrae estrictamente lo que hay entre { y }
+        match = re.search(r'\{.*\}', texto_crudo, re.DOTALL)
+        
+        if match:
+            texto_json = match.group(0)
+            datos_ia = json.loads(texto_json)
+            print(f"   [+] Análisis extraído y procesado con éxito.")
+        else:
+            print(f"   [!] La IA no devolvió un formato reconocible.")
+            print(f"   [Debug Texto Crudo]: {texto_crudo}")
+            
     except Exception as e:
-        print(f"   [!] Error con la IA para {titulo}. Detalle: {e}")
+        print(f"   [!] Error técnico al procesar {titulo}: {e}")
 
     # Buscar la carátula oficial
     imagen_url = buscar_portada_juego(titulo)
