@@ -134,12 +134,12 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO MANUAL CON IA EDITORIAL)
+# TAREA 2: SISTEMA DE TELEMETRÍA (ANÁLISIS DE JUEGOS)
 # ==========================================
-print("\n--- EJECUTANDO TAREA 2: LANZAMIENTOS (MODO MANUAL) ---")
+print("\n--- EJECUTANDO TAREA 2: TELEMETRÍA (ANÁLISIS MANUAL) ---")
 
-# 🎮 1. TU LISTA PERSONALIZADA DE JUEGOS
-# Edita esta lista añadiendo, quitando o modificando los juegos que quieras que aparezcan.
+# 🎮 TU LISTA PERSONALIZADA DE JUEGOS
+# Puedes añadir o quitar juegos aquí. El script se encarga del resto.
 juegos_manuales = [
     {"titulo": "007 First Light", "fecha": "27 de mayo de 2026", "plataformas": "PS5, PC, Xbox Series X/S"},
   {"titulo": "Forza Horizon 6", "fecha": "19 de mayo de 2026", "plataformas": "PC, Xbox Series X/S"},
@@ -168,63 +168,76 @@ juegos_manuales = [
   {"titulo": "Elden Ring", "fecha": "25 de febrero de 2022", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One"}
 ]
 
-# Creamos una única categoría para que tu archivo lanzamientos.html siga funcionando bien
-categoria_unica = "Selección KazokuGaming"
 estructura_final = {
-    "meses_disponibles": [categoria_unica],
-    "catalogo": { categoria_unica: [] }
+    "juegos": []
 }
 
-print(f">> Procesando {len(juegos_manuales)} juegos de la lista manual...")
+print(f">> Procesando {len(juegos_manuales)} títulos en Telemetría...")
 
-# 2. PROCESAR CADA JUEGO CON LA IA Y BUSCAR SU PORTADA
 for juego in juegos_manuales:
     titulo = juego["titulo"]
-    print(f"-> Analizando y redactando sinopsis para: {titulo}...")
+    print(f"-> Analizando hardware y redactando datos para: {titulo}...")
     
-    # Prompt para forzar a la IA a escribir algo original y sin copyright
-    prompt_sinopsis = f"""Eres el redactor principal de KazokuGaming, enfocado en el rendimiento técnico y la jugabilidad de PC y consolas. 
-    Tu tarea es escribir una sinopsis COMPLETAMENTE NUEVA y ORIGINAL para el videojuego '{titulo}'.
+    # Prompt avanzado para estructurar la sinopsis y requisitos de PC
+    prompt_telemetria = f"""Eres el analista técnico principal de KazokuGaming.
+    Genera un análisis original para el videojuego '{titulo}' en formato JSON.
     
-    Reglas estrictas:
-    1. NO copies textos de Wikipedia, tiendas ni otros medios. Escríbelo con tus propias palabras desde cero.
-    2. Mantén un estilo directo, entusiasta e informativo. Si conoces el juego, menciona aspectos como su motor gráfico, sus mecánicas clave o lo que espera la comunidad.
-    3. Escribe un único párrafo contundente (entre 3 y 5 líneas), ideal para una tarjeta de catálogo.
-    4. No incluyas saludos ni notas, devuelve únicamente la sinopsis redactada.
+    Reglas de contenido:
+    1. 'sinopsis': Redacta un párrafo original (4-5 líneas) con estilo directo y técnico enfocado en mecánicas y motor gráfico. No copies de otras webs.
+    2. 'requisitos': Si el juego está disponible en PC (revisa las plataformas: {juego['plataformas']}), investiga o estima de forma realista sus requisitos técnicos. Si NO está en PC, deja los campos vacíos "".
+    
+    Devuelve estrictamente un JSON con esta estructura (sin textos adicionales):
+    {{
+      "sinopsis": "Texto del análisis aquí...",
+      "requisitos": {{
+        "minimos": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."],
+        "recomendados": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."]
+      }}
+    }}
     """
     
-    descripcion_ia = "Sinopsis no disponible en este momento."
+    datos_ia = {
+        "sinopsis": "Análisis técnico en desarrollo.",
+        "requisitos": {"minimos": [], "recomendados": []}
+    }
+    
     try:
-        # Pedimos a Gemini que redacte la sinopsis
         respuesta_ia = client.models.generate_content(
             model='gemini-2.5-flash',
-            contents=prompt_sinopsis,
-            config=types.GenerateContentConfig(safety_settings=seguridad_permisiva)
+            contents=prompt_telemetria,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                safety_settings=seguridad_permisiva
+            )
         )
-        descripcion_ia = respuesta_ia.text.strip()
+        texto_limpio = respuesta_ia.text.replace('```json', '').replace('```', '').strip()
+        datos_ia = json.loads(texto_limpio)
     except Exception as e:
-        print(f"⚠️ Error generando sinopsis para {titulo}: {e}")
+        print(f"⚠️ Error con la IA para {titulo}: {e}")
 
-    # Buscar la imagen oficial usando tu función de RAWG
+    # Buscar la carátula oficial
     imagen_url = buscar_portada_juego(titulo)
-    time.sleep(0.5) # Pequeña pausa para no saturar la API de imágenes
+    time.sleep(0.5)
     
-    # Añadir el juego procesado a la estructura JSON
-    estructura_final["catalogo"][categoria_unica].append({
+    # Guardamos el juego con una ID limpia basada en el título para las URLs
+    id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
+
+    estructura_final["juegos"].append({
+        "id": id_juego,
         "titulo": titulo,
         "fecha": juego["fecha"],
-        "plataformas": juego.get("plataformas", "Multiplataforma"),
-        "descripcion": descripcion_ia,
+        "plataformas": juego["plataformas"],
+        "sinopsis": datos_ia.get("sinopsis", ""),
+        "requisitos": datos_ia.get("requisitos", {"minimos": [], "recomendados": []}),
         "imagen": imagen_url
     })
 
-# 3. GUARDAR LOS DATOS EN EL ARCHIVO JSON
+# Guardar en el JSON
 try:
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-    print("\n✅ lanzamientos.json guardado en disco con éxito (Modo Manual y Original).")
+    print("\n✅ Base de datos de Telemetría (lanzamientos.json) actualizada correctamente.")
 except Exception as e:
-    print("\n❌ ERROR FATAL AL ESCRIBIR EN DISCO:", e)
-    sys.exit(1)
+    print("\n❌ Error escribiendo lanzamientos.json:", e)
 
-print("=== KAZOKUBOT FINALIZADO CORRECTAMENTE ===")
+print("=== KAZOKUBOT FINALIZADO CORRECATMENTE ===")
