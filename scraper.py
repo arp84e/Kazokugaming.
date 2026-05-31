@@ -134,114 +134,74 @@ def buscar_portada_juego(titulo_juego):
 
 
 # ==========================================
-# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO BLINDADO + DOBLE INTENTO)
+# TAREA 2: SISTEMA DE LANZAMIENTOS (MÉTODO MANUAL CON IA EDITORIAL)
 # ==========================================
-print("\n--- EJECUTANDO TAREA 2: LANZAMIENTOS ---")
+print("\n--- EJECUTANDO TAREA 2: LANZAMIENTOS (MODO MANUAL) ---")
 
-def calcular_mes_exacto(offset):
-    mes_calculado = hoy.month + offset
-    anio_calculado = hoy.year
-    while mes_calculado < 1:
-        mes_calculado += 12
-        anio_calculado -= 1
-    while mes_calculado > 12:
-        mes_calculado -= 12
-        anio_calculado += 1
-    return f"{meses_nombres[mes_calculado - 1]} {anio_calculado}"
+# 🎮 1. TU LISTA PERSONALIZADA DE JUEGOS
+# Edita esta lista añadiendo, quitando o modificando los juegos que quieras que aparezcan.
+juegos_manuales = [
+    {"titulo": "Hollow Knight: Silksong", "fecha": "Por confirmar", "plataformas": "PC, Switch, Xbox, PS5"},
+    {"titulo": "Grand Theft Auto VI", "fecha": "Otoño 2025", "plataformas": "PS5, Xbox Series X/S"},
+    {"titulo": "DOOM: The Dark Ages", "fecha": "2025", "plataformas": "PC, PS5, Xbox Series X/S"},
+    {"titulo": "Metal Gear Solid Delta: Snake Eater", "fecha": "2024 / 2025", "plataformas": "PC, PS5, Xbox"}
+]
 
-mes_pasado_str = calcular_mes_exacto(-1)
-mes_actual_str = f"{meses_nombres[hoy.month - 1]} {hoy.year}"
-mes_siguiente_str = calcular_mes_exacto(1)
-
-# Estructura de seguridad (Fallback). 
+# Creamos una única categoría para que tu archivo lanzamientos.html siga funcionando bien
+categoria_unica = "Selección KazokuGaming"
 estructura_final = {
-    "meses_disponibles": [mes_pasado_str, mes_actual_str, mes_siguiente_str],
-    "catalogo": { mes_pasado_str: [], mes_actual_str: [], mes_siguiente_str: [] }
+    "meses_disponibles": [categoria_unica],
+    "catalogo": { categoria_unica: [] }
 }
 
-try:
-    print(">> Paso 1: Buscando información de lanzamientos...")
-    # Flexibilizamos el prompt para que NO devuelva listas vacías
-    prompt_busqueda = f"""
-    Haz una lista exhaustiva de los lanzamientos de videojuegos más importantes para estos meses: {mes_pasado_str}, {mes_actual_str} y {mes_siguiente_str}.
-    Reglas:
-    1. Incluye tanto juegos Triple A como juegos Indies destacados.
-    2. ¡OBLIGATORIO! Si un juego importante se lanza ese mes pero no tiene el día exacto confirmado, pon "Por confirmar" en la fecha, PERO INCLÚYELO EN LA LISTA. No dejes ningún mes vacío.
+print(f">> Procesando {len(juegos_manuales)} juegos de la lista manual...")
+
+# 2. PROCESAR CADA JUEGO CON LA IA Y BUSCAR SU PORTADA
+for juego in juegos_manuales:
+    titulo = juego["titulo"]
+    print(f"-> Analizando y redactando sinopsis para: {titulo}...")
+    
+    # Prompt para forzar a la IA a escribir algo original y sin copyright
+    prompt_sinopsis = f"""Eres el redactor principal de KazokuGaming, enfocado en el rendimiento técnico y la jugabilidad de PC y consolas. 
+    Tu tarea es escribir una sinopsis COMPLETAMENTE NUEVA y ORIGINAL para el videojuego '{titulo}'.
+    
+    Reglas estrictas:
+    1. NO copies textos de Wikipedia, tiendas ni otros medios. Escríbelo con tus propias palabras desde cero.
+    2. Mantén un estilo directo, entusiasta e informativo. Si conoces el juego, menciona aspectos como su motor gráfico, sus mecánicas clave o lo que espera la comunidad.
+    3. Escribe un único párrafo contundente (entre 3 y 5 líneas), ideal para una tarjeta de catálogo.
+    4. No incluyas saludos ni notas, devuelve únicamente la sinopsis redactada.
     """
     
+    descripcion_ia = "Sinopsis no disponible en este momento."
     try:
-        # Intento A: Con búsqueda en Internet en tiempo real
-        respuesta_busqueda = client.models.generate_content(
+        # Pedimos a Gemini que redacte la sinopsis
+        respuesta_ia = client.models.generate_content(
             model='gemini-2.5-flash',
-            contents=prompt_busqueda,
-            config=types.GenerateContentConfig(
-                tools=[types.Tool(google_search=types.GoogleSearch())],
-                safety_settings=seguridad_permisiva
-            )
-        )
-        print("✅ Búsqueda web completada.")
-    except Exception as e_search:
-        # Intento B: Si la búsqueda web falla por restricciones de la API, usa la base de datos interna de Gemini
-        print(f"⚠️ La búsqueda web falló o está restringida en tu API Key: {e_search}")
-        print(">> Intentando método alternativo (Memoria interna de la IA)...")
-        respuesta_busqueda = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt_busqueda,
+            contents=prompt_sinopsis,
             config=types.GenerateContentConfig(safety_settings=seguridad_permisiva)
         )
-        print("✅ Búsqueda interna completada.")
-    
-    texto_investigacion = respuesta_busqueda.text
-    time.sleep(2) 
-    
-    print(">> Paso 2: Estructurando los datos a JSON...")
-    prompt_estructurar = f"""
-    Convierte la siguiente información en un objeto JSON estricto:
-    {texto_investigacion}
-    
-    Formato EXACTO y OBLIGATORIO:
-    {{
-      "meses_disponibles": ["{mes_pasado_str}", "{mes_actual_str}", "{mes_siguiente_str}"],
-      "catalogo": {{
-        "{mes_pasado_str}": [ {{"titulo": "Juego A", "fecha": "12 de X", "plataformas": "PC", "descripcion": "..."}} ],
-        "{mes_actual_str}": [ {{"titulo": "Juego B", "fecha": "Por confirmar", "plataformas": "PS5", "descripcion": "..."}} ],
-        "{mes_siguiente_str}": []
-      }}
-    }}
-    """
-    respuesta_json = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=prompt_estructurar,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            safety_settings=seguridad_permisiva
-        )
-    )
-    
-    texto_json_limpio = respuesta_json.text.replace('```json', '').replace('```', '').strip()
-    datos_extraidos = json.loads(texto_json_limpio)
-    
-    if "catalogo" in datos_extraidos:
-        estructura_final = datos_extraidos
-        print("✅ JSON estructurado correctamente.")
-        
-        print(">> Paso 3: Sincronizando portadas de RAWG...")
-        for mes in estructura_final.get("meses_disponibles", []):
-            juegos_del_mes = estructura_final.get("catalogo", {}).get(mes, [])
-            for juego in juegos_del_mes:
-                juego["imagen"] = buscar_portada_juego(juego.get("titulo", ""))
-                time.sleep(0.25)
-        print("✅ Imágenes sincronizadas.")
+        descripcion_ia = respuesta_ia.text.strip()
+    except Exception as e:
+        print(f"⚠️ Error generando sinopsis para {titulo}: {e}")
 
-except Exception as e:
-    print(f"⚠️ ERROR DETECTADO EN EL PROCESO GLOBAL: {e}")
-    print("Se usará la estructura vacía de emergencia.")
+    # Buscar la imagen oficial usando tu función de RAWG
+    imagen_url = buscar_portada_juego(titulo)
+    time.sleep(0.5) # Pequeña pausa para no saturar la API de imágenes
+    
+    # Añadir el juego procesado a la estructura JSON
+    estructura_final["catalogo"][categoria_unica].append({
+        "titulo": titulo,
+        "fecha": juego["fecha"],
+        "plataformas": juego.get("plataformas", "Multiplataforma"),
+        "descripcion": descripcion_ia,
+        "imagen": imagen_url
+    })
 
-# Escribir en disco
+# 3. GUARDAR LOS DATOS EN EL ARCHIVO JSON
 try:
     with open('lanzamientos.json', 'w', encoding='utf-8') as f:
         json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-    print("\n✅ lanzamientos.json guardado en disco con éxito.")
+    print("\n✅ lanzamientos.json guardado en disco con éxito (Modo Manual y Original).")
 except Exception as e:
     print("\n❌ ERROR FATAL AL ESCRIBIR EN DISCO:", e)
     sys.exit(1)
