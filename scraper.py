@@ -178,17 +178,14 @@ for juego in juegos_manuales:
     titulo = juego["titulo"]
     print(f"-> Analizando hardware y redactando datos para: {titulo}...")
     
-    # Prompt avanzado para estructurar la sinopsis y requisitos de PC
+    # Prompt estricto
     prompt_telemetria = f"""Eres el analista técnico principal de KazokuGaming.
-    Genera un análisis original para el videojuego '{titulo}' en formato JSON.
+    Analiza el juego '{titulo}'.
+    Devuelve ÚNICAMENTE un JSON válido. NO uses bloques de código markdown (```json). NO agregues texto extra.
     
-    Reglas de contenido:
-    1. 'sinopsis': Redacta un párrafo original (4-5 líneas) con estilo directo y técnico enfocado en mecánicas y motor gráfico. No copies de otras webs.
-    2. 'requisitos': Si el juego está disponible en PC (revisa las plataformas: {juego['plataformas']}), investiga o estima de forma realista sus requisitos técnicos. Si NO está en PC, deja los campos vacíos "".
-    
-    Devuelve estrictamente un JSON con esta estructura (sin textos adicionales):
+    Estructura OBLIGATORIA:
     {{
-      "sinopsis": "Texto del análisis aquí...",
+      "sinopsis": "Un párrafo técnico y original (4-5 líneas) sobre el motor gráfico y mecánicas.",
       "requisitos": {{
         "minimos": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."],
         "recomendados": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."]
@@ -211,26 +208,28 @@ for juego in juegos_manuales:
             )
         )
         
-        texto_crudo = respuesta_ia.text
-        
-        # Método robusto: Busca exactamente dónde empieza y termina el diccionario JSON
-        inicio = texto_crudo.find('{')
-        fin = texto_crudo.rfind('}') + 1
-        
-        if inicio != -1 and fin > 0:
-            texto_json = texto_crudo[inicio:fin]
-            datos_ia = json.loads(texto_json)
-        else:
-            print(f"⚠️ El texto devuelto no contenía un formato JSON válido.")
+        # Limpieza extrema de Markdown por si la IA se equivoca
+        texto = respuesta_ia.text.strip()
+        if texto.startswith("
+```json"):
+            texto = texto[7:]
+        if texto.startswith("```"):
+            texto = texto[3:]
+        if texto.endswith("
+```"):
+            texto = texto[:-3]
             
+        texto = texto.strip()
+        datos_ia = json.loads(texto)
+        print(f"   [+] Análisis de IA generado correctamente.")
+        
     except Exception as e:
-        print(f"⚠️ Error al procesar la respuesta para {titulo}: {e}")
+        print(f"   [!] Error con la IA para {titulo}. Detalle: {e}")
 
     # Buscar la carátula oficial
     imagen_url = buscar_portada_juego(titulo)
-    time.sleep(0.5)
     
-    # Guardamos el juego con una ID limpia basada en el título para las URLs
+    # ID limpia
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
 
     estructura_final["juegos"].append({
@@ -238,10 +237,14 @@ for juego in juegos_manuales:
         "titulo": titulo,
         "fecha": juego["fecha"],
         "plataformas": juego["plataformas"],
-        "sinopsis": datos_ia.get("sinopsis", ""),
+        "sinopsis": datos_ia.get("sinopsis", "Análisis técnico en desarrollo."),
         "requisitos": datos_ia.get("requisitos", {"minimos": [], "recomendados": []}),
         "imagen": imagen_url
     })
+    
+    # 🚨 CRÍTICO: Pausa de 5 segundos para evitar que la API de Google bloquee el bot por saturación
+    print("   ... Pausa de seguridad (5s) ...")
+    time.sleep(5)
 
 # Guardar en el JSON
 try:
