@@ -53,7 +53,7 @@
       "titulo": "Animal Crossing: New Horizons (Versión mejorada)",
       "fecha": "15 de enero de 2026",
       "plataformas": "Nintendo Switch",
-      "sinopsis": "Animal Crossing: New Horizons (Versión mejorada) implementa un motor de juego propietario diseñado para una simulación de vida persistente, facilitando mecánicas de terraformación extensivas y un profundo sistema de crafteo para la personalización insular. El renderizado gráfico utiliza un pipeline estilizado con iluminación global y oclusión ambiental que eleva su estética cell-shaded, optimizado para mantener un rendimiento estable de 30 FPS en resolución dinámica. Sus características clave incluyen ciclos de tiempo real sincronizados, una IA de personajes no jugables con rutinas dinámicas, y un sistema económico robusto basado en la recolección, comercialización y expansión de infraestructura.",
+      "sinopsis": "Análisis técnico en desarrollo.",
       "requisitos": {
         "minimos": [],
         "recomendados": []
