@@ -7,32 +7,46 @@
   "catalogo": {
     "Abril 2026": [
       {
-        "titulo": "Darwin's Paradox",
-        "fecha": "2 de abril",
-        "plataformas": "PS5, Xbox Series X|S, Switch 2, PC",
+        "titulo": "Goat Simulator 3",
+        "fecha": "1 de abril",
+        "plataformas": "PC, PS5, Xbox Series, Switch, PS4, Xbox One, Switch 2",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/a84/a84195a150cebe9b3c3e5ba71a143587_gBi0e1c.jpg"
+        "imagen": "https://media.rawg.io/media/games/936/936627d24f7864a00adf3156b41ff314.jpg"
+      },
+      {
+        "titulo": "Content Warning",
+        "fecha": "1 de abril",
+        "plataformas": "PC, Switch, Switch 2, PS5, Xbox One, Xbox Series",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/4b7/4b7716ece99ad9d65747f580c0399237.jpg"
+      },
+      {
+        "titulo": "Darwin's Paradox!",
+        "fecha": "2 de abril",
+        "plataformas": "PC, Switch 2, PS5, Xbox Series",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/031/031e8772e923401b26fa25d73d7cde78.jpg"
       },
       {
         "titulo": "Fishbowl",
         "fecha": "2 de abril",
-        "plataformas": "PC, Mac, PS5",
+        "plataformas": "PC, PS5",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/e8f/e8f0964a9ab87f9a308539ffb1b40f4f.jpg"
       },
       {
         "titulo": "People of Note",
         "fecha": "7 de abril",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series X/S",
+        "plataformas": "PC, PS5, Switch 2, Xbox Series",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/335/335d372799451b3ef5312c9dc532702a.jpg"
       },
       {
-        "titulo": "Sigma Star Saga DX",
+        "titulo": "Sea of Stars",
         "fecha": "7 de abril",
-        "plataformas": "PC, PS5, Switch",
+        "plataformas": "Smartphones",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/cf3/cf39c637f18800b6d3f65d640a8ebbaa.jpg"
+        "imagen": "https://media.rawg.io/media/games/1de/1de8ff69ed31d7a47d4f7770f23f20b8.jpg"
       },
       {
         "titulo": "Starfield",
@@ -42,46 +56,109 @@
         "imagen": "https://media.rawg.io/media/games/ba8/ba82c971336adfd290e4c0eab6504fcf.jpg"
       },
       {
+        "titulo": "The Occultist",
+        "fecha": "8 de abril",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/070/070a9713c2f1700f93c279bce422fca5.jpg"
+      },
+      {
         "titulo": "Pokémon Champions",
         "fecha": "8 de abril",
-        "plataformas": "Switch, Switch 2, iOS, Android",
+        "plataformas": "Switch",
         "descripcion": "",
         "imagen": null
       },
       {
+        "titulo": "Samson: A Tyndalston Story",
+        "fecha": "8 de abril",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/9c5/9c551139a785b9763f8f2f557455a284.jpg"
+      },
+      {
+        "titulo": "Dosa Divas",
+        "fecha": "13 de abril",
+        "plataformas": "PC, PS, Switch 1 & 2, Xbox",
+        "descripcion": "",
+        "imagen": null
+      },
+      {
+        "titulo": "Moves of the Diamond Hand",
+        "fecha": "13 de abril",
+        "plataformas": "PC",
+        "descripcion": "Acceso anticipado",
+        "imagen": "https://media.rawg.io/media/screenshots/1ef/1ef455141543c9e27ef0856a68a52b48.jpg"
+      },
+      {
+        "titulo": "REPLACED",
+        "fecha": "14 de abril",
+        "plataformas": "PC, Xbox",
+        "descripcion": "Game Pass",
+        "imagen": "https://media.rawg.io/media/games/041/041e04184322bc859d617b790d8bfab9.jpg"
+      },
+      {
+        "titulo": "Tomodachi Life: Una vida de ensueño",
+        "fecha": "16 de abril",
+        "plataformas": "Nintendo Switch",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/fe7/fe72e2220837173418883fc68bb45040.jpg"
+      },
+      {
+        "titulo": "Mouse: P.I. For Hire",
+        "fecha": "16 de abril",
+        "plataformas": "PS5, Xbox, Switch 2, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/cf1/cf13436dea02745b8844d98bfa887740.jpg"
+      },
+      {
+        "titulo": "OPUS: Prism Peak",
+        "fecha": "16 de abril",
+        "plataformas": "PC, Switch, Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/dfa/dfaff35ff0018dae78189fef51d9935d.jpg"
+      },
+      {
         "titulo": "Pragmata",
         "fecha": "17 de abril",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch 2",
+        "plataformas": "PS5, Xbox Series, PC, Switch 2",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg"
       },
       {
-        "titulo": "Vampire Crawlers: The Turbo Wildcard from Vampire Survivors",
-        "fecha": "21 de abril",
-        "plataformas": "PC, PS5, Xbox Series X/S, NS",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/6b5/6b5a355ef64beb8697ab6162eb462aff.jpg"
-      },
-      {
         "titulo": "Outbound",
         "fecha": "23 de abril",
-        "plataformas": "PS5, Xbox Series X|S, Switch, PC",
+        "plataformas": "PC, PS5, Xbox Series, Switch, Switch 2",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/851/851cf64d1e55bc8f98e617bc38d7f5f2.jpg"
       },
       {
+        "titulo": "Kingdom's Return",
+        "fecha": "23 de abril",
+        "plataformas": "PC, PS5, Xbox, Switch, Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/95c/95cd92bbcb60c75cb5ccebafc3f2f5a4.jpg"
+      },
+      {
         "titulo": "Diablo IV: Lord of Hatred",
         "fecha": "28 de abril",
-        "plataformas": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "plataformas": "PS5, PS4, Xbox, PC",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/525/52577395aba84652f16e68e9541d38d7.jpg"
       },
       {
-        "titulo": "Invincible VS",
-        "fecha": "30 de abril",
-        "plataformas": "PC, PS5, Xbox Series X/S",
+        "titulo": "Neverness to Everness",
+        "fecha": "29 de abril",
+        "plataformas": "PC, PS5, iOS, Android",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/fdf/fdfec2a343d751fec655f551146976cb.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/ece/ece3b4d7546e3aaf12e164e5d2059c97.jpg"
+      },
+      {
+        "titulo": "MotoGP 26",
+        "fecha": "29 de abril",
+        "plataformas": "PS5, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/098/0980ef4a7af2c3cc368ae9bfad3fc112.jpg"
       },
       {
         "titulo": "Saros",
@@ -91,27 +168,111 @@
         "imagen": "https://media.rawg.io/media/games/be8/be86ee5cf3a427c784efec1661f9b194.jpg"
       },
       {
+        "titulo": "Invincible VS",
+        "fecha": "30 de abril",
+        "plataformas": "PC, PS5, Xbox Series",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/fdf/fdfec2a343d751fec655f551146976cb.jpg"
+      },
+      {
         "titulo": "inKONBINI: One Store. Many Stories",
         "fecha": "30 de abril",
-        "plataformas": "Xbox Series X, Switch 2, PC, PS5, Switch",
+        "plataformas": "Xbox Series, Switch 2, PC, PS5, Switch",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/a24/a24a8acc39da3c992cbe9fb33a36dfd5.jpg"
       }
     ],
     "Mayo 2026": [
       {
-        "titulo": "Dead as Disco",
-        "fecha": "5 de mayo",
+        "titulo": "Lollipop Chainsaw RePOP",
+        "fecha": "1 de mayo",
+        "plataformas": "PC, Switch, PS5, Xbox Series, PS4, Xbox One, Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/aaf/aaf67ae494cb1947bdb25f79111c4270.jpg"
+      },
+      {
+        "titulo": "Stray",
+        "fecha": "1 de mayo",
+        "plataformas": "PC, PS4, PS5, Xbox One, Xbox Series, Switch, Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/cd3/cd3c9c7d3e95cb1608fd6250f1b90b7a.jpg"
+      },
+      {
+        "titulo": "Call of the Elder Gods",
+        "fecha": "1 de mayo",
+        "plataformas": "PC, Switch 2, PS5, Xbox Series",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/a59/a59693f3a6250d80feda4912aef8e64a.jpg"
+      },
+      {
+        "titulo": "Constance",
+        "fecha": "1 de mayo",
+        "plataformas": "Xbox Series X|S, PS5 y Nintendo Switch",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/f90/f90ee5469761915d10498f57250e9db0.jpg"
+      },
+      {
+        "titulo": "Dark Pals: The 1st Floor",
+        "fecha": "1 de mayo",
         "plataformas": "PC",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/508/5089a843a832f5e590ea188f098606b4.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/4db/4dbe345ba029443ebb2ff8d02b47f775.jpg"
+      },
+      {
+        "titulo": "The Devil of the Plague",
+        "fecha": "1 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/3a8/3a8067311b5e6faf466a528f5ee695dc.jpg"
+      },
+      {
+        "titulo": "Soulquest",
+        "fecha": "1 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/073/073b03196082916a5a6e09a7b647eae9.jpg"
+      },
+      {
+        "titulo": "Gambonanza",
+        "fecha": "1 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": ""
+      },
+      {
+        "titulo": "Prime Monster",
+        "fecha": "4 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/9e6/9e6118f1fcbbbc0ea457c41eb12133b7.jpg"
+      },
+      {
+        "titulo": "Islantiles",
+        "fecha": "4 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/b83/b83e72818547d869b07d9b97e00430e7.jpg"
       },
       {
         "titulo": "Wax Heads",
         "fecha": "5 de mayo",
-        "plataformas": "Xbox Series X, PC, Switch, PS5",
+        "plataformas": "PC, Switch, PS5, Xbox Series",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/c45/c45406adbd8dc8206443f003ed438582_I9w3e0I.jpg"
+      },
+      {
+        "titulo": "Dead as Disco",
+        "fecha": "5 de mayo",
+        "plataformas": "PC/Steam",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/508/5089a843a832f5e590ea188f098606b4.jpg"
+      },
+      {
+        "titulo": "Beyond Enemy Lines - Vietnam",
+        "fecha": "6 de mayo",
+        "plataformas": "PC/Steam",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/253/2539258054a5e134aec9a75fc1da7ad7.jpg"
       },
       {
         "titulo": "Mixtape",
@@ -121,39 +282,116 @@
         "imagen": "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg"
       },
       {
-        "titulo": "Call of the Elder Gods",
-        "fecha": "12 de mayo",
-        "plataformas": "PC, Switch 2, PS5, Xbox Series",
+        "titulo": "Celestial Return",
+        "fecha": "7 de mayo",
+        "plataformas": "PC",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/a59/a59693f3a6250d80feda4912aef8e64a.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/199/199b1769522219bb7a20089606a4291b.jpg"
       },
       {
-        "titulo": "Indiana Jones and the Great Circle",
-        "fecha": "15 de mayo",
-        "plataformas": "PS5, Xbox Series, PC",
+        "titulo": "Duck Side of the Moon",
+        "fecha": "7 de mayo",
+        "plataformas": "Switch, PC",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/824/824c0f8d6a591ef5828d7546664fc87c.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/6a0/6a0128db1c6c52050ca3d38c68ace868.jpg"
+      },
+      {
+        "titulo": "Infinity Sweeper",
+        "fecha": "7 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/b3f/b3f9b2e55ef52a1c2afdb7038a279d39.jpg"
+      },
+      {
+        "titulo": "Akuma Rise",
+        "fecha": "8 de mayo",
+        "plataformas": "PS5, Switch, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/f82/f82d545f7a9fabe464dad2dbf0bcc23a.jpg"
+      },
+      {
+        "titulo": "Everything Is Crab: The Animal Evolution Roguelite",
+        "fecha": "8 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/d55/d55e6354d8c10f2a2b339cf06355f87b.jpg"
+      },
+      {
+        "titulo": "Hydroneer",
+        "fecha": "8 de mayo",
+        "plataformas": "PS5, Xbox",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/d9c/d9cf62e3582553994a7da8423ae0c568.jpg"
+      },
+      {
+        "titulo": "Battlestar Galactica: Scattered Hopes",
+        "fecha": "11 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/84d/84d2168586f372e40fe68f17e1a70c5b.jpg"
+      },
+      {
+        "titulo": "Directive 8020",
+        "fecha": "12 de mayo",
+        "plataformas": "PS5, Xbox Series X|S, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/10d/10dd957940dbaedc77a08730995194c7.jpg"
+      },
+      {
+        "titulo": "Burgle Supply Company",
+        "fecha": "12 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/4ea/4eaa50ded253689639fb29870e945d6a.jpg"
       },
       {
         "titulo": "Forza Horizon 6",
         "fecha": "19 de mayo",
-        "plataformas": "Xbox Series X/S, PC, PS5",
-        "descripcion": "",
+        "plataformas": "Xbox Series X|S, PC",
+        "descripcion": "Acceso anticipado desde el 15 de mayo",
         "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
+      },
+      {
+        "titulo": "Atomic Owl",
+        "fecha": "20 de mayo",
+        "plataformas": "Xbox Series X, PS4, Switch, Xbox One, PS5",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/874/8747e51fab10179bc19dc5689283b7ee.jpg"
+      },
+      {
+        "titulo": "Thick As Thieves",
+        "fecha": "20 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/707/707f426f3d903f08184ade8bb023f017.jpg"
+      },
+      {
+        "titulo": "Deep Rock Galactic: Rogue Core",
+        "fecha": "20 de mayo",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/1eb/1ebae240bdf6275a169e81b551e44e67.jpg"
+      },
+      {
+        "titulo": "Yoshi and the Mysterious Book",
+        "fecha": "21 de mayo",
+        "plataformas": "Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/25a/25a256ab63823d3ed3eea8207730d074.jpg"
       },
       {
         "titulo": "Coffee Talk Tokyo",
         "fecha": "21 de mayo",
-        "plataformas": "PS5",
+        "plataformas": "PS5, Xbox, PC, Nintendo Switch",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/ab8/ab8b7f365180a440529ceed4b7276c6d.jpg"
       },
       {
-        "titulo": "Zero Parades: For Dead Spies",
-        "fecha": "21 de mayo",
-        "plataformas": "PC",
+        "titulo": "LEGO Batman: Legacy of the Dark Knight",
+        "fecha": "22 de mayo",
+        "plataformas": "Multiplataforma",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/52b/52bc4034309ecefe64b25e4c75a6b525.jpg"
+        "imagen": "https://media.rawg.io/media/games/69a/69a6a1097f82210dbf8583f8e0d09123.jpg"
       },
       {
         "titulo": "Bubsy 4D",
@@ -161,13 +399,6 @@
         "plataformas": "Switch, Xbox Series X, Switch 2, PS5, Xbox One, PS4, PC",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/3f5/3f56e79671e3e144fefb3ad30e924c2d.jpg"
-      },
-      {
-        "titulo": "LEGO Batman: Legacy of the Dark Knight",
-        "fecha": "22 de mayo",
-        "plataformas": "PS5, Xbox Series X/S, PC, Switch 2",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/69a/69a6a1097f82210dbf8583f8e0d09123.jpg"
       },
       {
         "titulo": "Tales of Arise - Beyond the Dawn Edition",
@@ -180,52 +411,108 @@
         "titulo": "Paralives",
         "fecha": "25 de mayo",
         "plataformas": "PC",
-        "descripcion": "",
+        "descripcion": "Acceso anticipado",
         "imagen": "https://media.rawg.io/media/screenshots/64a/64a39ca3b3be03ed98fa8dfe9d0df860.jpg"
+      },
+      {
+        "titulo": "Realm of Ink",
+        "fecha": "26 de mayo",
+        "plataformas": "PC, PS4, PS5, Switch, Xbox Series X/S",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/b71/b71aac60cc295207737a6fb70ae08fd4.jpg"
+      },
+      {
+        "titulo": "World of Tanks: HEAT",
+        "fecha": "26 de mayo",
+        "plataformas": "PC, PS5, Xbox Series X/S",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/587/58785538b2d3a7226fa2c07d36e02b2b.jpeg"
       },
       {
         "titulo": "007: First Light",
         "fecha": "27 de mayo",
-        "plataformas": "PC, PS5, Xbox Series X/S, Switch 2",
+        "plataformas": "PC, PS5, Xbox Series X|S, Switch 2",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg"
+      },
+      {
+        "titulo": "Echo Generation 2",
+        "fecha": "27 de mayo",
+        "plataformas": "PC, Xbox Series X/S",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/c0e/c0ebf3ab6ba5a5ce3302c03bf6135761.jpg"
+      },
+      {
+        "titulo": "Indiana Jones and the Great Circle",
+        "fecha": "Por confirmar",
+        "plataformas": "PS5, Xbox Series, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/824/824c0f8d6a591ef5828d7546664fc87c.jpg"
       }
     ],
     "Junio 2026": [
       {
-        "titulo": "Broken Lore: Hollow",
+        "titulo": "BrokenLore Follow",
         "fecha": "1 de junio",
-        "plataformas": "PS5, Xbox Series X/S, PC",
+        "plataformas": "PS5, PC",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/94a/94a4bcd1cd570a1f21144d3695d2bf80.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/b61/b61ef03beaa25f799e9b9e704807fe1c.jpg"
       },
       {
         "titulo": "Fatekeeper",
         "fecha": "2 de junio",
-        "plataformas": "PC - Acceso anticipado",
-        "descripcion": "",
+        "plataformas": "PC",
+        "descripcion": "Acceso anticipado",
         "imagen": "https://media.rawg.io/media/screenshots/2ab/2ab6b2a2a0dd143aae68b5c83ae3fbee.jpg"
+      },
+      {
+        "titulo": "Nioh 3",
+        "fecha": "2 de junio",
+        "plataformas": "PC, PS5",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/18f/18f1e09f98c9a0e822b616d68d73c956.jpg"
+      },
+      {
+        "titulo": "eFootball Kick-Off!",
+        "fecha": "3 de junio",
+        "plataformas": "Switch 2",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/46b/46b78f8959562f22c247390c51755f14.jpg"
       },
       {
         "titulo": "Final Fantasy VII Rebirth",
         "fecha": "3 de junio",
-        "plataformas": "Xbox Series X|S, Switch 2",
+        "plataformas": "Switch 2, Xbox Series X/S",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/511/511995d5dfcf18965dbb354d2ba9e176.jpg"
       },
       {
-        "titulo": "Calx",
-        "fecha": "4 de junio",
-        "plataformas": "PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/2d5/2d55b9262e0c5cb8e315a0c3f609df8d.jpg"
-      },
-      {
         "titulo": "The 7th Guest Remake",
         "fecha": "4 de junio",
-        "plataformas": "PS5, Xbox Series X|S, PC",
+        "plataformas": "PC, PS5, Switch, Xbox Series X/S",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/ef6/ef64a3aed53dccd10019ea72c3fcfd92.jpg"
+      },
+      {
+        "titulo": "Hollowbody",
+        "fecha": "4 de junio",
+        "plataformas": "PS5, Xbox Series X/S",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/ccc/ccc6a391383cbca20744bc7d3dc49ec7.jpg"
+      },
+      {
+        "titulo": "River City Saga: Journey to the West",
+        "fecha": "4 de junio",
+        "plataformas": "PC, PS5, Switch",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/8c1/8c12c360524703c87a528fa388f49b43.jpg"
+      },
+      {
+        "titulo": "CALX",
+        "fecha": "4 de junio",
+        "plataformas": "PS5, Switch, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/2d5/2d55b9262e0c5cb8e315a0c3f609df8d.jpg"
       },
       {
         "titulo": "Swan Song",
@@ -237,23 +524,86 @@
       {
         "titulo": "Gothic Remake",
         "fecha": "5 de junio",
-        "plataformas": "PC, PS5, Xbox Series",
+        "plataformas": "PC, PS5, Xbox Series X|S",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/f24/f24d20c6fddb77fe83d39cbfd7d4687f.jpg"
       },
       {
+        "titulo": "Solarpunk",
+        "fecha": "8 de junio",
+        "plataformas": "Xbox, PlayStation, Nintendo Switch 2, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/436/4361eff82bf3d208e62f80f66e22a248.jpg"
+      },
+      {
         "titulo": "Cursemark",
         "fecha": "8 de junio",
-        "plataformas": "PC - Acceso anticipado",
-        "descripcion": "",
+        "plataformas": "PC",
+        "descripcion": "Acceso anticipado",
         "imagen": "https://media.rawg.io/media/screenshots/0dd/0dde0327cbd5c396e9fb8ed81e7c9999.jpg"
       },
       {
-        "titulo": "Solarpunk",
+        "titulo": "R-Type Tactics I & II Cosmos",
         "fecha": "8 de junio",
         "plataformas": "PC",
         "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/436/4361eff82bf3d208e62f80f66e22a248.jpg"
+        "imagen": "https://media.rawg.io/media/screenshots/ddb/ddb139da661cb360092b479d4c8bbd47.jpg"
+      },
+      {
+        "titulo": "Killer Bean",
+        "fecha": "8 de junio",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/ba8/ba8440c4e83a0868c59a1051abfb1f4b.jpg"
+      },
+      {
+        "titulo": "NBA The Run",
+        "fecha": "9 de junio",
+        "plataformas": "PS5, Xbox Series, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/e98/e984db819db44aac1dcfa26900f5b18e.jpg"
+      },
+      {
+        "titulo": "Voidling Bound",
+        "fecha": "9 de junio",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/games/1ba/1ba281ea404d16ddef6cbe30f4c5028d.jpg"
+      },
+      {
+        "titulo": "Witchspire",
+        "fecha": "10 de junio",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": null
+      },
+      {
+        "titulo": "SpaceCraft",
+        "fecha": "11 de junio",
+        "plataformas": "PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/3dc/3dc8a42ec6856d0a74549143192b515c.jpg"
+      },
+      {
+        "titulo": "Beastro",
+        "fecha": "11 de junio",
+        "plataformas": "PS5, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/665/665eb10702e823554951c38d25c7f9c8.jpg"
+      },
+      {
+        "titulo": "Denshattack!",
+        "fecha": "17 de junio",
+        "plataformas": "PS5, Xbox, PC",
+        "descripcion": "",
+        "imagen": null
+      },
+      {
+        "titulo": "Hell Let Loose: Vietnam",
+        "fecha": "18 de junio",
+        "plataformas": "PS5, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/605/605a4b4b2ae2eee26dcf628c86260593.jpg"
       },
       {
         "titulo": "The Adventures of Elliot: The Millennium Tales",
@@ -263,25 +613,18 @@
         "imagen": "https://media.rawg.io/media/screenshots/a7a/a7aed08ad87bacbc7b6b7bec1aba4094.jpg"
       },
       {
-        "titulo": "Hell Let Loose: Vietnam",
-        "fecha": "18 de junio",
-        "plataformas": "Xbox Series X/S, PS5, PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/605/605a4b4b2ae2eee26dcf628c86260593.jpg"
-      },
-      {
-        "titulo": "R-Type Tactics I • II Cosmos",
-        "fecha": "18 de junio",
-        "plataformas": "PC, Xbox Series X/S, PS5, PS4, Switch 2, Switch",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/df7/df77682629ccca6577917c176152d65d.jpg"
-      },
-      {
         "titulo": "EA Sports UFC 6",
         "fecha": "19 de junio",
-        "plataformas": "PS5, Xbox Series X/S",
+        "plataformas": "PS5, Xbox Series X|S",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/games/1b9/1b9b1b82d204e9656019f73c577cb804.jpg"
+      },
+      {
+        "titulo": "Frostpunk 2: Breach of Trust",
+        "fecha": "23 de junio",
+        "plataformas": "PS5, Xbox, PC",
+        "descripcion": "",
+        "imagen": "https://media.rawg.io/media/screenshots/aea/aeadc86935839e1c3307eb4a11f559a3.jpg"
       },
       {
         "titulo": "Star Fox",
@@ -291,16 +634,16 @@
         "imagen": "https://media.rawg.io/media/games/618/61863759abf17a7f94fa6ededb6f178b.jpg"
       },
       {
-        "titulo": "Denshattack!",
-        "fecha": "Por confirmar - junio",
-        "plataformas": "Por confirmar",
+        "titulo": "Dead or Alive 6 Last Round",
+        "fecha": "25 de junio",
+        "plataformas": "PS5, Xbox, PC",
         "descripcion": "",
-        "imagen": null
+        "imagen": "https://media.rawg.io/media/games/a8a/a8a624bbf3e96658fca79a7700de55d7.jpg"
       },
       {
         "titulo": "Monopoly: Star Wars Heroes vs. Villains",
-        "fecha": "Por confirmar - junio",
-        "plataformas": "Por confirmar",
+        "fecha": "Por confirmar",
+        "plataformas": "Plataformas no especificadas",
         "descripcion": "",
         "imagen": "https://media.rawg.io/media/screenshots/e28/e284c1fe789ad92af55334ec018e920d.jpg"
       }
