@@ -67,20 +67,21 @@
         <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Capturar el ID del artículo desde la URL (?id=X)
+<script>
+        // 1. Capturar el ID alfanumérico desde la URL (?id=not_...)
         const params = new URLSearchParams(window.location.search);
-        const idArticulo = parseInt(params.get('id'));
+        const idArticulo = params.get('id');
 
         fetch('noticias.json')
             .then(response => response.json())
             .then(data => {
+                // Creamos una lista única juntando la destacada y las secundarias
                 let listaNoticias = [];
                 if (data.destacada) listaNoticias.push(data.destacada);
                 if (data.secundarias) listaNoticias = listaNoticias.concat(data.secundarias);
 
-                // Buscamos por índice id
-                const articuloEncontrado = listaNoticias[idArticulo];
+                // 2. CORRECCIÓN: Buscamos el artículo comparando el campo 'id' real de los objetos
+                const articuloEncontrado = listaNoticias.find(n => n.id === idArticulo);
 
                 if (articuloEncontrado) {
                     document.getElementById('cuerpo-articulo').innerHTML = `
@@ -111,6 +112,7 @@
                     `;
                     document.title = `${articuloEncontrado.titulo} | KazokuGaming`;
                 } else {
+                    // Si no encuentra el ID, muestra la interfaz de la imagen 6a978984-9116-46d3-8d05-1ae2bbd877bb
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="text-center py-16 space-y-4">
                             <h1 class="text-2xl font-bold text-white">Error 404</h1>
