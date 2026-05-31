@@ -9,11 +9,13 @@ jobs:
   actualizar:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Permite al bot guardar y subir el archivo lanzamientos.json
+      contents: write  # Permite al bot guardar y subir los archivos JSON
 
     steps:
     - name: 1. Descargar la web
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Necesario para evitar conflictos al hacer git pull
 
     - name: 2. Preparar el servidor Python
       uses: actions/setup-python@v5
@@ -36,5 +38,12 @@ jobs:
         git config --global user.name 'KazokuBot'
         git config --global user.email 'bot@kazokugaming.com'
         git add lanzamientos.json noticias.json || true
+        
+        # Primero guardamos los cambios de la IA
         git commit -m "🤖 Actualización automática de contenido e imágenes" || echo "No hay cambios nuevos que guardar"
+        
+        # Magia anti-conflictos: El bot descarga tus cambios manuales y los fusiona pacíficamente
+        git pull origin main --rebase
+        
+        # Finalmente, sube todo el paquete a GitHub
         git push
