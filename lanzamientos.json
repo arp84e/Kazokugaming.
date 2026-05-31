@@ -1,399 +1,183 @@
 {
   "meses_disponibles": [
-    "Abril 2026",
-    "Mayo 2026",
-    "Junio 2026"
+    "Selección KazokuGaming"
   ],
   "catalogo": {
-    "Abril 2026": [
+    "Selección KazokuGaming": [
       {
-        "titulo": "Darwin's Paradox",
-        "fecha": "2 de abril",
-        "plataformas": "PC, PS5, Xbox Series X|S, Switch 2",
-        "descripcion": "Una aventura en la que controlas a un cefalópodo inteligente que busca escapar de un complejo industrial.",
-        "imagen": "https://media.rawg.io/media/screenshots/a84/a84195a150cebe9b3c3e5ba71a143587_gBi0e1c.jpg"
-      },
-      {
-        "titulo": "Fishbowl",
-        "fecha": "2 de abril",
-        "plataformas": "PC, PS5, Mac",
-        "descripcion": "Un juego narrativo sobre el duelo y el autodescubrimiento.",
-        "imagen": "https://media.rawg.io/media/screenshots/e8f/e8f0964a9ab87f9a308539ffb1b40f4f.jpg"
-      },
-      {
-        "titulo": "Content Warning",
-        "fecha": "1 de abril",
-        "plataformas": "PC, Switch, Switch 2, PS5, Xbox One, Xbox Series",
-        "descripcion": "Un juego de aventura, acción y terror cooperativo para filmar cosas espeluznantes.",
-        "imagen": "https://media.rawg.io/media/games/4b7/4b7716ece99ad9d65747f580c0399237.jpg"
-      },
-      {
-        "titulo": "Starfield",
-        "fecha": "7 de abril",
-        "plataformas": "PS5",
-        "descripcion": "El aclamado RPG espacial de Bethesda llega a PlayStation 5.",
-        "imagen": "https://media.rawg.io/media/games/ba8/ba82c971336adfd290e4c0eab6504fcf.jpg"
-      },
-      {
-        "titulo": "People of Note",
-        "fecha": "7 de abril",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series X/S",
-        "descripcion": "Un RPG musical por turnos donde ayudas a Cadence a alcanzar el estrellato.",
-        "imagen": "https://media.rawg.io/media/games/335/335d372799451b3ef5312c9dc532702a.jpg"
-      },
-      {
-        "titulo": "Pokémon Champions",
-        "fecha": "8 de abril",
-        "plataformas": "Switch, Switch 2, iOS, Android",
-        "descripcion": "Un videojuego de estrategia RPG.",
-        "imagen": null
-      },
-      {
-        "titulo": "South of Midnight",
-        "fecha": "8 de abril",
-        "plataformas": "Xbox Series X|S, PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/734/73451dc0abd013bee5b7d88faaacec11.jpg"
-      },
-      {
-        "titulo": "Commandos: Origins",
-        "fecha": "9 de abril",
-        "plataformas": "PS5, PS4, Xbox Series X|S, Xbox One, PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/bc7/bc78dd0c78a8f45845468d5dfcf4a6d8.jpg"
-      },
-      {
-        "titulo": "REPLACED",
-        "fecha": "14 de abril",
-        "plataformas": "PC, Xbox Series X|S",
-        "descripcion": "Un plataformas de acción 2.5D con estética cyberpunk y pixel art.",
-        "imagen": "https://media.rawg.io/media/games/041/041e04184322bc859d617b790d8bfab9.jpg"
-      },
-      {
-        "titulo": "Pragmata",
-        "fecha": "17 de abril",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series X|S",
-        "descripcion": "La esperada nueva IP de Capcom.",
-        "imagen": "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg"
-      },
-      {
-        "titulo": "Vampire Crawlers: The Turbo Wildcard from Vampire Survivors",
-        "fecha": "21 de abril",
-        "plataformas": "PC, PS5, Xbox Series X|S, Switch",
-        "descripcion": "Un spin-off roguelite de mazmorras.",
-        "imagen": "https://media.rawg.io/media/screenshots/6b5/6b5a355ef64beb8697ab6162eb462aff.jpg"
-      },
-      {
-        "titulo": "Outbound",
-        "fecha": "23 de abril",
-        "plataformas": "PS5, Xbox Series X|S, Switch, PC",
-        "descripcion": "Un simulador de exploración en un mundo abierto utópico.",
-        "imagen": "https://media.rawg.io/media/games/851/851cf64d1e55bc8f98e617bc38d7f5f2.jpg"
-      },
-      {
-        "titulo": "Diablo IV: Lord of Hatred",
-        "fecha": "28 de abril",
-        "plataformas": "PC, PS5, PS4, Xbox Series X|S, Xbox One",
-        "descripcion": "La expansión de contenido para el popular ARPG.",
-        "imagen": "https://media.rawg.io/media/games/525/52577395aba84652f16e68e9541d38d7.jpg"
-      },
-      {
-        "titulo": "Aphelion",
-        "fecha": "28 de abril",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/625/625657779791552523890d4c2e2d0b13.jpg"
-      },
-      {
-        "titulo": "Saros",
-        "fecha": "30 de abril",
-        "plataformas": "PS5",
-        "descripcion": "Lo nuevo de Housemarque.",
-        "imagen": "https://media.rawg.io/media/games/be8/be86ee5cf3a427c784efec1661f9b194.jpg"
-      },
-      {
-        "titulo": "Invincible VS",
-        "fecha": "30 de abril",
-        "plataformas": "PC, PS5, Xbox Series X",
-        "descripcion": "Un juego de lucha 3 contra 3 ambientado en el universo de Invencible.",
-        "imagen": "https://media.rawg.io/media/screenshots/fdf/fdfec2a343d751fec655f551146976cb.jpg"
-      }
-    ],
-    "Mayo 2026": [
-      {
-        "titulo": "Constance",
-        "fecha": "1 de mayo",
-        "plataformas": "Xbox Series X|S, PS5, Nintendo Switch",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/f90/f90ee5469761915d10498f57250e9db0.jpg"
-      },
-      {
-        "titulo": "Wax Heads",
-        "fecha": "5 de mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S, Switch",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/c45/c45406adbd8dc8206443f003ed438582_I9w3e0I.jpg"
-      },
-      {
-        "titulo": "Mixtape",
-        "fecha": "7 de mayo",
-        "plataformas": "PC, Xbox Series X|S, Switch 2, PS5",
-        "descripcion": "De los creadores de The Artful Escape, con música y nostalgia en su centro.",
-        "imagen": "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg"
-      },
-      {
-        "titulo": "Directive 8020",
-        "fecha": "12 de mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "descripcion": "Una aventura de terror que inicia la segunda temporada de The Dark Pictures Anthology.",
-        "imagen": "https://media.rawg.io/media/games/10d/10dd957940dbaedc77a08730995194c7.jpg"
-      },
-      {
-        "titulo": "Indiana Jones and the Great Circle",
-        "fecha": "12 de mayo",
-        "plataformas": "PS5, Xbox Series X|S, PC, Switch 2",
-        "descripcion": "Una nueva aventura de acción del legendario arqueólogo.",
-        "imagen": "https://media.rawg.io/media/games/824/824c0f8d6a591ef5828d7546664fc87c.jpg"
-      },
-      {
-        "titulo": "Forza Horizon 6",
-        "fecha": "19 de mayo",
-        "plataformas": "PC, Xbox Series X|S",
-        "descripcion": "La nueva entrega del aclamado simulador de carreras.",
-        "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
-      },
-      {
-        "titulo": "Darksiders: Warmastered Edition",
-        "fecha": "19 de mayo",
-        "plataformas": "PS5, Xbox Series X|S",
-        "descripcion": "Una nueva versión del juego original con mejoras gráficas.",
-        "imagen": "https://media.rawg.io/media/games/1f1/1f1888e1308959dfd3be4c144a81d19c.jpg"
-      },
-      {
-        "titulo": "Deep Rock Galactic: Rogue Core",
-        "fecha": "20 de mayo",
-        "plataformas": "PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/1eb/1ebae240bdf6275a169e81b551e44e67.jpg"
-      },
-      {
-        "titulo": "Thick as Thieves",
-        "fecha": "20 de mayo",
-        "plataformas": "PC",
-        "descripcion": "Un juego de sigilo y atracos de Warren Spector.",
-        "imagen": "https://media.rawg.io/media/screenshots/707/707f426f3d903f08184ade8bb023f017.jpg"
-      },
-      {
-        "titulo": "Yoshi and the Mysterious Book",
-        "fecha": "21 de mayo",
-        "plataformas": "Switch 2",
-        "descripcion": "Una nueva aventura de plataformas protagonizada por Yoshi.",
-        "imagen": "https://media.rawg.io/media/games/25a/25a256ab63823d3ed3eea8207730d074.jpg"
-      },
-      {
-        "titulo": "Coffee Talk Tokyo",
-        "fecha": "21 de mayo",
-        "plataformas": "PS5",
-        "descripcion": "Continúa la relajante narrativa donde preparas bebidas a clientes sobrenaturales.",
-        "imagen": "https://media.rawg.io/media/screenshots/ab8/ab8b7f365180a440529ceed4b7276c6d.jpg"
-      },
-      {
-        "titulo": "Zero Parades: For Dead Spies",
-        "fecha": "21 de mayo",
-        "plataformas": "PC",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/games/52b/52bc4034309ecefe64b25e4c75a6b525.jpg"
-      },
-      {
-        "titulo": "Bubsy 4D",
-        "fecha": "22 de mayo",
-        "plataformas": "PC, PS4, PS5, Switch, Switch 2, Xbox One, Xbox Series X|S",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/3f5/3f56e79671e3e144fefb3ad30e924c2d.jpg"
-      },
-      {
-        "titulo": "LEGO Batman: Legacy of the Dark Knight",
-        "fecha": "22 de mayo",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series X|S",
-        "descripcion": "Una nueva aventura de LEGO Batman.",
-        "imagen": "https://media.rawg.io/media/games/69a/69a6a1097f82210dbf8583f8e0d09123.jpg"
-      },
-      {
-        "titulo": "Tales of Arise - Beyond the Dawn Edition",
-        "fecha": "22 de mayo",
-        "plataformas": "Switch 2",
-        "descripcion": "La edición de este aclamado JRPG para la nueva consola de Nintendo.",
-        "imagen": "https://media.rawg.io/media/games/5a9/5a9e785af72ae88026380f7987f23d90.jpg"
-      },
-      {
-        "titulo": "Paralives",
-        "fecha": "25 de mayo",
-        "plataformas": "PC",
-        "descripcion": "Un simulador de vida independiente muy esperado.",
-        "imagen": "https://media.rawg.io/media/screenshots/64a/64a39ca3b3be03ed98fa8dfe9d0df860.jpg"
-      },
-      {
-        "titulo": "Realm of Ink",
-        "fecha": "26 de mayo",
-        "plataformas": "PC, PS4, PS5, Switch, Xbox Series X/S",
-        "descripcion": "Un roguelite de acción con impresionante arte dibujado a mano.",
-        "imagen": "https://media.rawg.io/media/screenshots/b71/b71aac60cc295207737a6fb70ae08fd4.jpg"
-      },
-      {
-        "titulo": "007: First Light",
-        "fecha": "27 de mayo",
-        "plataformas": "PC, PS5, Xbox Series X|S, Switch 2",
-        "descripcion": "La historia de origen de James Bond de IO Interactive.",
+        "titulo": "007 First Light",
+        "fecha": "27 de mayo de 2026",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "007 First Light propels players into the crucible of James Bond's formative missions, expertly rendered with the visual fidelity of Unreal Engine 5. Experience a seamless blend of emergent stealth, brutal close-quarters combat, and an adaptable gadget arsenal as you shape the legend across meticulously crafted global locations. This next-gen spy thriller promises a deep, character-driven narrative and sophisticated gameplay mechanics that fans on PC and consoles have eagerly anticipated.",
         "imagen": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg"
       },
       {
-        "titulo": "Good Boy",
-        "fecha": "Por confirmar",
+        "titulo": "Forza Horizon 6",
+        "fecha": "19 de mayo de 2026",
+        "plataformas": "PC, Xbox Series X/S",
+        "descripcion": "KazokuGaming está listo para Forza Horizon 6, que promete llevar el aclamado motor ForzaTech a un nivel inédito en una deslumbrante y extensa ambientación inspirada en los paisajes nórdicos. Anticipamos una fidelidad visual sin precedentes, donde un sistema climático dinámico —desde auroras boreales hasta tormentas de nieve— redefinirá cada carrera de mundo abierto. Con una lista masiva de vehículos hiperrealistas, opciones de personalización más profundas y una integración online evolucionada, la comunidad espera una nueva cumbre de libertad al volante y excelencia técnica.",
+        "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
+      },
+      {
+        "titulo": "Resident Evil Requiem",
+        "fecha": "27 de febrero de 2026",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Resident Evil Requiem se perfila como una entrega fundamental, empujando los límites del género con la impecable potencia del RE Engine para una inmersión gráfica y sonora sin precedentes. Este título combina magistralmente la gestión de recursos crítica y el diseño de puzles intrincados de la vieja escuela con un combate visceral y una narrativa oscura que profundiza en los mitos más complejos de la saga. Prepárense para una experiencia de terror de supervivencia técnica y atmosféricamente superior que la comunidad de PC y consolas ha estado esperando.",
+        "imagen": "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg"
+      },
+      {
+        "titulo": "Crisol: Theater of Idols",
+        "fecha": "10 de febrero de 2026",
+        "plataformas": "PS5, PC, Xbox Series X/S, Nintendo Switch",
+        "descripcion": "Prepare for the macabre spectacle of Crisol: Theater of Idols, a Metroidvania masterpiece poised to impress with its unique character-swapping mechanic and stunning hand-drawn aesthetic. Powered by Unreal Engine, we anticipate incredibly fluid performance across PC and consoles, allowing for precise control as you command Crisol, the puppeteer, and Myranda, his puppet, through a decaying world brimming with dark secrets and theatrical combat. This title is on every enthusiast's radar for its blend of innovative gameplay and technical ambition.",
+        "imagen": "https://media.rawg.io/media/games/868/868149477e4463324c23ed9b4481034c.jpg"
+      },
+      {
+        "titulo": "Animal Crossing: New Horizons (Versión mejorada)",
+        "fecha": "15 de enero de 2026",
+        "plataformas": "Nintendo Switch",
+        "descripcion": "Imagina la idílica escapada isleña de *Animal Crossing: New Horizons* redefinida con un rendimiento técnico vanguardista. Esta versión mejorada optimiza su motor para ofrecer 60fps estables, resolución 4K nítida y una distancia de dibujado ampliada, transformando cada detalle de tu paraíso. Con tiempos de carga reducidos y mejoras sustanciales en la calidad de vida, es la experiencia definitiva que la comunidad ha anhelado, llevando el relax creativo a una nueva dimensión en tu PC o consola.",
+        "imagen": "https://media.rawg.io/media/games/42f/42fe1abd4d7c11ca92d93a0fb0f8662b.jpg"
+      },
+      {
+        "titulo": "Metal Gear Solid Delta: Snake Eater",
+        "fecha": "17 de noviembre de 2025",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Metal Gear Solid Delta: Snake Eater reimagina el legendario origen de Naked Snake en la selva de 1964 con una fidelidad visual sin precedentes, reconstruido desde cero con un motor gráfico de última generación. Prepárate para una inmersión total en el survival-stealth, donde cada detalle, desde el camuflaje dinámico hasta el CQC visceral, ha sido pulido para la era moderna. Esta esperadísima entrega promete honrar el diseño maestro del original, elevando la tensión y la estrategia a cotas nunca vistas en consolas y PC.",
+        "imagen": "https://media.rawg.io/media/games/1c0/1c0548b761f7c4e4c0da71172b3362bf.jpg"
+      },
+      {
+        "titulo": "Hades II",
+        "fecha": "25 de septiembre de 2025",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
+        "descripcion": "Hades II eleva la aclamada fórmula roguelike de Supergiant Games, sumergiéndonos en una nueva epopeya con Melinoë, princesa del Inframundo, contra Chronos, el Titán del Tiempo. Manteniendo el deslumbrante arte dibujado a mano y un combate ultrarrápido que definen al estudio, este título expande las bendiciones olímpicas y las intrincadas construcciones, prometiendo una profundidad estratégica sin precedentes. La expectación es máxima por su rendimiento técnico pulido en PC y consolas, asegurando una experiencia fluida y responsiva a cada desafío.",
+        "imagen": "https://media.rawg.io/media/screenshots/6d6/6d61e8ef67c0f27b29b4f16266dbd9bd.jpg"
+      },
+      {
+        "titulo": "Hollow Knight: Silksong",
+        "fecha": "4 de septiembre de 2025",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg"
+      },
+      {
+        "titulo": "Hell is Us",
+        "fecha": "4 de septiembre de 2025",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/60b/60b7561ab47a7c0853ae983d419b47cb.jpg"
+      },
+      {
+        "titulo": "Metroid Prime 4: Beyond",
+        "fecha": "18 de agosto de 2025",
+        "plataformas": "Nintendo Switch",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/de7/de7678219604a2e47fae734699f4444c.jpeg"
+      },
+      {
+        "titulo": "Doom: The Dark Ages",
+        "fecha": "13 de mayo de 2025",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg"
+      },
+      {
+        "titulo": "Clair Obscur: Expedition 33",
+        "fecha": "24 de abril de 2025",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg"
+      },
+      {
+        "titulo": "Blue Prince",
+        "fecha": "10 de abril de 2025",
         "plataformas": "PC",
-        "descripcion": "Un juego de acción multijugador.",
-        "imagen": "https://media.rawg.io/media/screenshots/5d7/5d772bd2af27cf7940bbc15801712348.jpg"
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/258/258f88a911a4233d4f21c2f91dceb892.jpg"
       },
       {
-        "titulo": "The Occultist",
-        "fecha": "Por confirmar",
-        "plataformas": "PC, PS5, Xbox Series X/S",
-        "descripcion": "Una aventura de terror.",
-        "imagen": "https://media.rawg.io/media/screenshots/070/070a9713c2f1700f93c279bce422fca5.jpg"
-      }
-    ],
-    "Junio 2026": [
+        "titulo": "South of Midnight",
+        "fecha": "8 de abril de 2025",
+        "plataformas": "PC, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/734/73451dc0abd013bee5b7d88faaacec11.jpg"
+      },
       {
-        "titulo": "Fatekeeper",
-        "fecha": "2 de junio",
+        "titulo": "Split Fiction",
+        "fecha": "6 de marzo de 2025",
         "plataformas": "PC",
-        "descripcion": "Un RPG de acción y fantasía en primera persona.",
-        "imagen": "https://media.rawg.io/media/screenshots/2ab/2ab6b2a2a0dd143aae68b5c83ae3fbee.jpg"
+        "descripcion": "Split Fiction redefines interactive storytelling, thrusting players into a reality fractured by their very first critical choice. Driven by a revolutionary custom engine, experience two concurrent timelines where every action in one subtly or drastically alters the other, demanding strategic navigation between divergent paths. KazokuGaming anticipates its profound narrative depth and groundbreaking dual-reality mechanics will set a new benchmark for choice-driven adventures on PC and consoles, pushing technical boundaries.",
+        "imagen": "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg"
       },
       {
-        "titulo": "Final Fantasy VII Rebirth",
-        "fecha": "3 de junio",
-        "plataformas": "Xbox Series X|S, Switch 2",
-        "descripcion": "La segunda entrega del remake de Final Fantasy VII llega a nuevas plataformas.",
-        "imagen": "https://media.rawg.io/media/games/511/511995d5dfcf18965dbb354d2ba9e176.jpg"
+        "titulo": "Kingdom Come: Deliverance 2",
+        "fecha": "11 de febrero de 2025",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "KazokuGaming se prepara para **Kingdom Come: Deliverance 2**, la esperada secuela que promete redefinir el RPG histórico. Con un motor gráfico potenciado para ofrecer una fidelidad visual sin precedentes en la Bohemia del siglo XV, el juego expande drásticamente su mundo y la profundidad de sus sistemas. Prepárense para un combate realista e implacable, decisiones con consecuencias palpables y una inmersión técnica y jugable que llevará la saga de Henry a nuevas cotas en PC y consolas.",
+        "imagen": "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg"
       },
       {
-        "titulo": "The 7th Guest Remake",
-        "fecha": "4 de junio",
-        "plataformas": "PC, PS5, Xbox Series X|S, PCVR, PSVR 2",
-        "descripcion": "El remake del clásico juego de puzles.",
-        "imagen": "https://media.rawg.io/media/screenshots/ef6/ef64a3aed53dccd10019ea72c3fcfd92.jpg"
+        "titulo": "Call of Duty: Black Ops 6",
+        "fecha": "25 de octubre de 2024",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
+        "descripcion": "Call of Duty: Black Ops 6 detonates onto the scene, thrusting players into a gripping 90s espionage thriller meticulously optimized for peak performance across PC and consoles. Treyarch's signature campaign depth meets groundbreaking Omnimovement, offering unparalleled tactical fluidity. Expect a visually stunning experience powered by an evolved engine, delivering crisp frame rates and responsive gunplay that competitive players demand, promising the most technically advanced Black Ops to date.",
+        "imagen": "https://media.rawg.io/media/games/e89/e89f9a409bce5d36873f65ea9659c36e.jpg"
       },
       {
-        "titulo": "River City Saga: Journey to the West",
-        "fecha": "4 de junio",
-        "plataformas": "PS5, Switch, Steam",
-        "descripcion": "Un roguelike de acción.",
-        "imagen": "https://media.rawg.io/media/screenshots/8c1/8c12c360524703c87a528fa388f49b43.jpg"
+        "titulo": "Star Wars Outlaws",
+        "fecha": "30 de agosto de 2024",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "KazokuGaming tiene el ojo puesto en *Star Wars Outlaws*, la inmersión de Ubisoft Massive en el inframundo galáctico. Encarnando a la audaz Kay Vess, te sumergirás en un sandbox de mundo abierto potenciado por el motor Snowdrop, donde orquestarás atracos épicos, pilotarás tu nave por el Borde Exterior y forjarás una reputación entre los poderosos sindicatos. Prepárate para una libertad sin igual y una aventura criminal que redefinirá tu visión de Star Wars.",
+        "imagen": "https://media.rawg.io/media/games/853/853aa2b76ae85fcf2782ace58cf7479f.jpg"
       },
       {
-        "titulo": "Gothic 1 Remake",
-        "fecha": "5 de junio",
-        "plataformas": "PC, PS5, Xbox Series X|S",
-        "descripcion": "El remake del icónico RPG de acción y fantasía.",
-        "imagen": "https://media.rawg.io/media/games/f24/f24d20c6fddb77fe83d39cbfd7d4687f.jpg"
+        "titulo": "Black Myth: Wukong",
+        "fecha": "20 de agosto de 2024",
+        "plataformas": "PS5, PC, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg"
       },
       {
-        "titulo": "Solarpunk",
-        "fecha": "8 de junio",
-        "plataformas": "PC, PS5, Switch 2, Xbox",
-        "descripcion": "Un acogedor juego de supervivencia ambientado en islas flotantes.",
-        "imagen": "https://media.rawg.io/media/screenshots/436/4361eff82bf3d208e62f80f66e22a248.jpg"
+        "titulo": "Baldur's Gate 3",
+        "fecha": "3 de agosto de 2023",
+        "plataformas": "PS5, PC, Mac, Xbox Series X/S",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg"
       },
       {
-        "titulo": "NBA The Run",
-        "fecha": "9 de junio",
-        "plataformas": "PC, PS5, Xbox Series",
-        "descripcion": "Un juego de baloncesto arcade 3 contra 3.",
-        "imagen": "https://media.rawg.io/media/screenshots/e98/e984db819db44aac1dcfa26900f5b18e.jpg"
+        "titulo": "Final Fantasy XVI",
+        "fecha": "22 de junio de 2023",
+        "plataformas": "PS5, PC",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg"
       },
       {
-        "titulo": "Denshattack!",
-        "fecha": "17 de junio",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series X|S",
-        "descripcion": "Un indie español con mecánicas de skate y trenes.",
-        "imagen": null
+        "titulo": "Diablo IV",
+        "fecha": "5 de junio de 2023",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/77d/77d51f8f4a07c3eecb0f8504027b1bf0.jpg"
       },
       {
-        "titulo": "Hell Let Loose: Vietnam",
-        "fecha": "18 de junio",
-        "plataformas": "PC, PS5, Xbox Series",
-        "descripcion": "Una entrega táctica de FPS ambientada en la Guerra de Vietnam.",
-        "imagen": "https://media.rawg.io/media/screenshots/605/605a4b4b2ae2eee26dcf628c86260593.jpg"
+        "titulo": "EA SPORTS FC 24",
+        "fecha": "29 de septiembre de 2023",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/104/10404407d458d90f4559a1f587c2650a.jpg"
       },
       {
-        "titulo": "The Adventures of Elliot: The Millennium Tales",
-        "fecha": "18 de junio",
-        "plataformas": "PC, PS5, Switch 2, Xbox Series",
-        "descripcion": "Un emocionante RPG de acción de Square Enix.",
-        "imagen": "https://media.rawg.io/media/screenshots/a7a/a7aed08ad87bacbc7b6b7bec1aba4094.jpg"
+        "titulo": "Dead Island 2",
+        "fecha": "21 de abril de 2023",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/9cd/9cd22ae5aebd922f96f2bc50efab83df.jpg"
       },
       {
-        "titulo": "EA Sports UFC 6",
-        "fecha": "19 de junio",
-        "plataformas": "PS5, Xbox Series X|S",
-        "descripcion": "La última entrega de la serie de lucha de la UFC.",
-        "imagen": "https://media.rawg.io/media/games/1b9/1b9b1b82d204e9656019f73c577cb804.jpg"
-      },
-      {
-        "titulo": "Frostpunk 2: Breach of Trust",
-        "fecha": "23 de junio",
-        "plataformas": "PC, PS5, Xbox",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/aea/aeadc86935839e1c3307eb4a11f559a3.jpg"
-      },
-      {
-        "titulo": "Star Fox",
-        "fecha": "25 de junio",
-        "plataformas": "Switch 2",
-        "descripcion": "Un remake del clásico Star Fox 64.",
-        "imagen": "https://media.rawg.io/media/games/618/61863759abf17a7f94fa6ededb6f178b.jpg"
-      },
-      {
-        "titulo": "Dead or Alive 6 Last Round",
-        "fecha": "25 de junio",
-        "plataformas": "PC, PS5, Xbox Series",
-        "descripcion": "Una nueva versión del popular juego de lucha 3D.",
-        "imagen": "https://media.rawg.io/media/games/a8a/a8a624bbf3e96658fca79a7700de55d7.jpg"
-      },
-      {
-        "titulo": "Control Resonant",
-        "fecha": "Por confirmar",
-        "plataformas": "PC, PS5, Xbox",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/5b8/5b812f73e4c5df28630747c52f57170b.jpg"
-      },
-      {
-        "titulo": "Vapor World Over the Mind",
-        "fecha": "Por confirmar",
-        "plataformas": "PC, PS5, Switch, Xbox",
-        "descripcion": "",
-        "imagen": "https://media.rawg.io/media/screenshots/8f9/8f9d8739db67255f193c93c6c8fcd072.jpg"
-      },
-      {
-        "titulo": "Monopoly: Star Wars Heroes vs. Villains",
-        "fecha": "Por confirmar",
-        "plataformas": "",
-        "descripcion": "Un juego de mesa digital ambientado en el universo de Star Wars.",
-        "imagen": "https://media.rawg.io/media/screenshots/e28/e284c1fe789ad92af55334ec018e920d.jpg"
-      },
-      {
-        "titulo": "Destroy All Humans! Remake",
-        "fecha": "Por confirmar",
-        "plataformas": "PS4, Xbox One, Switch, PC",
-        "descripcion": "El remake del juego de acción de 2005.",
-        "imagen": "https://media.rawg.io/media/games/78d/78da51d43def2bc49d7c446f2421dd6e.jpg"
-      },
-      {
-        "titulo": "Chronicles: Medieval",
-        "fecha": "Por confirmar",
-        "plataformas": "PC, PS5, Xbox Series",
-        "descripcion": "Un juego de estrategia.",
-        "imagen": "https://media.rawg.io/media/screenshots/a4b/a4bf44cf18632db07ba929759ec041f3.jpg"
+        "titulo": "Elden Ring",
+        "fecha": "25 de febrero de 2022",
+        "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
+        "descripcion": "Sinopsis no disponible en este momento.",
+        "imagen": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
       }
     ]
   }
