@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente | KazokuGaming</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between">
+
+    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
+                KAZOKU<span class="text-slate-100">GAMING</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-slate-400 hover:text-slate-200 transition-colors">Noticias</a>
+                <a href="lanzamientos.html" class="text-cyan-400 transition-colors">Telemetría</a>
+                <a href="hardware.html" class="text-slate-400 hover:text-slate-200 transition-colors">Hardware</a>
+                <a href="radar.html" class="text-slate-400 hover:text-slate-200 transition-colors">Radar de Ofertas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div id="pantalla-juego" class="space-y-8">
+            <p class="text-slate-500 text-sm animate-pulse text-center py-12">Accediendo a los servidores de telemetría...</p>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-950 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const idJuego = params.get('id');
+
+        fetch('lanzamientos.json')
+            .then(response => response.json())
+            .then(data => {
+                const juego = data.juegos.find(j => j.id === idJuego);
+
+                if (juego) {
+                    // Verificar si tiene requisitos de PC válidos
+                    const tienePc = juego.plataformas.toLowerCase().includes('pc');
+                    const reqMin = juego.requisitos?.minimos || [];
+                    const reqRec = juego.requisitos?.recomendados || [];
+                    
+                    let bloqueHardware = '';
+                    if (tienePc && (reqMin.length > 0 || reqRec.length > 0)) {
+                        bloqueHardware = `
+                            <div class="mt-12 space-y-6">
+                                <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Requisitos del Sistema (PC)
+                                </h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-6">
+                                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5">⚙️ Configuración Mínima</h3>
+                                        <ul class="space-y-2.5 text-xs text-slate-400">
+                                            ${reqMin.map(r => `<li class="border-b border-slate-900 pb-2 last:border-0"><strong class="text-slate-300">${r.split(':')[0]}:</strong> ${r.split(':')[1] || ''}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="bg-indigo-950/10 border border-indigo-500/10 rounded-2xl p-6">
+                                        <h3 class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-4 flex items-center gap-1.5">🚀 Configuración Recomendada</h3>
+                                        <ul class="space-y-2.5 text-xs text-slate-400">
+                                            ${reqRec.map(r => `<li class="border-b border-slate-900/40 pb-2 last:border-0"><strong class="text-slate-200">${r.split(':')[0]}:</strong> ${r.split(':')[1] || ''}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    document.getElementById('pantalla-juego').innerHTML = `
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+                            <div class="w-full md:w-1/3 aspect-[3/4] rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl">
+                                <img src="${juego.imagen || 'https://via.placeholder.com/400x600'}" alt="Carátula" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-full md:w-2/3 space-y-4">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase tracking-wider">${juego.fecha}</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700 uppercase tracking-wider">Análisis Técnico</span>
+                                </div>
+                                <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">${juego.titulo}</h1>
+                                <p class="text-xs font-bold text-slate-400 tracking-wide uppercase">${juego.plataformas}</p>
+                                <div class="h-px bg-slate-800/60 my-4"></div>
+                                <p class="text-sm text-slate-300 leading-relaxed font-normal">${juego.sinopsis}</p>
+                            </div>
+                        </div>
+                        ${bloqueHardware}
+                    `;
+                    document.title = `${juego.titulo} | Telemetría`;
+                } else {
+                    document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente solicitado no existe.</div>`;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos de Telemetría.</div>`;
+            });
+    </script>
+</body>
+</html>
