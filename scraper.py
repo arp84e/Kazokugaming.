@@ -245,13 +245,3 @@ for juego in juegos_manuales:
     # 🚨 CRÍTICO: Pausa de 5 segundos para evitar que la API de Google bloquee el bot por saturación
     print("   ... Pausa de seguridad (5s) ...")
     time.sleep(5)
-
-# Guardar en el JSON
-try:
-    with open('lanzamientos.json', 'w', encoding='utf-8') as f:
-        json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-    print("\n✅ Base de datos de Telemetría (lanzamientos.json) actualizada correctamente.")
-except Exception as e:
-    print("\n❌ Error escribiendo lanzamientos.json:", e)
-
-print("=== KAZOKUBOT FINALIZADO CORRECATMENTE ===")
