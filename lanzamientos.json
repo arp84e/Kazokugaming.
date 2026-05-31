@@ -5,20 +5,10 @@
       "titulo": "007 First Light",
       "fecha": "27 de mayo de 2026",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "007 First Light, hipotéticamente desarrollado bajo el potente Unreal Engine 5, presentaría una experiencia de espionaje en primera persona que redefine la inmersión visual. Se esperarían mecánicas de sigilo avanzadas, potenciadas por un sistema de IA reactivo y adaptativo, y un robusto sistema de cobertura dinámico. La implementación de Lumen y Nanite sería crucial para entornos hiperrealistas y modelos de personajes con detalles fotorrealistas, garantizando una fidelidad gráfica de nueva generación, mientras que el trazado de rayos realzaría la iluminación y los reflejos, clave en escenarios de intriga y acción directa.",
+      "sinopsis": "Análisis técnico en desarrollo.",
       "requisitos": {
-        "minimos": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "recomendados": [
-          "",
-          "",
-          "",
-          ""
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg"
     },
@@ -63,7 +53,7 @@
       "titulo": "Animal Crossing: New Horizons (Versión mejorada)",
       "fecha": "15 de enero de 2026",
       "plataformas": "Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
+      "sinopsis": "Animal Crossing: New Horizons (Versión mejorada) implementa un motor de juego propietario diseñado para una simulación de vida persistente, facilitando mecánicas de terraformación extensivas y un profundo sistema de crafteo para la personalización insular. El renderizado gráfico utiliza un pipeline estilizado con iluminación global y oclusión ambiental que eleva su estética cell-shaded, optimizado para mantener un rendimiento estable de 30 FPS en resolución dinámica. Sus características clave incluyen ciclos de tiempo real sincronizados, una IA de personajes no jugables con rutinas dinámicas, y un sistema económico robusto basado en la recolección, comercialización y expansión de infraestructura.",
       "requisitos": {
         "minimos": [],
         "recomendados": []
