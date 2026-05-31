@@ -77,9 +77,18 @@ if nuevas_entradas:
         elif 'media_thumbnail' in e and len(e.media_thumbnail) > 0: img = e.media_thumbnail[0]['url']
         textos += f"Título: {e.title}\nResumen: {e.summary}\nEnlace: {e.link}\nImagen oficial: {img}\n\n"
         
-    prompt = f"""Eres un periodista de videojuegos. Reescribe estas noticias al español de forma detallada.
-    Genera un JSON con una lista llamada "nuevas_noticias". Formato: {{"nuevas_noticias": [ {{"categoria": "...", "titulo": "...", "resumen": "...", "contenido_completo": "<p>...</p>", "imagen": "URL", "enlace": "..."}} ] }}
-    Noticias a procesar:\n{textos}"""
+    prompt = f"""Eres el redactor principal de KazokuGaming, un medio de videojuegos conocido por su estilo directo, entusiasta y altamente enfocado en el rendimiento técnico (tanto de PC como de consolas).
+    Tu tarea es leer la siguiente información y redactar artículos COMPLETAMENTE NUEVOS y ORIGINALES.
+    
+    Reglas estrictas para evitar plagio:
+    1. NO traduzcas, no parafrasees de forma simple y no copies la estructura original. 
+    2. Usa la información solo como "fuente de datos" bruta. Construye la noticia desde cero, aportando una introducción con gancho, un análisis crítico del anuncio y una conclusión.
+    3. Añade tu propio toque editorial. Si la noticia trata sobre un juego nuevo o hardware, menciona libremente tus expectativas sobre tasas de cuadros, requisitos técnicos, rendimiento gráfico o impacto en la industria.
+    4. Usa etiquetas HTML (<p>, <h3>, <strong>, <ul>) dentro del campo 'contenido_completo' para estructurar bien la lectura.
+
+    Genera un JSON con una lista llamada "nuevas_noticias". Formato estricto: {{"nuevas_noticias": [ {{"categoria": "...", "titulo": "...", "resumen": "...", "contenido_completo": "...", "imagen": "URL", "enlace": "..."}} ] }}
+    
+    Información fuente a analizar (solo para extraer datos objetivos):\n{textos}"""
     
     try:
         response = client.models.generate_content(
