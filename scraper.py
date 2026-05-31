@@ -140,7 +140,6 @@ def buscar_portada_juego(titulo_juego):
 print("\n--- EJECUTANDO TAREA 2: TELEMETRÍA (ANÁLISIS MANUAL) ---")
 
 # 🎮 TU LISTA PERSONALIZADA DE JUEGOS
-# Puedes añadir o quitar juegos aquí. El script se encarga del resto.
 juegos_manuales = [
     {"titulo": "007 First Light", "fecha": "27 de mayo de 2026", "plataformas": "PS5, PC, Xbox Series X/S"},
   {"titulo": "Forza Horizon 6", "fecha": "19 de mayo de 2026", "plataformas": "PC, Xbox Series X/S"},
@@ -179,10 +178,9 @@ for juego in juegos_manuales:
     titulo = juego["titulo"]
     print(f"-> Analizando hardware y redactando datos para: {titulo}...")
     
-    # Prompt estricto
     prompt_telemetria = f"""Eres el analista técnico principal de KazokuGaming.
     Analiza el juego '{titulo}'.
-    Devuelve ÚNICAMENTE un JSON válido. NO uses bloques de código markdown (```json). NO agregues texto extra.
+    Devuelve ÚNICAMENTE un JSON válido. NO uses bloques de código markdown.
     
     Estructura OBLIGATORIA:
     {{
@@ -199,7 +197,7 @@ for juego in juegos_manuales:
         "requisitos": {"minimos": [], "recomendados": []}
     }
     
-try:
+    try:
         respuesta_ia = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt_telemetria,
@@ -210,26 +208,19 @@ try:
         )
         
         texto_crudo = respuesta_ia.text
-        
-        # MÉTODO BLINDADO: Buscar solo el diccionario JSON usando Regex
-        # Esto escanea todo el texto y extrae estrictamente lo que hay entre { y }
         match = re.search(r'\{.*\}', texto_crudo, re.DOTALL)
         
         if match:
             texto_json = match.group(0)
             datos_ia = json.loads(texto_json)
-            print(f"   [+] Análisis extraído y procesado con éxito.")
+            print(f"   [+] Análisis extraído con éxito.")
         else:
             print(f"   [!] La IA no devolvió un formato reconocible.")
-            print(f"   [Debug Texto Crudo]: {texto_crudo}")
             
     except Exception as e:
         print(f"   [!] Error técnico al procesar {titulo}: {e}")
 
-    # Buscar la carátula oficial
     imagen_url = buscar_portada_juego(titulo)
-    
-    # ID limpia
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
 
     estructura_final["juegos"].append({
@@ -242,6 +233,14 @@ try:
         "imagen": imagen_url
     })
     
-    # 🚨 CRÍTICO: Pausa de 5 segundos para evitar que la API de Google bloquee el bot por saturación
     print("   ... Pausa de seguridad (5s) ...")
     time.sleep(5)
+
+try:
+    with open('lanzamientos.json', 'w', encoding='utf-8') as f:
+        json.dump(estructura_final, f, ensure_ascii=False, indent=2)
+    print("\n✅ Base de datos de Telemetría (lanzamientos.json) actualizada correctamente.")
+except Exception as e:
+    print("\n❌ Error escribiendo lanzamientos.json:", e)
+
+print("=== KAZOKUBOT FINALIZADO CORRECTAMENTE ===")
