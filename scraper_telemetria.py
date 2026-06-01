@@ -36,7 +36,8 @@ if not titulos:
 estructura_final = {"juegos": []}
 archivo_json = 'telemetria.json'
 
-if no sobrescribir and os.path.exists(archivo_json):
+# --- LÍNEA CORREGIDA AQUÍ ---
+if not sobrescribir and os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
             datos_existentes = json.load(f)
