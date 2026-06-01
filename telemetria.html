@@ -46,7 +46,7 @@
 
     <script>
         function cargarTelemetria() {
-            fetch('lanzamientos.json')
+            fetch('telemetria.json')
                 .then(response => response.json())
                 .then(data => {
                     const contenedor = document.getElementById('grid-juegos');
