@@ -5,20 +5,10 @@
       "titulo": "007 First Light",
       "fecha": "27 de mayo de 2026",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Tras una exhaustiva revisión de nuestras bases de datos de lanzamientos y títulos en desarrollo, no se ha encontrado ninguna referencia oficial a un juego titulado '007 First Light'. Por tanto, no es posible realizar un análisis técnico preciso de su motor gráfico, arquitectura de renderizado, implementación de físicas o las mecánicas de juego subyacentes, ya que no disponemos de información verificable sobre su tecnología o innovaciones. Es posible que sea un concepto no oficial o un título inexistente en el mercado actual.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 1.656366423s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '1s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido)."
-        ],
-        "recomendados": [
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido).",
-          "Información no disponible (título no reconocido)."
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg"
     },
@@ -27,20 +17,10 @@
       "titulo": "Forza Horizon 6",
       "fecha": "19 de mayo de 2026",
       "plataformas": "PC, Xbox Series X/S",
-      "sinopsis": "Forza Horizon 6, basándose en la probada evolución del motor Forzatech, llevaría la inmersión visual a nuevas cotas. Se espera una implementación robusta de técnicas de renderizado híbridas, combinando rasterización avanzada con trazado de rayos a nivel global para iluminación, reflejos y sombras, logrando una fidelidad sin precedentes en su vasto mundo abierto. Las mecánicas de simulación física de vehículos serían refinadas para ofrecer una respuesta más granular ante las condiciones del terreno y las variaciones climáticas dinámicas. Además, la gestión de la carga de recursos y el streaming de texturas de alta resolución estarían optimizados para aprovechar al máximo las arquitecturas de almacenamiento de próxima generación, garantizando transiciones fluidas y un LOD (Level of Detail) excepcional a cualquier velocidad.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 56.204537026s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-10400F / AMD Ryzen 5 3600",
-          "Gráficos: NVIDIA GeForce GTX 1660 Ti / AMD Radeon RX 5600 XT",
-          "Memoria: 12 GB RAM",
-          "Almacenamiento: 150 GB SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-12700K / AMD Ryzen 7 5800X3D",
-          "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 150 GB NVMe SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
     },
@@ -49,20 +29,10 @@
       "titulo": "Resident Evil Requiem",
       "fecha": "27 de febrero de 2026",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Resident Evil Requiem sumerge a los jugadores en una experiencia de terror de supervivencia visceral, impulsada por el motor propietario \"RE Engine Apex\". Esta evolución del aclamado motor de Capcom permite una fidelidad gráfica sin precedentes, desde entornos fotorrealistas con iluminación volumétrica dinámica y oclusión ambiental en tiempo real, hasta modelos de personajes hiperdetallados y una física de daño modular en enemigos. Las mecánicas de juego se centran en una gestión de recursos extremadamente limitada, combate estratégico con un sistema de desmembramiento avanzado para vulnerar amenazas, y una compleja red de puzles basados en la interacción ambiental y narrativa, todo orquestado para mantener una tensión constante y una inmersión profunda en su lúgubre mundo.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 50.79295185s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '50s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600X",
-          "Gráficos: NVIDIA GeForce GTX 1070 / AMD Radeon RX 590",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 70 GB SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-12700K / AMD Ryzen 7 5800X3D",
-          "Gráficos: NVIDIA GeForce RTX 3080 / AMD Radeon RX 6800 XT",
-          "Memoria: 32 GB RAM",
-          "Almacenamiento: 80 GB SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg"
     },
@@ -71,20 +41,10 @@
       "titulo": "Crisol: Theater of Idols",
       "fecha": "10 de febrero de 2026",
       "plataformas": "PS5, PC, Xbox Series X/S, Nintendo Switch",
-      "sinopsis": "Crisol: Theater of Idols se erige sobre un motor gráfico 2D altamente optimizado, presumiblemente Unity, lo que le confiere una fluidez visual excepcional para su estilo artístico 'hand-drawn' o pixel-art de alta resolución, caracterizado por animaciones de sprites meticulosas y entornos ricos en detalles con profundidad mediante paralaje. Las mecánicas centrales se enfocan en una progresión metroidvania no lineal, donde la adquisición estratégica de nuevas habilidades es esencial para desbloquear áreas y fomentar la reexploración inteligente. Su sistema de combate es preciso y exigente, basándose en la destreza del jugador para evadir ataques, ejecutar contraofensivas y gestionar recursos, todo ello sustentado por una física de plataformas responsiva.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 45.250751507s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '45s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-4460 o AMD Ryzen 3 1200",
-          "Gráficos: GeForce GTX 750 Ti o Radeon RX 560",
-          "Memoria: 8 GB RAM",
-          "Almacenamiento: 2 GB de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-4790K o AMD Ryzen 5 1600",
-          "Gráficos: GeForce GTX 1060 o Radeon RX 580",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 2 GB de espacio disponible"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/868/868149477e4463324c23ed9b4481034c.jpg"
     },
@@ -93,20 +53,10 @@
       "titulo": "Animal Crossing: New Horizons (Versión mejorada)",
       "fecha": "15 de enero de 2026",
       "plataformas": "Nintendo Switch",
-      "sinopsis": "Animal Crossing: New Horizons (Versión mejorada) emplea un motor gráfico propietario de Nintendo, meticulosamente optimizado para ofrecer una estética 'cartoon' vibrante y un rendimiento fluido en entornos abiertos. Destaca por su avanzado sistema de iluminación global y sombreado, que simula ciclos día/noche y estaciones dinámicas, con reflejos en tiempo real sobre el agua y texturas detalladas para la vegetación y los modelos de personajes. Las mecánicas centrales giran en torno a la simulación social, la personalización extensiva de la isla, la recolección de recursos, la fabricación de objetos mediante un robusto sistema de crafting y una progresión temporal en sincronía con el mundo real, fomentando la interacción constante y la creatividad del jugador.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 39.596736987s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '39s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i3-6100 o AMD FX-6300",
-          "Gráficos: NVIDIA GeForce GT 1030 o AMD Radeon RX 550",
-          "Memoria: 6 GB RAM",
-          "Almacenamiento: 15 GB de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce GTX 1060 (3GB) o AMD Radeon RX 580 (4GB)",
-          "Memoria: 12 GB RAM",
-          "Almacenamiento: 20 GB de espacio disponible"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/42f/42fe1abd4d7c11ca92d93a0fb0f8662b.jpg"
     },
@@ -115,20 +65,10 @@
       "titulo": "Metal Gear Solid Delta: Snake Eater",
       "fecha": "17 de noviembre de 2025",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Metal Gear Solid Delta: Snake Eater es una reimaginación técnica del clásico, reconstruida desde cero sobre el potente Unreal Engine 5. Esta elección de motor permite una fidelidad visual sin precedentes, empleando tecnologías como Nanite para la geometría detallada de entornos selváticos y Lumen para una iluminación global dinámica fotorrealista. Las mecánicas de sigilo, combate CQC y supervivencia son preservadas con mejoras sutiles, aprovechando el nuevo motor para una inmersión atmosférica más profunda, interacciones ambientales reactivas y un diseño de audio espacial avanzado que eleva la experiencia táctica original a estándares modernos, manteniendo la esencia jugable intacta.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 33.851491881s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce RTX 2060 (6GB) o AMD Radeon RX 5700 XT (8GB)",
-          "Memoria: 16 GB RAM DDR4",
-          "Almacenamiento: 70 GB SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-10700K o AMD Ryzen 7 3700X",
-          "Gráficos: NVIDIA GeForce RTX 3070 (8GB) o AMD Radeon RX 6800 XT (16GB)",
-          "Memoria: 16 GB RAM DDR4",
-          "Almacenamiento: 70 GB SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/1c0/1c0548b761f7c4e4c0da71172b3362bf.jpg"
     },
@@ -137,19 +77,19 @@
       "titulo": "Hades II",
       "fecha": "25 de septiembre de 2025",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "Hades II continúa la tradición de Supergiant Games utilizando una evolución de su motor gráfico propietario, altamente optimizado para un rendimiento fluido y efectos visuales impactantes. Este motor permite una representación exquisita de animaciones dibujadas a mano, combinadas con un sistema de partículas dinámico y efectos de iluminación en tiempo real que enriquecen cada habilidad y encuentro. Las mecánicas del juego se sustentan en una generación procedimental sofisticada, asegurando una rejugabilidad infinita a través de la disposición de entornos, enemigos y bendiciones, mientras que el combate responsivo y las colisiones precisas son gestionadas eficientemente por un robusto subsistema de física.",
+      "sinopsis": "Hades II se construye sobre la evolución del motor propietario de Supergiant Games, una infraestructura personalizada en C++ que sobresale en la renderización de su distintivo estilo artístico 2D dibujado a mano sobre entornos 3D isométricos. Este motor está optimizado para mantener una tasa de fotogramas fluida y consistente, incluso ante la densa profusión de partículas, efectos visuales de magia y las complejas animaciones que caracterizan su combate en tiempo real. La implementación de mecánicas roguelike se apoya en algoritmos de generación procedural eficientes, mientras que el sistema de colisiones y la física ligera están meticulosamente calibrados para una experiencia de juego altamente responsiva y dinámica, maximizando el rendimiento de la GPU con shaders personalizados para sus efectos únicos.",
       "requisitos": {
         "minimos": [
-          "Procesador: Dual Core 2.4 Ghz",
-          "Gráficos: 2GB VRAM / DirectX 11 compatible (GeForce GTX 760, Radeon R9 270X o Intel HD Graphics 5000)",
-          "Memoria: 8 GB RAM",
+          "Procesador: Dual Core de 2.4 GHz",
+          "Gráficos: GPU con 2GB VRAM, compatible con DirectX 11.0c",
+          "Memoria: 8 GB de RAM",
           "Almacenamiento: 10 GB de espacio disponible"
         ],
         "recomendados": [
-          "Procesador: Quad Core 2.4 Ghz",
-          "Gráficos: 4GB VRAM / DirectX 11 compatible (GeForce GTX 1080 o Radeon RX 5700 XT)",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 10 GB de espacio disponible"
+          "Procesador: Quad Core de 2.4 GHz o superior",
+          "Gráficos: GPU con 4GB VRAM, compatible con DirectX 11.0c",
+          "Memoria: 16 GB de RAM",
+          "Almacenamiento: 10 GB de espacio disponible (preferiblemente SSD)"
         ]
       },
       "imagen": "https://media.rawg.io/media/screenshots/6d6/6d61e8ef67c0f27b29b4f16266dbd9bd.jpg"
@@ -159,20 +99,10 @@
       "titulo": "Hollow Knight: Silksong",
       "fecha": "4 de septiembre de 2025",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "Hollow Knight: Silksong, con alta probabilidad, continúa utilizando el motor Unity, como su aclamado predecesor, lo que permite un control preciso sobre el renderizado 2D y la optimización del rendimiento. Se anticipa una mejora en la densidad de detalles y efectos de partículas, manteniendo la fluidez de animaciones cuadro por cuadro y un target de 60 FPS estables. Las mecánicas de juego evolucionan, introduciendo a Hornet con un set de movimientos más dinámico, incluyendo nuevas capacidades de movilidad basadas en seda y un sistema de herramientas diversificado. La estructura Metroidvania se promete más compleja y vertical, explotando las capacidades del motor para interacciones ambientales precisas y un combate ágil y reactivo.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 16.291503962s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '16s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i3-2100 / AMD FX-4350",
-          "Gráficos: NVIDIA GeForce GT 640 / AMD Radeon HD 7750",
-          "Memoria: 4 GB RAM",
-          "Almacenamiento: 10 GB de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i5-4670K / AMD Ryzen 5 1500X",
-          "Gráficos: NVIDIA GeForce GTX 760 / AMD Radeon R9 270X",
-          "Memoria: 8 GB RAM",
-          "Almacenamiento: 10 GB de espacio disponible"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg"
     },
@@ -181,20 +111,10 @@
       "titulo": "Hell is Us",
       "fecha": "4 de septiembre de 2025",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Hell is Us se perfila como un título de acción-aventura que, con alta probabilidad, aprovecha la potencia de Unreal Engine para renderizar un mundo desolado con un realismo visual impactante, destacando su iluminación volumétrica y la fidelidad de sus texturas. El motor facilitará una inmersión profunda en sus entornos gracias a sus sistemas de física avanzada y efectos de partículas. En cuanto a sus mecánicas, el juego promete un combate desafiante y táctico contra criaturas grotescas, complementado con una exploración no lineal que fomenta el descubrimiento y el uso ingenioso de herramientas específicas, como un dron, para desvelar los misterios de su atmósfera opresiva y su narrativa críptica.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 8.971778098s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '8s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 / AMD Ryzen 3 3100",
-          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB)",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 50 GB de espacio disponible (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-10700K / AMD Ryzen 5 5600X",
-          "Gráficos: NVIDIA GeForce RTX 2070 / AMD Radeon RX 6700 XT",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 50 GB de espacio disponible (SSD)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/60b/60b7561ab47a7c0853ae983d419b47cb.jpg"
     },
@@ -203,20 +123,10 @@
       "titulo": "Metroid Prime 4: Beyond",
       "fecha": "18 de agosto de 2025",
       "plataformas": "Nintendo Switch",
-      "sinopsis": "Metroid Prime 4: Beyond se anticipa a exprimir al máximo las capacidades técnicas de su plataforma, probablemente empleando una evolución robusta de un motor propietario, optimizado para la renderización dinámica de entornos interconectados y detallados. Se espera una inmersión visual superior, lograda mediante el uso de técnicas de iluminación global híbridas y efectos de partículas de alta fidelidad que enriquecen tanto la exploración como el combate. Las mecánicas jugables, manteniendo la esencia de exploración no lineal y puzles ambientales en primera persona, serán complementadas con un sistema de físicas avanzadas para la interacción con el entorno y una IA enemiga más adaptativa, garantizando una experiencia de juego desafiante y fluida.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 1.79151528s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '1s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) o AMD Radeon RX 580 (8GB)",
-          "Memoria: 8 GB de RAM",
-          "Almacenamiento: 50 GB de espacio disponible (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-10700K o AMD Ryzen 7 3700X",
-          "Gráficos: NVIDIA GeForce RTX 3070 o AMD Radeon RX 6700 XT",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 50 GB de espacio disponible (SSD NVMe)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/de7/de7678219604a2e47fae734699f4444c.jpeg"
     },
@@ -225,7 +135,7 @@
       "titulo": "Doom: The Dark Ages",
       "fecha": "13 de mayo de 2025",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "⚠️ ERROR DEL SISTEMA: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 56.336577674s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}",
       "requisitos": {
         "minimos": [],
         "recomendados": []
@@ -237,20 +147,10 @@
       "titulo": "Clair Obscur: Expedition 33",
       "fecha": "24 de abril de 2025",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Clair Obscur: Expedition 33 se perfila como un RPG por turnos que explota las capacidades de un motor gráfico moderno, previsiblemente Unreal Engine 5, para renderizar un mundo con una dirección artística singular, evocando ilustraciones de cómic francés o pinturas al óleo. La implementación de iluminación global avanzada y el nivel de detalle en los modelos de personajes y entornos son fundamentales para su inmersión visual. En cuanto a mecánicas, propone un sistema de combate por turnos que integra elementos reactivos y un timing preciso para optimizar el daño o la defensa, entrelazándose con un robusto sistema de progresión de personajes y la exploración de sus singulares y desafiantes paisajes.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 50.889329483s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '50s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-10400 o equivalente AMD (ej. Ryzen 5 3600)",
-          "Gráficos: NVIDIA GeForce RTX 2060 o AMD Radeon RX 6600",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 70 GB SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-12700 o equivalente AMD (ej. Ryzen 7 5800X3D)",
-          "Gráficos: NVIDIA GeForce RTX 3070 o AMD Radeon RX 6800 XT",
-          "Memoria: 32 GB RAM",
-          "Almacenamiento: 70 GB SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg"
     },
@@ -259,20 +159,10 @@
       "titulo": "Blue Prince",
       "fecha": "10 de abril de 2025",
       "plataformas": "PC",
-      "sinopsis": "Blue Prince se perfila como una propuesta técnica intrigante, haciendo uso de un motor gráfico (posiblemente Unity o Unreal Engine, altamente personalizado) para dar vida a su distintivo estilo visual isométrico, que combina la profundidad y el dinamismo de entornos 3D con una estética evocadora de dibujos a mano. Este híbrido permite un sofisticado sistema de iluminación y sombras, crucial para su atmósfera de misterio y exploración. Las mecánicas principales se centran en la resolución de puzles arquitectónicos dentro de una mansión que, se presume, podría emplear algoritmos de generación procedural o de transformación dinámica para sus niveles, exigiendo una gestión de recursos eficiente y una lógica de juego compleja para su narrativa no lineal.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 45.342125024s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '45s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-4430 o AMD FX-6300",
-          "Gráficos: NVIDIA GeForce GTX 750 (2GB) o AMD Radeon R7 260X (2GB)",
-          "Memoria: 8 GB de RAM",
-          "Almacenamiento: 12 GB de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-4770K o AMD Ryzen 5 1600",
-          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) o AMD Radeon RX 580 (8GB)",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 12 GB de espacio disponible (SSD recomendado)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/258/258f88a911a4233d4f21c2f91dceb892.jpg"
     },
@@ -281,20 +171,10 @@
       "titulo": "South of Midnight",
       "fecha": "8 de abril de 2025",
       "plataformas": "PC, Xbox Series X/S",
-      "sinopsis": "South of Midnight, de Compulsion Games, es un despliegue técnico de cómo manipular un motor gráfico robusto, presumiblemente Unreal Engine 5, para forjar una estética única de animación 'stop-motion' en tiempo real. Esto se logra mediante shaders personalizados y una pipeline de renderizado que intencionalmente simula una baja tasa de cuadros de animación y transiciones de pose abruptas, sin sacrificar la reactividad del gameplay. Las mecánicas de combate y exploración se entrelazan con habilidades de 'weaving', que probablemente requieren un sofisticado sistema de física para la interacción ambiental y una compleja gestión de estados de animación para la protagonista, reforzando la inmersión en su mundo místico.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 39.948187688s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '39s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce GTX 1070 o AMD Radeon RX 580 (8GB VRAM)",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 80 GB de espacio disponible (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i5-10600K o AMD Ryzen 5 3600X",
-          "Gráficos: NVIDIA GeForce RTX 3060 o AMD Radeon RX 6600 XT (12GB VRAM)",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 80 GB de espacio disponible (SSD NVMe recomendado)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/734/73451dc0abd013bee5b7d88faaacec11.jpg"
     },
@@ -303,20 +183,10 @@
       "titulo": "Split Fiction",
       "fecha": "6 de marzo de 2025",
       "plataformas": "PC",
-      "sinopsis": "Split Fiction se desarrolla sobre una bifurcación altamente optimizada del Unreal Engine 5, lo que permite una renderización fotorrealista de entornos dinámicos y la transición fluida entre realidades paralelas. Su núcleo mecánico se basa en un sistema de manipulación de la realidad procedural, donde las decisiones del jugador alteran directamente la topología del mundo en tiempo real, utilizando técnicas de voxelización adaptativa para la destrucción ambiental. La implementación de físicas avanzadas, potenciada por Chaos Physics, garantiza interacciones complejas y reactivas con el entorno. El pipeline de renderizado diferido con trazado de rayos híbrido gestiona la iluminación global y las reflexiones, sumergiendo al jugador en una narrativa espacialmente compleja y visualmente impactante.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 34.529321044s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce GTX 1070 (8GB) o AMD Radeon RX 580 (8GB)",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 80 GB SSD de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-10700K o AMD Ryzen 7 3700X",
-          "Gráficos: NVIDIA GeForce RTX 3070 (8GB) o AMD Radeon RX 6800 XT (12GB)",
-          "Memoria: 32 GB RAM",
-          "Almacenamiento: 80 GB SSD (NVMe recomendado) de espacio disponible"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg"
     },
@@ -325,20 +195,10 @@
       "titulo": "Kingdom Come: Deliverance 2",
       "fecha": "11 de febrero de 2025",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Kingdom Come: Deliverance 2 se erige como un testamento a la inmersión histórica, impulsado por una versión altamente evolucionada del CryEngine, ahora optimizado bajo una nomenclatura propietaria. Este motor gráfico promete gráficos fotorrealistas con texturas de altísima resolución, un sistema de iluminación global dinámico y físicas de objetos y personajes con un nivel de realismo sin precedentes. Las mecánicas jugables ahondarán en un sistema de combate direccional brutalmente auténtico, una economía profundamente simulada y un sistema de decisiones y consecuencias que modela el vasto mundo abierto medieval, demandando una capacidad de procesamiento robusta para la IA y los detallados entornos.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 28.133222057s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-9600K o AMD Ryzen 5 3600",
-          "Gráficos: NVIDIA GeForce GTX 1070 o AMD Radeon RX 590",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 100 GB SSD (NVMe recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-12700K o AMD Ryzen 7 5800X",
-          "Gráficos: NVIDIA GeForce RTX 3070 o AMD Radeon RX 6700 XT",
-          "Memoria: 32 GB de RAM",
-          "Almacenamiento: 100 GB SSD NVMe"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg"
     },
@@ -347,20 +207,10 @@
       "titulo": "Call of Duty: Black Ops 6",
       "fecha": "25 de octubre de 2024",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Call of Duty: Black Ops 6 se asienta sobre una evolución significativa del motor IW Engine, conocido por su capacidad de renderizado fotorrealista. Este título potencia la fidelidad visual con un sistema de iluminación global volumétrico avanzado, texturas de alta resolución y modelos de personaje detallados que aprovechan el teselado y el mapeo de paralaje. La principal novedad mecánica es el sistema Omnimovement, que redefine la movilidad del jugador con un control total de 360 grados en cualquier dirección, permitiendo transiciones fluidas entre correr, esprintar, deslizarse y bucear. Además, el audio posicional 3D y una física de objetos mejorada buscan una inmersión sin precedentes en el campo de batalla.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 21.379911185s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-6600K / AMD Ryzen 5 1600",
-          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB)",
-          "Memoria: 8 GB RAM",
-          "Almacenamiento: 100 GB de espacio disponible (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-8700K / AMD Ryzen 7 2700X",
-          "Gráficos: NVIDIA GeForce RTX 3070 (8GB) / AMD Radeon RX 6700 XT (12GB)",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 100 GB de espacio disponible (SSD NVMe)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/e89/e89f9a409bce5d36873f65ea9659c36e.jpg"
     },
@@ -369,20 +219,10 @@
       "titulo": "Star Wars Outlaws",
       "fecha": "30 de agosto de 2024",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Star Wars Outlaws emerge como una propuesta ambiciosa, impulsada por el robusto motor Snowdrop de Ubisoft Massive, célebre por su capacidad para renderizar entornos detallados y complejos mundos abiertos con iluminación avanzada y físicas realistas. Esta tecnología permite una inmersión visual en diversos biomas galácticos, desde paisajes urbanos aéreos hasta desiertos. A nivel mecánico, el juego combina un combate de tercera persona dinámico con elementos de sigilo, exploración a bordo de vehículos y naves espaciales, y un sistema de reputación que influye directamente en la narrativa y las oportunidades como canalla en el bajo mundo.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 15.685147119s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '15s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i7-4790 / AMD Ryzen 5 1600",
-          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 570 (8GB)",
-          "Memoria: 16 GB RAM (configuración de doble canal)",
-          "Almacenamiento: 90 GB SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-8700K / AMD Ryzen 5 3600",
-          "Gráficos: NVIDIA GeForce RTX 3060 (8GB) / AMD Radeon RX 6700 XT (12GB)",
-          "Memoria: 16 GB RAM (configuración de doble canal)",
-          "Almacenamiento: 90 GB SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/853/853aa2b76ae85fcf2782ace58cf7479f.jpg"
     },
@@ -391,7 +231,7 @@
       "titulo": "Black Myth: Wukong",
       "fecha": "20 de agosto de 2024",
       "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 54.577211771s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 10.160957173s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}",
       "requisitos": {
         "minimos": [],
         "recomendados": []
@@ -403,7 +243,7 @@
       "titulo": "Baldur's Gate 3",
       "fecha": "3 de agosto de 2023",
       "plataformas": "PS5, PC, Mac, Xbox Series X/S",
-      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 48.600543627s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 4.747976311s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '4s'}]}}",
       "requisitos": {
         "minimos": [],
         "recomendados": []
@@ -415,20 +255,10 @@
       "titulo": "Final Fantasy XVI",
       "fecha": "22 de junio de 2023",
       "plataformas": "PS5, PC",
-      "sinopsis": "Final Fantasy XVI se construye sobre un motor propietario altamente optimizado para la arquitectura de consolas de nueva generación y PC, exhibiendo un realismo sombrío y detallado. El motor gestiona eficazmente densos entornos, complejos sistemas de iluminación global y un elevado número de efectos de partículas durante el combate. Las mecánicas de juego pivotan hacia un robusto sistema de combate de acción en tiempo real, influenciado por el género de \"character action games\", integrando habilidades de Eikon con transiciones fluidas entre la exploración, el combate terrestre y espectaculares batallas colosales que fusionan el gameplay con cinemáticas interactivas.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 59.251849946s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i7-12700 / AMD Ryzen 7 3700X",
-          "Gráficos: NVIDIA GeForce RTX 2080 / AMD Radeon RX 6600 XT / Intel Arc A750",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 90 GB disponibles (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-13700 / AMD Ryzen 7 5800X3D",
-          "Gráficos: NVIDIA GeForce RTX 4080 / AMD Radeon RX 7900 XT",
-          "Memoria: 16 GB RAM",
-          "Almacenamiento: 90 GB disponibles (SSD altamente recomendado)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg"
     },
@@ -437,20 +267,10 @@
       "titulo": "Diablo IV",
       "fecha": "5 de junio de 2023",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Diablo IV se erige sobre un motor gráfico propietario, altamente optimizado para DirectX 12, que integra PBR avanzado, iluminación volumétrica dinámica y texturas de alta resolución para generar un mundo oscuro y atmosférico. Su arquitectura de cliente-servidor facilita una experiencia de mundo compartido continuo, mientras que las mecánicas de juego se centran en un combate visceral, un sistema de progresión de personaje profundo mediante el Árbol de Habilidades y el Tablero de Paragón, y un sistema de botín robusto con aspectos legendarios que modifican drásticamente las habilidades, manteniendo la esencia del hack-and-slash isométrico en un entorno modernizado.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 53.57016618s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-2500K o AMD FX-8350",
-          "Gráficos: NVIDIA GeForce GTX 660 o AMD Radeon R9 280 (DirectX 12)",
-          "Memoria: 8 GB de RAM",
-          "Almacenamiento: 90 GB de espacio SSD"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-8700K o AMD Ryzen 7 2700X",
-          "Gráficos: NVIDIA GeForce RTX 2060 o AMD Radeon RX 5700 XT (DirectX 12)",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 90 GB de espacio SSD"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/77d/77d51f8f4a07c3eecb0f8504027b1bf0.jpg"
     },
@@ -459,20 +279,10 @@
       "titulo": "EA SPORTS FC 24",
       "fecha": "29 de septiembre de 2023",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "EA SPORTS FC 24 se apoya en una evolución robusta del motor Frostbite, implementando la tecnología HyperMotionV que utiliza datos volumétricos de más de 180 partidos reales de fútbol masculino y femenino para una autenticidad de movimiento sin precedentes. A esto se suma Sapien Technology, mejorando la anatomía y musculatura de los jugadores, y la física GPU Cloth para una interacción de la indumentaria más realista. Las mecánicas de juego se enriquecen con los PlayStyles, potenciados por datos de Opta, y una expansión del sistema AcceleRATE 2.0, ofreciendo una experiencia de juego más profunda y visualmente impactante.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 48.190962446s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-6600K / AMD Ryzen 5 1600 o equivalente",
-          "Gráficos: NVIDIA GeForce GTX 1050 Ti / AMD Radeon RX 570 o equivalente",
-          "Memoria: 8 GB de RAM",
-          "Almacenamiento: 100 GB de espacio disponible"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-8600K / AMD Ryzen 7 2700X o equivalente",
-          "Gráficos: NVIDIA GeForce GTX 1660 / AMD Radeon RX 5600 XT o equivalente",
-          "Memoria: 12 GB de RAM",
-          "Almacenamiento: 100 GB de espacio disponible"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/104/10404407d458d90f4559a1f587c2650a.jpg"
     },
@@ -481,20 +291,10 @@
       "titulo": "Dead Island 2",
       "fecha": "21 de abril de 2023",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Dead Island 2 se construye sobre una versión altamente optimizada de Unreal Engine 4, destacando su sistema procedural de daño \"FLESH\" (Fully Locational Evisceration System for Humanoids). Esta tecnología permite una representación detallada y dinámica de la desmembración y el gore, con reacciones físicas intrincadas a cada impacto. La implementación de físicas ragdoll avanzadas y un motor de materiales PBR (Physically Based Rendering) contribuyen a un entorno inmersivo y un combate visceral que enfatiza el daño localizado y la interacción ambiental con elementos como el fuego o la electricidad, creando una experiencia jugable gráficamente intensa.",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 42.686593802s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '42s'}]}}",
       "requisitos": {
-        "minimos": [
-          "Procesador: AMD FX-9590 o Intel Core i7-7700H",
-          "Gráficos: AMD Radeon RX 480 (8GB) o NVIDIA GeForce GTX 1060 (6GB)",
-          "Memoria: 10 GB de RAM",
-          "Almacenamiento: 70 GB de espacio disponible (SSD recomendado)"
-        ],
-        "recomendados": [
-          "Procesador: AMD Ryzen 5 5600X o Intel Core i7-10700K",
-          "Gráficos: AMD Radeon RX 6600 XT (8GB) o NVIDIA GeForce RTX 2070 (8GB)",
-          "Memoria: 16 GB de RAM",
-          "Almacenamiento: 70 GB de espacio disponible (SSD)"
-        ]
+        "minimos": [],
+        "recomendados": []
       },
       "imagen": "https://media.rawg.io/media/games/9cd/9cd22ae5aebd922f96f2bc50efab83df.jpg"
     },
@@ -503,7 +303,7 @@
       "titulo": "Elden Ring",
       "fecha": "25 de febrero de 2022",
       "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 26.176559ms.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '0s'}]}}",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 37.209579378s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '37s'}]}}",
       "requisitos": {
         "minimos": [],
         "recomendados": []
