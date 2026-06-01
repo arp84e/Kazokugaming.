@@ -1,304 +1,82 @@
 {
   "juegos": [
     {
-      "id": "007-first-light",
-      "titulo": "007 First Light",
-      "fecha": "27 de mayo de 2026",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg"
-    },
-    {
-      "id": "forza-horizon-6",
-      "titulo": "Forza Horizon 6",
-      "fecha": "19 de mayo de 2026",
-      "plataformas": "PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
-    },
-    {
-      "id": "resident-evil-requiem",
-      "titulo": "Resident Evil Requiem",
-      "fecha": "27 de febrero de 2026",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg"
-    },
-    {
-      "id": "crisol-theater-of-idols",
-      "titulo": "Crisol: Theater of Idols",
-      "fecha": "10 de febrero de 2026",
-      "plataformas": "PS5, PC, Xbox Series X/S, Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/868/868149477e4463324c23ed9b4481034c.jpg"
-    },
-    {
-      "id": "animal-crossing-new-horizons-(versión-mejorada)",
-      "titulo": "Animal Crossing: New Horizons (Versión mejorada)",
-      "fecha": "15 de enero de 2026",
-      "plataformas": "Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/42f/42fe1abd4d7c11ca92d93a0fb0f8662b.jpg"
-    },
-    {
-      "id": "metal-gear-solid-delta-snake-eater",
-      "titulo": "Metal Gear Solid Delta: Snake Eater",
-      "fecha": "17 de noviembre de 2025",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/1c0/1c0548b761f7c4e4c0da71172b3362bf.jpg"
-    },
-    {
-      "id": "hades-ii",
-      "titulo": "Hades II",
-      "fecha": "25 de septiembre de 2025",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/6d6/6d61e8ef67c0f27b29b4f16266dbd9bd.jpg"
-    },
-    {
       "id": "hollow-knight-silksong",
       "titulo": "Hollow Knight: Silksong",
-      "fecha": "4 de septiembre de 2025",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
+      "fecha": "Por confirmar",
+      "plataformas": "PC, Switch, Xbox, PS5",
+      "sinopsis": "Hollow Knight: Silksong, construido probablemente sobre una versión altamente optimizada del motor Unity, promete expandir el ya aclamado legado visual y jugable de su predecesor. Se espera una meticulosa renderización de entornos 2D dibujados a mano, con una paleta de colores vibrante y animaciones fluidas que dan vida a cada criatura y rincón de Pharloom. Las mecánicas de combate y movimiento de Hornet se perfilan como más ágiles y verticales, incorporando un sistema de herramientas y habilidades de seda que añaden profundidad estratégica al estilo Metroidvania, mientras la carga gráfica se mantiene contenida para asegurar una amplia accesibilidad sin comprometer la belleza artística ni la respuesta del control. La optimización del motor será clave para su rendimiento.",
       "requisitos": {
-        "minimos": [],
-        "recomendados": []
+        "minimos": [
+          "Procesador: Intel Core i3-2100 / AMD FX-4350 o equivalente",
+          "Gráficos: NVIDIA GeForce GT 730 (2GB) / AMD Radeon R7 240 (2GB) o equivalente",
+          "Memoria: 4 GB RAM",
+          "Almacenamiento: 10 GB de espacio disponible"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i5-4460 / AMD Ryzen 3 1200 o equivalente",
+          "Gráficos: NVIDIA GeForce GTX 960 (4GB) / AMD Radeon R9 280 (3GB) o equivalente",
+          "Memoria: 8 GB RAM",
+          "Almacenamiento: 10 GB de espacio disponible"
+        ]
       },
       "imagen": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg"
     },
     {
-      "id": "hell-is-us",
-      "titulo": "Hell is Us",
-      "fecha": "4 de septiembre de 2025",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
+      "id": "grand-theft-auto-vi",
+      "titulo": "Grand Theft Auto VI",
+      "fecha": "Otoño 2025",
+      "plataformas": "PS5, Xbox Series X/S",
+      "sinopsis": "⚠️ ERROR DEL SISTEMA: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 21.324570537s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}",
       "requisitos": {
         "minimos": [],
         "recomendados": []
       },
-      "imagen": "https://media.rawg.io/media/games/60b/60b7561ab47a7c0853ae983d419b47cb.jpg"
-    },
-    {
-      "id": "metroid-prime-4-beyond",
-      "titulo": "Metroid Prime 4: Beyond",
-      "fecha": "18 de agosto de 2025",
-      "plataformas": "Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/de7/de7678219604a2e47fae734699f4444c.jpeg"
+      "imagen": "https://media.rawg.io/media/games/734/7342a1cd82c8997ec620084ae4c2e7e4.jpg"
     },
     {
       "id": "doom-the-dark-ages",
-      "titulo": "Doom: The Dark Ages",
-      "fecha": "13 de mayo de 2025",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
+      "titulo": "DOOM: The Dark Ages",
+      "fecha": "2025",
+      "plataformas": "PC, PS5, Xbox Series X/S",
+      "sinopsis": "DOOM: The Dark Ages se perfila como una evolución robusta del id Tech Engine, probablemente una iteración avanzada del id Tech 7, optimizado para ofrecer una fidelidad visual excepcional y una fluidez extrema incluso con hordas demoníacas en pantalla. Sus mecánicas se centran en un combate arena brutalmente rápido, que combina la icónica filosofía de 'Glory Kills' y el manejo táctico de recursos con nuevas adiciones como un escudo-sierra y una mayal retráctil, expandiendo el arsenal del Slayer. La implementación de monturas y armaduras gigantes promete añadir una nueva capa de verticalidad y escala a los enfrentamientos, manteniendo la agresividad característica de la serie pero bajo un prisma de fantasía oscura.",
       "requisitos": {
-        "minimos": [],
-        "recomendados": []
+        "minimos": [
+          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
+          "Gráficos: NVIDIA GeForce GTX 1660 SUPER (6GB VRAM) o AMD Radeon RX 580 (8GB VRAM)",
+          "Memoria: 16 GB RAM",
+          "Almacenamiento: 85 GB de espacio disponible (SSD recomendado)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 3700X",
+          "Gráficos: NVIDIA GeForce RTX 3070 (8GB VRAM) o AMD Radeon RX 6700 XT (12GB VRAM)",
+          "Memoria: 32 GB RAM",
+          "Almacenamiento: 85 GB de espacio disponible (SSD NVMe obligatorio)"
+        ]
       },
       "imagen": "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg"
     },
     {
-      "id": "clair-obscur-expedition-33",
-      "titulo": "Clair Obscur: Expedition 33",
-      "fecha": "24 de abril de 2025",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
+      "id": "metal-gear-solid-delta-snake-eater",
+      "titulo": "Metal Gear Solid Delta: Snake Eater",
+      "fecha": "2024 / 2025",
+      "plataformas": "PC, PS5, Xbox",
+      "sinopsis": "Metal Gear Solid Delta: Snake Eater representa una reimaginación técnica del clásico, construida sobre Unreal Engine 5. Esta transición dota al juego de fotorrealismo avanzado, empleando técnicas de renderizado modernas como Lumen para iluminación global dinámica y Nanite para una geometría de alta densidad y detalle extremo sin comprometer el rendimiento. Las mecánicas de sigilo, combate y supervivencia se benefician de un sistema de físicas renovado, reflejando de manera más auténtica la interacción con entornos dinámicos y la balística, elevando la inmersión del jugador a un nuevo estándar visual y táctico.",
       "requisitos": {
-        "minimos": [],
-        "recomendados": []
+        "minimos": [
+          "Procesador: Intel Core i5-8400 o AMD Ryzen 5 2600",
+          "Gráficos: NVIDIA GeForce GTX 1070 (8GB VRAM) o AMD Radeon RX 580 (8GB VRAM)",
+          "Memoria: 16 GB RAM",
+          "Almacenamiento: 70 GB SSD"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-10700K o AMD Ryzen 7 3700X",
+          "Gráficos: NVIDIA GeForce RTX 3070 (8GB VRAM) o AMD Radeon RX 6700 XT (8GB VRAM)",
+          "Memoria: 16 GB RAM",
+          "Almacenamiento: 70 GB SSD (NVMe recomendado)"
+        ]
       },
-      "imagen": "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg"
-    },
-    {
-      "id": "blue-prince",
-      "titulo": "Blue Prince",
-      "fecha": "10 de abril de 2025",
-      "plataformas": "PC",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/258/258f88a911a4233d4f21c2f91dceb892.jpg"
-    },
-    {
-      "id": "south-of-midnight",
-      "titulo": "South of Midnight",
-      "fecha": "8 de abril de 2025",
-      "plataformas": "PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/734/73451dc0abd013bee5b7d88faaacec11.jpg"
-    },
-    {
-      "id": "split-fiction",
-      "titulo": "Split Fiction",
-      "fecha": "6 de marzo de 2025",
-      "plataformas": "PC",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg"
-    },
-    {
-      "id": "kingdom-come-deliverance-2",
-      "titulo": "Kingdom Come: Deliverance 2",
-      "fecha": "11 de febrero de 2025",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg"
-    },
-    {
-      "id": "call-of-duty-black-ops-6",
-      "titulo": "Call of Duty: Black Ops 6",
-      "fecha": "25 de octubre de 2024",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/e89/e89f9a409bce5d36873f65ea9659c36e.jpg"
-    },
-    {
-      "id": "star-wars-outlaws",
-      "titulo": "Star Wars Outlaws",
-      "fecha": "30 de agosto de 2024",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/853/853aa2b76ae85fcf2782ace58cf7479f.jpg"
-    },
-    {
-      "id": "black-myth-wukong",
-      "titulo": "Black Myth: Wukong",
-      "fecha": "20 de agosto de 2024",
-      "plataformas": "PS5, PC, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg"
-    },
-    {
-      "id": "baldur's-gate-3",
-      "titulo": "Baldur's Gate 3",
-      "fecha": "3 de agosto de 2023",
-      "plataformas": "PS5, PC, Mac, Xbox Series X/S",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg"
-    },
-    {
-      "id": "final-fantasy-xvi",
-      "titulo": "Final Fantasy XVI",
-      "fecha": "22 de junio de 2023",
-      "plataformas": "PS5, PC",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg"
-    },
-    {
-      "id": "diablo-iv",
-      "titulo": "Diablo IV",
-      "fecha": "5 de junio de 2023",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/77d/77d51f8f4a07c3eecb0f8504027b1bf0.jpg"
-    },
-    {
-      "id": "ea-sports-fc-24",
-      "titulo": "EA SPORTS FC 24",
-      "fecha": "29 de septiembre de 2023",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/104/10404407d458d90f4559a1f587c2650a.jpg"
-    },
-    {
-      "id": "dead-island-2",
-      "titulo": "Dead Island 2",
-      "fecha": "21 de abril de 2023",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/9cd/9cd22ae5aebd922f96f2bc50efab83df.jpg"
-    },
-    {
-      "id": "elden-ring",
-      "titulo": "Elden Ring",
-      "fecha": "25 de febrero de 2022",
-      "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One",
-      "sinopsis": "Análisis técnico en desarrollo.",
-      "requisitos": {
-        "minimos": [],
-        "recomendados": []
-      },
-      "imagen": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
+      "imagen": "https://media.rawg.io/media/games/1c0/1c0548b761f7c4e4c0da71172b3362bf.jpg"
     }
   ]
 }
