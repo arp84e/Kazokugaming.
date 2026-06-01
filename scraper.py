@@ -141,31 +141,10 @@ print("\n--- EJECUTANDO TAREA 2: TELEMETRÍA (ANÁLISIS MANUAL) ---")
 
 # 🎮 TU LISTA PERSONALIZADA DE JUEGOS
 juegos_manuales = [
-    {"titulo": "007 First Light", "fecha": "27 de mayo de 2026", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Forza Horizon 6", "fecha": "19 de mayo de 2026", "plataformas": "PC, Xbox Series X/S"},
-  {"titulo": "Resident Evil Requiem", "fecha": "27 de febrero de 2026", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Crisol: Theater of Idols", "fecha": "10 de febrero de 2026", "plataformas": "PS5, PC, Xbox Series X/S, Nintendo Switch"},
-  {"titulo": "Animal Crossing: New Horizons (Versión mejorada)", "fecha": "15 de enero de 2026", "plataformas": "Nintendo Switch"},
-  {"titulo": "Metal Gear Solid Delta: Snake Eater", "fecha": "17 de noviembre de 2025", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Hades II", "fecha": "25 de septiembre de 2025", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch"},
-  {"titulo": "Hollow Knight: Silksong", "fecha": "4 de septiembre de 2025", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch"},
-  {"titulo": "Hell is Us", "fecha": "4 de septiembre de 2025", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Metroid Prime 4: Beyond", "fecha": "18 de agosto de 2025", "plataformas": "Nintendo Switch"},
-  {"titulo": "Doom: The Dark Ages", "fecha": "13 de mayo de 2025", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Clair Obscur: Expedition 33", "fecha": "24 de abril de 2025", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Blue Prince", "fecha": "10 de abril de 2025", "plataformas": "PC"},
-  {"titulo": "South of Midnight", "fecha": "8 de abril de 2025", "plataformas": "PC, Xbox Series X/S"},
-  {"titulo": "Split Fiction", "fecha": "6 de marzo de 2025", "plataformas": "PC"},
-  {"titulo": "Kingdom Come: Deliverance 2", "fecha": "11 de febrero de 2025", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Call of Duty: Black Ops 6", "fecha": "25 de octubre de 2024", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One"},
-  {"titulo": "Star Wars Outlaws", "fecha": "30 de agosto de 2024", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Black Myth: Wukong", "fecha": "20 de agosto de 2024", "plataformas": "PS5, PC, Xbox Series X/S"},
-  {"titulo": "Baldur's Gate 3", "fecha": "3 de agosto de 2023", "plataformas": "PS5, PC, Mac, Xbox Series X/S"},
-  {"titulo": "Final Fantasy XVI", "fecha": "22 de junio de 2023", "plataformas": "PS5, PC"},
-  {"titulo": "Diablo IV", "fecha": "5 de junio de 2023", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One"},
-  {"titulo": "EA SPORTS FC 24", "fecha": "29 de septiembre de 2023", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One, Nintendo Switch"},
-  {"titulo": "Dead Island 2", "fecha": "21 de abril de 2023", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One"},
-  {"titulo": "Elden Ring", "fecha": "25 de febrero de 2022", "plataformas": "PS5, PS4, PC, Xbox Series X/S, Xbox One"}
+    {"titulo": "Hollow Knight: Silksong", "fecha": "Por confirmar", "plataformas": "PC, Switch, Xbox, PS5"},
+    {"titulo": "Grand Theft Auto VI", "fecha": "Otoño 2025", "plataformas": "PS5, Xbox Series X/S"},
+    {"titulo": "DOOM: The Dark Ages", "fecha": "2025", "plataformas": "PC, PS5, Xbox Series X/S"},
+    {"titulo": "Metal Gear Solid Delta: Snake Eater", "fecha": "2024 / 2025", "plataformas": "PC, PS5, Xbox"}
 ]
 
 estructura_final = {
@@ -216,9 +195,13 @@ for juego in juegos_manuales:
             print(f"   [+] Análisis extraído con éxito.")
         else:
             print(f"   [!] La IA no devolvió un formato reconocible.")
+            datos_ia["sinopsis"] = "⚠️ Fallo de formato: La IA no estructuró los datos correctamente."
             
     except Exception as e:
-        print(f"   [!] Error técnico al procesar {titulo}: {e}")
+        # AQUÍ ESTÁ LA MAGIA: Capturamos el error real y lo enviamos a tu web
+        error_str = str(e).replace('"', "'")
+        print(f"   [!] Error técnico al procesar {titulo}: {error_str}")
+        datos_ia["sinopsis"] = f"⚠️ ERROR DEL SISTEMA: {error_str}"
 
     imagen_url = buscar_portada_juego(titulo)
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
