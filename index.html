@@ -75,7 +75,9 @@
             const gridSecundarias = document.getElementById('noticiasSecundariasGrid');
 
             try {
-                const respuesta = await fetch('noticias.json?v=' + Date.now());
+                // CORRECCIÓN AQUÍ: Eliminado el "?v=" para evitar errores de lectura local
+                const respuesta = await fetch('noticias.json');
+                
                 if (!respuesta.ok) throw new Error("No se pudo leer noticias.json");
                 
                 const datos = await respuesta.json();
@@ -176,6 +178,10 @@
                         gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas en las últimas 72 horas.</p>";
                         zonaSecundarias.classList.remove('hidden');
                     }
+                } else if (!mostrarDestacada) {
+                    // Si datos.secundarias no existe o está vacío, y tampoco hay destacada reciente
+                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas en las últimas 72 horas.</p>";
+                    zonaSecundarias.classList.remove('hidden');
                 }
 
             } catch (error) {
