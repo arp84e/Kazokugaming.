@@ -21,15 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      # 👇 Agregamos requests aquí
-      - run: pip install google-genai requests
+      # ... (resto de pasos)
       - name: Ejecutar Bot
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }} # 👈 Agregamos tu llave de RAWG aquí
-          NUEVOS_JUEGOS: ${{ inputs.juegos }}
-          SOBRESCRIBIR: ${{ inputs.sobrescribir }}
+        working-directory: .
         run: python scraper_telemetria.py
