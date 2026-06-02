@@ -53,7 +53,7 @@
         </div>
     </footer>
 
-    <script>
+<script>
         async function cargarNoticiasInicio() {
             const loading = document.getElementById('noticiasLoading');
             const contenedor = document.getElementById('noticiasContenedor');
@@ -62,7 +62,6 @@
             const gridSecundarias = document.getElementById('noticiasSecundariasGrid');
 
             try {
-                // RUTA LIMPIA PARA GITHUB PAGES
                 const respuesta = await fetch('noticias.json');
                 if (!respuesta.ok) throw new Error("No se pudo leer noticias.json");
                 
@@ -71,71 +70,80 @@
                 loading.classList.add('hidden');
                 contenedor.classList.remove('hidden');
 
-                const TRES_DIAS_MS = 259200000;
-                const ahora = Date.now();
+                // 1. Renderizado de la Noticia Destacada (AHORA SIN LÍMITE DE FECHA)
                 let mostrarDestacada = false;
-
                 if (datos.destacada) {
+                    mostrarDestacada = true;
                     const dest = datos.destacada;
-                    const fechaDestacada = dest.fecha ? new Date(dest.fecha).getTime() : ahora;
-                    
-                    if (ahora - fechaDestacada <= TRES_DIAS_MS || !dest.fecha) {
-                        mostrarDestacada = true;
-                        zonaDestacada.innerHTML = `
-                            <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
-                                <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
-                                    <img src="${dest.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
-                                    <span class="absolute top-4 left-4 bg-indigo-600/90 backdrop-blur-sm text-white text-xs uppercase font-black tracking-wider px-3 py-1 rounded-lg border border-indigo-500/30 shadow-md">Destacado</span>
+                    zonaDestacada.innerHTML = `
+                        <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
+                            <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
+                                <img src="${dest.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" alt="${dest.titulo}" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-indigo-600/90 backdrop-blur-sm text-white text-xs uppercase font-black tracking-wider px-3 py-1 rounded-lg border border-indigo-500/30 shadow-md">
+                                    ${dest.categoria || 'Destacado'}
+                                </span>
+                            </div>
+                            <div class="p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between space-y-6">
+                                <div class="space-y-4">
+                                    <span class="text-xs text-slate-500 font-medium">Reporte Principal</span>
+                                    <h3 class="text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight group-hover:text-cyan-300 transition-colors">
+                                        ${dest.titulo}
+                                    </h3>
+                                    <p class="text-slate-400 text-sm leading-relaxed">
+                                        ${dest.resumen || dest.contenido || ''}
+                                    </p>
                                 </div>
-                                <div class="p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between space-y-6">
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight group-hover:text-cyan-300 transition-colors">${dest.titulo}</h3>
-                                        <p class="text-slate-400 text-sm leading-relaxed">${dest.resumen || ''}</p>
-                                    </div>
-                                    <div class="pt-4 border-t border-slate-800/60">
-                                        <a href="articulo.html?id=${dest.id || ''}" class="inline-flex justify-center bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition">Leer Crónica Completa →</a>
-                                    </div>
+                                <div class="pt-4 border-t border-slate-800/60">
+                                    <a href="articulo.html?id=${dest.id || ''}" class="inline-flex justify-center bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition shadow-md shadow-indigo-900/30">
+                                        Leer Crónica Completa →
+                                    </a>
                                 </div>
-                            </div>`;
-                    }
+                            </div>
+                        </div>
+                    `;
                 }
+
                 if (!mostrarDestacada) zonaDestacada.innerHTML = "";
 
+                // 2. Renderizado de Noticias Secundarias
                 if (datos.secundarias && datos.secundarias.length > 0) {
                     gridSecundarias.innerHTML = "";
-                    const noticiasFiltradas = datos.secundarias.filter(noticia => {
-                        if (!noticia.fecha) return true;
-                        return (ahora - new Date(noticia.fecha).getTime()) <= TRES_DIAS_MS;
+                    zonaSecundarias.classList.remove('hidden');
+                    
+                    datos.secundarias.forEach(noticia => {
+                        gridSecundarias.innerHTML += `
+                            <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
+                                <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
+                                    <img src="${noticia.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600'}" alt="${noticia.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <div class="space-y-2">
+                                        <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors">
+                                            ${noticia.titulo}
+                                        </h4>
+                                        <p class="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                                            ${noticia.resumen}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
                     });
-
-                    if (noticiasFiltradas.length > 0) {
-                        zonaSecundarias.classList.remove('hidden');
-                        noticiasFiltradas.forEach(noticia => {
-                            gridSecundarias.innerHTML += `
-                                <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 transition-all flex flex-col justify-between hover:-translate-y-1">
-                                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
-                                        <img src="${noticia.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                    </div>
-                                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                                        <div>
-                                            <h4 class="text-lg font-bold text-white leading-snug line-clamp-2">${noticia.titulo}</h4>
-                                            <p class="text-sm text-slate-400 line-clamp-3 mt-2">${noticia.resumen}</p>
-                                        </div>
-                                    </div>
-                                </article>`;
-                        });
-                    } else if (!mostrarDestacada) {
-                        gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas recientes.</p>";
-                        zonaSecundarias.classList.remove('hidden');
-                    }
                 } else if (!mostrarDestacada) {
-                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas recientes.</p>";
+                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas disponibles.</p>";
                     zonaSecundarias.classList.remove('hidden');
                 }
+
             } catch (error) {
-                loading.innerHTML = `<div class="text-center text-red-400 text-sm">⚠️ El complemento de noticias está inactivo o vacío.</div>`;
+                console.error(error);
+                loading.innerHTML = `
+                    <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto">
+                        <p class="text-red-400 font-semibold text-sm">⚠️ El complemento de noticias está inactivo o el JSON tiene formato incorrecto.</p>
+                    </div>
+                `;
             }
         }
+
         document.addEventListener('DOMContentLoaded', cargarNoticiasInicio);
     </script>
 </body>
