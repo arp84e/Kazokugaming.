@@ -1,20 +1,26 @@
 {
   "juegos": [
     {
-      "id": "cyberpunk-2077-alan-wake-2",
-      "titulo": "Cyberpunk 2077 Alan Wake 2",
-      "fecha": "No aplicable, juego no existente",
-      "plataformas": "No aplicable",
-      "sinopsis": "El título 'Cyberpunk 2077 Alan Wake 2' no corresponde a un juego existente en el mercado. Cyberpunk 2077 fue desarrollado por CD Projekt Red utilizando su motor propietario REDengine 4, diseñado para ofrecer un vasto mundo abierto con una alta densidad de detalles, sofisticados sistemas de iluminación global y reflejos, incluyendo una implementación temprana de ray tracing que exigía hardware potente. Por otro lado, Alan Wake 2, de Remedy Entertainment, emplea el motor Northlight, que es un referente en fotorrealismo, efectos volumétricos avanzados y una implementación de path tracing de última generación, elevando drásticamente el listón visual y requiriendo GPUs muy potentes para su máxima expresión.",
+      "id": "cyberpunk-2077",
+      "titulo": "Cyberpunk 2077",
+      "fecha": "10 de diciembre de 2020",
+      "plataformas": "PC, PS4, Xbox One, PS5, Xbox Series X/S",
+      "sinopsis": "Cyberpunk 2077 opera bajo el avanzado REDengine 4, un motor gráfico propietario de CD Projekt Red, diseñado para renderizar mundos abiertos masivos y densos con un alto nivel de detalle visual. Su arquitectura se enfoca en un rendering diferido complejo, destacando por su implementación de iluminación global y efectos de ray tracing, que imponen una considerable carga en la GPU. Las físicas del juego están integradas para ofrecer interacciones ambientales y de vehículos realistas. El motor maneja eficientemente el streaming de activos y una IA compleja, posicionándolo como un título exigente que aprovecha al máximo tanto la CPU como la GPU modernas.",
       "requisitos": {
         "minimos": [
-          "No aplicable, juego no existente"
+          "Procesador: Intel Core i7-6700 o AMD Ryzen 5 1600",
+          "Gráficos: NVIDIA GeForce GTX 1060 (6GB) o AMD Radeon RX 580 (8GB) o Intel Arc A380 (8GB)",
+          "Memoria: 12 GB RAM",
+          "Almacenamiento: 70 GB SSD"
         ],
         "recomendados": [
-          "No aplicable, juego no existente"
+          "Procesador: Intel Core i7-12700 o AMD Ryzen 7 7800X3D",
+          "Gráficos: NVIDIA GeForce RTX 2060 SUPER o AMD Radeon RX 5700 XT o Intel Arc A770",
+          "Memoria: 16 GB RAM",
+          "Almacenamiento: 70 GB SSD NVMe"
         ]
       },
-      "imagen": "assets/default.jpg"
+      "imagen": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1117/K16e53k5jT2f5vM4lY9a72wS.png"
     }
   ]
 }
