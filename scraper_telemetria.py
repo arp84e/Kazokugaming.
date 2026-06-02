@@ -2,12 +2,15 @@ import os
 import sys
 import json
 import time
+import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (MODO MANUAL) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
+rawg_key = os.environ.get("RAWG_API_KEY") # 👈 Recuperamos tu llave de RAWG
+
 if not api_key:
     print("❌ ERROR: No se encontró GEMINI_API_KEY.")
     sys.exit(1)
@@ -21,66 +24,69 @@ seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# Recibir variables desde GitHub Actions
+# 🛠️ FUNCIÓN PARA OBTENER LA PORTADA REAL
+def buscar_portada(titulo_juego):
+    if not rawg_key:
+        return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400"
+    
+    url = f"https://api.rawg.io/api/games?key={rawg_key}&search={titulo_juego}&page_size=1"
+    try:
+        respuesta = requests.get(url).json()
+        if respuesta['results']:
+            return respuesta['results'][0]['background_image']
+    except Exception as e:
+        print(f"⚠️ Error buscando imagen en RAWG: {e}")
+    
+    return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400"
+
 nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-# Limpiar la lista de juegos recibida (uno por línea)
 titulos = [linea.strip() for linea in nuevos_juegos_raw.split('\n') if linea.strip()]
 
 if not titulos:
-    print("⚠️ No se proporcionaron juegos para analizar. Finalizando script.")
+    print("⚠️ No se proporcionaron juegos para analizar.")
     sys.exit(0)
 
-# Cargar el archivo telemetria.json existente o crear uno nuevo
 estructura_final = {"juegos": []}
 archivo_json = 'telemetria.json'
 
-# --- LÍNEA CORREGIDA AQUÍ ---
 if not sobrescribir and os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
             datos_existentes = json.load(f)
             if "juegos" in datos_existentes:
                 estructura_final["juegos"] = datos_existentes["juegos"]
-        print(f"✅ Archivo anterior cargado. Manteniendo {len(estructura_final['juegos'])} expedientes existentes.")
     except Exception as e:
-        print(f"⚠️ Error al leer el JSON anterior, se creará uno nuevo. Error: {e}")
-elif sobrescribir:
-    print("⚠️ MODO SOBRESCRIBIR ACTIVADO: Se eliminará el catálogo anterior.")
+        print(f"⚠️ Error al leer JSON antiguo: {e}")
 
-# Procesar los nuevos juegos
 for titulo in titulos:
     print(f"\nProcesando telemetría para: {titulo}")
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
-    
-    # Comprobar si el juego ya existe en el JSON para actualizarlo en lugar de duplicarlo
     indice_existente = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
     
+    # 📸 Buscamos la imagen real primero
+    imagen_real = buscar_portada(titulo)
+    
     prompt = f"""
-    Actúa como un experto en hardware y rendimiento de videojuegos. Analiza el juego '{titulo}'.
-    Devuelve un JSON con el siguiente formato exacto:
+    Actúa como un experto en hardware y rendimiento de videojuegos. Analiza: '{titulo}'.
+    Devuelve un JSON con este formato exacto:
     {{
-        "fecha": "Fecha de lanzamiento confirmada o 'Por determinar'",
-        "plataformas": "Ej: PC, PS5, Xbox Series X/S",
-        "sinopsis": "Un párrafo técnico de 4-5 líneas analizando exclusivamente el motor gráfico, físicas y arquitectura técnica.",
+        "fecha": "Fecha de lanzamiento",
+        "plataformas": "Ej: PC, PS5",
+        "sinopsis": "Párrafo técnico sobre el motor gráfico.",
         "requisitos": {{
-            "minimos": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."],
-            "recomendados": ["Procesador: ...", "Gráficos: ...", "Memoria: ...", "Almacenamiento: ..."]
-        }},
-        "imagen": "Genera una URL de imagen representativa o escribe 'assets/default.jpg'"
+            "minimos": ["..."],
+            "recomendados": ["..."]
+        }}
     }}
-    Responde ÚNICAMENTE con la estructura JSON solicitada.
     """
     
     try:
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt,
-            config=types.GenerateContentConfig(
-                safety_settings=seguridad_permisiva,
-                response_mime_type="application/json",
-            )
+            config=types.GenerateContentConfig(safety_settings=seguridad_permisiva, response_mime_type="application/json")
         )
         
         datos_ia = json.loads(response.text)
@@ -90,28 +96,22 @@ for titulo in titulos:
             "titulo": titulo,
             "fecha": datos_ia.get("fecha", "Por determinar"),
             "plataformas": datos_ia.get("plataformas", "Multiplataforma"),
-            "sinopsis": datos_ia.get("sinopsis", "Análisis técnico en curso..."),
+            "sinopsis": datos_ia.get("sinopsis", "Análisis en curso..."),
             "requisitos": datos_ia.get("requisitos", {"minimos": [], "recomendados": []}),
-            "imagen": datos_ia.get("imagen", "") 
+            "imagen": imagen_real # 👈 Inyectamos la imagen descargada de la API
         }
         
         if indice_existente is not None:
-            # Actualiza el existente
             estructura_final["juegos"][indice_existente] = nuevo_expediente
-            print(f"🔄 {titulo} actualizado en el catálogo.")
         else:
-            # Lo añade al final (append)
             estructura_final["juegos"].append(nuevo_expediente)
-            print(f"✅ {titulo} añadido al catálogo.")
             
     except Exception as e:
-        print(f"⚠️ Error al procesar {titulo}: {e}")
+        print(f"⚠️ Error procesando {titulo}: {e}")
     
-    print("⏳ Esperando 15 segundos para proteger la API de Gemini...")
-    time.sleep(15)
+    time.sleep(12)
 
-# Guardar el resultado fusionado
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
-print(f"✅ Proceso terminado. Total de expedientes en telemetria.json: {len(estructura_final['juegos'])}")
+print("✅ telemetria.json actualizado con imágenes reales.")
