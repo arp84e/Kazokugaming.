@@ -4,24 +4,55 @@ on:
   workflow_dispatch:
     inputs:
       juegos:
-        description: 'Juegos a analizar (uno por línea)'
+        description: 'Escribe los juegos a añadir (uno por línea)'
         required: true
         type: string
       sobrescribir:
-        description: '¿Borrar catálogo anterior?'
+        description: '⚠️ ¿Borrar catálogo anterior?'
         required: false
         type: boolean
         default: false
 
 permissions:
-  contents: write
+  contents: write # ESTO ES CRÍTICO PARA QUE EL BOT PUEDA ESCRIBIR EN EL REPO
 
 jobs:
-  analizar:
+  analizar-telemetria:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-      # ... (resto de pasos)
-      - name: Ejecutar Bot
-        working-directory: .
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependencias
+        run: pip install google-genai requests
+
+      - name: Ejecutar Bot de Telemetría
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          NUEVOS_JUEGOS: ${{ inputs.juegos }}
+          SOBRESCRIBIR: ${{ inputs.sobrescribir }}
         run: python scraper_telemetria.py
+
+      - name: Commit y Push de los cambios
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          
+          # Añadimos el archivo telemetria.json
+          git add telemetria.json
+          
+          # Solo hacemos commit si detectamos cambios reales
+          if git diff --staged --quiet; then
+            echo "No hay cambios nuevos en telemetria.json."
+          else
+            git commit -m "🤖 Actualización automática de Telemetría"
+            git push
+            echo "Cambios subidos a GitHub."
+          fi
