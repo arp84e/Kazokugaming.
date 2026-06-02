@@ -43,7 +43,7 @@
         const params = new URLSearchParams(window.location.search);
         const idJuego = params.get('id');
 
-        fetch('lanzamientos.json')
+        fetch('telemetria.json')
             .then(response => response.json())
             .then(data => {
                 const juego = data.juegos.find(j => j.id === idJuego);
