@@ -24,15 +24,12 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: pip install google-genai
-      - env:
+      # 👇 Agregamos requests aquí
+      - run: pip install google-genai requests
+      - name: Ejecutar Bot
+        env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }} # 👈 Agregamos tu llave de RAWG aquí
           NUEVOS_JUEGOS: ${{ inputs.juegos }}
           SOBRESCRIBIR: ${{ inputs.sobrescribir }}
         run: python scraper_telemetria.py
-      - name: Guardar en GitHub
-        run: |
-          git config --global user.name "KazokuBot"
-          git config --global user.email "bot@kazokugaming.com"
-          git add telemetria.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Actualizando telemetria.json" && git push)
