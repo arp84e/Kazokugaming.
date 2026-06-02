@@ -62,19 +62,18 @@ for titulo in titulos:
     
     imagen_real = buscar_portada(titulo)
     
-    # PROMPT AVANZADO PARA UN ANÁLISIS EXHAUSTIVO
     prompt = f"""
-    Actúa como un experto analista técnico de videojuegos y hardware (estilo Digital Foundry).
-    Analiza exhaustivamente el juego '{titulo}'.
+    Actúa como un experto analista técnico de videojuegos. Analiza el juego '{titulo}'.
     Devuelve UNICAMENTE un JSON válido con esta estructura exacta:
     {{
         "fecha": "Fecha de lanzamiento",
-        "plataformas": "Ej: PC, PS5, Xbox Series X/S",
-        "motor_grafico": "Nombre exacto del motor (ej. Unreal Engine 5, REDengine)",
-        "tecnologias": "Menciona tecnologías clave (ej. Ray Tracing, DLSS 3.0, FSR, Lumen)",
-        "rendimiento": "Resolución y FPS objetivo en consolas o PC medio",
+        "plataformas": "Ej: PC, PS5",
+        "calificacion": "Nota numérica del 1 al 10 basada en la crítica web (ej. 8.5 o 9.2)",
+        "motor_grafico": "Nombre exacto del motor (ej. Unreal Engine 5)",
+        "tecnologias": "Menciona tecnologías clave (ej. Ray Tracing, DLSS)",
+        "rendimiento": "Resolución y FPS objetivo",
         "sinopsis": "Breve sinopsis general del juego (2 líneas).",
-        "analisis_detallado": "<p>Escribe 2 o 3 párrafos en HTML analizando a fondo la arquitectura gráfica, optimización de CPU/GPU, físicas e iluminación.</p>",
+        "analisis_detallado": "<p>Escribe 2 o 3 párrafos en HTML analizando a fondo la arquitectura gráfica, optimización e iluminación.</p>",
         "requisitos": {{
             "minimos": ["SO: ...", "Procesador: ...", "Memoria: ...", "Gráficos: ...", "Almacenamiento: ..."],
             "recomendados": ["SO: ...", "Procesador: ...", "Memoria: ...", "Gráficos: ...", "Almacenamiento: ..."]
@@ -88,7 +87,6 @@ for titulo in titulos:
             contents=prompt,
             config=types.GenerateContentConfig(safety_settings=seguridad_permisiva, response_mime_type="application/json")
         )
-        
         datos_ia = json.loads(response.text)
         
         nuevo_expediente = {
@@ -96,11 +94,12 @@ for titulo in titulos:
             "titulo": titulo,
             "fecha": datos_ia.get("fecha", "Por determinar"),
             "plataformas": datos_ia.get("plataformas", "Multiplataforma"),
+            "calificacion": datos_ia.get("calificacion", "N/A"),
             "motor_grafico": datos_ia.get("motor_grafico", "No especificado"),
             "tecnologias": datos_ia.get("tecnologias", "Estándar"),
-            "rendimiento": datos_ia.get("rendimiento", "Variable según hardware"),
+            "rendimiento": datos_ia.get("rendimiento", "Variable"),
             "sinopsis": datos_ia.get("sinopsis", ""),
-            "analisis_detallado": datos_ia.get("analisis_detallado", "<p>Análisis técnico en proceso...</p>"),
+            "analisis_detallado": datos_ia.get("analisis_detallado", "<p>Análisis en proceso...</p>"),
             "requisitos": datos_ia.get("requisitos", {"minimos": [], "recomendados": []}),
             "imagen": imagen_real
         }
