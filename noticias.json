@@ -1,11 +1,50 @@
 {
   "destacada": {
-    "categoria": "Noticias de Videojuegos",
-    "titulo": "Revolución en el Campo de Batalla: Un Shooter AAA Desafía las Convenciones del Combate",
-    "resumen": "La industria de los videojuegos se estremece ante la noticia de un nuevo shooter AAA que promete redefinir por completo la experiencia de combate. Este título emergente es la prueba palpable de que la innovación profunda sigue siendo una fuerza motriz en las producciones de gran presupuesto, marcando un hito que podría inspirar a todo el género.",
-    "contenido_completo": "<p>En un momento en el que muchos jugadores y críticos lamentan la aparente falta de riesgo en los grandes títulos de la industria, surge una noticia que infunde esperanza: un próximo shooter AAA está generando un revuelo considerable gracias a la audacia de su sistema de combate. La promesa de una mecánica 'más novedosa' de lo visto hasta la fecha en el género no solo captura la imaginación, sino que también desafía la percepción de que la innovación está reservada únicamente para los desarrollos independientes.</p><p>Este anuncio no es baladí. Demuestra que, con la visión y la inversión adecuadas, los estudios de alto perfil pueden y deben ir más allá de las fórmulas probadas. Un sistema de combate verdaderamente original tiene el potencial no solo de ofrecer una experiencia fresca a los jugadores, sino también de establecer nuevos estándares para la interactividad y la estrategia dentro de los shooters, obligando a otros desarrolladores a repensar sus propios enfoques.</p><p>El impacto en la industria podría ser monumental. Si este juego logra el éxito esperado, podría desencadenar una oleada de creatividad, alentando a otros gigantes a explorar mecánicas de juego inusuales y a invertir en la experimentación. Esto, a su vez, beneficiaría enormemente a la comunidad de jugadores, que disfrutaría de una mayor diversidad y profundidad en sus opciones de entretenimiento. Es un recordatorio poderoso de que el estatus AAA no tiene por qué ser sinónimo de conservadurismo, sino que puede ser una plataforma para la vanguardia.</p>",
-    "imagen": "https://www.ejemplo.com/imagenes/shooter_innovacion_futurista.jpg",
-    "enlace": "https://es.ign.com/compras/229999/es-el-combate-mas-novedoso-que-he-visto-nunca-en-un-shooter-la-prueba-de-que-los-aaa-aun-pueden-inno",
-    "fecha": "2023-10-27T14:45:00.000000"
-  }
+    "id": "dest-01",
+    "categoria": "Noticia Principal",
+    "titulo": "Take-Two: WWE 2K tiene el potencial de triplicar su éxito actual",
+    "resumen": "El CEO de Take-Two Interactive, Strauss Zelnick, afirma que la franquicia WWE 2K podría crecer exponencialmente, duplicando o triplicando su tamaño actual en el mercado.",
+    "contenido_completo": "<p>Strauss Zelnick, el influyente CEO de Take-Two Interactive, ha compartido una visión ambiciosa para el futuro de la franquicia WWE 2K. Según Zelnick, la serie de lucha libre tiene el potencial de ser «el doble o el triple de grande» de lo que es actualmente. Esta declaración subraya la confianza de la compañía en el valor de la marca WWE y en la capacidad de su equipo de desarrollo, Visual Concepts, para expandir significativamente el alcance y el impacto comercial de sus títulos anuales. Este optimismo llega en un momento en que la serie ha estado recibiendo una recepción cada vez más positiva por parte de los fans y la crítica, especialmente con entregas recientes que han mejorado sustancialmente la jugabilidad y el contenido.</p><p>La visión de Zelnick sugiere que Take-Two no solo busca mantener el éxito actual, sino catapultar la franquicia WWE 2K a nuevas cotas, posiblemente equiparándola con otras grandes sagas deportivas en términos de ingresos y base de jugadores. Esto podría implicar una inversión continuada en nuevas características, modos de juego innovadores, mejoras gráficas y una expansión en el soporte post-lanzamiento. La compañía podría estar explorando nuevas estrategias para monetizar y comprometer a los jugadores a largo plazo, buscando no solo atraer a los aficionados acérrimos de la lucha libre, sino también captar a una audiencia más amplia de jugadores que buscan experiencias deportivas robustas y envolventes.</p>",
+    "enlace": "https://es.ign.com/wwe-2k26/230048/el-jefe-de-take-two-lo-tiene-claro-wwe-2k-puede-ser-el-doble-o-el-triple-de-grande-de-lo-que-es-ahor",
+    "fecha": "2024-07-25T10:30:00.000000",
+    "imagen": "https://sm.ign.com/ign_es/news/t/take-two-b/take-two-boss-says-2ks-wwe-franchise-could-be-double-or-trip_n8ca.jpg"
+  },
+  "secundarias": [
+    {
+      "id": "sec-1",
+      "categoria": "Actualidad",
+      "titulo": "¡Juego multijugador GRATIS en PlayStation: Reclámalo ya!",
+      "resumen": "Aprovecha una oferta imperdible: un popular juego multijugador está disponible completamente gratis para usuarios de PlayStation. No pierdas la oportunidad de reclamarlo antes de que finalice la promoción. ¡Corre a descargarlo y disfruta de la acción online sin costo!",
+      "enlace": "https://es.ign.com/playstation-1/230046/si-juegas-en-playstation-corre-a-reclamar-este-juego-multijugador-que-esta-gratis",
+      "fecha": "2026-06-02T17:22:05.090639",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/war-robots-juego-multijugador_crbv.jpg"
+    },
+    {
+      "id": "sec-3",
+      "categoria": "Actualidad",
+      "titulo": "Star Fox: ¿La resurrección que esperábamos?",
+      "resumen": "Hemos probado el nuevo Star Fox y nuestras impresiones son muy positivas. Podría ser la resurrección tan esperada para la saga, prometiendo la combinación perfecta entre innovación y la esencia clásica que los fans adoran.",
+      "enlace": "https://es.ign.com/star-fox-wii-u/230027/hemos-jugado-a-star-fox-y-puede-ser-exactamente-la-resurreccion-que-la-saga-necesita",
+      "fecha": "2026-06-02T17:22:33.429791",
+      "imagen": "https://sm.ign.com/ign_es/photo/default/nintendo-confirms-switch-2-star-fox-pricing-h5hj-17785907952_v56v.jpg"
+    },
+    {
+      "id": "sec-4",
+      "categoria": "Actualidad",
+      "titulo": "Estrenos destacados: Series y películas en streaming este junio",
+      "resumen": "Prepárate para los estrenos más esperados de junio con una lista de 9 series y un largometraje que llegarán a las plataformas de streaming. Descubre qué ver para tus maratones del próximo mes. Una guía imprescindible para los amantes del entretenimiento televisivo.",
+      "enlace": "https://es.ign.com/tv/230013/las-9-series-mas-esperadas-y-un-peliculon-que-se-podran-ver-en-streaming-en-junio",
+      "fecha": "2026-06-02T17:22:51.024742",
+      "imagen": "https://sm.ign.com/ign_es/feature/t/the-9-most/the-9-most-anticipated-tv-shows-and-one-movie-to-stream-in-j_aj21.jpg"
+    },
+    {
+      "id": "sec-5",
+      "categoria": "Actualidad",
+      "titulo": "Final Fantasy VII Rebirth: ¿Superior a Remake en todo?",
+      "resumen": "Después de 40 horas, un jugador evalúa Final Fantasy VII Rebirth, afirmando que es superior a Remake en casi todos los aspectos. Solo una característica impide su victoria total sobre su predecesor. Descubre los puntos clave de esta profunda comparación.",
+      "enlace": "https://es.ign.com/final-fantasy-vii-rebirth/230008/tras-40-horas-en-nintendo-switch-2-lo-tengo-claro-final-fantasy-vii-rebirth-es-mejor-que-remake-en-t",
+      "fecha": "2026-06-02T17:23:07.150930",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/final-fantasy-vii-rebirth-portada-2_ey7r.jpg"
+    }
+  ]
 }
