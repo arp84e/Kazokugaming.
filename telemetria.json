@@ -1,3 +1,20 @@
 {
-  "juegos": []
+  "juegos": [
+    {
+      "id": "cyberpunk-2077-alan-wake-2",
+      "titulo": "Cyberpunk 2077 Alan Wake 2",
+      "fecha": "No aplicable, juego no existente",
+      "plataformas": "No aplicable",
+      "sinopsis": "El título 'Cyberpunk 2077 Alan Wake 2' no corresponde a un juego existente en el mercado. Cyberpunk 2077 fue desarrollado por CD Projekt Red utilizando su motor propietario REDengine 4, diseñado para ofrecer un vasto mundo abierto con una alta densidad de detalles, sofisticados sistemas de iluminación global y reflejos, incluyendo una implementación temprana de ray tracing que exigía hardware potente. Por otro lado, Alan Wake 2, de Remedy Entertainment, emplea el motor Northlight, que es un referente en fotorrealismo, efectos volumétricos avanzados y una implementación de path tracing de última generación, elevando drásticamente el listón visual y requiriendo GPUs muy potentes para su máxima expresión.",
+      "requisitos": {
+        "minimos": [
+          "No aplicable, juego no existente"
+        ],
+        "recomendados": [
+          "No aplicable, juego no existente"
+        ]
+      },
+      "imagen": "assets/default.jpg"
+    }
+  ]
 }
