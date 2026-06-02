@@ -40,72 +40,101 @@
     </footer>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const idJuego = params.get('id');
+    const urlParams = new URLSearchParams(window.location.search);
+    const idBuscado = urlParams.get('id');
 
+    if (!idBuscado) {
+        document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400">⚠️ No se especificó ningún expediente.</div>`;
+    } else {
         fetch('telemetria.json')
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
-                const juego = data.juegos.find(j => j.id === idJuego);
-
+                const juego = data.juegos.find(j => j.id === idBuscado);
+                
                 if (juego) {
-                    // Verificar si tiene requisitos de PC válidos
-                    const tienePc = juego.plataformas.toLowerCase().includes('pc');
+                    // Generar lista de requisitos
                     const reqMin = juego.requisitos?.minimos || [];
                     const reqRec = juego.requisitos?.recomendados || [];
                     
-                    let bloqueHardware = '';
-                    if (tienePc && (reqMin.length > 0 || reqRec.length > 0)) {
-                        bloqueHardware = `
-                            <div class="mt-12 space-y-6">
-                                <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Requisitos del Sistema (PC)
-                                </h2>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-6">
-                                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5">⚙️ Configuración Mínima</h3>
-                                        <ul class="space-y-2.5 text-xs text-slate-400">
-                                            ${reqMin.map(r => `<li class="border-b border-slate-900 pb-2 last:border-0"><strong class="text-slate-300">${r.split(':')[0]}:</strong> ${r.split(':')[1] || ''}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                    <div class="bg-indigo-950/10 border border-indigo-500/10 rounded-2xl p-6">
-                                        <h3 class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-4 flex items-center gap-1.5">🚀 Configuración Recomendada</h3>
-                                        <ul class="space-y-2.5 text-xs text-slate-400">
-                                            ${reqRec.map(r => `<li class="border-b border-slate-900/40 pb-2 last:border-0"><strong class="text-slate-200">${r.split(':')[0]}:</strong> ${r.split(':')[1] || ''}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    }
+                    let htmlMinimos = reqMin.map(r => `<li class="flex items-start space-x-2"><span class="text-cyan-500 mt-0.5 text-xs">▸</span><span>${r}</span></li>`).join('');
+                    let htmlRecomendados = reqRec.map(r => `<li class="flex items-start space-x-2"><span class="text-cyan-500 mt-0.5 text-xs">▸</span><span>${r}</span></li>`).join('');
 
+                    // Interfaz mejorada con los nuevos datos técnicos
                     document.getElementById('pantalla-juego').innerHTML = `
-                        <div class="flex flex-col md:flex-row gap-8 items-start">
-                            <div class="w-full md:w-1/3 aspect-[3/4] rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl">
-                                <img src="${juego.imagen || 'https://via.placeholder.com/400x600'}" alt="Carátula" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full md:w-2/3 space-y-4">
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase tracking-wider">${juego.fecha}</span>
-                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700 uppercase tracking-wider">Análisis Técnico</span>
+                        <div class="lg:flex lg:space-x-10 mb-12">
+                            <div class="lg:w-1/3 mb-8 lg:mb-0">
+                                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80 sticky top-24 relative">
+                                    <img src="${juego.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" alt="${juego.titulo}" class="w-full h-auto object-cover aspect-[3/4]">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                                 </div>
-                                <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">${juego.titulo}</h1>
-                                <p class="text-xs font-bold text-slate-400 tracking-wide uppercase">${juego.plataformas}</p>
-                                <div class="h-px bg-slate-800/60 my-4"></div>
-                                <p class="text-sm text-slate-300 leading-relaxed font-normal">${juego.sinopsis}</p>
+                            </div>
+                            
+                            <div class="lg:w-2/3 flex flex-col justify-center">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase tracking-wider">${juego.fecha}</span>
+                                    <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700 uppercase tracking-wider">Telemetría Completa</span>
+                                </div>
+                                <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-2">${juego.titulo}</h1>
+                                <p class="text-sm font-bold text-slate-400 tracking-wide uppercase mb-6">${juego.plataformas}</p>
+                                
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                                    <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Motor Gráfico</p>
+                                        <p class="text-sm font-semibold text-cyan-400">${juego.motor_grafico || 'No especificado'}</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Tecnologías</p>
+                                        <p class="text-sm font-semibold text-white">${juego.tecnologias || 'Estándar'}</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 col-span-2 md:col-span-1">
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Rendimiento</p>
+                                        <p class="text-sm font-semibold text-white">${juego.rendimiento || 'Variable'}</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 md:p-8 mb-8 prose prose-invert prose-p:text-slate-300 prose-p:leading-relaxed max-w-none">
+                                    <h3 class="text-xl font-bold text-white mb-4 flex items-center"><span class="text-cyan-500 mr-2">⚡</span> Análisis Técnico Profundo</h3>
+                                    ${juego.analisis_detallado}
+                                </div>
                             </div>
                         </div>
-                        ${bloqueHardware}
+
+                        <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-8 lg:p-12 shadow-xl">
+                            <div class="text-center mb-10">
+                                <h2 class="text-2xl lg:text-3xl font-extrabold text-white">Requisitos del Sistema en PC</h2>
+                                <p class="text-slate-400 mt-2 text-sm">Especificaciones necesarias para una experiencia óptima.</p>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                                <div class="bg-slate-950/50 rounded-2xl p-6 border border-slate-800/50 hover:border-cyan-500/30 transition-colors">
+                                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-800/60">
+                                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 font-bold">MIN</div>
+                                        <h3 class="text-lg font-bold text-slate-200">Requisitos Mínimos</h3>
+                                    </div>
+                                    <ul class="space-y-4 text-sm text-slate-400">${htmlMinimos || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                                </div>
+                                
+                                <div class="bg-cyan-950/10 rounded-2xl p-6 border border-cyan-900/30 hover:border-cyan-500/50 transition-colors relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
+                                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">REC</div>
+                                        <h3 class="text-lg font-bold text-cyan-100">Requisitos Recomendados</h3>
+                                    </div>
+                                    <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlRecomendados || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                                </div>
+                            </div>
+                        </div>
                     `;
-                    document.title = `${juego.titulo} | Telemetría`;
+                    document.title = `${juego.titulo} | Análisis Técnico`;
                 } else {
-                    document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente solicitado no existe.</div>`;
+                    document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente de telemetría solicitado no existe.</div>`;
                 }
             })
             .catch(err => {
                 console.error(err);
-                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos de Telemetría.</div>`;
+                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos.</div>`;
             });
-    </script>
+    }
+</script>
 </body>
 </html>
