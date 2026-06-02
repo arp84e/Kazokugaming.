@@ -1,25 +1,35 @@
 {
   "juegos": [
     {
-      "id": "prueba-1",
-      "titulo": "PRUEBA DE ESCRITURA EXITOSA",
-      "fecha": "Hoy",
-      "plataformas": "PC",
-      "calificacion": "10",
-      "motor_grafico": "Debug Engine",
-      "tecnologias": "Ninguna",
-      "rendimiento": "60 FPS",
-      "sinopsis": "Si ves esto, el bot escribe correctamente.",
-      "analisis_detallado": "<p>Prueba exitosa.</p>",
+      "id": "borderlands-4",
+      "titulo": "borderlands 4",
+      "fecha": "2025-10-22",
+      "plataformas": "PC, PlayStation 5, Xbox Series X|S",
+      "calificacion": "8.7",
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": "DLSS 3.5, FSR 3.0, Ray Tracing (sombras, oclusión ambiental), HDR10",
+      "rendimiento": "PC: 4K@60FPS (DLSS/FSR Quality), Consolas (Modo Rendimiento): 1440p-1800p@60FPS, Consolas (Modo Calidad): 4K@30FPS (con RT)",
+      "sinopsis": "Vuelve la acción frenética de Borderlands con nuevos buscacámaras, mundos por explorar y millones de armas. Una amenaza intergaláctica inédita se cierne sobre Pandora y el resto de la galaxia, y solo un equipo de excéntricos mercenarios puede detenerla, si no se matan entre ellos primero.",
+      "analisis_detallado": "<p>Borderlands 4 se asienta firmemente en el Unreal Engine 5, y el salto es perceptible, aunque se mantiene fiel a su distintivo estilo cel-shaded. La iluminación global ha recibido una mejora sustancial, aportando una mayor profundidad y dramatismo a los entornos, especialmente en los paisajes alienígenas que ahora exhiben una riqueza cromática y un detalle ambiental que superan con creces a sus predecesores. Hemos notado un uso discreto pero efectivo del Ray Tracing para las sombras y la oclusión ambiental, lo que añade una capa extra de realismo y cohesión visual sin traicionar la estética cartoon. Los modelos de personajes y armas, por su parte, se benefician de una mayor densidad poligonal y texturas de alta resolución que resaltan cada imperfección y detalle característico del universo.</p><p>En cuanto al rendimiento, Borderlands 4 es una bestia escalable. En PC, con una RTX 4080 o superior y DLSS 3.5 en modo 'Calidad', es posible disfrutar de una experiencia fluida a 4K y 60 fotogramas por segundo, incluso en los tiroteos más caóticos, aunque picos de explosiones masivas pueden causar caídas puntuales. En consolas de nueva generación, el 'Modo Rendimiento' prioriza los 60fps a una resolución dinámica que oscila entre 1440p y 1800p, logrando una consistencia encomiable con mínimas fluctuaciones. El 'Modo Calidad', por otro lado, empuja la resolución a 4K nativos, incorpora un Ray Tracing más robusto en sombras y reflejos puntuales, pero bloquea el framerate a 30fps. La experiencia es más cinematográfica, pero el dinamismo del combate de Borderlands se siente penalizado por la menor tasa de refresco, haciéndolo una opción de nicho para quienes prioricen la fidelidad visual absoluta sobre la respuesta.</p>",
       "requisitos": {
         "minimos": [
-          "Ninguno"
+          "SO: Windows 10 (64-bit)",
+          "Procesador: Intel Core i5-8600K / AMD Ryzen 5 3600",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1080 / AMD Radeon RX 5900",
+          "DirectX: Versión 12",
+          "Almacenamiento: 100 GB de espacio disponible (SSD recomendado)"
         ],
         "recomendados": [
-          "Ninguno"
+          "SO: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core i7-10700K / AMD Ryzen 7 5800X",
+          "Memoria: 32 GB de RAM",
+          "Gráficos: NVIDIA GeForce RTX 3070 Ti / AMD Radeon RX 6800 XT",
+          "DirectX: Versión 12",
+          "Almacenamiento: 100 GB de espacio disponible (SSD NVMe)"
         ]
       },
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400"
+      "imagen": "https://media.rawg.io/media/games/9cc/9ccb59a7c634091bc8a9b7978d4dc322.jpg"
     }
   ]
 }
