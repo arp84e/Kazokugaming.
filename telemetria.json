@@ -1,3 +1,25 @@
 {
-  "juegos": []
+  "juegos": [
+    {
+      "id": "prueba-1",
+      "titulo": "PRUEBA DE ESCRITURA EXITOSA",
+      "fecha": "Hoy",
+      "plataformas": "PC",
+      "calificacion": "10",
+      "motor_grafico": "Debug Engine",
+      "tecnologias": "Ninguna",
+      "rendimiento": "60 FPS",
+      "sinopsis": "Si ves esto, el bot escribe correctamente.",
+      "analisis_detallado": "<p>Prueba exitosa.</p>",
+      "requisitos": {
+        "minimos": [
+          "Ninguno"
+        ],
+        "recomendados": [
+          "Ninguno"
+        ]
+      },
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400"
+    }
+  ]
 }
