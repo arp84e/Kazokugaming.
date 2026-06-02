@@ -6,7 +6,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (SISTEMA ANTI-FALLAS) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
@@ -42,7 +42,7 @@ sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 titulos = [linea.strip() for linea in nuevos_juegos_raw.split('\n') if linea.strip()]
 
 if not titulos:
-    print("⚠️ No hay títulos para analizar.")
+    print("⚠️ No hay títulos para analizar. El texto de entrada está vacío.")
     sys.exit(0)
 
 estructura_final = {"juegos": []}
@@ -56,7 +56,7 @@ if not sobrescribir and os.path.exists(archivo_json):
         pass
 
 for titulo in titulos:
-    print(f"\nGenerando Expediente Avanzado: {titulo}")
+    print(f"\nProcesando: {titulo}")
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
     indice_existente = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
     
@@ -68,18 +68,20 @@ for titulo in titulos:
     {{
         "fecha": "Fecha de lanzamiento",
         "plataformas": "Ej: PC, PS5",
-        "calificacion": "Nota numérica del 1 al 10 basada en la crítica web (ej. 8.5 o 9.2)",
-        "motor_grafico": "Nombre exacto del motor (ej. Unreal Engine 5)",
-        "tecnologias": "Menciona tecnologías clave (ej. Ray Tracing, DLSS)",
+        "calificacion": "Nota numérica del 1 al 10",
+        "motor_grafico": "Nombre exacto del motor",
+        "tecnologias": "Tecnologías clave",
         "rendimiento": "Resolución y FPS objetivo",
-        "sinopsis": "Breve sinopsis general del juego (2 líneas).",
-        "analisis_detallado": "<p>Escribe 2 o 3 párrafos en HTML analizando a fondo la arquitectura gráfica, optimización e iluminación.</p>",
+        "sinopsis": "Breve sinopsis general del juego.",
+        "analisis_detallado": "<p>Escribe 2 o 3 párrafos en HTML analizando a fondo la arquitectura gráfica.</p>",
         "requisitos": {{
-            "minimos": ["SO: ...", "Procesador: ...", "Memoria: ...", "Gráficos: ...", "Almacenamiento: ..."],
-            "recomendados": ["SO: ...", "Procesador: ...", "Memoria: ...", "Gráficos: ...", "Almacenamiento: ..."]
+            "minimos": ["..."],
+            "recomendados": ["..."]
         }}
     }}
     """
+    
+    nuevo_expediente = {}
     
     try:
         response = client.models.generate_content(
@@ -103,17 +105,34 @@ for titulo in titulos:
             "requisitos": datos_ia.get("requisitos", {"minimos": [], "recomendados": []}),
             "imagen": imagen_real
         }
+        print("✅ Análisis generado con éxito.")
         
-        if indice_existente is not None:
-            estructura_final["juegos"][indice_existente] = nuevo_expediente
-        else:
-            estructura_final["juegos"].append(nuevo_expediente)
-            
     except Exception as e:
-        print(f"⚠️ Error: {e}")
+        # ⚠️ AQUÍ ESTÁ EL TRUCO: Si falla, forzamos un expediente de error para que la web lo muestre
+        error_msg = str(e).replace('"', "'")
+        print(f"⚠️ Error crítico detectado: {error_msg}")
+        nuevo_expediente = {
+            "id": id_juego,
+            "titulo": f"⚠️ Fallo en: {titulo}",
+            "fecha": "ERROR",
+            "plataformas": "Fallo de Conexión",
+            "calificacion": "0.0",
+            "motor_grafico": "N/A",
+            "tecnologias": "N/A",
+            "rendimiento": "N/A",
+            "sinopsis": f"El bot encontró un bloqueo al intentar procesar la información. El sistema impidió el análisis.",
+            "analisis_detallado": f"<p class='text-red-400 font-bold'>Motivo del error técnico:</p><p class='text-slate-400'>{error_msg}</p>",
+            "requisitos": {"minimos": ["Error de red o cuota"], "recomendados": ["Reintentar más tarde"]},
+            "imagen": imagen_real
+        }
+        
+    if indice_existente is not None:
+        estructura_final["juegos"][indice_existente] = nuevo_expediente
+    else:
+        estructura_final["juegos"].append(nuevo_expediente)
     
     time.sleep(12)
 
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-print("✅ Expedientes guardados.")
+print(f"✅ Archivo {archivo_json} guardado con {len(estructura_final['juegos'])} juegos.")
