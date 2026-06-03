@@ -1,15 +1,34 @@
 {
   "destacada": {
-    "id": "dest-1780512219",
+    "id": "dest-1780518559",
     "categoria": "Reporte Principal",
-    "titulo": "Silent Hill f se desploma a su precio mínimo histórico: el terror está en el juego, no en el precio",
-    "resumen": "Los fans del survival horror están de enhorabuena. Silent Hill f ha alcanzado su precio más bajo hasta la fecha, ofreciendo una oportunidad inmejorable para sumergirse en su escalofriante atmósfera.",
-    "contenido_completo": "<p>La esperada entrega de la icónica saga de terror psicológico, Silent Hill f, ha caído a su precio mínimo histórico, convirtiéndose en una oferta irresistible para los amantes del género. Este movimiento en el mercado llega en un momento clave, permitiendo a un público más amplio acceder a una de las propuestas más intrigantes y aterradoras de los últimos años. Con una ambientación japonesa única y un enfoque renovado en el horror corporal y psicológico, Silent Hill f promete redefinir lo que esperamos de la franquicia, y ahora es el momento perfecto para vivir esa experiencia sin que el precio sea una barrera.</p><p>Esta caída de precio no solo democratiza el acceso a uno de los títulos más anticipados, sino que también revitaliza la conversación en torno a Silent Hill f, un juego que desde su anuncio ha generado grandes expectativas. Para aquellos que han estado esperando el momento adecuado para adentrarse en sus misterios y enfrentar sus miedos más profundos, esta es la señal definitiva. El terror prometido por Konami y Neobards Entertainment está al alcance de la mano, asegurando que la única pesadilla sea la que se vive dentro del juego y no la de la factura final.</p>",
-    "enlace": "https://es.ign.com/compras/230123/silent-hill-f-se-desploma-a-su-precio-minimo-historico-el-terror-esta-en-el-juego-no-en-el-precio",
-    "fecha": "2026-06-03T18:43:39.209354",
-    "imagen": "https://sm.ign.com/ign_es/screenshot/default/silent-hill-f_pked.jpg"
+    "titulo": "¡Xbox Game Pass Desvela su Arsenal para la Primera Mitad de Junio!",
+    "resumen": "Microsoft ha revelado los esperados títulos que llegarán a Xbox Game Pass en la primera quincena de junio, prometiendo una selección diversa para sus suscriptores.\nDesde aventuras épicas hasta indies aclamados, la biblioteca se expande con emocionantes novedades para consola, PC y la nube.",
+    "contenido_completo": "<p>El ecosistema de Xbox Game Pass se prepara para una emocionante inyección de contenido, ya que Microsoft ha desvelado oficialmente la primera oleada de títulos que se unirán a su servicio de suscripción durante la primera mitad de junio. Esta noticia, largamente esperada por la comunidad de jugadores, promete enriquecer aún más la vasta biblioteca disponible para usuarios de consola, PC y aquellos que disfrutan del juego en la nube a través de Xbox Cloud Gaming.</p><p>Aunque los detalles específicos de cada juego se irán revelando progresivamente, la promesa es una mezcla ecléctica que abarcará desde aclamadas experiencias narrativas hasta intensos títulos de acción, pasando por joyas independientes que han capturado la atención de la crítica. Esta estrategia refuerza el compromiso de Xbox por ofrecer una diversidad sin igual, asegurando que cada suscriptor encuentre algo de su agrado y pueda explorar nuevos mundos sin coste adicional más allá de su suscripción mensual.</p>",
+    "enlace": "https://www.eurogamer.es/anunciados-los-juegos-de-xbox-game-pass-de-la-primera-mitad-de-junio-2026",
+    "fecha": "2026-06-03T20:29:19.077406",
+    "imagen": "https://assetsio.gnwcdn.com/Starseeker.jpg?width=690&quality=85&format=jpg&auto=webp"
   },
   "secundarias": [
+    {
+      "id": "sec-1780518580-2",
+      "categoria": "Actualidad",
+      "titulo": "Pokémon Champions llegará a dispositivos móviles iOS y Android el 17 de junio",
+      "resumen": "Pokémon Champions, el esperado título de la franquicia, estará disponible para iOS y Android a partir del 17 de junio. Prepárate para emocionantes combates y nuevas aventuras en tu móvil.",
+      "enlace": "https://www.eurogamer.es/pokemon-champions-llegara-a-dispositivos-moviles-ios-y-android-el-17-de-junio",
+      "fecha": "2024-07-28T10:30:00.000000",
+      "imagen": "https://assetsio.gnwcdn.com/Pokemon-Champions_SCp4mYs.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "dest-1780512219",
+      "categoria": "Reporte Principal",
+      "titulo": "Silent Hill f se desploma a su precio mínimo histórico: el terror está en el juego, no en el precio",
+      "resumen": "Los fans del survival horror están de enhorabuena. Silent Hill f ha alcanzado su precio más bajo hasta la fecha, ofreciendo una oportunidad inmejorable para sumergirse en su escalofriante atmósfera.",
+      "contenido_completo": "<p>La esperada entrega de la icónica saga de terror psicológico, Silent Hill f, ha caído a su precio mínimo histórico, convirtiéndose en una oferta irresistible para los amantes del género. Este movimiento en el mercado llega en un momento clave, permitiendo a un público más amplio acceder a una de las propuestas más intrigantes y aterradoras de los últimos años. Con una ambientación japonesa única y un enfoque renovado en el horror corporal y psicológico, Silent Hill f promete redefinir lo que esperamos de la franquicia, y ahora es el momento perfecto para vivir esa experiencia sin que el precio sea una barrera.</p><p>Esta caída de precio no solo democratiza el acceso a uno de los títulos más anticipados, sino que también revitaliza la conversación en torno a Silent Hill f, un juego que desde su anuncio ha generado grandes expectativas. Para aquellos que han estado esperando el momento adecuado para adentrarse en sus misterios y enfrentar sus miedos más profundos, esta es la señal definitiva. El terror prometido por Konami y Neobards Entertainment está al alcance de la mano, asegurando que la única pesadilla sea la que se vive dentro del juego y no la de la factura final.</p>",
+      "enlace": "https://es.ign.com/compras/230123/silent-hill-f-se-desploma-a-su-precio-minimo-historico-el-terror-esta-en-el-juego-no-en-el-precio",
+      "fecha": "2026-06-03T18:43:39.209354",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/silent-hill-f_pked.jpg"
+    },
     {
       "id": "sec-1780512238-1",
       "categoria": "Actualidad",
