@@ -3,11 +3,11 @@ import sys
 import json
 import time
 import feedparser
-from datetime import datetime
+from datetime import datetime, timedelta
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: NOTICIAS ===")
+print("=== INICIANDO KAZOKUBOT: NOTICIAS MULTIFUENTE ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
@@ -23,14 +23,13 @@ seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-rss_url = "https://es.ign.com/feed.xml"
-feed = feedparser.parse(rss_url)
+# 📡 1. LISTA DE FUENTES (Puedes agregar más enlaces RSS aquí)
+rss_urls = [
+    "https://es.ign.com/feed.xml",
+    "https://www.eurogamer.es/feed",
+    "https://www.levelup.com/rss/noticias"
+]
 
-if not feed.entries:
-    print("❌ No se detectaron entradas en el feed.")
-    sys.exit(1)
-
-# 🛠️ FUNCIÓN VITAL: Extraer la imagen real del RSS en lugar de pedírsela a la IA
 def obtener_imagen(entrada):
     if 'media_content' in entrada and len(entrada.media_content) > 0:
         return entrada.media_content[0]['url']
@@ -40,87 +39,137 @@ def obtener_imagen(entrada):
         for link in entrada.links:
             if 'image' in link.get('type', ''):
                 return link.href
-    # Imagen de respaldo por si la noticia no trae foto
     return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
 
+archivo_json = 'noticias.json'
 datos_finales = {"destacada": {}, "secundarias": []}
+historial_valido = []
+urls_existentes = set()
+limite_72h = datetime.now() - timedelta(days=3)
 
-# ==========================================
-# 1. PROCESAR LA NOTICIA DESTACADA
-# ==========================================
-noticia_origen = feed.entries[0]
-imagen_real = obtener_imagen(noticia_origen)
-print(f"Procesando Destacada: {noticia_origen.title}")
+# 🧠 2. SISTEMA DE MEMORIA: Recuperar noticias de los últimos 3 días
+if os.path.exists(archivo_json):
+    try:
+        with open(archivo_json, 'r', encoding='utf-8') as f:
+            datos_viejos = json.load(f)
+            
+            # Unificamos todas las noticias anteriores (destacada + secundarias)
+            todas_viejas = datos_viejos.get("secundarias", [])
+            if datos_viejos.get("destacada"):
+                todas_viejas.insert(0, datos_viejos["destacada"])
+                
+            for n in todas_viejas:
+                if "fecha" in n:
+                    try:
+                        fecha_n = datetime.fromisoformat(n["fecha"])
+                        # Si la noticia tiene menos de 3 días, la salvamos del borrado
+                        if fecha_n > limite_72h:
+                            historial_valido.append(n)
+                            urls_existentes.add(n.get("enlace", ""))
+                    except:
+                        pass
+    except Exception as e:
+        print(f"⚠️ Aviso: No se pudo leer el historial anterior ({e})")
+
+# 🌐 3. BUSCAR NUEVAS NOTICIAS EN TODAS LAS FUENTES
+nuevas_entradas = []
+for url in rss_urls:
+    print(f"Sintonizando antena: {url}")
+    try:
+        feed = feedparser.parse(url)
+        for entry in feed.entries[:3]: # Tomamos las 3 más frescas de cada página
+            if entry.link not in urls_existentes:
+                nuevas_entradas.append(entry)
+    except Exception as e:
+        print(f"⚠️ Error leyendo {url}: {e}")
+
+# Limitamos a procesar un máximo de 4 noticias nuevas por ejecución 
+# para proteger tu cuota gratuita de la API de Gemini
+nuevas_entradas = nuevas_entradas[:4]
+
+if not nuevas_entradas:
+    print("✅ No hay noticias nuevas en la web. Se mantendrá el catálogo actual de 72 horas.")
+    if historial_valido:
+        datos_finales["destacada"] = historial_valido.pop(0) # La más reciente vuelve a ser destacada
+        datos_finales["secundarias"] = historial_valido
+        with open(archivo_json, 'w', encoding='utf-8') as f:
+            json.dump(datos_finales, f, ensure_ascii=False, indent=2)
+    sys.exit(0)
+
+# ✍️ 4. REDACCIÓN CON INTELIGENCIA ARTIFICIAL
+# La noticia nueva #1 será la Gran Destacada
+noticia_origen = nuevas_entradas[0]
+print(f"🗞️ Redactando Nueva Destacada: {noticia_origen.title}")
 
 prompt_destacada = f"""
 Actúa como un editor principal de videojuegos. Redacta un artículo basado en:
 Título: {noticia_origen.title}
 Devuelve UNICAMENTE un objeto JSON válido con esta estructura:
 {{
-  "id": "dest-01",
-  "categoria": "Noticia Principal",
-  "titulo": "Título potente",
-  "resumen": "Resumen corto.",
-  "contenido_completo": "<p>Escribe aquí 2 párrafos detallando la noticia en HTML.</p>",
+  "id": "dest-{int(time.time())}",
+  "categoria": "Reporte Principal",
+  "titulo": "Título potente y atractivo",
+  "resumen": "Resumen de máximo 2 líneas.",
+  "contenido_completo": "<p>Escribe aquí 2 párrafos detallando la noticia en formato HTML.</p>",
   "enlace": "{noticia_origen.link}",
   "fecha": "{datetime.now().isoformat()}"
 }}
 """
 
 try:
-    response = client.models.generate_content(
+    res_dest = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=prompt_destacada,
         config=types.GenerateContentConfig(safety_settings=seguridad_permisiva, response_mime_type="application/json")
     )
-    datos_dest = json.loads(response.text)
-    datos_dest["imagen"] = imagen_real  # Inyectamos la foto real con Python
+    datos_dest = json.loads(res_dest.text)
+    datos_dest["imagen"] = obtener_imagen(noticia_origen)
     datos_finales["destacada"] = datos_dest
 except Exception as e:
     print(f"⚠️ Error en destacada: {e}")
+    if historial_valido:
+        datos_finales["destacada"] = historial_valido.pop(0)
 
-# Pausa de seguridad para evitar Error 429 de la API
-time.sleep(12) 
+time.sleep(15) # Pausa estratégica
 
-# ==========================================
-# 2. PROCESAR NOTICIAS SECUNDARIAS (5 Artículos)
-# ==========================================
-# Iteramos desde la noticia 1 hasta la 6 del RSS
-for i in range(1, min(6, len(feed.entries))):
-    noticia_sec = feed.entries[i]
-    imagen_sec = obtener_imagen(noticia_sec)
-    print(f"Procesando Secundaria {i}: {noticia_sec.title}")
+# Redactar el resto de las noticias nuevas como secundarias
+nuevas_secundarias = []
+for i in range(1, len(nuevas_entradas)):
+    noticia_sec = nuevas_entradas[i]
+    print(f"📝 Redactando Secundaria: {noticia_sec.title}")
     
     prompt_sec = f"""
-    Resume esta noticia de videojuegos para una tarjeta web:
+    Resume esta noticia para una tarjeta web rápida:
     Título: {noticia_sec.title}
     Devuelve UNICAMENTE un objeto JSON válido con esta estructura:
     {{
-      "id": "sec-{i}",
+      "id": "sec-{int(time.time())}-{i}",
       "categoria": "Actualidad",
-      "titulo": "Título atractivo y conciso",
+      "titulo": "Título directo",
       "resumen": "Un resumen de máximo 3 líneas.",
       "enlace": "{noticia_sec.link}",
       "fecha": "{datetime.now().isoformat()}"
     }}
     """
-    
     try:
-        response_sec = client.models.generate_content(
+        res_sec = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt_sec,
             config=types.GenerateContentConfig(safety_settings=seguridad_permisiva, response_mime_type="application/json")
         )
-        datos_sec = json.loads(response_sec.text)
-        datos_sec["imagen"] = imagen_sec  # Inyectamos la foto real con Python
-        datos_finales["secundarias"].append(datos_sec)
+        datos_sec = json.loads(res_sec.text)
+        datos_sec["imagen"] = obtener_imagen(noticia_sec)
+        nuevas_secundarias.append(datos_sec)
     except Exception as e:
         print(f"⚠️ Error en secundaria {i}: {e}")
         
-    time.sleep(12) # Pausa de seguridad tras cada iteración
+    time.sleep(15)
 
-# Guardamos el archivo final estructurado
-with open('noticias.json', 'w', encoding='utf-8') as f:
+# 💾 5. FUSIONAR Y GUARDAR
+# Juntamos las noticias recién creadas con el historial válido de los últimos 3 días
+datos_finales["secundarias"] = nuevas_secundarias + historial_valido
+
+with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(datos_finales, f, ensure_ascii=False, indent=2)
 
-print("✅ noticias.json redactado y guardado correctamente con imágenes reales.")
+print(f"✅ Catálogo guardado. Total en pantalla: 1 destacada y {len(datos_finales['secundarias'])} crónicas recientes.")
