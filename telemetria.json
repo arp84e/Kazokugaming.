@@ -30,6 +30,33 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9cc/9ccb59a7c634091bc8a9b7978d4dc322.jpg"
+    },
+    {
+      "id": "half-life-2",
+      "titulo": "Half Life 2",
+      "fecha": "16 de noviembre de 2004",
+      "plataformas": "PC (Windows, Linux, macOS), Xbox, Xbox 360, PlayStation 3",
+      "calificacion": 9.5,
+      "motor_grafico": "Source Engine",
+      "tecnologias": "Havok Physics, HDR Lighting (post-lanzamiento), Facial Animation System, Deferred Shading, Water Caustics, Shader Model 2.0",
+      "rendimiento": "1280x1024 a 60 FPS en hardware de gama media-alta de la época; altamente escalable a resoluciones y framerates superiores en hardware moderno.",
+      "sinopsis": "Half-Life 2 es un revolucionario shooter en primera persona de Valve que sigue al físico Gordon Freeman en su lucha contra la opresiva Combine en una Tierra distópica. Famoso por su narrativa inmersiva, física de vanguardia y diseño de niveles innovador, el juego estableció nuevos estándares para el género.",
+      "analisis_detallado": "<p>Desde el momento de su lanzamiento, Half-Life 2 fue una demostración técnica asombrosa del potencial del Source Engine. La integración del motor de físicas Havok fue una auténtica revolución, permitiendo interacciones ambientales y resolución de puzles de una forma nunca antes vista, lo que se traducía en una inmersión sin precedentes. Los modelos de personajes eran excepcionalmente detallados para la época, con un sistema de animación facial que dotaba a los NPC de una expresividad fotorrealista que aún hoy impresiona. La fidelidad visual se complementaba con una arquitectura de niveles compleja y una iluminación que, aunque inicialmente basada en shaders estáticos, mostraba un gran dominio del color y la atmósfera.</p><p>La ingeniería de Valve permitió que Half-Life 2 fuera un título sorprendentemente escalable, capaz de ejecutarse en una amplia gama de hardware manteniendo una experiencia jugable. Sin embargo, en equipos de gama alta, el juego brillaba, especialmente tras la adición del soporte HDR (High Dynamic Range) que transformó la iluminación y el contraste de una manera espectacular, adelantándose a su tiempo. El motor Source demostró una flexibilidad y robustez que lo hicieron perdurar por años, influyendo en innumerables títulos y estableciendo una vara muy alta para la presentación técnica y la interacción jugador-entorno. A pesar de sus casi dos décadas, Half-Life 2 sigue siendo un referente de cómo el hardware puede ser empujado para crear experiencias memorables.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: 1.2 GHz",
+          "RAM: 256 MB",
+          "Tarjeta Gráfica: Compatible con DirectX 7 (ej. NVIDIA GeForce 3 o ATI Radeon 8500)",
+          "Almacenamiento: 4.5 GB"
+        ],
+        "recomendados": [
+          "Procesador: Pentium 4 a 3.0 GHz o superior",
+          "RAM: 512 MB - 1 GB",
+          "Tarjeta Gráfica: Compatible con DirectX 9 (ej. NVIDIA GeForce FX 5900 o ATI Radeon 9600 Pro)",
+          "Almacenamiento: 4.5 GB"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
     }
   ]
 }
