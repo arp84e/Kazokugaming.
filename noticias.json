@@ -1,15 +1,52 @@
 {
   "destacada": {
-    "id": "dest-01",
-    "categoria": "Noticia Principal",
-    "titulo": "¡Oferta imperdible! El volante Logitech G29/G920 a precio de ganga, pero date prisa",
-    "resumen": "Logitech pone al alcance de todos su aclamado volante de carreras G29/G920 con un descuento excepcional, una oportunidad que los amantes de la simulación no querrán perder.",
-    "contenido_completo": "<p>Los aficionados a la simulación de carreras están de enhorabuena. El reconocido volante Logitech G29 Driving Force, compatible con PlayStation, y su hermano el G920, para Xbox y PC, han visto sus precios desplomarse en una oferta que ha sorprendido a propios y extraños. Este dispositivo, conocido por su robustez, su feedback de fuerza inmersivo y sus pedales de gran precisión, es un favorito entre los entusiastas que buscan una experiencia de conducción realista sin vaciar la cartera. La promoción actual lo sitúa en un rango de precio históricamente bajo, haciéndolo accesible para aquellos que siempre soñaron con llevar sus habilidades de piloto al siguiente nivel.</p><p>Sin embargo, como suele ocurrir con estas oportunidades doradas, la oferta no durará para siempre. Se trata de una promoción con stock limitado o una duración muy específica, lo que significa que los interesados deberán actuar con rapidez si no quieren quedarse sin su unidad. Es el momento perfecto para renovar el setup de simulación o para dar el salto al mundo de los volantes de calidad sin realizar una inversión desorbitada. No dejes pasar esta ventana de oportunidad para adquirir uno de los mejores volantes de gama media del mercado a un precio verdaderamente 'tirado'.</p>",
-    "enlace": "https://es.ign.com/compras/230047/este-volante-de-logitech-esta-ahora-tirado-de-precio-aunque-solo-por-tiempo-muy-limitado",
-    "fecha": "2026-06-02T19:59:06.549976",
-    "imagen": "https://sm.ign.com/ign_es/screenshot/default/volante-logitech-g-g29-se_37ne.jpg"
+    "id": "dest-1780512219",
+    "categoria": "Reporte Principal",
+    "titulo": "Silent Hill f se desploma a su precio mínimo histórico: el terror está en el juego, no en el precio",
+    "resumen": "Los fans del survival horror están de enhorabuena. Silent Hill f ha alcanzado su precio más bajo hasta la fecha, ofreciendo una oportunidad inmejorable para sumergirse en su escalofriante atmósfera.",
+    "contenido_completo": "<p>La esperada entrega de la icónica saga de terror psicológico, Silent Hill f, ha caído a su precio mínimo histórico, convirtiéndose en una oferta irresistible para los amantes del género. Este movimiento en el mercado llega en un momento clave, permitiendo a un público más amplio acceder a una de las propuestas más intrigantes y aterradoras de los últimos años. Con una ambientación japonesa única y un enfoque renovado en el horror corporal y psicológico, Silent Hill f promete redefinir lo que esperamos de la franquicia, y ahora es el momento perfecto para vivir esa experiencia sin que el precio sea una barrera.</p><p>Esta caída de precio no solo democratiza el acceso a uno de los títulos más anticipados, sino que también revitaliza la conversación en torno a Silent Hill f, un juego que desde su anuncio ha generado grandes expectativas. Para aquellos que han estado esperando el momento adecuado para adentrarse en sus misterios y enfrentar sus miedos más profundos, esta es la señal definitiva. El terror prometido por Konami y Neobards Entertainment está al alcance de la mano, asegurando que la única pesadilla sea la que se vive dentro del juego y no la de la factura final.</p>",
+    "enlace": "https://es.ign.com/compras/230123/silent-hill-f-se-desploma-a-su-precio-minimo-historico-el-terror-esta-en-el-juego-no-en-el-precio",
+    "fecha": "2026-06-03T18:43:39.209354",
+    "imagen": "https://sm.ign.com/ign_es/screenshot/default/silent-hill-f_pked.jpg"
   },
   "secundarias": [
+    {
+      "id": "sec-1780512238-1",
+      "categoria": "Actualidad",
+      "titulo": "Marvel: Lobezno: Malas noticias para la edición coleccionista",
+      "resumen": "Malas noticias para los fans que esperaban una edición coleccionista de Marvel: Lobezno. Parece que el esperado título de Insomniac Games no contará con una versión especial para coleccionistas, lo que podría decepcionar a muchos.",
+      "enlace": "https://es.ign.com/marvels-wolverine/230127/malas-noticias-para-quienes-esperan-una-edicion-coleccionista-de-marvel-lobezno",
+      "fecha": "2026-06-03T18:43:58.408932",
+      "imagen": "https://sm.ign.com/ign_es/news/f/from-19-in/from-19-inches-of-venom-to-nothing-theres-no-marvels-wolveri_9wfv.jpg"
+    },
+    {
+      "id": "sec-1780512257-2",
+      "categoria": "Actualidad",
+      "titulo": "Youtuber intenta colarse en las oficinas de Rockstar por GTA VI",
+      "resumen": "Un youtuber australiano, como uno de los casos más extremos del \"hype\" por GTA VI, intentó acceder sin permiso a las oficinas de Rockstar Games. El incidente subraya la enorme expectación que rodea al próximo lanzamiento del videojuego, llevando a comportamientos inusuales por parte de los fans.",
+      "enlace": "https://es.ign.com/grand-theft-auto-vi/230126/uno-de-los-casos-mas-extremos-del-hype-por-gta-vi-un-youtuber-intenta-colarse-en-las-oficinas-de-roc",
+      "fecha": "2026-06-03T18:44:17.529998",
+      "imagen": "https://sm.ign.com/ign_es/news/a/as-gta-6-h/as-gta-6-hype-hits-new-levels-youtuber-tries-to-walk-inside_b5ke.jpg"
+    },
+    {
+      "id": "sec-1780512275-3",
+      "categoria": "Actualidad",
+      "titulo": "LEGO Batman: El Legado del Caballero Oscuro llega a Switch 2 en septiembre",
+      "resumen": "El videojuego \"LEGO Batman: El Legado del Caballero Oscuro\" se prepara para su lanzamiento en la próxima consola Switch 2. Los fans del héroe de Gotham podrán disfrutar de esta nueva aventura a partir del mes de septiembre.",
+      "enlace": "https://www.eurogamer.es/lego-batman-el-legado-del-caballero-oscuro-dara-el-salto-a-switch-2-en-septiembre",
+      "fecha": "2026-06-03T18:44:35.273074",
+      "imagen": "https://assetsio.gnwcdn.com/chrome_qGaqhebzTZ.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "dest-01",
+      "categoria": "Noticia Principal",
+      "titulo": "¡Oferta imperdible! El volante Logitech G29/G920 a precio de ganga, pero date prisa",
+      "resumen": "Logitech pone al alcance de todos su aclamado volante de carreras G29/G920 con un descuento excepcional, una oportunidad que los amantes de la simulación no querrán perder.",
+      "contenido_completo": "<p>Los aficionados a la simulación de carreras están de enhorabuena. El reconocido volante Logitech G29 Driving Force, compatible con PlayStation, y su hermano el G920, para Xbox y PC, han visto sus precios desplomarse en una oferta que ha sorprendido a propios y extraños. Este dispositivo, conocido por su robustez, su feedback de fuerza inmersivo y sus pedales de gran precisión, es un favorito entre los entusiastas que buscan una experiencia de conducción realista sin vaciar la cartera. La promoción actual lo sitúa en un rango de precio históricamente bajo, haciéndolo accesible para aquellos que siempre soñaron con llevar sus habilidades de piloto al siguiente nivel.</p><p>Sin embargo, como suele ocurrir con estas oportunidades doradas, la oferta no durará para siempre. Se trata de una promoción con stock limitado o una duración muy específica, lo que significa que los interesados deberán actuar con rapidez si no quieren quedarse sin su unidad. Es el momento perfecto para renovar el setup de simulación o para dar el salto al mundo de los volantes de calidad sin realizar una inversión desorbitada. No dejes pasar esta ventana de oportunidad para adquirir uno de los mejores volantes de gama media del mercado a un precio verdaderamente 'tirado'.</p>",
+      "enlace": "https://es.ign.com/compras/230047/este-volante-de-logitech-esta-ahora-tirado-de-precio-aunque-solo-por-tiempo-muy-limitado",
+      "fecha": "2026-06-02T19:59:06.549976",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/volante-logitech-g-g29-se_37ne.jpg"
+    },
     {
       "id": "sec-1",
       "categoria": "Actualidad",
