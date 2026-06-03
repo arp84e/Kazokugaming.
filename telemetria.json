@@ -57,6 +57,35 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
+    },
+    {
+      "id": "the-last-of-us",
+      "titulo": "The Last of Us",
+      "fecha": "14 de junio de 2013 (PS3 original)",
+      "plataformas": "PlayStation 3, PlayStation 4, PlayStation 5, PC",
+      "calificacion": 9.8,
+      "motor_grafico": "Motor propietario de Naughty Dog (personalizado)",
+      "tecnologias": "Renderizado diferido avanzado, Subsurface Scattering, Iluminación volumétrica, Oclusión ambiental (SSAO), Texturas de alta resolución, Sombras dinámicas complejas. En PC (Part I): NVIDIA DLSS, AMD FSR, Intel XeSS, Soporte para monitores ultrapanorámicos, HDR.",
+      "rendimiento": "PS3: 720p @ ~30 FPS. PS4 Remastered: 1080p @ 60 FPS (opcional 30 FPS para mayor fidelidad). PS5 (Part I): Modo Fidelidad: Nativo 4K @ 30 FPS; Modo Rendimiento: Dinámico 4K @ 60 FPS. PC (Part I): Variable según hardware, apuntando a 60 FPS+ a 1080p/1440p/4K con escalado.",
+      "sinopsis": "Una conmovedora aventura post-apocalíptica que sigue a Joel, un contrabandista, y a Ellie, una joven resiliente, a través de unos Estados Unidos devastados por una pandemia fúngica. Su viaje se convierte en una lucha por la supervivencia y el forjamiento de un vínculo inquebrantable, enfrentándose a infectados mutados y a la brutalidad de otros supervivientes.",
+      "analisis_detallado": "<p>Desde su debut en PlayStation 3, 'The Last of Us' demostró el dominio técnico de Naughty Dog, llevando al límite el hardware de la época. Su motor propietario, meticulosamente optimizado, permitía escenas con una densidad poligonal y una calidad de texturas asombrosas, junto con una iluminación precalculada y dinámica que creaba atmósferas opresivas y realistas. La versión Remastered para PS4 no solo elevó la resolución a 1080p y la tasa de frames a unos fluidos 60 FPS, sino que también mejoró las texturas, las sombras y la calidad de la oclusión ambiental, consolidando su estatus como un referente visual en su generación.</p><p>Con 'Part I' para PS5 y PC, el juego experimentó un remake completo con una renovación técnica que abraza las capacidades de la nueva generación. Incorpora un sistema de iluminación global dinámico, oclusión ambiental mejorada y una mayor densidad de detalles en entornos y personajes. Si bien la versión de PS5 ofrece modos de 30 FPS a 4K nativos y 60 FPS a 4K dinámicos, la llegada a PC, aunque con un lanzamiento inicial algo irregular en optimización, ha permitido el aprovechamiento de tecnologías como DLSS, FSR y XeSS para alcanzar resoluciones y tasas de refresco aún mayores en hardware compatible, ofreciendo la experiencia visual más pulida hasta la fecha, aunque exigente.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: AMD Ryzen 5 1600X / Intel Core i7-4770K",
+          "GPU: AMD Radeon RX 470 (4 GB) / NVIDIA GeForce GTX 970 (4 GB)",
+          "RAM: 16 GB",
+          "SO: Windows 10 (versión 1909 o posterior)",
+          "Almacenamiento: 100 GB SSD"
+        ],
+        "recomendados": [
+          "CPU: AMD Ryzen 5 3600X / Intel Core i7-8700",
+          "GPU: AMD Radeon RX 5800 XT (8 GB) / NVIDIA GeForce RTX 2070 Super (8 GB) / AMD Radeon RX 6600 XT (8 GB)",
+          "RAM: 16 GB",
+          "SO: Windows 10 (versión 1909 o posterior)",
+          "Almacenamiento: 100 GB SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"
     }
   ]
 }
