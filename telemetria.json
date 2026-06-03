@@ -86,6 +86,27 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"
+    },
+    {
+      "id": "bloodborne",
+      "titulo": "Bloodborne",
+      "fecha": "2015-03-24",
+      "plataformas": "PlayStation 4",
+      "calificacion": "8.5/10",
+      "motor_grafico": "FromSoftware's Proprietary Engine (modificado)",
+      "tecnologias": "Physically Based Rendering (PBR), complejos sistemas de partículas y post-procesado, sofisticada iluminación volumétrica y global",
+      "rendimiento": "1080p (nativo/escalado) a 30fps (objetivo, con caídas frecuentes)",
+      "sinopsis": "Ambientado en la gótica y desolada ciudad de Yharnam, Bloodborne sumerge a los jugadores en una pesadilla lovecraftiana donde una misteriosa plaga transforma a sus habitantes en bestias. Como cazador, el objetivo es desentrañar los secretos de la sangría y detener la expansión de la enfermedad, enfrentándose a horrores indescriptibles y un combate visceral y agresivo.",
+      "analisis_detallado": "<p>Bloodborne, el exclusivo de PlayStation 4 de FromSoftware, es un tour de force artístico y de diseño que empujó los límites de la consola en su momento. La dirección de arte gótica victoriana, infundida con elementos de horror cósmico, es simplemente sublime, y cada rincón de Yharnam está imbuido de una atmósfera opresiva y detallada. El motor gráfico propietario de FromSoftware, una evolución de los utilizados en Demon's Souls y Dark Souls, demuestra una capacidad impresionante para renderizar entornos complejos, modelos de personajes detallados con PBR y efectos de partículas dinámicos que dan vida a los feroces combates y los elaborados escenarios. La iluminación volumétrica y el sombreado global contribuyen enormemente a la inmersión, creando una estética visual cohesiva y aterradora.</p><p>Sin embargo, el ambicioso apartado visual no está exento de sacrificios en el rendimiento. El juego apunta a una resolución de 1080p y una tasa de 30 fotogramas por segundo, pero raramente logra mantener esta última de manera consistente. Son frecuentes las caídas por debajo de los 30fps, especialmente en áreas con mucha acción, efectos de partículas intensos o enemigos numerosos, lo que puede impactar la fluidez del combate y la precisión del jugador. Además, Bloodborne sufre de notorios problemas de frame-pacing, que hacen que el movimiento en pantalla se sienta errático y menos suave de lo que sugeriría la media de fotogramas, exacerbando la percepción de un rendimiento irregular. Los tiempos de carga iniciales también fueron un punto débil importante en el lanzamiento, aunque mejoraron con parches posteriores, la experiencia de rendimiento en general sigue siendo un punto de fricción para un título de esta envergadura.</p>",
+      "requisitos": {
+        "minimos": [
+          "N/A - Exclusivo de PlayStation 4"
+        ],
+        "recomendados": [
+          "N/A - Exclusivo de PlayStation 4"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/214/214b29aeff13a0ae6a70fc4426e85991.jpg"
     }
   ]
 }
