@@ -56,8 +56,10 @@ def buscar_info_extra(titulo):
 
 nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
-titulos = [linea.strip() for linea in nuevos_juegos_raw.split('\n') if linea.strip()]
 
+# 🛠️ MEJORA: Ahora el bot entiende tanto saltos de línea como comas
+texto_unificado = nuevos_juegos_raw.replace(",", "\n")
+titulos = [linea.strip() for linea in texto_unificado.split('\n') if linea.strip()]
 if not titulos:
     print("⚠️ No hay títulos para analizar.")
     sys.exit(0)
