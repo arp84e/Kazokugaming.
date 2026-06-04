@@ -1,23 +1,51 @@
 {
   "destacada": {
-    "id": "dest-1780518559",
+    "id": "dest-1780595901",
     "categoria": "Reporte Principal",
-    "titulo": "¡Xbox Game Pass Desvela su Arsenal para la Primera Mitad de Junio!",
-    "resumen": "Microsoft ha revelado los esperados títulos que llegarán a Xbox Game Pass en la primera quincena de junio, prometiendo una selección diversa para sus suscriptores.\nDesde aventuras épicas hasta indies aclamados, la biblioteca se expande con emocionantes novedades para consola, PC y la nube.",
-    "contenido_completo": "<p>El ecosistema de Xbox Game Pass se prepara para una emocionante inyección de contenido, ya que Microsoft ha desvelado oficialmente la primera oleada de títulos que se unirán a su servicio de suscripción durante la primera mitad de junio. Esta noticia, largamente esperada por la comunidad de jugadores, promete enriquecer aún más la vasta biblioteca disponible para usuarios de consola, PC y aquellos que disfrutan del juego en la nube a través de Xbox Cloud Gaming.</p><p>Aunque los detalles específicos de cada juego se irán revelando progresivamente, la promesa es una mezcla ecléctica que abarcará desde aclamadas experiencias narrativas hasta intensos títulos de acción, pasando por joyas independientes que han capturado la atención de la crítica. Esta estrategia refuerza el compromiso de Xbox por ofrecer una diversidad sin igual, asegurando que cada suscriptor encuentre algo de su agrado y pueda explorar nuevos mundos sin coste adicional más allá de su suscripción mensual.</p>",
-    "enlace": "https://www.eurogamer.es/anunciados-los-juegos-de-xbox-game-pass-de-la-primera-mitad-de-junio-2026",
-    "fecha": "2026-06-03T20:29:19.077406",
-    "imagen": "https://assetsio.gnwcdn.com/Starseeker.jpg?width=690&quality=85&format=jpg&auto=webp"
+    "titulo": "No es una moda pasajera: la onda expansiva que ha generado este nuevo simulador ha llegado al reino de Los Sims",
+    "resumen": "Un nuevo simulador de vida emerge con fuerza, desafiando el reinado de Los Sims y prometiendo una experiencia fresca y altamente personalizable que está generando expectación sin precedentes.",
+    "contenido_completo": "<p>La industria de los videojuegos ha sido testigo del surgimiento de un competidor formidable en el género de simulación de vida, un espacio dominado por la franquicia *Los Sims* durante décadas. Este nuevo título, *Paralives*, no es simplemente otra alternativa; está generando una 'onda expansiva' que ha capturado la atención de millones de jugadores y ha puesto en alerta al gigante de EA. Con un enfoque en la personalización granular, la construcción intuitiva y una comunidad de desarrollo transparente, *Paralives* ha demostrado ser más que una moda pasajera, consolidando su posición como un contendiente serio.</p><p>Lo que hace a este fenómeno particularmente interesante es cómo su propuesta de valor resuena directamente con las demandas insatisfechas de la base de jugadores de *Los Sims*. La promesa de mayor libertad creativa, menos restricciones y una interfaz fresca ha provocado un éxodo potencial de jugadores, o al menos un interés masivo en lo que este nuevo simulador tiene para ofrecer. Este desafío directo al *statu quo* no solo beneficia a los consumidores con más opciones, sino que también empuja a los desarrolladores de *Los Sims* a innovar y adaptarse, asegurando que el futuro de los simuladores de vida sea más vibrante y competitivo que nunca.</p>",
+    "enlace": "https://es.ign.com/paralives/230142/no-es-una-moda-pasajera-la-onda-expansiva-que-ha-generado-este-nuevo-simulador-ha-llegado-al-reino-d",
+    "fecha": "2026-06-04T17:58:21.956486",
+    "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_cavc.jpg"
   },
   "secundarias": [
     {
-      "id": "sec-1780518580-2",
+      "id": "sec-1780595922-1",
       "categoria": "Actualidad",
-      "titulo": "Pokémon Champions llegará a dispositivos móviles iOS y Android el 17 de junio",
-      "resumen": "Pokémon Champions, el esperado título de la franquicia, estará disponible para iOS y Android a partir del 17 de junio. Prepárate para emocionantes combates y nuevas aventuras en tu móvil.",
-      "enlace": "https://www.eurogamer.es/pokemon-champions-llegara-a-dispositivos-moviles-ios-y-android-el-17-de-junio",
-      "fecha": "2024-07-28T10:30:00.000000",
-      "imagen": "https://assetsio.gnwcdn.com/Pokemon-Champions_SCp4mYs.jpg?width=690&quality=85&format=jpg&auto=webp"
+      "titulo": "God of War Laufey es una buena noticia por dos razones",
+      "resumen": "Las novedades sobre Laufey en God of War son excelentes, ofreciendo una perspectiva más profunda de su personaje. Esto no solo enriquece la mitología del juego, sino que también abre interesantes posibilidades para futuras tramas y la conexión familiar.",
+      "enlace": "https://es.ign.com/god-of-war-laufey/230155/god-of-war-laufey-es-una-buena-noticia-por-dos-razones",
+      "fecha": "2026-06-04T17:58:42.772769",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_yra7.jpg"
+    },
+    {
+      "id": "sec-1780595940-2",
+      "categoria": "Actualidad",
+      "titulo": "Un jugador de Elden Ring consigue lo que solo se puede describir como el \"guantazo del siglo\"",
+      "resumen": "Un jugador de Elden Ring ha logrado una impresionante hazaña, conocida como el 'guantazo del siglo', demostrando una habilidad excepcional en el juego.",
+      "enlace": "https://es.ign.com/elden-ring/230144/un-jugador-de-elden-ring-consigue-lo-que-solo-se-puede-describir-como-el-guantazo-del-siglo",
+      "fecha": "2026-06-04T17:59:00.963830",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/rykard_jnz3.jpg"
+    },
+    {
+      "id": "sec-1780595960-3",
+      "categoria": "Actualidad",
+      "titulo": "007 First Light triunfa en ventas japonesas",
+      "resumen": "El videojuego \"007 First Light\" ha logrado un excelente debut en las listas de ventas de Japón. Su buen posicionamiento indica una fuerte acogida y éxito en el mercado nipón desde su lanzamiento.",
+      "enlace": "https://www.eurogamer.es/007-first-light-tambien-tiene-un-buen-estreno-en-las-listas-de-ventas-japonesas",
+      "fecha": "2026-06-04T17:59:20.261351",
+      "imagen": "https://assetsio.gnwcdn.com/007-First-Light-Ann_06-02-25-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "dest-1780518559",
+      "categoria": "Reporte Principal",
+      "titulo": "¡Xbox Game Pass Desvela su Arsenal para la Primera Mitad de Junio!",
+      "resumen": "Microsoft ha revelado los esperados títulos que llegarán a Xbox Game Pass en la primera quincena de junio, prometiendo una selección diversa para sus suscriptores.\nDesde aventuras épicas hasta indies aclamados, la biblioteca se expande con emocionantes novedades para consola, PC y la nube.",
+      "contenido_completo": "<p>El ecosistema de Xbox Game Pass se prepara para una emocionante inyección de contenido, ya que Microsoft ha desvelado oficialmente la primera oleada de títulos que se unirán a su servicio de suscripción durante la primera mitad de junio. Esta noticia, largamente esperada por la comunidad de jugadores, promete enriquecer aún más la vasta biblioteca disponible para usuarios de consola, PC y aquellos que disfrutan del juego en la nube a través de Xbox Cloud Gaming.</p><p>Aunque los detalles específicos de cada juego se irán revelando progresivamente, la promesa es una mezcla ecléctica que abarcará desde aclamadas experiencias narrativas hasta intensos títulos de acción, pasando por joyas independientes que han capturado la atención de la crítica. Esta estrategia refuerza el compromiso de Xbox por ofrecer una diversidad sin igual, asegurando que cada suscriptor encuentre algo de su agrado y pueda explorar nuevos mundos sin coste adicional más allá de su suscripción mensual.</p>",
+      "enlace": "https://www.eurogamer.es/anunciados-los-juegos-de-xbox-game-pass-de-la-primera-mitad-de-junio-2026",
+      "fecha": "2026-06-03T20:29:19.077406",
+      "imagen": "https://assetsio.gnwcdn.com/Starseeker.jpg?width=690&quality=85&format=jpg&auto=webp"
     },
     {
       "id": "dest-1780512219",
