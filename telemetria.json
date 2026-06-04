@@ -111,28 +111,28 @@
     {
       "id": "silent-hill-f",
       "titulo": "Silent Hill f",
-      "fecha": "TBA (Anunciado)",
+      "fecha": "Sin fecha de lanzamiento confirmada",
       "plataformas": "PlayStation 5, PC",
-      "calificacion": "N/A (No lanzado)",
-      "motor_grafico": "Potencialmente Unreal Engine 5",
-      "tecnologias": "Ray Tracing (iluminación global, reflejos, sombras), DLSS/FSR/XeSS (en PC), Upscaling temporal (consolas)",
-      "rendimiento": "PS5: Objetivo 1440p@60fps (Modo Rendimiento) / 4K@30fps (Modo Calidad); PC: Escalable hasta 4K@60fps+ con hardware de gama alta",
-      "sinopsis": "Silent Hill f es una nueva entrega de la icónica saga de terror psicológico, ambientada en el Japón de los años 60. Con una estética que fusiona el terror corporal japonés con elementos clásicos de Silent Hill, la trama sigue a una joven atrapada en un mundo hermoso pero horripilante, donde la realidad se pudre y se transforma en pesadilla.",
-      "analisis_detallado": "<p>Desde los primeros avances de Silent Hill f, la dirección artística es innegablemente impactante, prometiendo una nueva dimensión visual para la franquicia. El uso aparente de un motor moderno, con la especulación apuntando hacia Unreal Engine 5, permite una representación fotorrealista de entornos japoneses que luego se corrompen de manera grotesca. La fidelidad en los modelos de personajes, la complejidad geométrica de los escenarios y un sistema de iluminación avanzado –probablemente con elementos de Ray Tracing para la oclusión ambiental y los reflejos– son cruciales para establecer esa atmósfera opresiva y perturbadora. La atención al detalle en las texturas, desde la piel putrefacta hasta los elementos orgánicos y vegetales que invaden la arquitectura, será vital para la inmersión y el impacto del horror corporal, poniendo a prueba la capacidad de sombreado y renderizado del motor.</p><p>En cuanto al rendimiento, Silent Hill f, como título de nueva generación, enfrentará los desafíos habituales de optimización para consolas y PC. En PlayStation 5, esperamos un enfoque de dos modos: un 'Modo Rendimiento' apuntando a 1440p escalado a 60 fotogramas por segundo, utilizando soluciones de upscaling como FSR para mantener la fluidez, y un 'Modo Calidad' que priorice la resolución nativa o cercana a 4K, con todos los ajustes gráficos al máximo y Ray Tracing activado, pero limitando el framerate a 30fps. Para PC, el título demandará una GPU potente (RTX 3070/RX 6700 XT como punto de partida para 1440p@60fps) y un procesador multinúcleo moderno. La implementación sólida de DLSS, FSR y XeSS será indispensable para que una amplia gama de configuraciones de hardware pueda disfrutar del juego a altas resoluciones y tasas de refresco, sin comprometer excesivamente la calidad visual que define su propuesta de terror.</p>",
+      "calificacion": "N/A (Juego no lanzado)",
+      "motor_grafico": "Unreal Engine (probablemente UE4 o UE5)",
+      "tecnologias": "Ray Tracing (iluminación global, reflejos), DLSS/FSR (en PC), HDR",
+      "rendimiento": "PS5: Modo Calidad 4K dinámico/30fps, Modo Rendimiento 1440p/60fps. PC: Escalable, objetivo 4K/60fps en hardware de gama alta con DLSS/FSR.",
+      "sinopsis": "Ambientado en el Japón de la década de 1960, Silent Hill f sigue la historia de una joven que se ve envuelta en un mundo decadente y surrealista, infestado de criaturas grotescas y una misteriosa niebla que corroe tanto el entorno como la realidad.",
+      "analisis_detallado": "<p>Desde los primeros adelantos, Silent Hill f promete un despliegue gráfico ambicioso, potenciando la atmósfera de horror psicológico que define la saga. El motor, presumiblemente Unreal Engine, parece estar siendo utilizado para recrear entornos decadentes con un nivel de detalle ambiental sobresaliente. La dirección artística, inspirada en el horror japonés, se beneficia enormemente de texturas de alta resolución, modelados de personajes detallados con animaciones faciales y corporales que transmiten inquietud, y un uso magistral de la iluminación volumétrica y sombreado para generar tensión. La niebla, un sello distintivo de Silent Hill, aquí adquiere una nueva dimensión visual gracias a los efectos de partículas avanzados y la interacción con la luz, creando un lienzo perfecto para las grotescas transformaciones del mundo.</p><p>El reto para Silent Hill f será traducir esta ambición visual en una experiencia de juego fluida y consistente en todas las plataformas. En consolas de actual generación como PS5, esperamos ver los modos habituales: un 'Modo Calidad' apuntando a resoluciones cercanas al 4K con 30 fotogramas por segundo, priorizando la fidelidad visual y el Ray Tracing; y un 'Modo Rendimiento' que podría escalar a 1440p para alcanzar unos 60fps más estables, sacrificando quizás algunos efectos o la resolución nativa. Para PC, la implementación de tecnologías como DLSS y FSR será crucial para asegurar un rendimiento óptimo en una amplia gama de hardware. La estabilidad del frame rate y un frame pacing impecable son vitales en un juego de horror donde cualquier micro-stutter o caída abrupta de rendimiento puede romper la inmersión y diluir el impacto del susto o la tensión.</p>",
       "requisitos": {
         "minimos": [
-          "Sistema Operativo: Windows 10 (64-bit)",
-          "Procesador: Intel Core i5-8400 / AMD Ryzen 3 3200G",
-          "Memoria: 16 GB de RAM",
+          "SO: Windows 10 (64-bit)",
+          "Procesador: Intel Core i5-8400 / AMD Ryzen 3 3300X",
+          "Memoria: 12 GB RAM",
           "Gráficos: NVIDIA GeForce GTX 1070 / AMD Radeon RX 590",
-          "Almacenamiento: 50 GB de espacio disponible (SSD recomendado)"
+          "Almacenamiento: 50 GB disponibles"
         ],
         "recomendados": [
-          "Sistema Operativo: Windows 10/11 (64-bit)",
+          "SO: Windows 10/11 (64-bit)",
           "Procesador: Intel Core i7-10700K / AMD Ryzen 5 5600X",
-          "Memoria: 16 GB de RAM (o más)",
+          "Memoria: 16 GB RAM",
           "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT",
-          "Almacenamiento: 50 GB de espacio disponible (SSD altamente recomendado)"
+          "Almacenamiento: 50 GB disponibles (SSD recomendado)"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
