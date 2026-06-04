@@ -3,139 +3,313 @@
     {
       "id": "borderlands-4",
       "titulo": "borderlands 4",
-      "fecha": "2025-10-22",
-      "plataformas": "PC, PlayStation 5, Xbox Series X|S",
-      "calificacion": "8.7",
-      "motor_grafico": "Unreal Engine 5",
-      "tecnologias": "DLSS 3.5, FSR 3.0, Ray Tracing (sombras, oclusión ambiental), HDR10",
-      "rendimiento": "PC: 4K@60FPS (DLSS/FSR Quality), Consolas (Modo Rendimiento): 1440p-1800p@60FPS, Consolas (Modo Calidad): 4K@30FPS (con RT)",
-      "sinopsis": "Vuelve la acción frenética de Borderlands con nuevos buscacámaras, mundos por explorar y millones de armas. Una amenaza intergaláctica inédita se cierne sobre Pandora y el resto de la galaxia, y solo un equipo de excéntricos mercenarios puede detenerla, si no se matan entre ellos primero.",
-      "analisis_detallado": "<p>Borderlands 4 se asienta firmemente en el Unreal Engine 5, y el salto es perceptible, aunque se mantiene fiel a su distintivo estilo cel-shaded. La iluminación global ha recibido una mejora sustancial, aportando una mayor profundidad y dramatismo a los entornos, especialmente en los paisajes alienígenas que ahora exhiben una riqueza cromática y un detalle ambiental que superan con creces a sus predecesores. Hemos notado un uso discreto pero efectivo del Ray Tracing para las sombras y la oclusión ambiental, lo que añade una capa extra de realismo y cohesión visual sin traicionar la estética cartoon. Los modelos de personajes y armas, por su parte, se benefician de una mayor densidad poligonal y texturas de alta resolución que resaltan cada imperfección y detalle característico del universo.</p><p>En cuanto al rendimiento, Borderlands 4 es una bestia escalable. En PC, con una RTX 4080 o superior y DLSS 3.5 en modo 'Calidad', es posible disfrutar de una experiencia fluida a 4K y 60 fotogramas por segundo, incluso en los tiroteos más caóticos, aunque picos de explosiones masivas pueden causar caídas puntuales. En consolas de nueva generación, el 'Modo Rendimiento' prioriza los 60fps a una resolución dinámica que oscila entre 1440p y 1800p, logrando una consistencia encomiable con mínimas fluctuaciones. El 'Modo Calidad', por otro lado, empuja la resolución a 4K nativos, incorpora un Ray Tracing más robusto en sombras y reflejos puntuales, pero bloquea el framerate a 30fps. La experiencia es más cinematográfica, pero el dinamismo del combate de Borderlands se siente penalizado por la menor tasa de refresco, haciéndolo una opción de nicho para quienes prioricen la fidelidad visual absoluta sobre la respuesta.</p>",
+      "fecha": "No anunciado",
+      "plataformas": "Desconocidas",
+      "calificacion": "N/A",
+      "motor_grafico": "Desconocido (probablemente Unreal Engine)",
+      "tecnologias": "Desconocidas (se esperarían DLSS, FSR, Ray Tracing, etc.)",
+      "rendimiento": "Desconocido",
+      "sinopsis": "Borderlands 4 no ha sido oficialmente anunciado por Gearbox Software o 2K Games. La saga Borderlands es conocida por su estilo artístico cel-shaded, jugabilidad de looter-shooter, humor irreverente y un universo post-apocalíptico lleno de personajes excéntricos y criaturas peligrosas. Una posible secuela continuaría la narrativa de sus predecesores, expandiendo el universo y las mecánicas de juego.",
+      "analisis_detallado": "<p>Dado que Borderlands 4 no ha sido oficialmente anunciado, cualquier análisis técnico sobre sus gráficos, físicas o rendimiento es puramente especulativo. Históricamente, la serie Borderlands ha utilizado el motor Unreal Engine, y es plausible que una futura entrega opte por una versión moderna como Unreal Engine 5 para aprovechar sus capacidades de Lumen, Nanite y otras mejoras. Esto permitiría gráficos más detallados, iluminación global en tiempo real y entornos más complejos sin un impacto excesivo en el rendimiento si se optimiza correctamente.</p><p>En términos de rendimiento, se esperaría que un Borderlands 4 apuntara a resoluciones 1080p a 60 FPS en hardware de gama media, con opciones para 1440p y 4K a tasas de refresco más altas en sistemas potentes, posiblemente con el apoyo de tecnologías de escalado como DLSS, FSR e Intel XeSS. Las físicas, tradicionalmente enfocadas en la destrucción de elementos y el comportamiento de las armas, podrían ver mejoras en la interactividad ambiental y la simulación de partículas. Sin embargo, todo esto depende de un anuncio oficial y los detalles que lo acompañen.</p>",
       "requisitos": {
         "minimos": [
-          "SO: Windows 10 (64-bit)",
-          "Procesador: Intel Core i5-8600K / AMD Ryzen 5 3600",
-          "Memoria: 16 GB de RAM",
-          "Gráficos: NVIDIA GeForce GTX 1080 / AMD Radeon RX 5900",
-          "DirectX: Versión 12",
-          "Almacenamiento: 100 GB de espacio disponible (SSD recomendado)"
+          "No anunciados"
         ],
         "recomendados": [
-          "SO: Windows 10/11 (64-bit)",
-          "Procesador: Intel Core i7-10700K / AMD Ryzen 7 5800X",
-          "Memoria: 32 GB de RAM",
-          "Gráficos: NVIDIA GeForce RTX 3070 Ti / AMD Radeon RX 6800 XT",
-          "DirectX: Versión 12",
-          "Almacenamiento: 100 GB de espacio disponible (SSD NVMe)"
+          "No anunciados"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9cc/9ccb59a7c634091bc8a9b7978d4dc322.jpg"
     },
     {
-      "id": "half-life-2",
-      "titulo": "Half Life 2",
-      "fecha": "16 de noviembre de 2004",
-      "plataformas": "PC (Windows, Linux, macOS), Xbox, Xbox 360, PlayStation 3",
-      "calificacion": 9.5,
-      "motor_grafico": "Source Engine",
-      "tecnologias": "Havok Physics, HDR Lighting (post-lanzamiento), Facial Animation System, Deferred Shading, Water Caustics, Shader Model 2.0",
-      "rendimiento": "1280x1024 a 60 FPS en hardware de gama media-alta de la época; altamente escalable a resoluciones y framerates superiores en hardware moderno.",
-      "sinopsis": "Half-Life 2 es un revolucionario shooter en primera persona de Valve que sigue al físico Gordon Freeman en su lucha contra la opresiva Combine en una Tierra distópica. Famoso por su narrativa inmersiva, física de vanguardia y diseño de niveles innovador, el juego estableció nuevos estándares para el género.",
-      "analisis_detallado": "<p>Desde el momento de su lanzamiento, Half-Life 2 fue una demostración técnica asombrosa del potencial del Source Engine. La integración del motor de físicas Havok fue una auténtica revolución, permitiendo interacciones ambientales y resolución de puzles de una forma nunca antes vista, lo que se traducía en una inmersión sin precedentes. Los modelos de personajes eran excepcionalmente detallados para la época, con un sistema de animación facial que dotaba a los NPC de una expresividad fotorrealista que aún hoy impresiona. La fidelidad visual se complementaba con una arquitectura de niveles compleja y una iluminación que, aunque inicialmente basada en shaders estáticos, mostraba un gran dominio del color y la atmósfera.</p><p>La ingeniería de Valve permitió que Half-Life 2 fuera un título sorprendentemente escalable, capaz de ejecutarse en una amplia gama de hardware manteniendo una experiencia jugable. Sin embargo, en equipos de gama alta, el juego brillaba, especialmente tras la adición del soporte HDR (High Dynamic Range) que transformó la iluminación y el contraste de una manera espectacular, adelantándose a su tiempo. El motor Source demostró una flexibilidad y robustez que lo hicieron perdurar por años, influyendo en innumerables títulos y estableciendo una vara muy alta para la presentación técnica y la interacción jugador-entorno. A pesar de sus casi dos décadas, Half-Life 2 sigue siendo un referente de cómo el hardware puede ser empujado para crear experiencias memorables.</p>",
+      "id": "elden-ring",
+      "titulo": "Elden Ring",
+      "fecha": "25 de febrero de 2022",
+      "plataformas": "PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S",
+      "calificacion": 9.6,
+      "motor_grafico": "Motor propietario de FromSoftware",
+      "tecnologias": "Rasterización tradicional, compatibilidad limitada con Ray Tracing (añadido post-lanzamiento), Ambient Occlusion, HDR",
+      "rendimiento": "1440p @ 60 FPS (PC recomendado), 1440p @ 60 FPS o 4K (escalado) @ 30 FPS (Consolas de nueva generación)",
+      "sinopsis": "Elden Ring es un videojuego de rol de acción desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. Ambientado en las Tierras Intermedias, un reino de fantasía ideado por Hidetaka Miyazaki y George R. R. Martin, el jugador asume el papel de un Sinluz exiliado, cuya misión es restaurar el Anillo de Elden y convertirse en el Señor de Elden. El juego es aclamado por su vasto mundo abierto, su desafiante combate, su rica mitología y su profunda exploración.",
+      "analisis_detallado": "<p>Elden Ring utiliza una evolución del motor propietario de FromSoftware, lo que se traduce en un estilo artístico distintivo que prioriza la atmósfera y el diseño de criaturas sobre la fidelidad gráfica cruda. Si bien las texturas de algunos elementos ambientales pueden parecer modestas, la dirección artística, el uso magistral de la iluminación, los efectos volumétricos y el detallado diseño de personajes y enemigos, contribuyen a un mundo visualmente coherente e impresionante. La capacidad de recorrer grandes distancias de dibujado y la fluidez en la transición entre zonas del mapa son notables, aunque se pueden observar algunos casos de 'pop-in' de elementos a distancia. La estética de fantasía oscura se realza con una dirección visual que comunica gran parte de la narrativa ambiental.</p><p>En cuanto a las físicas, el juego implementa un sistema funcional que se centra principalmente en las animaciones de los personajes, los efectos de 'ragdoll' al derrotar enemigos y una interacción ambiental básica (ej. destrucción de objetos menores). No incorpora simulaciones complejas de fluidos o destrucción en tiempo real. Desde el punto de vista del rendimiento, el lanzamiento en PC fue notoriamente problemático, sufriendo de caídas de fotogramas y micro-stuttering, incluso en hardware de gama alta, especialmente en zonas densas o durante combates intensos. Aunque los parches posteriores han mejorado la estabilidad general, el juego aún puede presentar problemas de 'frame pacing' y, a menudo, tiene dificultades para mantener una tasa constante de 60 FPS, sobre todo a resoluciones elevadas. Las versiones de consola generalmente ofrecen una experiencia más estable en sus modos de rendimiento, aunque a veces recurriendo a la escalada dinámica de resolución.</p>",
       "requisitos": {
         "minimos": [
-          "Procesador: 1.2 GHz",
-          "RAM: 256 MB",
-          "Tarjeta Gráfica: Compatible con DirectX 7 (ej. NVIDIA GeForce 3 o ATI Radeon 8500)",
-          "Almacenamiento: 4.5 GB"
+          "SO: Windows 10",
+          "Procesador: Intel Core i5-8400 o AMD Ryzen 3 3300X",
+          "Memoria: 12 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 3GB o AMD Radeon RX 580 4GB",
+          "DirectX: Versión 12",
+          "Almacenamiento: 60 GB de espacio disponible"
         ],
         "recomendados": [
-          "Procesador: Pentium 4 a 3.0 GHz o superior",
-          "RAM: 512 MB - 1 GB",
-          "Tarjeta Gráfica: Compatible con DirectX 9 (ej. NVIDIA GeForce FX 5900 o ATI Radeon 9600 Pro)",
-          "Almacenamiento: 4.5 GB"
+          "SO: Windows 10/11",
+          "Procesador: Intel Core i7-8700K o AMD Ryzen 5 3600X",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1070 8GB o AMD Radeon RX Vega 56 8GB",
+          "DirectX: Versión 12",
+          "Almacenamiento: 60 GB de espacio disponible"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
+    },
+    {
+      "id": "resident-evil-4",
+      "titulo": "Resident Evil 4",
+      "fecha": "24 de marzo de 2023",
+      "plataformas": "PlayStation 5, Xbox Series X|S, PC (Steam), PlayStation 4",
+      "calificacion": "9/10",
+      "motor_grafico": "RE Engine",
+      "tecnologias": "AMD FidelityFX Super Resolution (FSR), Ray Tracing (reflexiones, sombras)",
+      "rendimiento": "PC: 1440p a 60 FPS con ajustes altos; 4K a 30-60 FPS con ajustes medios/altos y FSR. Consolas: 4K dinámico a 30 FPS (Modo Resolución) o 1080p-1440p a 60 FPS (Modo Rendimiento).",
+      "sinopsis": "Resident Evil 4 (2023) es el remake del aclamado survival horror de 2005. En él, el agente Leon S. Kennedy es enviado a una remota aldea en España para rescatar a Ashley Graham, la hija del presidente de los Estados Unidos. Allí, descubre que los habitantes están infectados por un parásito desconocido, La Plaga, y debe luchar por su vida mientras desentraña una conspiración siniestra.",
+      "analisis_detallado": "<p>Resident Evil 4 (2023) hace un uso ejemplar del RE Engine, el motor propietario de Capcom, logrando una fidelidad gráfica sobresaliente que redefine la atmósfera del original. Los modelos de personajes y enemigos presentan un nivel de detalle excepcional, con texturas de alta resolución y animaciones faciales y corporales sumamente realistas. La implementación de la iluminación global y los efectos volumétricos contribuye a crear entornos increíblemente inmersivos, especialmente en las zonas oscuras y claustrofóbicas que caracterizan al juego. La destrucción ambiental y la reacción de los enemigos a los impactos, con desmembramientos precisos y fluidos, no solo añaden al gore visceral sino que también tienen implicaciones tácticas en el combate.</p><p>En términos de rendimiento, Resident Evil 4 es un título bien optimizado, aunque exigente en sus configuraciones más altas. En PC, ofrece una amplia gama de opciones gráficas para escalar el rendimiento, incluyendo la tecnología FSR de AMD, que es crucial para alcanzar altas tasas de frames en resoluciones elevadas, especialmente con el Ray Tracing activado. El Ray Tracing, aunque no es el más avanzado del mercado, mejora significativamente la calidad de las reflexiones y sombras, aportando una capa extra de realismo a expensas de un impacto considerable en el framerate. En consolas, el juego ofrece un modo de calidad con mayor resolución (4K dinámico) a 30 FPS y un modo rendimiento que busca los 60 FPS sacrificando resolución, siendo este último generalmente preferido por su mayor fluidez en la jugabilidad. Sin embargo, en momentos de alta carga o zonas muy detalladas, pueden observarse caídas de frames en ambos modos.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Windows 10 (64 bit)",
+          "Procesador: AMD Ryzen 3 1200 / Intel Core i5-7500",
+          "Memoria: 8 GB RAM",
+          "Gráficos: AMD Radeon RX 560 (4GB VRAM) / NVIDIA GeForce GTX 1050 Ti (4GB VRAM)",
+          "DirectX: Versión 12"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Windows 10 (64 bit)",
+          "Procesador: AMD Ryzen 5 3600 / Intel Core i7 8700",
+          "Memoria: 16 GB RAM",
+          "Gráficos: AMD Radeon RX 6700 XT / NVIDIA GeForce RTX 2070",
+          "DirectX: Versión 12"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg"
+    },
+    {
+      "id": "cyberpunk-2077",
+      "titulo": "Cyberpunk 2077",
+      "fecha": "10 de diciembre de 2020",
+      "plataformas": "PC, PlayStation 4, Xbox One (lanzamiento inicial); PlayStation 5, Xbox Series X|S (actualización de nueva generación)",
+      "calificacion": "8.5",
+      "motor_grafico": "REDengine 4",
+      "tecnologias": "Ray Tracing (Reflections, Shadows, Global Illumination, Ambient Occlusion), Path Tracing (RT Overdrive), NVIDIA DLSS, AMD FSR, Intel XeSS, HDR",
+      "rendimiento": "1440p a 60 FPS con DLSS/FSR para hardware de gama media-alta; 1080p a 60 FPS con DLSS/FSR para hardware de gama media",
+      "sinopsis": "Cyberpunk 2077 es un videojuego de rol de acción de mundo abierto ambientado en Night City, una megalópolis obsesionada con el poder, el glamour y la modificación corporal. El jugador asume el papel de V, un mercenario personalizable que busca un implante único, la clave de la inmortalidad, mientras navega por una trama compleja llena de facciones en conflicto y personajes memorables.",
+      "analisis_detallado": "<p>Cyberpunk 2077, construido sobre el REDengine 4, destaca por su sobresaliente fidelidad gráfica y la densa recreación de Night City. El detalle de los modelos de personajes, la complejidad ambiental y la calidad de las texturas son de referencia. La implementación de tecnologías de Ray Tracing eleva la inmersión a un nuevo nivel, con reflejos precisos, sombras realistas y una iluminación global que transforma cada rincón de la ciudad. La opción de Path Tracing (RT Overdrive) ofrece un realismo luminoso sin precedentes, aunque a un coste computacional extremadamente elevado. Las físicas, especialmente las de vehículos y la interacción con el entorno destructible, contribuyen a una experiencia inmersiva, aunque la simulación de colisiones puede ser inconsistente en algunos aspectos.</p><p>En cuanto al rendimiento, Cyberpunk 2077 fue inicialmente un título notoriamente exigente, especialmente en hardware de la generación anterior y al activar las opciones de Ray Tracing. Sin embargo, con múltiples parches y la importante actualización 2.0, el juego ha visto una optimización sustancial. Aun así, sigue siendo un banco de pruebas para las GPUs más potentes. Para lograr tasas de cuadros jugables a resoluciones elevadas, las tecnologías de escalado como NVIDIA DLSS, AMD FSR e Intel XeSS son prácticamente indispensables. Estas permiten un equilibrio crucial entre calidad visual y fluidez, haciendo que el juego sea accesible para una gama más amplia de sistemas modernos sin sacrificar excesivamente la experiencia gráfica.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 64-bit",
+          "Procesador: Intel Core i5-3570K / AMD FX-8310",
+          "RAM: 8 GB",
+          "GPU: NVIDIA GeForce GTX 970 / AMD Radeon RX 470",
+          "Almacenamiento: 70 GB SSD"
+        ],
+        "recomendados": [
+          "SO: Windows 10 64-bit",
+          "Procesador: Intel Core i7-6700 / AMD Ryzen 5 1600",
+          "RAM: 12 GB",
+          "GPU: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB)",
+          "Almacenamiento: 70 GB SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+    },
+    {
+      "id": "half-life-2-the-last-of-us",
+      "titulo": "half life 2 The Last of Us",
+      "fecha": "28 de marzo de 2023",
+      "plataformas": "PC (Steam, Epic Games Store)",
+      "calificacion": "59/100 (Metacritic PC)",
+      "motor_grafico": "Naughty Dog Engine (Motor propietario)",
+      "tecnologias": "AMD FSR 2.2, NVIDIA DLSS 2.x, Intel XeSS, Ray Tracing (sombras, reflejos), DirectStorage",
+      "rendimiento": "Objetivo: 1440p a 60 FPS con ajustes gráficos altos, utilizando escalado (DLSS/FSR) si es necesario. Para 4K, se recomienda el uso de escalado y ajustes en nivel medio-alto.",
+      "sinopsis": "En un mundo postapocalíptico asolado por una pandemia de un hongo Cordyceps que convierte a los humanos en criaturas mutantes, 'The Last of Us' narra la brutal y conmovedora historia de Joel, un superviviente endurecido, y Ellie, una adolescente inmune, en su viaje a través de unos Estados Unidos devastados. Su misión es crucial para la posible cura de la humanidad, enfrentándose a peligrosos enemigos humanos y mutantes en un relato de supervivencia, amor y pérdida.",
+      "analisis_detallado": "<p>A nivel gráfico, 'The Last of Us Part I' en PC es una proeza técnica, heredando y mejorando la calidad visual de la versión de PlayStation 5. Presenta modelos de personajes extremadamente detallados, animaciones faciales realistas y entornos fotorrealistas con una iluminación volumétrica y efectos de partículas de primer nivel. La implementación de tecnologías como el Ray Tracing para sombras y reflejos añade una capa adicional de inmersión y realismo, aunque a un coste significativo en rendimiento. El detallado nivel de los escenarios, desde ciudades en ruinas hasta frondosos bosques, es consistente y contribuye a una atmósfera opresiva y bella a la vez, destacando el arte de Naughty Dog.</p><p>En cuanto al rendimiento y las físicas, el lanzamiento inicial en PC fue notorio por sus problemas de optimización, incluyendo alta carga de VRAM, largos tiempos de compilación de shaders y stuttering. Sin embargo, posteriores parches han mejorado significativamente la estabilidad y el rendimiento, haciendo del juego una experiencia más fluida. Las físicas del juego son sólidas, con interacciones ambientales creíbles y un sistema de combate visceral que se beneficia de animaciones fluidas y reactivas. Aunque exige hardware moderno potente, especialmente en CPU y VRAM, las tecnologías de escalado como DLSS, FSR y XeSS son cruciales para alcanzar altas tasas de frames en resoluciones elevadas, permitiendo un equilibrio entre fidelidad visual y una jugabilidad fluida.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 (versión 1909 o superior) 64-bit",
+          "CPU: Intel Core i7-4770K o AMD Ryzen 5 1500X",
+          "RAM: 16 GB",
+          "GPU: NVIDIA GeForce GTX 970 (4 GB) o AMD Radeon RX 470 (4 GB)",
+          "Almacenamiento: 100 GB SSD"
+        ],
+        "recomendados": [
+          "SO: Windows 10 (versión 1909 o superior) 64-bit",
+          "CPU: Intel Core i7-8700K o AMD Ryzen 5 3600X",
+          "RAM: 16 GB",
+          "GPU: NVIDIA GeForce RTX 2070 Super (8 GB) o AMD Radeon RX 6600 XT (8 GB)",
+          "Almacenamiento: 100 GB SSD"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
     },
     {
-      "id": "the-last-of-us",
-      "titulo": "The Last of Us",
-      "fecha": "14 de junio de 2013 (PS3 original)",
-      "plataformas": "PlayStation 3, PlayStation 4, PlayStation 5, PC",
-      "calificacion": 9.8,
-      "motor_grafico": "Motor propietario de Naughty Dog (personalizado)",
-      "tecnologias": "Renderizado diferido avanzado, Subsurface Scattering, Iluminación volumétrica, Oclusión ambiental (SSAO), Texturas de alta resolución, Sombras dinámicas complejas. En PC (Part I): NVIDIA DLSS, AMD FSR, Intel XeSS, Soporte para monitores ultrapanorámicos, HDR.",
-      "rendimiento": "PS3: 720p @ ~30 FPS. PS4 Remastered: 1080p @ 60 FPS (opcional 30 FPS para mayor fidelidad). PS5 (Part I): Modo Fidelidad: Nativo 4K @ 30 FPS; Modo Rendimiento: Dinámico 4K @ 60 FPS. PC (Part I): Variable según hardware, apuntando a 60 FPS+ a 1080p/1440p/4K con escalado.",
-      "sinopsis": "Una conmovedora aventura post-apocalíptica que sigue a Joel, un contrabandista, y a Ellie, una joven resiliente, a través de unos Estados Unidos devastados por una pandemia fúngica. Su viaje se convierte en una lucha por la supervivencia y el forjamiento de un vínculo inquebrantable, enfrentándose a infectados mutados y a la brutalidad de otros supervivientes.",
-      "analisis_detallado": "<p>Desde su debut en PlayStation 3, 'The Last of Us' demostró el dominio técnico de Naughty Dog, llevando al límite el hardware de la época. Su motor propietario, meticulosamente optimizado, permitía escenas con una densidad poligonal y una calidad de texturas asombrosas, junto con una iluminación precalculada y dinámica que creaba atmósferas opresivas y realistas. La versión Remastered para PS4 no solo elevó la resolución a 1080p y la tasa de frames a unos fluidos 60 FPS, sino que también mejoró las texturas, las sombras y la calidad de la oclusión ambiental, consolidando su estatus como un referente visual en su generación.</p><p>Con 'Part I' para PS5 y PC, el juego experimentó un remake completo con una renovación técnica que abraza las capacidades de la nueva generación. Incorpora un sistema de iluminación global dinámico, oclusión ambiental mejorada y una mayor densidad de detalles en entornos y personajes. Si bien la versión de PS5 ofrece modos de 30 FPS a 4K nativos y 60 FPS a 4K dinámicos, la llegada a PC, aunque con un lanzamiento inicial algo irregular en optimización, ha permitido el aprovechamiento de tecnologías como DLSS, FSR y XeSS para alcanzar resoluciones y tasas de refresco aún mayores en hardware compatible, ofreciendo la experiencia visual más pulida hasta la fecha, aunque exigente.</p>",
+      "id": "silent-hill-f",
+      "titulo": "Silent Hill f",
+      "fecha": "Por anunciar (sin fecha de lanzamiento confirmada)",
+      "plataformas": "PC (vía Steam), PlayStation 5",
+      "calificacion": "Pendiente (juego no lanzado)",
+      "motor_grafico": "Desconocido oficialmente (se especula con Unreal Engine 5 o un motor propietario avanzado)",
+      "tecnologias": "Se esperan: Ray Tracing (iluminación global, reflejos, sombras), DLSS/FSR (escalado de resolución), HDR, FidelityFX.",
+      "rendimiento": "PC: 1440p a 60 FPS (recomendado), 4K a 60 FPS (alto rendimiento). Consolas: 4K a 30 FPS o 1440p a 60 FPS (con escalado a 4K).",
+      "sinopsis": "Silent Hill f es una nueva entrega de la aclamada saga de horror psicológico, ambientada en el Japón de los años 60. La narrativa se centra en un mundo hermoso pero macabro, donde la realidad se retuerce y elementos orgánicos y grotescos invaden el entorno. Escrito por Ryukishi07 (Higurashi When They Cry) y con diseño de monstruos por k_uchi, promete una experiencia de horror única con una atmósfera inquietante y una historia profunda que explora la transformación y la corrupción.",
+      "analisis_detallado": "<p>A falta de material de juego real y datos técnicos concretos, el análisis de Silent Hill f se basa en las expectativas generadas por su revelación y el pedigrí de la franquicia. Se anticipa un salto gráfico significativo, aprovechando la potencia de las consolas de nueva generación y PCs modernos. La dirección artística, que fusiona la estética japonesa tradicional con el horror corporal y grotesco, sugiere el uso de texturas de alta resolución, modelados detallados y un sistema de iluminación avanzado. El Ray Tracing será crucial para recrear atmósferas opresivas, con sombras dinámicas, oclusiones ambientales realistas y reflejos que amplifiquen la sensación de desasosiego en los entornos retorcidos del juego. La calidad de los efectos de partículas y volumétricos, como niebla o esporas, también será clave para inmersión.</p><p>En cuanto al rendimiento, la naturaleza del juego como título de terror atmosférico no exige framerates ultra altos para su disfrute, pero una estabilidad a 60 FPS en PC y, si es posible, en modos de rendimiento de consola, es altamente deseable para una experiencia fluida. Las físicas del juego, especialmente en lo que respecta a la deformación de entornos y la interacción con elementos orgánicos, serán fundamentales para transmitir la visceralidad del horror. Se espera que el motor gráfico permita simulaciones de tela, destrucción parcial de entornos y físicas de ragdoll para los enemigos, contribuyendo a la inmersión. La optimización del motor para gestionar la carga gráfica de los entornos detallados y la IA de los monstruos será crítica para evitar caídas de rendimiento y garantizar una experiencia de juego consistente en todas las plataformas objetivo.</p>",
       "requisitos": {
         "minimos": [
-          "CPU: AMD Ryzen 5 1600X / Intel Core i7-4770K",
-          "GPU: AMD Radeon RX 470 (4 GB) / NVIDIA GeForce GTX 970 (4 GB)",
-          "RAM: 16 GB",
-          "SO: Windows 10 (versión 1909 o posterior)",
-          "Almacenamiento: 100 GB SSD"
+          "SO: Windows 10 de 64 bits",
+          "Procesador: Intel Core i5-9400F / AMD Ryzen 5 2600",
+          "Memoria: 12 GB RAM",
+          "Gráficos: NVIDIA GeForce GTX 1660 Ti / AMD Radeon RX 590 (6 GB VRAM)",
+          "Almacenamiento: 50 GB SSD"
         ],
         "recomendados": [
-          "CPU: AMD Ryzen 5 3600X / Intel Core i7-8700",
-          "GPU: AMD Radeon RX 5800 XT (8 GB) / NVIDIA GeForce RTX 2070 Super (8 GB) / AMD Radeon RX 6600 XT (8 GB)",
-          "RAM: 16 GB",
-          "SO: Windows 10 (versión 1909 o posterior)",
-          "Almacenamiento: 100 GB SSD"
+          "SO: Windows 10/11 de 64 bits",
+          "Procesador: Intel Core i7-10700K / AMD Ryzen 7 3700X",
+          "Memoria: 16 GB RAM",
+          "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT (8 GB VRAM)",
+          "Almacenamiento: 50 GB SSD"
         ]
       },
-      "imagen": "https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"
+      "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
     },
     {
       "id": "bloodborne",
       "titulo": "Bloodborne",
-      "fecha": "2015-03-24",
+      "fecha": "24 de marzo de 2015",
       "plataformas": "PlayStation 4",
-      "calificacion": "8.5/10",
-      "motor_grafico": "FromSoftware's Proprietary Engine (modificado)",
-      "tecnologias": "Physically Based Rendering (PBR), complejos sistemas de partículas y post-procesado, sofisticada iluminación volumétrica y global",
-      "rendimiento": "1080p (nativo/escalado) a 30fps (objetivo, con caídas frecuentes)",
-      "sinopsis": "Ambientado en la gótica y desolada ciudad de Yharnam, Bloodborne sumerge a los jugadores en una pesadilla lovecraftiana donde una misteriosa plaga transforma a sus habitantes en bestias. Como cazador, el objetivo es desentrañar los secretos de la sangría y detener la expansión de la enfermedad, enfrentándose a horrores indescriptibles y un combate visceral y agresivo.",
-      "analisis_detallado": "<p>Bloodborne, el exclusivo de PlayStation 4 de FromSoftware, es un tour de force artístico y de diseño que empujó los límites de la consola en su momento. La dirección de arte gótica victoriana, infundida con elementos de horror cósmico, es simplemente sublime, y cada rincón de Yharnam está imbuido de una atmósfera opresiva y detallada. El motor gráfico propietario de FromSoftware, una evolución de los utilizados en Demon's Souls y Dark Souls, demuestra una capacidad impresionante para renderizar entornos complejos, modelos de personajes detallados con PBR y efectos de partículas dinámicos que dan vida a los feroces combates y los elaborados escenarios. La iluminación volumétrica y el sombreado global contribuyen enormemente a la inmersión, creando una estética visual cohesiva y aterradora.</p><p>Sin embargo, el ambicioso apartado visual no está exento de sacrificios en el rendimiento. El juego apunta a una resolución de 1080p y una tasa de 30 fotogramas por segundo, pero raramente logra mantener esta última de manera consistente. Son frecuentes las caídas por debajo de los 30fps, especialmente en áreas con mucha acción, efectos de partículas intensos o enemigos numerosos, lo que puede impactar la fluidez del combate y la precisión del jugador. Además, Bloodborne sufre de notorios problemas de frame-pacing, que hacen que el movimiento en pantalla se sienta errático y menos suave de lo que sugeriría la media de fotogramas, exacerbando la percepción de un rendimiento irregular. Los tiempos de carga iniciales también fueron un punto débil importante en el lanzamiento, aunque mejoraron con parches posteriores, la experiencia de rendimiento en general sigue siendo un punto de fricción para un título de esta envergadura.</p>",
+      "calificacion": 9,
+      "motor_grafico": "Motor propietario de FromSoftware (modificado)",
+      "tecnologias": "Ninguna destacable para su época y plataforma (no soporta Ray Tracing, DLSS, etc.)",
+      "rendimiento": "Resolución y FPS objetivo: 1080p a 30 FPS. Rendimiento real: Frecuentes caídas por debajo de los 30 FPS, con mínimos que pueden llegar a los 20-25 FPS en áreas densas o con muchos efectos. Experimenta problemas de 'frame pacing'.",
+      "sinopsis": "Bloodborne es un videojuego de rol de acción desarrollado por FromSoftware y publicado por Sony Computer Entertainment, exclusivo para PlayStation 4. Ambientado en la decadente ciudad gótica de Yharnam, el jugador asume el papel de un Cazador en busca de la fuente de una plaga que convierte a sus habitantes en bestias grotescas. El juego es conocido por su alta dificultad, atmósfera lovecraftiana y un sistema de combate agresivo que recompensa la ofensiva.",
+      "analisis_detallado": "<p>Desde una perspectiva técnica, Bloodborne exhibe una dirección de arte sobresaliente que compensa en gran medida las limitaciones del hardware de PlayStation 4 en su lanzamiento. Los entornos góticos y lovecraftianos están ricamente detallados, con una iluminación atmosférica impresionante que utiliza eficazmente las sombras y el oclussion ambiental para construir tensión y profundidad. Los modelos de personajes y enemigos son intrincados, con texturas de alta resolución para la época, aunque se aprecian artefactos como el 'aliasing' en bordes y cierto 'pop-in' de texturas y objetos a distancia, comunes en juegos de consola de esa generación. Las físicas son básicas, principalmente enfocadas en colisiones de personajes y 'ragdolls' para los enemigos derrotados, sin un motor de físicas destructivas complejo, pero cumplen su función en el contexto del combate visceral del juego.</p><p>El rendimiento es, sin duda, el punto más criticado de Bloodborne a nivel técnico. Aunque el objetivo era una resolución de 1080p a 30 fotogramas por segundo, el juego rara vez mantiene una tasa de frames estable. Las caídas son frecuentes y significativas, especialmente en zonas con múltiples enemigos, efectos de partículas o vistas amplias de entornos complejos, llegando a descender a rangos de 20-25 FPS. Esto se agrava por un problema notorio de 'frame pacing', donde la inconsistencia en el tiempo entre fotogramas hace que la experiencia parezca más entrecortada de lo que sugeriría la media de FPS. Los tiempos de carga iniciales también eran considerablemente largos en el lanzamiento, aunque fueron mejorados en parches posteriores. A pesar de estos inconvenientes, la brillantez del diseño de juego y su atmósfera lograron que la mayoría de los jugadores pasaran por alto estas deficiencias técnicas.</p>",
       "requisitos": {
         "minimos": [
-          "N/A - Exclusivo de PlayStation 4"
+          "N/A (Exclusivo de consola PlayStation 4)"
         ],
         "recomendados": [
-          "N/A - Exclusivo de PlayStation 4"
+          "N/A (Exclusivo de consola PlayStation 4)"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/214/214b29aeff13a0ae6a70fc4426e85991.jpg"
     },
     {
-      "id": "silent-hill-f",
-      "titulo": "Silent Hill f",
-      "fecha": "Sin fecha de lanzamiento confirmada",
-      "plataformas": "PlayStation 5, PC",
-      "calificacion": "N/A (Juego no lanzado)",
-      "motor_grafico": "Unreal Engine (probablemente UE4 o UE5)",
-      "tecnologias": "Ray Tracing (iluminación global, reflejos), DLSS/FSR (en PC), HDR",
-      "rendimiento": "PS5: Modo Calidad 4K dinámico/30fps, Modo Rendimiento 1440p/60fps. PC: Escalable, objetivo 4K/60fps en hardware de gama alta con DLSS/FSR.",
-      "sinopsis": "Ambientado en el Japón de la década de 1960, Silent Hill f sigue la historia de una joven que se ve envuelta en un mundo decadente y surrealista, infestado de criaturas grotescas y una misteriosa niebla que corroe tanto el entorno como la realidad.",
-      "analisis_detallado": "<p>Desde los primeros adelantos, Silent Hill f promete un despliegue gráfico ambicioso, potenciando la atmósfera de horror psicológico que define la saga. El motor, presumiblemente Unreal Engine, parece estar siendo utilizado para recrear entornos decadentes con un nivel de detalle ambiental sobresaliente. La dirección artística, inspirada en el horror japonés, se beneficia enormemente de texturas de alta resolución, modelados de personajes detallados con animaciones faciales y corporales que transmiten inquietud, y un uso magistral de la iluminación volumétrica y sombreado para generar tensión. La niebla, un sello distintivo de Silent Hill, aquí adquiere una nueva dimensión visual gracias a los efectos de partículas avanzados y la interacción con la luz, creando un lienzo perfecto para las grotescas transformaciones del mundo.</p><p>El reto para Silent Hill f será traducir esta ambición visual en una experiencia de juego fluida y consistente en todas las plataformas. En consolas de actual generación como PS5, esperamos ver los modos habituales: un 'Modo Calidad' apuntando a resoluciones cercanas al 4K con 30 fotogramas por segundo, priorizando la fidelidad visual y el Ray Tracing; y un 'Modo Rendimiento' que podría escalar a 1440p para alcanzar unos 60fps más estables, sacrificando quizás algunos efectos o la resolución nativa. Para PC, la implementación de tecnologías como DLSS y FSR será crucial para asegurar un rendimiento óptimo en una amplia gama de hardware. La estabilidad del frame rate y un frame pacing impecable son vitales en un juego de horror donde cualquier micro-stutter o caída abrupta de rendimiento puede romper la inmersión y diluir el impacto del susto o la tensión.</p>",
+      "id": "sekiro-shadows-die-twice",
+      "titulo": "Sekiro Shadows Die Twice",
+      "fecha": "22 de marzo de 2019",
+      "plataformas": "PC (Windows), PlayStation 4, Xbox One",
+      "calificacion": "9",
+      "motor_grafico": "Motor propietario de FromSoftware",
+      "tecnologias": "Renderizado tradicional, sin DLSS, FSR ni Ray Tracing nativos",
+      "rendimiento": "Objetivo: 1080p a 60 FPS. Recomendado: 1440p a 60 FPS. Entusiasta: 4K a 60 FPS (con hardware de gama alta)",
+      "sinopsis": "Sekiro: Shadows Die Twice es un juego de acción-aventura desarrollado por FromSoftware y publicado por Activision. Ambientado en un Japón feudal ficticio del período Sengoku, el juego sigue a Lobo, un shinobi cuya misión es rescatar a su joven señor, Kuro, descendiente de un antiguo linaje. El juego enfatiza el sigilo, la exploración y un intenso combate de espadas, presentando una mecánica única de 'resurrección' y el uso de prótesis shinobi multifuncionales.",
+      "analisis_detallado": "<p>Sekiro utiliza el motor propietario de FromSoftware para ofrecer una experiencia visual distintiva que prioriza la dirección artística y la atmósfera sobre la fidelidad gráfica de vanguardia. Aunque las texturas y el conteo de polígonos no compiten con los títulos AAA más exigentes en crudo realismo, el juego sobresale en su diseño ambiental, modelos de personajes intrincados (especialmente los jefes) y un uso efectivo de la iluminación y efectos de partículas. La estética estilizada captura perfectamente el escenario del Japón feudal, con arquitectura detallada, paisajes exuberantes y diseños de enemigos grotescos, todo contribuyendo a un mundo cohesivo e inmersivo. La optimización del motor es generalmente robusta, permitiendo una presentación visual consistente en diversas configuraciones de hardware.</p><p>El rendimiento es un punto fuerte para Sekiro, con el juego generalmente manteniendo unos estables 60 fotogramas por segundo en el hardware recomendado, incluso durante intensas secuencias de combate. La versión para PC, aunque inicialmente limitada a 60 FPS (requiriendo mods para tasas de fotogramas ilimitadas), demuestra una excelente sincronización de fotogramas, lo que se traduce en una experiencia de juego fluida y receptiva, crucial para su exigente sistema de combate. Las físicas son en gran medida deterministas y sirven a las mecánicas de juego, siendo la destrucción ambiental mínima. Las físicas de personajes y telas están presentes, pero no son innovadoras, adhiriéndose a un enfoque funcional en lugar de hiperrealista. El motor del juego prioriza la capacidad de respuesta del combate y la consistencia ambiental, asegurando que el bucle de juego principal no se vea obstaculizado por inconsistencias de rendimiento o simulaciones físicas excesivamente complejas.</p>",
       "requisitos": {
         "minimos": [
-          "SO: Windows 10 (64-bit)",
-          "Procesador: Intel Core i5-8400 / AMD Ryzen 3 3300X",
-          "Memoria: 12 GB RAM",
-          "Gráficos: NVIDIA GeForce GTX 1070 / AMD Radeon RX 590",
-          "Almacenamiento: 50 GB disponibles"
+          "SO: Windows 7 / 8 / 10 (64-bit)",
+          "Procesador: Intel Core i3-2100 / AMD FX-6300",
+          "Memoria: 4 GB RAM",
+          "Gráficos: NVIDIA GeForce GTX 760 / AMD Radeon HD 7950",
+          "DirectX: Versión 11",
+          "Almacenamiento: 25 GB de espacio disponible"
         ],
         "recomendados": [
-          "SO: Windows 10/11 (64-bit)",
-          "Procesador: Intel Core i7-10700K / AMD Ryzen 5 5600X",
-          "Memoria: 16 GB RAM",
-          "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT",
-          "Almacenamiento: 50 GB disponibles (SSD recomendado)"
+          "SO: Windows 7 / 8 / 10 (64-bit)",
+          "Procesador: Intel Core i5-2500K / AMD Ryzen 5 1400",
+          "Memoria: 8 GB RAM",
+          "Gráficos: NVIDIA GeForce GTX 970 / AMD Radeon RX 570",
+          "DirectX: Versión 11",
+          "Almacenamiento: 25 GB de espacio disponible"
         ]
       },
-      "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
+      "imagen": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg"
+    },
+    {
+      "id": "minecraft",
+      "titulo": "Minecraft",
+      "fecha": "18 de noviembre de 2011",
+      "plataformas": "PC (Windows, macOS, Linux), PlayStation 3, PlayStation 4, PlayStation 5, Xbox 360, Xbox One, Xbox Series X/S, Nintendo Switch, Wii U, iOS, Android",
+      "calificacion": "9.3/10 (Basado en críticas de la versión Java)",
+      "motor_grafico": "Motor de juego propietario basado en Java (Java Edition) / Motor de juego propietario basado en C++ (Bedrock Edition)",
+      "tecnologias": "OpenGL (Java Edition), DirectX (Bedrock Edition), Shaders (a través de OptiFine o mods de terceros), Ray Tracing (oficialmente en Bedrock RTX, experimental en Java con mods), renderizado basado en Voxel",
+      "rendimiento": "1080p @ 60 FPS (experiencia base suave), 1440p @ 90 FPS o 4K @ 60 FPS (con hardware potente y optimización de renderizado)",
+      "sinopsis": "Minecraft es un videojuego de construcción de mundo abierto que permite a los jugadores explorar un vasto entorno tridimensional generado proceduralmente, compuesto por bloques. Los jugadores pueden extraer materias primas, construir estructuras, crear herramientas y objetos, y luchar contra criaturas hostiles. Ofrece modos de juego como supervivencia, creativo y aventura, fomentando la creatividad y la exploración en un universo cúbico.",
+      "analisis_detallado": "<p>En términos de gráficos, Minecraft emplea un estilo artístico pixelado y basado en vóxeles que, aunque visualmente simple en su base, es increíblemente escalable. La dependencia de OpenGL (Java Edition) o DirectX (Bedrock Edition) y la carga de 'chunks' (trozos de mundo) hacen que el rendimiento esté fuertemente ligado a la CPU y la RAM, especialmente al aumentar la distancia de renderizado. El motor no se centra en el fotorrealismo, sino en la interacción y la construcción, lo que permite que el juego funcione en una amplia gama de hardware. Sin embargo, la implementación de shaders avanzados o paquetes de texturas de alta resolución puede transformar drásticamente su apartado visual, llevando el rendimiento de la GPU a sus límites y exigiendo una VRAM considerable.</p><p>Las físicas en Minecraft son deliberadamente simplificadas y abstractas, diseñadas para la jugabilidad sandbox en lugar de la simulación realista. La gravedad afecta a entidades y bloques específicos (arena, grava), y los sistemas de agua y lava fluyen de manera predecible pero no volumétrica. El sistema de Redstone permite crear circuitos lógicos complejos, actuando como un pilar fundamental para la automatización y la ingeniería dentro del juego. El rendimiento general se ve impactado por la cantidad de entidades, la complejidad de los mecanismos de Redstone y la generación activa de mundo, lo que puede provocar cuellos de botella en la CPU y micro-tartamudeos incluso en sistemas potentes, particularmente en la edición Java, conocida por su gestión de memoria y rendimiento de subprocesos menos optimizada en comparación con la edición Bedrock escrita en C++.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: Intel Core i3-3210 | AMD A8-7600 APU",
+          "GPU: Intel HD Graphics 4000 | AMD Radeon R5 series (con OpenGL 4.4)",
+          "RAM: 4 GB",
+          "Almacenamiento: 1 GB (para el juego base y archivos de mundo)",
+          "SO: Windows 7 (64-bit) o superior, macOS 10.9 Maverick, Linux"
+        ],
+        "recomendados": [
+          "CPU: Intel Core i5-4690 | AMD A10-7800",
+          "GPU: NVIDIA GeForce 700 Series | AMD Radeon Rx 200 Series (con OpenGL 4.5)",
+          "RAM: 8 GB o más",
+          "Almacenamiento: 4 GB SSD",
+          "SO: Windows 10 (64-bit) o superior, macOS 10.12 Sierra, Linux"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+    },
+    {
+      "id": "hollow-knight",
+      "titulo": "Hollow Knight",
+      "fecha": "24 de febrero de 2017",
+      "plataformas": "PC (Windows, macOS, Linux), Nintendo Switch, PlayStation 4, Xbox One",
+      "calificacion": "9",
+      "motor_grafico": "Unity Engine",
+      "tecnologias": "Renderizado 2D de alta eficiencia, animaciones dibujadas a mano, efectos de partículas con Unity.",
+      "rendimiento": "1080p a 60 FPS (fácilmente superable en la mayoría de hardware moderno)",
+      "sinopsis": "Hollow Knight es un videojuego de acción y aventura en 2D con elementos de Metroidvania, desarrollado por Team Cherry. Los jugadores exploran el vasto y arruinado reino de Hallownest como el Silencioso Caballero, con la misión de detener una plaga mística conocida como 'La Infección' que amenaza con destruir todo el reino.",
+      "analisis_detallado": "<p>Hollow Knight destaca por su excepcional apartado gráfico 2D, donde cada elemento, desde los personajes hasta los detallados fondos, ha sido meticulosamente dibujado a mano. El uso del motor Unity permite una implementación fluida de este estilo artístico, con un impresionante efecto de paralaje que dota de profundidad a los entornos y una iluminación atmosférica que realza la oscura belleza del reino de Hallownest. Las animaciones son exquisitas y fluidas, lo que es crucial para la jugabilidad basada en la precisión. Las físicas del juego, aunque simples, son consistentes y predecibles, fundamentales para la plataforma y el combate, contribuyendo a una experiencia de juego gratificante y sin fricciones.</p><p>Desde una perspectiva de rendimiento, Hollow Knight es un ejemplo de optimización sobresaliente. Gracias a su naturaleza 2D y el uso eficiente del Unity Engine, el juego es increíblemente ligero en recursos, permitiendo alcanzar y mantener tasas de refresco elevadas (60 FPS o más) en una vasta gama de configuraciones de hardware, incluso en equipos modestos o portátiles de gama baja. Esta estabilidad en el framerate es vital para la precisión requerida en su combate y plataforma. No emplea tecnologías avanzadas como Ray Tracing o DLSS, centrándose en una ejecución impecable de su estilo artístico y jugabilidad, garantizando una experiencia fluida y reactiva que es el pilar de su inmersión.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Windows 7",
+          "Procesador: Intel Core 2 Duo E5200",
+          "Memoria: 4 GB RAM",
+          "Gráficos: GeForce 9800GTX+ (512 MB VRAM)",
+          "DirectX: Versión 9.0c",
+          "Almacenamiento: 9 GB de espacio disponible"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Windows 10",
+          "Procesador: Intel Core i5",
+          "Memoria: 8 GB RAM",
+          "Gráficos: GeForce GTX 560",
+          "DirectX: Versión 11",
+          "Almacenamiento: 9 GB de espacio disponible"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg"
+    },
+    {
+      "id": "devil-may-cry-5",
+      "titulo": "Devil May Cry 5",
+      "fecha": "8 de marzo de 2019",
+      "plataformas": "PC, PlayStation 4, Xbox One",
+      "calificacion": 9.0,
+      "motor_grafico": "RE Engine",
+      "tecnologias": "HDR (High Dynamic Range), AMD FidelityFX (en algunas implementaciones), Ray Tracing (añadido en la Special Edition y posteriores actualizaciones para PC)",
+      "rendimiento": "1080p a 60 FPS (mínimo recomendado para una experiencia fluida), 1440p a 60 FPS o 4K a 30-60 FPS (para equipos de gama alta, con o sin Ray Tracing)",
+      "sinopsis": "Devil May Cry 5 es un videojuego de acción y aventura hack and slash desarrollado y publicado por Capcom. La trama sigue a los cazadores de demonios Nero, Dante y el enigmático V, quienes se unen para detener al poderoso rey demonio Urizen de aniquilar la humanidad. El juego se caracteriza por su combate estilizado, sus complejos sistemas de combos y su énfasis en la calificación de rendimiento del jugador.",
+      "analisis_detallado": "<p>Devil May Cry 5 es un testimonio del poder y la eficiencia del RE Engine de Capcom, que también impulsó Resident Evil 7 y Resident Evil 2 Remake. El motor permite una fidelidad gráfica excepcional, con modelos de personajes increíblemente detallados, texturas de alta resolución y una iluminación dinámica que resalta los entornos góticos y demoníacos. Las animaciones son fluidas y reactivas, cruciales para el sistema de combate que exige precisión y rapidez. Los efectos de partículas para explosiones, magias y salpicaduras de sangre son visualmente impactantes sin comprometer el rendimiento general, creando una experiencia inmersiva y estéticamente pulida.</p><p>En cuanto al rendimiento, Devil May Cry 5 está notablemente bien optimizado en todas sus plataformas. En PC, ofrece una amplia gama de opciones gráficas que permiten escalarlo para funcionar a 60 FPS estables incluso en hardware de gama media a 1080p. La física del juego, aunque no es un simulador puro, se integra perfectamente en el combate, con el desmembramiento de enemigos y la reacción a los impactos contribuyendo a la sensación visceral de cada golpe. La posterior adición de Ray Tracing en la Special Edition y como parche para PC mejora aún más la iluminación y los reflejos, aunque con un impacto considerable en el rendimiento, requiriendo GPUs potentes para mantener los 60 FPS con esta característica activada. La capacidad del RE Engine para ofrecer gráficos punteros con una optimización robusta es una de las principales fortalezas técnicas del título.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: WINDOWS 7, 8.1, 10 (64-BIT)",
+          "Procesador: Intel Core i5-4460 / AMD FX-6300",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 760 / AMD Radeon R7 260x (VRAM 2GB)",
+          "DirectX: Versión 11",
+          "Almacenamiento: 35 GB de espacio disponible"
+        ],
+        "recomendados": [
+          "SO: WINDOWS 7, 8.1, 10 (64-BIT)",
+          "Procesador: Intel Core i7-3770 / AMD FX-9590",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 / AMD Radeon RX 480 (VRAM 3GB)",
+          "DirectX: Versión 11",
+          "Almacenamiento: 35 GB de espacio disponible"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/9fb/9fbf956a16249def7625ab5dc3d09515.jpg"
     }
   ]
 }
