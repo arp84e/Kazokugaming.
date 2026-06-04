@@ -57,10 +57,7 @@ def buscar_info_extra(titulo):
 nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-# Reemplazamos posibles saltos de línea por punto y coma
 texto_unificado = nuevos_juegos_raw.replace("\n", ";")
-
-# Separamos los juegos usando el punto y coma (;)
 titulos = [linea.strip() for linea in texto_unificado.split(';') if linea.strip()]
 
 if not titulos:
@@ -142,6 +139,9 @@ for titulo in titulos:
         
     except Exception as e:
         print(f"❌ Error en {titulo}: {e}")
+        # 🛠️ CORRECCIÓN: Limpiamos el mensaje de error fuera de la llave f-string
+        error_msg = str(e).replace('"', "'") 
+        
         error_juego = {
             "id": id_juego,
             "titulo": f"⚠️ {titulo}",
@@ -152,7 +152,7 @@ for titulo in titulos:
             "tecnologias": "N/A",
             "rendimiento": "N/A",
             "sinopsis": "Error en la generación de datos.",
-            "analisis_detallado": f"<p class='text-red-400'>Error: {str(e).replace('\"', \"'\")}</p>",
+            "analisis_detallado": f"<p class='text-red-400'>Error: {error_msg}</p>",
             "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
             "imagen": imagen_real
         }
