@@ -7,7 +7,7 @@ import urllib.parse
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (CON INVESTIGACIÓN WEB) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (VERSIÓN DEFINITIVA) ===")
 
 # Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -19,6 +19,7 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 
+# Configuración de seguridad para evitar bloqueos
 seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
@@ -54,28 +55,35 @@ def buscar_info_extra(titulo):
         pass
     return "Utiliza tu base de datos interna de Wikijuegos y Fandom para obtener la precisión técnica."
 
+# Variables de entrada desde GitHub Actions
 nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-# 🛠️ MEJORA: Ahora el bot entiende tanto saltos de línea como comas
-texto_unificado = nuevos_juegos_raw.replace(",", "\n")
+# 🛠️ MEJORA DE SEPARACIÓN: Reconoce barras (/), comas (,) y saltos de línea
+texto_unificado = nuevos_juegos_raw.replace("/", "\n").replace(",", "\n")
 titulos = [linea.strip() for linea in texto_unificado.split('\n') if linea.strip()]
+
 if not titulos:
     print("⚠️ No hay títulos para analizar.")
     sys.exit(0)
 
+# Carga inicial del archivo actual
 estructura_final = {"juegos": []}
 archivo_json = 'telemetria.json'
 
 if not sobrescribir and os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
-            estructura_final = json.load(f)
+            datos_viejos = json.load(f)
+            if isinstance(datos_viejos, dict) and "juegos" in datos_viejos:
+                estructura_final["juegos"] = datos_viejos["juegos"]
     except:
         pass
 
+# Procesamiento de cada juego
 for titulo in titulos:
-    id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("/", "-")
+    # Creamos un ID único limpio para la URL
+    id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("'", "").replace(".", "")
     print(f"\n⚙️ Investigando y Analizando: {titulo}...")
     
     # 1. Obtenemos imagen y datos de enciclopedias web
@@ -85,12 +93,13 @@ for titulo in titulos:
     
     # 2. Le pasamos todo a la IA para que lo estructure
     prompt = f"""
-    Actúa como experto en hardware y rendimiento (estilo Digital Foundry). Analiza el juego '{titulo}'.
+    Actúa como experto en hardware y rendimiento (estilo Digital Foundry) para la sección Telemetría. 
+    Analiza el juego '{titulo}'.
     
     A continuación, tienes información extraída de Wikipedia para asegurar máxima precisión:
     "{contexto_web}"
     
-    Combina esta información web con tu conocimiento de Wikijuegos y bases de datos técnicas.
+    Combina esta información web con tu conocimiento técnico de Wikijuegos.
     Devuelve UNICAMENTE un JSON válido con esta estructura:
     {{
         "fecha": "Fecha de lanzamiento exacta",
@@ -136,12 +145,11 @@ for titulo in titulos:
             estructura_final["juegos"][idx] = nuevo_juego
         else: 
             estructura_final["juegos"].append(nuevo_juego)
-        
-        print("   ✅ Expediente completado.")
+            
+        print("   ✅ Expediente completado con éxito.")
         
     except Exception as e:
         print(f"❌ Error redactando {titulo}: {e}")
-        # En caso de fallo crítico, guardamos una tarjeta de aviso
         error_juego = {
             "id": id_juego,
             "titulo": f"⚠️ {titulo}",
@@ -151,7 +159,7 @@ for titulo in titulos:
             "motor_grafico": "N/A",
             "tecnologias": "N/A",
             "rendimiento": "N/A",
-            "sinopsis": "Error en la investigación de datos.",
+            "sinopsis": "Error en la investigación de datos o conexión con la IA.",
             "analisis_detallado": f"<p class='text-red-400'>Error técnico: {str(e).replace('\"', \"'\")}</p>",
             "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
             "imagen": imagen_real
@@ -160,9 +168,9 @@ for titulo in titulos:
         if idx is not None: estructura_final["juegos"][idx] = error_juego
         else: estructura_final["juegos"].append(error_juego)
     
-    time.sleep(12) # Pausa estratégica para procesar múltiples títulos
+    time.sleep(12) # Pausa estratégica vital para no saturar la cuota de la API
 
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
-print("✅ Todos los expedientes han sido guardados con precisión enciclopédica.")
+print("✅ Todos los expedientes han sido guardados y el archivo telemetria.json fue actualizado.")
