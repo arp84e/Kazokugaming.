@@ -107,6 +107,35 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/214/214b29aeff13a0ae6a70fc4426e85991.jpg"
+    },
+    {
+      "id": "silent-hill-f",
+      "titulo": "Silent Hill f",
+      "fecha": "TBA (Anunciado)",
+      "plataformas": "PlayStation 5, PC",
+      "calificacion": "N/A (No lanzado)",
+      "motor_grafico": "Potencialmente Unreal Engine 5",
+      "tecnologias": "Ray Tracing (iluminación global, reflejos, sombras), DLSS/FSR/XeSS (en PC), Upscaling temporal (consolas)",
+      "rendimiento": "PS5: Objetivo 1440p@60fps (Modo Rendimiento) / 4K@30fps (Modo Calidad); PC: Escalable hasta 4K@60fps+ con hardware de gama alta",
+      "sinopsis": "Silent Hill f es una nueva entrega de la icónica saga de terror psicológico, ambientada en el Japón de los años 60. Con una estética que fusiona el terror corporal japonés con elementos clásicos de Silent Hill, la trama sigue a una joven atrapada en un mundo hermoso pero horripilante, donde la realidad se pudre y se transforma en pesadilla.",
+      "analisis_detallado": "<p>Desde los primeros avances de Silent Hill f, la dirección artística es innegablemente impactante, prometiendo una nueva dimensión visual para la franquicia. El uso aparente de un motor moderno, con la especulación apuntando hacia Unreal Engine 5, permite una representación fotorrealista de entornos japoneses que luego se corrompen de manera grotesca. La fidelidad en los modelos de personajes, la complejidad geométrica de los escenarios y un sistema de iluminación avanzado –probablemente con elementos de Ray Tracing para la oclusión ambiental y los reflejos– son cruciales para establecer esa atmósfera opresiva y perturbadora. La atención al detalle en las texturas, desde la piel putrefacta hasta los elementos orgánicos y vegetales que invaden la arquitectura, será vital para la inmersión y el impacto del horror corporal, poniendo a prueba la capacidad de sombreado y renderizado del motor.</p><p>En cuanto al rendimiento, Silent Hill f, como título de nueva generación, enfrentará los desafíos habituales de optimización para consolas y PC. En PlayStation 5, esperamos un enfoque de dos modos: un 'Modo Rendimiento' apuntando a 1440p escalado a 60 fotogramas por segundo, utilizando soluciones de upscaling como FSR para mantener la fluidez, y un 'Modo Calidad' que priorice la resolución nativa o cercana a 4K, con todos los ajustes gráficos al máximo y Ray Tracing activado, pero limitando el framerate a 30fps. Para PC, el título demandará una GPU potente (RTX 3070/RX 6700 XT como punto de partida para 1440p@60fps) y un procesador multinúcleo moderno. La implementación sólida de DLSS, FSR y XeSS será indispensable para que una amplia gama de configuraciones de hardware pueda disfrutar del juego a altas resoluciones y tasas de refresco, sin comprometer excesivamente la calidad visual que define su propuesta de terror.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Windows 10 (64-bit)",
+          "Procesador: Intel Core i5-8400 / AMD Ryzen 3 3200G",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1070 / AMD Radeon RX 590",
+          "Almacenamiento: 50 GB de espacio disponible (SSD recomendado)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core i7-10700K / AMD Ryzen 5 5600X",
+          "Memoria: 16 GB de RAM (o más)",
+          "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT",
+          "Almacenamiento: 50 GB de espacio disponible (SSD altamente recomendado)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
     }
   ]
 }
