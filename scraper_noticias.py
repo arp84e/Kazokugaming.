@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: NOTICIAS RED EXTENDIDA (VOLUMEN x2) ===")
+print("=== INICIANDO KAZOKUBOT: NOTICIAS RED EXTENDIDA (5 DÍAS DE RETENCIÓN) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
@@ -23,7 +23,7 @@ seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 📡 1. RED EXTENDIDA DE MEDIOS (6 Fuentes de rastreo simultáneo)
+# 📡 RED DE MEDIOS (6 Fuentes de rastreo)
 rss_urls = [
     "https://es.ign.com/feed.xml",
     "https://www.eurogamer.es/feed",
@@ -42,30 +42,32 @@ def obtener_imagen(entrada):
         for link in entrada.links:
             if 'image' in link.get('type', ''):
                 return link.href
-    # Imagen genérica de respaldo si la noticia carece de portada original
     return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
 
 archivo_json = 'noticias.json'
 datos_finales = {"destacada": {}, "secundarias": []}
 historial_valido = []
 urls_existentes = set()
-limite_72h = datetime.now() - timedelta(days=3)
 
-# 🧠 2. SISTEMA DE MEMORIA PASADA (Preserva contenido menor a 72 horas)
+# 🧠 CAMBIO AQUÍ: Extendemos el límite de memoria a 5 días exactos (120 horas)
+limite_5dias = datetime.now() - timedelta(days=5)
+
+# SISTEMA DE MEMORIA PASADA
 if os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
             datos_viejos = json.load(f)
             
             todas_viejas = datos_viejos.get("secundarias", [])
-            if datos_viejos.get("destacada"):
+            if datos_viejos.get("destacada") and datos_viejos["destacada"].get("titulo"):
                 todas_viejas.insert(0, datos_viejos["destacada"])
                 
             for n in todas_viejas:
                 if "fecha" in n:
                     try:
                         fecha_n = datetime.fromisoformat(n["fecha"])
-                        if fecha_n > limite_72h:
+                        # Retenemos todo lo que tenga menos de 5 días
+                        if fecha_n > limite_5dias:
                             historial_valido.append(n)
                             urls_existentes.add(n.get("enlace", ""))
                     except:
@@ -73,26 +75,24 @@ if os.path.exists(archivo_json):
     except Exception as e:
         print(f"⚠️ Aviso de lectura del archivo base: {e}")
 
-# 🌐 3. ESCANEO GLOBAL DE ENTRADAS
+# 🌐 ESCANEO GLOBAL DE ENTRADAS NEW
 nuevas_entradas = []
 for url in rss_urls:
-    print(f"📡 Escaneando frecuencias en: {url}")
     try:
         feed = feedparser.parse(url)
-        for entry in feed.entries[:4]: # Extrae los titulares más calientes de cada medio
+        for entry in feed.entries[:4]:
             if entry.link not in urls_existentes:
                 nuevas_entradas.append(entry)
     except Exception as e:
         print(f"⚠️ Omisión temporal de fuente por error de red: {e}")
 
-# 📊 CONFIGURACIÓN DEL DOBLE DE NOTICIAS: 1 Destacada + 10 Secundarias = 11 Noticias nuevas en total
+# Configuración de procesamiento balanceado por ciclo
 NUEVAS_SECUNDARIAS_OBJETIVO = 10
 MAX_PROCESAR_NUEVAS = 1 + NUEVAS_SECUNDARIAS_OBJETIVO
-
 nuevas_entradas = nuevas_entradas[:MAX_PROCESAR_NUEVAS]
 
 if not nuevas_entradas:
-    print("✅ Central informativa actualizada. Sin novedades críticas que requieran re-redacción.")
+    print("✅ No hay novedades críticas en las redes. Manteniendo historial activo de 5 días.")
     if historial_valido:
         datos_finales["destacada"] = historial_valido.pop(0)
         datos_finales["secundarias"] = historial_valido
@@ -100,16 +100,19 @@ if not nuevas_entradas:
             json.dump(datos_finales, f, ensure_ascii=False, indent=2)
     sys.exit(0)
 
-# ✍️ 4. REDACCIÓN PRINCIPAL (Noticia Destacada)
+# ✍️ REDACCIÓN PRINCIPAL (Noticia Destacada)
 noticia_origen = nuevas_entradas[0]
 print(f"🗞️ Creando Reporte Principal: {noticia_origen.title}")
+
+# Guardamos un ID basado en timestamp único
+timestamp_id = int(time.time())
 
 prompt_destacada = f"""
 Actúa como un redactor jefe de una revista de videojuegos premium. Redacta una crónica basada en:
 Título fuente: {noticia_origen.title}
 Devuelve EXCLUSIVAMENTE un objeto JSON válido estructurado así:
 {{
-  "id": "dest-{int(time.time())}",
+  "id": "noticia-{timestamp_id}",
   "categoria": "Reporte Crítico",
   "titulo": "Titular de alto impacto técnico",
   "resumen": "Resumen conciso del acontecimiento.",
@@ -135,7 +138,7 @@ except Exception as e:
 
 time.sleep(12)
 
-# 📝 5. GENERACIÓN DEL BLOQUE DOBLE DE NOTICIAS SECUNDARIAS (Hasta 10 artículos en cola)
+# 📝 GENERACIÓN DEL BLOQUE DE NOTICIAS SECUNDARIAS
 nuevas_secundarias = []
 for i in range(1, len(nuevas_entradas)):
     noticia_sec = nuevas_entradas[i]
@@ -146,10 +149,10 @@ for i in range(1, len(nuevas_entradas)):
     Origen: {noticia_sec.title}
     Devuelve EXCLUSIVAMENTE un objeto JSON válido estructurado así:
     {{
-      "id": "sec-{int(time.time())}-{i}",
+      "id": "noticia-{timestamp_id}-{i}",
       "categoria": "Actualidad Gaming",
       "titulo": "Título directo y con enganche",
-      "resumen": "Análisis analítico sintético de un párrafo para lectura veloz.",
+      "resumen": "Análisis sintético de un párrafo para lectura veloz.",
       "enlace": "{noticia_sec.link}",
       "fecha": "{datetime.now().isoformat()}"
     }}
@@ -166,12 +169,12 @@ for i in range(1, len(nuevas_entradas)):
     except Exception as e:
         print(f"⚠️ Salto de registro secundario por error técnico: {e}")
         
-    time.sleep(12) # Pausa estratégica para salvaguardar cuotas ante volumen masivo
+    time.sleep(12)
 
-# 💾 6. CONSOLIDACIÓN E INDEXACIÓN FINAL
+# CONSOLIDACIÓN FINAL EN EL ARCHIVO DISCO
 datos_finales["secundarias"] = nuevas_secundarias + historial_valido
 
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(datos_finales, f, ensure_ascii=False, indent=2)
 
-print(f"✅ Sincronización finalizada. Tu portal cuenta ahora con 1 noticia destacada y {len(datos_finales['secundarias'])} crónicas en rotación activa.")
+print(f"✅ Sincronización finalizada. Historial ampliado a 5 días con éxito.")
