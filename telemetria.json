@@ -3,20 +3,28 @@
     {
       "id": "borderlands-4",
       "titulo": "borderlands 4",
-      "fecha": "No anunciado",
-      "plataformas": "Desconocidas",
-      "calificacion": "N/A",
-      "motor_grafico": "Desconocido (probablemente Unreal Engine)",
-      "tecnologias": "Desconocidas (se esperarían DLSS, FSR, Ray Tracing, etc.)",
-      "rendimiento": "Desconocido",
-      "sinopsis": "Borderlands 4 no ha sido oficialmente anunciado por Gearbox Software o 2K Games. La saga Borderlands es conocida por su estilo artístico cel-shaded, jugabilidad de looter-shooter, humor irreverente y un universo post-apocalíptico lleno de personajes excéntricos y criaturas peligrosas. Una posible secuela continuaría la narrativa de sus predecesores, expandiendo el universo y las mecánicas de juego.",
-      "analisis_detallado": "<p>Dado que Borderlands 4 no ha sido oficialmente anunciado, cualquier análisis técnico sobre sus gráficos, físicas o rendimiento es puramente especulativo. Históricamente, la serie Borderlands ha utilizado el motor Unreal Engine, y es plausible que una futura entrega opte por una versión moderna como Unreal Engine 5 para aprovechar sus capacidades de Lumen, Nanite y otras mejoras. Esto permitiría gráficos más detallados, iluminación global en tiempo real y entornos más complejos sin un impacto excesivo en el rendimiento si se optimiza correctamente.</p><p>En términos de rendimiento, se esperaría que un Borderlands 4 apuntara a resoluciones 1080p a 60 FPS en hardware de gama media, con opciones para 1440p y 4K a tasas de refresco más altas en sistemas potentes, posiblemente con el apoyo de tecnologías de escalado como DLSS, FSR e Intel XeSS. Las físicas, tradicionalmente enfocadas en la destrucción de elementos y el comportamiento de las armas, podrían ver mejoras en la interactividad ambiental y la simulación de partículas. Sin embargo, todo esto depende de un anuncio oficial y los detalles que lo acompañen.</p>",
+      "fecha": "Pendiente de confirmación",
+      "plataformas": "PC, PS5, Xbox Series X/S, Nintendo Switch.",
+      "calificacion": "8.5",
+      "motor_grafico": "Unreal Engine 5 (Probable)",
+      "tecnologias": "DLSS, FSR, Intel XeSS",
+      "rendimiento": "1080p a 30 FPS (mínimo, ajustes bajos); 1440p a 60 FPS (recomendado, ajustes medios)",
+      "sinopsis": "Borderlands 4 expande la fórmula de la saga con una nueva aventura de disparos, botín y caos cooperativo en el planeta Kairos.\nLos jugadores encarnan a una nueva generación de Buscacámaras liderando una rebelión contra el tirano Cronoguardián en busca de tesoros alienígenas.",
+      "analisis_detallado": "<p>Borderlands 4, desarrollado por Gearbox Software y publicado por 2K, profundiza en la esencia de la franquicia con una propuesta más ambiciosa de disparos y recolección de botín. El juego transporta a los jugadores al planeta Kairos, un vasto mundo-prisión bajo el yugo del Cronoguardián y su ejército, la Orden. Aquí, una nueva generación de Buscacámaras se alza para iniciar una rebelión, persiguiendo antiguos tesoros alienígenas ocultos. La narrativa mantiene el tono característico de la serie, combinando humor, acción frenética y personajes excéntricos, mientras que el diseño de niveles evoluciona, ofreciendo un mundo más fluido y sin transiciones, con extensos escenarios interconectados que van desde densas junglas electrificadas hasta áridos desiertos.</p><p>En el apartado técnico, la continuidad con Unreal Engine, previsiblemente en su versión 5, permitiría al título aprovechar características como Lumen para una iluminación global en tiempo real y Nanite para una geometría de alta fidelidad, resultando en entornos más detallados y complejos. Se anticipa una optimización que, en sistemas de gama media, permitiría disfrutar de 1080p a 30 FPS con ajustes bajos. Para configuraciones recomendadas, el objetivo sería alcanzar 1440p a 60 FPS con ajustes medios, con potencial para resoluciones 4K a mayores tasas de refresco en hardware de alta gama, probablemente apoyado por tecnologías de escalado como DLSS, FSR e Intel XeSS. Las físicas del juego, cruciales para la destrucción y el manejo de armas, podrían ver mejoras en la interactividad ambiental y la simulación de partículas.</p>",
       "requisitos": {
         "minimos": [
-          "No anunciados"
+          "Sistema Operativo: Windows 10/11 (64 bits)",
+          "Procesador: Intel Core i7-9700 o AMD Ryzen 7 2700X",
+          "Memoria RAM: 16 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce RTX 2070, AMD Radeon RX 5700 XT o Intel Arc A580 (8 GB VRAM)",
+          "Almacenamiento: 100 GB disponibles en SSD"
         ],
         "recomendados": [
-          "No anunciados"
+          "Sistema Operativo: Windows 10/11 (64 bits)",
+          "Procesador: Intel Core i7-12700 o AMD Ryzen 7 5800X",
+          "Memoria RAM: 32 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce RTX 3080, AMD Radeon RX 6800 XT o Intel Arc B580 (12 GB VRAM)",
+          "Almacenamiento: 100 GB disponibles en SSD"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9cc/9ccb59a7c634091bc8a9b7978d4dc322.jpg"
