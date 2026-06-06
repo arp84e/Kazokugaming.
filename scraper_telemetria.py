@@ -7,7 +7,7 @@ import urllib.parse
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (SISTEMA DE FORMULARIO MULTI-CUADRO) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (EDICIÓN Y FUSIÓN INTELIGENTE) ===")
 
 # Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -85,50 +85,77 @@ if not sobrescribir and os.path.exists(archivo_json):
 # 3. PROCESAR CADA JUEGO EN LA LISTA
 for indice, titulo in enumerate(titulos):
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("'", "").replace(".", "")
-    imagen_real = buscar_portada(titulo)
     
-    # Comprobamos si es el PRIMER JUEGO y si tiene datos manuales rellenados en los cuadros
+    # Verificamos si el juego YA existe en nuestra base de datos para activar la fusión inteligente
+    idx_existente = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
+    juego_existente = estructura_final["juegos"][idx_existente] if idx_existente is not None else None
+
+    print(f"\n⚙️ Procesando: {titulo}...")
+    if juego_existente:
+        print("   [i] El juego ya existe en telemetria.json. Modo de Fusión/Edición activado.")
+
+    imagen_real = juego_existente["imagen"] if juego_existente else buscar_portada(titulo)
+    
+    # Comprobamos si tiene datos manuales en los cuadros (y es el primer juego de la lista enviada)
     es_primer_juego = (indice == 0)
     tiene_datos_manuales = (analisis_cuadro or requisitos_cuadro or calificacion_cuadro or plataformas_cuadro)
     
     if es_primer_juego and tiene_datos_manuales:
-        # MODO CUADRO MANUAL (Aplica reescritura anti-copyright para el primer título)
-        print(f"\n⚙️ [MODO FORMULARIO MANUAL] Analizando y Reescriturando original: {titulo}...")
+        # 🛠️ MODO EDICIÓN / REESCRITURA MANUAL
+        print("   [+] Procesando cuadros de texto del formulario...")
         
+        # Preparamos las instrucciones para la IA considerando si el juego existe o es totalmente nuevo
+        if juego_existente:
+            instruccion_contexto = f"""
+            Este juego ya tiene un registro previo en nuestra base de datos. 
+            Análisis detallado anterior: "{juego_existente.get('analisis_detallado', '')}"
+            Requisitos anteriores: {json.dumps(juego_existente.get('requisitos', {}))}
+            
+            Tu objetivo es actualizar ese registro. Si el usuario te dio un nuevo 'Texto de análisis/sinopsis base', utilízalo y reescríbelo con un estilo 100% original anti-copyright. Si la casilla de análisis base viene vacía o es muy corta, mantén, pule y mejora el análisis detallado anterior.
+            """
+        else:
+            instruccion_contexto = "Este juego es completamente nuevo. Estructura y redacta desde cero basándote en los datos aportados de forma original y técnica."
+
         prompt = f"""
         Actúas como un redactor técnico senior de videojuegos (estilo Digital Foundry). 
-        Se te han provisto notas y análisis manuales para el juego '{titulo}'.
-        Tu misión es REESCRIBIR Y READAPTAR COMPLETAMENTE el análisis base para garantizar que sea 100% original, libre de plagio y con un lenguaje periodístico fluido.
+        Analizas el juego: '{titulo}'
+        
+        {instruccion_contexto}
 
-        Datos aportados por el usuario:
-        - Calificación: {calificacion_cuadro if calificacion_cuadro else 'Calificación web automatizada'}
-        - Plataformas sugeridas: {plataformas_cuadro if plataformas_cuadro else 'Buscar estándar'}
+        Datos nuevos aportados en el formulario por el administrador:
+        - Calificación sugerida: "{calificacion_cuadro}"
+        - Plataformas sugeridas: "{plataformas_cuadro}"
         - Requisitos crudos: "{requisitos_cuadro}"
-        - Texto de análisis/sinopsis base: "{analisis_cuadro}"
+        - Texto de análisis/sinopsis base nuevo: "{analisis_cuadro}"
 
-        Instrucciones:
-        1. Estructura los requisitos aportados en listas limpias para los campos "minimos" y "recomendados".
-        2. El "analisis_detallado" debe constar de 2 párrafos redactados en HTML (<p>...</p>) transformando el texto base de forma elegante y técnica.
+        Instrucciones estrictas:
+        1. Si el campo de Requisitos crudos no está vacío, desglósalo en listas para "minimos" y "recomendados". Si está vacío, mantén los del registro anterior si existían, o búscalos tú de forma lógica.
+        2. El "analisis_detallado" debe constar de 2 párrafos redactados en HTML (<p>...</p>). Si hay un texto base nuevo, redáctalo para que sea original y libre de copyright.
 
         Devuelve UNICAMENTE un JSON válido con esta estructura:
         {{
             "fecha": "Fecha de lanzamiento real o estimada",
-            "plataformas": "{plataformas_cuadro if plataformas_cuadro else 'Multiplataforma'}",
-            "calificacion": "{calificacion_cuadro if calificacion_cuadro else '8.5'}",
-            "motor_grafico": "Motor gráfico utilizado (o 'No especificado')",
+            "plataformas": "Plataformas (prioriza la nueva sugerida si existe)",
+            "calificacion": "Usa la nueva calificación sugerida si existe",
+            "motor_grafico": "Motor gráfico utilizado (o conserva el anterior)",
             "tecnologias": "Tecnologías clave deducidas (DLSS, FSR, Ray Tracing, etc.)",
             "rendimiento": "Resolución y FPS objetivo recomendados",
             "sinopsis": "Sinopsis de 2 líneas escrita con tus propias palabras.",
-            "analisis_detallado": "<p>Primer párrafo reescrito.</p><p>Segundo párrafo técnico reescrito.</p>",
+            "analisis_detallado": "<p>Primer párrafo.</p><p>Segundo párrafo técnico.</p>",
             "requisitos": {{
-                "minimos": ["Dato extraído 1", "Dato extraído 2"],
-                "recomendados": ["Dato extraído 1", "Dato extraído 2"]
+                "minimos": ["Dato 1", "Dato 2"],
+                "recomendados": ["Dato 1", "Dato 2"]
             }}
         }}
         """
     else:
-        # MODO AUTOMÁTICO TRADICIONAL (Para el segundo juego en adelante, o si envías todo vacío)
-        print(f"\n⚙️ [MODO AUTOMÁTICO INTELIGENTE] Investigando en internet: {titulo}...")
+        # MODO AUTOMÁTICO TRADICIONAL
+        if juego_existente:
+            # Si se pasa en modo automático pero ya existe, no gastamos cuota de IA, simplemente lo dejamos pasar idéntico
+            print("   [✅] El juego ya está completo y no se enviaron datos nuevos para modificar. Saltando...")
+            continue
+            
+        print("   [+] Investigando en internet (Wikipedia + RAWG)...")
         contexto_web = buscar_info_extra(titulo)
         
         prompt = f"""
@@ -160,47 +187,58 @@ for indice, titulo in enumerate(titulos):
         )
         data = json.loads(response.text)
         
+        # FUSIÓN DE COMPLEMENTARIEDAD: Si el campo del formulario vino vacío, heredamos lo que ya tenía el JSON viejo
+        fecha_final = data.get("fecha") if data.get("fecha") else (juego_existente.get("fecha", "Por determinar") if juego_existente else "Por determinar")
+        plataformas_final = plataformas_cuadro if plataformas_cuadro else (data.get("plataformas") if data.get("plataformas") else (juego_existente.get("plataformas", "Multiplataforma") if juego_existente else "Multiplataforma"))
+        calificacion_final = calificacion_cuadro if calificacion_cuadro else (data.get("calificacion") if data.get("calificacion") else (juego_existente.get("calificacion", "N/A") if juego_existente else "N/A"))
+        motor_final = data.get("motor_grafico") if data.get("motor_grafico") and data.get("motor_grafico") != "No especificado" else (juego_existente.get("motor_grafico", "No especificado") if juego_existente else "No especificado")
+        tecnologias_final = data.get("tecnologias") if data.get("tecnologias") and data.get("tecnologias") != "Estándar" else (juego_existente.get("tecnologias", "Estándar") if juego_existente else "Estándar")
+        rendimiento_final = data.get("rendimiento") if data.get("rendimiento") and data.get("rendimiento") != "Variable" else (juego_existente.get("rendimiento", "Variable") if juego_existente else "Variable")
+        sinopsis_final = data.get("sinopsis") if data.get("sinopsis") else (juego_existente.get("sinopsis", "") if juego_existente else "")
+        analisis_final = data.get("analisis_detallado") if data.get("analisis_detallado") and "Análisis en proceso" not in data.get("analisis_detallado") else (juego_existente.get("analisis_detallado", "<p>Análisis en proceso...</p>") if juego_existente else "<p>Análisis en proceso...</p>")
+        requisitos_final = data.get("requisitos") if data.get("requisitos") and data.get("requisitos", {}).get("minimos") else (juego_existente.get("requisitos", {"minimos": [], "recomendados": []}) if juego_existente else {"minimos": [], "recomendados": []})
+
         nuevo_juego = {
             "id": id_juego,
-            "titulo": titulo,
-            "fecha": data.get("fecha", "Por determinar"),
-            "plataformas": data.get("plataformas", "Multiplataforma"),
-            "calificacion": data.get("calificacion", "N/A"),
-            "motor_grafico": data.get("motor_grafico", "No especificado"),
-            "tecnologias": data.get("tecnologias", "Estándar"),
-            "rendimiento": data.get("rendimiento", "Variable"),
-            "sinopsis": data.get("sinopsis", ""),
-            "analisis_detallado": data.get("analisis_detallado", "<p>Análisis en proceso...</p>"),
-            "requisitos": data.get("requisitos", {"minimos": [], "recomendados": []}),
+            "titulo": juego_existente["titulo"] if juego_existente else titulo,
+            "fecha": fecha_final,
+            "plataformas": plataformas_final,
+            "calificacion": calificacion_final,
+            "motor_grafico": motor_final,
+            "tecnologias": tecnologias_final,
+            "rendimiento": rendimiento_final,
+            "sinopsis": sinopsis_final,
+            "analisis_detallado": analisis_final,
+            "requisitos": requisitos_final,
             "imagen": imagen_real
         }
         
-        idx = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
-        if idx is not None: estructura_final["juegos"][idx] = nuevo_juego
-        else: estructura_final["juegos"].append(nuevo_juego)
-            
-        print(f"   ✅ {titulo} completado con éxito.")
+        if idx_existente is not None:
+            estructura_final["juegos"][idx_existente] = nuevo_juego
+            print(f"   ✨ Fusión exitosa. Datos antiguos preservados y campos nuevos guardados.")
+        else:
+            estructura_final["juegos"].append(nuevo_juego)
+            print(f"   ✅ Nuevo expediente '{titulo}' guardado.")
         
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
-        error_msg = str(e).replace('"', "'")
-        error_juego = {
-            "id": id_juego,
-            "titulo": f"⚠️ {titulo}",
-            "fecha": "ERROR",
-            "plataformas": "N/A",
-            "calificacion": "0.0",
-            "motor_grafico": "N/A",
-            "tecnologias": "N/A",
-            "rendimiento": "N/A",
-            "sinopsis": "Fallo en la sincronización de datos o lectura del formulario.",
-            "analisis_detallado": f"<p class='text-red-400'>Error en transformación: {error_msg}</p>",
-            "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
-            "imagen": imagen_real
-        }
-        idx = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
-        if idx is not None: estructura_final["juegos"][idx] = error_juego
-        else: estructura_final["juegos"].append(error_juego)
+        if not juego_existente:
+            error_msg = str(e).replace('"', "'")
+            error_juego = {
+                "id": id_juego,
+                "titulo": f"⚠️ {titulo}",
+                "fecha": "ERROR",
+                "plataformas": "N/A",
+                "calificacion": calificacion_cuadro if calificacion_cuadro else "0.0",
+                "motor_grafico": "N/A",
+                "tecnologias": "N/A",
+                "rendimiento": "N/A",
+                "sinopsis": "Fallo en la sincronización.",
+                "analisis_detallado": f"<p class='text-red-400'>Error en transformación: {error_msg}</p>",
+                "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
+                "imagen": imagen_real
+            }
+            estructura_final["juegos"].append(error_juego)
         
     time.sleep(12)
 
