@@ -339,6 +339,27 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/526/526881e0f5f8c1550e51df3801f96ea3.jpg"
+    },
+    {
+      "id": "borderlands-3",
+      "titulo": "⚠️ borderlands 3",
+      "fecha": "ERROR",
+      "plataformas": "N/A",
+      "calificacion": "0.0",
+      "motor_grafico": "N/A",
+      "tecnologias": "N/A",
+      "rendimiento": "N/A",
+      "sinopsis": "Fallo en sincronización.",
+      "analisis_detallado": "<p class='text-red-400'>Error: Imposible conectar con la IA después de 3 intentos debido a servidores saturados.</p>",
+      "requisitos": {
+        "minimos": [
+          "N/A"
+        ],
+        "recomendados": [
+          "N/A"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg"
     }
   ]
 }
