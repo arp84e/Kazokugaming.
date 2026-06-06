@@ -1,4 +1,13 @@
 {
-  "destacada": {},
+  "destacada": {
+    "categoria": "Actualidad Gaming",
+    "titulo": "Tenebris Somnia: La Fusión de Pixel Art y VHS Desatará el Terror en Octubre",
+    "resumen": "Tenebris Somnia, el intrigante título de terror psicológico que ha captado la atención por su particular estética, ha confirmado su lanzamiento para el próximo mes de octubre. El juego promete una experiencia inmersiva y escalofriante gracias a su distintiva mezcla de pixel art retro y secuencias de vídeo de acción real, una fusión que rinde homenaje a los clásicos del género y que ya está generando una notable expectación entre la comunidad gamer. Su propuesta busca redefinir el miedo a través de una innovadora narrativa visual.",
+    "contenido_completo": "<p>La escena del videojuego de terror se prepara para recibir una propuesta fresca y profundamente inquietante con la inminente llegada de Tenebris Somnia. Este título, que ha permanecido en el radar de los aficionados al género por su particular estética y su autor, el visionario desarrollador Jordi 'Moyparra' Moyà, fusiona la nostalgia del pixel art de 8 bits con la crudeza y el realismo perturbador de las secuencias de vídeo de acción real. El resultado es una atmósfera de pesadilla que recuerda a los experimentos de terror interactivo de antaño, pero con una ejecución moderna y pulida que promete una inmersión sin precedentes en el horror psicológico. La combinación de estos estilos visuales no es solo un truco estético, sino una parte integral de la narrativa y la experiencia del juego.</p><p>Con un lanzamiento fijado estratégicamente para octubre, un mes emblemático para el terror y Halloween, Tenebris Somnia busca capturar la atención de aquellos que buscan experiencias que trasciendan los clichés del género. Los detalles sobre su trama, que aún se mantienen bajo cierto misterio, sugieren un viaje oscuro e introspectivo a través de sueños y realidades distorsionadas, donde la línea entre lo real y lo onírico se desdibuja constantemente. La comunidad está ansiosa por descubrir cómo esta innovadora mezcla de estilos visuales se traducirá en mecánicas de juego, sustos efectivos y una historia que desafiará las percepciones de los jugadores y dejará una huella duradera en el panorama del terror interactivo.</p>",
+    "id": "noticia-1780747075-4",
+    "enlace": "https://www.eurogamer.es/tenebris-somnia-juego-de-terror-que-mezcla-pixel-art-y-secuencias-de-video-se-lanzara-en-octubre",
+    "imagen": "https://assetsio.gnwcdn.com/chrome_2iQ3v1e0OV.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "fecha": "2026-06-06T11:58:50.741699"
+  },
   "secundarias": []
 }
