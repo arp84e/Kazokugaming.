@@ -11,13 +11,31 @@
   },
   "secundarias": [
     {
-      "id": "noticia-1704067200-1",
+      "id": "sec-1780739122-7",
       "categoria": "Actualidad Gaming",
-      "titulo": "¡Mafia: The Old Country Confirma Gran Expansión de Historia!",
-      "resumen": "Los fans de la saga Mafia están de enhorabuena: se ha anunciado oficialmente una ambiciosa expansión que profundizará la trama de Mafia: The Old Country. Esta nueva entrega promete expandir significativamente la narrativa, introduciendo nuevos giros argumentales y personajes que enriquecerán la experiencia del universo mafioso y ofrecerán horas adicionales de juego.",
-      "enlace": "https://www.eurogamer.es/anunciada-una-expansion-para-la-historia-de-mafia-the-old-country",
-      "fecha": "2024-01-01T12:00:00.000000",
-      "imagen": "https://assetsio.gnwcdn.com/ADKq_NbCuJGiZJWMKTZbPHKuLVJZwoKf.jpg?width=690&quality=85&format=jpg&auto=webp"
+      "titulo": "FF7 Revelation: Tráiler Debut y Ventana de Lanzamiento Confirmados",
+      "resumen": "El tan esperado Final Fantasy 7: Revelation ha revelado su primer tráiler oficial, ofreciendo un vistazo inicial a su universo y jugabilidad. Junto con esta primera visión, Square Enix ha confirmado la ventana de lanzamiento del título, proporcionando a los fans una fecha aproximada para anticipar el próximo capítulo de la saga FF7 y sumergirse en su renovada narrativa.",
+      "enlace": "https://www.eurogamer.es/primer-trailer-y-ventana-de-lanzamiento-de-final-fantasy-7-revelation",
+      "fecha": "2026-06-15T10:30:00.000000",
+      "imagen": "https://assetsio.gnwcdn.com/bafkreie6vnnys3qeqn7gil6ob34q4wyue6fnc4fuqq37pj7wa7hadcfune.webp?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "noticia-202606071100-1",
+      "categoria": "Deportes",
+      "titulo": "Flavio Cobolli Toca la Gloria: Reacción Emotiva tras Alcanzar su 1ª Final de Grand Slam",
+      "resumen": "Flavio Cobolli ha protagonizado un momento inolvidable al clasificarse para su primera final de Grand Slam. Tras la retirada de su rival, el joven tenista mostró una reacción cargada de emoción y asombro, marcando un hito significativo en su prometedora carrera que ya resuena en el mundo del tenis.",
+      "enlace": "https://www.gamereactor.es/la-reaccion-de-flavio-cobolli-tras-la-retirada-de-su-rival-y-alcanzar-su-primera-final-de-grand-slam-1715023/",
+      "fecha": "2026-06-07T11:00:00.000000",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
+    },
+    {
+      "id": "noticia-1780742777-4",
+      "categoria": "Actualidad Gaming",
+      "titulo": "Summer Game Fest 2026: Todas las Novedades y Anuncios Bombazo",
+      "resumen": "El Summer Game Fest 2026 ha vuelto a ser el epicentro de la industria, revelando un aluvión de nuevos títulos, tráilers exclusivos y actualizaciones muy esperadas. Desde IPs completamente inéditas hasta continuaciones de sagas aclamadas y sorpresas inesperadas, este evento ha delineado el futuro más inmediato del gaming, garantizando un año lleno de emocionantes lanzamientos para todos los gustos.",
+      "enlace": "https://www.eurogamer.es/todos-anuncios-summer-game-fest-2026",
+      "fecha": "2026-06-06T10:47:20.307881",
+      "imagen": "https://assetsio.gnwcdn.com/Summer-Game-Fest-2026_DSbTc8M.jpg?width=690&quality=85&format=jpg&auto=webp"
     },
     {
       "id": "noticia-1780742777",
@@ -30,66 +48,12 @@
       "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_7c4g.jpg"
     },
     {
-      "id": "noticia-1780742777-4",
+      "id": "sec-1780739177-10",
       "categoria": "Actualidad Gaming",
-      "titulo": "Summer Game Fest 2026: Todas las Novedades y Anuncios Bombazo",
-      "resumen": "El Summer Game Fest 2026 ha vuelto a ser el epicentro de la industria, revelando un aluvión de nuevos títulos, tráilers exclusivos y actualizaciones muy esperadas. Desde IPs completamente inéditas hasta continuaciones de sagas aclamadas y sorpresas inesperadas, este evento ha delineado el futuro más inmediato del gaming, garantizando un año lleno de emocionantes lanzamientos para todos los gustos.",
-      "enlace": "https://www.eurogamer.es/todos-anuncios-summer-game-fest-2026",
-      "fecha": "2026-06-06T10:47:20.307881",
-      "imagen": "https://assetsio.gnwcdn.com/Summer-Game-Fest-2026_DSbTc8M.jpg?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
-      "id": "noticia-202606071100-1",
-      "categoria": "Deportes",
-      "titulo": "Flavio Cobolli Toca la Gloria: Reacción Emotiva tras Alcanzar su 1ª Final de Grand Slam",
-      "resumen": "Flavio Cobolli ha protagonizado un momento inolvidable al clasificarse para su primera final de Grand Slam. Tras la retirada de su rival, el joven tenista mostró una reacción cargada de emoción y asombro, marcando un hito significativo en su prometedora carrera que ya resuena en el mundo del tenis.",
-      "enlace": "https://www.gamereactor.es/la-reaccion-de-flavio-cobolli-tras-la-retirada-de-su-rival-y-alcanzar-su-primera-final-de-grand-slam-1715023/",
-      "fecha": "2026-06-07T11:00:00.000000",
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
-    },
-    {
-      "id": "sec-1780739046-2",
-      "categoria": "Actualidad Gaming",
-      "titulo": "Monster Hunter Wilds: ¡Capcom Anuncia Expansión Gigantesca!",
-      "resumen": "Capcom ha confirmado una \"expansión gigantesca\" para Monster Hunter Wilds, que se lanzará el próximo año. Esta noticia asegura un vasto contenido post-lanzamiento, garantizando que la aventura de los cazadores no terminará con el juego base y prometiendo nuevas e impresionantes experiencias.",
-      "enlace": "https://es.ign.com/monster-hunter-wilds-1/230217/no-creas-que-has-terminado-con-monster-hunter-wilds-capcom-anuncia-una-expansion-gigantesca-para-el",
-      "fecha": "2026-06-06T09:44:06.570952",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_f6nv.jpg"
-    },
-    {
-      "id": "sec-1780739062-3",
-      "categoria": "Actualidad Gaming",
-      "titulo": "Juega 1666 Amsterdam: Lo nuevo del cocreador de Assassin's Creed, ¡por 30 minutos!",
-      "resumen": "Aprovecha una oportunidad de oro para experimentar '1666 Amsterdam', la nueva propuesta del aclamado cocreador de Assassin's Creed. Por tiempo limitado, disfruta de 30 minutos de este esperado título y descubre la visión de Patrice Désilets en su último proyecto. Una experiencia jugable exclusiva que no querrás perderte.",
-      "enlace": "https://es.ign.com/1666-amsterdam/230220/aprovecha-esta-oportunidad-de-oro-y-disfruta-de-1666-amsterdam-lo-nuevo-del-cocreador-de-assassins-c",
-      "fecha": "2026-06-06T09:44:22.063620",
-      "imagen": "https://sm.ign.com/ign_es/news/a/assassins-/assassins-creed-co-creator-re-reveals-1666-amsterdam-30-minu_mtru.jpg"
-    },
-    {
-      "id": "sec-1780739079-5",
-      "categoria": "Actualidad Gaming",
-      "titulo": "Tenebris Somnia: Terror Pixel Art y Vídeo Llega en Octubre",
-      "resumen": "El innovador juego de terror Tenebris Somnia se prepara para su lanzamiento en octubre, ofreciendo una propuesta única que fusiona el nostálgico pixel art con impactantes secuencias de vídeo. Prepárate para una experiencia de miedo sin precedentes.",
-      "enlace": "https://www.eurogamer.es/tenebris-somnia-juego-de-terror-que-mezcla-pixel-art-y-secuencias-de-video-se-lanzara-en-octubre",
-      "fecha": "2026-06-06T09:44:39.450063",
-      "imagen": "https://assetsio.gnwcdn.com/chrome_2iQ3v1e0OV.jpg?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
-      "id": "sec-1780739122-7",
-      "categoria": "Actualidad Gaming",
-      "titulo": "FF7 Revelation: Tráiler Debut y Ventana de Lanzamiento Confirmados",
-      "resumen": "El tan esperado Final Fantasy 7: Revelation ha revelado su primer tráiler oficial, ofreciendo un vistazo inicial a su universo y jugabilidad. Junto con esta primera visión, Square Enix ha confirmado la ventana de lanzamiento del título, proporcionando a los fans una fecha aproximada para anticipar el próximo capítulo de la saga FF7 y sumergirse en su renovada narrativa.",
-      "enlace": "https://www.eurogamer.es/primer-trailer-y-ventana-de-lanzamiento-de-final-fantasy-7-revelation",
-      "fecha": "2026-06-15T10:30:00.000000",
-      "imagen": "https://assetsio.gnwcdn.com/bafkreie6vnnys3qeqn7gil6ob34q4wyue6fnc4fuqq37pj7wa7hadcfune.webp?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
-      "id": "sec-1780739140-8",
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡Confirmado! Monster Hunter Wilds aterrizará en Switch 2: ¿Otro port 'milagroso' de Capcom?",
-      "resumen": "Capcom ha confirmado el desarrollo de una versión de su ambicioso título, Monster Hunter Wilds, para la futura Nintendo Switch 2. Esta decisión refuerza el compromiso de la compañía con la plataforma de Nintendo, especialmente tras el éxito y la pericia demostrada en sus anteriores 'ports milagrosos' para la Switch original. Los jugadores anticipan con interés cómo Capcom adaptará la envergadura de Wilds al nuevo hardware, esperando una optimización que mantenga la calidad y la experiencia de juego característica de la saga.",
-      "enlace": "https://vandal.elespanol.com/noticia/1350790521/monster-hunter-wilds-tendra-version-para-switch-2-tras-varios-ports-milagrosos-de-capcom/",
-      "fecha": "2026-06-06T09:45:40.194058",
+      "titulo": "Bungie Regala Marathon a Afectados por Error de Compra en PS5",
+      "resumen": "Bungie ha respondido a las quejas de los jugadores de PS5 que compraron por error una edición deluxe, creyendo que incluía el nuevo juego Marathon. Para corregir esta confusión y compensar a los afectados, la desarrolladora regalará una copia de Marathon a todos aquellos que realizaron dicha compra errónea. Esta acción demuestra la atención de Bungie a su comunidad y su disposición a solucionar problemas rápidamente.",
+      "enlace": "https://vandal.elespanol.com/noticia/1350790520/bungie-da-la-razon-a-los-jugadores-y-regalara-marathon-a-quienes-compraron-por-error-la-edicion-deluxe-en-ps5/",
+      "fecha": "2026-06-06T09:46:17.823381",
       "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
     },
     {
@@ -102,13 +66,67 @@
       "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
     },
     {
-      "id": "sec-1780739177-10",
+      "id": "sec-1780739140-8",
       "categoria": "Actualidad Gaming",
-      "titulo": "Bungie Regala Marathon a Afectados por Error de Compra en PS5",
-      "resumen": "Bungie ha respondido a las quejas de los jugadores de PS5 que compraron por error una edición deluxe, creyendo que incluía el nuevo juego Marathon. Para corregir esta confusión y compensar a los afectados, la desarrolladora regalará una copia de Marathon a todos aquellos que realizaron dicha compra errónea. Esta acción demuestra la atención de Bungie a su comunidad y su disposición a solucionar problemas rápidamente.",
-      "enlace": "https://vandal.elespanol.com/noticia/1350790520/bungie-da-la-razon-a-los-jugadores-y-regalara-marathon-a-quienes-compraron-por-error-la-edicion-deluxe-en-ps5/",
-      "fecha": "2026-06-06T09:46:17.823381",
+      "titulo": "¡Confirmado! Monster Hunter Wilds aterrizará en Switch 2: ¿Otro port 'milagroso' de Capcom?",
+      "resumen": "Capcom ha confirmado el desarrollo de una versión de su ambicioso título, Monster Hunter Wilds, para la futura Nintendo Switch 2. Esta decisión refuerza el compromiso de la compañía con la plataforma de Nintendo, especialmente tras el éxito y la pericia demostrada en sus anteriores 'ports milagrosos' para la Switch original. Los jugadores anticipan con interés cómo Capcom adaptará la envergadura de Wilds al nuevo hardware, esperando una optimización que mantenga la calidad y la experiencia de juego característica de la saga.",
+      "enlace": "https://vandal.elespanol.com/noticia/1350790521/monster-hunter-wilds-tendra-version-para-switch-2-tras-varios-ports-milagrosos-de-capcom/",
+      "fecha": "2026-06-06T09:45:40.194058",
       "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
+    },
+    {
+      "id": "sec-1780739079-5",
+      "categoria": "Actualidad Gaming",
+      "titulo": "Tenebris Somnia: Terror Pixel Art y Vídeo Llega en Octubre",
+      "resumen": "El innovador juego de terror Tenebris Somnia se prepara para su lanzamiento en octubre, ofreciendo una propuesta única que fusiona el nostálgico pixel art con impactantes secuencias de vídeo. Prepárate para una experiencia de miedo sin precedentes.",
+      "enlace": "https://www.eurogamer.es/tenebris-somnia-juego-de-terror-que-mezcla-pixel-art-y-secuencias-de-video-se-lanzara-en-octubre",
+      "fecha": "2026-06-06T09:44:39.450063",
+      "imagen": "https://assetsio.gnwcdn.com/chrome_2iQ3v1e0OV.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "sec-1780739062-3",
+      "categoria": "Actualidad Gaming",
+      "titulo": "Juega 1666 Amsterdam: Lo nuevo del cocreador de Assassin's Creed, ¡por 30 minutos!",
+      "resumen": "Aprovecha una oportunidad de oro para experimentar '1666 Amsterdam', la nueva propuesta del aclamado cocreador de Assassin's Creed. Por tiempo limitado, disfruta de 30 minutos de este esperado título y descubre la visión de Patrice Désilets en su último proyecto. Una experiencia jugable exclusiva que no querrás perderte.",
+      "enlace": "https://es.ign.com/1666-amsterdam/230220/aprovecha-esta-oportunidad-de-oro-y-disfruta-de-1666-amsterdam-lo-nuevo-del-cocreador-de-assassins-c",
+      "fecha": "2026-06-06T09:44:22.063620",
+      "imagen": "https://sm.ign.com/ign_es/news/a/assassins-/assassins-creed-co-creator-re-reveals-1666-amsterdam-30-minu_mtru.jpg"
+    },
+    {
+      "id": "sec-1780739046-2",
+      "categoria": "Actualidad Gaming",
+      "titulo": "Monster Hunter Wilds: ¡Capcom Anuncia Expansión Gigantesca!",
+      "resumen": "Capcom ha confirmado una \"expansión gigantesca\" para Monster Hunter Wilds, que se lanzará el próximo año. Esta noticia asegura un vasto contenido post-lanzamiento, garantizando que la aventura de los cazadores no terminará con el juego base y prometiendo nuevas e impresionantes experiencias.",
+      "enlace": "https://es.ign.com/monster-hunter-wilds-1/230217/no-creas-que-has-terminado-con-monster-hunter-wilds-capcom-anuncia-una-expansion-gigantesca-para-el",
+      "fecha": "2026-06-06T09:44:06.570952",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_f6nv.jpg"
+    },
+    {
+      "id": "sec-1780595960-3",
+      "categoria": "Actualidad",
+      "titulo": "007 First Light triunfa en ventas japonesas",
+      "resumen": "El videojuego \"007 First Light\" ha logrado un excelente debut en las listas de ventas de Japón. Su buen posicionamiento indica una fuerte acogida y éxito en el mercado nipón desde su lanzamiento.",
+      "enlace": "https://www.eurogamer.es/007-first-light-tambien-tiene-un-buen-estreno-en-las-listas-de-ventas-japonesas",
+      "fecha": "2026-06-04T17:59:20.261351",
+      "imagen": "https://assetsio.gnwcdn.com/007-First-Light-Ann_06-02-25-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "id": "sec-1780595940-2",
+      "categoria": "Actualidad",
+      "titulo": "Un jugador de Elden Ring consigue lo que solo se puede describir como el \"guantazo del siglo\"",
+      "resumen": "Un jugador de Elden Ring ha logrado una impresionante hazaña, conocida como el 'guantazo del siglo', demostrando una habilidad excepcional en el juego.",
+      "enlace": "https://es.ign.com/elden-ring/230144/un-jugador-de-elden-ring-consigue-lo-que-solo-se-puede-describir-como-el-guantazo-del-siglo",
+      "fecha": "2026-06-04T17:59:00.963830",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/rykard_jnz3.jpg"
+    },
+    {
+      "id": "sec-1780595922-1",
+      "categoria": "Actualidad",
+      "titulo": "God of War Laufey es una buena noticia por dos razones",
+      "resumen": "Las novedades sobre Laufey en God of War son excelentes, ofreciendo una perspectiva más profunda de su personaje. Esto no solo enriquece la mitología del juego, sino que también abre interesantes posibilidades para futuras tramas y la conexión familiar.",
+      "enlace": "https://es.ign.com/god-of-war-laufey/230155/god-of-war-laufey-es-una-buena-noticia-por-dos-razones",
+      "fecha": "2026-06-04T17:58:42.772769",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_yra7.jpg"
     },
     {
       "id": "dest-1780595901",
@@ -121,33 +139,6 @@
       "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_cavc.jpg"
     },
     {
-      "id": "sec-1780595922-1",
-      "categoria": "Actualidad",
-      "titulo": "God of War Laufey es una buena noticia por dos razones",
-      "resumen": "Las novedades sobre Laufey en God of War son excelentes, ofreciendo una perspectiva más profunda de su personaje. Esto no solo enriquece la mitología del juego, sino que también abre interesantes posibilidades para futuras tramas y la conexión familiar.",
-      "enlace": "https://es.ign.com/god-of-war-laufey/230155/god-of-war-laufey-es-una-buena-noticia-por-dos-razones",
-      "fecha": "2026-06-04T17:58:42.772769",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_yra7.jpg"
-    },
-    {
-      "id": "sec-1780595940-2",
-      "categoria": "Actualidad",
-      "titulo": "Un jugador de Elden Ring consigue lo que solo se puede describir como el \"guantazo del siglo\"",
-      "resumen": "Un jugador de Elden Ring ha logrado una impresionante hazaña, conocida como el 'guantazo del siglo', demostrando una habilidad excepcional en el juego.",
-      "enlace": "https://es.ign.com/elden-ring/230144/un-jugador-de-elden-ring-consigue-lo-que-solo-se-puede-describir-como-el-guantazo-del-siglo",
-      "fecha": "2026-06-04T17:59:00.963830",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/rykard_jnz3.jpg"
-    },
-    {
-      "id": "sec-1780595960-3",
-      "categoria": "Actualidad",
-      "titulo": "007 First Light triunfa en ventas japonesas",
-      "resumen": "El videojuego \"007 First Light\" ha logrado un excelente debut en las listas de ventas de Japón. Su buen posicionamiento indica una fuerte acogida y éxito en el mercado nipón desde su lanzamiento.",
-      "enlace": "https://www.eurogamer.es/007-first-light-tambien-tiene-un-buen-estreno-en-las-listas-de-ventas-japonesas",
-      "fecha": "2026-06-04T17:59:20.261351",
-      "imagen": "https://assetsio.gnwcdn.com/007-First-Light-Ann_06-02-25-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
       "id": "dest-1780518559",
       "categoria": "Reporte Principal",
       "titulo": "¡Xbox Game Pass Desvela su Arsenal para la Primera Mitad de Junio!",
@@ -158,23 +149,13 @@
       "imagen": "https://assetsio.gnwcdn.com/Starseeker.jpg?width=690&quality=85&format=jpg&auto=webp"
     },
     {
-      "id": "dest-1780512219",
-      "categoria": "Reporte Principal",
-      "titulo": "Silent Hill f se desploma a su precio mínimo histórico: el terror está en el juego, no en el precio",
-      "resumen": "Los fans del survival horror están de enhorabuena. Silent Hill f ha alcanzado su precio más bajo hasta la fecha, ofreciendo una oportunidad inmejorable para sumergirse en su escalofriante atmósfera.",
-      "contenido_completo": "<p>La esperada entrega de la icónica saga de terror psicológico, Silent Hill f, ha caído a su precio mínimo histórico, convirtiéndose en una oferta irresistible para los amantes del género. Este movimiento en el mercado llega en un momento clave, permitiendo a un público más amplio acceder a una de las propuestas más intrigantes y aterradoras de los últimos años. Con una ambientación japonesa única y un enfoque renovado en el horror corporal y psicológico, Silent Hill f promete redefinir lo que esperamos de la franquicia, y ahora es el momento perfecto para vivir esa experiencia sin que el precio sea una barrera.</p><p>Esta caída de precio no solo democratiza el acceso a uno de los títulos más anticipados, sino que también revitaliza la conversación en torno a Silent Hill f, un juego que desde su anuncio ha generado grandes expectativas. Para aquellos que han estado esperando el momento adecuado para adentrarse en sus misterios y enfrentar sus miedos más profundos, esta es la señal definitiva. El terror prometido por Konami y Neobards Entertainment está al alcance de la mano, asegurando que la única pesadilla sea la que se vive dentro del juego y no la de la factura final.</p>",
-      "enlace": "https://es.ign.com/compras/230123/silent-hill-f-se-desploma-a-su-precio-minimo-historico-el-terror-esta-en-el-juego-no-en-el-precio",
-      "fecha": "2026-06-03T18:43:39.209354",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/silent-hill-f_pked.jpg"
-    },
-    {
-      "id": "sec-1780512238-1",
+      "id": "sec-1780512275-3",
       "categoria": "Actualidad",
-      "titulo": "Marvel: Lobezno: Malas noticias para la edición coleccionista",
-      "resumen": "Malas noticias para los fans que esperaban una edición coleccionista de Marvel: Lobezno. Parece que el esperado título de Insomniac Games no contará con una versión especial para coleccionistas, lo que podría decepcionar a muchos.",
-      "enlace": "https://es.ign.com/marvels-wolverine/230127/malas-noticias-para-quienes-esperan-una-edicion-coleccionista-de-marvel-lobezno",
-      "fecha": "2026-06-03T18:43:58.408932",
-      "imagen": "https://sm.ign.com/ign_es/news/f/from-19-in/from-19-inches-of-venom-to-nothing-theres-no-marvels-wolveri_9wfv.jpg"
+      "titulo": "LEGO Batman: El Legado del Caballero Oscuro llega a Switch 2 en septiembre",
+      "resumen": "El videojuego \"LEGO Batman: El Legado del Caballero Oscuro\" se prepara para su lanzamiento en la próxima consola Switch 2. Los fans del héroe de Gotham podrán disfrutar de esta nueva aventura a partir del mes de septiembre.",
+      "enlace": "https://www.eurogamer.es/lego-batman-el-legado-del-caballero-oscuro-dara-el-salto-a-switch-2-en-septiembre",
+      "fecha": "2026-06-03T18:44:35.273074",
+      "imagen": "https://assetsio.gnwcdn.com/chrome_qGaqhebzTZ.jpg?width=690&quality=85&format=jpg&auto=webp"
     },
     {
       "id": "sec-1780512257-2",
@@ -186,13 +167,23 @@
       "imagen": "https://sm.ign.com/ign_es/news/a/as-gta-6-h/as-gta-6-hype-hits-new-levels-youtuber-tries-to-walk-inside_b5ke.jpg"
     },
     {
-      "id": "sec-1780512275-3",
+      "id": "sec-1780512238-1",
       "categoria": "Actualidad",
-      "titulo": "LEGO Batman: El Legado del Caballero Oscuro llega a Switch 2 en septiembre",
-      "resumen": "El videojuego \"LEGO Batman: El Legado del Caballero Oscuro\" se prepara para su lanzamiento en la próxima consola Switch 2. Los fans del héroe de Gotham podrán disfrutar de esta nueva aventura a partir del mes de septiembre.",
-      "enlace": "https://www.eurogamer.es/lego-batman-el-legado-del-caballero-oscuro-dara-el-salto-a-switch-2-en-septiembre",
-      "fecha": "2026-06-03T18:44:35.273074",
-      "imagen": "https://assetsio.gnwcdn.com/chrome_qGaqhebzTZ.jpg?width=690&quality=85&format=jpg&auto=webp"
+      "titulo": "Marvel: Lobezno: Malas noticias para la edición coleccionista",
+      "resumen": "Malas noticias para los fans que esperaban una edición coleccionista de Marvel: Lobezno. Parece que el esperado título de Insomniac Games no contará con una versión especial para coleccionistas, lo que podría decepcionar a muchos.",
+      "enlace": "https://es.ign.com/marvels-wolverine/230127/malas-noticias-para-quienes-esperan-una-edicion-coleccionista-de-marvel-lobezno",
+      "fecha": "2026-06-03T18:43:58.408932",
+      "imagen": "https://sm.ign.com/ign_es/news/f/from-19-in/from-19-inches-of-venom-to-nothing-theres-no-marvels-wolveri_9wfv.jpg"
+    },
+    {
+      "id": "dest-1780512219",
+      "categoria": "Reporte Principal",
+      "titulo": "Silent Hill f se desploma a su precio mínimo histórico: el terror está en el juego, no en el precio",
+      "resumen": "Los fans del survival horror están de enhorabuena. Silent Hill f ha alcanzado su precio más bajo hasta la fecha, ofreciendo una oportunidad inmejorable para sumergirse en su escalofriante atmósfera.",
+      "contenido_completo": "<p>La esperada entrega de la icónica saga de terror psicológico, Silent Hill f, ha caído a su precio mínimo histórico, convirtiéndose en una oferta irresistible para los amantes del género. Este movimiento en el mercado llega en un momento clave, permitiendo a un público más amplio acceder a una de las propuestas más intrigantes y aterradoras de los últimos años. Con una ambientación japonesa única y un enfoque renovado en el horror corporal y psicológico, Silent Hill f promete redefinir lo que esperamos de la franquicia, y ahora es el momento perfecto para vivir esa experiencia sin que el precio sea una barrera.</p><p>Esta caída de precio no solo democratiza el acceso a uno de los títulos más anticipados, sino que también revitaliza la conversación en torno a Silent Hill f, un juego que desde su anuncio ha generado grandes expectativas. Para aquellos que han estado esperando el momento adecuado para adentrarse en sus misterios y enfrentar sus miedos más profundos, esta es la señal definitiva. El terror prometido por Konami y Neobards Entertainment está al alcance de la mano, asegurando que la única pesadilla sea la que se vive dentro del juego y no la de la factura final.</p>",
+      "enlace": "https://es.ign.com/compras/230123/silent-hill-f-se-desploma-a-su-precio-minimo-historico-el-terror-esta-en-el-juego-no-en-el-precio",
+      "fecha": "2026-06-03T18:43:39.209354",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/silent-hill-f_pked.jpg"
     }
   ]
 }
