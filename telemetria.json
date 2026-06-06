@@ -351,20 +351,28 @@
     {
       "id": "borderlands-3",
       "titulo": "⚠️ borderlands 3",
-      "fecha": "ERROR",
-      "plataformas": "N/A",
-      "calificacion": "0.0",
+      "fecha": "2019",
+      "plataformas": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch.",
+      "calificacion": "8.0",
       "motor_grafico": "N/A",
       "tecnologias": "N/A",
-      "rendimiento": "N/A",
-      "sinopsis": "Fallo en sincronización.",
-      "analisis_detallado": "<p class='text-red-400'>Error: Imposible conectar con la IA después de 3 intentos debido a servidores saturados.</p>",
+      "rendimiento": "Mínimo: 1080p; Recomendado: 1440p",
+      "sinopsis": "Borderlands 3 eleva la fórmula looter-shooter de Gearbox, ofreciendo una experiencia más grande, frenética y completa con un gunplay perfeccionado y una vasta exploración interplanetaria.\nLos nuevos Buscacámaras se enfrentan a los Gemelos Calypso en una aventura repleta de armas creativas, habilidades diversas y cooperativo mejorado, pese a ciertos problemas de rendimiento iniciales.",
+      "analisis_detallado": "<p>Borderlands 3 marca un hito en la evolución de la distintiva fórmula de Gearbox, entregando una experiencia de shooter-looter que supera a sus predecesores en magnitud, intensidad y profundidad. Desde su lanzamiento en 2019, el título ha refinado el característico sistema de disparos de la serie, introduciendo combates más dinámicos y un arsenal de armas excepcionalmente creativas, todo ello enmarcado en un sistema de progresión diseñado para una constante búsqueda de botín. La aventura trasciende las fronteras de Pandora, llevando a los jugadores a diversos planetas con personalidades únicas, desde las urbes futuristas de Promethea hasta los escenarios místicos de Athenas, donde los Buscacámaras Amara, Moze, FL4K y Zane se oponen a los villanos mediáticos, los Gemelos Calypso.</p><p>Uno de los puntos fuertes del juego reside en la prodigiosa variedad de armamento y habilidades disponibles, lo que facilita la creación de estilos de juego sumamente diversos y fomenta una alta rejugabilidad. La experiencia cooperativa también ha sido objeto de mejoras significativas, incorporando opciones de botín individualizado y escalado de niveles para optimizar el disfrute con amigos. Aunque el juego mantiene su humor irreverente y abundancia de referencias, no está exento de puntos débiles; se registraron problemas de rendimiento en consolas de pasada generación durante su lanzamiento, y recibió críticas por la conducción de vehículos y el diseño de algunos niveles, que para ciertos jugadores resultaron más lineales de lo esperado. Sin embargo, su vasta oferta de contenido, el sobresaliente sistema de disparos y una mecánica de juego consistentemente adictiva consolidan a Borderlands 3 como una de las entregas más robustas y duraderas de la franquicia.</p>",
       "requisitos": {
         "minimos": [
-          "N/A"
+          "Sistema Operativo: Windows 7/8/10 (último service pack)",
+          "Procesador: AMD FX-8350 o Intel Core i5-3570",
+          "Memoria RAM: 6 GB",
+          "Tarjeta Gráfica: AMD Radeon HD 7970 o NVIDIA GeForce GTX 680 (2 GB)",
+          "DirectX: Versión 11"
         ],
         "recomendados": [
-          "N/A"
+          "Sistema Operativo: Windows 7/8/10 (último service pack)",
+          "Procesador: AMD Ryzen 5 2600 o Intel Core i7-4770",
+          "Memoria RAM: 16 GB",
+          "Tarjeta Gráfica: AMD Radeon RX 590 o NVIDIA GeForce GTX 1060 (6 GB)",
+          "DirectX: Versión 12"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg"
