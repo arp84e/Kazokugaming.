@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: NOTICIAS RED EXTENDIDA (5 DÍAS DE RETENCIÓN) ===")
+print("=== INICIANDO KAZOKUBOT: HEMEROTECA MASIVA (5 DÍAS TOTALES) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
@@ -23,7 +23,7 @@ seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 📡 RED DE MEDIOS (6 Fuentes de rastreo)
+# 📡 RED DE MEDIOS AMPLIA
 rss_urls = [
     "https://es.ign.com/feed.xml",
     "https://www.eurogamer.es/feed",
@@ -46,36 +46,35 @@ def obtener_imagen(entrada):
 
 archivo_json = 'noticias.json'
 datos_finales = {"destacada": {}, "secundarias": []}
-historial_valido = []
+historial_acumulado = []
 urls_existentes = set()
-
-# 🧠 CAMBIO AQUÍ: Extendemos el límite de memoria a 5 días exactos (120 horas)
 limite_5dias = datetime.now() - timedelta(days=5)
 
-# SISTEMA DE MEMORIA PASADA
+# 🧠 1. MEMORIA DE ACUMULACIÓN: Recuperamos ABSOLUTAMENTE TODO lo que no haya caducado
 if os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
             datos_viejos = json.load(f)
             
-            todas_viejas = datos_viejos.get("secundarias", [])
+            # Consolidamos todo el contenido previo para filtrarlo únicamente por tiempo
+            pool_previo = datos_viejos.get("secundarias", [])
             if datos_viejos.get("destacada") and datos_viejos["destacada"].get("titulo"):
-                todas_viejas.insert(0, datos_viejos["destacada"])
+                pool_previo.insert(0, datos_viejos["destacada"])
                 
-            for n in todas_viejas:
+            for n in pool_previo:
                 if "fecha" in n:
                     try:
                         fecha_n = datetime.fromisoformat(n["fecha"])
-                        # Retenemos todo lo que tenga menos de 5 días
+                        # Si tiene menos de 5 días, se queda en el historial permanentemente
                         if fecha_n > limite_5dias:
-                            historial_valido.append(n)
+                            historial_acumulado.append(n)
                             urls_existentes.add(n.get("enlace", ""))
                     except:
                         pass
     except Exception as e:
-        print(f"⚠️ Aviso de lectura del archivo base: {e}")
+        print(f"⚠️ Aviso de lectura: {e}")
 
-# 🌐 ESCANEO GLOBAL DE ENTRADAS NEW
+# 🌐 2. ESCANEO DE FUENTES EN BUSCA DE EDICIONES NUEVAS
 nuevas_entradas = []
 for url in rss_urls:
     try:
@@ -84,29 +83,28 @@ for url in rss_urls:
             if entry.link not in urls_existentes:
                 nuevas_entradas.append(entry)
     except Exception as e:
-        print(f"⚠️ Omisión temporal de fuente por error de red: {e}")
+        print(f"⚠️ Enlace omitido: {url}")
 
-# Configuración de procesamiento balanceado por ciclo
-NUEVAS_SECUNDARIAS_OBJETIVO = 10
-MAX_PROCESAR_NUEVAS = 1 + NUEVAS_SECUNDARIAS_OBJETIVO
-nuevas_entradas = nuevas_entradas[:MAX_PROCESAR_NUEVAS]
+# Limitamos la IA a redactar un bloque balanceado de hasta 8 noticias frescas por ejecución
+nuevas_entradas = nuevas_entradas[:8]
 
 if not nuevas_entradas:
-    print("✅ No hay novedades críticas en las redes. Manteniendo historial activo de 5 días.")
-    if historial_valido:
-        datos_finales["destacada"] = historial_valido.pop(0)
-        datos_finales["secundarias"] = historial_valido
+    print("✅ No hay noticias nuevas en la red. Manteniendo las de los últimos 5 días intactas.")
+    if historial_acumulado:
+        # Re-ordenamos por fecha para asegurar la jerarquía
+        historial_acumulado.sort(key=lambda x: x.get("fecha", ""), reverse=True)
+        datos_finales["destacada"] = historial_acumulado.pop(0)
+        datos_finales["secundarias"] = historial_acumulado
         with open(archivo_json, 'w', encoding='utf-8') as f:
             json.dump(datos_finales, f, ensure_ascii=False, indent=2)
     sys.exit(0)
 
-# ✍️ REDACCIÓN PRINCIPAL (Noticia Destacada)
-noticia_origen = nuevas_entradas[0]
-print(f"🗞️ Creando Reporte Principal: {noticia_origen.title}")
-
-# Guardamos un ID basado en timestamp único
+# ✍️ 3. REDACCIÓN DE NUEVAS CRÓNICAS
 timestamp_id = int(time.time())
 
+# Nueva Destacada
+noticia_origen = nuevas_entradas[0]
+print(f"🗞️ Redactando Destacada: {noticia_origen.title}")
 prompt_destacada = f"""
 Actúa como un redactor jefe de una revista de videojuegos premium. Redacta una crónica basada en:
 Título fuente: {noticia_origen.title}
@@ -122,6 +120,7 @@ Devuelve EXCLUSIVAMENTE un objeto JSON válido estructurado así:
 }}
 """
 
+nuevas_redactadas = []
 try:
     res_dest = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -132,17 +131,14 @@ try:
     datos_dest["imagen"] = obtener_imagen(noticia_origen)
     datos_finales["destacada"] = datos_dest
 except Exception as e:
-    print(f"❌ Desviación en flujo principal: {e}")
-    if historial_valido:
-        datos_finales["destacada"] = historial_valido.pop(0)
+    print(f"❌ Error en destacada: {e}")
 
 time.sleep(12)
 
-# 📝 GENERACIÓN DEL BLOQUE DE NOTICIAS SECUNDARIAS
-nuevas_secundarias = []
+# Nuevas Secundarias
 for i in range(1, len(nuevas_entradas)):
     noticia_sec = nuevas_entradas[i]
-    print(f"📝 Redactando Tarjeta de Actualidad [{i}/{len(nuevas_entradas)-1}]: {noticia_sec.title}")
+    print(f"📝 Redactando Secundaria [{i}/{len(nuevas_entradas)-1}]: {noticia_sec.title}")
     
     prompt_sec = f"""
     Sintetiza la novedad para un despliegue rápido en tarjeta web:
@@ -165,16 +161,25 @@ for i in range(1, len(nuevas_entradas)):
         )
         datos_sec = json.loads(res_sec.text)
         datos_sec["imagen"] = obtener_imagen(noticia_sec)
-        nuevas_secundarias.append(datos_sec)
+        nuevas_redactadas.append(datos_sec)
     except Exception as e:
-        print(f"⚠️ Salto de registro secundario por error técnico: {e}")
-        
+        print(f"⚠️ Error en secundaria: {e}")
     time.sleep(12)
 
-# CONSOLIDACIÓN FINAL EN EL ARCHIVO DISCO
-datos_finales["secundarias"] = nuevas_secundarias + historial_valido
+# 💾 4. UNIFICACIÓN Y ORDENAMIENTO ABSOLUTO POR FECHA
+# Combinamos todo el historial salvado de 5 días con lo nuevo redactado
+todo_el_pool = nuevas_redactadas + historial_acumulado
+
+# Si no pudimos crear una destacada nueva por algún fallo de red, usamos la más reciente disponible
+if not datos_finales.get("destacada") and todo_el_pool:
+    todo_el_pool.sort(key=lambda x: x.get("fecha", ""), reverse=True)
+    datos_finales["destacada"] = todo_el_pool.pop(0)
+
+# El resto va íntegro a las secundarias (sin importar si son 20, 40 o 80 noticias)
+todo_el_pool.sort(key=lambda x: x.get("fecha", ""), reverse=True)
+datos_finales["secundarias"] = todo_el_pool
 
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(datos_finales, f, ensure_ascii=False, indent=2)
 
-print(f"✅ Sincronización finalizada. Historial ampliado a 5 días con éxito.")
+print(f"✅ Éxito. Guardadas {len(datos_finales['secundarias']) + 1} noticias en total dentro del rango de los 5 días.")
