@@ -7,7 +7,7 @@ import urllib.parse
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (MÓDULO ANTI-COPYRIGHT + MANUAL) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (SISTEMA DE FORMULARIO MULTI-CUADRO) ===")
 
 # Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -53,18 +53,23 @@ def buscar_info_extra(titulo):
         pass
     return "Utiliza tu base de datos interna para obtener precisión técnica."
 
-# 1. RECEPCIÓN Y PARSEO INTELIGENTE DE ENTRADAS
-nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
+# 1. CAPTURA DE DATOS DESDE LOS DIFERENTES CUADROS
+juegos_raw = os.environ.get("INPUT_JUEGOS", "")
+calificacion_cuadro = os.environ.get("INPUT_CALIFICACION", "").strip()
+plataformas_cuadro = os.environ.get("INPUT_PLATAFORMAS", "").strip()
+requisitos_cuadro = os.environ.get("INPUT_REQUISITOS", "").strip()
+analisis_cuadro = os.environ.get("INPUT_ANALISIS", "").strip()
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-texto_unificado = nuevos_juegos_raw.replace("\n", ";")
-bloques_juegos = [linea.strip() for linea in texto_unificado.split(';') if linea.strip()]
+# Procesamos la lista de títulos usando punto y coma (;)
+texto_unificado = juegos_raw.replace("\n", ";")
+titulos = [t.strip() for t in texto_unificado.split(';') if t.strip()]
 
-if not bloques_juegos:
-    print("⚠️ No se detectaron entradas. Entrada recibida:", nuevos_juegos_raw)
+if not titulos:
+    print("⚠️ No se detectó ningún título en la casilla principal.")
     sys.exit(0)
 
-# 2. CARGAR ARCHIVO ACTUAL
+# 2. CARGAR EL ARCHIVO BASE ACTUAL
 estructura_final = {"juegos": []}
 archivo_json = 'telemetria.json'
 
@@ -77,70 +82,58 @@ if not sobrescribir and os.path.exists(archivo_json):
     except:
         pass
 
-# 3. PROCESAR EXPEDIENTES
-for bloque in bloques_juegos:
-    # Inicializamos variables por defecto
-    modo_manual = False
-    calificacion_manual = "N/A"
-    requisitos_manuales = ""
-    analisis_manual = ""
-    
-    # Comprobamos si el bloque tiene datos manuales divididos por "|"
-    if "|" in bloque:
-        modo_manual = True
-        partes = [p.strip() for p in bloque.split('|')]
-        titulo = partes[0]
-        
-        if len(partes) > 1: calificacion_manual = partes[1]
-        if len(partes) > 2: requisitos_manuales = partes[2]
-        if len(partes) > 3: analisis_manual = partes[3]
-    else:
-        titulo = bloque
-
+# 3. PROCESAR CADA JUEGO EN LA LISTA
+for indice, titulo in enumerate(titulos):
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("'", "").replace(".", "")
-    print(f"\n⚙️ Procesando [{ 'MODO MANUAL ASSIST' if modo_manual else 'MODO AUTOMÁTICO' }]: {titulo}...")
-    
     imagen_real = buscar_portada(titulo)
     
-    # Construcción del prompt según el modo seleccionado
-    if modo_manual:
-        print("   [+] Ejecutando filtro anti-plagio y reescritura de estilo para KazokuGaming...")
+    # Comprobamos si es el PRIMER JUEGO y si tiene datos manuales rellenados en los cuadros
+    es_primer_juego = (indice == 0)
+    tiene_datos_manuales = (analisis_cuadro or requisitos_cuadro or calificacion_cuadro or plataformas_cuadro)
+    
+    if es_primer_juego and tiene_datos_manuales:
+        # MODO CUADRO MANUAL (Aplica reescritura anti-copyright para el primer título)
+        print(f"\n⚙️ [MODO FORMULARIO MANUAL] Analizando y Reescriturando original: {titulo}...")
+        
         prompt = f"""
-        Actúas como un redactor técnico senior de videojuegos con un estilo original, analítico y crítico (estilo Digital Foundry).
-        Se te ha provisto un análisis crudo y notas de un videojuego que pueden tener problemas de copyright o derechos de autor si se copian directamente.
-        Tu misión es REESCRIBIR Y READAPTAR COMPLETAMENTE la información con tus propias palabras, garantizando un texto 100% original, libre de plagio y con lenguaje periodístico avanzado.
+        Actúas como un redactor técnico senior de videojuegos (estilo Digital Foundry). 
+        Se te han provisto notas y análisis manuales para el juego '{titulo}'.
+        Tu misión es REESCRIBIR Y READAPTAR COMPLETAMENTE el análisis base para garantizar que sea 100% original, libre de plagio y con un lenguaje periodístico fluido.
 
-        Juego: '{titulo}'
-        Nota asignada por el usuario: {calificacion_manual}
-        Requisitos en bruto aportados: "{requisitos_manuales}"
-        Análisis/Texto base a transformar: "{analisis_manual}"
+        Datos aportados por el usuario:
+        - Calificación: {calificacion_cuadro if calificacion_cuadro else 'Calificación web automatizada'}
+        - Plataformas sugeridas: {plataformas_cuadro if plataformas_cuadro else 'Buscar estándar'}
+        - Requisitos crudos: "{requisitos_cuadro}"
+        - Texto de análisis/sinopsis base: "{analisis_cuadro}"
 
-        Instrucciones de estructura:
-        1. Desglosa los requisitos aportados de forma limpia en listas para los campos "minimos" y "recomendados".
-        2. El "analisis_detallado" debe constar de 2 párrafos redactados en HTML (<p>...</p>) usando la información del texto base pero con un vocabulario totalmente reestructurado, fluido y técnico.
+        Instrucciones:
+        1. Estructura los requisitos aportados en listas limpias para los campos "minimos" y "recomendados".
+        2. El "analisis_detallado" debe constar de 2 párrafos redactados en HTML (<p>...</p>) transformando el texto base de forma elegante y técnica.
 
         Devuelve UNICAMENTE un JSON válido con esta estructura:
         {{
-            "fecha": "Fecha de lanzamiento estimada o real del juego",
-            "plataformas": "Plataformas en las que está disponible",
-            "calificacion": "{calificacion_manual}",
-            "motor_grafico": "Motor gráfico que usa (o 'No especificado' si no se deduce)",
-            "tecnologias": "Tecnologías de optimización deducidas (DLSS, FSR, Ray Tracing, etc.)",
-            "rendimiento": "Resolución y FPS recomendados en base a la lectura",
-            "sinopsis": "Una sinopsis breve de 2 líneas escrita con tus palabras.",
-            "analisis_detallado": "<p>Primer párrafo reescrito anti-plagio.</p><p>Segundo párrafo técnico reescrito.</p>",
+            "fecha": "Fecha de lanzamiento real o estimada",
+            "plataformas": "{plataformas_cuadro if plataformas_cuadro else 'Multiplataforma'}",
+            "calificacion": "{calificacion_cuadro if calificacion_cuadro else '8.5'}",
+            "motor_grafico": "Motor gráfico utilizado (o 'No especificado')",
+            "tecnologias": "Tecnologías clave deducidas (DLSS, FSR, Ray Tracing, etc.)",
+            "rendimiento": "Resolución y FPS objetivo recomendados",
+            "sinopsis": "Sinopsis de 2 líneas escrita con tus propias palabras.",
+            "analisis_detallado": "<p>Primer párrafo reescrito.</p><p>Segundo párrafo técnico reescrito.</p>",
             "requisitos": {{
-                "minimos": ["Requisito 1 extraído", "Requisito 2 extraído"],
-                "recomendados": ["Requisito 1 extraído", "Requisito 2 extraído"]
+                "minimos": ["Dato extraído 1", "Dato extraído 2"],
+                "recomendados": ["Dato extraído 1", "Dato extraído 2"]
             }}
         }}
         """
     else:
-        # Modo automático tradicional (Wikipedia)
+        # MODO AUTOMÁTICO TRADICIONAL (Para el segundo juego en adelante, o si envías todo vacío)
+        print(f"\n⚙️ [MODO AUTOMÁTICO INTELIGENTE] Investigando en internet: {titulo}...")
         contexto_web = buscar_info_extra(titulo)
+        
         prompt = f"""
         Actúa como experto en hardware y rendimiento. Analiza el juego '{titulo}'.
-        Contexto oficial extraído: "{contexto_web}"
+        Contexto enciclopédico extraído: "{contexto_web}"
         
         Devuelve UNICAMENTE un JSON válido con esta estructura:
         {{
@@ -172,7 +165,7 @@ for bloque in bloques_juegos:
             "titulo": titulo,
             "fecha": data.get("fecha", "Por determinar"),
             "plataformas": data.get("plataformas", "Multiplataforma"),
-            "calificacion": data.get("calificacion", calificacion_manual),
+            "calificacion": data.get("calificacion", "N/A"),
             "motor_grafico": data.get("motor_grafico", "No especificado"),
             "tecnologias": data.get("tecnologias", "Estándar"),
             "rendimiento": data.get("rendimiento", "Variable"),
@@ -186,22 +179,21 @@ for bloque in bloques_juegos:
         if idx is not None: estructura_final["juegos"][idx] = nuevo_juego
         else: estructura_final["juegos"].append(nuevo_juego)
             
-        print(f"   ✅ {titulo} indexado correctamente.")
+        print(f"   ✅ {titulo} completado con éxito.")
         
     except Exception as e:
-        print(f"❌ Error en {titulo}: {e}")
-        error_msg = str(e).replace('"', "'") 
-        
+        print(f"❌ Error procesando {titulo}: {e}")
+        error_msg = str(e).replace('"', "'")
         error_juego = {
             "id": id_juego,
             "titulo": f"⚠️ {titulo}",
             "fecha": "ERROR",
             "plataformas": "N/A",
-            "calificacion": calificacion_manual,
+            "calificacion": "0.0",
             "motor_grafico": "N/A",
             "tecnologias": "N/A",
             "rendimiento": "N/A",
-            "sinopsis": "Error en la generación de datos.",
+            "sinopsis": "Fallo en la sincronización de datos o lectura del formulario.",
             "analisis_detallado": f"<p class='text-red-400'>Error en transformación: {error_msg}</p>",
             "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
             "imagen": imagen_real
@@ -209,11 +201,11 @@ for bloque in bloques_juegos:
         idx = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
         if idx is not None: estructura_final["juegos"][idx] = error_juego
         else: estructura_final["juegos"].append(error_juego)
-    
+        
     time.sleep(12)
 
-# 4. GUARDAR CAMBIOS
+# 4. APLICAR CAMBIOS EN EL DISCO
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
-print("✅ Archivo telemetria.json actualizado exitosamente.")
+print("✅ Base de datos telemetria.json actualizada de forma segura.")
