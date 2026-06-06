@@ -141,29 +141,21 @@
     },
     {
       "id": "silent-hill-f",
-      "titulo": "Silent Hill f",
-      "fecha": "No especificada",
-      "plataformas": "PC, PS5, Xbox Series X|S",
-      "calificacion": "8.2",
-      "motor_grafico": "No especificado",
-      "tecnologias": "DLSS",
-      "rendimiento": "1080p a 60 FPS (Rendimiento) o 30 FPS (Calidad)",
-      "sinopsis": "Silent Hill f sumerge al jugador en un viaje al horror psicológico, recontextualizando temas clásicos de la saga a través de la mitología japonesa. La protagonista se enfrenta a sus demonios internos en un mundo que transita de lo mundano a lo grotesco, donde cada paso es una lucha por la supervivencia y la comprensión de una realidad distorsionada.",
-      "analisis_detallado": "<p>Silent Hill f se sumerge en la tradición de la saga con una narrativa que, de forma insidiosa, transmuta lo aparentemente mundano en un abismo de horror psicológico. La reinterpretación de temas clásicos como la culpa y la redención se entrelaza magistralmente con la rica mitología japonesa, proporcionando una base argumental profunda sin recurrir a explicaciones explícitas, lo que recompensa la paciencia del jugador veterano. El ritmo se calibra con pericia, alternando la exploración atmosférica y secuencias de terror puro con la resolución de acertijos, aunque algunos de estos pueden resultar excesivamente crípticos, desafiando la fluidez del juego. No obstante, ciertos rompecabezas destacan por su brillantez contextual, como el que exige ingenio bajo la presión incesante de una amenaza resurgente. En el ámbito jugable, Silent Hill f apuesta por una inmersión en la vulnerabilidad. El control de Hinako se percibe con una precisión deliberada, donde las inercias realistas refuerzan una sensación constante de indefensión, aunque ocasionalmente dificulten la estimación de distancias en combate. Este diseño no busca la confrontación directa de un 'soulslike', sino que enfatiza la supervivencia. Si bien el diseño de las criaturas es magistral, evocando influencias notables y propias de la franquicia, su excesiva frecuencia en ciertos encuentros diluye el impacto psicológico que deberían generar. Es en los momentos de huida y persecución donde el juego recupera su pulso más intenso, recordándonos la efectividad de limitar la presencia enemiga a situaciones de mayor relevancia para potenciar la atmósfera de terror y la indefensión inherente a la experiencia.</p><p>Desde una perspectiva técnica, Silent Hill f presenta un apartado visual competente, aunque no alcanza las cotas de un referente gráfico contemporáneo. En nuestras pruebas en PC, utilizando una configuración de gama alta (Ryzen 7 9800X3D y RTX 5080), el título mantuvo una fluidez excepcional entre 160-180 FPS a 3440x1440, con una estabilidad envidiable, exceptuando transiciones cinematográficas fijadas a 30 FPS. Lamentablemente, la implementación de DLSS es deficiente, introduciendo artefactos visuales constantes que obligan a su desactivación, mermando una optimización que podría haber sido ejemplar. No obstante, el diseño artístico brilla por su coherencia, empleando la niebla, la decadencia y los entornos claustrofóbicos para construir una atmósfera distintivamente japonesa, complementada por un diseño de criaturas que equilibra lo grotesco y lo poético, sello distintivo de la franquicia. El diseño sonoro es un pilar fundamental de la inmersión, con una banda sonora que, si bien carece de melodías icónicas capaces de trascender la experiencia, sobresale en su función ambiental, sosteniendo una tensión palpable. La calibración de los efectos de sonido –ecos, crujidos, respiraciones– es impecable, logrando generar una sensación de vigilancia constante. Sin embargo, el precio de lanzamiento de Silent Hill f, que asciende a 79.99€ para la edición base y 89.90€ para la Deluxe, resulta difícil de justificar dado el calibre técnico y los fallos mencionados, especialmente la integración del DLSS. Asimismo, el inclusion de elementos como un disfraz de conejito rosa en la edición Deluxe choca flagrantemente con la atmósfera opresiva del juego, denotando una incongruencia en la visión del producto final.</p>",
+      "titulo": "⚠️ Silent Hill f",
+      "fecha": "ERROR",
+      "plataformas": "N/A",
+      "calificacion": "0.0",
+      "motor_grafico": "N/A",
+      "tecnologias": "N/A",
+      "rendimiento": "N/A",
+      "sinopsis": "Fallo en la sincronización de datos o lectura del formulario.",
+      "analisis_detallado": "<p class='text-red-400'>Error en transformación: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}</p>",
       "requisitos": {
         "minimos": [
-          "Sistema Operativo: Windows 11 x64",
-          "Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600",
-          "Gráficos: NVIDIA GeForce GTX 1070 Ti / AMD Radeon RX 5700",
-          "Almacenamiento: 50 GB (SSD recomendado)",
-          "Rendimiento Esperado: 720p a 30 FPS (Calidad Rendimiento)"
+          "N/A"
         ],
         "recomendados": [
-          "Sistema Operativo: Windows 11 x64",
-          "Procesador: Intel Core i7-9700 / AMD Ryzen 5 5500",
-          "Gráficos: NVIDIA GeForce RTX 2080 / AMD Radeon RX 6800 XT",
-          "Almacenamiento: 50 GB (SSD obligatorio)",
-          "Rendimiento Esperado: 1080p a 60 FPS (Rendimiento) o 30 FPS (Calidad)"
+          "N/A"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
