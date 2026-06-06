@@ -7,7 +7,7 @@ import urllib.parse
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (FORMATO PUNTO Y COMA) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA (MÓDULO ANTI-COPYRIGHT + MANUAL) ===")
 
 # Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -53,20 +53,18 @@ def buscar_info_extra(titulo):
         pass
     return "Utiliza tu base de datos interna para obtener precisión técnica."
 
-# 1. RECIBIR JUEGOS Y APLICAR EL NUEVO FORMATO DE PUNTO Y COMA (;)
+# 1. RECEPCIÓN Y PARSEO INTELIGENTE DE ENTRADAS
 nuevos_juegos_raw = os.environ.get("NUEVOS_JUEGOS", "")
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
 texto_unificado = nuevos_juegos_raw.replace("\n", ";")
-titulos = [linea.strip() for linea in texto_unificado.split(';') if linea.strip()]
+bloques_juegos = [linea.strip() for linea in texto_unificado.split(';') if linea.strip()]
 
-if not titulos:
-    print("⚠️ No se detectaron juegos. Entrada recibida:", nuevos_juegos_raw)
+if not bloques_juegos:
+    print("⚠️ No se detectaron entradas. Entrada recibida:", nuevos_juegos_raw)
     sys.exit(0)
 
-print(f"📦 Juegos detectados ({len(titulos)}): {', '.join(titulos)}")
-
-# 2. CARGAR EL ARCHIVO JSON ACTUAL
+# 2. CARGAR ARCHIVO ACTUAL
 estructura_final = {"juegos": []}
 archivo_json = 'telemetria.json'
 
@@ -79,34 +77,87 @@ if not sobrescribir and os.path.exists(archivo_json):
     except:
         pass
 
-# 3. PROCESAR CADA JUEGO
-for titulo in titulos:
+# 3. PROCESAR EXPEDIENTES
+for bloque in bloques_juegos:
+    # Inicializamos variables por defecto
+    modo_manual = False
+    calificacion_manual = "N/A"
+    requisitos_manuales = ""
+    analisis_manual = ""
+    
+    # Comprobamos si el bloque tiene datos manuales divididos por "|"
+    if "|" in bloque:
+        modo_manual = True
+        partes = [p.strip() for p in bloque.split('|')]
+        titulo = partes[0]
+        
+        if len(partes) > 1: calificacion_manual = partes[1]
+        if len(partes) > 2: requisitos_manuales = partes[2]
+        if len(partes) > 3: analisis_manual = partes[3]
+    else:
+        titulo = bloque
+
     id_juego = titulo.lower().replace(":", "").replace(" ", "-").replace("'", "").replace(".", "")
-    print(f"\n⚙️ Investigando: {titulo}...")
+    print(f"\n⚙️ Procesando [{ 'MODO MANUAL ASSIST' if modo_manual else 'MODO AUTOMÁTICO' }]: {titulo}...")
     
     imagen_real = buscar_portada(titulo)
-    contexto_web = buscar_info_extra(titulo)
     
-    prompt = f"""
-    Actúa como experto en hardware y rendimiento. Analiza el juego '{titulo}'.
-    Contexto oficial extraído: "{contexto_web}"
-    
-    Devuelve UNICAMENTE un JSON válido con esta estructura:
-    {{
-        "fecha": "Fecha de lanzamiento exacta",
-        "plataformas": "Plataformas de salida",
-        "calificacion": "Nota numérica del 1 al 10 en base a críticas",
-        "motor_grafico": "Motor (Ej. Unreal Engine 5)",
-        "tecnologias": "Tecnologías (DLSS, Ray Tracing, etc)",
-        "rendimiento": "Resolución y FPS objetivo recomendados",
-        "sinopsis": "Sinopsis enciclopédica breve",
-        "analisis_detallado": "<p>Escribe 2 párrafos técnicos en HTML analizando los gráficos, físicas y rendimiento.</p>",
-        "requisitos": {{
-            "minimos": ["..."],
-            "recomendados": ["..."]
+    # Construcción del prompt según el modo seleccionado
+    if modo_manual:
+        print("   [+] Ejecutando filtro anti-plagio y reescritura de estilo para KazokuGaming...")
+        prompt = f"""
+        Actúas como un redactor técnico senior de videojuegos con un estilo original, analítico y crítico (estilo Digital Foundry).
+        Se te ha provisto un análisis crudo y notas de un videojuego que pueden tener problemas de copyright o derechos de autor si se copian directamente.
+        Tu misión es REESCRIBIR Y READAPTAR COMPLETAMENTE la información con tus propias palabras, garantizando un texto 100% original, libre de plagio y con lenguaje periodístico avanzado.
+
+        Juego: '{titulo}'
+        Nota asignada por el usuario: {calificacion_manual}
+        Requisitos en bruto aportados: "{requisitos_manuales}"
+        Análisis/Texto base a transformar: "{analisis_manual}"
+
+        Instrucciones de estructura:
+        1. Desglosa los requisitos aportados de forma limpia en listas para los campos "minimos" y "recomendados".
+        2. El "analisis_detallado" debe constar de 2 párrafos redactados en HTML (<p>...</p>) usando la información del texto base pero con un vocabulario totalmente reestructurado, fluido y técnico.
+
+        Devuelve UNICAMENTE un JSON válido con esta estructura:
+        {{
+            "fecha": "Fecha de lanzamiento estimada o real del juego",
+            "plataformas": "Plataformas en las que está disponible",
+            "calificacion": "{calificacion_manual}",
+            "motor_grafico": "Motor gráfico que usa (o 'No especificado' si no se deduce)",
+            "tecnologias": "Tecnologías de optimización deducidas (DLSS, FSR, Ray Tracing, etc.)",
+            "rendimiento": "Resolución y FPS recomendados en base a la lectura",
+            "sinopsis": "Una sinopsis breve de 2 líneas escrita con tus palabras.",
+            "analisis_detallado": "<p>Primer párrafo reescrito anti-plagio.</p><p>Segundo párrafo técnico reescrito.</p>",
+            "requisitos": {{
+                "minimos": ["Requisito 1 extraído", "Requisito 2 extraído"],
+                "recomendados": ["Requisito 1 extraído", "Requisito 2 extraído"]
+            }}
         }}
-    }}
-    """
+        """
+    else:
+        # Modo automático tradicional (Wikipedia)
+        contexto_web = buscar_info_extra(titulo)
+        prompt = f"""
+        Actúa como experto en hardware y rendimiento. Analiza el juego '{titulo}'.
+        Contexto oficial extraído: "{contexto_web}"
+        
+        Devuelve UNICAMENTE un JSON válido con esta estructura:
+        {{
+            "fecha": "Fecha de lanzamiento exacta",
+            "plataformas": "Plataformas de salida",
+            "calificacion": "Nota numérica del 1 al 10 en base a críticas",
+            "motor_grafico": "Motor (Ej. Unreal Engine 5)",
+            "tecnologias": "Tecnologías (DLSS, Ray Tracing, etc)",
+            "rendimiento": "Resolución y FPS objetivo recomendados",
+            "sinopsis": "Sinopsis enciclopédica breve",
+            "analisis_detallado": "<p>Escribe 2 párrafos técnicos en HTML analizando los gráficos, físicas y rendimiento.</p>",
+            "requisitos": {{
+                "minimos": ["..."],
+                "recomendados": ["..."]
+            }}
+        }}
+        """
     
     try:
         response = client.models.generate_content(
@@ -121,7 +172,7 @@ for titulo in titulos:
             "titulo": titulo,
             "fecha": data.get("fecha", "Por determinar"),
             "plataformas": data.get("plataformas", "Multiplataforma"),
-            "calificacion": data.get("calificacion", "N/A"),
+            "calificacion": data.get("calificacion", calificacion_manual),
             "motor_grafico": data.get("motor_grafico", "No especificado"),
             "tecnologias": data.get("tecnologias", "Estándar"),
             "rendimiento": data.get("rendimiento", "Variable"),
@@ -135,11 +186,10 @@ for titulo in titulos:
         if idx is not None: estructura_final["juegos"][idx] = nuevo_juego
         else: estructura_final["juegos"].append(nuevo_juego)
             
-        print(f"   ✅ {titulo} completado.")
+        print(f"   ✅ {titulo} indexado correctamente.")
         
     except Exception as e:
         print(f"❌ Error en {titulo}: {e}")
-        # 🛠️ CORRECCIÓN: Limpiamos el mensaje de error fuera de la llave f-string
         error_msg = str(e).replace('"', "'") 
         
         error_juego = {
@@ -147,12 +197,12 @@ for titulo in titulos:
             "titulo": f"⚠️ {titulo}",
             "fecha": "ERROR",
             "plataformas": "N/A",
-            "calificacion": "0.0",
+            "calificacion": calificacion_manual,
             "motor_grafico": "N/A",
             "tecnologias": "N/A",
             "rendimiento": "N/A",
             "sinopsis": "Error en la generación de datos.",
-            "analisis_detallado": f"<p class='text-red-400'>Error: {error_msg}</p>",
+            "analisis_detallado": f"<p class='text-red-400'>Error en transformación: {error_msg}</p>",
             "requisitos": {"minimos": ["N/A"], "recomendados": ["N/A"]},
             "imagen": imagen_real
         }
