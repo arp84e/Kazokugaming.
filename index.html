@@ -61,145 +61,157 @@
             const gridSecundarias = document.getElementById('noticiasSecundariasGrid');
             const zonaSecundarias = document.getElementById('zonaSecundarias');
 
+            // Limpieza inicial de seguridad por si acaso
+            if(zonaDestacada) zonaDestacada.innerHTML = "";
+            if(gridSecundarias) gridSecundarias.innerHTML = "";
+
             try {
                 const respuesta = await fetch('noticias.json');
                 if (!respuesta.ok) throw new Error("No se pudo leer noticias.json");
                 
                 const datos = await respuesta.json();
                 
-                loading.classList.add('hidden');
-                contenedor.classList.remove('hidden');
+                // Ocultamos la animación de carga y mostramos el contenedor principal
+                if(loading) loading.classList.add('hidden');
+                if(contenedor) contenedor.classList.remove('hidden');
 
-                // 1. Unificamos todo en un pool de procesamiento limpio
+                // 1. Unificamos todo el pool de noticias de forma segura
                 let poolNoticias = [];
                 if (datos.destacada && datos.destacada.titulo) {
                     poolNoticias.push(datos.destacada);
                 }
-                if (datos.secundarias && datos.secundarias.length > 0) {
+                if (datos.secundarias && Array.isArray(datos.secundarias)) {
                     poolNoticias = poolNoticias.concat(datos.secundarias);
                 }
 
-                // Eliminación estricta de duplicados por ID o Título
+                // 🛠️ CORRECCIÓN CRÍTICA: Filtro de duplicados limpio y funcional
                 const idsUnicos = new Set();
                 poolNoticias = poolNoticias.filter(n => {
-                    if (!n.id || idsUnicos.has(n.id)) return false;
-                    idsUnicos.has(n.id);
+                    if (!n || !n.id || idsUnicos.has(n.id)) return false;
                     idsUnicos.add(n.id);
                     return true;
                 });
 
+                // Si de verdad no hay nada, avisamos limpiamente sin romper la web
                 if (poolNoticias.length === 0) {
-                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas disponibles.</p>";
-                    zonaSecundarias.classList.remove('hidden');
+                    if(gridSecundarias) gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas disponibles actualmente.</p>";
+                    if(zonaSecundarias) zonaSecundarias.classList.remove('hidden');
                     return;
                 }
 
-                // 2. Extraemos la Noticia Destacada Principal (La número 1)
+                // 2. Extraemos de forma segura la Noticia Destacada Principal (La más fresca)
                 const destacadaPrincipal = poolNoticias.shift();
                 
-                zonaDestacada.innerHTML = `
-                    <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
-                        <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
-                            <img src="${destacadaPrincipal.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" alt="${destacadaPrincipal.titulo}" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
-                            <span class="absolute top-4 left-4 bg-indigo-600/90 backdrop-blur-sm text-white text-xs uppercase font-black tracking-wider px-3 py-1 rounded-lg border border-indigo-500/30 shadow-md">
-                                ${destacadaPrincipal.categoria || 'Reporte Crítico'}
-                            </span>
-                        </div>
-                        <div class="p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between space-y-6">
-                            <div class="space-y-4">
-                                <span class="text-xs text-slate-500 font-medium">Última Hora</span>
-                                <h3 class="text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight group-hover:text-cyan-300 transition-colors">
-                                    ${destacadaPrincipal.titulo}
-                                </h3>
-                                <p class="text-slate-400 text-sm leading-relaxed line-clamp-4">
-                                    ${destacadaPrincipal.resumen}
-                                </p>
+                if(zonaDestacada && destacadaPrincipal) {
+                    zonaDestacada.innerHTML = `
+                        <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
+                            <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
+                                <img src="${destacadaPrincipal.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" alt="${destacadaPrincipal.titulo}" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-indigo-600/90 backdrop-blur-sm text-white text-xs uppercase font-black tracking-wider px-3 py-1 rounded-lg border border-indigo-500/30 shadow-md">
+                                    ${destacadaPrincipal.categoria || 'Reporte Crítico'}
+                                </span>
                             </div>
-                            <div class="pt-4 border-t border-slate-800/60">
-                                <a href="articulo.html?id=${destacadaPrincipal.id}" class="inline-flex justify-center bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition shadow-md shadow-indigo-900/30">
-                                    Leer Crónica Completa →
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                // 3. Distribución inteligente garantizada: 
-                // Las siguientes 6 noticias van como tarjetas visuales completas.
-                // Todo el resto de noticias (desde la 7 hasta el final) van directas a la Hemeroteca compacta de 5 días.
-                let htmlTarjetasRecientes = "";
-                let htmlListaCompacta = "";
-
-                poolNoticias.forEach((noticia, indice) => {
-                    if (indice < 6) {
-                        // FORMATO VISUAL COMPLETO
-                        htmlTarjetasRecientes += `
-                            <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
-                                <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
-                                    <img src="${noticia.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600'}" alt="${noticia.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                                    <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-slate-700/50">
-                                        ${noticia.categoria || 'Actualidad'}
-                                    </span>
+                            <div class="p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between space-y-6">
+                                <div class="space-y-4">
+                                    <span class="text-xs text-slate-500 font-medium">Última Hora</span>
+                                    <h3 class="text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight group-hover:text-cyan-300 transition-colors">
+                                        ${destacadaPrincipal.titulo}
+                                    </h3>
+                                    <p class="text-slate-400 text-sm leading-relaxed line-clamp-4">
+                                        ${destacadaPrincipal.resumen}
+                                    </p>
                                 </div>
-                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                                    <div class="space-y-2">
-                                        <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors" title="${noticia.titulo}">
-                                            ${noticia.titulo}
-                                        </h4>
-                                        <p class="text-sm text-slate-400 line-clamp-3 leading-relaxed">
-                                            ${noticia.resumen}
-                                        </p>
-                                    </div>
-                                    <div class="pt-3 border-t border-slate-800/40 flex justify-between items-center">
-                                        <span class="text-[10px] text-slate-500 font-semibold uppercase">Reciente</span>
-                                        <a href="articulo.html?id=${noticia.id}" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition flex items-center space-x-1">
-                                            <span>Leer más</span>
-                                            <span>→</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                        `;
-                    } else {
-                        # FORMATO DE COMPACTACIÓN DE HEMEROTECA
-                        let fechaLegible = "Archivo";
-                        if (noticia.fecha) {
-                            const d = new Date(noticia.fecha);
-                            fechaLegible = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
-                        }
-
-                        htmlListaCompacta += `
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-slate-900/20 border border-slate-800/60 rounded-xl hover:border-slate-700/80 hover:bg-slate-900/40 transition-all duration-200 gap-3">
-                                <div class="flex items-center space-x-4 min-w-0">
-                                    <span class="text-xs font-black text-slate-500 uppercase tracking-wider bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">${fechaLegible}</span>
-                                    <div class="min-w-0">
-                                        <h5 class="text-sm font-bold text-slate-200 truncate group-hover:text-white">${noticia.titulo}</h5>
-                                        <p class="text-xs text-slate-400 line-clamp-1 mt-0.5">${noticia.resumen}</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-end shrink-0">
-                                    <a href="articulo.html?id=${noticia.id}" class="text-xs font-bold text-slate-400 hover:text-cyan-400 bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 px-4 py-2 rounded-lg transition-all shadow-md">
-                                        Explorar Crónica →
+                                <div class="pt-4 border-t border-slate-800/60">
+                                    <a href="articulo.html?id=${destacadaPrincipal.id}" class="inline-flex justify-center bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition shadow-md shadow-indigo-900/30">
+                                        Leer Crónica Completa →
                                     </a>
                                 </div>
                             </div>
-                        `;
-                    }
-                });
-
-                // Renderizamos las tarjetas principales
-                if (htmlTarjetasRecientes) {
-                    gridSecundarias.innerHTML = htmlTarjetasRecientes;
-                    zonaSecundarias.classList.remove('hidden');
-                } else {
-                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay crónicas en las últimas horas.</p>";
-                    zonaSecundarias.classList.remove('hidden');
+                        </div>
+                    `;
                 }
 
-                // Renderizamos e inyectamos la Hemeroteca Extendida al final
+                // 3. Renderizado del resto de las noticias (si es que existen)
+                let htmlTarjetasRecientes = "";
+                let htmlListaCompacta = "";
+
+                if (poolNoticias.length > 0) {
+                    poolNoticias.forEach((noticia, indice) => {
+                        if (!noticia || !noticia.titulo) return;
+
+                        if (indice < 6) {
+                            // FORMATO VISUAL COMPLETO (Primeras 6 secundarias)
+                            htmlTarjetasRecientes += `
+                                <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
+                                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
+                                        <img src="${noticia.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600'}" alt="${noticia.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                        <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-slate-700/50">
+                                            ${noticia.categoria || 'Actualidad'}
+                                        </span>
+                                    </div>
+                                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                        <div class="space-y-2">
+                                            <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors" title="${noticia.titulo}">
+                                                ${noticia.titulo}
+                                            </h4>
+                                            <p class="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                                                ${noticia.resumen}
+                                            </p>
+                                        </div>
+                                        <div class="pt-3 border-t border-slate-800/40 flex justify-between items-center">
+                                            <span class="text-[10px] text-slate-500 font-semibold uppercase">Reciente</span>
+                                            <a href="articulo.html?id=${noticia.id}" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition flex items-center space-x-1">
+                                                <span>Leer más</span>
+                                                <span>→</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            `;
+                        } else {
+                            // FORMATO COMPACTO DE HEMEROTECA (De la 7 en adelante)
+                            let fechaLegible = "Archivo";
+                            if (noticia.fecha) {
+                                try {
+                                    const d = new Date(noticia.fecha);
+                                    fechaLegible = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+                                } catch(e) {}
+                            }
+
+                            htmlListaCompacta += `
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-slate-900/20 border border-slate-800/60 rounded-xl hover:border-slate-700/80 hover:bg-slate-900/40 transition-all duration-200 gap-3">
+                                    <div class="flex items-center space-x-4 min-w-0">
+                                        <span class="text-xs font-black text-slate-500 uppercase tracking-wider bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">${fechaLegible}</span>
+                                        <div class="min-w-0">
+                                            <h5 class="text-sm font-bold text-slate-200 truncate group-hover:text-white">${noticia.titulo}</h5>
+                                            <p class="text-xs text-slate-400 line-clamp-1 mt-0.5">${noticia.resumen}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-end shrink-0">
+                                        <a href="articulo.html?id=${noticia.id}" class="text-xs font-bold text-slate-400 hover:text-cyan-400 bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 px-4 py-2 rounded-lg transition-all shadow-md">
+                                            Explorar Crónica →
+                                        </a>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    });
+                }
+
+                // Inyección segura en el GRID de secundarias recientes
+                if (gridSecundarias) {
+                    if (htmlTarjetasRecientes) {
+                        gridSecundarias.innerHTML = htmlTarjetasRecientes;
+                    } else {
+                        gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay más noticias recientes esta semana.</p>";
+                    }
+                }
+                if (zonaSecundarias) zonaSecundarias.classList.remove('hidden');
+
+                // Inyección o remoción segura de la sección Hemeroteca
                 let idHemeroteca = document.getElementById('hemerotecaNoticiasZona');
                 if (htmlListaCompacta) {
-                    if (!idHemeroteca) {
+                    if (!idHemeroteca && contenedor) {
                         const seccionHemeroteca = document.createElement('section');
                         seccionHemeroteca.id = "hemerotecaNoticiasZona";
                         seccionHemeroteca.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-slate-900";
@@ -207,26 +219,30 @@
                         idHemeroteca = seccionHemeroteca;
                     }
                     
-                    idHemeroteca.innerHTML = `
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></div>
-                            <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Hemeroteca de la Semana (Historial de 5 días)</h3>
-                        </div>
-                        <div class="space-y-2.5">
-                            ${htmlListaCompacta}
-                        </div>
-                    `;
+                    if(idHemeroteca) {
+                        idHemeroteca.innerHTML = `
+                            <div class="flex items-center space-x-3 mb-6">
+                                <div class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                                <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Hemeroteca de la Semana (Historial de 5 días)</h3>
+                            </div>
+                            <div class="space-y-2.5">
+                                ${htmlListaCompacta}
+                            </div>
+                        `;
+                    }
                 } else if (idHemeroteca) {
-                    idHemeroteca.innerHTML = "";
+                    idHemeroteca.remove(); // Si no hay suficientes noticias para Hemeroteca, se quita limpiamente
                 }
 
             } catch (error) {
-                console.error(error);
-                loading.innerHTML = `
-                    <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto">
-                        <p class="text-red-400 font-semibold text-sm">⚠️ El complemento de noticias está inactivo.</p>
-                    </div>
-                `;
+                console.error("Error cargando noticias:", error);
+                if(loading) {
+                    loading.innerHTML = `
+                        <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto">
+                            <p class="text-red-400 font-semibold text-sm">⚠️ El complemento de noticias está inactivo de momento.</p>
+                        </div>
+                    `;
+                }
             }
         }
 
