@@ -142,28 +142,28 @@
     {
       "id": "silent-hill-f",
       "titulo": "Silent Hill f",
-      "fecha": "Por anunciar (sin fecha de lanzamiento confirmada)",
-      "plataformas": "PC (vía Steam), PlayStation 5",
-      "calificacion": "Pendiente (juego no lanzado)",
-      "motor_grafico": "Desconocido oficialmente (se especula con Unreal Engine 5 o un motor propietario avanzado)",
-      "tecnologias": "Se esperan: Ray Tracing (iluminación global, reflejos, sombras), DLSS/FSR (escalado de resolución), HDR, FidelityFX.",
-      "rendimiento": "PC: 1440p a 60 FPS (recomendado), 4K a 60 FPS (alto rendimiento). Consolas: 4K a 30 FPS o 1440p a 60 FPS (con escalado a 4K).",
-      "sinopsis": "Silent Hill f es una nueva entrega de la aclamada saga de horror psicológico, ambientada en el Japón de los años 60. La narrativa se centra en un mundo hermoso pero macabro, donde la realidad se retuerce y elementos orgánicos y grotescos invaden el entorno. Escrito por Ryukishi07 (Higurashi When They Cry) y con diseño de monstruos por k_uchi, promete una experiencia de horror única con una atmósfera inquietante y una historia profunda que explora la transformación y la corrupción.",
-      "analisis_detallado": "<p>A falta de material de juego real y datos técnicos concretos, el análisis de Silent Hill f se basa en las expectativas generadas por su revelación y el pedigrí de la franquicia. Se anticipa un salto gráfico significativo, aprovechando la potencia de las consolas de nueva generación y PCs modernos. La dirección artística, que fusiona la estética japonesa tradicional con el horror corporal y grotesco, sugiere el uso de texturas de alta resolución, modelados detallados y un sistema de iluminación avanzado. El Ray Tracing será crucial para recrear atmósferas opresivas, con sombras dinámicas, oclusiones ambientales realistas y reflejos que amplifiquen la sensación de desasosiego en los entornos retorcidos del juego. La calidad de los efectos de partículas y volumétricos, como niebla o esporas, también será clave para inmersión.</p><p>En cuanto al rendimiento, la naturaleza del juego como título de terror atmosférico no exige framerates ultra altos para su disfrute, pero una estabilidad a 60 FPS en PC y, si es posible, en modos de rendimiento de consola, es altamente deseable para una experiencia fluida. Las físicas del juego, especialmente en lo que respecta a la deformación de entornos y la interacción con elementos orgánicos, serán fundamentales para transmitir la visceralidad del horror. Se espera que el motor gráfico permita simulaciones de tela, destrucción parcial de entornos y físicas de ragdoll para los enemigos, contribuyendo a la inmersión. La optimización del motor para gestionar la carga gráfica de los entornos detallados y la IA de los monstruos será crítica para evitar caídas de rendimiento y garantizar una experiencia de juego consistente en todas las plataformas objetivo.</p>",
+      "fecha": "No especificada",
+      "plataformas": "PC, PS5, Xbox Series X|S",
+      "calificacion": "8.2",
+      "motor_grafico": "No especificado",
+      "tecnologias": "DLSS",
+      "rendimiento": "1080p a 60 FPS (Rendimiento) o 30 FPS (Calidad)",
+      "sinopsis": "Silent Hill f sumerge al jugador en un viaje al horror psicológico, recontextualizando temas clásicos de la saga a través de la mitología japonesa. La protagonista se enfrenta a sus demonios internos en un mundo que transita de lo mundano a lo grotesco, donde cada paso es una lucha por la supervivencia y la comprensión de una realidad distorsionada.",
+      "analisis_detallado": "<p>Silent Hill f se sumerge en la tradición de la saga con una narrativa que, de forma insidiosa, transmuta lo aparentemente mundano en un abismo de horror psicológico. La reinterpretación de temas clásicos como la culpa y la redención se entrelaza magistralmente con la rica mitología japonesa, proporcionando una base argumental profunda sin recurrir a explicaciones explícitas, lo que recompensa la paciencia del jugador veterano. El ritmo se calibra con pericia, alternando la exploración atmosférica y secuencias de terror puro con la resolución de acertijos, aunque algunos de estos pueden resultar excesivamente crípticos, desafiando la fluidez del juego. No obstante, ciertos rompecabezas destacan por su brillantez contextual, como el que exige ingenio bajo la presión incesante de una amenaza resurgente. En el ámbito jugable, Silent Hill f apuesta por una inmersión en la vulnerabilidad. El control de Hinako se percibe con una precisión deliberada, donde las inercias realistas refuerzan una sensación constante de indefensión, aunque ocasionalmente dificulten la estimación de distancias en combate. Este diseño no busca la confrontación directa de un 'soulslike', sino que enfatiza la supervivencia. Si bien el diseño de las criaturas es magistral, evocando influencias notables y propias de la franquicia, su excesiva frecuencia en ciertos encuentros diluye el impacto psicológico que deberían generar. Es en los momentos de huida y persecución donde el juego recupera su pulso más intenso, recordándonos la efectividad de limitar la presencia enemiga a situaciones de mayor relevancia para potenciar la atmósfera de terror y la indefensión inherente a la experiencia.</p><p>Desde una perspectiva técnica, Silent Hill f presenta un apartado visual competente, aunque no alcanza las cotas de un referente gráfico contemporáneo. En nuestras pruebas en PC, utilizando una configuración de gama alta (Ryzen 7 9800X3D y RTX 5080), el título mantuvo una fluidez excepcional entre 160-180 FPS a 3440x1440, con una estabilidad envidiable, exceptuando transiciones cinematográficas fijadas a 30 FPS. Lamentablemente, la implementación de DLSS es deficiente, introduciendo artefactos visuales constantes que obligan a su desactivación, mermando una optimización que podría haber sido ejemplar. No obstante, el diseño artístico brilla por su coherencia, empleando la niebla, la decadencia y los entornos claustrofóbicos para construir una atmósfera distintivamente japonesa, complementada por un diseño de criaturas que equilibra lo grotesco y lo poético, sello distintivo de la franquicia. El diseño sonoro es un pilar fundamental de la inmersión, con una banda sonora que, si bien carece de melodías icónicas capaces de trascender la experiencia, sobresale en su función ambiental, sosteniendo una tensión palpable. La calibración de los efectos de sonido –ecos, crujidos, respiraciones– es impecable, logrando generar una sensación de vigilancia constante. Sin embargo, el precio de lanzamiento de Silent Hill f, que asciende a 79.99€ para la edición base y 89.90€ para la Deluxe, resulta difícil de justificar dado el calibre técnico y los fallos mencionados, especialmente la integración del DLSS. Asimismo, el inclusion de elementos como un disfraz de conejito rosa en la edición Deluxe choca flagrantemente con la atmósfera opresiva del juego, denotando una incongruencia en la visión del producto final.</p>",
       "requisitos": {
         "minimos": [
-          "SO: Windows 10 de 64 bits",
-          "Procesador: Intel Core i5-9400F / AMD Ryzen 5 2600",
-          "Memoria: 12 GB RAM",
-          "Gráficos: NVIDIA GeForce GTX 1660 Ti / AMD Radeon RX 590 (6 GB VRAM)",
-          "Almacenamiento: 50 GB SSD"
+          "Sistema Operativo: Windows 11 x64",
+          "Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600",
+          "Gráficos: NVIDIA GeForce GTX 1070 Ti / AMD Radeon RX 5700",
+          "Almacenamiento: 50 GB (SSD recomendado)",
+          "Rendimiento Esperado: 720p a 30 FPS (Calidad Rendimiento)"
         ],
         "recomendados": [
-          "SO: Windows 10/11 de 64 bits",
-          "Procesador: Intel Core i7-10700K / AMD Ryzen 7 3700X",
-          "Memoria: 16 GB RAM",
-          "Gráficos: NVIDIA GeForce RTX 3070 / AMD Radeon RX 6700 XT (8 GB VRAM)",
-          "Almacenamiento: 50 GB SSD"
+          "Sistema Operativo: Windows 11 x64",
+          "Procesador: Intel Core i7-9700 / AMD Ryzen 5 5500",
+          "Gráficos: NVIDIA GeForce RTX 2080 / AMD Radeon RX 6800 XT",
+          "Almacenamiento: 50 GB (SSD obligatorio)",
+          "Rendimiento Esperado: 1080p a 60 FPS (Rendimiento) o 30 FPS (Calidad)"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/e7f/e7f2f571761abd7b3c0598c719ae8893.jpg"
