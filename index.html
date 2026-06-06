@@ -70,33 +70,33 @@
                 loading.classList.add('hidden');
                 contenedor.classList.remove('hidden');
 
-                // Recopilamos todas las noticias existentes en un solo array ordenado
-                let listaGlobal = [];
+                // 1. Unificamos todo en un pool de procesamiento limpio
+                let poolNoticias = [];
                 if (datos.destacada && datos.destacada.titulo) {
-                    listaGlobal.push(datos.destacada);
+                    poolNoticias.push(datos.destacada);
                 }
                 if (datos.secundarias && datos.secundarias.length > 0) {
-                    listaGlobal = listaGlobal.concat(datos.secundarias);
+                    poolNoticias = poolNoticias.concat(datos.secundarias);
                 }
 
-                // Eliminamos duplicados por ID por si acaso
+                // Eliminación estricta de duplicados por ID o Título
                 const idsUnicos = new Set();
-                listaGlobal = listaGlobal.filter(n => {
+                poolNoticias = poolNoticias.filter(n => {
                     if (!n.id || idsUnicos.has(n.id)) return false;
+                    idsUnicos.has(n.id);
                     idsUnicos.add(n.id);
                     return true;
                 });
 
-                if (listaGlobal.length === 0) {
+                if (poolNoticias.length === 0) {
                     gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay crónicas disponibles.</p>";
                     zonaSecundarias.classList.remove('hidden');
                     return;
                 }
 
-                // La primera de la lista (la más fresca) siempre será la Destacada principal
-                const destacadaPrincipal = listaGlobal.shift();
+                // 2. Extraemos la Noticia Destacada Principal (La número 1)
+                const destacadaPrincipal = poolNoticias.shift();
                 
-                // Renderizado de la Noticia Destacada Principal
                 zonaDestacada.innerHTML = `
                     <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
                         <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
@@ -124,21 +124,15 @@
                     </div>
                 `;
 
-                // Clasificamos el resto de las noticias por antigüedad (48 Horas de límite para tarjetas visuales)
-                const limite48HorasMS = 48 * 60 * 60 * 1000;
-                const ahora = new Date().getTime();
-
+                // 3. Distribución inteligente garantizada: 
+                // Las siguientes 6 noticias van como tarjetas visuales completas.
+                // Todo el resto de noticias (desde la 7 hasta el final) van directas a la Hemeroteca compacta de 5 días.
                 let htmlTarjetasRecientes = "";
                 let htmlListaCompacta = "";
 
-                listaGlobal.forEach(noticia => {
-                    let antigüedadMS = 0;
-                    if (noticia.fecha) {
-                        antigüedadMS = ahora - new Date(noticia.fecha).getTime();
-                    }
-
-                    // FORMATO 1: Menos de 48 horas (Tarjetas con imagen grandes)
-                    if (antigüedadMS <= limite48HorasMS) {
+                poolNoticias.forEach((noticia, indice) => {
+                    if (indice < 6) {
+                        // FORMATO VISUAL COMPLETO
                         htmlTarjetasRecientes += `
                             <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
                                 <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
@@ -166,10 +160,8 @@
                                 </div>
                             </article>
                         `;
-                    } 
-                    // FORMATO 2: Días 3, 4 y 5 (Filas compactas ultra-limpias de Hemeroteca)
-                    else {
-                        // Formateamos una fecha legible corta si existe
+                    } else {
+                        # FORMATO DE COMPACTACIÓN DE HEMEROTECA
                         let fechaLegible = "Archivo";
                         if (noticia.fecha) {
                             const d = new Date(noticia.fecha);
@@ -195,36 +187,37 @@
                     }
                 });
 
-                // Inyectamos las tarjetas de las últimas 48h
+                // Renderizamos las tarjetas principales
                 if (htmlTarjetasRecientes) {
                     gridSecundarias.innerHTML = htmlTarjetasRecientes;
                     zonaSecundarias.classList.remove('hidden');
                 } else {
-                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay crónicas en las últimas 48 horas.</p>";
+                    gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay crónicas en las últimas horas.</p>";
                     zonaSecundarias.classList.remove('hidden');
                 }
 
-                // Inyectamos la sección de Hemeroteca (Días 3, 4 y 5) al final si existen noticias viejas
-                const idHemeroteca = document.getElementById('hemerotecaNoticiasZona');
+                // Renderizamos e inyectamos la Hemeroteca Extendida al final
+                let idHemeroteca = document.getElementById('hemerotecaNoticiasZona');
                 if (htmlListaCompacta) {
-                    // Si el contenedor visual de hemeroteca no existe en el HTML, lo creamos dinámicamente justo debajo
                     if (!idHemeroteca) {
                         const seccionHemeroteca = document.createElement('section');
                         seccionHemeroteca.id = "hemerotecaNoticiasZona";
                         seccionHemeroteca.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-slate-900";
-                        seccionHemeroteca.innerHTML = `
-                            <div class="flex items-center space-x-3 mb-6">
-                                <div class="h-2 w-2 rounded-full bg-slate-500 animate-pulse"></div>
-                                <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Hemeroteca de la Semana (Últimos 5 días)</h3>
-                            </div>
-                            <div class="space-y-2.5">
-                                ${htmlListaCompacta}
-                            </div>
-                        `;
                         contenedor.appendChild(seccionHemeroteca);
-                    } else {
-                        idHemeroteca.innerHTML = htmlListaCompacta;
+                        idHemeroteca = seccionHemeroteca;
                     }
+                    
+                    idHemeroteca.innerHTML = `
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                            <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Hemeroteca de la Semana (Historial de 5 días)</h3>
+                        </div>
+                        <div class="space-y-2.5">
+                            ${htmlListaCompacta}
+                        </div>
+                    `;
+                } else if (idHemeroteca) {
+                    idHemeroteca.innerHTML = "";
                 }
 
             } catch (error) {
