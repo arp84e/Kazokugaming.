@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: NOTICIAS MULTIFUENTE ===")
+print("=== INICIANDO KAZOKUBOT: NOTICIAS RED EXTENDIDA (VOLUMEN x2) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
@@ -23,11 +23,14 @@ seguridad_permisiva = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 📡 1. LISTA DE FUENTES (Puedes agregar más enlaces RSS aquí)
+# 📡 1. RED EXTENDIDA DE MEDIOS (6 Fuentes de rastreo simultáneo)
 rss_urls = [
     "https://es.ign.com/feed.xml",
     "https://www.eurogamer.es/feed",
-    "https://www.levelup.com/rss/noticias"
+    "https://www.levelup.com/rss/noticias",
+    "https://vandal.elespanol.com/xml.cgi",
+    "https://www.3djuegos.com/noticias.xml",
+    "https://www.gamereactor.es/rss/rss.php"
 ]
 
 def obtener_imagen(entrada):
@@ -39,6 +42,7 @@ def obtener_imagen(entrada):
         for link in entrada.links:
             if 'image' in link.get('type', ''):
                 return link.href
+    # Imagen genérica de respaldo si la noticia carece de portada original
     return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
 
 archivo_json = 'noticias.json'
@@ -47,13 +51,12 @@ historial_valido = []
 urls_existentes = set()
 limite_72h = datetime.now() - timedelta(days=3)
 
-# 🧠 2. SISTEMA DE MEMORIA: Recuperar noticias de los últimos 3 días
+# 🧠 2. SISTEMA DE MEMORIA PASADA (Preserva contenido menor a 72 horas)
 if os.path.exists(archivo_json):
     try:
         with open(archivo_json, 'r', encoding='utf-8') as f:
             datos_viejos = json.load(f)
             
-            # Unificamos todas las noticias anteriores (destacada + secundarias)
             todas_viejas = datos_viejos.get("secundarias", [])
             if datos_viejos.get("destacada"):
                 todas_viejas.insert(0, datos_viejos["destacada"])
@@ -62,55 +65,55 @@ if os.path.exists(archivo_json):
                 if "fecha" in n:
                     try:
                         fecha_n = datetime.fromisoformat(n["fecha"])
-                        # Si la noticia tiene menos de 3 días, la salvamos del borrado
                         if fecha_n > limite_72h:
                             historial_valido.append(n)
                             urls_existentes.add(n.get("enlace", ""))
                     except:
                         pass
     except Exception as e:
-        print(f"⚠️ Aviso: No se pudo leer el historial anterior ({e})")
+        print(f"⚠️ Aviso de lectura del archivo base: {e}")
 
-# 🌐 3. BUSCAR NUEVAS NOTICIAS EN TODAS LAS FUENTES
+# 🌐 3. ESCANEO GLOBAL DE ENTRADAS
 nuevas_entradas = []
 for url in rss_urls:
-    print(f"Sintonizando antena: {url}")
+    print(f"📡 Escaneando frecuencias en: {url}")
     try:
         feed = feedparser.parse(url)
-        for entry in feed.entries[:3]: # Tomamos las 3 más frescas de cada página
+        for entry in feed.entries[:4]: # Extrae los titulares más calientes de cada medio
             if entry.link not in urls_existentes:
                 nuevas_entradas.append(entry)
     except Exception as e:
-        print(f"⚠️ Error leyendo {url}: {e}")
+        print(f"⚠️ Omisión temporal de fuente por error de red: {e}")
 
-# Limitamos a procesar un máximo de 4 noticias nuevas por ejecución 
-# para proteger tu cuota gratuita de la API de Gemini
-nuevas_entradas = nuevas_entradas[:4]
+# 📊 CONFIGURACIÓN DEL DOBLE DE NOTICIAS: 1 Destacada + 10 Secundarias = 11 Noticias nuevas en total
+NUEVAS_SECUNDARIAS_OBJETIVO = 10
+MAX_PROCESAR_NUEVAS = 1 + NUEVAS_SECUNDARIAS_OBJETIVO
+
+nuevas_entradas = nuevas_entradas[:MAX_PROCESAR_NUEVAS]
 
 if not nuevas_entradas:
-    print("✅ No hay noticias nuevas en la web. Se mantendrá el catálogo actual de 72 horas.")
+    print("✅ Central informativa actualizada. Sin novedades críticas que requieran re-redacción.")
     if historial_valido:
-        datos_finales["destacada"] = historial_valido.pop(0) # La más reciente vuelve a ser destacada
+        datos_finales["destacada"] = historial_valido.pop(0)
         datos_finales["secundarias"] = historial_valido
         with open(archivo_json, 'w', encoding='utf-8') as f:
             json.dump(datos_finales, f, ensure_ascii=False, indent=2)
     sys.exit(0)
 
-# ✍️ 4. REDACCIÓN CON INTELIGENCIA ARTIFICIAL
-# La noticia nueva #1 será la Gran Destacada
+# ✍️ 4. REDACCIÓN PRINCIPAL (Noticia Destacada)
 noticia_origen = nuevas_entradas[0]
-print(f"🗞️ Redactando Nueva Destacada: {noticia_origen.title}")
+print(f"🗞️ Creando Reporte Principal: {noticia_origen.title}")
 
 prompt_destacada = f"""
-Actúa como un editor principal de videojuegos. Redacta un artículo basado en:
-Título: {noticia_origen.title}
-Devuelve UNICAMENTE un objeto JSON válido con esta estructura:
+Actúa como un redactor jefe de una revista de videojuegos premium. Redacta una crónica basada en:
+Título fuente: {noticia_origen.title}
+Devuelve EXCLUSIVAMENTE un objeto JSON válido estructurado así:
 {{
   "id": "dest-{int(time.time())}",
-  "categoria": "Reporte Principal",
-  "titulo": "Título potente y atractivo",
-  "resumen": "Resumen de máximo 2 líneas.",
-  "contenido_completo": "<p>Escribe aquí 2 párrafos detallando la noticia en formato HTML.</p>",
+  "categoria": "Reporte Crítico",
+  "titulo": "Titular de alto impacto técnico",
+  "resumen": "Resumen conciso del acontecimiento.",
+  "contenido_completo": "<p>Escribe aquí una cobertura de 2 o 3 párrafos sólidos estructurados con HTML informativo.</p>",
   "enlace": "{noticia_origen.link}",
   "fecha": "{datetime.now().isoformat()}"
 }}
@@ -126,27 +129,27 @@ try:
     datos_dest["imagen"] = obtener_imagen(noticia_origen)
     datos_finales["destacada"] = datos_dest
 except Exception as e:
-    print(f"⚠️ Error en destacada: {e}")
+    print(f"❌ Desviación en flujo principal: {e}")
     if historial_valido:
         datos_finales["destacada"] = historial_valido.pop(0)
 
-time.sleep(15) # Pausa estratégica
+time.sleep(12)
 
-# Redactar el resto de las noticias nuevas como secundarias
+# 📝 5. GENERACIÓN DEL BLOQUE DOBLE DE NOTICIAS SECUNDARIAS (Hasta 10 artículos en cola)
 nuevas_secundarias = []
 for i in range(1, len(nuevas_entradas)):
     noticia_sec = nuevas_entradas[i]
-    print(f"📝 Redactando Secundaria: {noticia_sec.title}")
+    print(f"📝 Redactando Tarjeta de Actualidad [{i}/{len(nuevas_entradas)-1}]: {noticia_sec.title}")
     
     prompt_sec = f"""
-    Resume esta noticia para una tarjeta web rápida:
-    Título: {noticia_sec.title}
-    Devuelve UNICAMENTE un objeto JSON válido con esta estructura:
+    Sintetiza la novedad para un despliegue rápido en tarjeta web:
+    Origen: {noticia_sec.title}
+    Devuelve EXCLUSIVAMENTE un objeto JSON válido estructurado así:
     {{
       "id": "sec-{int(time.time())}-{i}",
-      "categoria": "Actualidad",
-      "titulo": "Título directo",
-      "resumen": "Un resumen de máximo 3 líneas.",
+      "categoria": "Actualidad Gaming",
+      "titulo": "Título directo y con enganche",
+      "resumen": "Análisis analítico sintético de un párrafo para lectura veloz.",
       "enlace": "{noticia_sec.link}",
       "fecha": "{datetime.now().isoformat()}"
     }}
@@ -161,15 +164,14 @@ for i in range(1, len(nuevas_entradas)):
         datos_sec["imagen"] = obtener_imagen(noticia_sec)
         nuevas_secundarias.append(datos_sec)
     except Exception as e:
-        print(f"⚠️ Error en secundaria {i}: {e}")
+        print(f"⚠️ Salto de registro secundario por error técnico: {e}")
         
-    time.sleep(15)
+    time.sleep(12) # Pausa estratégica para salvaguardar cuotas ante volumen masivo
 
-# 💾 5. FUSIONAR Y GUARDAR
-# Juntamos las noticias recién creadas con el historial válido de los últimos 3 días
+# 💾 6. CONSOLIDACIÓN E INDEXACIÓN FINAL
 datos_finales["secundarias"] = nuevas_secundarias + historial_valido
 
 with open(archivo_json, 'w', encoding='utf-8') as f:
     json.dump(datos_finales, f, ensure_ascii=False, indent=2)
 
-print(f"✅ Catálogo guardado. Total en pantalla: 1 destacada y {len(datos_finales['secundarias'])} crónicas recientes.")
+print(f"✅ Sincronización finalizada. Tu portal cuenta ahora con 1 noticia destacada y {len(datos_finales['secundarias'])} crónicas en rotación activa.")
