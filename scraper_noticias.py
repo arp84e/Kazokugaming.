@@ -107,7 +107,7 @@ timestamp_base = int(time.time())
 for idx, entrada in enumerate(nuevas_entradas):
     print(f"📝 [{idx+1}/{len(nuevas_entradas)}] Redactando: {entrada.title}")
     
-   prompt = f"""
+prompt = f"""
     Actúa como un editor jefe y redactor experto en videojuegos. Tu tarea es analizar la siguiente noticia y reescribir la información y la sinopsis desde cero, creando un artículo completamente nuevo.
     
     Debes utilizar un tono de "gaming moderno", dinámico y atractivo. Es estrictamente necesario que realices una curación editorial original para evitar cualquier problema de copyright con la fuente. No copies frases literales.
