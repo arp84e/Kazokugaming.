@@ -1,15 +1,65 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "La leyenda de Amiga resurge: Defender of the Crown: The Legend Returns asalta las pantallas este agosto",
-    "resumen": "Prepárate para reclamar el trono de Inglaterra en una versión totalmente renovada de este clásico de la estrategia y la acción táctica medieval, que promete conquistar tanto a los nostálgicos como a las nuevas generaciones de estrategas.",
-    "contenido_completo": "<p>El clásico indiscutible que definió la estrategia cinematográfica en los tiempos de Commodore Amiga se prepara para un glorioso retorno. Se ha confirmado que <em>Defender of the Crown: The Legend Returns</em> irrumpirá en el mercado digital el próximo 13 de agosto. Esta reimaginación busca capturar la esencia de la caballería, la traición y la conquista territorial que enamoró a los jugadores en los años 80, adaptándola a la sensibilidad del público actual mediante mejoras visuales y mecánicas pulidas que respetan el espíritu del material original.</p><p>En esta épica aventura ambientada en la Inglaterra medieval, los jugadores tendrán que elegir a su héroe sajón para unificar un reino dividido tras la muerte del rey. Desde intensos torneos de justas y asedios a castillos enemigos con catapultas, hasta el rescate de doncellas en apuros y el saqueo de tesoros, la jugabilidad combinará acción directa con una profunda capa táctica de gestión de territorios. Prepara tu espada y tu ingenio, porque la corona británica espera a su legítimo defensor a mediados de este mes.</p>",
-    "id": "noticia-1780832825-5",
-    "enlace": "https://www.eurogamer.es/defender-of-the-crown-the-legend-returns-se-publicara-el-13-de-agosto",
-    "imagen": "https://assetsio.gnwcdn.com/Defender-Crown_06-06-26-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp",
-    "fecha": "2026-06-07T11:49:01.856141"
+    "titulo": "¿Adiós a los planos fijos? El esperado remake de Resident Evil Code: Veronica mantendrá la fórmula de cámara al hombro de Capcom",
+    "resumen": "Las últimas filtraciones apuntan a que el rumoreado regreso de Claire y Chris Redfield en Code: Veronica adaptará la perspectiva en tercera persona que consagró a las recientes reediciones de la saga, dejando atrás los ángulos fijos del clásico de Dreamcast.",
+    "contenido_completo": "<p>El misticismo que rodea a los futuros proyectos de Capcom vuelve a agitar a la comunidad. Según recientes filtraciones de insiders del sector, el ansiado remake de <strong>Resident Evil Code: Veronica</strong> no optará por experimentos nostálgicos, sino que consolidará la exitosa fórmula moderna de la compañía japonesa. Esto significa que la lúgubre aventura de Claire Redfield en la Isla Rockfort abandonará definitivamente los ángulos de cámara fijos del título de Dreamcast para abrazar la inmersiva perspectiva en tercera persona sobre el hombro, estandarizada con rotundo éxito en las aclamadas reimaginaciones de la segunda, tercera y cuarta entrega de la franquicia.</p><p>Esta decisión técnica y de diseño no solo homogeneizaría el catálogo contemporáneo de la saga bajo el potente motor gráfico RE Engine, sino que promete elevar la tensión claustrofóbica a niveles inéditos gracias a un sistema de control mucho más dinámico y orgánico. Los entusiastas del survival horror pueden esperar una jugabilidad revitalizada donde apuntar en la penumbra y esquivar a las grotescas mutaciones del virus T-Veronica se sentirá tan visceral y terrorífico como en el reciente remake de Resident Evil 4. Aunque Capcom aún mantiene el proyecto bajo un hermético silencio oficial, todo apunta a que están listos para hacer justicia a uno de los spin-offs más queridos y solicitados por los fans.</p>",
+    "id": "noticia-1780837829-5",
+    "enlace": "https://vandal.elespanol.com/noticia/1350790543/resident-evil-veronica-mantendria-la-camara-en-tercera-persona-de-los-ultimos-remakes-segun-una-filtracion/",
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
+    "fecha": "2026-06-07T13:12:28.848363"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Pesadillas pasadas por agua: The Sinking City 2 ya tiene fecha para inundar nuestras consolas de terror cósmico",
+      "resumen": "Frogwares confirma el momento del desembarco de su esperadísima secuela lovecraftiana, que abandona la investigación pausada para sumergirse de lleno en el survival horror más visceral y técnico hasta la fecha.",
+      "contenido_completo": "<p>Los amantes del horror cósmico y la literatura de H.P. Lovecraft ya pueden marcar sus calendarios. Frogwares ha desvelado por fin cuándo podremos adentrarnos en las inundadas y lúgubres calles de Arkham en <em>The Sinking City 2</em>. Esta secuela no solo promete un salto gráfico de gigante al estar desarrollada bajo las bondades de Unreal Engine 5, sino que también marca un ambicioso cambio de rumbo para la franquicia. El estudio ucraniano ha decidido dejar a un lado el ritmo detectivesco del título original para abrazar sin tapujos la fórmula del <em>survival horror</em> puro, donde la gestión de recursos y la tensión psicológica serán nuestras únicas aliadas frente a la locura.</p><p>Ambientado en una urbe decadente devorada por aguas místicas y plagada de aberraciones indescriptibles, el juego nos pondrá en una lucha constante por la supervivencia con un sistema de combate rediseñado desde cero. Con una atmósfera asfixiante que promete aprovechar al máximo el hardware de nueva generación, esta entrega se postula como uno de los lanzamientos más perturbadores del año. La marea del terror está subiendo y la cuenta atrás para enfrentarnos a lo desconocido ha comenzado de forma oficial.</p>",
+      "id": "noticia-1780837829-4",
+      "enlace": "https://www.eurogamer.es/the-sinking-city-2-ya-tiene-fecha-de-lanzamiento",
+      "imagen": "https://assetsio.gnwcdn.com/The-Sinking-City-2_2026_06-06-26_006-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-07T13:12:05.222973"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Cvstodia nos reclama de nuevo: Blasphemous 2 desata su lado más despiadado con la actualización gratuita 'The Third Sin'",
+      "resumen": "El aclamado metroidvania de The Game Kitchen se expande sin coste adicional con 'The Third Sin', una actualización masiva que introduce nuevos desafíos, zonas rediseñadas y duelos de infarto para poner a prueba la fe de los jugadores.",
+      "contenido_completo": "<p>La penitencia no conoce el descanso, y los chicos de The Game Kitchen acaban de darnos la excusa perfecta para volver a empuñar nuestras armas. Ya está disponible de forma totalmente gratuita 'The Third Sin', una ambiciosa actualización para Blasphemous 2 que promete agitar los cimientos del título de acción y plataformas. Este parche no es un simple lavado de cara; añade áreas inéditas por explorar, enemigos letales que exigirán nuestra máxima concentración y una serie de optimizaciones que pulen todavía más la sobresaliente jugabilidad de esta lúgubre odisea pixel art.</p><p>Para redoblar la apuesta, esta expansión gratuita llega custodiada por el lanzamiento de 'Mea Culpa', un DLC de pago que expande la historia y tiende un puente directo con los acontecimientos de la primera entrega. Con un rendimiento optimizado en consolas y PC, nuevas mecánicas de combate y ese diseño de niveles tan retorcido como fascinante, Blasphemous 2 reafirma su posición como uno de los reyes indiscutibles del panorama indie actual y un auténtico orgullo para el desarrollo de videojuegos en nuestro idioma.</p>",
+      "id": "noticia-1780837829-3",
+      "enlace": "https://www.eurogamer.es/disponible-la-actualizacion-gratuita-the-third-sin-para-blasphemous-2",
+      "imagen": "https://assetsio.gnwcdn.com/Blasphemous-II_2026_06-06-26_005-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-07T13:11:42.577660"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Fuego estelar sin límites! El sucesor espiritual de Star Fox que conquistará tu PC este verano",
+      "resumen": "Si añoras las batallas espaciales sobre raíles al más puro estilo de Nintendo, prepárate. Este verano aterriza en PC una propuesta de acción vertiginosa dispuesta a llenar el vacío galáctico con una jugabilidad frenética, ideal para quienes buscan una alternativa potente fuera de la Nintendo Switch.",
+      "contenido_completo": "<p>El género de los rail shooters tridimensionales se prepara para un soplo de aire fresco con un lanzamiento estival diseñado para revivir la era dorada de los combates intergalácticos. Bebiendo directamente de la jugabilidad arcade que definió a los clásicos de los noventa, este nuevo título nos invita a pilotar naves de combate a través de mundos alienígenas hostiles cargados de obstáculos, enemigos colosales y una velocidad que pondrá a prueba los reflejos de cualquier piloto experimentado. Todo ello se presenta con un apartado estético vibrante que moderniza la nostalgia poligonal sin perder ni un ápice de su carisma original.</p><p>Además de rescatar la esencia de esquivar y disparar en trayectorias dinámicas, esta propuesta destaca por introducir mecánicas de progresión adaptadas a los nuevos tiempos, ofreciendo una alta rejugabilidad y un diseño de niveles que se siente tan desafiante como gratificante. Con una banda sonora synthwave que promete acompañar perfectamente cada maniobra evasiva, el juego se posiciona como el plan perfecto para los meses de calor y una de las sorpresas independientes más esperadas por la comunidad de compatibles.</p>",
+      "id": "noticia-1780837829-2",
+      "enlace": "https://es.ign.com/juegos-indie/230044/no-es-star-fox-pero-si-no-tienes-una-switch-este-juego-es-lo-que-mas-se-le-acerca-y-puedes-jugarlo-e",
+      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_bmhm.jpg",
+      "fecha": "2026-06-07T13:11:20.129635"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Del scroll al arte impreso: Así lucen las alucinantes nuevas portadas de 'The Wandering Inn'",
+      "resumen": "El aclamado fenómeno de la literatura gamer y LitRPG, 'The Wandering Inn', se viste de gala. La popular saga digital que fusiona mecánicas de rol y fantasía épica presenta sus espectaculares nuevas portadas, un hito visual imperdible para la comunidad.",
+      "contenido_completo": "<p>'The Wandering Inn' no es una saga de fantasía convencional; representa el pináculo del LitRPG, un formato literario que une la pasión por los videojuegos de rol con la narrativa épica. Las nuevas portadas de sus ediciones físicas no solo son un deleite estético, sino que logran capturar con maestría esa atmósfera tan particular donde los niveles, las clases y las mecánicas de juego cobran vida. Con un rediseño que derrocha epicidad, estas ilustraciones se convierten en el portal de entrada perfecto tanto para los aventureros veteranos de la web como para los jugadores que buscan sumergirse en un lore tan profundo y estructurado como el de su RPG favorito.</p><p>Este lavado de cara editorial llega en el momento cumbre de la franquicia, consolidando su transición desde el formato web interactivo hasta las estanterías de los coleccionistas más exigentes. Al dotar a cada volumen de una identidad visual tan potente y cercana al arte conceptual de los videojuegos modernos, queda claro que la sinergia entre el gaming y la literatura está más fuerte que nunca. Si eres de los que disfrutan de una buena hoja de personaje, la construcción de mundos masivos y una dirección artística impecable, estas portadas son la excusa ideal para adentrarte en este universo.</p>",
+      "id": "noticia-1780837829-1",
+      "enlace": "https://es.ign.com/the-wandering-inn/230043/portadas-de-the-wandering-inn-book",
+      "imagen": "https://sm.ign.com/ign_es/gallery/t/the-wander/the-wandering-inn-book-covers_wnt1.jpg",
+      "fecha": "2026-06-07T13:10:59.474631"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "La leyenda de Amiga resurge: Defender of the Crown: The Legend Returns asalta las pantallas este agosto",
+      "resumen": "Prepárate para reclamar el trono de Inglaterra en una versión totalmente renovada de este clásico de la estrategia y la acción táctica medieval, que promete conquistar tanto a los nostálgicos como a las nuevas generaciones de estrategas.",
+      "contenido_completo": "<p>El clásico indiscutible que definió la estrategia cinematográfica en los tiempos de Commodore Amiga se prepara para un glorioso retorno. Se ha confirmado que <em>Defender of the Crown: The Legend Returns</em> irrumpirá en el mercado digital el próximo 13 de agosto. Esta reimaginación busca capturar la esencia de la caballería, la traición y la conquista territorial que enamoró a los jugadores en los años 80, adaptándola a la sensibilidad del público actual mediante mejoras visuales y mecánicas pulidas que respetan el espíritu del material original.</p><p>En esta épica aventura ambientada en la Inglaterra medieval, los jugadores tendrán que elegir a su héroe sajón para unificar un reino dividido tras la muerte del rey. Desde intensos torneos de justas y asedios a castillos enemigos con catapultas, hasta el rescate de doncellas en apuros y el saqueo de tesoros, la jugabilidad combinará acción directa con una profunda capa táctica de gestión de territorios. Prepara tu espada y tu ingenio, porque la corona británica espera a su legítimo defensor a mediados de este mes.</p>",
+      "id": "noticia-1780832825-5",
+      "enlace": "https://www.eurogamer.es/defender-of-the-crown-the-legend-returns-se-publicara-el-13-de-agosto",
+      "imagen": "https://assetsio.gnwcdn.com/Defender-Crown_06-06-26-1440x810.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-07T11:49:01.856141"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "¡Pesadilla temporal para rato! Bloober Team confirma una ambiciosa expansión para Cronos: The New Dawn",
