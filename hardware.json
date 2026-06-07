@@ -28,12 +28,12 @@
     "title": "Logitech G Pro X Superlight",
     "brand": "Logitech",
     "category": "accessory",
-    "desc": "El ratón definitivo para eSports. Extremadamente ligero y con un diseño sobrio sin comprometer la batería ni la integridad estructural de los clics.",
+    "desc": "El ratón definitivo para eSports. Extremadamente ligero y con un diseño sobrio sin comprometer la batería ni la integridad estructural.",
     "specs": [
       { "label": "Peso", "value": "Menos de 63 gramos" },
-      { "label": "Sensor", "value": "HERO 25K (25,600 DPI)" }
+      { "label": "Sensor", "value": "HERO 25K" }
     ],
-    "pros": ["Deslizamiento perfecto sin cables.", "Batería de larga duración (70h+)."],
+    "pros": ["Deslizamiento perfecto sin cables.", "Batería de larga duración."],
     "contras": ["Precio de gama premium.", "Carece de iluminación RGB."]
   }
 }
