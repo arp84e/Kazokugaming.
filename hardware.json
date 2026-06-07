@@ -129,5 +129,55 @@
       "Soporte postventa y disponibilidad de repuestos limitada en occidente al tratarse de una marca de nicho de importación."
     ],
     "imagen": "https://ae-pic-a1.aliexpress-media.com/kf/Sd9e1639ddd194ee3bc9748c3d18ea61fh.jpg_960x960q75.jpg_.webp"
+  },
+  "acer-nitro-v-16-ai-anv16-42": {
+    "title": "Acer Nitro V 16 AI (ANV16-42)",
+    "brand": "Acer",
+    "category": "laptop",
+    "tier": "media",
+    "desc": "El Acer Nitro V 16 AI sacude la gama media gaming al equilibrar de forma magistral potencia de última generación y un control térmico asombroso. La sinergia entre su procesador Ryzen AI y la GPU RTX Serie 50 permite exprimir la fluidez de su pantalla de 180 Hz en resolución QHD, todo esto sin convertir tu setup en una turbina de avión. Una máquina inteligente, silenciosa y sumamente competitiva para el jugador moderno.",
+    "specs": [
+      {
+        "label": "Procesador",
+        "value": "AMD Ryzen AI 7 260 con NPU dedicada para IA"
+      },
+      {
+        "label": "Tarjeta Gráfica",
+        "value": "NVIDIA GeForce RTX 5070 Mobile (8GB GDDR6, TGP 80W)"
+      },
+      {
+        "label": "Memoria RAM",
+        "value": "32 GB DDR5 (Dual-Channel, ampliable)"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "Doble SSD PCIe 4.0 NVMe de 1 TB (Total 2 TB)"
+      },
+      {
+        "label": "Pantalla",
+        "value": "16\" IPS WQXGA (2560 x 1600), 180 Hz, 420 nits, relación de aspecto 16:10"
+      },
+      {
+        "label": "Conectividad",
+        "value": "USB4 de alta velocidad, HDMI 2.1, RJ-45 Ethernet, Wi-Fi 6E"
+      },
+      {
+        "label": "Peso",
+        "value": "2.44 kg"
+      }
+    ],
+    "pros": [
+      "Eficiencia térmica y acústica sobresaliente, manteniendo un perfil de ruido sorprendentemente bajo en su modo de juego equilibrado.",
+      "Excelente rendimiento de juego en QHD optimizado por aceleración de IA y DLSS de última generación.",
+      "Gran capacidad de expansión a futuro con doble ranura SSD, RAM DDR5 actualizable y puerto de alta velocidad USB4.",
+      "Autonomía por encima de la media frente a competidores directos de su categoría en tareas cotidianas de productividad."
+    ],
+    "contras": [
+      "La GPU RTX 5070 de 80W con 8 GB de VRAM puede encontrar cuellos de botella de memoria en juegos ultra de próxima generación a resolución nativa.",
+      "Pantalla con cobertura de color limitada para creación de contenido y un marco inferior grueso que penaliza la relación de aspecto visual.",
+      "Chasis algo pesado (2.44 kg) y voluminoso que compromete la comodidad en el transporte diario.",
+      "Apartado multimedia discreto, con una webcam de resolución 720p y altavoces con escasa presencia de frecuencias graves."
+    ],
+    "imagen": "https://bizweb.dktcdn.net/100/512/769/files/va_-_core_i5-1334u_19_.png?v=1769421355790"
   }
 }
