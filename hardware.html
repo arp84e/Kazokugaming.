@@ -111,18 +111,19 @@
         let hardwareData = {};
         let gamaActual = 'all';
 
-        // 2. NUEVO: Función "mensajera" que busca y descarga los datos
+        // 2. NUEVO: Función "mensajera" con ROMPEDOR DE CACHÉ
         async function cargarBaseDeDatos() {
             try {
-                // El navegador va al servidor y pide el archivo JSON
-                const respuesta = await fetch('hardware.json');
+                // CORRECCIÓN AQUÍ: Añadimos '?t=' + getTime() para evitar el caché de Vercel
+                const url = 'hardware.json?t=' + new Date().getTime();
+                const respuesta = await fetch(url);
                 
-                if (!respuesta.ok) throw new Error("No se pudo conectar con los servidores de KazokuGaming");
+                if (!respuesta.ok) throw new Error("Archivo no encontrado en el servidor.");
                 
-                // Convertimos el texto del archivo a un objeto que JavaScript entienda
+                // Convertimos el texto del archivo a un objeto
                 hardwareData = await respuesta.json();
                 
-                // Una vez que tenemos los datos, damos la orden de dibujar las tarjetas
+                // Dibujamos las tarjetas
                 renderizarTarjetas();
                 
             } catch (error) {
@@ -130,7 +131,7 @@
                 document.getElementById('catalog-view').innerHTML = `
                     <div class="text-center py-20">
                         <p class="text-red-400 text-sm font-semibold mb-2">⚠️ Error de sincronización de datos.</p>
-                        <p class="text-slate-500 text-xs">No se pudo cargar la enciclopedia de hardware en este momento.</p>
+                        <p class="text-slate-500 text-xs">Asegúrate de que hardware.json está escrito perfectamente.</p>
                     </div>`;
             }
         }
