@@ -107,7 +107,7 @@ timestamp_base = int(time.time())
 for idx, entrada in enumerate(nuevas_entradas):
     print(f"📝 [{idx+1}/{len(nuevas_entradas)}] Redactando: {entrada.title}")
     
-prompt = f"""
+    prompt = f"""
     Actúa como un editor jefe y redactor experto en videojuegos. Tu tarea es analizar la siguiente noticia y reescribir la información y la sinopsis desde cero, creando un artículo completamente nuevo.
     
     Debes utilizar un tono de "gaming moderno", dinámico y atractivo. Es estrictamente necesario que realices una curación editorial original para evitar cualquier problema de copyright con la fuente. No copies frases literales.
@@ -124,7 +124,6 @@ prompt = f"""
     """
     
     try:
-        # CORRECCIÓN AQUÍ: ¡Usamos el modelo estable y ultrarrápido de última generación!
         response = client.models.generate_content(
             model="gemini-3.5-flash", 
             contents=prompt,
@@ -135,22 +134,17 @@ prompt = f"""
         )
         data_redactada = json.loads(response.text)
         
-        # Inyectamos de forma segura los parámetros técnicos del servidor
         data_redactada["id"] = f"noticia-{timestamp_base}-{idx}"
         data_redactada["enlace"] = entrada.link
         data_redactada["imagen"] = obtener_imagen(entrada)
         data_redactada["fecha"] = datetime.now().isoformat()
         
-        # Lo añadimos directamente al grupo acumulado
         pool_acumulado.append(data_redactada)
         
     except Exception as e:
         print(f"⚠️ No se pudo procesar esta entrada: {e}")
         
-    except Exception as e:
-        print(f"⚠️ No se pudo procesar esta entrada: {e}")
-        
-    time.sleep(12) # Pausa estratégica para evitar error 429 de cuota
+    time.sleep(12)
 
 # 💾 4. RE-ORDENAR TODO Y ESCRIBIR EL ARCHIVO FINAL
 # Ordenamos todo el pool combinado (lo viejo + lo nuevo) de más reciente a más antiguo
