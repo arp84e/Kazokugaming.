@@ -6,11 +6,23 @@
     "tier": "baja",
     "desc": "El nuevo punto de referencia económico actual. Hereda la distribución interna de ventiladores de la línea Legion manteniendo costes bajos en chasis.",
     "specs": [
-      { "label": "Gráfica", "value": "NVIDIA RTX 4050 Laptop" },
-      { "label": "Pantalla", "value": "15.6\" FHD IPS, 144Hz" }
+      {
+        "label": "Gráfica",
+        "value": "NVIDIA RTX 4050 Laptop"
+      },
+      {
+        "label": "Pantalla",
+        "value": "15.6\" FHD IPS, 144Hz"
+      }
     ],
-    "pros": ["Precio muy competitivo.", "Teclado de tacto excelente."],
-    "contras": ["Chasis completo de plástico.", "Duración de batería justa."]
+    "pros": [
+      "Precio muy competitivo.",
+      "Teclado de tacto excelente."
+    ],
+    "contras": [
+      "Chasis completo de plástico.",
+      "Duración de batería justa."
+    ]
   },
   "steam-deck": {
     "title": "Steam Deck OLED",
@@ -18,11 +30,24 @@
     "category": "handheld",
     "desc": "La madurez absoluta de las consolas portátiles de PC. Valve prioriza la eficiencia de su ecosistema dedicado en lugar de competir en potencia pura.",
     "specs": [
-      { "label": "APU", "value": "AMD custom (6nm Zen 2 + RDNA 2)" },
-      { "label": "Pantalla", "value": "7.4\" OLED HDR, 90Hz" }
+      {
+        "label": "APU",
+        "value": "AMD custom (6nm Zen 2 + RDNA 2)"
+      },
+      {
+        "label": "Pantalla",
+        "value": "7.4\" OLED HDR, 90Hz"
+      }
     ],
-    "pros": ["Pantalla OLED con contraste infinito.", "Eficiencia de batería líder del sector.", "Ecosistema SteamOS integrado."],
-    "contras": ["Menor potencia gráfica bruta que sus rivales.", "Incompatibilidad con algunos Anti-Cheat."]
+    "pros": [
+      "Pantalla OLED con contraste infinito.",
+      "Eficiencia de batería líder del sector.",
+      "Ecosistema SteamOS integrado."
+    ],
+    "contras": [
+      "Menor potencia gráfica bruta que sus rivales.",
+      "Incompatibilidad con algunos Anti-Cheat."
+    ]
   },
   "logitech-g-pro-x": {
     "title": "Logitech G Pro X Superlight",
@@ -30,10 +55,79 @@
     "category": "accessory",
     "desc": "El ratón definitivo para eSports. Extremadamente ligero y con un diseño sobrio sin comprometer la batería ni la integridad estructural.",
     "specs": [
-      { "label": "Peso", "value": "Menos de 63 gramos" },
-      { "label": "Sensor", "value": "HERO 25K" }
+      {
+        "label": "Peso",
+        "value": "Menos de 63 gramos"
+      },
+      {
+        "label": "Sensor",
+        "value": "HERO 25K"
+      }
     ],
-    "pros": ["Deslizamiento perfecto sin cables.", "Batería de larga duración."],
-    "contras": ["Precio de gama premium.", "Carece de iluminación RGB."]
+    "pros": [
+      "Deslizamiento perfecto sin cables.",
+      "Batería de larga duración."
+    ],
+    "contras": [
+      "Precio de gama premium.",
+      "Carece de iluminación RGB."
+    ]
+  },
+  "mad-60he-de-madlions-fabricado-por-shenzhen-shuomuda-technology": {
+    "title": "MADLIONS MAD 60HE",
+    "brand": "Madlions (Shenzhen Shuomuda Technology)",
+    "category": "accessory",
+    "tier": "",
+    "desc": "El MADLIONS MAD 60HE se posiciona como el auténtico azote de la gama alta de teclados magnéticos, ofreciendo especificaciones de nivel esports a una fracción del costo de sus rivales directos. Con una tasa de sondeo salvaje de 8000 Hz, escaneo interno de 16K y un Rapid Trigger ultrapreciso ajustable desde los 0.04 mm, este periférico de formato 60% es una bestia de latencia ultra baja (0.1 ms) diseñada específicamente para dominar la escena competitiva de shooters tácticos modernos.",
+    "specs": [
+      {
+        "label": "Factor de forma",
+        "value": "Compacto 60%"
+      },
+      {
+        "label": "Tipo de interruptor",
+        "value": "Magnéticos (Efecto Hall) de desarrollo propio"
+      },
+      {
+        "label": "Tasa de sondeo / Escaneo",
+        "value": "8000 Hz / 16K"
+      },
+      {
+        "label": "Latencia de entrada",
+        "value": "0.1 ms"
+      },
+      {
+        "label": "Precisión de Rapid Trigger",
+        "value": "Ajustable desde 0.04 mm"
+      },
+      {
+        "label": "Vida útil de switches",
+        "value": "100 millones de pulsaciones"
+      },
+      {
+        "label": "Material de Keycaps",
+        "value": "PBT altamente sublimado (Dye-sub)"
+      },
+      {
+        "label": "Efectos de iluminación",
+        "value": "Tira de luz LED personalizada y RGB de 16.5M de colores"
+      },
+      {
+        "label": "Software de configuración",
+        "value": "Controlador basado en web propietario (sin consumo de memoria)"
+      }
+    ],
+    "pros": [
+      "Rendimiento competitivo premium con latencia ultra baja de 0.1 ms y sondeo real de 8000 Hz.",
+      "Tecnología Rapid Trigger extremadamente precisa desde 0.04 mm para movimientos de counter-strafing instantáneos.",
+      "Switches magnéticos sin contacto físico que garantizan una durabilidad extrema de 100 millones de pulsaciones.",
+      "Controlador web propietario intuitivo que permite remapear y configurar macros sin instalar software pesado en segundo plano.",
+      "Relación calidad-precio disruptiva, ofreciendo la experiencia de teclados de gama entusiasta a una fracción de su costo."
+    ],
+    "contras": [
+      "Curva de aprendizaje pronunciada en la distribución 60% debido a la ausencia de flechas de dirección y teclas de función físicas dedicadas.",
+      "Soporte postventa y disponibilidad de repuestos limitada en occidente al tratarse de una marca de nicho de importación."
+    ],
+    "imagen": "https://ae-pic-a1.aliexpress-media.com/kf/Sd9e1639ddd194ee3bc9748c3d18ea61fh.jpg_960x960q75.jpg_.webp"
   }
 }
