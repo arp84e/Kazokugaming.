@@ -107,102 +107,38 @@
     </footer>
 
     <script>
-        const hardwareData = {
-            // === LAPTOPS GAMING ===
-            'lenovo-loq-15': {
-                title: 'Lenovo LOQ 15', brand: 'Lenovo', category: 'laptop', tier: 'baja',
-                desc: 'El nuevo punto de referencia económico actual. Hereda la distribución interna de ventiladores de la línea Legion manteniendo costes bajos en chasis.',
-                specs: [{ label: 'Gráfica', value: 'NVIDIA RTX 4050 Laptop' }, { label: 'Pantalla', value: '15.6" FHD IPS, 144Hz' }],
-                pros: ['Precio muy competitivo.', 'Teclado de tacto excelente.'], contras: ['Chasis completo de plástico.', 'Duración de batería justa.']
-            },
-            'asus-tuf-a15': {
-                title: 'ASUS TUF Gaming A15', brand: 'ASUS', category: 'laptop', tier: 'baja',
-                desc: 'Chasis robusto con certificación de resistencia militar y procesadores Ryzen que optimizan el consumo energético notablemente en reposo.',
-                specs: [{ label: 'Batería', value: '90 Wh de gran capacidad' }, { label: 'Gráfica', value: 'NVIDIA RTX 4050 / 4060' }],
-                pros: ['Duración de batería sobresaliente.', 'Chasis resistente.'], contras: ['Pantalla con tiempos de respuesta algo lentos.']
-            },
-            'hp-victus-16': {
-                title: 'HP Victus 16', brand: 'HP', category: 'laptop', tier: 'media',
-                desc: 'Estética limpia sin líneas agresivas. Su rendimiento gráfico es sólido para exprimir resoluciones nativas estándar en configuraciones medias.',
-                specs: [{ label: 'Procesador', value: 'AMD Ryzen 7 8845HS' }, { label: 'Gráfica', value: 'NVIDIA RTX 4060 Laptop' }],
-                pros: ['Diseño sobrio ideal para oficina o universidad.', 'Pantalla con buena representación cromática.'], contras: ['Bisagra de pantalla algo flexible.']
-            },
-            'rog-strix-g16': {
-                title: 'ROG Strix G16', brand: 'ASUS', category: 'laptop', tier: 'media',
-                desc: 'Línea de diseño marcadamente competitiva. Integra tres ventiladores internos combinados con compuesto térmico de metal líquido.',
-                specs: [{ label: 'Refrigeración', value: 'Tri-Fan Technology + Metal Líquido' }, { label: 'Pantalla', value: '16" ROG Nebula Display' }],
-                pros: ['Temperaturas muy controladas bajo estrés.', 'Iluminación RGB excelente.'], contras: ['Chasis algo grueso y aparatoso para transportar.']
-            },
-            'zephyrus-g14': {
-                title: 'ROG Zephyrus G14', brand: 'ASUS', category: 'laptop', tier: 'alta',
-                desc: 'El referente premium unibody. Estructura compacta mecanizada por CNC con un panel OLED de altísimo impacto visual y contraste infinito.',
-                specs: [{ label: 'Chasis', value: 'Aluminio Unibody CNC' }, { label: 'Pantalla', value: '14" OLED 2.5K, 120Hz' }],
-                pros: ['Diseño ultra esbelto de lujo absoluto.', 'Pantalla OLED con negros perfectos.'], contras: ['Memoria RAM soldada en la placa base.']
-            },
-            'legion-pro-7i': {
-                title: 'Legion Pro 7i', brand: 'Lenovo', category: 'laptop', tier: 'alta',
-                desc: 'Diseñada específicamente para sustituir ordenadores de torre. Entrega rendimiento sostenido impecable mediante cámaras de vapor complejas.',
-                specs: [{ label: 'Procesador', value: 'Intel Core i9-14900HX' }, { label: 'Gráfica', value: 'NVIDIA RTX 4080 (175W TGP)' }],
-                pros: ['Potencia gráfica desatada sin estrangulamiento térmico.', 'Teclado ergonómico sobresaliente.'], contras: ['Transformador externo muy pesado y aparatoso.']
-            },
-
-            // === CONSOLAS Y PLATAFORMAS ===
-            'steam-deck': {
-                title: 'Steam Deck OLED', brand: 'Valve', category: 'handheld',
-                desc: 'La madurez absoluta de las consolas portátiles de PC. Valve prioriza la eficiencia de su ecosistema dedicado en lugar de competir en potencia pura.',
-                specs: [{ label: 'APU', value: 'AMD custom (6nm Zen 2 + RDNA 2)' }, { label: 'Pantalla', value: '7.4" OLED HDR, 90Hz' }],
-                pros: ['Pantalla OLED con contraste infinito.', 'Eficiencia de batería líder del sector.', 'Ecosistema SteamOS integrado e intuitivo.'],
-                contras: ['Menor potencia gráfica bruta que sus rivales directos.', 'Incompatibilidad con algunos Anti-Cheat de Windows.']
-            },
-            'rog-ally-x': {
-                title: 'ROG Ally X', brand: 'ASUS', category: 'handheld',
-                desc: 'Evolución directa bajo Windows 11. Soluciona de raíz las carencias del modelo previo duplicando la batería y revisando la posición de los puertos térmicos.',
-                specs: [{ label: 'APU', value: 'AMD Ryzen Z1 Extreme' }, { label: 'Memoria', value: '24GB LPDDR5X' }],
-                pros: ['Batería masiva de excelente duración.', '24GB de RAM que eliminan tirones.', 'Pantalla VRR que suaviza caídas de frames.'],
-                contras: ['La interfaz de Windows 11 es engorrosa en modo táctil.', 'Panel clásico IPS en lugar de OLED.']
-            },
-            'ps5-pro': {
-                title: 'PlayStation 5 Pro', brand: 'Sony', category: 'console',
-                desc: 'La revisión de mitad de generación de Sony. Diseñada para mantener altas tasas de cuadros por segundo en configuraciones de gran impacto visual.',
-                specs: [{ label: 'Tecnología', value: 'PSSR (AI Upscaling) & Ray Tracing Avanzado' }, { label: 'Almacenamiento', value: '2TB Custom NVMe SSD' }],
-                pros: ['60 FPS estables manteniendo resoluciones muy nítidas.', 'Reescalado inteligente por IA limpio.'],
-                contras: ['Requiere una fuerte inversión inicial.', 'No incorpora lector de discos óptico de fábrica.']
-            },
-            'switch-2': {
-                title: 'Nintendo Switch 2', brand: 'Nintendo', category: 'console',
-                desc: 'La esperadísima renovación del entorno de hardware de Nintendo. Preserva la versatilidad híbrida pero añade compatibilidad con DLSS.',
-                specs: [{ label: 'Procesador', value: 'Nvidia Custom' }, { label: 'Gráficos', value: 'Arquitectura Ampere' }],
-                pros: ['Retrocompatibilidad de catálogo garantizada.', 'Salto de rendimiento masivo en modo base.'],
-                contras: ['Autonomía de batería ajustada bajo juegos de nueva era.']
-            },
-
-            // === NUEVO: PERIFÉRICOS Y ACCESORIOS ===
-            'logitech-g-pro-x': {
-                title: 'Logitech G Pro X Superlight', brand: 'Logitech', category: 'accessory',
-                desc: 'El ratón definitivo para eSports. Extremadamente ligero y con un diseño sobrio sin comprometer la batería ni la integridad estructural de los clics.',
-                specs: [{ label: 'Peso', value: 'Menos de 63 gramos' }, { label: 'Sensor', value: 'HERO 25K (25,600 DPI)' }],
-                pros: ['Deslizamiento perfecto sin cables.', 'Batería de larga duración (70h+).'], contras: ['Precio de gama premium.', 'Carece de iluminación RGB o características extra.']
-            },
-            'razer-huntsman-v2': {
-                title: 'Razer Huntsman V2 TKL', brand: 'Razer', category: 'accessory',
-                desc: 'Teclado mecánico Tenkeyless con switches ópticos que garantizan un tiempo de respuesta casi nulo, ideal para juego altamente competitivo.',
-                specs: [{ label: 'Switches', value: 'Razer Linear Optical' }, { label: 'Formato', value: 'TKL (Sin numpad)' }],
-                pros: ['Switches extremadamente rápidos y silenciosos.', 'Construcción en aluminio muy resistente.'], contras: ['Cable fijo, no desmontable.', 'El reposamuñecas incluido se desgasta con el tiempo.']
-            },
-            'hyperx-cloud-iii': {
-                title: 'HyperX Cloud III Wireless', brand: 'HyperX', category: 'accessory',
-                desc: 'Auriculares icónicos renovados con una asombrosa duración de batería y una comodidad excepcional para largas sesiones de streaming o juego.',
-                specs: [{ label: 'Batería', value: 'Hasta 120 horas' }, { label: 'Drivers', value: '53mm angulados' }],
-                pros: ['Comodidad legendaria de la serie Cloud.', 'Duración de batería inigualable en su sector.'], contras: ['Micrófono integrado con sonido estándar.', 'Aislamiento pasivo de ruido mejorable.']
-            }
-        };
-
+        // 1. Ahora la base de datos empieza vacía, esperando a ser llenada por el archivo JSON
+        let hardwareData = {};
         let gamaActual = 'all';
+
+        // 2. NUEVO: Función "mensajera" que busca y descarga los datos
+        async function cargarBaseDeDatos() {
+            try {
+                // El navegador va al servidor y pide el archivo JSON
+                const respuesta = await fetch('hardware.json');
+                
+                if (!respuesta.ok) throw new Error("No se pudo conectar con los servidores de KazokuGaming");
+                
+                // Convertimos el texto del archivo a un objeto que JavaScript entienda
+                hardwareData = await respuesta.json();
+                
+                // Una vez que tenemos los datos, damos la orden de dibujar las tarjetas
+                renderizarTarjetas();
+                
+            } catch (error) {
+                console.error("Error cargando el hardware:", error);
+                document.getElementById('catalog-view').innerHTML = `
+                    <div class="text-center py-20">
+                        <p class="text-red-400 text-sm font-semibold mb-2">⚠️ Error de sincronización de datos.</p>
+                        <p class="text-slate-500 text-xs">No se pudo cargar la enciclopedia de hardware en este momento.</p>
+                    </div>`;
+            }
+        }
 
         function renderizarTarjetas() {
             document.getElementById('container-laptops').innerHTML = '';
             document.getElementById('container-handhelds').innerHTML = '';
-            document.getElementById('container-accessories').innerHTML = ''; // Limpiamos la nueva sección
+            document.getElementById('container-accessories').innerHTML = ''; 
 
             Object.keys(hardwareData).forEach(id => {
                 const equipo = hardwareData[id];
@@ -240,7 +176,6 @@
             let tierBadge = '';
             let footerText = '';
 
-            // Lógicas de categorización para colores y textos
             if (equipo.category === 'laptop') {
                 colorBorde = 'hover:border-emerald-500/50';
                 footerText = 'Laptop';
@@ -346,7 +281,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Ejecutar inmediatamente al cargar la pestaña
+        // 3. CAMBIO CLAVE: Al cargar la página, llamamos a la función asíncrona
+        window.onload = cargarBaseDeDatos;
         window.onload = renderizarTarjetas;
     </script>
 </body>
