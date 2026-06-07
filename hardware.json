@@ -1,0 +1,39 @@
+{
+  "lenovo-loq-15": {
+    "title": "Lenovo LOQ 15",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "tier": "baja",
+    "desc": "El nuevo punto de referencia económico actual. Hereda la distribución interna de ventiladores de la línea Legion manteniendo costes bajos en chasis.",
+    "specs": [
+      { "label": "Gráfica", "value": "NVIDIA RTX 4050 Laptop" },
+      { "label": "Pantalla", "value": "15.6\" FHD IPS, 144Hz" }
+    ],
+    "pros": ["Precio muy competitivo.", "Teclado de tacto excelente."],
+    "contras": ["Chasis completo de plástico.", "Duración de batería justa."]
+  },
+  "steam-deck": {
+    "title": "Steam Deck OLED",
+    "brand": "Valve",
+    "category": "handheld",
+    "desc": "La madurez absoluta de las consolas portátiles de PC. Valve prioriza la eficiencia de su ecosistema dedicado en lugar de competir en potencia pura.",
+    "specs": [
+      { "label": "APU", "value": "AMD custom (6nm Zen 2 + RDNA 2)" },
+      { "label": "Pantalla", "value": "7.4\" OLED HDR, 90Hz" }
+    ],
+    "pros": ["Pantalla OLED con contraste infinito.", "Eficiencia de batería líder del sector.", "Ecosistema SteamOS integrado."],
+    "contras": ["Menor potencia gráfica bruta que sus rivales.", "Incompatibilidad con algunos Anti-Cheat."]
+  },
+  "logitech-g-pro-x": {
+    "title": "Logitech G Pro X Superlight",
+    "brand": "Logitech",
+    "category": "accessory",
+    "desc": "El ratón definitivo para eSports. Extremadamente ligero y con un diseño sobrio sin comprometer la batería ni la integridad estructural de los clics.",
+    "specs": [
+      { "label": "Peso", "value": "Menos de 63 gramos" },
+      { "label": "Sensor", "value": "HERO 25K (25,600 DPI)" }
+    ],
+    "pros": ["Deslizamiento perfecto sin cables.", "Batería de larga duración (70h+)."],
+    "contras": ["Precio de gama premium.", "Carece de iluminación RGB."]
+  }
+}
