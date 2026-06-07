@@ -120,10 +120,14 @@ for idx, entrada in enumerate(nuevas_entradas):
     """
     
     try:
+        # CORRECCIÓN AQUÍ: ¡Usamos el modelo estable y ultrarrápido de última generación!
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.5-flash", 
             contents=prompt,
-            config=types.GenerateContentConfig(safety_settings=seguridad_permisiva, response_mime_type="application/json")
+            config=types.GenerateContentConfig(
+                safety_settings=seguridad_permisiva, 
+                response_mime_type="application/json"
+            )
         )
         data_redactada = json.loads(response.text)
         
@@ -135,6 +139,9 @@ for idx, entrada in enumerate(nuevas_entradas):
         
         # Lo añadimos directamente al grupo acumulado
         pool_acumulado.append(data_redactada)
+        
+    except Exception as e:
+        print(f"⚠️ No se pudo procesar esta entrada: {e}")
         
     except Exception as e:
         print(f"⚠️ No se pudo procesar esta entrada: {e}")
