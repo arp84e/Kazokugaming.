@@ -107,15 +107,19 @@ timestamp_base = int(time.time())
 for idx, entrada in enumerate(nuevas_entradas):
     print(f"📝 [{idx+1}/{len(nuevas_entradas)}] Redactando: {entrada.title}")
     
-    prompt = f"""
-    Actúa como redactor experto en videojuegos. Redacta una noticia en español basada en:
+   prompt = f"""
+    Actúa como un editor jefe y redactor experto en videojuegos. Tu tarea es analizar la siguiente noticia y reescribir la información y la sinopsis desde cero, creando un artículo completamente nuevo.
+    
+    Debes utilizar un tono de "gaming moderno", dinámico y atractivo. Es estrictamente necesario que realices una curación editorial original para evitar cualquier problema de copyright con la fuente. No copies frases literales.
+    
     Título fuente: {entrada.title}
-    Devuelve EXCLUSIVAMENTE un objeto JSON estructurado así:
+    
+    Devuelve EXCLUSIVAMENTE un objeto JSON estructurado así, sin texto adicional ni formato markdown extra:
     {{
       "categoria": "Actualidad Gaming",
-      "titulo": "Titular potente y profesional",
-      "resumen": "Resumen conciso de un párrafo.",
-      "contenido_completo": "<p>Cobertura detallada en HTML de dos párrafos.</p>"
+      "titulo": "Titular potente, llamativo y 100% original",
+      "resumen": "Sinopsis reescrita y atractiva de un párrafo corto.",
+      "contenido_completo": "<p>Cobertura detallada, redactada con voz propia en formato HTML, compuesta por dos párrafos bien estructurados.</p>"
     }}
     """
     
