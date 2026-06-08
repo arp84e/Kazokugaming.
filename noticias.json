@@ -1,15 +1,55 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "¿Adiós a los planos fijos? El esperado remake de Resident Evil Code: Veronica mantendrá la fórmula de cámara al hombro de Capcom",
-    "resumen": "Las últimas filtraciones apuntan a que el rumoreado regreso de Claire y Chris Redfield en Code: Veronica adaptará la perspectiva en tercera persona que consagró a las recientes reediciones de la saga, dejando atrás los ángulos fijos del clásico de Dreamcast.",
-    "contenido_completo": "<p>El misticismo que rodea a los futuros proyectos de Capcom vuelve a agitar a la comunidad. Según recientes filtraciones de insiders del sector, el ansiado remake de <strong>Resident Evil Code: Veronica</strong> no optará por experimentos nostálgicos, sino que consolidará la exitosa fórmula moderna de la compañía japonesa. Esto significa que la lúgubre aventura de Claire Redfield en la Isla Rockfort abandonará definitivamente los ángulos de cámara fijos del título de Dreamcast para abrazar la inmersiva perspectiva en tercera persona sobre el hombro, estandarizada con rotundo éxito en las aclamadas reimaginaciones de la segunda, tercera y cuarta entrega de la franquicia.</p><p>Esta decisión técnica y de diseño no solo homogeneizaría el catálogo contemporáneo de la saga bajo el potente motor gráfico RE Engine, sino que promete elevar la tensión claustrofóbica a niveles inéditos gracias a un sistema de control mucho más dinámico y orgánico. Los entusiastas del survival horror pueden esperar una jugabilidad revitalizada donde apuntar en la penumbra y esquivar a las grotescas mutaciones del virus T-Veronica se sentirá tan visceral y terrorífico como en el reciente remake de Resident Evil 4. Aunque Capcom aún mantiene el proyecto bajo un hermético silencio oficial, todo apunta a que están listos para hacer justicia a uno de los spin-offs más queridos y solicitados por los fans.</p>",
-    "id": "noticia-1780837829-5",
-    "enlace": "https://vandal.elespanol.com/noticia/1350790543/resident-evil-veronica-mantendria-la-camara-en-tercera-persona-de-los-ultimos-remakes-segun-una-filtracion/",
-    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
-    "fecha": "2026-06-07T13:12:28.848363"
+    "titulo": "La Gran N desata la locura: Confirmado un Nintendo Direct sorpresa para mañana mismo",
+    "resumen": "¡Prepara las palomitas y despeja tu agenda! Nintendo ha soltado el bombazo definitivo al anunciar una nueva presentación Nintendo Direct para este 9 de junio, prometiendo novedades que pondrán a temblar el catálogo de Switch.",
+    "contenido_completo": "<p>La temporada más caliente del año para la industria del videojuego acaba de sumar un invitado de honor. Nintendo ha decidido dinamitar la calma de la comunidad gamer anunciando, casi sin previo aviso, la retransmisión de un nuevo Direct para mañana, 9 de junio. Aunque la compañía nipona mantiene el misterio habitual sobre los títulos que desfilarán por la pantalla, el timing es perfecto para mostrar la artillería pesada que acompañará a la consola híbrida durante los próximos meses y mantener el listón del 'hype' en lo más alto.</p><p>Como era de esperar, la comunidad ya ha comenzado a teorizar sobre qué sorpresas nos deparará este evento digital. Desde actualizaciones de los desarrollos más esperados hasta esos codiciados anuncios inesperados que redefinen calendarios, la cita de mañana se perfila como un punto de inflexión clave para el futuro inmediato de Nintendo Switch. No te despegues de las pantallas, porque la Gran N está lista para volver a acaparar todas las miradas y demostrar que aún le queda mucha magia por repartir.</p>",
+    "id": "noticia-1780942371-5",
+    "enlace": "https://www.eurogamer.es/anunciado-un-nintendo-direct-para-manana-dia-9-de-junio",
+    "imagen": "https://assetsio.gnwcdn.com/firefox_hjR1kw1DOf.png?width=690&quality=85&format=jpg&auto=webp",
+    "fecha": "2026-06-08T18:14:47.804722"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Despedida estelar: Sea of Stars anuncia 'Sunset Edition' y prepara su asalto a la nueva generación de Nintendo",
+      "resumen": "Sabotage Studio cierra el ciclo de su aclamado RPG con una actualización definitiva, un broche de oro que pulirá la experiencia al máximo mientras prepara su desembarco en la esperada sucesora de Nintendo Switch.",
+      "contenido_completo": "<p>El viaje nostálgico y mágico de Sea of Stars se prepara para su última gran parada. Sabotage Studio ha anunciado de forma oficial el lanzamiento de la \"Sunset Edition\", una actualización final concebida para perfeccionar cada rincón de su exitoso RPG de corte retro. Este parche definitivo no solo servirá como la despedida perfecta para una obra que cautivó a los apasionados del rol clásico, sino que optimizará la jugabilidad y añadirá esos últimos retoques solicitados por la comunidad, consolidando su estatus de culto en la actual generación.</p><p>La gran sorpresa es que este broche de oro coincidirá con un movimiento estratégico clave: el debut del título en la rumoreada y esperada sucesora de Nintendo Switch. Aprovechando la potencia del nuevo hardware de la Gran N, esta versión promete ofrecer la experiencia más fluida y visualmente impactante de la odisea de Valere y Zale. Se trata, sin duda, de una jugada maestra para asegurar que este clásico moderno continúe brillando con luz propia en el catálogo del futuro.</p>",
+      "id": "noticia-1780942371-4",
+      "enlace": "https://www.eurogamer.es/sea-of-stars-recibe-la-sunset-edition-una-ultima-actualizacion-que-llega-junto-al-port-a-switch-2",
+      "imagen": "https://assetsio.gnwcdn.com/Sea-Stars.webp?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-08T18:14:27.695563"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Giro radical para Misterio a la Orden! Scooby-Doo se olvida del CGI y presenta a su primer protagonista perruno real",
+      "resumen": "La mítica franquicia de misterios da un volantazo inesperado en su próxima producción. Por primera vez en la historia de la saga, el icónico Gran Danés no será una recreación digital, sino un encantador perro de carne y hueso que ya ha desatado el hype en redes sociales con su primer vistazo oficial.",
+      "contenido_completo": "<p>El eterno debate entre los efectos digitales y las producciones realistas ha llegado a uno de los sabuesos más famosos de la cultura pop. Tras años de adaptaciones cinematográficas que dependían por completo de la animación tridimensional —con resultados que a menudo dividían a la comunidad geek—, los responsables de la nueva producción de Scooby-Doo han decidido romper las reglas establecidas. Esta nueva aventura apostará por la autenticidad absoluta al otorgar el papel estelar a un adorable canino real, marcando un hito sin precedentes para la icónica franquicia de misterio.</p><p>Las primeras imágenes del nuevo protagonista de cuatro patas ya están encendiendo los foros de debate y las redes sociales, donde los seguidores de la saga celebran este regreso a un formato más orgánico y tangible. Aunque la integración de un animal real supondrá todo un desafío técnico para emular las expresiones cómicas y caricaturescas del miedoso detective, esta arriesgada decisión promete insuflar aire fresco a una marca que busca reconectar con las audiencias actuales, cansadas de la saturación del CGI en el entretenimiento moderno.</p>",
+      "id": "noticia-1780942371-3",
+      "enlace": "https://es.ign.com/scooby-doo-live-action-netflix-series/230368/scooby-doo-sera-representado-por-primera-vez-con-un-perro-real-y-ya-tenemos-el-primer-vistazo-del-ad",
+      "imagen": "https://sm.ign.com/ign_es/news/n/netflix-re/netflix-reveals-the-real-dog-playing-scooby-doo-in-upcoming_91sg.jpg",
+      "fecha": "2026-06-08T18:14:06.010763"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Prepara el asiento! 'Spider-Man: Brand New Day' desafía los límites de Marvel con una duración histórica",
+      "resumen": "El trepamuros más famoso de la cultura pop se prepara para su aventura más masiva e interminable en la gran pantalla. Los últimos informes revelan que 'Spider-Man: Brand New Day' destrozará los cronómetros, posicionándose como uno de los largometrajes más extensos y ambiciosos de todo el Universo Cinematográfico de Marvel.",
+      "contenido_completo": "<p>La próxima gran producción de Marvel Studios y Sony Pictures promete ser una auténtica prueba de resistencia para las vejigas de los fans. Las filtraciones más recientes del sector apuntan a que 'Spider-Man: Brand New Day' no escatimará en minutos, configurándose como un metraje colosal que rivalizará directamente con los eventos cinematográficos más masivos de la franquicia, al estilo de <em>Avengers: Endgame</em>. Esta descomunal duración responde a la necesidad de entrelazar complejas subtramas multiversales y dar cabida a un elenco de personajes que promete hacer las delicias de la comunidad geek.</p><p>Para los amantes de los videojuegos, esta entrega se perfila como el equivalente a un RPG de mundo abierto de más de cien horas: una experiencia inmersiva que se tomará su tiempo para desarrollar cada arco argumental con calma y espectacularidad. Con un ritmo que promete mantenernos pegados a la pantalla y una escala sin precedentes para el héroe arácnido, la nueva odisea de Peter Parker está lista para redefinir las reglas del cine de superhéroes contemporáneo.</p>",
+      "id": "noticia-1780942371-0",
+      "enlace": "https://es.ign.com/spider-man-brand-new-day/230371/spider-man-brand-new-day-sera-una-de-las-peliculas-mas-largas-de-marvel-esta-es-su-duracion",
+      "imagen": "https://sm.ign.com/ign_es/news/s/spider-man/spider-man-brand-new-day-runtime-revealed-and-its-one-of-the_2y6c.jpg",
+      "fecha": "2026-06-08T18:13:01.389875"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¿Adiós a los planos fijos? El esperado remake de Resident Evil Code: Veronica mantendrá la fórmula de cámara al hombro de Capcom",
+      "resumen": "Las últimas filtraciones apuntan a que el rumoreado regreso de Claire y Chris Redfield en Code: Veronica adaptará la perspectiva en tercera persona que consagró a las recientes reediciones de la saga, dejando atrás los ángulos fijos del clásico de Dreamcast.",
+      "contenido_completo": "<p>El misticismo que rodea a los futuros proyectos de Capcom vuelve a agitar a la comunidad. Según recientes filtraciones de insiders del sector, el ansiado remake de <strong>Resident Evil Code: Veronica</strong> no optará por experimentos nostálgicos, sino que consolidará la exitosa fórmula moderna de la compañía japonesa. Esto significa que la lúgubre aventura de Claire Redfield en la Isla Rockfort abandonará definitivamente los ángulos de cámara fijos del título de Dreamcast para abrazar la inmersiva perspectiva en tercera persona sobre el hombro, estandarizada con rotundo éxito en las aclamadas reimaginaciones de la segunda, tercera y cuarta entrega de la franquicia.</p><p>Esta decisión técnica y de diseño no solo homogeneizaría el catálogo contemporáneo de la saga bajo el potente motor gráfico RE Engine, sino que promete elevar la tensión claustrofóbica a niveles inéditos gracias a un sistema de control mucho más dinámico y orgánico. Los entusiastas del survival horror pueden esperar una jugabilidad revitalizada donde apuntar en la penumbra y esquivar a las grotescas mutaciones del virus T-Veronica se sentirá tan visceral y terrorífico como en el reciente remake de Resident Evil 4. Aunque Capcom aún mantiene el proyecto bajo un hermético silencio oficial, todo apunta a que están listos para hacer justicia a uno de los spin-offs más queridos y solicitados por los fans.</p>",
+      "id": "noticia-1780837829-5",
+      "enlace": "https://vandal.elespanol.com/noticia/1350790543/resident-evil-veronica-mantendria-la-camara-en-tercera-persona-de-los-ultimos-remakes-segun-una-filtracion/",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
+      "fecha": "2026-06-07T13:12:28.848363"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "Pesadillas pasadas por agua: The Sinking City 2 ya tiene fecha para inundar nuestras consolas de terror cósmico",
