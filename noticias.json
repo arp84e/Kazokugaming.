@@ -1,15 +1,25 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "La Gran N desata la locura: Confirmado un Nintendo Direct sorpresa para mañana mismo",
-    "resumen": "¡Prepara las palomitas y despeja tu agenda! Nintendo ha soltado el bombazo definitivo al anunciar una nueva presentación Nintendo Direct para este 9 de junio, prometiendo novedades que pondrán a temblar el catálogo de Switch.",
-    "contenido_completo": "<p>La temporada más caliente del año para la industria del videojuego acaba de sumar un invitado de honor. Nintendo ha decidido dinamitar la calma de la comunidad gamer anunciando, casi sin previo aviso, la retransmisión de un nuevo Direct para mañana, 9 de junio. Aunque la compañía nipona mantiene el misterio habitual sobre los títulos que desfilarán por la pantalla, el timing es perfecto para mostrar la artillería pesada que acompañará a la consola híbrida durante los próximos meses y mantener el listón del 'hype' en lo más alto.</p><p>Como era de esperar, la comunidad ya ha comenzado a teorizar sobre qué sorpresas nos deparará este evento digital. Desde actualizaciones de los desarrollos más esperados hasta esos codiciados anuncios inesperados que redefinen calendarios, la cita de mañana se perfila como un punto de inflexión clave para el futuro inmediato de Nintendo Switch. No te despegues de las pantallas, porque la Gran N está lista para volver a acaparar todas las miradas y demostrar que aún le queda mucha magia por repartir.</p>",
-    "id": "noticia-1780942371-5",
-    "enlace": "https://www.eurogamer.es/anunciado-un-nintendo-direct-para-manana-dia-9-de-junio",
-    "imagen": "https://assetsio.gnwcdn.com/firefox_hjR1kw1DOf.png?width=690&quality=85&format=jpg&auto=webp",
-    "fecha": "2026-06-08T18:14:47.804722"
+    "titulo": "¡Sora salta a la nueva generación! Kingdom Hearts 4 rompe el silencio con un tráiler brutal y confirma su llegada a Switch 2",
+    "resumen": "La aclamada saga de Square Enix vuelve al foco de atención con un nuevo y espectacular adelanto que ha revolucionado a la comunidad. Sora y sus amigos no solo lucen mejor que nunca, sino que se ha confirmado oficialmente que el título formará parte de la alineación de lanzamiento de la esperada sucesora de Nintendo Switch.",
+    "contenido_completo": "<p>Square Enix ha decidido romper el internet con el regreso triunfal de <em>Kingdom Hearts 4</em>. Tras un prolongado período de absoluto hermetismo, la desarrolladora nipona ha liberado un metraje inédito que profundiza en la estética fotorrealista de Quadratum, la metrópolis que servirá como epicentro para este nuevo arco argumental conocido como la \"Saga del Maestro de Maestros\". El tráiler no solo deleita a los seguidores con secuencias de combate sumamente fluidas y un apartado técnico de vanguardia impulsado por la tecnología de nueva generación, sino que también siembra dudas y teorías sobre el destino de Sora en esta ambiciosa odisea interdimensional.</p><p>Sin embargo, la verdadera bomba del anuncio reside en su distribución: se ha confirmado de manera oficial que esta esperada entrega estará disponible desde el primer día en la futura sucesora de Nintendo Switch. Este movimiento estratégico garantiza que los usuarios de la próxima consola híbrida de la gran N puedan disfrutar de la aventura con un rendimiento óptimo desde su debut. Con este anuncio, Square Enix asegura un lanzamiento multiplataforma masivo que posiciona a <em>Kingdom Hearts 4</em> como uno de los indiscutibles pesos pesados que definirán el catálogo inicial de la nueva generación portátil.</p>",
+    "id": "noticia-1781025205-5",
+    "enlace": "https://www.eurogamer.es/kingdom-hearts-4-reaparece-con-nuevo-trailer-y-se-confirma-que-estara-disponible-de-lanzamiento-en-switch-2",
+    "imagen": "https://assetsio.gnwcdn.com/chrome_RfPjZ3ooAP.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "fecha": "2026-06-09T17:15:29.955126"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "La Gran N desata la locura: Confirmado un Nintendo Direct sorpresa para mañana mismo",
+      "resumen": "¡Prepara las palomitas y despeja tu agenda! Nintendo ha soltado el bombazo definitivo al anunciar una nueva presentación Nintendo Direct para este 9 de junio, prometiendo novedades que pondrán a temblar el catálogo de Switch.",
+      "contenido_completo": "<p>La temporada más caliente del año para la industria del videojuego acaba de sumar un invitado de honor. Nintendo ha decidido dinamitar la calma de la comunidad gamer anunciando, casi sin previo aviso, la retransmisión de un nuevo Direct para mañana, 9 de junio. Aunque la compañía nipona mantiene el misterio habitual sobre los títulos que desfilarán por la pantalla, el timing es perfecto para mostrar la artillería pesada que acompañará a la consola híbrida durante los próximos meses y mantener el listón del 'hype' en lo más alto.</p><p>Como era de esperar, la comunidad ya ha comenzado a teorizar sobre qué sorpresas nos deparará este evento digital. Desde actualizaciones de los desarrollos más esperados hasta esos codiciados anuncios inesperados que redefinen calendarios, la cita de mañana se perfila como un punto de inflexión clave para el futuro inmediato de Nintendo Switch. No te despegues de las pantallas, porque la Gran N está lista para volver a acaparar todas las miradas y demostrar que aún le queda mucha magia por repartir.</p>",
+      "id": "noticia-1780942371-5",
+      "enlace": "https://www.eurogamer.es/anunciado-un-nintendo-direct-para-manana-dia-9-de-junio",
+      "imagen": "https://assetsio.gnwcdn.com/firefox_hjR1kw1DOf.png?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-08T18:14:47.804722"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "Despedida estelar: Sea of Stars anuncia 'Sunset Edition' y prepara su asalto a la nueva generación de Nintendo",
