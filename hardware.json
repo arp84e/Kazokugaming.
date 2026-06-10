@@ -222,5 +222,44 @@
       "El nuevo acabado brillante en los paneles superiores de la carcasa es muy propenso a rayaduras y atrae el polvo."
     ],
     "imagen": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=2070&auto=format&fit=crop"
+  },
+  "xbox-series-s": {
+    "title": "Microsoft Xbox Series S",
+    "brand": "Microsoft",
+    "category": "console",
+    "tier": "",
+    "desc": "La Xbox Series S se consolida como el milagro de la ingeniería compacta de la 'next-gen', ofreciendo un rendimiento asombroso en un factor de forma minimalista. Impulsada por la arquitectura Xbox Velocity, es la máquina definitiva para devorar el catálogo de Xbox Game Pass a resoluciones de 1080p y 1440p con una fluidez técnica que no tiene rival en su rango de precio.",
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "Zen 2 personalizado de 8 núcleos a 3.6 GHz (3.4 GHz con SMT)"
+      },
+      {
+        "label": "GPU",
+        "value": "RDNA 2 personalizada de 4 TFLOPS a 1.565 GHz"
+      },
+      {
+        "label": "Memoria",
+        "value": "10 GB GDDR6 con bus de 128 bits"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "512 GB o 1 TB SSD NVMe personalizado (Velocity Architecture)"
+      },
+      {
+        "label": "Rendimiento Objetivo",
+        "value": "1440p hasta 120 FPS con reescalado a 4K"
+      }
+    ],
+    "pros": [
+      "La puerta de entrada más económica y con mejor rendimiento por euro de la generación actual.",
+      "La tecnología Quick Resume permite suspender y reanudar múltiples juegos de forma instantánea.",
+      "Diseño ultra compacto, estético y sumamente silencioso incluso bajo máxima carga gráfica."
+    ],
+    "contras": [
+      "El espacio de almacenamiento de la versión de 512 GB es muy escaso para el peso de los triple A modernos.",
+      "Carece de lector de discos físicos, lo que te ata por completo al ecosistema de tiendas digitales."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=2070&auto=format&fit=crop"
   }
 }
