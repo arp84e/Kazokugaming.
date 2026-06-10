@@ -261,5 +261,48 @@
       "Carece de lector de discos físicos, lo que te ata por completo al ecosistema de tiendas digitales."
     ],
     "imagen": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=2070&auto=format&fit=crop"
+  },
+  "msi-cyborg-15": {
+    "title": "MSI Cyborg 15 A12V / A13V",
+    "brand": "MSI",
+    "category": "laptop",
+    "tier": "media",
+    "desc": "El MSI Cyborg 15 irrumpe en el terreno de juego con una propuesta estética cyberpunk semi-translúcida que desafía los diseños convencionales. Equipado con la eficiencia de la arquitectura Ada Lovelace de NVIDIA y procesadores Intel Core, este portátil ofrece un equilibrio impecable entre portabilidad extrema, rendimiento de nueva generación con DLSS 3 y una relación calidad-precio imbatible para el gamer de hoy.",
+    "specs": [
+      {
+        "label": "Procesador",
+        "value": "Intel Core i7-13620H (10 núcleos, hasta 4.90 GHz)"
+      },
+      {
+        "label": "Tarjeta Gráfica",
+        "value": "NVIDIA GeForce RTX 4060 Laptop GPU (8GB GDDR6, TGP 45W)"
+      },
+      {
+        "label": "Pantalla",
+        "value": "15.6\" FHD (1920x1080), IPS-Level, 144Hz"
+      },
+      {
+        "label": "Memoria RAM",
+        "value": "16 GB DDR5 5200MHz (Dual Channel, ampliable)"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "512 GB SSD NVMe PCIe Gen4 x4"
+      },
+      {
+        "label": "Peso y Grosor",
+        "value": "1.98 kg / 21.95 mm"
+      }
+    ],
+    "pros": [
+      "Diseño futurista semi-translúcido único y chasis extremadamente ligero por debajo de los 2 kg.",
+      "Excelente rendimiento de entrada y acceso a DLSS 3 + Frame Generation para exprimir los últimos lanzamientos.",
+      "Funcionamiento térmico muy silencioso en tareas cotidianas y sesiones de juego moderadas."
+    ],
+    "contras": [
+      "El límite de potencia de la GPU (TGP a 45W) restringe el rendimiento máximo que la RTX 4060 podría alcanzar.",
+      "La pantalla cuenta con una cobertura de color limitada, ideal para eSports pero no recomendada para creación de contenido profesional."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
   }
 }
