@@ -179,5 +179,48 @@
       "Apartado multimedia discreto, con una webcam de resolución 720p y altavoces con escasa presencia de frecuencias graves."
     ],
     "imagen": "https://bizweb.dktcdn.net/100/512/769/files/va_-_core_i5-1334u_19_.png?v=1769421355790"
+  },
+  "ps5-slim": {
+    "title": "Sony PlayStation 5 Slim",
+    "brand": "Sony",
+    "category": "console",
+    "tier": "",
+    "desc": "La evolución del buque insignia de Sony llega con una notable reducción de volumen del 30% y un peso mucho más liviano, sin comprometer ni un solo teraflop de su descomunal potencia. Esta revisión destaca por su brillante diseño modular con lector de discos extraíble y un salto clave hasta el almacenamiento de 1 TB neto de alta velocidad. Es la versión definitiva para dominar la actual generación de consolas con un factor de forma más estilizado y eficiente.",
+    "specs": [
+      {
+        "label": "Procesador (CPU)",
+        "value": "AMD Zen 2 de 8 núcleos a 3.5 GHz (frecuencia variable)"
+      },
+      {
+        "label": "Gráficos (GPU)",
+        "value": "AMD Radeon RDNA 2 con 10.3 TFLOPS a 2.23 GHz y trazado de rayos"
+      },
+      {
+        "label": "Memoria",
+        "value": "16 GB GDDR6 con ancho de banda de 448 GB/s"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "SSD NVMe personalizado de 1 TB (ampliable mediante ranura M.2)"
+      },
+      {
+        "label": "Puertos frontales",
+        "value": "2x USB-C (uno de alta velocidad a 10 Gbps, uno estándar)"
+      },
+      {
+        "label": "Dimensiones y Peso",
+        "value": "358 x 96 x 216 mm | 3.2 kg (con unidad de disco)"
+      }
+    ],
+    "pros": [
+      "Chasis notablemente más compacto y ligero que mantiene una excelente refrigeración y un funcionamiento silencioso.",
+      "Incremento de almacenamiento interno a 1 TB SSD, solventando una de las mayores quejas del modelo de lanzamiento.",
+      "Modularidad sobresaliente gracias a la unidad lectora Blu-ray 4K extraíble e intercambiable de manera sencilla."
+    ],
+    "contras": [
+      "El soporte vertical se vende por separado, obligando a un desembolso extra si no quieres colocarla en horizontal.",
+      "El nuevo acabado brillante en los paneles superiores de la carcasa es muy propenso a rayaduras y atrae el polvo."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=2070&auto=format&fit=crop"
   }
 }
