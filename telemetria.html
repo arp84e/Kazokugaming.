@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telemetría | KazokuGaming</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Explora el análisis de telemetría de videojuegos AAA. Rendimiento, requisitos de sistema optimizados y arquitectura técnica de motores gráficos.">
+    <meta name="keywords" content="telemetria juegos, requisitos pc, rendimiento videojuegos, analisis tecnico pc">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Análisis de Telemetría | KazokuGaming">
+    <meta property="og:description" content="Rendimiento, requisitos y arquitectura técnica de tus títulos seleccionados.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400">
+    <meta property="og:url" content="https://kazokugaming.vercel.app/telemetria.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Análisis de Telemetría | KazokuGaming">
+    <meta name="twitter:description" content="Rendimiento, requisitos y arquitectura técnica de tus títulos seleccionados.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
     </style>
-
     <script defer src="/_vercel/insights/script.js"></script>
-    
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
@@ -33,12 +47,11 @@
     </footer>
 
     <script src="header.js"></script>
-
     <script>
         function cargarTelemetria() {
             fetch('telemetria.json')
                 .then(res => {
-                    if (!res.ok) throw new Error('Network response was not ok');
+                    if (!res.ok) throw new Error('Network error');
                     return res.json();
                 })
                 .then(data => {
@@ -54,7 +67,7 @@
                         <a href="juego.html?id=${juego.id}" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all flex flex-col justify-between hover:-translate-y-1">
                             <div>
                                 <div class="aspect-[16/9] w-full overflow-hidden bg-slate-950 relative">
-                                    <img src="${juego.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <img src="${juego.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                                 </div>
                                 <div class="p-5 space-y-2">
                                     <h3 class="font-bold text-base text-white tracking-wide group-hover:text-cyan-400 transition-colors line-clamp-1">${juego.titulo}</h3>
