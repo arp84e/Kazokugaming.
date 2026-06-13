@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar de Ofertas | KazokuGaming</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -19,20 +19,6 @@
     
 </head>
 <body class="min-h-screen flex flex-col justify-between">
-
-    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                KAZOKU<span class="text-slate-100">GAMING</span>
-            </a>
-            <nav class="flex space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition">Noticias</a>
-                <a href="telemetria.html" class="text-slate-400 hover:text-cyan-400 transition">Telemetría</a>
-                <a href="radar.html" class="text-cyan-400 border-b-2 border-cyan-400 px-1 pb-1">Radar de Ofertas</a>
-                <a href="hardware.html" class="text-slate-400 hover:text-cyan-400 transition">Hardware</a>
-            </nav>
-        </div>
-    </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         
@@ -71,8 +57,9 @@
         </div>
     </footer>
 
+    <script src="header.js"></script>
+
     <script>
-        // Mapeo selectivo y completo de IDs de tiendas autorizadas
         const ID_TIENDAS = {
             "1": "Steam",
             "7": "GOG.com",
@@ -87,7 +74,6 @@
             const section = document.getElementById('resultsSection');
 
             try {
-                // Descarga paralela optimizada de 6 páginas
                 const totalPages = 6;
                 const fetchPromises = [];
                 for (let i = 0; i < totalPages; i++) {
@@ -112,18 +98,15 @@
                 for (let i = 0; i < ofertas.length; i++) {
                     const item = ofertas[i];
                     
-                    // 1. FILTRO ESTRICTO DE TIENDAS PERMITIDAS
                     if (!ID_TIENDAS[item.storeID]) {
                         continue; 
                     }
 
-                    // 2. FILTRO DE PORCENTAJE (Mayor o igual al 50%)
                     const descuento = Math.round(parseFloat(item.savings));
                     if (descuento < 50) {
                         continue; 
                     }
 
-                    // 3. FILTRO DE DUPLICADOS POR TÍTULO NORMALIZADO
                     const tituloBase = item.title.split('-')[0].split('(')[0].split('–')[0].trim().toLowerCase();
                     if (juegosMostrados.has(tituloBase)) {
                         continue; 
@@ -134,7 +117,6 @@
 
                     const tiendaNombre = ID_TIENDAS[item.storeID];
                     
-                    // Configuración estética según rango
                     let badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">RANK #${ofertasContadas}</span>`;
                     let highlightCard = "border-slate-800 bg-slate-900/40";
                     
@@ -181,7 +163,6 @@
                     `;
                     container.insertAdjacentHTML('beforeend', cardHtml);
 
-                    // Forzamos el límite exacto a 24 tarjetas
                     if (ofertasContadas >= 24) {
                         break;
                     }
