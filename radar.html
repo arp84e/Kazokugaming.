@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar de Ofertas | KazokuGaming</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
-            color: #ffffff;
-            margin: 0;
-        }
-    </style>
-
-    <script defer src="/_vercel/insights/script.js"></script>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Las mejores rebajas digitales de videojuegos detectadas hoy en tiendas oficiales y verificadas. ¡Escaneo en vivo!">
+    <meta name="keywords" content="ofertas videojuegos, descuentos steam, rebajas epic games, eneba ofertas, juegos baratos">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Radar de Ofertas | KazokuGaming">
+    <meta property="og:description" content="Las mejores rebajas digitales detectadas hoy en vivo. Filtro estricto de tiendas oficiales y autorizadas.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400">
+    <meta property="og:url" content="https://kazokugaming.vercel.app/radar.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Radar de Ofertas | KazokuGaming">
+    <meta name="twitter:description" content="Las mejores rebajas digitales detectadas hoy en vivo en tiendas oficiales.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #ffffff; margin: 0; }
+    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-slate-800 pb-6 gap-4">
             <div class="text-center md:text-left">
-                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mb-2">
-                    🎯 Radar de Ofertas
-                </h1>
+                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mb-2">🎯 Radar de Ofertas</h1>
                 <p class="text-base text-slate-400">Las mejores rebajas digitales detectadas hoy en tiendas oficiales y verificadas</p>
             </div>
-            <span class="text-xs bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full uppercase tracking-widest font-bold animate-pulse">
-                🔴 Escaneo en Vivo
-            </span>
+            <span class="text-xs bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full uppercase tracking-widest font-bold animate-pulse">🔴 Escaneo en Vivo</span>
         </div>
 
         <div id="loadingState" class="flex flex-col items-center justify-center py-20 space-y-4">
@@ -48,25 +52,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div class="max-w-4xl mx-auto bg-slate-900/30 border border-slate-800/50 rounded-xl p-4">
                 <p class="text-xs text-slate-500 leading-relaxed text-justify sm:text-center">
-                    <strong>Aviso de transparencia (Disclaimer):</strong> KazokuGaming es un medio informativo independiente. Los enlaces de ofertas recopilados en este radar redirigen a tiendas externas. No gestionamos pagos, claves ni soporte técnico de dichas plataformas. Aunque filtramos estrictamente las tiendas mostradas para garantizar la máxima seguridad (restringiéndonos a plataformas oficiales y distribuidores autorizados selectos como Eneba), te recomendamos verificar siempre las condiciones de compra en la web de destino antes de realizar cualquier transacción.
+                    <strong>Aviso de transparencia (Disclaimer):</strong> KazokuGaming es un medio informativo independiente. Los enlaces de ofertas recopilados en este radar redirigen a tiendas externas. No gestionamos pagos, claves ni soporte técnico de dichas plataformas. Aunque filtramos estrictamente las tiendas para garantizar la máxima seguridad, te recomendamos verificar siempre las condiciones de compra antes de realizar transacciones.
                 </p>
             </div>
-            <p class="text-sm text-slate-600">
-                &copy; 2026 KazokuGaming. Todos los derechos reservados.
-            </p>
+            <p class="text-sm text-slate-600">&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="header.js"></script>
-
     <script>
-        const ID_TIENDAS = {
-            "1": "Steam",
-            "7": "GOG.com",
-            "11": "Epic Games",
-            "25": "Epic Games Store",
-            "34": "Eneba"
-        };
+        const ID_TIENDAS = { "1": "Steam", "7": "GOG.com", "11": "Epic Games", "25": "Epic Games Store", "34": "Eneba" };
 
         async function cargarTopOfertas() {
             const container = document.getElementById('cardsContainer');
@@ -77,12 +72,7 @@
                 const totalPages = 6;
                 const fetchPromises = [];
                 for (let i = 0; i < totalPages; i++) {
-                    fetchPromises.push(
-                        fetch(`https://www.cheapshark.com/api/1.0/deals?pageNumber=${i}`).then(res => {
-                            if (!res.ok) throw new Error("Fallo en la API");
-                            return res.json();
-                        })
-                    );
+                    fetchPromises.push(fetch(`https://www.cheapshark.com/api/1.0/deals?pageNumber=${i}`).then(res => { if (!res.ok) throw new Error(); return res.json(); }));
                 }
 
                 const results = await Promise.all(fetchPromises);
@@ -97,26 +87,18 @@
 
                 for (let i = 0; i < ofertas.length; i++) {
                     const item = ofertas[i];
-                    
-                    if (!ID_TIENDAS[item.storeID]) {
-                        continue; 
-                    }
+                    if (!ID_TIENDAS[item.storeID]) continue; 
 
                     const descuento = Math.round(parseFloat(item.savings));
-                    if (descuento < 50) {
-                        continue; 
-                    }
+                    if (descuento < 50) continue; 
 
                     const tituloBase = item.title.split('-')[0].split('(')[0].split('–')[0].trim().toLowerCase();
-                    if (juegosMostrados.has(tituloBase)) {
-                        continue; 
-                    }
+                    if (juegosMostrados.has(tituloBase)) continue; 
 
                     juegosMostrados.add(tituloBase);
                     ofertasContadas++;
 
                     const tiendaNombre = ID_TIENDAS[item.storeID];
-                    
                     let badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">RANK #${ofertasContadas}</span>`;
                     let highlightCard = "border-slate-800 bg-slate-900/40";
                     
@@ -136,48 +118,24 @@
                                     ${item.title}
                                 </h3>
                             </div>
-
                             <div class="relative aspect-video w-full overflow-hidden bg-slate-950 border-y border-slate-800/50">
                                 <img src="${item.thumb}" alt="Portada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=400'">
-                                <span class="absolute bottom-3 right-3 bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-lg tracking-wider shadow-md">
-                                    -${descuento}%
-                                </span>
+                                <span class="absolute bottom-3 right-3 bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-lg tracking-wider shadow-md">-${descuento}%</span>
                             </div>
-
                             <div class="p-5 space-y-4 bg-slate-950/20">
-                                <div class="flex justify-between text-xs text-slate-500">
-                                    <span>Precio base:</span>
-                                    <span class="line-through">$${item.normalPrice}</span>
-                                </div>
-                                <div class="flex justify-between items-end pt-2 border-t border-slate-800/40">
-                                    <span class="text-xs uppercase font-bold text-slate-400">Rebaja:</span>
-                                    <span class="text-2xl font-black text-emerald-400 tracking-tight">
-                                        $${item.salePrice}
-                                    </span>
-                                </div>
-                                <a href="https://www.cheapshark.com/redirect?dealID=${item.dealID}" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition shadow-md shadow-indigo-900/30">
-                                    VER OFERTA →
-                                </a>
+                                <div class="flex justify-between text-xs text-slate-500"><span>Precio base:</span><span class="line-through">$${item.normalPrice}</span></div>
+                                <div class="flex justify-between items-end pt-2 border-t border-slate-800/40"><span class="text-xs uppercase font-bold text-slate-400">Rebaja:</span><span class="text-2xl font-black text-emerald-400 tracking-tight">$${item.salePrice}</span></div>
+                                <a href="https://www.cheapshark.com/redirect?dealID=${item.dealID}" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition shadow-md">VER OFERTA →</a>
                             </div>
-                        </div>
-                    `;
+                        </div>`;
                     container.insertAdjacentHTML('beforeend', cardHtml);
-
-                    if (ofertasContadas >= 24) {
-                        break;
-                    }
+                    if (ofertasContadas >= 24) break;
                 }
-
             } catch (error) {
                 console.error(error);
-                loading.innerHTML = `
-                    <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto">
-                        <p class="text-red-400 font-semibold text-sm">⚠️ Error al sincronizar el Radar de Ofertas.</p>
-                        <button onclick="window.location.reload()" class="mt-3 text-xs bg-slate-800 px-3 py-1.5 rounded-lg text-slate-300 hover:bg-slate-700 cursor-pointer">Reintentar Escaneo</button>
-                    </div>`;
+                loading.innerHTML = `<div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto"><p class="text-red-400 font-semibold text-sm">⚠️ Error al sincronizar el Radar.</p></div>`;
             }
         }
-        
         document.addEventListener('DOMContentLoaded', cargarTopOfertas);
     </script>
 </body>
