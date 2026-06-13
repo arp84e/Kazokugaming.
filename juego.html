@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expediente | KazokuGaming</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Especificaciones de rendimiento e informes de hardware detallados de juegos en PC.">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
     </style>
-
     <script defer src="/_vercel/insights/script.js"></script>
-    
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
@@ -29,7 +32,6 @@
     </footer>
 
     <script src="header.js"></script>
-
     <script>
     const urlParams = new URLSearchParams(window.location.search);
     const idBuscado = urlParams.get('id');
@@ -66,7 +68,6 @@
                                 
                                 <div class="flex items-start justify-between mb-2">
                                     <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight pr-4">${juego.titulo}</h1>
-                                    
                                     <div class="relative flex flex-col items-center justify-center w-20 h-20 min-w-[5rem] bg-slate-900 border-2 border-cyan-500/80 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] transform hover:scale-105 transition-transform duration-300">
                                         <div class="absolute -top-3.5 bg-gradient-to-r from-cyan-400 to-indigo-500 text-white text-[12px] font-black px-3 py-1 rounded-md shadow-lg border border-cyan-300/30 flex items-center justify-center">
                                             <span>家族</span>
@@ -75,7 +76,6 @@
                                         <span class="text-[9px] text-cyan-500 font-bold uppercase tracking-widest mt-0.5">Score</span>
                                     </div>
                                 </div>
-
                                 <p class="text-sm font-bold text-slate-400 tracking-wide uppercase mb-6 mt-2">${juego.plataformas}</p>
                                 
                                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -92,10 +92,9 @@
                                         <p class="text-sm font-semibold text-white">${juego.rendimiento || 'Variable'}</p>
                                     </div>
                                 </div>
-
-                                <div class="bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 md:p-8 mb-8 prose prose-invert prose-p:text-slate-300 prose-p:leading-relaxed max-w-none">
+                                <div class="bg-slate-900/30 border border-slate-800/50 rounded-2xl p-6 md:p-8 mb-8 prose prose-invert max-w-none">
                                     <h3 class="text-xl font-bold text-white mb-4 flex items-center"><span class="text-cyan-500 mr-2">⚡</span> Análisis Técnico Profundo</h3>
-                                    ${juego.analisis_detallado}
+                                    <div class="text-slate-300 leading-relaxed">${juego.analisis_detallado}</div>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +104,6 @@
                                 <h2 class="text-2xl lg:text-3xl font-extrabold text-white">Requisitos del Sistema en PC</h2>
                                 <p class="text-slate-400 mt-2 text-sm">Especificaciones necesarias para una experiencia óptima.</p>
                             </div>
-                            
                             <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
                                 <div class="bg-slate-950/50 rounded-2xl p-6 border border-slate-800/50 hover:border-cyan-500/30 transition-colors">
                                     <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-800/60">
@@ -114,7 +112,6 @@
                                     </div>
                                     <ul class="space-y-4 text-sm text-slate-400">${htmlMinimos || '<li class="text-slate-600">No disponibles.</li>'}</ul>
                                 </div>
-                                
                                 <div class="bg-cyan-950/10 rounded-2xl p-6 border border-cyan-900/30 hover:border-cyan-500/50 transition-colors relative overflow-hidden">
                                     <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
                                     <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
