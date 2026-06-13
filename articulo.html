@@ -4,100 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KazokuGaming | Crónica</title>
-    <!-- Cargamos Tailwind CSS en su versión 4 para los estilos visuales -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
-        }
-        
-        /* 
-          ESTILOS DE LECTURA (UX): 
-          Estas reglas aseguran que los textos redactados por el sistema tengan 
-          un contraste excelente, espaciados amplios y tipografía agradable.
-        */
-        .prose h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        .prose p {
-            color: #94a3b8; /* Slate-400: Tono gris suave que evita el cansancio ocular */
-            line-height: 1.75;
-            margin-bottom: 1.25rem;
-        }
-        .prose strong {
-            color: #22d3ee; /* Cyan-400: Resalta palabras clave en azul eléctrico */
-            font-weight: 600;
-        }
-        .prose ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1.25rem;
-            color: #94a3b8;
-        }
-        .prose li {
-            margin-bottom: 0.5rem;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Script de analíticas de Vercel -->
+    <meta name="description" content="Lee el informe completo del mundo de los videojuegos en KazokuGaming.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="KazokuGaming">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
+        .prose h3 { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose p { color: #94a3b8; line-height: 1.75; margin-bottom: 1.25rem; }
+        .prose strong { color: #22d3ee; font-weight: 600; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #94a3b8; }
+        .prose li { margin-bottom: 0.5rem; }
+    </style>
     <script defer src="/_vercel/insights/script.js"></script>
-    
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
-    <!-- 
-      El bloque <header> viejo ha sido removido con éxito.
-      Nuestro archivo "header.js" inyectará aquí el menú interactivo con el enlace al foro.
-    -->
-
-    <!-- Contenedor principal donde se muestra el artículo -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div id="cuerpo-articulo" class="space-y-6">
-            <!-- Estado de carga inicial mientras se obtienen los datos -->
             <div class="text-center py-12">
                 <p class="text-slate-400 animate-pulse">Sincronizando con los servidores de KazokuGaming...</p>
             </div>
         </div>
     </main>
 
-    <!-- Pie de página independiente para las crónicas -->
     <footer class="border-t border-slate-950 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
         <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- 
-      CONEXIÓN DE COMPONENTES Y LÓGICA:
-      1. Primero dibujamos la barra de navegación.
-      2. Luego ejecutamos el script nativo de lectura de datos.
-    -->
     <script src="header.js"></script>
-
     <script>
-        // Capturar el ID alfanumérico desde la barra de direcciones de la URL (?id=not_...)
         const params = new URLSearchParams(window.location.search);
         const idArticulo = params.get('id');
 
-        // Consultamos de forma asíncrona nuestro archivo de datos de noticias
         fetch('noticias.json')
             .then(response => response.json())
             .then(data => {
-                // Juntamos la noticia destacada y las secundarias en una sola lista de búsqueda
                 let listaNoticias = [];
                 if (data.destacada) listaNoticias.push(data.destacada);
                 if (data.secundarias) listaNoticias = listaNoticias.concat(data.secundarias);
 
-                // Buscamos el artículo específico cuyo 'id' coincida con el de la URL
                 const articuloEncontrado = listaNoticias.find(n => n.id === idArticulo);
 
                 if (articuloEncontrado) {
-                    // Si el artículo existe, construimos la interfaz e inyectamos sus datos
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="space-y-4">
                             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
@@ -107,27 +63,21 @@
                                 ${articuloEncontrado.titulo}
                             </h1>
                         </div>
-
                         <div class="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/20 aspect-video w-full my-6">
                             <img src="${articuloEncontrado.imagen}" alt="Portada" class="w-full h-full object-cover">
                         </div>
-
                         <div class="prose max-w-none text-slate-300">
                             ${articuloEncontrado.contenido_completo || `<p class="text-slate-400">${articuloEncontrado.resumen}</p><p class="text-xs italic text-amber-400/80 mt-4">⚠️ El análisis completo está siendo redactado por el sistema, vuelve en unos minutos.</p>`}
                         </div>
-
                         <div class="mt-12 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-slate-500">
                             <p>Análisis independiente redactado por la IA editorial de KazokuGaming.</p>
                             <a href="${articuloEncontrado.enlace}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center space-x-1 font-medium">
-                                <span>Ver datos del reporte original</span>
-                                <span>→</span>
+                                <span>Ver datos del reporte original</span><span>→</span>
                             </a>
                         </div>
                     `;
-                    // Cambiamos dinámicamente el título de la pestaña del navegador
                     document.title = `${articuloEncontrado.titulo} | KazokuGaming`;
                 } else {
-                    // Vista elegante de Error 404 en caso de colocar un ID inválido
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="text-center py-16 space-y-4">
                             <h1 class="text-2xl font-bold text-white">Error 404</h1>
@@ -138,10 +88,7 @@
             })
             .catch(error => {
                 console.error(error);
-                document.getElementById('cuerpo-articulo').innerHTML = `
-                    <div class="text-center py-12 text-red-400 text-sm">
-                        ⚠️ Error de conexión al cargar la base de datos de crónicas.
-                    </div>`;
+                document.getElementById('cuerpo-articulo').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión al cargar la base de datos de crónicas.</div>`;
             });
     </script>
 </body>
