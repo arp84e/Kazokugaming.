@@ -304,5 +304,48 @@
       "La pantalla cuenta con una cobertura de color limitada, ideal para eSports pero no recomendada para creación de contenido profesional."
     ],
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
+  },
+  "razer-edge": {
+    "title": "Razer Edge",
+    "brand": "Razer",
+    "category": "handheld",
+    "tier": "",
+    "desc": "El Razer Edge se consolida como una de las apuestas más ambiciosas para el ecosistema del juego en la nube y la emulación de alto rendimiento. Equipado con el potente chipset Snapdragon G3x Gen 1 y una soberbia pantalla AMOLED de 144Hz, este dispositivo redefine la experiencia gaming portátil bajo arquitectura Android, ofreciendo una fluidez y fidelidad visual que pocos competidores directos pueden igualar.",
+    "specs": [
+      {
+        "label": "Procesador",
+        "value": "Qualcomm Snapdragon G3x Gen 1 (Active Cooling)"
+      },
+      {
+        "label": "Pantalla",
+        "value": "6.8\" AMOLED FHD+ (2400x1080) a 144Hz"
+      },
+      {
+        "label": "Controlador",
+        "value": "Razer Kishi V2 Pro (Háptica HyperSense y Jack 3.5mm)"
+      },
+      {
+        "label": "Memoria y Almacenamiento",
+        "value": "6GB LPDDR5 RAM / 128GB UFS 3.1 (Expandible hasta 2TB)"
+      },
+      {
+        "label": "Batería",
+        "value": "5000 mAh"
+      },
+      {
+        "label": "Conectividad",
+        "value": "Wi-Fi 6E, Bluetooth 5.2"
+      }
+    ],
+    "pros": [
+      "Pantalla AMOLED de 144Hz que ofrece negros perfectos, colores vibrantes y una fluidez excepcional para gaming nativo y cloud streaming.",
+      "Mando Razer Kishi V2 Pro incluido, que aporta botones con microswitches mecánicos, conector físico tipo C sin latencia y una excelente ergonomía.",
+      "Sistema de refrigeración activa integrado que evita el estrangulamiento térmico (thermal throttling) durante sesiones intensas de emulación."
+    ],
+    "contras": [
+      "La relación de aspecto de 20:9 genera marcadas barras negras laterales en la gran mayoría de plataformas de streaming de videojuegos y emuladores clásicos.",
+      "La experiencia de software se percibe más como una tablet Android con un accesorio que como una consola de videojuegos con interfaz unificada y fluida."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
   }
 }
