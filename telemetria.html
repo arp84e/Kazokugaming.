@@ -6,7 +6,7 @@
     <title>Telemetría | KazokuGaming</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
     </style>
 
@@ -14,20 +14,6 @@
     
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
-
-    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                KAZOKU<span class="text-slate-100">GAMING</span>
-            </a>
-            <nav class="flex space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition">Noticias</a>
-                <a href="telemetria.html" class="text-cyan-400 border-b-2 border-cyan-400 px-1 pb-1">Telemetría</a>
-                <a href="radar.html" class="text-slate-400 hover:text-cyan-400 transition">Radar de Ofertas</a>
-                <a href="hardware.html" class="text-slate-400 hover:text-cyan-400 transition">Hardware</a>
-            </nav>
-        </div>  
-    </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
         <div class="mb-10 border-b border-slate-800 pb-6 flex items-end justify-between">
@@ -46,9 +32,10 @@
         &copy; 2026 KazokuGaming.
     </footer>
 
+    <script src="header.js"></script>
+
     <script>
         function cargarTelemetria() {
-            // RUTA ACTUALIZADA A TELEMETRÍA
             fetch('telemetria.json')
                 .then(res => {
                     if (!res.ok) throw new Error('Network response was not ok');
