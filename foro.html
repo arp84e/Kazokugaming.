@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro y Comunidad | KazokuGaming</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Únete al Muro de KazokuGaming. Debate sobre hardware, juegos y noticias con total privacidad.">
+    <meta property="og:title" content="Foro de la Comunidad | KazokuGaming">
+    <meta property="og:description" content="El punto de encuentro sin rastreo. Crea tu seudónimo y únete a la conversación.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
+        /* Scrollbar personalizada para el muro */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between">
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full flex flex-col lg:flex-row gap-8">
+        
+        <div class="lg:w-2/3 flex flex-col h-[80vh]">
+            <div class="mb-6">
+                <h1 class="text-3xl font-extrabold tracking-tight text-white flex items-center">
+                    <span class="text-amber-400 mr-3">💬</span> Muro de Kazoku
+                </h1>
+                <p class="text-slate-400 mt-2 text-sm">Comparte descubrimientos, debate sobre telemetría o pide consejo de hardware.</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 mb-6 shadow-lg backdrop-blur-sm">
+                <textarea id="mensajeInput" rows="3" class="w-full bg-slate-950/50 border border-slate-800 rounded-xl p-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 resize-none transition-all" placeholder="Escribe tu mensaje en el muro... (Requiere acceso)"></textarea>
+                <div class="flex justify-between items-center mt-3">
+                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Respeta las normas comunitarias</span>
+                    <button id="btnPublicar" class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold px-6 py-2 rounded-lg transition shadow-md shadow-cyan-900/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                        Publicar
+                    </button>
+                </div>
+            </div>
+
+            <div id="muroMensajes" class="flex-grow overflow-y-auto space-y-4 pr-2">
+                <div class="bg-slate-900/30 border border-slate-800/50 rounded-xl p-5 flex space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center font-bold text-white shrink-0 shadow-lg">KG</div>
+                    <div>
+                        <div class="flex items-baseline space-x-2 mb-1">
+                            <span class="font-bold text-white text-sm">KazokuAdmin</span>
+                            <span class="text-[10px] text-slate-500">Hace 2 horas</span>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">¡Bienvenidos al nuevo muro de la comunidad! Este es un espacio seguro y privado. ¿Qué juegos están probando este fin de semana?</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/30 border border-slate-800/50 rounded-xl p-5 flex space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-slate-400 shrink-0 border border-slate-700">G</div>
+                    <div>
+                        <div class="flex items-baseline space-x-2 mb-1">
+                            <span class="font-bold text-cyan-400 text-sm">GamerAnon22</span>
+                            <span class="text-[10px] text-slate-500">Hace 5 horas</span>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">Acabo de leer el análisis de telemetría del nuevo parche. Increíble cómo han optimizado el uso de VRAM. Saludos a todos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:w-1/3">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 lg:p-8 sticky top-24 backdrop-blur-md shadow-2xl">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 mb-4 border border-emerald-500/20">
+                        🔒
+                    </div>
+                    <h2 class="text-xl font-bold text-white tracking-tight">Acceso Privado</h2>
+                    <p class="text-xs text-slate-400 mt-2">Crea tu identidad sin dar tu correo. Si pierdes tu contraseña, perderás la cuenta.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Tu Apodo</label>
+                        <input type="text" id="apodoInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="Ej. CyberNinja99">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Contraseña (Secreta)</label>
+                        <input type="password" id="passInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="••••••••">
+                    </div>
+                    
+                    <div class="pt-2 flex flex-col space-y-3">
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm py-2.5 rounded-lg transition shadow-md cursor-pointer">
+                            Entrar al Muro
+                        </button>
+                        <button class="w-full bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 font-bold text-sm py-2.5 rounded-lg transition cursor-pointer">
+                            Crear Nueva Identidad
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="header.js"></script>
+    
+</body>
+</html>
