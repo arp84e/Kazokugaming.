@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KazokuGaming | Crónica</title>
+    <!-- Cargamos Tailwind CSS en su versión 4 para los estilos visuales -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0f19;
         }
-        /* Estilos personalizados para el cuerpo del artículo generado por IA */
+        
+        /* 
+          ESTILOS DE LECTURA (UX): 
+          Estas reglas aseguran que los textos redactados por el sistema tengan 
+          un contraste excelente, espaciados amplios y tipografía agradable.
+        */
         .prose h3 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -20,12 +27,12 @@
             margin-bottom: 0.75rem;
         }
         .prose p {
-            color: #94a3b8; /* slate-400 */
+            color: #94a3b8; /* Slate-400: Tono gris suave que evita el cansancio ocular */
             line-height: 1.75;
             margin-bottom: 1.25rem;
         }
         .prose strong {
-            color: #22d3ee; /* cyan-400 */
+            color: #22d3ee; /* Cyan-400: Resalta palabras clave en azul eléctrico */
             font-weight: 600;
         }
         .prose ul {
@@ -39,54 +46,58 @@
         }
     </style>
 
+    <!-- Script de analíticas de Vercel -->
     <script defer src="/_vercel/insights/script.js"></script>
     
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
-    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                KAZOKU<span class="text-slate-100">GAMING</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="index.html" class="text-cyan-400 transition-colors">Noticias</a>
-                <a href="telemetria.html" class="text-slate-400 hover:text-cyan-400 transition">Telemetría</a>
-                <a href="hardware.html" class="text-slate-400 hover:text-slate-200 transition-colors">Hardware</a>
-                <a href="radar.html" class="text-slate-400 hover:text-slate-200 transition-colors">Radar de Ofertas</a>
-            </nav>
-        </div>
-    </header>
+    <!-- 
+      El bloque <header> viejo ha sido removido con éxito.
+      Nuestro archivo "header.js" inyectará aquí el menú interactivo con el enlace al foro.
+    -->
 
+    <!-- Contenedor principal donde se muestra el artículo -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div id="cuerpo-articulo" class="space-y-6">
+            <!-- Estado de carga inicial mientras se obtienen los datos -->
             <div class="text-center py-12">
                 <p class="text-slate-400 animate-pulse">Sincronizando con los servidores de KazokuGaming...</p>
             </div>
         </div>
     </main>
 
+    <!-- Pie de página independiente para las crónicas -->
     <footer class="border-t border-slate-950 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
         <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
     </footer>
 
-<script>
-        // 1. Capturar el ID alfanumérico desde la URL (?id=not_...)
+    <!-- 
+      CONEXIÓN DE COMPONENTES Y LÓGICA:
+      1. Primero dibujamos la barra de navegación.
+      2. Luego ejecutamos el script nativo de lectura de datos.
+    -->
+    <script src="header.js"></script>
+
+    <script>
+        // Capturar el ID alfanumérico desde la barra de direcciones de la URL (?id=not_...)
         const params = new URLSearchParams(window.location.search);
         const idArticulo = params.get('id');
 
+        // Consultamos de forma asíncrona nuestro archivo de datos de noticias
         fetch('noticias.json')
             .then(response => response.json())
             .then(data => {
-                // Creamos una lista única juntando la destacada y las secundarias
+                // Juntamos la noticia destacada y las secundarias en una sola lista de búsqueda
                 let listaNoticias = [];
                 if (data.destacada) listaNoticias.push(data.destacada);
                 if (data.secundarias) listaNoticias = listaNoticias.concat(data.secundarias);
 
-                // 2. CORRECCIÓN: Buscamos el artículo comparando el campo 'id' real de los objetos
+                // Buscamos el artículo específico cuyo 'id' coincida con el de la URL
                 const articuloEncontrado = listaNoticias.find(n => n.id === idArticulo);
 
                 if (articuloEncontrado) {
+                    // Si el artículo existe, construimos la interfaz e inyectamos sus datos
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="space-y-4">
                             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
@@ -113,9 +124,10 @@
                             </a>
                         </div>
                     `;
+                    // Cambiamos dinámicamente el título de la pestaña del navegador
                     document.title = `${articuloEncontrado.titulo} | KazokuGaming`;
                 } else {
-                    // Si no encuentra el ID, muestra la interfaz de la imagen 6a978984-9116-46d3-8d05-1ae2bbd877bb
+                    // Vista elegante de Error 404 en caso de colocar un ID inválido
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="text-center py-16 space-y-4">
                             <h1 class="text-2xl font-bold text-white">Error 404</h1>
