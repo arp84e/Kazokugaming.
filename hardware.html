@@ -25,20 +25,6 @@
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
-    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                KAZOKU<span class="text-slate-100">GAMING</span>
-            </a>
-            <nav class="flex space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-400 hover:text-cyan-400 transition">Noticias</a>
-                <a href="telemetria.html" class="text-slate-400 hover:text-cyan-400 transition">Telemetría</a>
-                <a href="radar.html" class="text-slate-400 hover:text-cyan-400 transition">Radar de Ofertas</a>
-                <a href="hardware.html" class="text-cyan-400 border-b-2 border-cyan-400 px-1 pb-1">Hardware</a>
-            </nav>
-        </div>
-    </header>
-
     <main id="catalog-view" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -49,7 +35,7 @@
                 💻 Gadgets & Hardware
             </h1>
             <p class="text-lg text-slate-400">
-                Análisis técnico detallado, especificaciones, ventajas y desventajas de las mejores plataformas, ordenadores y accesorios del mercado.
+                Análisis técnico detallado, especificaciones, ventajas y desventajas de las mejores plataformas y ordenadores portátiles del mercado.
             </p>
         </div>
 
@@ -57,7 +43,7 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-slate-800/60 pb-4">
                 <div class="flex items-center space-x-3">
                     <div class="h-8 w-1 bg-emerald-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold text-white tracking-tight">Laptops Gaming (Destacadas)</h2>
+                    <h2 class="text-2xl font-bold text-white tracking-tight">Laptops Gaming (12 Destacadas por Presupuesto)</h2>
                 </div>
                 <div class="flex bg-slate-950/60 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
                     <button onclick="filtrarGama('all')" id="btn-gama-all" class="px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 transition cursor-pointer">Todas</button>
@@ -67,30 +53,17 @@
                 </div>
             </div>
             
-            <div id="container-laptops" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
+            <div id="container-laptops" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </section>
 
         <section class="mb-16">
             <div class="flex items-center space-x-3 mb-8">
                 <div class="h-8 w-1 bg-cyan-500 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Ecosistemas, Consolas y Handhelds</h2>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Ecosistemas, Consolas y Handhelds (12 Destacadas)</h2>
             </div>
             
-            <div id="container-handhelds" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
+            <div id="container-handhelds" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </section>
-
-        <section class="mb-16">
-            <div class="flex items-center space-x-3 mb-8">
-                <div class="h-8 w-1 bg-violet-500 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">🎧 Periféricos y Accesorios Gaming</h2>
-            </div>
-            
-            <div id="container-accessories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-        </section>
-
     </main>
 
     <main id="details-view" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
@@ -106,40 +79,173 @@
         </div>
     </footer>
 
-    <script>
-        // 1. Ahora la base de datos empieza vacía, esperando a ser llenada por el archivo JSON
-        let hardwareData = {};
-        let gamaActual = 'all';
+    <script src="header.js"></script>
 
-        // 2. NUEVO: Función "mensajera" con ROMPEDOR DE CACHÉ
-        async function cargarBaseDeDatos() {
-            try {
-                // CORRECCIÓN AQUÍ: Añadimos '?t=' + getTime() para evitar el caché de Vercel
-                const url = 'hardware.json?t=' + new Date().getTime();
-                const respuesta = await fetch(url);
-                
-                if (!respuesta.ok) throw new Error("Archivo no encontrado en el servidor.");
-                
-                // Convertimos el texto del archivo a un objeto
-                hardwareData = await respuesta.json();
-                
-                // Dibujamos las tarjetas
-                renderizarTarjetas();
-                
-            } catch (error) {
-                console.error("Error cargando el hardware:", error);
-                document.getElementById('catalog-view').innerHTML = `
-                    <div class="text-center py-20">
-                        <p class="text-red-400 text-sm font-semibold mb-2">⚠️ Error de sincronización de datos.</p>
-                        <p class="text-slate-500 text-xs">Asegúrate de que hardware.json está escrito perfectamente.</p>
-                    </div>`;
+    <script>
+        const hardwareData = {
+            'lenovo-loq-15': {
+                title: 'Lenovo LOQ 15', brand: 'Lenovo', category: 'laptop', tier: 'baja',
+                desc: 'El nuevo punto de referencia económico actual. Hereda la distribución interna de ventiladores de la línea Legion manteniendo costes bajos en chasis.',
+                specs: [{ label: 'Gráfica', value: 'NVIDIA RTX 4050 Laptop' }, { label: 'Pantalla', value: '15.6" FHD IPS, 144Hz' }],
+                pros: ['Precio muy competitivo.', 'Teclado de tacto excelente.'], contras: ['Chasis completo de plástico.', 'Duración de batería justa.']
+            },
+            'asus-tuf-a15': {
+                title: 'ASUS TUF Gaming A15', brand: 'ASUS', category: 'laptop', tier: 'baja',
+                desc: 'Chasis robusto con certificación de resistencia militar y procesadores Ryzen que optimizan el consumo energético notablemente en reposo.',
+                specs: [{ label: 'Batería', value: '90 Wh de gran capacidad' }, { label: 'Gráfica', value: 'NVIDIA RTX 4050 / 4060' }],
+                pros: ['Duración de batería sobresaliente.', 'Chasis resistente.'], contras: ['Pantalla con tiempos de respuesta algo lentos.']
+            },
+            'acer-nitro-v15': {
+                title: 'Acer Nitro V 15', brand: 'Acer', category: 'laptop', tier: 'baja',
+                desc: 'Formato estilizado y bastante más delgado orientado a presupuestos ajustados y estudiantes que disfrutan de títulos eSports competitivos.',
+                specs: [{ label: 'Procesador', value: 'Intel Core i5-13420H' }, { label: 'Gráfica', value: 'NVIDIA RTX 4050 (75W TGP)' }],
+                pros: ['Chasis ligero y fácil de transportar.', 'Precio muy accesible.'], contras: ['Límites de energía de GPU ajustados.']
+            },
+            'msi-thin-15': {
+                title: 'MSI Thin 15', brand: 'MSI', category: 'laptop', tier: 'baja',
+                desc: 'Laptop delgada de entrada pensada para quienes buscan portabilidad a bajo coste sacrificando algunos enteros en la disipación térmica.',
+                specs: [{ label: 'Grosor', value: 'Solo 21.7 mm' }, { label: 'Gráfica', value: 'NVIDIA RTX 4050 Laptop' }],
+                pros: ['Grosor reducido en su rango de precio.', 'Estética minimalista uniforme.'], contras: ['Tiende a calentarse bajo uso continuo de juegos AAA.']
+            },
+            'hp-victus-16': {
+                title: 'HP Victus 16', brand: 'HP', category: 'laptop', tier: 'media',
+                desc: 'Estética limpia sin líneas agresivas. Su rendimiento gráfico es sólido para exprimir resoluciones nativas estándar en configuraciones medias.',
+                specs: [{ label: 'Procesador', value: 'AMD Ryzen 7 8845HS' }, { label: 'Gráfica', value: 'NVIDIA RTX 4060 Laptop' }],
+                pros: ['Diseño sobrio ideal para oficina o universidad.', 'Pantalla con buena representación cromática.'], contras: ['Bisagra de pantalla algo flexible.']
+            },
+            'rog-strix-g16': {
+                title: 'ROG Strix G16', brand: 'ASUS', category: 'laptop', tier: 'media',
+                desc: 'Línea de diseño marcadamente competitiva. Integra tres ventiladores internos combinados con compuesto térmico de metal líquido.',
+                specs: [{ label: 'Refrigeración', value: 'Tri-Fan Technology + Metal Líquido' }, { label: 'Pantalla', value: '16" ROG Nebula Display' }],
+                pros: ['Temperaturas muy controladas bajo estrés.', 'Iluminación RGB excelente.'], contras: ['Chasis algo grueso y aparatoso para transportar.']
+            },
+            'predator-helios-16': {
+                title: 'Acer Predator Helios 16', brand: 'Acer', category: 'laptop', tier: 'media',
+                desc: 'Equipo de gran formato con pantalla en relación de aspecto 16:10 y límites de energía máximos completamente desbloqueados.',
+                specs: [{ label: 'Pantalla', value: '16" WQXGA 240Hz 16:10' }, { label: 'Gráfica', value: 'NVIDIA RTX 4070 (140W TGP)' }],
+                pros: ['Pantalla sumamente rápida y nítida.', 'Rendimiento gráfico sin restricciones estructurales.'], contras: ['Ventiladores muy ruidosos en perfiles altos.']
+            },
+            'gigabyte-aorus-16': {
+                title: 'Gigabyte Aorus 16X', brand: 'Gigabyte', category: 'laptop', tier: 'media',
+                desc: 'Laptop muy equilibrada enfocada en herramientas de creación de contenido y optimización de flujos de trabajo de IA local.',
+                specs: [{ label: 'Pantalla', value: '16" QHD+ 165Hz G-Sync' }, { label: 'Gráfica', value: 'NVIDIA RTX 4070 Laptop' }],
+                pros: ['Gran suite de calibración de pantalla.', 'Buen diseño con cubierta de aluminio.'], contras: ['Altavoces nativos con bajos algo planos.']
+            },
+            'zephyrus-g14': {
+                title: 'ROG Zephyrus G14', brand: 'ASUS', category: 'laptop', tier: 'alta',
+                desc: 'El referente premium unibody. Estructura compacta mecanizada por CNC con un panel OLED de altísimo impacto visual y contraste infinito.',
+                specs: [{ label: 'Chasis', value: 'Aluminio Unibody CNC' }, { label: 'Pantalla', value: '14" OLED 2.5K, 120Hz' }],
+                pros: ['Diseño ultra esbelto de lujo absoluto.', 'Pantalla OLED con negros perfectos.'], contras: ['Memoria RAM soldada en la placa base.']
+            },
+            'legion-pro-7i': {
+                title: 'Legion Pro 7i', brand: 'Lenovo', category: 'laptop', tier: 'alta',
+                desc: 'Diseñada específicamente para sustituir ordenadores de torre. Entrega rendimiento sostenido impecable mediante cámaras de vapor complejas.',
+                specs: [{ label: 'Procesador', value: 'Intel Core i9-14900HX' }, { label: 'Gráfica', value: 'NVIDIA RTX 4080 (175W TGP)' }],
+                pros: ['Potencia gráfica desatada sin estrangulamiento térmico.', 'Teclado ergonómico sobresaliente.'], contras: ['Transformador externo muy pesado y aparatoso.']
+            },
+            'razer-blade-16': {
+                title: 'Razer Blade 16', brand: 'Razer', category: 'laptop', tier: 'alta',
+                desc: 'El tope de gama estructural de aluminio anodizado, implementando una sofisticada pantalla Dual-Mode Mini-LED.',
+                specs: [{ label: 'Pantalla', value: '16" Dual-Mode Mini-LED (4K / FHD+)' }, { label: 'Gráfica', value: 'NVIDIA RTX 4090 Laptop' }],
+                pros: ['Panel Mini-LED de brillo inigualable en exteriores.', 'Construcción perfecta sin crujidos.'], contras: ['Coste de mercado sumamente prohibitivo.']
+            },
+            'msi-raider-ge78': {
+                title: 'MSI Raider GE78', brand: 'MSI', category: 'laptop', tier: 'alta',
+                desc: 'Una bestia masiva orientada al máximo rendimiento entusiasta de sobremesa, con barra de iluminación matricial RGB.',
+                specs: [{ label: 'Procesador', value: 'Intel Core i9 de grado entusiasta' }, { label: 'Gráfica', value: 'NVIDIA RTX 4090 (TGP Máximo)' }],
+                pros: ['Rendimiento extremo comparable a PCs de escritorio.', 'Gran cantidad de puertos físicos de expansión.'], contras: ['Portabilidad muy comprometida por peso y grosor.']
+            },
+            'steam-deck': {
+                title: 'Steam Deck OLED', brand: 'Valve', category: 'handheld',
+                desc: 'La madurez absoluta de las consolas portátiles de PC. Valve prioriza la eficiencia de su ecosistema dedicado en lugar de competir en potencia pura.',
+                specs: [{ label: 'APU', value: 'AMD Sephiroth custom (6nm Zen 2 + RDNA 2)' }, { label: 'Pantalla', value: '7.4" OLED HDR, 90Hz' }],
+                pros: ['Pantalla OLED con contraste infinito y negros perfectos.', 'Eficiencia de batería líder del sector.', 'Ecosistema SteamOS integrado e intuitivo.'],
+                contras: ['Menor potencia gráfica bruta que sus rivales directos.', 'Incompatibilidad con algunos Anti-Cheat de Windows.']
+            },
+            'rog-ally-x': {
+                title: 'ROG Ally X', brand: 'ASUS', category: 'handheld',
+                desc: 'Evolución directa bajo Windows 11. Soluciona de raíz las carencias del modelo previo duplicando la batería y revisando la posición de los puertos térmicos.',
+                specs: [{ label: 'APU', value: 'AMD Ryzen Z1 Extreme (Zen 4 + RDNA 3)' }, { label: 'Memoria/Batería', value: '24GB LPDDR5X / 80Wh' }],
+                pros: ['Batería masiva de excelente duración.', '24GB de RAM dedicados que eliminan tirones.', 'Pantalla VRR que suaviza la caída de frames.'],
+                contras: ['La interfaz de Windows 11 puede ser engorrosa en modo táctil.', 'Panel clásico IPS en lugar de OLED.']
+            },
+            'ps5-pro': {
+                title: 'PlayStation 5 Pro', brand: 'Sony', category: 'console',
+                desc: 'La revisión de mitad de generación de Sony. Diseñada para mantener altas tasas de cuadros por segundo en configuraciones de gran impacto visual.',
+                specs: [{ label: 'Tecnología Clave', value: 'PSSR (AI Upscaling) & Ray Tracing Avanzado' }, { label: 'Almacenamiento', value: '2TB Custom NVMe SSD' }],
+                pros: ['60 FPS estables manteniendo resoluciones muy nítidas.', 'El reescalado inteligente por IA de Sony es limpio.'],
+                contras: ['Requiere una fuerte inversión de salida.', 'No incorpora lector de discos óptico de fábrica.']
+            },
+            'switch-2': {
+                title: 'Nintendo Switch 2', brand: 'Nintendo', category: 'console',
+                desc: 'La esperadísima renovación del entorno de hardware de Nintendo. Preserva la versatilidad híbrida pero añade compatibilidad con DLSS.',
+                specs: [{ label: 'Procesador', value: 'Nvidia Drake T239' }, { label: 'Gráficos', value: 'Arquitectura Ampere con núcleos Tensor' }],
+                pros: ['Retrocompatibilidad de catálogo garantizada física y digital.', 'Salto de rendimiento masivo en modo base gracias a la IA.'],
+                contras: ['Panel inicial LCD para reducir costes de lanzamiento.', 'Autonomía de batería ajustada bajo juegos de nueva era.']
+            },
+            'ayaneo-3': {
+                title: 'AYANEO 3', brand: 'AYANEO', category: 'handheld',
+                desc: 'Consola portátil boutique de diseño premium. Se enfoca en materiales sofisticados y joysticks magnéticos de efecto Hall.',
+                specs: [{ label: 'Procesador', value: 'AMD Ryzen 7 de última generación' }, { label: 'Joysticks', value: 'Magnéticos de Efecto Hall anti-drift' }],
+                pros: ['Acabados estéticos de lujo insuperables.', 'Gatillos y sticks sin desgaste mecánico.'],
+                contras: ['Dispositivo costoso de importación entusiasta.', 'Ecosistema de soporte y garantías internacional complejo.']
+            },
+            'xbox-series-x': {
+                title: 'Xbox Series X (Digital)', brand: 'Microsoft', category: 'console',
+                desc: 'El hardware clásico tradicional más potente de Microsoft en una revisión optimizada exclusivamente para descarga digital.',
+                specs: [{ label: 'Rendimiento', value: '12 Teraflops RDNA 2' }, { label: 'Funciones', value: 'Quick Resume instantáneo' }],
+                pros: ['Consola sumamente silenciosa bajo estrés térmico.', 'Quick Resume gestiona juegos suspendidos de forma impecable.'],
+                contras: ['Dependencia total de la tienda digital oficial.']
+            },
+            'legion-go': {
+                title: 'Lenovo Legion Go', brand: 'Lenovo', category: 'handheld',
+                desc: 'Diseño híbrido de gran tamaño. Destaca por su versatilidad y mandos desmontables modulares orientados a shooters de PC.',
+                specs: [{ label: 'Procesador', value: 'AMD Ryzen Z1 Extreme' }, { label: 'Pantalla', value: '8.8" QHD+ IPS, 144Hz' }],
+                pros: ['Pantalla inmensa de enorme nitidez.', 'Mandos versátiles con trackpad integrado.'],
+                contras: ['Dispositivo pesado y voluminoso.', 'Consumo alto que agota rápido la batería a resolución nativa.']
+            },
+            'gpd-win-mini': {
+                title: 'GPD Win Mini', brand: 'GPD', category: 'handheld',
+                desc: 'Ordenador de bolsillo completo metido en un formato tipo concha. Ideal para entusiastas del juego clásico y la terminal de comandos.',
+                specs: [{ label: 'Diseño', value: 'Clamshell con Teclado QWERTY físico' }, { label: 'Conexión', value: 'Puerto OCuLink nativo para eGPU' }],
+                pros: ['Verdaderamente portátil, entra en bolsillos estándar.', 'Teclado integrado cómodo para chats y credenciales.'],
+                contras: ['Ergonomía sacrificada de botones planos.', 'Disipación ajustada debido a las dimensiones del chasis.']
+            },
+            'switch-oled': {
+                title: 'Nintendo Switch OLED', brand: 'Nintendo', category: 'handheld',
+                desc: 'La evolución definitiva del chasis original de Switch, destacando por su pantalla mejorada y soporte trasero rígido.',
+                specs: [{ label: 'Pantalla', value: '7" OLED con marcos reducidos' }, { label: 'Almacenamiento', value: '64GB Internos expandibles' }],
+                pros: ['Excelente calidad visual en modo portátil.', 'Catálogo exclusivo histórico de enorme valor.'],
+                contras: ['Hardware obsoleto para juegos multiplataforma exigentes.']
+            },
+            'ps5-slim': {
+                title: 'PlayStation 5 Slim', brand: 'Sony', category: 'console',
+                desc: 'Revisión estilizada del modelo base de Sony, reduciendo el volumen físico e incrementando el espacio de almacenamiento.',
+                specs: [{ label: 'Almacenamiento', value: '1TB Custom NVMe SSD' }, { label: 'Audio', value: 'Tempest 3D AudioTech' }],
+                pros: ['Catálogo impecable de títulos exclusivos.', 'Chasis compacto y ligero en comparación al original.'],
+                contras: ['La base vertical para colocarla de pie se vende por separado.']
+            },
+            'gpd-win-4': {
+                title: 'GPD Win 4', brand: 'GPD', category: 'handheld',
+                desc: 'Consola china con diseño clásico que evoca a las portátiles de Sony, incorporando una pantalla deslizante vertical.',
+                specs: [{ label: 'Procesador', value: 'AMD Ryzen 7 con gráficos RDNA' }, { label: 'Pantalla', value: '6" H-IPS deslizante' }],
+                pros: ['Formato compacto y muy ergonómico.', 'Estética nostálgica muy llamativa.'],
+                contras: ['Pantalla pequeña para leer textos de PC de alta resolución.']
+            },
+            'xbox-series-s': {
+                title: 'Xbox Series S', brand: 'Microsoft', category: 'console',
+                desc: 'La opción más económica para adentrarse en la generación actual, orientada a resoluciones 1080p y fluidez absoluta.',
+                specs: [{ label: 'Almacenamiento', value: '512GB / 1TB NVMe SSD' }, { label: 'Arquitectura', value: 'Xbox Velocity Architecture' }],
+                pros: ['Tamaño diminuto, sumamente portátil.', 'Excelente punto de entrada combinado con Game Pass.'],
+                contras: ['Espacio de almacenamiento inicial ajustado.', 'No renderiza a 4K nativo en juegos complejos.']
             }
-        }
+        };
+
+        let gamaActual = 'all';
 
         function renderizarTarjetas() {
             document.getElementById('container-laptops').innerHTML = '';
             document.getElementById('container-handhelds').innerHTML = '';
-            document.getElementById('container-accessories').innerHTML = ''; 
 
             Object.keys(hardwareData).forEach(id => {
                 const equipo = hardwareData[id];
@@ -150,8 +256,6 @@
                     if (gamaActual === 'all' || gamaActual === tier) {
                         document.getElementById('container-laptops').innerHTML += crearTarjetaHTML(id, equipo);
                     }
-                } else if (cat === 'accessory') {
-                    document.getElementById('container-accessories').innerHTML += crearTarjetaHTML(id, equipo);
                 } else {
                     document.getElementById('container-handhelds').innerHTML += crearTarjetaHTML(id, equipo);
                 }
@@ -175,11 +279,10 @@
         function crearTarjetaHTML(id, equipo) {
             let colorBorde = 'hover:border-cyan-500/50';
             let tierBadge = '';
-            let footerText = '';
+            let footerText = equipo.category === 'handheld' ? 'PC Portátil' : equipo.category === 'console' ? 'Consola Sobremesa' : 'Laptop';
 
             if (equipo.category === 'laptop') {
                 colorBorde = 'hover:border-emerald-500/50';
-                footerText = 'Laptop';
                 const coloresTier = {
                     'baja': 'bg-slate-800 text-slate-400 border-slate-700',
                     'media': 'bg-blue-950/40 text-blue-400 border-blue-900/40',
@@ -187,11 +290,6 @@
                 };
                 const tierName = equipo.tier === 'baja' ? 'Entrada' : equipo.tier === 'media' ? 'Media' : 'Alta / Ultra';
                 tierBadge = `<span class="text-[10px] px-2 py-0.5 rounded border font-bold uppercase ${coloresTier[equipo.tier]}">${tierName}</span>`;
-            } else if (equipo.category === 'accessory') {
-                colorBorde = 'hover:border-violet-500/50';
-                footerText = 'Accesorio / Periférico';
-            } else {
-                footerText = equipo.category === 'handheld' ? 'PC Portátil' : 'Consola Sobremesa';
             }
 
             const esChinaPremium = ['ayaneo', 'gpd'].includes(equipo.brand.toLowerCase());
@@ -282,8 +380,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 3. CAMBIO CLAVE: Al cargar la página, llamamos a la función asíncrona
-        window.onload = cargarBaseDeDatos;
+        window.onload = renderizarTarjetas;
     </script>
 </body>
 </html>
