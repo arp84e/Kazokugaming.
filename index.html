@@ -4,44 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KazokuGaming | Revista de Videojuegos</title>
-    <!-- Etiquetas SEO Básicas -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+
     <meta name="description" content="La actualidad del videojuego de las últimas 72 horas, optimizada para ti en KazokuGaming.">
     <meta name="keywords" content="videojuegos, noticias gamer, telemetria, hardware gaming, foro juegos, cronicas gaming">
     <meta name="author" content="KazokuGaming">
     <meta name="robots" content="index, follow">
-
-    <!-- Etiquetas Open Graph (Para WhatsApp, Discord, Facebook, Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="KazokuGaming | Revista de Videojuegos">
     <meta property="og:description" content="La actualidad del videojuego de las últimas 72 horas, optimizada para ti.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"> <!-- Usamos la espectacular portada de tu noticia destacada -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800">
     <meta property="og:url" content="https://kazokugaming.vercel.app">
-
-    <!-- Etiquetas Twitter Cards (Para X / Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KazokuGaming | Revista de Videojuegos">
     <meta name="twitter:description" content="La actualidad del videojuego de las últimas 72 horas, optimizada para ti.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800">
-    <!-- Cargamos Tailwind CSS (Nota: En los siguientes pasos optimizaremos esto para producción) -->
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
     </style>
-
-    <!-- Script de analíticas de Vercel -->
     <script defer src="/_vercel/insights/script.js"></script>
-    
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
-    <!-- 
-      ¡NUEVA MODIFICACIÓN! 
-      Aquí ya no verás el bloque <header>...</header> de antes.
-      Ahora, el archivo "header.js" se encargará de inyectar el menú automáticamente en este espacio al cargar la página.
-    -->
-
-    <!-- Bloque principal de contenido de la página -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Actualidad Gamer Semanal</span>
@@ -49,13 +38,11 @@
             <p class="text-lg text-slate-400">La actualidad del videojuego de las últimas 72 horas, optimizada para ti.</p>
         </div>
 
-        <!-- Indicador de carga (Spinner de sintonización) -->
         <div id="noticiasLoading" class="flex flex-col items-center justify-center py-20 space-y-4">
             <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"></div>
             <p class="text-slate-400 text-sm animate-pulse">Sintonizando noticias desde el satélite...</p>
         </div>
 
-        <!-- Contenedor dinámico donde se inyectan las noticias desde noticias.json -->
         <div id="noticiasContenedor" class="hidden space-y-12">
             <div id="noticiaDestacadaZona"></div>
             <div id="zonaSecundarias" class="border-t border-slate-900 pt-8 hidden">
@@ -65,20 +52,13 @@
         </div>
     </main>
 
-    <!-- Pie de página (Footer) de KazokuGaming -->
     <footer class="bg-slate-950 border-t border-slate-900 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
             &copy; 2026 KazokuGaming.
         </div>
     </footer>
 
-    <!-- 
-      ¡CONEXIÓN MAESTRA!
-      Primero llamamos a nuestro componente de menú "header.js" para que dibuje la navegación superior y resalte el botón de "Noticias".
-    -->
     <script src="header.js"></script>
-
-    <!-- Script original que procesa e inyecta las noticias del archivo JSON -->
     <script>
         async function cargarNoticiasInicio() {
             const loading = document.getElementById('noticiasLoading');
@@ -87,25 +67,17 @@
             const gridSecundarias = document.getElementById('noticiasSecundariasGrid');
             const zonaSecundarias = document.getElementById('zonaSecundarias');
 
-            if(zonaDestacada) zonaDestacada.innerHTML = "";
-            if(gridSecundarias) gridSecundarias.innerHTML = "";
-
             try {
                 const respuesta = await fetch('noticias.json');
                 if (!respuesta.ok) throw new Error("No se pudo leer noticias.json");
-                
                 const datos = await respuesta.json();
                 
                 if(loading) loading.classList.add('hidden');
                 if(contenedor) contenedor.classList.remove('hidden');
 
                 let poolNoticias = [];
-                if (datos.destacada && datos.destacada.titulo) {
-                    poolNoticias.push(datos.destacada);
-                }
-                if (datos.secundarias && Array.isArray(datos.secundarias)) {
-                    poolNoticias = poolNoticias.concat(datos.secundarias);
-                }
+                if (datos.destacada && datos.destacada.titulo) poolNoticias.push(datos.destacada);
+                if (datos.secundarias && Array.isArray(datos.secundarias)) poolNoticias = poolNoticias.concat(datos.secundarias);
 
                 const idsUnicos = new Set();
                 poolNoticias = poolNoticias.filter(n => {
@@ -157,7 +129,6 @@
                 if (poolNoticias.length > 0) {
                     poolNoticias.forEach((noticia, indice) => {
                         if (!noticia || !noticia.titulo) return;
-
                         if (indice < 6) {
                             htmlTarjetasRecientes += `
                                 <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
@@ -169,7 +140,7 @@
                                     </div>
                                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                                         <div class="space-y-2">
-                                            <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors" title="${noticia.titulo}">
+                                            <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors">
                                                 ${noticia.titulo}
                                             </h4>
                                             <p class="text-sm text-slate-400 line-clamp-3 leading-relaxed">
@@ -179,8 +150,7 @@
                                         <div class="pt-3 border-t border-slate-800/40 flex justify-between items-center">
                                             <span class="text-[10px] text-slate-500 font-semibold uppercase">Reciente</span>
                                             <a href="articulo.html?id=${noticia.id}" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition flex items-center space-x-1">
-                                                <span>Leer más</span>
-                                                <span>→</span>
+                                                <span>Leer más</span><span>→</span>
                                             </a>
                                         </div>
                                     </div>
@@ -194,13 +164,12 @@
                                     fechaLegible = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
                                 } catch(e) {}
                             }
-
                             htmlListaCompacta += `
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-slate-900/20 border border-slate-800/60 rounded-xl hover:border-slate-700/80 hover:bg-slate-900/40 transition-all duration-200 gap-3">
                                     <div class="flex items-center space-x-4 min-w-0">
                                         <span class="text-xs font-black text-slate-500 uppercase tracking-wider bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">${fechaLegible}</span>
                                         <div class="min-w-0">
-                                            <h5 class="text-sm font-bold text-slate-200 truncate group-hover:text-white">${noticia.titulo}</h5>
+                                            <h5 class="text-sm font-bold text-slate-200 truncate">${noticia.titulo}</h5>
                                             <p class="text-xs text-slate-400 line-clamp-1 mt-0.5">${noticia.resumen}</p>
                                         </div>
                                     </div>
@@ -215,13 +184,7 @@
                     });
                 }
 
-                if (gridSecundarias) {
-                    if (htmlTarjetasRecientes) {
-                        gridSecundarias.innerHTML = htmlTarjetasRecientes;
-                    } else {
-                        gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay más noticias recientes esta semana.</p>";
-                    }
-                }
+                if (gridSecundarias) gridSecundarias.innerHTML = htmlTarjetasRecientes || "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay más noticias recientes.</p>";
                 if (zonaSecundarias) zonaSecundarias.classList.remove('hidden');
 
                 let idHemeroteca = document.getElementById('hemerotecaNoticiasZona');
@@ -233,34 +196,24 @@
                         contenedor.appendChild(seccionHemeroteca);
                         idHemeroteca = seccionHemeroteca;
                     }
-                    
                     if(idHemeroteca) {
                         idHemeroteca.innerHTML = `
                             <div class="flex items-center space-x-3 mb-6">
                                 <div class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></div>
                                 <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Hemeroteca de la Semana (Historial de 5 días)</h3>
                             </div>
-                            <div class="space-y-2.5">
-                                ${htmlListaCompacta}
-                            </div>
+                            <div class="space-y-2.5">${htmlListaCompacta}</div>
                         `;
                     }
-                } else if (idHemeroteca) {
-                    idHemeroteca.remove();
-                }
+                } else if (idHemeroteca) idHemeroteca.remove();
 
             } catch (error) {
-                console.error("Error cargando noticias:", error);
+                console.error(error);
                 if(loading) {
-                    loading.innerHTML = `
-                        <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto">
-                            <p class="text-red-400 font-semibold text-sm">⚠️ El complemento de noticias está inactivo de momento.</p>
-                        </div>
-                    `;
+                    loading.innerHTML = `<div class='text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto'><p class='text-red-400 font-semibold text-sm'>⚠️ El complemento de noticias está inactivo de momento.</p></div>`;
                 }
             }
         }
-
         document.addEventListener('DOMContentLoaded', cargarNoticiasInicio);
     </script>
 </body>
