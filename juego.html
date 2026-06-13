@@ -18,20 +18,6 @@
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
-    <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-                KAZOKU<span class="text-slate-100">GAMING</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="index.html" class="text-slate-400 hover:text-slate-200 transition-colors">Noticias</a>
-                <a href="telemetria.html" class="text-slate-400 hover:text-cyan-400 transition">Telemetría</a>
-                <a href="hardware.html" class="text-slate-400 hover:text-slate-200 transition-colors">Hardware</a>
-                <a href="radar.html" class="text-slate-400 hover:text-slate-200 transition-colors">Radar de Ofertas</a>
-            </nav>
-        </div>
-    </header>
-
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div id="pantalla-juego" class="space-y-8">
             <p class="text-slate-500 text-sm animate-pulse text-center py-12">Accediendo a los servidores de telemetría...</p>
@@ -41,6 +27,8 @@
     <footer class="border-t border-slate-950 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
         <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="header.js"></script>
 
     <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -148,6 +136,6 @@
                 document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos.</div>`;
             });
     }
-</script>
+    </script>
 </body>
 </html>
