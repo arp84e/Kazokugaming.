@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
 
     <meta name="description" content="Únete al Muro de KazokuGaming. Debate sobre hardware, juegos y noticias con total privacidad.">
     <meta property="og:title" content="Foro de la Comunidad | KazokuGaming">
@@ -21,7 +21,7 @@
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
     </style>
 </head>
-<body class="text-slate-200 h-screen flex flex-col justify-between overflow-hidden">
+<body class="text-slate-200 h-screen w-screen flex flex-col overflow-hidden">
 
     <button id="btnAbrirPanelMovil" class="lg:hidden fixed bottom-24 right-6 z-40 bg-indigo-600 hover:bg-indigo-500 text-white p-4 rounded-full shadow-xl border border-indigo-400/20 cursor-pointer flex items-center justify-center transition-transform active:scale-95">
         <span class="text-xl">👤</span>
@@ -29,17 +29,17 @@
 
     <div id="overlayPanelMovil" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-45 transition-opacity lg:hidden"></div>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-grow w-full flex flex-col lg:flex-row gap-6 h-[calc(100vh-70px)] min-h-0">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full flex flex-col lg:flex-row gap-6 min-h-0 overflow-hidden">
         
-        <div class="flex-grow lg:w-0 flex flex-col h-full min-h-0">
-            <div class="mb-4 shrink-0">
+        <div class="flex-1 min-w-0 flex flex-col h-full">
+            <div class="mb-3 shrink-0">
                 <h1 class="text-2xl font-extrabold tracking-tight text-white flex items-center">
                     <span class="text-amber-400 mr-2">💬</span> Muro de Kazoku
                 </h1>
-                <p class="text-slate-400 text-xs mt-1">Comparte descubrimientos o pide consejo en tiempo real.</p>
+                <p class="text-slate-400 text-xs mt-0.5">Comparte descubrimientos o pide consejo en tiempo real.</p>
             </div>
 
-            <div id="muroMensajes" class="flex-grow overflow-y-auto space-y-4 pr-2 mb-4 min-h-0">
+            <div id="muroMensajes" class="flex-1 overflow-y-auto space-y-4 pr-2 mb-4 min-h-0">
                 <p class="text-slate-500 text-sm text-center py-10 animate-pulse">Sincronizando con el satélite de comunicaciones...</p>
             </div>
 
@@ -54,8 +54,8 @@
             </div>
         </div>
 
-        <aside id="panelLateral" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-950/95 border-l border-slate-800 p-6 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col gap-4 overflow-y-auto
-            lg:relative lg:top-0 lg:right-0 lg:h-full lg:w-80 lg:shrink-0 lg:bg-transparent lg:border-none lg:p-0 lg:z-auto lg:transform-none lg:min-h-0">
+        <aside id="panelLateral" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-950/95 border-l border-slate-800 p-6 z-50 translate-x-full transition-transform duration-300 ease-in-out flex flex-col gap-4 overflow-y-auto
+            lg:static lg:h-full lg:w-80 lg:max-w-none lg:bg-transparent lg:border-none lg:p-0 lg:z-auto lg:translate-x-0 lg:overflow-visible lg:flex lg:flex-col shrink-0">
             
             <div class="flex justify-between items-center lg:hidden border-b border-slate-800 pb-3 mb-2 shrink-0">
                 <span class="text-sm font-bold uppercase tracking-wider text-slate-400">Panel de Control</span>
@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-4 backdrop-blur-md shadow-xl flex flex-col flex-grow min-h-0">
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-4 backdrop-blur-md shadow-xl flex flex-col flex-1 min-h-0">
                 <div class="flex items-center justify-between mb-3 border-b border-slate-800/60 pb-2 shrink-0">
                     <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -100,7 +100,7 @@
                     </h3>
                     <span id="contadorConectados" class="text-[10px] bg-slate-800 px-2 py-0.5 rounded-md font-mono text-cyan-400 border border-slate-700">0</span>
                 </div>
-                <div id="listaConectados" class="flex-grow overflow-y-auto space-y-2 pr-1 text-sm text-slate-400 min-h-0">
+                <div id="listaConectados" class="flex-1 overflow-y-auto space-y-2 pr-1 text-sm text-slate-400 min-h-0">
                     <p class="text-[11px] text-slate-500 text-center py-2 italic">Sincronizando red...</p>
                 </div>
             </div>
@@ -220,7 +220,7 @@
             const pass = passInput.value.trim();
 
             if(apodo.length < 3 || pass.length < 4) return alert('El apodo debe tener mínimo 3 letras y la contraseña 4.');
-            if(blacklist.includes(apodo.toLowerCase())) return alert('⚠️ Error: Este apodo es exclusivo del Staff.');
+            if(blacklist.includes(apodo.toLowerCase())) return alert('⚠️ Error: This nickname is reserved.');
 
             btnRegistro.innerText = 'Creando...';
             const hash = await cifrarPassword(pass);
@@ -287,7 +287,6 @@
 
         // --- CARGAR EL MURO (Orden Ascendente estilo Chat) ---
         async function cargarMensajes() {
-            // Se cambia a orden ASCENDENTE para que los viejos queden arriba y los nuevos abajo pegados al input
             const { data, error } = await supabase.from('mensajes').select('*').order('created_at', { ascending: true }).limit(50);
 
             if(error) {
@@ -334,11 +333,11 @@
                 muroMensajes.appendChild(div);
             });
 
-            // Auto-scroll al fondo para ver los últimos mensajes inmediatamente
+            // Auto-scroll instantáneo al fondo al cargar
             muroMensajes.scrollTop = muroMensajes.scrollHeight;
         }
 
-        // Inicializadores
+        // Inicializadores de la aplicación
         revisarSesion();
         cargarMensajes();
         renderUsuariosConectados();
