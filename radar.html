@@ -33,7 +33,7 @@
         <div class="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-slate-800 pb-6 gap-4">
             <div class="text-center md:text-left">
                 <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mb-2">🎯 Radar de Ofertas</h1>
-                <p class="text-base text-slate-400">Las mejores rebajas digitales detectadas hoy en tiendas oficiales y verificadas</p>
+                <p class="text-base text-slate-400">Las mejores rebajas digitales detectadas hoy en tiendas oficiales y mercados verificados</p>
             </div>
             <span class="text-xs bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full uppercase tracking-widest font-bold animate-pulse">🔴 Escaneo en Vivo</span>
         </div>
@@ -48,6 +48,7 @@
                 <input type="text" id="inputBuscador" placeholder="Introduce el título de un juego (ej: Cyberpunk, Elden Ring...)" class="w-full bg-transparent border-none outline-none pl-3 pr-4 py-2 text-sm text-white placeholder-slate-500 focus:ring-0">
                 <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl transition duration-200 cursor-pointer shrink-0">Buscar</button>
             </form>
+            
             <div id="statusBusqueda" class="hidden text-center mt-3 text-xs text-slate-400 animate-pulse">
                 Resultados para: "<span id="textoBusqueda" class="text-cyan-400 font-semibold"></span>" 
                 • <button onclick="limpiarBusqueda()" class="text-indigo-400 hover:text-indigo-300 font-medium underline ml-1 cursor-pointer">Volver al Top general</button>
@@ -68,7 +69,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div class="max-w-4xl mx-auto bg-slate-900/30 border border-slate-800/50 rounded-xl p-4">
                 <p class="text-xs text-slate-500 leading-relaxed text-justify sm:text-center">
-                    <strong>Aviso de transparencia (Disclaimer):</strong> KazokuGaming is un medio informativo independiente. Los enlaces de ofertas recopilados en este radar redirigen a tiendas externas. No gestionamos pagos, claves ni soporte técnico de dichas plataformas. Aunque filtramos estrictamente las tiendas para garantizar la máxima seguridad, te recomendamos verificar siempre las condiciones de compra antes de realizar transacciones.
+                    <strong>Aviso de transparencia (Disclaimer):</strong> KazokuGaming es un medio informativo independiente. Los enlaces de ofertas recopilados en este radar redirigen a tiendas externas. No gestionamos pagos, claves ni soporte técnico de dichas plataformas. Aunque filtramos estrictamente las tiendas para garantizar la máxima seguridad, te recomendamos verificar siempre las condiciones de compra antes de realizar transacciones.
                 </p>
             </div>
             <p class="text-sm text-slate-600">&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
@@ -77,30 +78,59 @@
 
     <script src="header.js"></script>
     <script>
-        const ID_TIENDAS = { "1": "Steam", "7": "GOG.com", "11": "Epic Games", "25": "Epic Games Store", "34": "Eneba" };
+        // Mapeo oficial de tiendas integradas de CheapShark
+        const ID_TIENDAS = { 
+            "1": "Steam", 
+            "7": "GOG.com", 
+            "11": "Epic Games", 
+            "25": "Epic Games Store", 
+            "22": "Humble Store", 
+            "14": "Fanatical" 
+        };
 
-        // Modificamos la función principal para que acepte un parámetro de búsqueda opcional
         async function cargarTopOfertas(busqueda = "") {
             const container = document.getElementById('cardsContainer');
             const loading = document.getElementById('loadingState');
             const section = document.getElementById('resultsSection');
 
-            // Reiniciamos estados visuales antes de la consulta
             loading.classList.remove('hidden');
             section.classList.add('hidden');
             container.innerHTML = "";
+
+            // 🦊 INTEGRACIÓN EN EL BUSCADOR (Si hay una palabra clave activa, creamos la Smart Card de Eneba al inicio)
+            if (busqueda) {
+                const urlEnebaBuscador = `https://www.eneba.com/es/store/all?text=${encodeURIComponent(busqueda)}`;
+                const tarjetaEnebaBuscador = `
+                    <div class="group border border-amber-500/30 bg-gradient-to-b from-amber-950/20 to-slate-900/40 rounded-2xl overflow-hidden flex flex-col justify-between backdrop-blur-sm hover:border-amber-500 hover:bg-slate-900/60 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20">
+                        <div class="p-5 pb-3 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] font-black px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-500/30">🦊 LLAVES DIGITALES</span>
+                                <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Eneba Marketplace</span>
+                            </div>
+                            <h3 class="font-bold text-base text-white tracking-wide line-clamp-1 group-hover:text-amber-300 transition-colors">
+                                Buscar "${busqueda}" en Eneba
+                            </h3>
+                        </div>
+                        <div class="relative aspect-video w-full overflow-hidden bg-slate-950 border-y border-slate-800/50 flex flex-col items-center justify-center p-4 text-center">
+                            <p class="text-xs text-slate-400 px-4">Compara instantáneamente el precio de las claves globales y ofertas de sellers verificados.</p>
+                        </div>
+                        <div class="p-5 space-y-4 bg-slate-950/20">
+                            <div class="text-xs text-slate-500 text-center">Ahorro alternativo en el Foro</div>
+                            <a href="${urlEnebaBuscador}" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition shadow-md">CONSULTAR EN ENEBA ↗</a>
+                        </div>
+                    </div>`;
+                container.insertAdjacentHTML('beforeend', tarjetaEnebaBuscador);
+            }
 
             try {
                 let ofertas = [];
 
                 if (busqueda) {
-                    // MODO BÚSQUEDA DIRECTA: Consulta ofertas basadas en la palabra clave introducida por el miembro
                     const res = await fetch(`https://www.cheapshark.com/api/1.0/deals?title=${encodeURIComponent(busqueda)}`);
                     if (!res.ok) throw new Error();
                     ofertas = await res.json();
                 } else {
-                    // MODO TOP GENERAL: Consulta las páginas globales tradicionales de ofertas destacadas
-                    const totalPages = 6;
+                    const totalPages = 5;
                     const fetchPromises = [];
                     for (let i = 0; i < totalPages; i++) {
                         fetchPromises.push(fetch(`https://www.cheapshark.com/api/1.0/deals?pageNumber=${i}`).then(res => { if (!res.ok) throw new Error(); return res.json(); }));
@@ -112,15 +142,6 @@
                 loading.classList.add('hidden');
                 section.classList.remove('hidden');
 
-                // Si la API devolvió una lista vacía para la búsqueda
-                if (ofertas.length === 0) {
-                    container.innerHTML = `
-                        <div class="col-span-full text-center py-16 bg-slate-900/20 border border-dashed border-slate-800 rounded-2xl">
-                            <p class="text-slate-400 text-sm">No se localizaron ofertas activas para ese título en los comercios verificados.</p>
-                        </div>`;
-                    return;
-                }
-
                 const juegosMostrados = new Set();
                 let ofertasContadas = 0;
 
@@ -129,8 +150,6 @@
                     if (!ID_TIENDAS[item.storeID]) continue; 
 
                     const descuento = Math.round(parseFloat(item.savings));
-                    
-                    // REGLA INTELIGENTE: Si es el Top General exigimos >50% de descuento. Si es una búsqueda del foro, permitimos cualquier descuento.
                     if (!busqueda && descuento < 50) continue; 
 
                     const tituloBase = item.title.split('-')[0].split('(')[0].split('–')[0].trim().toLowerCase();
@@ -144,7 +163,6 @@
                     let highlightCard = "border-slate-800 bg-slate-900/40";
                     
                     if (busqueda) {
-                        // Estilo neutral estilizado para listado de búsquedas directas
                         badgeHTML = `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 border border-indigo-500/20">Coincidencia</span>`;
                     } else if (ofertasContadas <= 3) {
                         badgeHTML = `<span class="text-[10px] font-black px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-500/30">💥 SUPER OFERTA</span>`;
@@ -176,20 +194,36 @@
                     if (ofertasContadas >= 24) break;
                 }
 
-                // Control secundario por si se filtraron todos los duplicados o marcas de tienda
-                if (ofertasContadas === 0 && busqueda) {
-                    container.innerHTML = `
-                        <div class="col-span-full text-center py-16 bg-slate-900/20 border border-dashed border-slate-800 rounded-2xl">
-                            <p class="text-slate-400 text-sm">No hay ofertas disponibles que coincidan con los comercios del ecosistema Kazoku para "${busqueda}".</p>
+                // 🦊 INTEGRACIÓN EN EL RADAR GENERAL (Si están viendo el catálogo limpio, inyectamos una tarjeta fija al final)
+                if (!busqueda) {
+                    const tarjetaEnebaFija = `
+                        <div class="group border border-amber-500/20 bg-slate-900/30 rounded-2xl overflow-hidden flex flex-col justify-between backdrop-blur-sm hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20">
+                            <div class="p-5 pb-3 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-950/40 text-amber-400 border border-amber-500/10">CATÁLOGO EXTERNO</span>
+                                    <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Eneba</span>
+                                </div>
+                                <h3 class="font-bold text-base text-white tracking-wide line-clamp-1 group-hover:text-amber-400 transition-colors">
+                                    ¿No encuentras tu juego en el Top?
+                                </h3>
+                            </div>
+                            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 border-y border-slate-800/50 flex items-center justify-center p-4 text-center">
+                                <p class="text-xs text-slate-400 leading-relaxed px-4">Explora las ofertas diarias globales del marketplace líder en llaves de PC y consolas.</p>
+                            </div>
+                            <div class="p-5 space-y-4 bg-slate-950/20">
+                                <div class="flex justify-between text-xs text-slate-500"><span>Tienda adicional</span><span class="text-amber-400 font-semibold">Descuentos</span></div>
+                                <a href="https://www.eneba.com/es/store/all" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-xs bg-gradient-to-r from-amber-600 to-amber-500 text-slate-950 font-extrabold py-3 rounded-xl transition shadow-md">EXPLORAR ENEBA →</a>
+                            </div>
                         </div>`;
+                    container.insertAdjacentHTML('beforeend', tarjetaEnebaFija);
                 }
+
             } catch (error) {
                 console.error(error);
                 loading.innerHTML = `<div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto"><p class="text-red-400 font-semibold text-sm">⚠️ Error al sincronizar el Radar.</p></div>`;
             }
         }
 
-        // Ejecuta la consulta de búsqueda interceptando el submit del formulario
         function ejecutarBusqueda(e) {
             e.preventDefault();
             const query = document.getElementById('inputBuscador').value.trim();
@@ -200,7 +234,6 @@
             cargarTopOfertas(query);
         }
 
-        // Restaura el input y vuelve a cargar las mejores ofertas iniciales globales
         function limpiarBusqueda() {
             document.getElementById('inputBuscador').value = '';
             document.getElementById('statusBusqueda').classList.add('hidden');
