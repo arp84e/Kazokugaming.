@@ -1,0 +1,45 @@
+{
+  "lenovo-loq-15": {
+    "title": "Lenovo LOQ 15IRH8",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "tier": "media",
+    "score": 85,
+    "desc": "La evolución del gaming de entrada hereda el ADN de la legendaria línea Legion. Rendimiento sólido de última generación con una refrigeración sobresaliente a un precio sumamente competitivo.",
+    "analysis_design": "El Lenovo LOQ 15 destaca por adoptar directamente la herencia de diseño de la aclamada línea Legion, ofreciendo un chasis construido enteramente en policarbonato de alta resistencia que, si bien prescinde del aluminio para ajustar costos, se siente sumamente robusto al tacto y libre de flexiones preocupantes en la zona del teclado. La estética es sobria y elegante, con un color gris tormenta mate que minimiza las huellas dactilares, complementado por sutiles acentos azules en las salidas de aire traseras que denotan su espíritu gamer. El diseño de bisagra retrasada no solo permite una apertura suave con una sola mano, sino que libera espacio para un excelente sistema de gestión de cables gracias a su distribución de puertos 'Rear I/O', ubicando la mayoría de las conexiones pesadas en la parte posterior del equipo.\n\nEn el apartado térmico, el LOQ 15 implementa una arquitectura de refrigeración de alto flujo equipada con ventiladores duales de 85 mm a 12V y cuatro disipadores de cobre de gran grosor que cubren tanto la CPU como la GPU y los VRM. Esta configuración se ve potenciada por el chip dedicado Lenovo LA1 AI, el cual interactúa directamente con los sensores térmicos para regular el consumo energético y la velocidad de los ventiladores en tiempo real mediante el algoritmo Engine+. Esto garantiza que, incluso durante sesiones de juego que exigen el 100% de carga, las temperaturas de la GPU se mantengan por debajo de los 78 °C, evitando por completo el estrangulamiento térmico (thermal throttling) sin generar un ruido acústico ensordecedor.",
+    "analysis_performance": "Bajo el capó, el rendimiento bruto de este equipo es sobresaliente dentro de su categoría, impulsado por la combinación del procesador Intel Core i7-13620H de 10 núcleos y la GPU NVIDIA GeForce RTX 4060 configurada a su TGP máximo de 115W con Dynamic Boost. En pruebas de juego real a resolución nativa de 1080p, títulos altamente demandantes como Cyberpunk 2077 logran promedios estables de 85 FPS utilizando ajustes en Ultra y DLSS 3 con Frame Generation activo, manteniendo un excelente control de los 1% lows que elimina cualquier micro-stuttering molesto. Para esports de alta velocidad como Valorant o Counter-Strike 2, la laptop exprime por completo la tasa de refresco de la pantalla, superando con holgura los 240 FPS con latencias de sistema mínimas gracias a la integración de un switch MUX nativo con tecnología Advanced Optimus.\n\nSin embargo, el panel IPS de 15.6 pulgadas a 144Hz es donde encontramos el compromiso necesario para mantener su precio competitivo. Aunque ofrece una excelente fluidez de actualización, compatibilidad con G-Sync y un brillo decente de 350 nits, la cobertura de color se limita a un 45% NTSC (aproximadamente 62.5% sRGB), lo que se traduce en una paleta de colores algo lavada para creadores de contenido profesional, aunque perfectamente funcional para competir en línea. Por el lado de la interfaz física, el teclado destaca de manera sobresaliente al heredar el diseño TrueStrike de Lenovo, ofreciendo un recorrido de tecla de 1.5 mm con un tacto sumamente preciso y 100% de anti-ghosting, ideal para las ráfagas de comandos más exigentes.",
+    "verdict": "El Lenovo LOQ 15 es una de las mejores inversiones del año para el jugador que busca el máximo rendimiento por su dinero en la gama media. Es ideal para estudiantes y gamers competitivos que priorizan altas tasas de cuadros por segundo, estabilidad térmica y la tecnología DLSS 3, siempre y cuando no requieran una precisión de color profesional para edición de video o diseño gráfico.",
+    "specs": [
+      {
+        "label": "Procesador",
+        "value": "Intel Core i7-13620H (10 núcleos, 16 hilos, hasta 4.90 GHz, 24 MB Cache)"
+      },
+      {
+        "label": "Tarjeta Gráfica",
+        "value": "NVIDIA GeForce RTX 4060 Laptop GPU 8GB GDDR6 (TGP 115W con MUX Switch)"
+      },
+      {
+        "label": "Memoria RAM",
+        "value": "16 GB DDR5 a 5200 MHz (2x8GB Dual Channel, ampliable a 32 GB)"
+      },
+      {
+        "label": "Pantalla",
+        "value": "15.6 pulgadas IPS FHD (1920x1080), 144Hz, G-Sync, 350 nits, 45% NTSC"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "512 GB SSD M.2 2242 PCIe Gen 4.0 NVMe (Ranura M.2 libre adicional)"
+      }
+    ],
+    "pros": [
+      "Excelente sistema de disipación térmica optimizado por inteligencia artificial Lenovo LA1.",
+      "GPU RTX 4060 configurada a su TGP máximo de 115W para exprimir hasta el último FPS.",
+      "Distribución de puertos trasera muy cómoda y teclado heredado de la gama alta Legion."
+    ],
+    "contras": [
+      "La pantalla tiene una gama de colores limitada (45% NTSC), restando viveza a entornos muy coloridos.",
+      "Chasis construido completamente en plástico, lo que disminuye la sensación premium general."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
+  }
+}
