@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: pip install google-genai feedparser requests
+      - run: pip install google-genai feedparser requests beautifulsoup4
       - env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scraper_noticias.py
