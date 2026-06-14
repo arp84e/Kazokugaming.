@@ -86,5 +86,48 @@
       "Un precio de venta recomendado sumamente elevado que ensancha la brecha de acceso para el consumidor promedio de consolas domésticas."
     ],
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
+  },
+  "ps5": {
+    "title": "Sony PlayStation 5 (Chasis CFI-1200)",
+    "brand": "Sony",
+    "category": "console",
+    "tier": "alta",
+    "score": 92,
+    "desc": "La obra maestra de hardware de Sony redefine la experiencia de juego de salón gracias a su arquitectura de almacenamiento ultrarrápida y un ecosistema háptico revolucionario.",
+    "analysis_design": "El chasis de la PlayStation 5 rompe con el conservadurismo industrial de generaciones pasadas, presentando un diseño futurista y asimétrico que destaca por sus placas de plástico ABS de alta densidad (fácilmente intercambiables) que flanquean un núcleo negro brillante de policarbonato. Con unas dimensiones imponentes de 390mm x 104mm x 260mm y un peso de 4.5 kg en su versión con lector físico, es una pieza de ingeniería masiva que exige espacio de ventilación dedicado. En términos de conectividad, el panel frontal ofrece un puerto USB-C SuperSpeed de 10 Gbps y un puerto USB-A de alta velocidad, mientras que la parte trasera alberga dos puertos USB-A SuperSpeed de 10 Gbps, un puerto HDMI 2.1 con soporte nativo para VRR (Variable Refresh Rate) y ALLM (Auto Low Latency Mode), y una toma Ethernet Gigabit para garantizar una latencia de red mínima durante sesiones de juego competitivo en línea.\n\nDesde la perspectiva puramente térmica, el laboratorio de KazokuGaming destaca la audaz e innovadora solución de disipación térmica implementada por Sony en esta iteración. El uso de metal líquido (Liquid Metal) como interfaz térmica (TIM) entre el SoC personalizado de AMD y el descomunal bloque disipador de cobre y aluminio mitiga drásticamente la resistencia térmica, optimizando la transferencia de calor de manera infinitamente más eficiente que las pastas térmicas tradicionales. El flujo de aire está gestionado por un ventilador centrífugo de doble cara de 120 mm de diámetro y 45 mm de grosor, el cual extrae aire fresco de la parte superior y expulsa el aire caliente por la rejilla trasera de forma sumamente silenciosa, manteniendo el nivel sonoro por debajo de los 35 dBA bajo carga extrema de renderizado en juegos exigentes a resolución 4K.",
+    "analysis_performance": "En nuestro banco de pruebas, el rendimiento bruto de la PS5 se sustenta en su APU personalizada con arquitectura de CPU Zen 2 (8 núcleos y 16 hilos a frecuencias variables de hasta 3.5 GHz) y una GPU basada en RDNA 2 personalizada con 36 Compute Units corriendo a una frecuencia de reloj ultrarrápida de hasta 2.23 GHz, entregando 10.28 TFLOPs de potencia teórica. Este hardware se traduce en un rendimiento asombroso en títulos de última generación, permitiendo jugar en resoluciones 4K nativas o reconstruidas a 60 FPS estables en modo Rendimiento, o experimentar con trazado de rayos (Ray Tracing) activo a 30 FPS en modo Fidelidad. La integración del ancho de banda de memoria de 16 GB de GDDR6 con un bus de 256 bits ofrece una velocidad de transferencia de 448 GB/s, lo que elimina virtualmente cualquier cuello de botella en cargas de texturas de alta resolución.\n\nNo obstante, la verdadera estrella de esta arquitectura es su SSD NVMe PCIe Gen 4 personalizado de 825 GB, capaz de alcanzar velocidades de lectura secuencial nativa de 5.5 GB/s (y más de 9 GB/s de datos comprimidos mediante el descompresor integrado Kraken de Oodle). En títulos optimizados, los tiempos de carga son prácticamente inexistentes (menos de 2 segundos en cargar mundos abiertos masivos), redefiniendo por completo el diseño de niveles en videojuegos. Asimismo, la latencia de entrada (input lag) se mantiene en valores mínimos competitivos gracias a la tecnología inalámbrica Bluetooth 5.1 del mando DualSense, cuyos gatillos adaptativos y motores de vibración de actuador de bobina de voz (LRA) ofrecen una respuesta de fidelidad háptica sin precedentes en la industria.",
+    "verdict": "La PlayStation 5 representa un salto tecnológico masivo y una compra obligada para el gamer que busca rendimiento de vanguardia en formato Plug-and-Play sin las complicaciones de configuración de un PC de gama alta. Con su combinación de almacenamiento ultrarrápido y el ecosistema de inmersión háptica del mando DualSense, es la inversión perfecta para entusiastas que priorizan juegos AAA y una experiencia de juego fluida a 4K de alta fidelidad.",
+    "specs": [
+      {
+        "label": "APU (CPU/GPU)",
+        "value": "AMD Zen 2 de 8 núcleos a 3.5 GHz / GPU RDNA 2 personalizada de 10.28 TFLOPs"
+      },
+      {
+        "label": "Memoria de Sistema",
+        "value": "16 GB GDDR6 con bus de 256-bit y ancho de banda de 448 GB/s"
+      },
+      {
+        "label": "Almacenamiento Interno",
+        "value": "SSD NVMe PCIe Gen 4 personalizado de 825 GB con velocidad de lectura de 5.5 GB/s"
+      },
+      {
+        "label": "Interfaz de Salida de Video",
+        "value": "HDMI 2.1 con soporte para resolución 4K a 120Hz, 8K, HDR y VRR"
+      },
+      {
+        "label": "Interfaz Térmica (TIM)",
+        "value": "Compuesto de Metal Líquido de alta conductividad en el encapsulado del SoC"
+      }
+    ],
+    "pros": [
+      "Ancho de banda de almacenamiento revolucionario con velocidades de carga instantáneas gracias al descompresor de hardware personalizado Kraken.",
+      "Ecosistema háptico del mando DualSense con gatillos resistivos que proporcionan un nivel de inmersión y respuesta física sin rival en consolas.",
+      "Excelente gestión de la temperatura y nivel de ruido extremadamente bajo gracias al uso de interfaz térmica de metal líquido y un disipador de gran volumen."
+    ],
+    "contras": [
+      "Capacidad de almacenamiento interno útil inicial limitada (aproximadamente 667 GB netos utilizables), lo que obliga a comprar un SSD NVMe M.2 de expansión a corto plazo.",
+      "Dimensiones físicas sumamente voluminosas y diseño asimétrico polarizante que dificulta su colocación en muebles de salón convencionales."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
   }
 }
