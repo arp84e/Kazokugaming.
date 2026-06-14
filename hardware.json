@@ -41,5 +41,50 @@
       "Chasis construido completamente en plástico, lo que disminuye la sensación premium general."
     ],
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
+  },
+  "playstation-5-pro": {
+    "title": "Sony PlayStation 5 Pro",
+    "brand": "Sony Interactive Entertainment",
+    "category": "console",
+    "tier": "alta",
+    "score": 85,
+    "desc": "La cúspide de la media generación de Sony llega para erradicar el compromiso entre resolución y rendimiento, fusionando trazado de rayos avanzado con reescalado inteligente por IA.",
+    "analysis_design": "Desde la perspectiva de la ingeniería de hardware, la PlayStation 5 Pro refina la audaz estética de la arquitectura original de Sony, presentando un chasis estilizado que incorpora unas ranuras negras laterales de ventilación activa. Estas aberturas no son un mero capricho visual; optimizan drásticamente la entrada de flujo de aire frío hacia el núcleo del sistema. La calidad de los materiales sigue apostando por polímeros ABS de alta densidad en las cubiertas intercambiables, proporcionando una rigidez estructural óptima que minimiza las vibraciones acústicas durante el funcionamiento de los componentes internos a máxima capacidad.",
+    "analysis_design_2": "La distribución de interfaces físicas ha sido modernizada con gran criterio técnico, sustituyendo el puerto USB-A frontal por una configuración dual de puertos USB-C (uno de ellos de alta velocidad a 10 Gbps), mientras que la parte trasera conserva los puertos de alta velocidad ideales para almacenamiento externo y accesorios de realidad virtual. En lo relativo a la gestión térmica, el rediseño del disipador de calor de cobre asistido por metal líquido (TIM) y un ventilador centrífugo PWM de 120 mm logran mantener las temperaturas de la APU personalizada por debajo de los umbrales críticos de estrangulamiento térmico, ofreciendo una acústica imperceptible que rara vez supera los 32 dB bajo cargas de procesamiento extremas.",
+    "analysis_performance": "El verdadero salto cualitativo de la PS5 Pro reside en su destreza de procesamiento gráfico en tiempo real. Gracias a una GPU que cuenta con un 67% más de unidades de cálculo que el modelo base y una memoria un 28% más rápida, la consola ofrece una tasa de cuadros por segundo de 60 FPS sólidos como una roca en resoluciones nativas y dinámicas ultra elevadas. Títulos de alto impacto técnico como 'Marvel's Spider-Man 2' logran sostener esta fluidez eliminando por completo la borrosidad típica de las técnicas de reescalado tradicionales, gracias a la implementación de PlayStation Spectral Super Resolution (PSSR), un algoritmo de aprendizaje profundo que rivaliza de tú a tú con las mejores tecnologías de reconstrucción temporal de PC.",
+    "analysis_performance_2": "En lo que respecta al trazado de rayos (Ray Tracing), la integración de hardware dedicado de última generación (derivado de las futuras arquitecturas RDNA de AMD) duplica e incluso triplica la velocidad de cálculo de intersecciones de rayos respecto a la PS5 estándar. Esto se traduce en reflejos dinámicos de nitidez cristalina y una oclusión ambiental impecable sin penalizar el framerate. La latencia de entrada se ve reducida gracias a la compatibilidad nativa con pantallas VRR (Variable Refresh Rate) de hasta 120 Hz, mientras que el chip Wi-Fi 7 integrado garantiza una consistencia en el tráfico de paquetes de red inalámbrica que reduce el jitter y el ping en sesiones competitivas de ritmo frenético.",
+    "verdict": "La PlayStation 5 Pro es una obra de ingeniería de nicho, ideal para el jugador entusiasta que exige el rendimiento gráfico y la tasa de refresco propios de una PC gaming de gama alta sin lidiar con configuraciones complejas de software. A pesar de su elevado coste de adquisición, es la máquina definitiva para exprimir al máximo televisores OLED y monitores gaming de última generación.",
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "AMD Zen 2 de 8 núcleos y 16 hilos a 3.5 GHz con frecuencia variable"
+      },
+      {
+        "label": "GPU",
+        "value": "APU personalizada de arquitectura RDNA con 16.7 TFLOPS y aceleración de Ray Tracing avanzada"
+      },
+      {
+        "label": "Memoria de Sistema",
+        "value": "16 GB GDDR6 (ancho de banda de 576 GB/s) + 2 GB DDR5 adicionales para tareas de SO"
+      },
+      {
+        "label": "Almacenamiento",
+        "value": "Unidad de estado sólido SSD NVMe PCIe 4.0 de 2 TB con velocidad de lectura de 5.5 GB/s"
+      },
+      {
+        "label": "Conectividad",
+        "value": "Wi-Fi 7 (802.11be), Bluetooth 5.3, Ethernet Gigabit y salida HDMI 2.1 con soporte VRR"
+      }
+    ],
+    "pros": [
+      "La tecnología de reescalado inteligente PSSR ofrece una calidad de imagen nítida que supera notablemente a FSR 2, compitiendo directamente con soluciones de PC.",
+      "El rendimiento de trazado de rayos mejorado permite mantener reflejos y sombras realistas sin sacrificar la tasa de refresco objetivo de 60 FPS.",
+      "Capacidad de almacenamiento interno duplicada a 2 TB de fábrica, eliminando la necesidad de expansión inmediata para albergar juegos de gran calibre."
+    ],
+    "contras": [
+      "La exclusión física de la unidad lectora de discos ópticos Blu-ray y del soporte vertical oficial, lo que requiere una inversión complementaria.",
+      "Un precio de venta recomendado sumamente elevado que ensancha la brecha de acceso para el consumidor promedio de consolas domésticas."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
   }
 }
