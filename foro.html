@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <meta name="description" content="Únete al Muro de KazokuGaming. Debate sobre hardware, juegos y noticias con total privacidad.">
     <meta property="og:title" content="Foro de la Comunidad | KazokuGaming">
@@ -185,28 +185,90 @@
             }
         }
 
-        // --- RENDER DE USUARIOS CONECTADOS ---
-        function renderUsuariosConectados() {
-            const usuariosBase = ['KazokuBot', 'VercelMaster', 'AlphaPlayer', 'SpecterX'];
-            if(usuarioActual && !usuariosBase.includes(usuarioActual)) {
-                usuariosBase.unshift(usuarioActual);
-            }
-            
-            contadorConectados.innerText = usuariosBase.length;
+        // --- TRACKING REALTIME PRESENCE (CONECTADOS REALES) ---
+        // Generamos un identificador único por pestaña para que no colisionen sesiones
+        const presKey = usuarioActual ? `user:${usuarioActual}_${Math.random().toString(36).substr(2,4)}` : `guest:${Math.random().toString(36).substr(2, 8)}`;
+        
+        const channel = supabase.channel('muro_online', {
+            config: { presence: { key: presKey } }
+        });
+
+        channel
+            .on('presence', { event: 'sync' }, () => {
+                const state = channel.presenceState();
+                renderUsuariosReales(state);
+            })
+            .subscribe(async (status) => {
+                if (status === 'SUBSCRIBED') {
+                    // Publicamos nuestro estado actual en la sala invisible de Supabase
+                    await channel.track({
+                        username: usuarioActual || 'Invitado Anon',
+                        esInvitado: !usuarioActual,
+                        onlineAt: new Date().toISOString()
+                    });
+                }
+            });
+
+        function renderUsuariosReales(state) {
             listaConectados.innerHTML = '';
-            
-            usuariosBase.forEach(user => {
-                const esAdmin = blacklist.includes(user.toLowerCase());
-                const badge = esAdmin ? '<span class="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 rounded border border-indigo-500/30 font-bold">STAFF</span>' : '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>';
+            const usuariosUnicos = [];
+            const nombresFiltrados = new Set();
+
+            // Extraemos y limpiamos la información que Supabase Presence recolecta de todos los navegadores abiertos
+            Object.keys(state).forEach((key) => {
+                const presences = state[key];
+                if (presences && presences.length > 0) {
+                    const datosUsuario = presences[0];
+                    
+                    if (!datosUsuario.esInvitado) {
+                        // Si es usuario registrado, evitamos duplicar su nombre si tiene varias pestañas abiertas
+                        if (!nombresFiltrados.has(datosUsuario.username)) {
+                            nombresFiltrados.add(datosUsuario.username);
+                            usuariosUnicos.push(datosUsuario);
+                        }
+                    } else {
+                        // Los invitados anónimos se añaden de forma individual siempre
+                        usuariosUnicos.push(datosUsuario);
+                    }
+                }
+            });
+
+            // Ordenamos: Miembros del Staff y usuarios primero, invitados al final
+            usuariosUnicos.sort((a, b) => {
+                const aAdmin = blacklist.includes(a.username.toLowerCase()) ? 0 : 1;
+                const bAdmin = blacklist.includes(b.username.toLowerCase()) ? 0 : 1;
+                if (aAdmin !== bAdmin) return aAdmin - bAdmin;
+                return a.esInvitado - b.esInvitado;
+            });
+
+            contadorConectados.innerText = usuariosUnicos.length;
+
+            if (usuariosUnicos.length === 0) {
+                listaConectados.innerHTML = '<p class="text-[11px] text-slate-500 text-center py-2 italic">No hay transmisiones...</p>';
+                return;
+            }
+
+            usuariosUnicos.forEach(user => {
+                const esAdmin = blacklist.includes(user.username.toLowerCase());
+                let badge = '';
                 
+                if (esAdmin) {
+                    badge = '<span class="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 rounded border border-indigo-500/30 font-bold">STAFF</span>';
+                } else if (user.esInvitado) {
+                    badge = '<span class="text-[8px] bg-slate-800 text-slate-500 px-1 rounded border border-slate-700">GUEST</span>';
+                } else {
+                    badge = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>';
+                }
+                
+                const inicial = user.username.charAt(0).toUpperCase();
                 const div = document.createElement('div');
                 div.className = 'flex items-center justify-between bg-slate-950/40 border border-slate-800/50 rounded-xl px-3 py-2 hover:border-slate-700/80 transition shrink-0';
                 div.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300">
-                            ${user.charAt(0).toUpperCase()}
+                    <div class="flex items-center gap-2 min-w-0">
+                        <div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300 shrink-0">
+                            ${inicial}
                         </div>
-                        <span class="text-xs font-medium text-slate-300 truncate max-w-[120px]">${user}</span>
+                        <span class="text-xs font-medium text-slate-300 truncate max-w-[120px]">${user.username}</span>
                     </div>
                     ${badge}
                 `;
@@ -220,7 +282,7 @@
             const pass = passInput.value.trim();
 
             if(apodo.length < 3 || pass.length < 4) return alert('El apodo debe tener mínimo 3 letras y la contraseña 4.');
-            if(blacklist.includes(apodo.toLowerCase())) return alert('⚠️ Error: This nickname is reserved.');
+            if(blacklist.includes(apodo.toLowerCase())) return alert('⚠️ Error: Este apodo está reservado.');
 
             btnRegistro.innerText = 'Creando...';
             const hash = await cifrarPassword(pass);
@@ -340,7 +402,6 @@
         // Inicializadores de la aplicación
         revisarSesion();
         cargarMensajes();
-        renderUsuariosConectados();
     </script>
 </body>
 </html>
