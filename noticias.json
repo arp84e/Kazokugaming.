@@ -1,15 +1,25 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "El fin de una era en Yharnam: El protector de Bloodborne cuelga su arma tras años salvando a la comunidad",
-    "resumen": "Incluso las pesadillas más eternas tienen un final. Uno de los cooperantes más emblemáticos y dedicados de Bloodborne ha decidido retirarse de la primera línea de batalla tras casi una década facilitando la vida a miles de jugadores frustrados.",
-    "contenido_completo": "<p>Yharnam es un lugar inhóspito, pero durante casi diez años, los jugadores de Bloodborne contaron con un ángel de la guarda digital. Este legendario cazador cooperativo se convirtió en el terror de los jefes más implacables del título de FromSoftware, respondiendo a la campana de convocación una y otra vez para rescatar a la comunidad de la desesperación absoluta. Su reputación le precedía, siendo el equivalente en el gótico universo de Miyazaki al aclamado 'Let Me Solo Her' de Elden Ring.</p><p>Sin embargo, toda cacería llega a su fin. Lejos de tratarse de una disputa con los servidores o el desgaste por la dificultad, el motivo de su jubilación es sumamente humano y comprensible: el simple deseo de pasar página, disfrutar de nuevos lanzamientos y dejar que las nuevas generaciones de cazadores forjen su propio camino sin depender de un salvavidas constante. La comunidad ya rinde homenaje a este héroe sin capa que demostró que, en el hostil mundo de los Soulsborne, la solidaridad es el arma más poderosa.</p>",
-    "id": "noticia-1781434301-5",
-    "enlace": "https://vandal.elespanol.com/noticia/1350790813/lleva-11-anos-ayudando-a-jugadores-de-bloodborne-a-vencer-a-un-dificil-jefe-pero-se-retira-por-una-sencilla-razon/",
+    "titulo": "Topuria contra Gaethje en la jaula virtual: EA Sports UFC dicta sentencia en el choque de titanes",
+    "resumen": "Ponemos a prueba el hiperrealismo de la aclamada franquicia de lucha de EA Sports para resolver uno de los debates más ardientes del octágono: ¿quién reinaría en un cara a cara entre Ilia Topuria y Justin Gaethje? El simulador de MMA ya tiene un veredicto.",
+    "contenido_completo": "<p>El 'hype' por ver a Ilia 'El Matador' Topuria medir fuerzas contra los peleadores más salvajes de la división no deja de crecer, y como la paciencia no es precisamente una virtud de la comunidad 'gamer', hemos decidido dejar el destino en manos de los algoritmos de EA Sports UFC. En una recreación digital ultra detallada que calibra al milímetro los atributos de striking, la barra de resistencia y el grappling de ambos contendientes, el octágono virtual echó chispas desde el primer asalto. Justin Gaethje, fiel a su estilo de demolición, castigó las piernas del hispano-georgiano con 'low kicks' devastadoras, obligando al jugador virtual a cambiar de estrategia sobre la marcha.</p><p>Sin embargo, la precisión y el 'timing' quirúrgico de Topuria terminaron por imponerse en los compases intermedios de la simulación. Tras esquivar una combinación letal del estadounidense gracias a las fluidas mecánicas de esquiva del juego, 'El Matador' conectó un derechazo descomunal que mandó a Gaethje directo a la lona de forma dramática. El réferi virtual detuvo el combate en el tercer round, decretando un KO técnico que consolida a Topuria como el monarca absoluto de la simulación y eleva las expectativas de los fans para cuando este choque de trenes ocurra en el mundo real.</p>",
+    "id": "noticia-1781450738-3",
+    "enlace": "https://vandal.elespanol.com/noticia/1350790818/simulamos-el-combate-entre-illia-topuria-y-justin-gaethje-en-ufc-6-y-este-sera-el-ganador-segun-el-videojuego/",
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
-    "fecha": "2026-06-14T10:53:48.702553"
+    "fecha": "2026-06-14T15:26:19.147723"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "El fin de una era en Yharnam: El protector de Bloodborne cuelga su arma tras años salvando a la comunidad",
+      "resumen": "Incluso las pesadillas más eternas tienen un final. Uno de los cooperantes más emblemáticos y dedicados de Bloodborne ha decidido retirarse de la primera línea de batalla tras casi una década facilitando la vida a miles de jugadores frustrados.",
+      "contenido_completo": "<p>Yharnam es un lugar inhóspito, pero durante casi diez años, los jugadores de Bloodborne contaron con un ángel de la guarda digital. Este legendario cazador cooperativo se convirtió en el terror de los jefes más implacables del título de FromSoftware, respondiendo a la campana de convocación una y otra vez para rescatar a la comunidad de la desesperación absoluta. Su reputación le precedía, siendo el equivalente en el gótico universo de Miyazaki al aclamado 'Let Me Solo Her' de Elden Ring.</p><p>Sin embargo, toda cacería llega a su fin. Lejos de tratarse de una disputa con los servidores o el desgaste por la dificultad, el motivo de su jubilación es sumamente humano y comprensible: el simple deseo de pasar página, disfrutar de nuevos lanzamientos y dejar que las nuevas generaciones de cazadores forjen su propio camino sin depender de un salvavidas constante. La comunidad ya rinde homenaje a este héroe sin capa que demostró que, en el hostil mundo de los Soulsborne, la solidaridad es el arma más poderosa.</p>",
+      "id": "noticia-1781434301-5",
+      "enlace": "https://vandal.elespanol.com/noticia/1350790813/lleva-11-anos-ayudando-a-jugadores-de-bloodborne-a-vencer-a-un-dificil-jefe-pero-se-retira-por-una-sencilla-razon/",
+      "imagen": "https://loremflickr.com/800/450/bloodborne,hunter",
+      "fecha": "2026-06-14T10:53:48.702553"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "Bandera roja en la pista: EA desconectará el multijugador de Grid Legends en consolas este septiembre",
@@ -27,7 +37,7 @@
       "contenido_completo": "<p>Naughty Dog ha pasado de ser la joya de la corona de Sony a generar más dudas que certezas en los últimos tiempos. La cancelación definitiva de <em>The Last of Us Online</em> dejó una profunda cicatriz en su hoja de ruta, evidenciando las dificultades de la compañía para adaptarse al implacable modelo de los juegos como servicio. A este tropiezo se suma una notable fuga de talentos clave en puestos directivos y una estrategia comercial demasiado apoyada en remakes y remasterizaciones que, aunque técnicamente impecables, han sabido a poco para una comunidad sedienta de nuevas licencias creativas y verdaderas experiencias de nueva generación.</p><p>Sin embargo, dar por muerto al estudio californiano sería un error garrafal. Bajo la dirección de Neil Druckmann, la desarrolladora ya se encuentra cocinando su próximo gran proyecto para PlayStation 5, el cual promete redefinir una vez más los límites de la narrativa interactiva y el fotorrealismo. Más que una crisis terminal, lo que hoy presenciamos es una dolorosa pero necesaria metamorfosis; una reconfiguración interna para aprender de los errores del pasado y centrar todos sus esfuerzos en su verdadero fuerte: las aventuras single-player capaces de marcar una época.</p>",
       "id": "noticia-1781434301-2",
       "enlace": "https://es.ign.com/crash-bandicoot/230401/que-diablos-esta-pasando-con-naughty-dog",
-      "imagen": "https://sm.ign.com/t/ign_es/feature/w/where-the-/where-the-hell-is-naughty-dog_6t53.640.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-14T10:52:57.935395"
     },
     {
@@ -47,7 +57,7 @@
       "contenido_completo": "<p>No es ningún secreto que los mejores desarrolladores de la industria del videojuego se inspiran constantemente en el séptimo arte para ponernos los pelos de punta. Esa atmósfera asfixiante de aislamiento, la paranoia constante de no saber qué acecha en la oscuridad y el diseño de criaturas grotescas que te hacen pausar la partida tienen un origen claro en el cine clásico de terror. Ahora, los suscriptores de Amazon Prime Video tienen la oportunidad de oro de experimentar una de las obras de culto más influyentes de la historia cinematográfica, una pieza clave para entender la evolución de franquicias legendarias de la talla de <em>Resident Evil</em>, <em>Silent Hill</em> o <em>Dead Space</em>.</p><p>Aprovechar el fin de semana para maratonear este filme no es solo un planazo de palomitas, sino una auténtica lección de diseño de niveles y narrativa de tensión psicológica. La película destaca por mantener un ritmo impecable que sabe cuándo asfixiarte y cuándo darte un respiro, un tempo que los estudios modernos imitan con precisión milimétrica. Prepara los auriculares, apaga las luces de tu setup y dale al play en Prime Video para descubrir por qué, décadas después de su estreno, esta joya sigue siendo el estándar de oro de las pesadillas interactivas y visuales.</p>",
       "id": "noticia-1781434301-0",
       "enlace": "https://es.ign.com/prime-video/230499/este-clasico-del-cine-de-terror-sigue-siendo-tan-inquietante-como-el-primer-dia-lo-tienes-en-prime-v",
-      "imagen": "https://sm.ign.com/t/ign_es/screenshot/default/sin-titulo-1_w4zs.640.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-14T10:52:04.823268"
     },
     {
@@ -57,7 +67,7 @@
       "contenido_completo": "<p>El panorama del desarrollo independiente vuelve a temblar, pero esta vez no es por el oleaje del foso azul, sino por las imponentes pisadas del mismísimo Rey de los Monstruos. Tras conquistar el mercado global con la adictiva y multifacética fórmula de <em>Dave the Diver</em>, sus creadores regresan a la carga con una sorpresa mayúscula: <strong>Godzilla Defense Force: X</strong>. Este nuevo proyecto promete trasladar todo el ingenio y la frescura que caracteriza al estudio a un escenario de escala planetaria, donde la supervivencia de la humanidad dependerá de nuestra capacidad táctica frente a colosales amenazas biológicas.</p><p>Aunque los detalles sobre las mecánicas exactas se guardan celosamente bajo llave, la firma de este equipo creativo es garantía de un bucle de juego endiabladamente divertido, cargado de personalidad y con un respeto absoluto por el lore de Toho. En <em>Godzilla Defense Force: X</em> nos espera una mezcla perfecta de defensa de bases, gestión de recursos de emergencia y, por supuesto, espectaculares enfrentamientos contra las criaturas más icónicas del cine de monstruos. Sin duda, estamos ante uno de los anuncios más estimulantes de la temporada, diseñado para mantenernos pegados a la pantalla mientras intentamos contener el caos absoluto.</p>",
       "id": "noticia-1781356496-5",
       "enlace": "https://www.eurogamer.es/los-creadores-de-dave-the-diver-anuncian-godzilla-defense-force-x",
-      "imagen": "https://assetsio.gnwcdn.com/unnamed_lZZiazZ.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-13T13:17:01.455692"
     },
     {
@@ -107,7 +117,7 @@
       "contenido_completo": "<p>El panorama de la industria del videojuego se agita con una de las alianzas editoriales más prometedoras del año. Focus Entertainment ha confirmado oficialmente que se encargará de financiar y distribuir el nuevo e inédito proyecto liderado por Davide Soliani, el carismático director que logró fusionar con un éxito rotundo los universos de Nintendo y Ubisoft. Tras su reciente salida de la compañía francesa, Soliani emprende una nueva aventura de desarrollo junto a su recién fundado estudio independiente, prometiendo infundir esa misma magia, frescura y genialidad jugable que caracterizó a sus anteriores obras en una propuesta totalmente original.</p><p>Aunque los detalles específicos sobre las mecánicas, el apartado artístico o la ventana de lanzamiento de esta misteriosa entrega se mantienen bajo estricto secreto, la sinergia entre ambas partes ya ha levantado una enorme expectación entre la comunidad. Focus, conocida por apostar por experiencias de rango medio con una fuerte identidad y un marcado toque de autor, se presenta como el hogar idóneo para que este veterano diseñador dé rienda suelta a su libertad creativa sin ataduras. Sin duda, este es uno de esos desarrollos a los que habrá que seguir la pista muy de cerca durante los próximos meses.</p>",
       "id": "noticia-1781286132-5",
       "enlace": "https://www.eurogamer.es/focus-entertainment-publicara-el-nuevo-juego-del-creador-de-mario-rabbids",
-      "imagen": "https://assetsio.gnwcdn.com/HKduUDQXAAErlPM-1920x1080.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-12T17:47:01.166375"
     },
     {
@@ -117,7 +127,7 @@
       "contenido_completo": "<p>La galaxia de Nuevo Eden nunca duerme, y su última expansión llega para demostrar por qué este sandbox espacial sigue siendo el rey indiscutible de la ciencia ficción masiva. CCP Games ha puesto toda la carne en el asador con una actualización que redefine por completo la soberanía territorial, ofreciendo a las corporaciones de jugadores herramientas inéditas para moldear sus propios imperios. Desde la gestión avanzada de recursos planetarios hasta la personalización extrema de sistemas estelares, los pilotos espaciales tienen ahora el poder absoluto de transformar sectores enteros en bastiones inexpugnables o en prósperos centros de comercio galáctico.</p><p>Pero no todo es diplomacia y construcción; el conflicto armado alcanza un nuevo nivel de epicidad. Con la introducción de colosales naves de transporte y mejoras visuales que quitan el aliento, las batallas multitudinarias prometen ser más tácticas, letales y espectaculares que nunca. Tanto si eres un veterano curtido en mil batallas interestelares como si decides adentrarte por primera vez en este implacable universo, esta expansión es la excusa perfecta para encender los propulsores, aliarte con las facciones más poderosas y reclamar tu propio pedazo de gloria en el infinito.</p>",
       "id": "noticia-1781286132-4",
       "enlace": "https://www.eurogamer.es/disponible-la-nueva-expansion-de-eve-online",
-      "imagen": "https://assetsio.gnwcdn.com/image_uynXfkN.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-12T17:46:38.293007"
     },
     {
@@ -127,7 +137,7 @@
       "contenido_completo": "<p>Personalizar la zona de juego se ha convertido en casi un ritual para los usuarios de consola, y Sony lo sabe muy bien. Aunque el periférico original cumple con nota, las variantes de color aportan una personalidad única que transforma por completo la experiencia visual en tu escritorio. En esta ocasión, la comunidad de PlayStation está de enhorabuena, ya que una de las ediciones cromáticas mejor valoradas por su elegancia y acabado premium se encuentra disponible con una rebaja de precio de esas que escasean, ideal para quienes buscan un segundo mando cooperativo o simplemente renovar el suyo con estilo.</p><p>Más allá de su imponente apartado estético, no hay que olvidar que el DualSense sigue siendo el rey de la inmersión en la actual generación gracias a su avanzada tecnología de retroalimentación háptica y gatillos adaptativos. Teniendo en cuenta que este tipo de ofertas flash suelen agotar su stock en cuestión de horas, te recomendamos no pensártelo demasiado si quieres darle ese ansiado lavado de cara a tu set de juego ahorrando unos cuantos euros en el proceso.</p>",
       "id": "noticia-1781286132-3",
       "enlace": "https://es.ign.com/compras/230534/uno-de-los-mandos-mas-bonitos-de-la-linea-dualsense-esta-rebajado-por-tiempo-limitado",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_zdm6.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-12T17:46:17.997713"
     },
     {
@@ -177,7 +187,7 @@
       "contenido_completo": "<p>Imaginar el universo de Hogwarts bajo la lente de Steven Spielberg es el equivalente cinematográfico a soñar con una colaboración imposible de esas que sacuden la industria del entretenimiento. Durante años, el misterio rodeó su renuncia a dirigir 'Harry Potter y la piedra filosofal', un proyecto que parecía hecho a su medida y que prometía un éxito rotundo. Sin embargo, el mismísimo rey Midas de Hollywood ha revelado que su descarte no se debió a diferencias creativas ni a problemas de guion, sino a una decisión puramente personal: prefirió priorizar su vida familiar y ver crecer a sus hijos en Los Ángeles antes que trasladarse a Londres durante casi medio año para liderar una producción tan mastodóntica.</p><p>Esta elección, que para cualquier otro cineasta habría supuesto un 'game over' profesional, demuestra la madurez de un director que ya no tenía nada que demostrar. Al dar un paso al lado, Spielberg no solo protegió su entorno íntimo, sino que permitió que Chris Columbus asumiera el mando y definiera la estética nostálgica que marcó la infancia de millones de espectadores. Aunque siempre nos quedará la espina clavada de cómo habría lucido el Mundo Mágico con la inconfundible iluminación y sentido de la aventura del director de Indiana Jones, la historia nos demuestra que, a veces, el movimiento más valiente es saber cuándo pasar de turno.</p>",
       "id": "noticia-1781203096-3",
       "enlace": "https://es.ign.com/harry-potter-and-the-sorcerers-stone/230502/despues-de-tantos-anos-por-fin-conocemos-la-verdadera-razon-por-la-que-spielberg-abandono-harry-pott",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/harry-potter-y-la-piedra-filosofal_us71.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-11T18:41:18.402467"
     },
     {
@@ -187,7 +197,7 @@
       "contenido_completo": "<p>El anuncio de la llegada de Tifa Lockhart a la plantilla de luchadores de Street Fighter 6 ha sacudido por completo a la comunidad de los fighting games. En un reciente desglose técnico, los creativos de Capcom explicaron los inmensos desafíos de diseño y fidelidad que supuso adaptar a la heroína de Square Enix. El objetivo principal de los desarrolladores no era solo replicar su icónica apariencia, sino traducir de forma orgánica sus fluidos movimientos de artes marciales al exigente sistema 'Drive' del juego, asegurando que se sienta competitiva y equilibrada frente a leyendas del ring como Ryu o Chun-Li.</p><p>Para lograr esta transición impecable, Capcom trabajó en estrecha colaboración con el equipo de Square Enix, prestando especial atención a la recreación de sus combos más emblemáticos y sus demoledores ataques límite. Esta sinergia sin precedentes no solo busca complacer a los fans de la nostalgia, sino establecer un nuevo estándar de calidad para los personajes invitados en la franquicia, demostrando que el respeto por el material original puede dar vida a una experiencia de combate tan fresca como espectacular.</p>",
       "id": "noticia-1781203096-2",
       "enlace": "https://es.ign.com/final-fantasy-vii-remake-part-3/230467/capcom-explica-como-tifa-de-final-fantasy-vii-se-convirtio-en-un-personaje-nuevo-de-street-fighter-6",
-      "imagen": "https://sm.ign.com/ign_es/news/c/capcom-exp/capcom-explains-how-tifa-from-final-fantasy-7-came-to-be-a-s_gv97.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-11T18:40:21.757497"
     },
     {
@@ -197,7 +207,7 @@
       "contenido_completo": "<p>El catálogo de PlayStation 5 sigue sumando ofertas difíciles de ignorar, especialmente para los amantes del gore y la acción desenfrenada. En esta ocasión, una de las propuestas más gamberras y espectaculares de la nueva generación recibe un tijeretazo brutal en su precio. Su edición Deluxe, cargada de incentivos estéticos y armas exclusivas para machacar hordas con estilo, se posiciona como una compra obligatoria para exprimir la potencia gráfica y la tecnología de vibración háptica de la consola de Sony sin vaciar tu cartera.</p><p>Con un sistema de desmembramientos hiperrealista que pone a prueba el motor físico del juego y un modo cooperativo dinámico que garantiza risas y adrenalina con amigos, este título es la excusa perfecta para liberar tensiones. No dejes escapar esta oportunidad de adentrarte en un paraíso infectado de no muertos por menos de 60 euros; una oferta ideal tanto para coleccionistas del formato físico como para aquellos que buscan un despliegue visual sobresaliente en su televisor.</p>",
       "id": "noticia-1781203096-1",
       "enlace": "https://es.ign.com/compras/230497/por-menos-de-60-euros-tienes-la-edicion-deluxe-de-este-juego-de-zombis-para-quemar-tu-ps5",
-      "imagen": "https://sm.ign.com/ign_es/screenshot/default/sin-titulo-1_f4ef.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-11T18:39:18.736042"
     },
     {
@@ -207,7 +217,7 @@
       "contenido_completo": "<p>Detrás de los grandes focos y las adquisiciones millonarias, las oficinas de Xbox albergaron momentos de máxima incertidumbre sobre el destino de la marca verde. Durante un periodo crítico de reestructuración, Sarah Bond, actual presidenta de la división, confrontó directamente al director de estrategia con una pregunta tan cruda como necesaria: ¿tenía realmente solución el negocio de consolas de Microsoft? Este dilema interno refleja la enorme presión que sufría el equipo ante el estancamiento de las ventas de hardware y la urgente necesidad de justificar las colosales inversiones de la compañía ante sus inversores.</p><p>La respuesta a esta encrucijada no fue la rendición, sino una metamorfosis absoluta que hoy define el rumbo de la industria. Lejos de aferrarse al modelo tradicional de exclusividades estrictas, la cúpula de Xbox entendió que la supervivencia dependía de romper las barreras del hardware. Así nació la estrategia actual: una expansión masiva que prioriza la presencia de sus franquicias en ecosistemas rivales y la consolidación de Xbox Game Pass como el verdadero motor del ecosistema, demostrando que en el gaming moderno, el software y la accesibilidad mandan sobre el plástico.</p>",
       "id": "noticia-1781203096-0",
       "enlace": "https://es.ign.com/xbox-next-generation/230503/la-jefa-de-xbox-pregunto-al-director-de-estrategia-si-la-marca-tenia-solucion-y-esta-fue-su-respuest",
-      "imagen": "https://sm.ign.com/ign_es/news/x/xbox-boss-/xbox-boss-asha-sharma-asked-her-chief-strategy-officer-if-th_cbja.jpg",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-11T18:38:34.926154"
     },
     {
@@ -217,7 +227,7 @@
       "contenido_completo": "<p>Square Enix ha decidido romper el internet con el regreso triunfal de <em>Kingdom Hearts 4</em>. Tras un prolongado período de absoluto hermetismo, la desarrolladora nipona ha liberado un metraje inédito que profundiza en la estética fotorrealista de Quadratum, la metrópolis que servirá como epicentro para este nuevo arco argumental conocido como la \"Saga del Maestro de Maestros\". El tráiler no solo deleita a los seguidores con secuencias de combate sumamente fluidas y un apartado técnico de vanguardia impulsado por la tecnología de nueva generación, sino que también siembra dudas y teorías sobre el destino de Sora en esta ambiciosa odisea interdimensional.</p><p>Sin embargo, la verdadera bomba del anuncio reside en su distribución: se ha confirmado de manera oficial que esta esperada entrega estará disponible desde el primer día en la futura sucesora de Nintendo Switch. Este movimiento estratégico garantiza que los usuarios de la próxima consola híbrida de la gran N puedan disfrutar de la aventura con un rendimiento óptimo desde su debut. Con este anuncio, Square Enix asegura un lanzamiento multiplataforma masivo que posiciona a <em>Kingdom Hearts 4</em> como uno de los indiscutibles pesos pesados que definirán el catálogo inicial de la nueva generación portátil.</p>",
       "id": "noticia-1781025205-5",
       "enlace": "https://www.eurogamer.es/kingdom-hearts-4-reaparece-con-nuevo-trailer-y-se-confirma-que-estara-disponible-de-lanzamiento-en-switch-2",
-      "imagen": "https://assetsio.gnwcdn.com/chrome_RfPjZ3ooAP.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-09T17:15:29.955126"
     }
   ]
