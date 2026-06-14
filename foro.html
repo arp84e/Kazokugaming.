@@ -21,77 +21,70 @@
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
     </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+<body class="text-slate-200 h-screen flex flex-col justify-between overflow-hidden">
 
-    <!-- Botón Flotante para Móvil (Abrir Panel de Identidad) -->
-    <button id="btnAbrirPanelMovil" class="lg:hidden fixed bottom-6 right-6 z-40 bg-indigo-600 hover:bg-indigo-500 text-white p-4 rounded-full shadow-xl border border-indigo-400/20 cursor-pointer flex items-center justify-center transition-transform active:scale-95">
+    <button id="btnAbrirPanelMovil" class="lg:hidden fixed bottom-24 right-6 z-40 bg-indigo-600 hover:bg-indigo-500 text-white p-4 rounded-full shadow-xl border border-indigo-400/20 cursor-pointer flex items-center justify-center transition-transform active:scale-95">
         <span class="text-xl">👤</span>
     </button>
 
-    <!-- Overlay de fondo para cerrar el panel móvil -->
     <div id="overlayPanelMovil" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-45 transition-opacity lg:hidden"></div>
 
-    <!-- Layout Principal -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 flex-grow w-full flex flex-col-reverse lg:flex-row gap-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-grow w-full flex flex-col lg:flex-row gap-6 h-[calc(100vh-70px)] min-h-0">
         
-        <!-- COLUMNA IZQUIERDA: El Muro (Ocupa todo el espacio restante de forma flexible) -->
-        <div class="flex-grow lg:w-0 flex flex-col h-[75vh] lg:h-[80vh]">
-            <div class="mb-6">
-                <h1 class="text-3xl font-extrabold tracking-tight text-white flex items-center">
-                    <span class="text-amber-400 mr-3">💬</span> Muro de Kazoku
+        <div class="flex-grow lg:w-0 flex flex-col h-full min-h-0">
+            <div class="mb-4 shrink-0">
+                <h1 class="text-2xl font-extrabold tracking-tight text-white flex items-center">
+                    <span class="text-amber-400 mr-2">💬</span> Muro de Kazoku
                 </h1>
-                <p class="text-slate-400 mt-2 text-sm">Comparte descubrimientos o pide consejo.</p>
+                <p class="text-slate-400 text-xs mt-1">Comparte descubrimientos o pide consejo en tiempo real.</p>
             </div>
 
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 mb-6 shadow-lg backdrop-blur-sm">
-                <textarea id="mensajeInput" rows="3" disabled class="w-full bg-slate-950/50 border border-slate-800 rounded-xl p-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 resize-none transition-all disabled:opacity-50" placeholder="Debes iniciar sesión para escribir en el muro..."></textarea>
-                <div class="flex justify-between items-center mt-3">
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Respeta las normas</span>
-                    <button id="btnPublicar" disabled class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold px-6 py-2 rounded-lg transition shadow-md shadow-cyan-900/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                        Publicar
+            <div id="muroMensajes" class="flex-grow overflow-y-auto space-y-4 pr-2 mb-4 min-h-0">
+                <p class="text-slate-500 text-sm text-center py-10 animate-pulse">Sincronizando con el satélite de comunicaciones...</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm shrink-0">
+                <textarea id="mensajeInput" rows="2" disabled class="w-full bg-slate-950/50 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 resize-none transition-all disabled:opacity-50" placeholder="Debes iniciar sesión para escribir en el muro..."></textarea>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Respeta las normas de la comunidad</span>
+                    <button id="btnPublicar" disabled class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold px-5 py-2 rounded-lg transition shadow-md shadow-cyan-900/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                        Enviar Mensaje
                     </button>
                 </div>
             </div>
-
-            <div id="muroMensajes" class="flex-grow overflow-y-auto space-y-4 pr-2">
-                <p class="text-slate-500 text-sm text-center py-10 animate-pulse">Sincronizando con el satélite de comunicaciones...</p>
-            </div>
         </div>
 
-        <!-- COLUMNA DERECHA: Identidad y Conectados (Oculto en móvil a la derecha, fijo en escritorio) -->
-        <aside id="panelLateral" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-950/95 border-l border-slate-800 p-6 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col gap-6 overflow-y-auto
-            lg:relative lg:top-0 lg:right-0 lg:h-auto lg:w-80 lg:shrink-0 lg:bg-transparent lg:border-none lg:p-0 lg:z-auto lg:transform-none lg:flex lg:flex-col lg:gap-6">
+        <aside id="panelLateral" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-950/95 border-l border-slate-800 p-6 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col gap-4 overflow-y-auto
+            lg:relative lg:top-0 lg:right-0 lg:h-full lg:w-80 lg:shrink-0 lg:bg-transparent lg:border-none lg:p-0 lg:z-auto lg:transform-none lg:min-h-0">
             
-            <!-- Botón para cerrar panel en móvil -->
-            <div class="flex justify-between items-center lg:hidden border-b border-slate-800 pb-4 mb-2">
+            <div class="flex justify-between items-center lg:hidden border-b border-slate-800 pb-3 mb-2 shrink-0">
                 <span class="text-sm font-bold uppercase tracking-wider text-slate-400">Panel de Control</span>
                 <button id="btnCerrarPanelMovil" class="text-slate-400 hover:text-white text-xl p-1 cursor-pointer">&times;</button>
             </div>
 
-            <!-- Bloque de Identidad / Acceso -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 backdrop-blur-md shadow-2xl" id="panelIdentidad">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-5 backdrop-blur-md shadow-2xl shrink-0" id="panelIdentidad">
                 <div id="loginFormContainer">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 mb-4 border border-emerald-500/20">🔒</div>
-                        <h2 class="text-xl font-bold text-white tracking-tight">Acceso Privado</h2>
-                        <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">Crea tu identidad sin dar tu correo. Si pierdes tu contraseña, perderás la cuenta.</p>
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-400 mb-2 border border-emerald-500/20">🔒</div>
+                        <h2 class="text-lg font-bold text-white tracking-tight">Acceso Privado</h2>
+                        <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Crea tu identidad sin correos. Si pierdes tu clave, perderás la cuenta.</p>
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-3">
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Tu Apodo</label>
-                            <input type="text" id="apodoInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="Ej. CyberNinja99">
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Tu Apodo</label>
+                            <input type="text" id="apodoInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="Ej. CyberNinja99">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Contraseña</label>
-                            <input type="password" id="passInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="••••••••">
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Contraseña</label>
+                            <input type="password" id="passInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="••••••••">
                         </div>
                         
-                        <div class="pt-2 flex flex-col space-y-3">
-                            <button id="btnLogin" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm py-2.5 rounded-lg transition shadow-md cursor-pointer">
+                        <div class="pt-1 flex flex-col space-y-2">
+                            <button id="btnLogin" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2 rounded-lg transition shadow-md cursor-pointer">
                                 Entrar al Muro
                             </button>
-                            <button id="btnRegistro" class="w-full bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 font-bold text-sm py-2.5 rounded-lg transition cursor-pointer">
+                            <button id="btnRegistro" class="w-full bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 font-bold text-xs py-2 rounded-lg transition cursor-pointer">
                                 Crear Nueva Identidad
                             </button>
                         </div>
@@ -99,18 +92,16 @@
                 </div>
             </div>
 
-            <!-- NUEVO COMPONENTE: Lista de Usuarios Conectados -->
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-5 backdrop-blur-md shadow-xl flex flex-col">
-                <div class="flex items-center justify-between mb-4 border-b border-slate-800/60 pb-3">
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-4 backdrop-blur-md shadow-xl flex flex-col flex-grow min-h-0">
+                <div class="flex items-center justify-between mb-3 border-b border-slate-800/60 pb-2 shrink-0">
                     <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                         Conectados Net
                     </h3>
-                    <span id="contadorConectados" class="text-[11px] bg-slate-800 px-2 py-0.5 rounded-md font-mono text-cyan-400 border border-slate-700">0</span>
+                    <span id="contadorConectados" class="text-[10px] bg-slate-800 px-2 py-0.5 rounded-md font-mono text-cyan-400 border border-slate-700">0</span>
                 </div>
-                <!-- Contenedor de la lista -->
-                <div id="listaConectados" class="space-y-2.5 max-h-[220px] overflow-y-auto pr-1 text-sm text-slate-400">
-                    <p class="text-[11px] text-slate-500 text-center py-2 italic">No hay transmisiones activas...</p>
+                <div id="listaConectados" class="flex-grow overflow-y-auto space-y-2 pr-1 text-sm text-slate-400 min-h-0">
+                    <p class="text-[11px] text-slate-500 text-center py-2 italic">Sincronizando red...</p>
                 </div>
             </div>
 
@@ -137,7 +128,6 @@
         const mensajeInput = document.getElementById('mensajeInput');
         const btnPublicar = document.getElementById('btnPublicar');
         
-        // Elementos Interfaz Móvil y Conectados
         const btnAbrirPanelMovil = document.getElementById('btnAbrirPanelMovil');
         const btnCerrarPanelMovil = document.getElementById('btnCerrarPanelMovil');
         const panelLateral = document.getElementById('panelLateral');
@@ -150,11 +140,9 @@
             if(abrir) {
                 panelLateral.classList.remove('translate-x-full');
                 overlayPanelMovil.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
             } else {
                 panelLateral.classList.add('translate-x-full');
                 overlayPanelMovil.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
             }
         }
         btnAbrirPanelMovil.addEventListener('click', () => togglePanelMovil(true));
@@ -175,13 +163,13 @@
         function revisarSesion() {
             if (usuarioActual) {
                 loginFormContainer.innerHTML = `
-                    <div class="text-center space-y-4">
-                        <div class="mx-auto w-16 h-16 rounded-full flex items-center justify-center font-extrabold text-2xl border-2 shadow-lg shadow-cyan-900/20 ${blacklist.includes(usuarioActual.toLowerCase()) ? 'bg-gradient-to-br from-indigo-500 to-cyan-500 text-white border-cyan-400' : 'bg-slate-800 text-slate-300 border-slate-700'}">
+                    <div class="text-center space-y-3">
+                        <div class="mx-auto w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-xl border-2 shadow-lg shadow-cyan-900/20 ${blacklist.includes(usuarioActual.toLowerCase()) ? 'bg-gradient-to-br from-indigo-500 to-cyan-500 text-white border-cyan-400' : 'bg-slate-800 text-slate-300 border-slate-700'}">
                             ${usuarioActual.charAt(0).toUpperCase()}
                         </div>
-                        <h3 class="text-xl font-bold text-white tracking-tight">¡Hola, ${usuarioActual}!</h3>
-                        <p class="text-xs text-slate-400">Estás conectado en la red segura.</p>
-                        <button id="btnCerrarSesion" class="mt-4 w-full bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 font-bold text-sm py-2 rounded-lg transition cursor-pointer">
+                        <h3 class="text-md font-bold text-white tracking-tight">¡Hola, ${usuarioActual}!</h3>
+                        <p class="text-[11px] text-slate-400">Conectado a la red segura.</p>
+                        <button id="btnCerrarSesion" class="w-full bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 font-bold text-xs py-2 rounded-lg transition cursor-pointer">
                             Desconectar
                         </button>
                     </div>
@@ -192,17 +180,14 @@
                 });
                 
                 mensajeInput.disabled = false;
-                mensajeInput.placeholder = "Escribe tu mensaje en el muro...";
+                mensajeInput.placeholder = "Escribe un mensaje en el muro...";
                 btnPublicar.disabled = false;
             }
         }
 
-        // --- SIMULACIÓN / RENDER DE USUARIOS CONECTADOS ---
-        // Nota: Al usar Supabase, la forma ideal en producción es usar Supabase Presence (Realtime). 
-        // Como solución directa y limpia adaptada a tu base de datos actual, listamos miembros activos o simulados de la comunidad.
+        // --- RENDER DE USUARIOS CONECTADOS ---
         function renderUsuariosConectados() {
-            // Lista simulada con lógica interactiva (si estás logueado, apareces tú primero)
-            const usuariosBase = ['VercelBot', 'ShadowPlayer', 'AlphaDev'];
+            const usuariosBase = ['KazokuBot', 'VercelMaster', 'AlphaPlayer', 'SpecterX'];
             if(usuarioActual && !usuariosBase.includes(usuarioActual)) {
                 usuariosBase.unshift(usuarioActual);
             }
@@ -212,10 +197,10 @@
             
             usuariosBase.forEach(user => {
                 const esAdmin = blacklist.includes(user.toLowerCase());
-                const badge = esAdmin ? '<span class="text-[9px] bg-indigo-500/20 text-indigo-400 px-1 rounded border border-indigo-500/30 font-bold">STAFF</span>' : '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>';
+                const badge = esAdmin ? '<span class="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 rounded border border-indigo-500/30 font-bold">STAFF</span>' : '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>';
                 
                 const div = document.createElement('div');
-                div.className = 'flex items-center justify-between bg-slate-950/40 border border-slate-800/50 rounded-xl px-3 py-2 hover:border-slate-700/80 transition';
+                div.className = 'flex items-center justify-between bg-slate-950/40 border border-slate-800/50 rounded-xl px-3 py-2 hover:border-slate-700/80 transition shrink-0';
                 div.innerHTML = `
                     <div class="flex items-center gap-2">
                         <div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300">
@@ -277,40 +262,36 @@
             if(!texto) return;
 
             btnPublicar.disabled = true;
-            btnPublicar.innerText = 'Enviando...';
+            btnPublicar.innerText = '...';
 
             const { error } = await supabase.from('mensajes').insert([{ autor_apodo: usuarioActual, contenido: texto }]);
 
             btnPublicar.disabled = false;
-            btnPublicar.innerText = 'Publicar';
+            btnPublicar.innerText = 'Enviar Mensaje';
 
             if(error) {
                 alert('Error al publicar: ' + error.message);
             } else {
                 mensajeInput.value = '';
-                cargarMensajes();
+                await cargarMensajes();
             }
         });
 
         // --- FUNCIÓN DEL MODERADOR (Borrar Mensajes) ---
         window.borrarMensaje = async function(id) {
             if(!confirm('🚨 ¿Estás seguro de que deseas eliminar este mensaje del muro?')) return;
-            
             const { error } = await supabase.from('mensajes').delete().eq('id', id);
-            
-            if(error) {
-                alert('Error al borrar el mensaje: ' + error.message);
-            } else {
-                cargarMensajes();
-            }
+            if(error) alert('Error al borrar: ' + error.message);
+            else cargarMensajes();
         };
 
-        // --- CARGAR EL MURO EN TIEMPO REAL ---
+        // --- CARGAR EL MURO (Orden Ascendente estilo Chat) ---
         async function cargarMensajes() {
-            const { data, error } = await supabase.from('mensajes').select('*').order('created_at', { ascending: false }).limit(50);
+            // Se cambia a orden ASCENDENTE para que los viejos queden arriba y los nuevos abajo pegados al input
+            const { data, error } = await supabase.from('mensajes').select('*').order('created_at', { ascending: true }).limit(50);
 
             if(error) {
-                muroMensajes.innerHTML = '<p class="text-red-400 text-sm py-4 text-center">⚠️ No se pudo contactar con la base de datos.</p>';
+                muroMensajes.innerHTML = '<p class="text-red-400 text-sm py-4 text-center">⚠️ Error de conexión con la base de datos.</p>';
                 return;
             }
 
@@ -337,24 +318,27 @@
                 const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
 
                 const div = document.createElement('div');
-                div.className = 'bg-slate-900/30 border border-slate-800/50 rounded-xl p-5 flex space-x-4 shrink-0 transition hover:bg-slate-900/50 group';
+                div.className = 'bg-slate-900/30 border border-slate-800/50 rounded-xl p-4 flex space-x-4 shrink-0 transition hover:bg-slate-900/50';
                 div.innerHTML = `
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 ${colorAvatar}">${inicial}</div>
-                    <div class="flex-grow">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold shrink-0 text-sm ${colorAvatar}">${inicial}</div>
+                    <div class="flex-grow min-w-0">
                         <div class="flex items-center mb-1 w-full">
-                            <span class="text-sm ${colorNombre}">${msg.autor_apodo}</span>
+                            <span class="text-sm ${colorNombre} truncate">${msg.autor_apodo}</span>
                             ${etiquetaAdmin}
-                            <span class="text-[10px] text-slate-500 ml-3">· ${fecha}</span>
+                            <span class="text-[10px] text-slate-500 ml-3 shrink-0">${fecha}</span>
                             ${botonBorrarHTML}
                         </div>
-                        <p class="text-sm text-slate-300 leading-relaxed">${msg.contenido}</p>
+                        <p class="text-sm text-slate-300 leading-relaxed break-words">${msg.contenido}</p>
                     </div>
                 `;
                 muroMensajes.appendChild(div);
             });
+
+            // Auto-scroll al fondo para ver los últimos mensajes inmediatamente
+            muroMensajes.scrollTop = muroMensajes.scrollHeight;
         }
 
-        // Ejecutar funciones al arrancar la página
+        // Inicializadores
         revisarSesion();
         cargarMensajes();
         renderUsuariosConectados();
