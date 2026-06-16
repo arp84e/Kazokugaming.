@@ -217,5 +217,48 @@
       "Hardware excesivamente limitado para los estándares actuales, lo que fuerza resoluciones sub-720p dinámicas y caídas de framerate en juegos multiplataforma exigentes."
     ],
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
+  },
+  "xbox-series-s": {
+    "title": "Microsoft Xbox Series S",
+    "brand": "Microsoft",
+    "category": "console",
+    "tier": "media",
+    "score": 88,
+    "desc": "La puerta de entrada más compacta y accesible a la novena generación de consolas, optimizada para rendimiento digital a 1080p y 1440p.",
+    "analysis_design": "Desde la perspectiva del diseño industrial, la Xbox Series S es una obra maestra de la miniaturización. Con un chasis en acabado 'Robot White' de plástico mate de alta densidad, la consola prescinde de la unidad de disco óptico para reducir su volumen en un 60% respecto a su hermana mayor, la Series X. Su estética rectangular y minimalista se integra de manera orgánica en cualquier setup gaming, permitiendo un posicionamiento tanto vertical como horizontal gracias a sus sutiles apoyos de goma.\n\nEl aspecto más crítico de su diseño es su arquitectura térmica. Microsoft ha implementado una gran rejilla de ventilación circular negra en la cara superior (o lateral, según orientación) que aloja un ventilador de tipo axial optimizado para mover un flujo constante de aire a bajas revoluciones. Este ventilador extrae el calor generado por el SoC a través de un disipador de aluminio con base de cobre. Durante nuestras pruebas de estrés sostenido de 4 horas, la consola se mantuvo asombrosamente silenciosa, registrando un nivel de ruido inferior a los 30 dB y manteniendo las temperaturas del procesador dentro de rangos operativos seguros sin estrangulamiento térmico (thermal throttling). En el apartado de conectividad física, el panel trasero ofrece un puerto HDMI 2.1, dos puertos USB 3.1 Gen 1 (más uno frontal), un puerto Gigabit Ethernet y la ranura propietaria para tarjetas de expansión de almacenamiento de Seagate/Western Digital.",
+    "analysis_performance": "En el terreno del rendimiento bruto, la Xbox Series S desafía las expectativas de su rango de precio gracias a su arquitectura Velocity. Equipada con una CPU AMD Zen 2 personalizada de 8 núcleos a 3.6 GHz y una GPU RDNA 2 de 4 TFLOPS, la consola está diseñada para ofrecer una experiencia fluida con un objetivo de resolución de 1080p a 1440p, alcanzando hasta 120 FPS en títulos competitivos optimizados como Gears 5 o Halo Infinite. La velocidad de carga es sobresaliente gracias al SSD NVMe PCIe Gen 4 personalizado de 512 GB, que ofrece un ancho de banda de 2.4 GB/s de datos puros, permitiendo la implementación de la tecnología Quick Resume para alternar entre múltiples juegos en menos de 8 segundos.\n\nSin embargo, la principal limitación técnica radica en su subsistema de memoria: cuenta con 10 GB de RAM GDDR6 con un bus asimétrico, donde 8 GB operan a 224 GB/s y los 2 GB restantes a 56 GB/s. Bajo escenarios de carga gráfica intensa y trazado de rayos (Ray Tracing) activo, esta arquitectura de memoria obliga a los desarrolladores a reducir la resolución de renderizado interna y la calidad de las texturas en comparación con la Series X. A pesar de esto, la consistencia de los fotogramas por segundo es excelente, soportada por tecnologías de vanguardia como Variable Refresh Rate (VRR) y Auto Low Latency Mode (ALLM), lo que garantiza una latencia de entrada mínima y elimina el tearing en pantallas compatibles.",
+    "verdict": "La Xbox Series S es una opción de compra sobresaliente e imbatible en calidad-precio para jugadores que buscan dar el salto generacional sin realizar un gran desembolso económico. Es el dispositivo perfecto para usuarios orientados al consumo de contenido digital y suscripciones como Xbox Game Pass, así como para setups secundarios o monitores de 1080p/1440p. No es recomendable para puristas del hardware que exijan resolución 4K nativa o que posean una amplia colección de videojuegos en formato físico.",
+    "specs": [
+      {
+        "label": "Procesador (CPU)",
+        "value": "AMD Zen 2 personalizado de 8 núcleos a 3.6 GHz (3.4 GHz con SMT)"
+      },
+      {
+        "label": "Procesador Gráfico (GPU)",
+        "value": "AMD RDNA 2 personalizada con 20 CUs a 1.565 GHz (4 TFLOPS)"
+      },
+      {
+        "label": "Memoria de Sistema",
+        "value": "10 GB GDDR6 (8 GB @ 224 GB/s, 2 GB @ 56 GB/s)"
+      },
+      {
+        "label": "Almacenamiento Interno",
+        "value": "SSD NVMe personalizado de 512 GB (364 GB libres para el usuario)"
+      },
+      {
+        "label": "Salida de Video e Interfaz",
+        "value": "HDMI 2.1 con soporte para 1440p a 120 Hz, VRR, ALLM y HDR10/Dolby Vision"
+      }
+    ],
+    "pros": [
+      "Relación calidad-precio insuperable para acceder a la actual generación de videojuegos y tecnologías como Ray Tracing.",
+      "Factor de forma sumamente compacto, silencioso y con una gestión térmica eficiente que evita el sobrecalentamiento.",
+      "Tiempos de carga ultrarrápidos y soporte para Quick Resume gracias a la arquitectura de almacenamiento de estado sólido."
+    ],
+    "contras": [
+      "Almacenamiento interno limitado de 512 GB (364 GB útiles) que se agota rápidamente con títulos modernos de gran peso técnico.",
+      "Ausencia de lector de discos ópticos, lo que elimina el mercado de segunda mano físico y la retrocompatibilidad con discos físicos anteriores."
+    ],
+    "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
   }
 }
