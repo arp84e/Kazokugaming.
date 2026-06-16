@@ -1,15 +1,75 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "Terremoto en Xbox: El legendario Craig Duncan cierra su etapa dorada al frente de los estudios de Microsoft",
-    "resumen": "Una de las mentes más brillantes y respetadas del ecosistema de Xbox dice adiós. Craig Duncan, el veterano que resucitó a Rare y asumió la dirección de Xbox Game Studios, ha anunciado su salida de la compañía, marcando el fin de una era irrepetible para la marca verde.",
-    "contenido_completo": "<p>El organigrama interno de Microsoft Gaming se prepara para una reestructuración de calibre tras confirmarse la salida de Craig Duncan. Conocido por su impecable trayectoria liderando Rare, donde capitaneó el fenómeno de piratas <em>Sea of Thieves</em>, Duncan se había convertido en un pilar fundamental para la cohesión creativa de la marca. Su transición a la jefatura de Xbox Game Studios prometía consolidar una filosofía centrada en el talento y la libertad de desarrollo, pero su marcha obligará a la compañía a redefinir el timón de sus proyectos más ambiciosos en un momento crucial para la industria.</p><p>Aunque los detalles sobre el próximo destino profesional de Duncan siguen bajo llave, el impacto de su legado es innegable. Bajo su tutela, los estudios de Xbox no solo ganaron en diversidad de propuestas, sino que lograron conectar con audiencias masivas gracias a un enfoque de juego como servicio más humano y cercano. Ahora, Microsoft se enfrenta al gigantesco desafío de encontrar un sucesor capaz de llenar este vacío de liderazgo y mantener el rumbo de un catálogo que necesita, hoy más que nunca, golpes sobre la mesa estables y de alta calidad.</p>",
-    "id": "noticia-1781555799-4",
-    "enlace": "https://www.eurogamer.es/craig-duncan-director-de-xbox-game-studios-y-veterano-lider-de-rare-anuncia-su-salida-de-la-compania",
-    "imagen": "https://assetsio.gnwcdn.com/duncan_rare.png?width=690&quality=85&format=jpg&auto=webp",
-    "fecha": "2026-06-15T20:39:02.372339"
+    "titulo": "¡Último viaje al Japón feudal! Assassin’s Creed Shadows se despide hoy de sus actualizaciones de contenido",
+    "resumen": "Ubisoft pone el broche de oro a la aventura de Naoe y Yasuke con el lanzamiento de su parche definitivo. Tras meses de soporte, Assassin's Creed Shadows recibe hoy su última actualización de contenido antes de que el equipo de desarrollo ponga la mirada en el futuro de la franquicia.",
+    "contenido_completo": "<p>El viaje de infiltración y combates por el Japón feudal llega a su estación final. Ubisoft ha desplegado hoy la que será la última actualización de contenido para <strong>Assassin's Creed Shadows</strong>, marcando el cierre de una etapa de soporte postlanzamiento que ha buscado pulir al máximo la experiencia de los jugadores. Este parche no solo llega para resolver los flecos pendientes en términos de rendimiento y estabilidad en todas las plataformas, sino que también sirve como despedida oficial para las aventuras de Naoe y Yasuke, dejándoles el terreno completamente preparado para quienes decidan sumergirse en esta epopeya histórica a partir de ahora.</p><p>Con este movimiento, el equipo de desarrollo liderado por Ubisoft Quebec da por concluido el ciclo de vida activo de esta entrega y reasigna sus recursos a los próximos y ambiciosos proyectos de la saga de asesinos, que ya asoman en el horizonte. Aunque no se esperan grandes añadidos jugables a partir de hoy, la comunidad ya celebra que el título se quede en su estado más óptimo y pulido posible. Es hora de enfundar las katanas, ajustar las hojas ocultas y prepararse para lo que depara el futuro del credo.</p>",
+    "id": "noticia-1781641092-5",
+    "enlace": "https://www.eurogamer.es/assassins-creed-shadows-recibe-hoy-su-ultima-actualizacion-de-contenido",
+    "imagen": "https://assetsio.gnwcdn.com/assassin-s-creed-shadows-ha-supe.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "fecha": "2026-06-16T20:20:45.465156"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Anuncios en mitad de la partida! EA revoluciona la monetización con su nueva plataforma publicitaria in-game",
+      "resumen": "Electronic Arts da un paso de gigante (y bastante polémico) en su estrategia de negocio al presentar una tecnología diseñada para integrar publicidad dinámica directamente dentro de la experiencia de juego.",
+      "contenido_completo": "<p>El eterno debate sobre la monetización en la industria del videojuego acaba de entrar en una nueva fase. Electronic Arts ha presentado oficialmente su nueva plataforma interna, bautizada como EA Advertising, una herramienta destinada a colocar anuncios dinámicos de marcas reales dentro del propio gameplay. Lejos de limitarse a los habituales banners estáticos en los menús principales, esta tecnología busca fusionar la publicidad con el entorno virtual de forma activa, abriendo una nueva vía de ingresos para la compañía en sus lanzamientos más potentes.</p><p>Aunque la idea de ver marcas comerciales mientras jugamos pueda encender las alarmas de los jugadores más puristas debido a la pérdida de inmersión, desde la distribuidora defienden que esta integración se sentirá orgánica y aportará realismo, especialmente en simuladores deportivos y títulos de mundo abierto. El movimiento promete cambiar las reglas del juego para los anunciantes, pero ahora la pelota está en el tejado de una comunidad que suele mirar con lupa cualquier intento de transformar sus partidas en vallas publicitarias interactivas.</p>",
+      "id": "noticia-1781641092-4",
+      "enlace": "https://www.eurogamer.es/electronic-arts-lanza-la-plataforma-ea-advertising-para-meter-publicidad-en-el-gameplay-de-sus-juegos",
+      "imagen": "https://assetsio.gnwcdn.com/ea-sports-fc-26.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-16T20:20:08.906766"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¿Relevo en el multiverso? Tom Holland ya tiene en mente a su sucesor ideal para portar la máscara de Spider-Man",
+      "resumen": "El futuro del trepamuros sigue encendiendo las redes sociales. El mismísimo Tom Holland ha tomado la palabra para confesar a quién ve con la madurez y el carisma necesarios para heredar las redes en la gran pantalla, apuntando directamente hacia una de las figuras más queridas por la comunidad de los videojuegos.",
+      "contenido_completo": "<p>El universo arácnido está listo para dar el siguiente gran salto generacional, emulando la exitosa fórmula que ya hemos disfrutado en nuestras consolas. Tom Holland ha dejado claro que el camino a seguir para la franquicia cinematográfica pasa inevitablemente por introducir a Miles Morales en acción real. El actor británico no ha ocultado su entusiasmo al señalar que el joven héroe de Brooklyn, consolidado ya como un titán del gaming gracias a las producciones de Insomniac Games, es la evolución natural y necesaria para mantener fresca la mitología del lanzarredes en el cine.</p><p>Esta postura no solo valida el tremendo impacto cultural que el personaje ha tenido en el sector del videojuego y la animación, sino que también pavimenta una transición orgánica que los fans llevan años exigiendo. Aunque a Holland todavía le queda cuerda para rato vistiendo el traje clásico, sus declaraciones demuestran una madurez absoluta al querer apadrinar el debut de su sucesor. La mesa está servida para que el multiverso cinematográfico de Marvel reciba una inyección de energía fresca, conectando de forma definitiva con una audiencia que ya domina el arte de balancearse entre rascacielos con el mando en las manos.</p>",
+      "id": "noticia-1781641092-3",
+      "enlace": "https://es.ign.com/spider-man-brand-new-day/230632/tom-holland-cree-saber-quien-es-el-actor-perfecto-para-ser-el-proximo-spider-man-y-su-eleccion-no-so",
+      "imagen": "https://sm.ign.com/t/ign_es/news/t/tom-hollan/tom-holland-suggests-adolescence-star-owen-cooper-as-his-spi_162z.640.jpg",
+      "fecha": "2026-06-16T20:19:46.587409"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡El trepamuros calienta motores! Spider-Man: Brand New Day aviva el hype con nueva imagen y fecha para su próximo tráiler",
+      "resumen": "La comunidad arácnida está revolucionada tras revelarse un nuevo vistazo de Spider-Man: Brand New Day, un aperitivo de lujo que viene acompañado de la fecha oficial para el lanzamiento de su esperadísimo tráiler.",
+      "contenido_completo": "<p>La expectación por volver a balancearse entre rascacielos está alcanzando niveles estratosféricos. Para amenizar la espera, se ha liberado una espectacular y misteriosa imagen que ya tiene a los fans analizando cada detalle al milímetro. Esta captura no solo sirve para demostrar el impresionante acabado artístico que nos espera, sino que funciona como el preludio perfecto para el verdadero plato fuerte: un nuevo tráiler gameplay que promete dejar a la comunidad con la boca abierta.</p><p>Prepara la agenda y despeja la tarde, porque la fecha de este esperado avance ya es oficial y está mucho más cerca de lo que imaginas. Los desarrolladores prometen desvelar novedades jugosas sobre la trama, mecánicas inéditas y, con suerte, la confirmación de esos villanos clásicos que tanto se han rumoreado en los foros. El tren del hype ha salido de la estación y nadie quiere quedarse abajo en esta nueva y prometedora era del trepamuros.</p>",
+      "id": "noticia-1781641092-2",
+      "enlace": "https://es.ign.com/spider-man-brand-new-day/230633/spider-man-brand-new-day-se-vuelve-a-dejar-ver-en-una-nueva-imagen-en-visperas-de-su-proximo-trailer",
+      "imagen": "https://sm.ign.com/t/ign_es/news/s/spider-man/spider-man-brand-new-days-next-trailer-expected-tomorrow-and_f8wb.640.jpg",
+      "fecha": "2026-06-16T20:19:20.254757"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Chollo de terror! Resident Evil Requiem revienta su mínimo histórico por menos de 55€",
+      "resumen": "Si estabas esperando la señal definitiva para adentrarte en la pesadilla de Capcom, es esta: Resident Evil Requiem acaba de desplomar su precio en las tiendas, rompiendo la barrera de los 55 euros por primera vez.",
+      "contenido_completo": "<p>La caza de ofertas en el sector del videojuego nos acaba de dejar una de esas oportunidades que ocurren una vez cada mil años. Capcom ha decidido tirar la casa por la ventana y su aclamado Resident Evil Requiem ha protagonizado un bajón de precio histórico en las principales plataformas de venta, colocándose por debajo de los 55 euros. Se trata de la rebaja más agresiva registrada hasta la fecha para este survival horror, convirtiéndose en el pretexto perfecto tanto para los coleccionistas de formato físico como para los rezagados que aún no se habían atrevido a sobrevivir a su asfixiante atmósfera.</p><p>Aunque este tipo de ofertas flash suelen tener una vida útil muy corta antes de que se agote el stock, lo cierto es que la relación calidad-precio actual del título es sencillamente imbatible. Si quieres disfrutar de una jugabilidad pulida, gráficos de infarto y esa tensión constante que define a la franquicia sin castigar tu bolsillo, te aconsejamos que no te lo pienses demasiado. Corre a por él antes de que vuelva a subir, ¡porque una oportunidad así vuela en cuestión de horas!</p>",
+      "id": "noticia-1781641092-1",
+      "enlace": "https://es.ign.com/compras/230631/resident-evil-requiem-se-desploma-a-su-precio-minimo-historico-quedandose-por-debajo-de-los-55-euros",
+      "imagen": "https://loremflickr.com/800/450/residentevil,capcom",
+      "fecha": "2026-06-16T20:18:52.562753"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Tensión en la Tierra Media: El nuevo fichaje para 'La caza de Gollum' desata el debate en la comunidad",
+      "resumen": "La próxima aventura cinematográfica del universo de Tolkien, dirigida por Andy Serkis, ha encendido los foros de debate tras anunciar una nueva incorporación al elenco. Mientras que algunos fans aplauden el aire fresco para la franquicia, los puristas del lore ya han sacado sus espadas virtuales ante posibles licencias creativas.",
+      "contenido_completo": "<p>El retorno a la Tierra Media con 'The Hunt for Gollum' promete ser uno de los eventos cinematográficos y geeks más potentes de los próximos años, pero el camino hacia el estreno ya está sumando sus primeros jefes de zona. La última incorporación al casting de la película dirigida por Andy Serkis ha generado un auténtico cisma entre los fans de la fantasía. Por un lado, una parte de la comunidad celebra que se dé espacio a nuevos talentos para expandir este rico universo; por el otro, los guardianes más estrictos de la obra de Tolkien temen que esta decisión altere la esencia de una historia tan querida y respetada.</p><p>Este choque de opiniones evidencia que la comunidad geek no está dispuesta a dejar pasar ni una sola alteración que pueda poner en peligro la coherencia del lore. Con la producción en el punto de mira, Warner Bros. y el equipo creativo se enfrentan a un desafío titánico: equilibrar el hype comercial con la fidelidad que los veteranos de la Tierra Media exigen. La conversación en redes sociales está que arde y cada nuevo detalle técnico o de reparto será analizado como si de una build competitiva se tratase.</p>",
+      "id": "noticia-1781641092-0",
+      "enlace": "https://es.ign.com/lord-of-the-rings-the-hunt-for-gollum/230634/la-nueva-fichaje-en-el-senor-de-los-anillos-la-caza-de-gollum-divide-a-los-fans",
+      "imagen": "https://loremflickr.com/800/450/gollum,middle-earth",
+      "fecha": "2026-06-16T20:18:27.211751"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "Terremoto en Xbox: El legendario Craig Duncan cierra su etapa dorada al frente de los estudios de Microsoft",
+      "resumen": "Una de las mentes más brillantes y respetadas del ecosistema de Xbox dice adiós. Craig Duncan, el veterano que resucitó a Rare y asumió la dirección de Xbox Game Studios, ha anunciado su salida de la compañía, marcando el fin de una era irrepetible para la marca verde.",
+      "contenido_completo": "<p>El organigrama interno de Microsoft Gaming se prepara para una reestructuración de calibre tras confirmarse la salida de Craig Duncan. Conocido por su impecable trayectoria liderando Rare, donde capitaneó el fenómeno de piratas <em>Sea of Thieves</em>, Duncan se había convertido en un pilar fundamental para la cohesión creativa de la marca. Su transición a la jefatura de Xbox Game Studios prometía consolidar una filosofía centrada en el talento y la libertad de desarrollo, pero su marcha obligará a la compañía a redefinir el timón de sus proyectos más ambiciosos en un momento crucial para la industria.</p><p>Aunque los detalles sobre el próximo destino profesional de Duncan siguen bajo llave, el impacto de su legado es innegable. Bajo su tutela, los estudios de Xbox no solo ganaron en diversidad de propuestas, sino que lograron conectar con audiencias masivas gracias a un enfoque de juego como servicio más humano y cercano. Ahora, Microsoft se enfrenta al gigantesco desafío de encontrar un sucesor capaz de llenar este vacío de liderazgo y mantener el rumbo de un catálogo que necesita, hoy más que nunca, golpes sobre la mesa estables y de alta calidad.</p>",
+      "id": "noticia-1781555799-4",
+      "enlace": "https://www.eurogamer.es/craig-duncan-director-de-xbox-game-studios-y-veterano-lider-de-rare-anuncia-su-salida-de-la-compania",
+      "imagen": "https://assetsio.gnwcdn.com/duncan_rare.png?width=690&quality=85&format=jpg&auto=webp",
+      "fecha": "2026-06-15T20:39:02.372339"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "Alarma roja en Xbox: El destino de Compulsion Games y 'South of Midnight' pende de un hilo",
@@ -209,66 +269,6 @@
       "enlace": "https://es.ign.com/assassins-creed-black-flag-resynced/230536/assassins-creed-black-flag-resynced-escena-de-edward-y-caroline-ign-first",
       "imagen": "https://loremflickr.com/800/450/assassinscreed,nostalgia",
       "fecha": "2026-06-12T17:44:11.600915"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡Quema asfalto! Gran Turismo 7 ruge con más fuerza gracias a su espectacular actualización 1.70",
-      "resumen": "Polyphony Digital vuelve a pisar el acelerador con el parche 1.70 para Gran Turismo 7, una actualización cargada de novedades mecánicas, bólidos de ensueño y ajustes que prometen redefinir la experiencia de conducción en PlayStation.",
-      "contenido_completo": "<p>El simulador de conducción por excelencia de Sony no levanta el pie del acelerador. Con la llegada de la versión 1.70, los entusiastas de la velocidad tienen motivos de sobra para volver al garaje virtual. Esta actualización no solo amplía el ya de por sí espectacular catálogo de vehículos con incorporaciones que harán las delicias de los coleccionistas más exigentes, sino que también introduce desafíos inéditos y eventos comunitarios diseñados para poner a prueba la destreza de los pilotos en cada curva.</p><p>Más allá de las nuevas máquinas disponibles, el equipo de desarrollo ha aprovechado este parche para pulir la jugabilidad, aplicando sutiles pero cruciales ajustes en el comportamiento físico de los neumáticos y la respuesta del motor. Junto a nuevas localizaciones para el aclamado modo fotográfico Scapes, esta versión consolida el compromiso del estudio por mantener el título en el podio de los deportes del motor virtuales. Es hora de ajustar el cinturón, calibrar el volante y devorar la pista.</p>",
-      "id": "noticia-1781203096-5",
-      "enlace": "https://www.eurogamer.es/disponible-la-actualizacion-170-de-gran-turismo-7",
-      "imagen": "https://loremflickr.com/800/450/racing,update",
-      "fecha": "2026-06-11T18:42:48.490129"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡Rey indiscutible! El fenómeno Nintendo sigue destrozando récords de ventas en Japón",
-      "resumen": "La fiebre por las consolas de Nintendo no tiene techo en el país del sol naciente. Semana tras semana, la gran N mantiene un control absoluto sobre el mercado nipón de hardware y software, demostrando que su ecosistema sigue siendo el preferido por goleada.",
-      "contenido_completo": "<p>El mercado de los videojuegos en Japón sigue teniendo un único y absoluto dueño. Las listas semanales de ventas de hardware y software vuelven a teñirse de rojo nintendero, consolidando una hegemonía que parece inmune al paso del tiempo. Incluso en la recta final de su ciclo de vida actual y con las expectativas puestas en la ansiada sucesora de la híbrida, el público japonés sigue apostando masivamente por el catálogo y el formato de la compañía de Kioto, dejando a sus competidores directos en una posición meramente testimonial.</p><p>Esta arrolladora dominancia no solo demuestra la excelente salud de la marca en su territorio natal, sino que también pavimenta el camino para lo que promete ser un relevo generacional histórico. Mientras la industria debate sobre la potencia gráfica y los costes de desarrollo, la fórmula de accesibilidad, portabilidad y exclusivas potentes de Nintendo revalida su corona semana tras semana, dejando claro que el trono del gaming en Japón ya tiene dueño asegurado para el futuro.</p>",
-      "id": "noticia-1781203096-4",
-      "enlace": "https://www.eurogamer.es/nintendo-switch-2-domina-una-semana-mas-las-listas-de-ventas-de-japon",
-      "imagen": "https://loremflickr.com/800/450/nintendo,sales",
-      "fecha": "2026-06-11T18:41:59.971871"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "Giro de guion histórico: El verdadero motivo por el que Spielberg le dijo 'no' a la saga de Harry Potter",
-      "resumen": "Hablamos del que podría haber sido el 'crossover' definitivo entre la magia de Hogwarts y la dirección del creador de E.T. Tras décadas de teorías y rumores, finalmente se desvela la razón de peso por la que Steven Spielberg decidió bajarse de la escoba mágica antes de que despegara el fenómeno cinematográfico.",
-      "contenido_completo": "<p>Imaginar el universo de Hogwarts bajo la lente de Steven Spielberg es el equivalente cinematográfico a soñar con una colaboración imposible de esas que sacuden la industria del entretenimiento. Durante años, el misterio rodeó su renuncia a dirigir 'Harry Potter y la piedra filosofal', un proyecto que parecía hecho a su medida y que prometía un éxito rotundo. Sin embargo, el mismísimo rey Midas de Hollywood ha revelado que su descarte no se debió a diferencias creativas ni a problemas de guion, sino a una decisión puramente personal: prefirió priorizar su vida familiar y ver crecer a sus hijos en Los Ángeles antes que trasladarse a Londres durante casi medio año para liderar una producción tan mastodóntica.</p><p>Esta elección, que para cualquier otro cineasta habría supuesto un 'game over' profesional, demuestra la madurez de un director que ya no tenía nada que demostrar. Al dar un paso al lado, Spielberg no solo protegió su entorno íntimo, sino que permitió que Chris Columbus asumiera el mando y definiera la estética nostálgica que marcó la infancia de millones de espectadores. Aunque siempre nos quedará la espina clavada de cómo habría lucido el Mundo Mágico con la inconfundible iluminación y sentido de la aventura del director de Indiana Jones, la historia nos demuestra que, a veces, el movimiento más valiente es saber cuándo pasar de turno.</p>",
-      "id": "noticia-1781203096-3",
-      "enlace": "https://es.ign.com/harry-potter-and-the-sorcerers-stone/230502/despues-de-tantos-anos-por-fin-conocemos-la-verdadera-razon-por-la-que-spielberg-abandono-harry-pott",
-      "imagen": "https://loremflickr.com/800/450/spielberg,potter",
-      "fecha": "2026-06-11T18:41:18.402467"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡De Midgar al Ring! Capcom desvela las claves de la brutal llegada de Tifa Lockhart a Street Fighter 6",
-      "resumen": "El esperado crossover entre dos colosos de la industria ya es una realidad. Capcom detalla el minucioso proceso creativo y técnico que vivieron para trasladar a Tifa Lockhart, el icónico bastión de Final Fantasy VII, al dinámico y exigente ecosistema competitivo de Street Fighter 6.",
-      "contenido_completo": "<p>El anuncio de la llegada de Tifa Lockhart a la plantilla de luchadores de Street Fighter 6 ha sacudido por completo a la comunidad de los fighting games. En un reciente desglose técnico, los creativos de Capcom explicaron los inmensos desafíos de diseño y fidelidad que supuso adaptar a la heroína de Square Enix. El objetivo principal de los desarrolladores no era solo replicar su icónica apariencia, sino traducir de forma orgánica sus fluidos movimientos de artes marciales al exigente sistema 'Drive' del juego, asegurando que se sienta competitiva y equilibrada frente a leyendas del ring como Ryu o Chun-Li.</p><p>Para lograr esta transición impecable, Capcom trabajó en estrecha colaboración con el equipo de Square Enix, prestando especial atención a la recreación de sus combos más emblemáticos y sus demoledores ataques límite. Esta sinergia sin precedentes no solo busca complacer a los fans de la nostalgia, sino establecer un nuevo estándar de calidad para los personajes invitados en la franquicia, demostrando que el respeto por el material original puede dar vida a una experiencia de combate tan fresca como espectacular.</p>",
-      "id": "noticia-1781203096-2",
-      "enlace": "https://es.ign.com/final-fantasy-vii-remake-part-3/230467/capcom-explica-como-tifa-de-final-fantasy-vii-se-convirtio-en-un-personaje-nuevo-de-street-fighter-6",
-      "imagen": "https://loremflickr.com/800/450/crossover,fighting",
-      "fecha": "2026-06-11T18:40:21.757497"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡Masacre zombie a precio de saldo! Consigue la edición Deluxe más espectacular de PS5 en oferta",
-      "resumen": "Si buscas acción visceral y gráficos de infarto, no dejes pasar la oportunidad de hacerte con la versión más completa de uno de los matazombis más potentes de PlayStation 5 a un precio irresistible.",
-      "contenido_completo": "<p>El catálogo de PlayStation 5 sigue sumando ofertas difíciles de ignorar, especialmente para los amantes del gore y la acción desenfrenada. En esta ocasión, una de las propuestas más gamberras y espectaculares de la nueva generación recibe un tijeretazo brutal en su precio. Su edición Deluxe, cargada de incentivos estéticos y armas exclusivas para machacar hordas con estilo, se posiciona como una compra obligatoria para exprimir la potencia gráfica y la tecnología de vibración háptica de la consola de Sony sin vaciar tu cartera.</p><p>Con un sistema de desmembramientos hiperrealista que pone a prueba el motor físico del juego y un modo cooperativo dinámico que garantiza risas y adrenalina con amigos, este título es la excusa perfecta para liberar tensiones. No dejes escapar esta oportunidad de adentrarte en un paraíso infectado de no muertos por menos de 60 euros; una oferta ideal tanto para coleccionistas del formato físico como para aquellos que buscan un despliegue visual sobresaliente en su televisor.</p>",
-      "id": "noticia-1781203096-1",
-      "enlace": "https://es.ign.com/compras/230497/por-menos-de-60-euros-tienes-la-edicion-deluxe-de-este-juego-de-zombis-para-quemar-tu-ps5",
-      "imagen": "https://loremflickr.com/800/450/zombie,ps5",
-      "fecha": "2026-06-11T18:39:18.736042"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "Al borde del abismo: La tensa pregunta interna que redefinió el futuro de Xbox",
-      "resumen": "Un revelador vistazo a las entrañas de Microsoft deja al descubierto las dudas existenciales que acechaban a la directiva, donde la propia Sarah Bond llegó a cuestionar la viabilidad de la marca antes de activar su actual y agresivo plan de rescate multiplataforma.",
-      "contenido_completo": "<p>Detrás de los grandes focos y las adquisiciones millonarias, las oficinas de Xbox albergaron momentos de máxima incertidumbre sobre el destino de la marca verde. Durante un periodo crítico de reestructuración, Sarah Bond, actual presidenta de la división, confrontó directamente al director de estrategia con una pregunta tan cruda como necesaria: ¿tenía realmente solución el negocio de consolas de Microsoft? Este dilema interno refleja la enorme presión que sufría el equipo ante el estancamiento de las ventas de hardware y la urgente necesidad de justificar las colosales inversiones de la compañía ante sus inversores.</p><p>La respuesta a esta encrucijada no fue la rendición, sino una metamorfosis absoluta que hoy define el rumbo de la industria. Lejos de aferrarse al modelo tradicional de exclusividades estrictas, la cúpula de Xbox entendió que la supervivencia dependía de romper las barreras del hardware. Así nació la estrategia actual: una expansión masiva que prioriza la presencia de sus franquicias en ecosistemas rivales y la consolidación de Xbox Game Pass como el verdadero motor del ecosistema, demostrando que en el gaming moderno, el software y la accesibilidad mandan sobre el plástico.</p>",
-      "id": "noticia-1781203096-0",
-      "enlace": "https://es.ign.com/xbox-next-generation/230503/la-jefa-de-xbox-pregunto-al-director-de-estrategia-si-la-marca-tenia-solucion-y-esta-fue-su-respuest",
-      "imagen": "https://loremflickr.com/800/450/xbox,strategy",
-      "fecha": "2026-06-11T18:38:34.926154"
     }
   ]
 }
