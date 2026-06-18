@@ -1,15 +1,35 @@
 {
   "destacada": {
     "categoria": "Actualidad Gaming",
-    "titulo": "¡Último viaje al Japón feudal! Assassin’s Creed Shadows se despide hoy de sus actualizaciones de contenido",
-    "resumen": "Ubisoft pone el broche de oro a la aventura de Naoe y Yasuke con el lanzamiento de su parche definitivo. Tras meses de soporte, Assassin's Creed Shadows recibe hoy su última actualización de contenido antes de que el equipo de desarrollo ponga la mirada en el futuro de la franquicia.",
-    "contenido_completo": "<p>El viaje de infiltración y combates por el Japón feudal llega a su estación final. Ubisoft ha desplegado hoy la que será la última actualización de contenido para <strong>Assassin's Creed Shadows</strong>, marcando el cierre de una etapa de soporte postlanzamiento que ha buscado pulir al máximo la experiencia de los jugadores. Este parche no solo llega para resolver los flecos pendientes en términos de rendimiento y estabilidad en todas las plataformas, sino que también sirve como despedida oficial para las aventuras de Naoe y Yasuke, dejándoles el terreno completamente preparado para quienes decidan sumergirse en esta epopeya histórica a partir de ahora.</p><p>Con este movimiento, el equipo de desarrollo liderado por Ubisoft Quebec da por concluido el ciclo de vida activo de esta entrega y reasigna sus recursos a los próximos y ambiciosos proyectos de la saga de asesinos, que ya asoman en el horizonte. Aunque no se esperan grandes añadidos jugables a partir de hoy, la comunidad ya celebra que el título se quede en su estado más óptimo y pulido posible. Es hora de enfundar las katanas, ajustar las hojas ocultas y prepararse para lo que depara el futuro del credo.</p>",
-    "id": "noticia-1781641092-5",
-    "enlace": "https://www.eurogamer.es/assassins-creed-shadows-recibe-hoy-su-ultima-actualizacion-de-contenido",
+    "titulo": "¡Home run histórico! Konami revienta las listas de ventas en Japón con su última joya deportiva",
+    "resumen": "La pasión por el béisbol y la nostalgia se fusionan en el último gran éxito de Konami, un título que ha barrido por completo a la competencia en el mercado nipón, demostrando que las franquicias de nicho local aún tienen la fuerza para liderar la industria.",
+    "contenido_completo": "<p>El mercado de los videojuegos en Japón tiene un rey indiscutible esta temporada, y no viene de la mano de los sospechosos habituales de la acción o el rol fantástico. Konami ha dado un golpe sobre la mesa de los que hacen época, colocando su legendaria saga de béisbol en lo más alto de los rankings de ventas físicas y digitales. Este simulador, que equilibra a la perfección una estética caricaturesca sumamente carismática con una profundidad táctica endiablada, ha desatado una auténtica fiebre entre los jugadores nipones, superando sin despeinarse a lanzamientos internacionales de enorme presupuesto.</p><p>Este arrollador éxito no solo reitera la salud de hierro de la que goza este deporte en el país del sol naciente, sino que valida la estrategia de Konami de mimar sus IPs más tradicionales y queridas. Mientras el resto de la industria global se obsesiona con el fotorrealismo y los mundos abiertos masivos, la firma japonesa demuestra que entender la cultura de tu público y pulir una fórmula jugable endiabladamente divertida sigue siendo la receta definitiva para coronarse en las listas de éxitos.</p>",
+    "id": "noticia-1781806647-5",
+    "enlace": "https://www.eurogamer.es/konami-arrasa-en-las-listas-de-ventas-japonesas-con-un-juego-de-beisbol",
     "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
-    "fecha": "2026-06-16T20:20:45.465156"
+    "fecha": "2026-06-18T18:19:04.353422"
   },
   "secundarias": [
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡La locura de Pokopia se expande! Todo sobre el nuevo DLC y las brutales imágenes del Nintendo Direct 2026",
+      "resumen": "El universo de Pokémon Pokopia está a punto de hacerse gigante. Tras el último Nintendo Direct, se han revelado los primeros detalles del esperado pase de expansión junto a un lavado de cara gráfico que promete exprimir al máximo nuestras consolas. Prepárate para nuevas criaturas y desafíos inéditos.",
+      "contenido_completo": "<p>El último Nintendo Direct de 2026 ha dejado claro que la franquicia de los monstruos de bolsillo no piensa pisar el freno. Con la revelación oficial del nuevo pase de expansión para Pokémon Pokopia, la comunidad ha entrado en un 'hype' absoluto gracias a la promesa de nuevas regiones inexploradas, misiones legendarias y, por supuesto, una nueva tanda de criaturas listas para unirse a nuestro equipo de ensueño. Esta actualización no solo amplía las horas de juego, sino que redefine por completo la experiencia que ya nos había enamorado en el lanzamiento original.</p><p>Además de las novedades jugables, las nuevas capturas de pantalla oficiales muestran un salto técnico y artístico que ha sorprendido a los fans más exigentes. La actualización visual promete exprimir la potencia del hardware para ofrecernos un rendimiento mucho más fluido y entornos que lucen más vivos y dinámicos que nunca. Sin duda, Pokopia se prepara para su era definitiva y nosotros estamos listos para analizar cada rincón de esta nueva aventura.</p>",
+      "id": "noticia-1781806647-2",
+      "enlace": "https://es.ign.com/pokemon-pokopia/230717/pokemon-pokopia-update-and-expansion-pass-dlc-nintendo-direct-2026-screenshots",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
+      "fecha": "2026-06-18T18:18:04.541409"
+    },
+    {
+      "categoria": "Actualidad Gaming",
+      "titulo": "¡Último viaje al Japón feudal! Assassin’s Creed Shadows se despide hoy de sus actualizaciones de contenido",
+      "resumen": "Ubisoft pone el broche de oro a la aventura de Naoe y Yasuke con el lanzamiento de su parche definitivo. Tras meses de soporte, Assassin's Creed Shadows recibe hoy su última actualización de contenido antes de que el equipo de desarrollo ponga la mirada en el futuro de la franquicia.",
+      "contenido_completo": "<p>El viaje de infiltración y combates por el Japón feudal llega a su estación final. Ubisoft ha desplegado hoy la que será la última actualización de contenido para <strong>Assassin's Creed Shadows</strong>, marcando el cierre de una etapa de soporte postlanzamiento que ha buscado pulir al máximo la experiencia de los jugadores. Este parche no solo llega para resolver los flecos pendientes en términos de rendimiento y estabilidad en todas las plataformas, sino que también sirve como despedida oficial para las aventuras de Naoe y Yasuke, dejándoles el terreno completamente preparado para quienes decidan sumergirse en esta epopeya histórica a partir de ahora.</p><p>Con este movimiento, el equipo de desarrollo liderado por Ubisoft Quebec da por concluido el ciclo de vida activo de esta entrega y reasigna sus recursos a los próximos y ambiciosos proyectos de la saga de asesinos, que ya asoman en el horizonte. Aunque no se esperan grandes añadidos jugables a partir de hoy, la comunidad ya celebra que el título se quede en su estado más óptimo y pulido posible. Es hora de enfundar las katanas, ajustar las hojas ocultas y prepararse para lo que depara el futuro del credo.</p>",
+      "id": "noticia-1781641092-5",
+      "enlace": "https://www.eurogamer.es/assassins-creed-shadows-recibe-hoy-su-ultima-actualizacion-de-contenido",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
+      "fecha": "2026-06-16T20:20:45.465156"
+    },
     {
       "categoria": "Actualidad Gaming",
       "titulo": "¡Anuncios en mitad de la partida! EA revoluciona la monetización con su nueva plataforma publicitaria in-game",
@@ -67,7 +87,7 @@
       "contenido_completo": "<p>El organigrama interno de Microsoft Gaming se prepara para una reestructuración de calibre tras confirmarse la salida de Craig Duncan. Conocido por su impecable trayectoria liderando Rare, donde capitaneó el fenómeno de piratas <em>Sea of Thieves</em>, Duncan se había convertido en un pilar fundamental para la cohesión creativa de la marca. Su transición a la jefatura de Xbox Game Studios prometía consolidar una filosofía centrada en el talento y la libertad de desarrollo, pero su marcha obligará a la compañía a redefinir el timón de sus proyectos más ambiciosos en un momento crucial para la industria.</p><p>Aunque los detalles sobre el próximo destino profesional de Duncan siguen bajo llave, el impacto de su legado es innegable. Bajo su tutela, los estudios de Xbox no solo ganaron en diversidad de propuestas, sino que lograron conectar con audiencias masivas gracias a un enfoque de juego como servicio más humano y cercano. Ahora, Microsoft se enfrenta al gigantesco desafío de encontrar un sucesor capaz de llenar este vacío de liderazgo y mantener el rumbo de un catálogo que necesita, hoy más que nunca, golpes sobre la mesa estables y de alta calidad.</p>",
       "id": "noticia-1781555799-4",
       "enlace": "https://www.eurogamer.es/craig-duncan-director-de-xbox-game-studios-y-veterano-lider-de-rare-anuncia-su-salida-de-la-compania",
-      "imagen": "https://assetsio.gnwcdn.com/duncan_rare.png?width=690&quality=85&format=jpg&auto=webp",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800",
       "fecha": "2026-06-15T20:39:02.372339"
     },
     {
@@ -169,56 +189,6 @@
       "enlace": "https://es.ign.com/prime-video/230499/este-clasico-del-cine-de-terror-sigue-siendo-tan-inquietante-como-el-primer-dia-lo-tienes-en-prime-v",
       "imagen": "https://loremflickr.com/800/450/survivalhorror,adaptation",
       "fecha": "2026-06-14T10:52:04.823268"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡De pescar sushi a salvar el planeta! Los creadores de Dave the Diver anuncian Godzilla Defense Force: X",
-      "resumen": "El equipo detrás del arrollador éxito de Dave the Diver da un giro de 180 grados para traernos una propuesta colosal de estrategia y Kaijus que promete romper todos los esquemas del gaming actual.",
-      "contenido_completo": "<p>El panorama del desarrollo independiente vuelve a temblar, pero esta vez no es por el oleaje del foso azul, sino por las imponentes pisadas del mismísimo Rey de los Monstruos. Tras conquistar el mercado global con la adictiva y multifacética fórmula de <em>Dave the Diver</em>, sus creadores regresan a la carga con una sorpresa mayúscula: <strong>Godzilla Defense Force: X</strong>. Este nuevo proyecto promete trasladar todo el ingenio y la frescura que caracteriza al estudio a un escenario de escala planetaria, donde la supervivencia de la humanidad dependerá de nuestra capacidad táctica frente a colosales amenazas biológicas.</p><p>Aunque los detalles sobre las mecánicas exactas se guardan celosamente bajo llave, la firma de este equipo creativo es garantía de un bucle de juego endiabladamente divertido, cargado de personalidad y con un respeto absoluto por el lore de Toho. En <em>Godzilla Defense Force: X</em> nos espera una mezcla perfecta de defensa de bases, gestión de recursos de emergencia y, por supuesto, espectaculares enfrentamientos contra las criaturas más icónicas del cine de monstruos. Sin duda, estamos ante uno de los anuncios más estimulantes de la temporada, diseñado para mantenernos pegados a la pantalla mientras intentamos contener el caos absoluto.</p>",
-      "id": "noticia-1781356496-5",
-      "enlace": "https://www.eurogamer.es/los-creadores-de-dave-the-diver-anuncian-godzilla-defense-force-x",
-      "imagen": "https://loremflickr.com/800/450/godzilla,kaiju",
-      "fecha": "2026-06-13T13:17:01.455692"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "El Mundo Digital te llama: Ya puedes probar gratis Digimon Story Time Stranger en Nintendo Switch",
-      "resumen": "Prepara tu Digivice porque la eShop de Nintendo acaba de estrenar una demo gratuita de Digimon Story Time Stranger. Una oportunidad perfecta para sumergirte en sus combates tácticos y explorar el Mundo Digital antes que nadie sin gastar un solo céntimo.",
-      "contenido_completo": "<p>¡Atención, entrenadores de monstruos digitales! Nintendo Switch ha recibido por sorpresa una versión de prueba gratuita de Digimon Story Time Stranger directamente en su eShop. Esta demo interactiva permite a los jugadores experimentar los primeros compases de una aventura rolera que promete dosis masivas de exploración, estrategia y nostalgia. Es la oportunidad ideal para familiarizarse con las mecánicas de combate por turnos y el vistoso apartado artístico de esta nueva entrega antes de dar el salto al juego completo.</p><p>Además de poner a prueba el sistema de crianza y evolución de tus compañeros digitales, este aperitivo jugable te servirá para comprobar cómo rinde el título en el modo portátil de la consola híbrida. No dejes pasar la oportunidad de adentrarte en su fascinante universo y descubrir los secretos de una trama que promete atrapar tanto a los fans veteranos como a los recién llegados. Prepara espacio en tu tarjeta SD, porque la descarga ya está disponible y lista para conquistar tus sesiones de juego.</p>",
-      "id": "noticia-1781356496-4",
-      "enlace": "https://www.eurogamer.es/disponible-una-demo-de-digimon-story-time-stranger-en-la-eshop",
-      "imagen": "https://loremflickr.com/800/450/digimon,game",
-      "fecha": "2026-06-13T13:16:38.525056"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "Chill y con consecuencias: el fenómeno narrativo que va a salvar tu fin de semana",
-      "resumen": "Si buscas un planazo de sofá, manta y dilemas morales, tenemos la recomendación definitiva. Descubre cómo este título 'cozy' logra combinar una atmósfera sumamente relajante con un sistema de elecciones que transformará por completo tu experiencia de juego.",
-      "contenido_completo": "<p>El auge de los videojuegos de estilo \"cozy\" ha demostrado que no siempre necesitamos dosis extremas de adrenalina para quedarnos atrapados frente a la pantalla. Esta propuesta destaca precisamente por fusionar esa irresistible paz visual y sonora con un potente núcleo narrativo donde cada una de tus acciones tiene un peso real en el destino de los personajes. Lejos de los estresantes desafíos de los títulos de acción tradicionales, aquí el verdadero gancho reside en la empatía, la exploración pausada y la construcción de relaciones que reaccionan de forma orgánica a tus elecciones cotidianas.</p><p>Ideal para devorar en una tarde de desconexión total, el juego se posiciona como el refugio digital perfecto para quienes buscan una historia madura pero reconfortante. Así que prepara tu bebida favorita, ponte cómodo y déjate atrapar por una aventura interactiva que demuestra que las experiencias más memorables de la industria actual no requieren reflejos de acero, sino un toque de intuición y mucho corazón.</p>",
-      "id": "noticia-1781356496-2",
-      "enlace": "https://es.ign.com/juegos-indie/230498/un-finde-aburrido-cambialo-con-este-acogedor-juego-en-el-que-tus-decisiones-importan",
-      "imagen": "https://loremflickr.com/800/450/cozy,narrative",
-      "fecha": "2026-06-13T13:15:57.023228"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "Revolución truncada: El creador del motor Euphoria confiesa que su destino en GTA era muy diferente",
-      "resumen": "El motor físico que nos voló la cabeza en GTA IV estaba destinado a cambiar las reglas del juego para siempre, pero el tijeretazo de la optimización cambió su historia.",
-      "contenido_completo": "<p>El motor de físicas Euphoria de NaturalMotion marcó un antes y un después en la industria del videojuego, regalándonos en <i>Grand Theft Auto IV</i> algunas de las reacciones orgánicas más alucinantes jamás vistas. Sin embargo, el plan maestro de sus creadores contemplaba una evolución técnica mucho más ambiciosa. En lugar de ser una tecnología de nicho, la idea original era estandarizar un ecosistema donde la inteligencia artificial y la física de impactos se fusionaran para crear entornos completamente impredecibles y realistas en la actual generación de consolas.</p><p>Lamentablemente, las exigencias de rendimiento y el gigantesco tamaño de los mapas posteriores, como el de <i>GTA V</i>, obligaron a simplificar drásticamente este sistema. Esta decisión de diseño técnico sacrificó gran parte de la complejidad de Euphoria en favor de la estabilidad, dejando a los fans con la eterna duda de hasta dónde podría haber llegado esta tecnología. A pesar del sabor agridulce, su legado sigue siendo el santo grial para los amantes de la simulación física que buscan un verdadero salto generacional en la interactividad.</p>",
-      "id": "noticia-1781356496-1",
-      "enlace": "https://es.ign.com/euphoria/230493/el-creador-de-euphoria-tenia-un-final-muy-diferente-en-la-cabeza",
-      "imagen": "https://loremflickr.com/800/450/gta,physicsengine",
-      "fecha": "2026-06-13T13:15:36.388668"
-    },
-    {
-      "categoria": "Actualidad Gaming",
-      "titulo": "¡Fuego y 'hate' en Poniente! El líder de 'House of the Dragon' activa el modo defensivo y destroza a los críticos",
-      "resumen": "Cansado de la toxicidad digital y el constante escrutinio de las redes, el protagonista de la aclamada serie de fantasía ha decidido romper el silencio para defender el rumbo creativo de la producción con la firmeza de un auténtico boss de incursión.",
-      "contenido_completo": "<p>La toxicidad en las redes sociales ha dejado de ser un boss exclusivo de las comunidades de videojuegos para convertirse en la plaga definitiva del entretenimiento moderno. El último en plantarle cara a esta oleada de negatividad ha sido el mismísimo protagonista de <em>House of the Dragon</em>, quien ha decidido romper el silencio frente a la horda de haters que asedian las decisiones narrativas de la serie. Lejos de adoptar un perfil bajo, el actor ha decidido 'mutear' el ruido exterior y defender con uñas y dientes el rumbo de la trama, comparando la implacable presión de los teclados con un asedio que los creadores deben sortear para mantener viva su visión artística original.</p><p>El intérprete ha dejado claro que la fantasía épica no puede rendirse ante las exigencias de un 'fandom' obsesionado con el 'fan service' y los guiones predecibles. Esta firme postura marca un punto de inflexión en la industria geek, donde las estrellas del sector ya no temen responder al 'review bombing' con la misma agresividad que un jugador profesional en una partida clasificatoria. Al final del día, blindar la libertad creativa frente a las quejas sistemáticas de internet es el verdadero 'power move' que mantendrá con vida el alma de las grandes sagas literarias y televisivas.</p>",
-      "id": "noticia-1781356496-0",
-      "enlace": "https://es.ign.com/house-1/230357/el-protagonista-de-house-carga-contra-los-mas-criticos-con-la-serie",
-      "imagen": "https://loremflickr.com/800/450/housedragon,targaryen",
-      "fecha": "2026-06-13T13:15:10.727170"
     }
   ]
 }
