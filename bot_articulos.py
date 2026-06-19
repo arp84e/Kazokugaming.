@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 from duckduckgo_search import DDGS
 
-print("=== 🤖 KAZOKUBOT V2: MOTOR EDITORIAL CON SCRAPER MULTIMODAL DE IMÁGENES ===")
+print("=== 🤖 KAZOKUBOT V2.1: MOTOR EDITORIAL PERFECCIONADO ===")
 
 # 📥 1. CAPTURA DE ENTRADAS DESDE GITHUB ACTIONS
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -39,7 +39,6 @@ def extraer_imagenes_de_enlaces(texto_enlaces):
     if not texto_enlaces:
         return imagenes_encontradas
         
-    # Limpiar y separar los enlaces por comas
     urls = [u.strip() for u in texto_enlaces.split(",") if u.strip().startswith("http")]
     print(f"🔗 Analizando {len(urls)} enlace(s) manual(es) para extraer imágenes originales...")
     
@@ -51,19 +50,17 @@ def extraer_imagenes_de_enlaces(texto_enlaces):
             if res.status_code == 200:
                 soup = BeautifulSoup(res.text, 'html.parser')
                 
-                # 1. Intentar capturar la imagen de portada SEO (OpenGraph Meta Image)
-                og_meta = soup.find("meta", property="og:image") or soup.find("meta", name="twitter:image")
+                # SINTAXIS CORREGIDA: Buscamos las propiedades OpenGraph sin romper los argumentos de BS4
+                og_meta = soup.find("meta", property="og:image") or soup.find("meta", attrs={"name": "twitter:image"})
                 if og_meta and og_meta.get("content"):
                     img_url = og_meta["content"].strip()
                     if img_url.startswith("http") and img_url not in imagenes_encontradas:
                         print(f"   📸 Portada SEO detectada: {img_url[:60]}...")
                         imagenes_encontradas.append(img_url)
                 
-                # 2. Si faltan, buscar imágenes grandes en el cuerpo de la página web
                 for img_tag in soup.find_all("img"):
                     src = img_tag.get("src") or img_tag.get("data-src") or img_tag.get("lazy-src")
                     if src and src.startswith("http"):
-                        # Filtrar miniaturas, iconos o logos obvios
                         if not any(x in src.lower() for x in ["icon", "logo", "avatar", "sprite", "nav", "header", "badge"]):
                             if src not in imagenes_encontradas:
                                 imagenes_encontradas.append(src)
@@ -91,12 +88,11 @@ if accion == "1_generar_borrador":
             for res in resultados:
                 contexto_busqueda += f"- {res['title']}: {res['body']} (Fuente: {res['href']})\n"
     except Exception as e:
-        print(f"⚠️ Nota: Buscador externo omitido ({e}). Usaremos tus fuentes directas.")
+        print(f"⚠️ Nota: Buscador de contexto omitido ({e}). Usaremos tus fuentes directas.")
 
     if enlaces_manuales:
         contexto_busqueda += f"\n[FUENTES OFICIALES PRIORITARIAS]:\n{enlaces_manuales}\n"
 
-    # ✍️ Redacción del súper artículo e invención de palabras clave para la imagen
     print("✍️ Fase 2: Redactando contenido y optimizando palabras clave multimedia con Gemini...")
     
     prompt = f"""
@@ -112,7 +108,7 @@ if accion == "1_generar_borrador":
     1. TÍTULO: Sumamente profesional, magnético y optimizado para SEO. Max 70 caracteres.
     2. RESUMEN CORTO: Un gancho de 2 líneas para la tarjeta de la página de inicio.
     3. CUERPO: Formato HTML limpio. Usa párrafos con (<p class="mb-4 text-justify">...</p>), sub-titulares interesantes con h3 (<h3 class="text-xl font-bold text-white mt-6 mb-3">...</h3>) y viñetas puntuales si hay especificaciones. Vocabulario técnico gamer refinado. Mínimo 4 párrafos completos.
-    4. PALABRAS CLAVE DE IMAGEN (CLAVE): Piensa en el sujeto principal del artículo y genera de 2 a 4 palabras clave ultra-concisas en inglés ideales para buscar un fondo de pantalla o fotografía espectacular del tema en internet. (Ejemplo: si hablas de un juego, escribe 'gta 6 official artwork' o 'ps5 pro console design'). No uses comillas ni frases largas.
+    4. PALABRAS CLAVE DE IMAGEN: Escribe un único término conceptual muy corto y conciso en inglés, SIN COMAS, ideal para buscar un fondo de pantalla del tema en internet. (Ejemplo: 'nvidia rtx GPU concept' o 'futuristic hardware design'). No mezcles múltiples frases separadas por comas.
     
     RESPONDE EXCLUSIVAMENTE EN EL SIGUIENTE FORMATO JSON PLANO (Sin markdown ```json):
     {{
@@ -120,7 +116,7 @@ if accion == "1_generar_borrador":
       "resumen": "Resumen corto e intrigante aquí.",
       "cuerpo": "Contenido del cuerpo formateado en HTML limpio.",
       "categoria": "{categoria}",
-      "termino_busqueda_imagen": "palabras clave optimizadas en inglés aquí"
+      "termino_busqueda_imagen": "termino corto en ingles sin comas aqui"
     }}
     """
 
@@ -138,33 +134,33 @@ if accion == "1_generar_borrador":
         print(f"❌ ERROR CON GEMINI: {e}")
         sys.exit(1)
 
-    # 🖼️ Fase 3: Adquisición Inteligente de Imágenes Combinadas
     print("🖼️ Fase 3: Buscando y consolidando imágenes de alta relevancia...")
     
-    # Intentar traer fotos de las webs analizadas primero
+    # 1. Extraer fotos de tus enlaces manuales (lo cual funcionó de maravilla)
     opciones_imagenes = extraer_imagenes_de_enlaces(enlaces_manuales)
     
-    # Si hay menos de 3 fotos de los enlaces, completamos el resto usando DuckDuckGo con los términos optimizados por la IA
+    # 2. Intentar buscar en DuckDuckGo saneando el término (quitando comas si la IA se equivoca)
     palabras_clave_ia = articulo_ia.get("termino_busqueda_imagen", tema)
-    print(f"🔎 Buscando alternativas en la web usando el motor de IA: '{palabras_clave_ia}'...")
+    if "," in palabras_clave_ia:
+        palabras_clave_ia = palabras_clave_ia.split(",")[0].strip()
+        
+    print(f"🔎 Buscando alternativas de apoyo en la web usando el motor de IA: '{palabras_clave_ia}'...")
     
     try:
         with DDGS() as ddgs:
-            # Buscamos imágenes grandes (wallpapers/artworks) usando el término limpio
-            img_results = list(ddgs.images(f"{palabras_clave_ia}", max_results=20))
+            img_results = list(ddgs.images(f"{palabras_clave_ia} gaming wallpaper", max_results=15))
             for img in img_results:
                 url = img.get('image')
                 if url and url.startswith("http"):
-                    # Filtros de exclusión avanzados para evitar basura
                     if not any(x in url.lower() for x in ["thumbnail", "icon", "avatar", "logo", "loader", "sprite"]):
-                        if url not in opciones_imagenes: # Evitar duplicados estrictamente
+                        if url not in opciones_imagenes: 
                             opciones_imagenes.append(url)
                 if len(opciones_imagenes) >= 5:
                     break
     except Exception as e:
-        print(f"⚠️ Error al buscar en internet: {e}")
+        print(f"⚠️ Nota: Buscador de imágenes web omitido ({e}). Dependeremos de los enlaces del usuario.")
     
-    # Sistema de salvaguarda total en caso de fallos de red de internet
+    # Imágenes de respaldo universales
     imagenes_respaldo = [
         "[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)",
         "[https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200](https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200)",
@@ -175,10 +171,8 @@ if accion == "1_generar_borrador":
         if img_res not in opciones_imagenes:
             opciones_imagenes.append(img_res)
 
-    # Recortar la lista a exactamente las 3 mejores imágenes únicas
     opciones_imagenes = opciones_imagenes[:3]
 
-    # Armar y guardar el borrador limpio
     borrador_data = {
         "titulo": articulo_ia.get("titulo", "Artículo de Tecnología"),
         "resumen": articulo_ia.get("resumen", "Previa del artículo."),
