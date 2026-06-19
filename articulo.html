@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KazokuGaming | Crónica</title>
+    <title>KazokuGaming | Artículo Especial</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta name="description" content="Lee el informe completo del mundo de los videojuegos en KazokuGaming.">
+    <meta name="description" content="Lee el informe, guía y análisis completo en el área de tecnología de KazokuGaming.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="KazokuGaming">
     <meta name="twitter:card" content="summary_large_image">
@@ -17,8 +17,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-        .prose h3 { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.75rem; }
-        .prose p { color: #94a3b8; line-height: 1.75; margin-bottom: 1.25rem; }
+        /* Clases de soporte para inyectar el código semántico de la IA con estilo impecable */
+        .prose h3 { font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 1.75rem; margin-bottom: 0.75rem; border-left: 3px solid #22d3ee; padding-left: 10px; }
+        .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.25rem; text-align: justify; }
         .prose strong { color: #22d3ee; font-weight: 600; }
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #94a3b8; }
         .prose li { margin-bottom: 0.5rem; }
@@ -30,13 +31,13 @@
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div id="cuerpo-articulo" class="space-y-6">
             <div class="text-center py-12">
-                <p class="text-slate-400 animate-pulse">Sincronizando con los servidores de KazokuGaming...</p>
+                <p class="text-slate-400 animate-pulse">Sincronizando con los servidores editoriales de KazokuGaming...</p>
             </div>
         </div>
     </main>
 
-    <footer class="border-t border-slate-950 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
-        <p>&copy; 2026 KazokuGaming. Todos los derechos reservados.</p>
+    <footer class="border-t border-slate-900 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 KazokuGaming. Todos los derechos reservados de la red de publicaciones.</p>
     </footer>
 
     <script src="header.js"></script>
@@ -44,51 +45,61 @@
         const params = new URLSearchParams(window.location.search);
         const idArticulo = params.get('id');
 
-        fetch('noticias.json')
+        // 📂 Apuntamos a la nueva base de datos unificada de artículos
+        fetch('articulos.json')
             .then(response => response.json())
-            .then(data => {
-                let listaNoticias = [];
-                if (data.destacada) listaNoticias.push(data.destacada);
-                if (data.secundarias) listaNoticias = listaNoticias.concat(data.secundarias);
+            .then(listaArticulos => {
+                if (!Array.isArray(listaArticulos)) throw new Error("Estructura inválida");
 
-                const articuloEncontrado = listaNoticias.find(n => n.id === idArticulo);
+                // Buscamos el artículo que corresponda al ID/Slug de la URL
+                const articuloEncontrado = listaArticulos.find(a => a.id === idArticulo);
 
                 if (articuloEncontrado) {
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="space-y-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                                ${articuloEncontrado.categoria}
-                            </span>
+                            <div class="flex items-center space-x-3 text-xs text-slate-500 font-medium">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    ${articuloEncontrado.categoria}
+                                </span>
+                                <span>•</span>
+                                <span>${articuloEncontrado.fecha || 'Publicado'}</span>
+                            </div>
                             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                                 ${articuloEncontrado.titulo}
                             </h1>
                         </div>
-                        <div class="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/20 aspect-video w-full my-6">
-                            <img src="${articuloEncontrado.imagen}" alt="Portada" class="w-full h-full object-cover">
+                        
+                        <div class="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950 aspect-video w-full my-6 shadow-xl shadow-black/50">
+                            <img src="${articuloEncontrado.imagen}" alt="Portada del Artículo" class="w-full h-full object-cover">
                         </div>
+                        
                         <div class="prose max-w-none text-slate-300">
-                            ${articuloEncontrado.contenido_completo || `<p class="text-slate-400">${articuloEncontrado.resumen}</p><p class="text-xs italic text-amber-400/80 mt-4">⚠️ El análisis completo está siendo redactado por el sistema, vuelve en unos minutos.</p>`}
+                            ${articuloEncontrado.cuerpo || `<p class="text-slate-400">${articuloEncontrado.resumen}</p>`}
                         </div>
+                        
                         <div class="mt-12 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-slate-500">
-                            <p>Análisis independiente redactado por la IA editorial de KazokuGaming.</p>
-                            <a href="${articuloEncontrado.enlace}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center space-x-1 font-medium">
-                                <span>Ver datos del reporte original</span><span>→</span>
-                            </a>
+                            <p>Análisis y redacción supervisada por la mesa de edición de KazokuGaming.</p>
+                            ${articuloEncontrado.enlace && articuloEncontrado.enlace !== "https://kazokugaming.com" ? `
+                                <a href="${articuloEncontrado.enlace}" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center space-x-1 font-semibold bg-cyan-950/40 px-3 py-1.5 rounded-lg border border-cyan-800/30">
+                                    <span>Consultar Fuentes Oficiales</span><span>→</span>
+                                </a>
+                            ` : ''}
                         </div>
                     `;
                     document.title = `${articuloEncontrado.titulo} | KazokuGaming`;
                 } else {
+                    // En caso de que no exista el ID (Error 404 amigable)
                     document.getElementById('cuerpo-articulo').innerHTML = `
                         <div class="text-center py-16 space-y-4">
-                            <h1 class="text-2xl font-bold text-white">Error 404</h1>
-                            <p class="text-slate-400 text-sm">La crónica que buscas no se encuentra en nuestros registros.</p>
-                            <a href="index.html" class="inline-block text-xs bg-slate-800 text-slate-300 px-4 py-2 rounded-xl hover:bg-slate-700 transition">Volver al Inicio</a>
+                            <h1 class="text-2xl font-bold text-white">Artículo no encontrado</h1>
+                            <p class="text-slate-400 text-sm">El reporte solicitado ha sido archivado o el enlace es incorrecto.</p>
+                            <a href="index.html" class="inline-block text-xs bg-slate-800 text-slate-300 px-4 py-2 rounded-xl hover:bg-slate-700 transition">Volver al Índice</a>
                         </div>`;
                 }
             })
             .catch(error => {
                 console.error(error);
-                document.getElementById('cuerpo-articulo').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión al cargar la base de datos de crónicas.</div>`;
+                document.getElementById('cuerpo-articulo').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error al conectar con la base de datos de artículos.</div>`;
             });
     </script>
 </body>
