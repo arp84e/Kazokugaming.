@@ -10,7 +10,7 @@ from duckduckgo_search import DDGS
 
 print("=== 🤖 KAZOKUBOT V2.1: MOTOR EDITORIAL PERFECCIONADO ===")
 
-# 📥 1. CAPTURA DE ENTRADAS DESDE GITHUB ACTIONS
+# 📥 1. CAPTURA DE ENTRADAS
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
 tema = os.environ.get("INPUT_TEMA", "")
 categoria = os.environ.get("INPUT_CATEGORIA", "Tecnología")
@@ -19,7 +19,7 @@ imagen_ok = os.environ.get("INPUT_IMAGEN_OK", "1")
 api_key = os.environ.get("GEMINI_API_KEY")
 
 if not api_key:
-    print("❌ ERROR: No se configuró GEMINI_API_KEY en los secretos del repositorio.")
+    print("❌ ERROR: No se configuró GEMINI_API_KEY en los secretos.")
     sys.exit(1)
 
 client = genai.Client(api_key=api_key)
@@ -33,7 +33,6 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 🧲 FUNCIÓN MAESTRA: Extraer imágenes reales de los enlaces proporcionados
 def extraer_imagenes_de_enlaces(texto_enlaces):
     imagenes_encontradas = []
     if not texto_enlaces:
@@ -50,8 +49,8 @@ def extraer_imagenes_de_enlaces(texto_enlaces):
             if res.status_code == 200:
                 soup = BeautifulSoup(res.text, 'html.parser')
                 
-                # SINTAXIS CORREGIDA: Buscamos las propiedades OpenGraph sin romper los argumentos de BS4
-                og_meta = soup.find("meta", property="og:image") or soup.find("meta", attrs={"name": "twitter:image"})
+                # Búsqueda segura en meta tags de redes sociales (evitando errores en Wikipedia)
+                og_meta = soup.find("meta", attrs={"property": "og:image"}) or soup.find("meta", attrs={"name": "twitter:image"})
                 if og_meta and og_meta.get("content"):
                     img_url = og_meta["content"].strip()
                     if img_url.startswith("http") and img_url not in imagenes_encontradas:
@@ -71,9 +70,9 @@ def extraer_imagenes_de_enlaces(texto_enlaces):
             
     return imagenes_encontradas
 
-# =====================================================================
+# ===============================================
 # 🔄 FASE 1: GENERAR UN NUEVO BORRADOR
-# =====================================================================
+# ===============================================
 if accion == "1_generar_borrador":
     if not tema:
         print("❌ ERROR: Para generar un borrador necesitas escribir un 'Tema o Título'.")
@@ -84,39 +83,35 @@ if accion == "1_generar_borrador":
     
     try:
         with DDGS() as ddgs:
-            resultados = list(ddgs.text(f"{tema} gaming technology news", max_results=4))
+            resultados = list(ddgs.text(f"{tema} gaming technology news", max_results=3))
             for res in resultados:
                 contexto_busqueda += f"- {res['title']}: {res['body']} (Fuente: {res['href']})\n"
     except Exception as e:
-        print(f"⚠️ Nota: Buscador de contexto omitido ({e}). Usaremos tus fuentes directas.")
+        print(f"⚠️ Nota: Buscador de contexto omitido ({e}).")
 
     if enlaces_manuales:
         contexto_busqueda += f"\n[FUENTES OFICIALES PRIORITARIAS]:\n{enlaces_manuales}\n"
 
-    print("✍️ Fase 2: Redactando contenido y optimizando palabras clave multimedia con Gemini...")
-    
+    print("✍️ Fase 2: Redactando contenido con Gemini...")
     prompt = f"""
-    Actúa como un Redactor Jefe Senior y experto en SEO para la revista digital KazokuGaming.
-    Crea un artículo técnico, original, llamativo y muy profesional basado en estos datos:
-    
-    TEMA DE ENTRADA: {tema}
+    Actúa como un Redactor Jefe Senior para KazokuGaming. Crea un artículo técnico, original y llamativo:
+    TEMA: {tema}
     CATEGORÍA: {categoria}
-    INVESTIGACIÓN DE SOPORTE:
-    {contexto_busqueda}
+    INVESTIGACIÓN: {contexto_busqueda}
     
-    INSTRUCCIONES DE FORMATO:
-    1. TÍTULO: Sumamente profesional, magnético y optimizado para SEO. Max 70 caracteres.
-    2. RESUMEN CORTO: Un gancho de 2 líneas para la tarjeta de la página de inicio.
-    3. CUERPO: Formato HTML limpio. Usa párrafos con (<p class="mb-4 text-justify">...</p>), sub-titulares interesantes con h3 (<h3 class="text-xl font-bold text-white mt-6 mb-3">...</h3>) y viñetas puntuales si hay especificaciones. Vocabulario técnico gamer refinado. Mínimo 4 párrafos completos.
-    4. PALABRAS CLAVE DE IMAGEN: Escribe un único término conceptual muy corto y conciso en inglés, SIN COMAS, ideal para buscar un fondo de pantalla del tema en internet. (Ejemplo: 'nvidia rtx GPU concept' o 'futuristic hardware design'). No mezcles múltiples frases separadas por comas.
+    INSTRUCCIONES:
+    1. TÍTULO: Profesional y optimizado SEO (Max 70 caracteres).
+    2. RESUMEN: Gancho corto de 2 líneas.
+    3. CUERPO: Formato HTML limpio. Párrafos (<p class="mb-4 text-justify">...</p>), sub-titulares (<h3 class="text-xl font-bold text-white mt-6 mb-3">...</h3>). Mínimo 4 párrafos.
+    4. PALABRAS CLAVE: Un único término conceptual corto en inglés (ej. 'nvidia RTX concept' o 'PS5 pro leak'), SIN COMAS para buscar fotos.
     
-    RESPONDE EXCLUSIVAMENTE EN EL SIGUIENTE FORMATO JSON PLANO (Sin markdown ```json):
+    RESPONDE EXCLUSIVAMENTE EN JSON PLANO (Sin markdown ```json):
     {{
-      "titulo": "Título profesional aquí",
-      "resumen": "Resumen corto e intrigante aquí.",
-      "cuerpo": "Contenido del cuerpo formateado en HTML limpio.",
+      "titulo": "Título profesional",
+      "resumen": "Resumen corto",
+      "cuerpo": "Contenido HTML limpio",
       "categoria": "{categoria}",
-      "termino_busqueda_imagen": "termino corto en ingles sin comas aqui"
+      "termino_busqueda_imagen": "termino en ingles sin comas"
     }}
     """
 
@@ -134,33 +129,28 @@ if accion == "1_generar_borrador":
         print(f"❌ ERROR CON GEMINI: {e}")
         sys.exit(1)
 
-    print("🖼️ Fase 3: Buscando y consolidando imágenes de alta relevancia...")
-    
-    # 1. Extraer fotos de tus enlaces manuales (lo cual funcionó de maravilla)
+    print("🖼️ Fase 3: Consolidando imágenes...")
     opciones_imagenes = extraer_imagenes_de_enlaces(enlaces_manuales)
     
-    # 2. Intentar buscar en DuckDuckGo saneando el término (quitando comas si la IA se equivoca)
     palabras_clave_ia = articulo_ia.get("termino_busqueda_imagen", tema)
     if "," in palabras_clave_ia:
         palabras_clave_ia = palabras_clave_ia.split(",")[0].strip()
         
-    print(f"🔎 Buscando alternativas de apoyo en la web usando el motor de IA: '{palabras_clave_ia}'...")
-    
+    print(f"🔎 Buscando alternativas web para: '{palabras_clave_ia}'...")
     try:
         with DDGS() as ddgs:
-            img_results = list(ddgs.images(f"{palabras_clave_ia} gaming wallpaper", max_results=15))
+            img_results = list(ddgs.images(f"{palabras_clave_ia} gaming", max_results=10))
             for img in img_results:
                 url = img.get('image')
                 if url and url.startswith("http"):
-                    if not any(x in url.lower() for x in ["thumbnail", "icon", "avatar", "logo", "loader", "sprite"]):
+                    if not any(x in url.lower() for x in ["thumbnail", "icon", "avatar", "logo"]):
                         if url not in opciones_imagenes: 
                             opciones_imagenes.append(url)
                 if len(opciones_imagenes) >= 5:
                     break
     except Exception as e:
-        print(f"⚠️ Nota: Buscador de imágenes web omitido ({e}). Dependeremos de los enlaces del usuario.")
+        print(f"⚠️ Nota: DuckDuckGo bloqueado o lento ({e}). Usaremos fuentes alternativas.")
     
-    # Imágenes de respaldo universales
     imagenes_respaldo = [
         "[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)",
         "[https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200](https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200)",
@@ -168,13 +158,12 @@ if accion == "1_generar_borrador":
     ]
     for img_res in imagenes_respaldo:
         if len(opciones_imagenes) >= 3: break
-        if img_res not in opciones_imagenes:
-            opciones_imagenes.append(img_res)
+        if img_res not in opciones_imagenes: opciones_imagenes.append(img_res)
 
     opciones_imagenes = opciones_imagenes[:3]
 
     borrador_data = {
-        "titulo": articulo_ia.get("titulo", "Artículo de Tecnología"),
+        "titulo": articulo_ia.get("titulo", "Artículo Especial"),
         "resumen": articulo_ia.get("resumen", "Previa del artículo."),
         "cuerpo": articulo_ia.get("cuerpo", ""),
         "categoria": categoria,
@@ -185,23 +174,20 @@ if accion == "1_generar_borrador":
         json.dump(borrador_data, f, ensure_ascii=False, indent=2)
         
     print("\n" + "="*60)
-    print("🎉 ¡SÚPER BORRADOR GENERADO CON ÉXITO!")
+    print("🎉 ¡BORRADOR CREADO!")
     print(f"📝 Título: {borrador_data['titulo']}")
-    print(f"🔑 Término IA usado para fotos: '{palabras_clave_ia}'")
-    print("="*60)
-    print("🖼️ REVISA ESTAS 3 URLS DIFERENTES EN TU NAVEGADOR:")
+    print("🖼️ OPCIONES DE IMAGEN:")
     print(f" Opc [1]: {opciones_imagenes[0]}")
     print(f" Opc [2]: {opciones_imagenes[1]}")
     print(f" Opc [3]: {opciones_imagenes[2]}")
     print("="*60)
-    print("💡 Todo listo. Ahora ejecuta el flujo en GitHub seleccionando '2_publicar_borrador'.")
 
-# =====================================================================
-# 🚀 FASE 2: APROBAR Y PUBLICAR EL BORRADOR EN PRODUCCIÓN
-# =====================================================================
+# ===============================================
+# 🚀 FASE 2: APROBAR Y PUBLICAR
+# ===============================================
 elif accion == "2_publicar_borrador":
     if not os.path.exists(archivo_borrador):
-        print("❌ ERROR: No hay ningún borrador creado previamente. Corre primero la acción '1_generar_borrador'.")
+        print("❌ ERROR: No hay ningún borrador. Ejecuta '1_generar_borrador' primero.")
         sys.exit(1)
         
     with open(archivo_borrador, "r", encoding="utf-8") as f:
@@ -243,4 +229,4 @@ elif accion == "2_publicar_borrador":
     if os.path.exists(archivo_borrador):
         os.remove(archivo_borrador)
         
-    print(f"🚀 ¡ÉXITO TOTAL! El artículo '{nuevo_articulo['titulo']}' ya está en producción con la imagen seleccionada.")
+    print(f"🚀 ¡PUBLICADO! El artículo '{nuevo_articulo['titulo']}' está listo.")
