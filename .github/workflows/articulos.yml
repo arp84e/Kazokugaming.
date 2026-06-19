@@ -74,13 +74,16 @@ jobs:
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
-          # Añadimos tanto los borradores como la base de datos oficial
+          
+          # Aseguramos que git reconozca tanto la creación como la eliminación de borradores
           git add articulos_borrador.json articulos.json || true
           
           if git diff --staged --quiet; then
-            echo "Sin cambios en los archivos JSON."
+            echo "Sin cambios detectados en los archivos editoriales."
           else
             git commit -m "🤖 Bot Artículos: Actualización de estado [${{ github.event.inputs.accion }}]"
+            # Sincronización intermedia para evitar choques de escritura
+            git pull --rebase origin main || git pull --rebase origin master || true
             git push
           fi
 
