@@ -1,0 +1,90 @@
+name: Bot Redactor de Artículos Pro
+
+# 🕹️ Activación manual desde la pestaña "Actions" de GitHub
+on:
+  workflow_dispatch:
+    inputs:
+      accion:
+        description: '🚀 ¿Qué deseas hacer?'
+        required: true
+        type: choice
+        default: '1_generar_borrador'
+        options:
+          - '1_generar_borrador'
+          - '2_publicar_borrador'
+      tema_articulo:
+        description: '📝 Tema o Título conceptual del Artículo (Ej: El impacto del trazado de rayos en la nueva generación)'
+        required: false
+        type: string
+      categoria:
+        description: '🏷️ Categoría del Artículo'
+        required: false
+        type: choice
+        default: 'Tecnología'
+        options:
+          - 'Tecnología'
+          - 'Videojuegos'
+          - 'Análisis'
+          - 'Guías y Tutoriales'
+      enlaces_oficiales:
+        description: '🔗 Enlaces Oficiales de referencia (Opcional - Sepáralos por comas si son varios)'
+        required: false
+        type: string
+      imagen_elegida:
+        description: '🖼️ Si vas a PUBLICAR, ¿qué número de imagen del borrador prefieres? (1, 2 o 3)'
+        required: false
+        type: choice
+        default: '1'
+        options:
+          - '1'
+          - '2'
+          - '3'
+
+permissions:
+  contents: write
+
+jobs:
+  procesar_articulo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+      
+      - name: Configurar entorno de Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Instalar librerías necesarias
+        # Instalamos herramientas para conectarnos con Gemini y buscar en internet de forma segura
+        run: pip install google-genai requests duckduckgo-search beautifulsoup4
+        
+      - name: Ejecutar el motor del Bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Enviamos todas tus respuestas de las cajitas hacia el script de Python
+          INPUT_ACCION: ${{ github.event.inputs.accion }}
+          INPUT_TEMA: ${{ github.event.inputs.tema_articulo }}
+          INPUT_CATEGORIA: ${{ github.event.inputs.categoria }}
+          INPUT_ENLACES: ${{ github.event.inputs.enlaces_oficiales }}
+          INPUT_IMAGEN_OK: ${{ github.event.inputs.imagen_elegida }}
+        run: python bot_articulos.py
+        
+      - name: Guardar cambios en el repositorio (Git Commit)
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          # Añadimos tanto los borradores como la base de datos oficial
+          git add articulos_borrador.json articulos.json || true
+          
+          if git diff --staged --quiet; then
+            echo "Sin cambios en los archivos JSON."
+          else
+            git commit -m "🤖 Bot Artículos: Actualización de estado [${{ github.event.inputs.accion }}]"
+            git push
+          fi
+
+      - name: Notificar y Desplegar en Vercel
+        # Solo avisamos a Vercel para que actualice la web en vivo si decidiste PUBLICAR
+        if: success() && github.event.inputs.accion == '2_publicar_borrador'
+        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
