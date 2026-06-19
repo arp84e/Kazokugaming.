@@ -70,19 +70,19 @@ jobs:
           INPUT_IMAGEN_OK: ${{ github.event.inputs.imagen_elegida }}
         run: python bot_articulos.py
         
-      - name: Guardar cambios en el repositorio (Git Commit)
+     - name: Guardar cambios en el repositorio (Git Commit)
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
           
-          # Aseguramos que git reconozca tanto la creación como la eliminación de borradores
-          git add articulos_borrador.json articulos.json || true
+          # Separamos los adds en líneas individuales para que la ausencia de uno no bloquee al otro
+          git add articulos_borrador.json || true
+          git add articulos.json || true
           
           if git diff --staged --quiet; then
             echo "Sin cambios detectados en los archivos editoriales."
           else
             git commit -m "🤖 Bot Artículos: Actualización de estado [${{ github.event.inputs.accion }}]"
-            # Sincronización intermedia para evitar choques de escritura
             git pull --rebase origin main || git pull --rebase origin master || true
             git push
           fi
