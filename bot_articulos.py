@@ -92,24 +92,31 @@ if accion == "1_generar_borrador":
     if enlaces_manuales:
         contexto_busqueda += f"\n[FUENTES OFICIALES PRIORITARIAS]:\n{enlaces_manuales}\n"
 
-    print("✍️ Fase 2: Redactando contenido con Gemini...")
+   print("✍️ Fase 2: Redactando MEGA ARTÍCULO con Gemini...")
     prompt = f"""
-    Actúa como un Redactor Jefe Senior para KazokuGaming. Crea un artículo técnico, original y llamativo:
+    Actúa como un Redactor Jefe Senior y Experto Analista para KazokuGaming. Crea un mega-artículo técnico, profundo, original y espectacular:
+    
     TEMA: {tema}
     CATEGORÍA: {categoria}
     INVESTIGACIÓN: {contexto_busqueda}
     
-    INSTRUCCIONES:
-    1. TÍTULO: Profesional y optimizado SEO (Max 70 caracteres).
+    INSTRUCCIONES DE REDACCIÓN Y FORMATO WEB:
+    1. TÍTULO: Profesional, magnético y optimizado SEO (Max 70 caracteres).
     2. RESUMEN: Gancho corto de 2 líneas.
-    3. CUERPO: Formato HTML limpio. Párrafos (<p class="mb-4 text-justify">...</p>), sub-titulares (<h3 class="text-xl font-bold text-white mt-6 mb-3">...</h3>). Mínimo 4 párrafos.
-    4. PALABRAS CLAVE: Un único término conceptual corto en inglés (ej. 'nvidia RTX concept' o 'PS5 pro leak'), SIN COMAS para buscar fotos.
+    3. CUERPO (HTML LIMPIO, MÍNIMO 8 PÁRRAFOS LARGOS):
+       - Desarrolla el tema a fondo. No seas breve. Imagina que escribes para una revista premium.
+       - Usa párrafos justificados: <p class="mb-5 text-justify text-slate-300 leading-relaxed">...</p>
+       - Usa múltiples sub-titulares para dividir los temas: <h3 class="text-2xl font-extrabold text-white mt-8 mb-4 border-l-4 border-cyan-500 pl-3">...</h3>
+       - Usa al menos un bloque de cita destacada para dar un dato clave o reflexión: <blockquote class="p-4 my-6 bg-slate-900/50 border-l-4 border-cyan-400 italic text-slate-300 rounded-r-lg">...</blockquote>
+       - Si el tema lo permite (hardware, juegos, parches), incluye una lista de especificaciones técnica muy detallada usando: <ul class="list-disc pl-6 space-y-2 mb-6 text-slate-400 marker:text-cyan-500"><li><strong>Dato:</strong> Explicación</li></ul>
+       - Resalta términos técnicos importantes usando <strong>texto</strong>.
+    4. PALABRAS CLAVE: Un único término conceptual corto en inglés, SIN COMAS.
     
     RESPONDE EXCLUSIVAMENTE EN JSON PLANO (Sin markdown ```json):
     {{
       "titulo": "Título profesional",
       "resumen": "Resumen corto",
-      "cuerpo": "Contenido HTML limpio",
+      "cuerpo": "Contenido HTML limpio, extenso y enriquecido",
       "categoria": "{categoria}",
       "termino_busqueda_imagen": "termino en ingles sin comas"
     }}
