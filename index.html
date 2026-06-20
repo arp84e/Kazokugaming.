@@ -3,203 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KazokuGaming | Artículos, Análisis y Tecnología</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>KazokuGaming | Artículos y Análisis</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <meta name="description" content="Profundiza en el mundo de los videojuegos y la tecnología con nuestros artículos especializados, guías de optimización y análisis a fondo en KazokuGaming.">
-    <meta name="keywords" content="articulos tecnologia, analasis videojuegos, guias hardware, gaiming pro, kazokugaming">
-    <meta name="author" content="KazokuGaming">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="KazokuGaming | Artículos, Análisis y Tecnología">
-    <meta property="og:description" content="Análisis profundos, guías técnicas y artículos de opinión sobre hardware y la cultura de los videojuegos.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800">
-    <meta property="og:url" content="https://kazokugaming.vercel.app">
-    <meta name="twitter:card" content="summary_large_image">
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-    </style>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } </style>
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Espacio Editorial e Investigación</span>
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mt-4 mb-4">Artículos y Análisis de Expertos</h1>
-            <p class="text-lg text-slate-400">Reportajes técnicos, guías de optimización y columnas de opinión redactadas con rigor periodístico.</p>
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Espacio Editorial</span>
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mt-4 mb-4">Artículos y Análisis Pro</h1>
         </div>
 
-        <div id="articulosLoading" class="flex flex-col items-center justify-center py-20 space-y-4">
-            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"></div>
-            <p class="text-slate-400 text-sm animate-pulse">Cargando base de datos editorial...</p>
-        </div>
-
-        <div id="articulosContenedor" class="hidden space-y-12">
-            <div id="articuloDestacadoZona"></div>
-            
-            <div id="zonaSecundarias" class="border-t border-slate-900 pt-8 hidden">
-                <h2 class="text-xl font-bold text-slate-400 tracking-tight mb-6">Lecturas Recomendadas</h2>
-                <div id="articulosSecundariasGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 mb-12 shadow-lg max-w-4xl mx-auto backdrop-blur-sm">
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="w-full md:w-1/2">
+                    <input type="text" id="buscador" placeholder="Buscar por título o palabra clave..." class="w-full bg-slate-950 border border-slate-700 text-sm text-white rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all">
+                </div>
+                <div class="flex flex-wrap gap-2 justify-center" id="botones-filtros">
+                    <button data-cat="Todos" class="filtro-btn bg-cyan-600 text-slate-950 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition">Todos</button>
+                    <button data-cat="Tecnología" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Tecnología</button>
+                    <button data-cat="Videojuegos" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Videojuegos</button>
+                    <button data-cat="Análisis" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Análisis</button>
+                </div>
             </div>
         </div>
-    </main>
 
-    <footer class="bg-slate-950 border-t border-slate-900 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
-            &copy; 2026 KazokuGaming. Alianza de tecnología y cultura gamer.
+        <div id="articulosLoading" class="flex flex-col items-center justify-center py-10 space-y-4">
+            <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-cyan-400"></div>
         </div>
-    </footer>
+
+        <div id="articulosContenedor" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden"></div>
+        <p id="mensaje-vacio" class="hidden text-center text-slate-500 py-10">No se encontraron artículos con esa búsqueda.</p>
+    </main>
 
     <script src="header.js"></script>
     <script>
-        async function cargarArticulosInicio() {
-            const loading = document.getElementById('articulosLoading');
+        let todosLosArticulos = [];
+
+        function calcularTiempoLectura(textoHTML) {
+            const textoPlano = textoHTML.replace(/<[^>]*>?/gm, '');
+            const palabras = textoPlano.trim().split(/\s+/).length;
+            return Math.ceil(palabras / 200); // 200 palabras por minuto
+        }
+
+        function renderizarTarjetas(lista) {
             const contenedor = document.getElementById('articulosContenedor');
-            const zonaDestacada = document.getElementById('articuloDestacadoZona');
-            const gridSecundarias = document.getElementById('articulosSecundariasGrid');
-            const zonaSecundarias = document.getElementById('zonaSecundarias');
+            const vacio = document.getElementById('mensaje-vacio');
+            contenedor.innerHTML = "";
+            
+            if(lista.length === 0) {
+                contenedor.classList.add('hidden');
+                vacio.classList.remove('hidden');
+                return;
+            }
 
-            try {
-                // 📂 Ahora leemos el nuevo archivo oficial generado por el bot
-                const respuesta = await fetch('articulos.json');
-                if (!respuesta.ok) throw new Error("No se pudo leer articulos.json");
-                let poolArticulos = await respuesta.json();
-                
-                if(loading) loading.classList.add('hidden');
-                if(contenedor) contenedor.classList.remove('hidden');
+            vacio.classList.add('hidden');
+            contenedor.classList.remove('hidden');
 
-                if (!poolArticulos || poolArticulos.length === 0) {
-                    if(gridSecundarias) gridSecundarias.innerHTML = "<p class='text-slate-500 text-sm col-span-full text-center py-10'>No hay artículos publicados en este momento. ¡Vuelve pronto!</p>";
-                    if(zonaSecundarias) zonaSecundarias.classList.remove('hidden');
-                    return;
-                }
-
-                // Separamos el primero de la lista para que sea el gran DESTACADO visual
-                const destacadaPrincipal = poolArticulos.shift();
-                
-                if(zonaDestacada && destacadaPrincipal) {
-                    zonaDestacada.innerHTML = `
-                        <div class="group bg-slate-900/40 border border-slate-800/80 rounded-3xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 lg:flex shadow-2xl shadow-black/40">
-                            <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative bg-slate-950">
-                                <img src="${destacadaPrincipal.imagen}" alt="${destacadaPrincipal.titulo}" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
-                                <span class="absolute top-4 left-4 bg-cyan-600/90 backdrop-blur-sm text-white text-xs uppercase font-black tracking-wider px-3 py-1 rounded-lg border border-cyan-500/30 shadow-md">
-                                    ${destacadaPrincipal.categoria || 'Especial'}
-                                </span>
+            lista.forEach(articulo => {
+                const tiempo = calcularTiempoLectura(articulo.cuerpo || articulo.resumen);
+                contenedor.innerHTML += `
+                    <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-cyan-900 hover:bg-slate-900/80 transition-all duration-300 flex flex-col shadow-lg">
+                        <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
+                            <img src="${articulo.imagen}" alt="${articulo.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-cyan-600/90 text-white text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded shadow-md">${articulo.categoria}</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors mb-3">${articulo.titulo}</h4>
+                                <p class="text-sm text-slate-400 line-clamp-3 mb-4">${articulo.resumen}</p>
                             </div>
-                            <div class="p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between space-y-6">
-                                <div class="space-y-4">
-                                    <span class="text-xs text-cyan-400 font-semibold tracking-wider uppercase">${destacadaPrincipal.fecha || 'Destacado'}</span>
-                                    <h3 class="text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight group-hover:text-cyan-300 transition-colors">
-                                        ${destacadaPrincipal.titulo}
-                                    </h3>
-                                    <p class="text-slate-400 text-sm leading-relaxed line-clamp-4">
-                                        ${destacadaPrincipal.resumen}
-                                    </p>
+                            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+                                <div class="flex flex-col space-y-1">
+                                    <span class="text-slate-500">${articulo.fecha}</span>
+                                    <span class="text-cyan-600 font-semibold">⏳ ${tiempo} min de lectura</span>
                                 </div>
-                                <div class="pt-4 border-t border-slate-800/60">
-                                    <a href="articulo.html?id=${destacadaPrincipal.id}" class="inline-flex justify-center bg-cyan-600 hover:bg-cyan-500 text-slate-950 text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-xl transition shadow-md shadow-cyan-900/30">
-                                        Leer Artículo Completo →
-                                    </a>
-                                </div>
+                                <a href="articulo.html?id=${articulo.id}" class="bg-slate-800 hover:bg-cyan-600 hover:text-white text-cyan-400 px-3 py-1.5 rounded-lg transition-colors font-bold">Leer →</a>
                             </div>
                         </div>
-                    `;
-                }
+                    </article>
+                `;
+            });
+        }
 
-                let htmlTarjetasRecientes = "";
-                let htmlListaCompacta = "";
-
-                if (poolArticulos.length > 0) {
-                    poolArticulos.forEach((articulo, indice) => {
-                        if (!articulo || !articulo.titulo) return;
-                        
-                        // Los siguientes 6 se renderizan como hermosas tarjetas visuales
-                        if (indice < 6) {
-                            htmlTarjetasRecientes += `
-                                <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/20">
-                                    <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
-                                        <img src="${articulo.imagen}" alt="${articulo.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                                        <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-cyan-400 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-slate-700/50">
-                                            ${articulo.categoria || 'Análisis'}
-                                        </span>
-                                    </div>
-                                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                                        <div class="space-y-2">
-                                            <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-300 transition-colors">
-                                                ${articulo.titulo}
-                                            </h4>
-                                            <p class="text-sm text-slate-400 line-clamp-3 leading-relaxed">
-                                                ${articulo.resumen}
-                                            </p>
-                                        </div>
-                                        <div class="pt-3 border-t border-slate-800/40 flex justify-between items-center">
-                                            <span class="text-[10px] text-slate-500 font-semibold uppercase">${articulo.fecha || 'Reciente'}</span>
-                                            <a href="articulo.html?id=${articulo.id}" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition flex items-center space-x-1">
-                                                <span>Leer más</span><span>→</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </article>
-                            `;
-                        } else {
-                            // Los artículos más antiguos pasan a una sección de archivo de texto elegante
-                            htmlListaCompacta += `
-                                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-slate-900/20 border border-slate-800/60 rounded-xl hover:border-slate-700/80 hover:bg-slate-900/40 transition-all duration-200 gap-3">
-                                    <div class="flex items-center space-x-4 min-w-0">
-                                        <span class="text-xs font-black text-slate-500 uppercase tracking-wider bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">${articulo.fecha || 'Historial'}</span>
-                                        <div class="min-w-0">
-                                            <h5 class="text-sm font-bold text-slate-200 truncate">${articulo.titulo}</h5>
-                                            <p class="text-xs text-slate-400 line-clamp-1 mt-0.5">${articulo.resumen}</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-end shrink-0">
-                                        <a href="articulo.html?id=${articulo.id}" class="text-xs font-bold text-slate-400 hover:text-cyan-400 bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 px-4 py-2 rounded-lg transition-all shadow-md">
-                                            Explorar Artículo →
-                                        </a>
-                                    </div>
-                                </div>
-                            `;
-                        }
-                    });
-                }
-
-                if (gridSecundarias) gridSecundarias.innerHTML = htmlTarjetasRecientes || "<p class='text-slate-500 text-sm col-span-full text-center py-6'>No hay más artículos recientes.</p>";
-                if (zonaSecundarias) zonaSecundarias.classList.remove('hidden');
-
-                let idHemeroteca = document.getElementById('hemerotecaArticulosZona');
-                if (htmlListaCompacta) {
-                    if (!idHemeroteca && contenedor) {
-                        const seccionHemeroteca = document.createElement('section');
-                        seccionHemeroteca.id = "hemerotecaArticulosZona";
-                        seccionHemeroteca.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-slate-900";
-                        contenedor.appendChild(seccionHemeroteca);
-                        idHemeroteca = seccionHemeroteca;
-                    }
-                    if(idHemeroteca) {
-                        idHemeroteca.innerHTML = `
-                            <div class="flex items-center space-x-3 mb-6">
-                                <div class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></div>
-                                <h3 class="text-lg font-extrabold text-slate-400 tracking-wider uppercase text-sm">Archivo Editorial de Artículos</h3>
-                            </div>
-                            <div class="space-y-2.5">${htmlListaCompacta}</div>
-                        `;
-                    }
-                } else if (idHemeroteca) idHemeroteca.remove();
-
-            } catch (error) {
-                console.error(error);
-                if(loading) {
-                    loading.innerHTML = `<div class='text-center p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-md mx-auto'><p class='text-red-400 font-semibold text-sm'>⚠️ El módulo de artículos se encuentra en mantenimiento técnico.</p></div>`;
-                }
+        async function init() {
+            try {
+                const res = await fetch('articulos.json');
+                todosLosArticulos = await res.json();
+                document.getElementById('articulosLoading').classList.add('hidden');
+                renderizarTarjetas(todosLosArticulos);
+            } catch (e) {
+                document.getElementById('articulosLoading').innerHTML = "<p class='text-red-400'>Error al cargar los artículos.</p>";
             }
         }
-        document.addEventListener('DOMContentLoaded', cargarArticulosInicio);
+
+        // Lógica de Filtros y Búsqueda
+        document.getElementById('buscador').addEventListener('input', (e) => {
+            const texto = e.target.value.toLowerCase();
+            const filtrados = todosLosArticulos.filter(a => a.titulo.toLowerCase().includes(texto) || a.resumen.toLowerCase().includes(texto));
+            renderizarTarjetas(filtrados);
+        });
+
+        document.querySelectorAll('.filtro-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Estilos de botones
+                document.querySelectorAll('.filtro-btn').forEach(b => {
+                    b.classList.remove('bg-cyan-600', 'text-slate-950');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                e.target.classList.remove('bg-slate-800', 'text-slate-300');
+                e.target.classList.add('bg-cyan-600', 'text-slate-950');
+
+                // Filtrado
+                const cat = e.target.getAttribute('data-cat');
+                if(cat === 'Todos') renderizarTarjetas(todosLosArticulos);
+                else renderizarTarjetas(todosLosArticulos.filter(a => a.categoria === cat));
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
