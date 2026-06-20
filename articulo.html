@@ -41,8 +41,7 @@
                 </h3>
             </div>
 
-            <div id="caja-escribir-comentario" class="bg-slate-900/30 border border-slate-800 rounded-2xl p-5 mb-8 shadow-lg">
-                </div>
+            <div id="caja-escribir-comentario" class="bg-slate-900/30 border border-slate-800 rounded-2xl p-5 mb-8 shadow-lg"></div>
 
             <div class="bg-slate-900/20 border border-slate-800/60 rounded-2xl p-4 sm:p-6 shadow-inner">
                 <div id="lista-comentarios" class="space-y-3">
@@ -58,20 +57,15 @@
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-        // 1. Configuración de Supabase (Tus credenciales reales del foro)
         const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co';
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU';
         const supabase = createClient(supabaseUrl, supabaseKey);
 
-        // 2. Variables de Control
         const blacklist = ['kazokuadmin', 'gameranon22'];
         const usuarioActual = localStorage.getItem('kazoku_usuario');
         const params = new URLSearchParams(window.location.search);
         const idArticulo = params.get('id');
 
-        // ==========================================
-        // PARTE A: RENDERIZAR EL ARTÍCULO LEYENDO JSON
-        // ==========================================
         async function cargarArticuloYRelacionados() {
             try {
                 const res = await fetch('articulos.json');
@@ -96,7 +90,6 @@
                     `;
                     document.title = `${articulo.titulo} | KazokuGaming`;
 
-                    // Índice Flotante
                     const subtitulos = document.querySelectorAll('#contenido-real h3');
                     const indice = document.getElementById('indice-flotante');
                     if(subtitulos.length > 0) {
@@ -109,7 +102,6 @@
                         indice.innerHTML = "<li>No hay subsecciones.</li>";
                     }
 
-                    // Artículos Relacionados
                     const relacionados = lista.filter(a => a.categoria === articulo.categoria && a.id !== articulo.id).slice(0, 3);
                     if(relacionados.length > 0) {
                         document.getElementById('zona-relacionados').classList.remove('hidden');
@@ -125,22 +117,18 @@
                     }
                 } else {
                     document.getElementById('area-articulo').innerHTML = "<h1 class='text-2xl text-white'>Error 404: Artículo no encontrado.</h1>";
-                    document.getElementById('seccion-comentarios').classList.add('hidden'); // Ocultar comentarios si no hay artículo
+                    document.getElementById('seccion-comentarios').classList.add('hidden');
                 }
             } catch (error) {
                 console.error("Error al cargar artículo:", error);
             }
         }
 
-        // ==========================================
-        // PARTE B: LÓGICA DE COMENTARIOS CON SUPABASE
-        // ==========================================
         const cajaEscribir = document.getElementById('caja-escribir-comentario');
         const listaComentarios = document.getElementById('lista-comentarios');
 
         function renderizarCajaInput() {
             if (usuarioActual) {
-                // Usuario logueado
                 const inicial = usuarioActual.charAt(0).toUpperCase();
                 const esAdmin = blacklist.includes(usuarioActual.toLowerCase());
                 const colorAvatar = esAdmin ? 'bg-gradient-to-br from-indigo-500 to-cyan-500 text-white border-cyan-400' : 'bg-slate-800 text-slate-300 border-slate-700';
@@ -162,7 +150,6 @@
                     </div>
                 `;
 
-                // Evento de publicación
                 document.getElementById('btnPublicarCom').addEventListener('click', async () => {
                     const texto = document.getElementById('textoComentario').value.trim();
                     if(!texto) return;
@@ -181,15 +168,14 @@
                     btn.innerText = 'Publicar Comentario';
 
                     if(error) {
-                        alert('Error al publicar: ' + error.message);
+                        alert('Error detallado de Supabase al escribir: ' + error.message);
                     } else {
                         document.getElementById('textoComentario').value = '';
-                        await cargarComentarios(); // Refrescar muro abajo
+                        await cargarComentarios(); 
                     }
                 });
 
             } else {
-                // Usuario no logueado (Llamado a la acción)
                 cajaEscribir.innerHTML = `
                     <div class="text-center py-4 space-y-3">
                         <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-400 mb-1 border border-indigo-500/20">🔒</div>
@@ -203,7 +189,6 @@
             }
         }
 
-        // Exponer función al window para poder borrar desde los botones HTML generados
         window.borrarComentario = async function(id) {
             if(!confirm('🚨 ¿Estás seguro de que deseas eliminar este comentario?')) return;
             const { error } = await supabase.from('comentarios_articulos').delete().eq('id', id);
@@ -214,15 +199,21 @@
         async function cargarComentarios() {
             if(!idArticulo) return;
 
-            // Buscamos solo los comentarios del artículo que el usuario está leyendo
             const { data, error } = await supabase
                 .from('comentarios_articulos')
                 .select('*')
                 .eq('articulo_id', idArticulo)
-                .order('created_at', { ascending: false }); // Los más nuevos arriba
+                .order('created_at', { ascending: false });
 
+            // 🛑 AQUÍ IMPRIMIMOS EL ERROR REAL DE LA BASE DE DATOS
             if(error) {
-                listaComentarios.innerHTML = '<p class="text-red-400 text-sm py-4 text-center">⚠️ Error de conexión con la base de datos.</p>';
+                listaComentarios.innerHTML = `
+                    <div class="bg-red-900/20 border border-red-500/30 p-4 rounded-xl text-center max-w-lg mx-auto mt-4">
+                        <p class="text-red-400 text-sm font-bold mb-2">⚠️ Supabase ha bloqueado la conexión</p>
+                        <code class="text-red-300 text-xs block bg-black/50 p-3 rounded mb-3 break-all font-mono">${error.message}</code>
+                        <p class="text-slate-400 text-xs">El código web está perfecto, pero tu base de datos está rechazando la lectura. Sigue el Paso 2 para solucionarlo.</p>
+                    </div>`;
+                console.error("Error de Supabase:", error);
                 return;
             }
 
@@ -267,7 +258,6 @@
             });
         }
 
-        // --- INICIALIZACIÓN ---
         cargarArticuloYRelacionados();
         renderizarCajaInput();
         cargarComentarios();
