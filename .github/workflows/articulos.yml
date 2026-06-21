@@ -1,6 +1,5 @@
 name: Bot Redactor de Artículos Pro
 
-# 🕹️ Activación manual desde la pestaña "Actions" de GitHub
 on:
   workflow_dispatch:
     inputs:
@@ -27,7 +26,7 @@ on:
           - 'Análisis'
           - 'Guías y Tutoriales'
       enlaces_oficiales:
-        description: '🔗 Enlaces Oficiales de referencia (Opcional - Sepáralos por comas)'
+        description: '🔗 Enlaces Oficiales (Opcional - Sepáralos por comas)'
         required: false
         type: string
       imagen_elegida:
@@ -49,13 +48,13 @@ jobs:
     steps:
       - name: Descargar el código del repositorio
         uses: actions/checkout@v4
-      
-      - name: Configurar entorno de Python
-        uses: actions/setup-python@v4
+        
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
           
-      - name: Instalar librerías necesarias
+      - name: Instalar dependencias
         run: pip install google-genai requests duckduckgo-search beautifulsoup4
         
       - name: Ejecutar el motor del Bot
@@ -68,24 +67,23 @@ jobs:
           INPUT_IMAGEN_OK: ${{ github.event.inputs.imagen_elegida }}
         run: python bot_articulos.py
         
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
+        
       - name: Guardar cambios en el repositorio (Git Commit)
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
           
-          # Separamos los archivos para que no haya errores si es la primera vez
           git add articulos_borrador.json || true
           git add articulos.json || true
+          git add articulos/ || true
+          git add sitemap.xml || true
           
           if git diff --staged --quiet; then
-            echo "Sin cambios detectados en los archivos editoriales."
+            echo "Sin cambios detectados en los archivos."
           else
-            git commit -m "🤖 Bot Artículos: Actualización de estado [${{ github.event.inputs.accion }}]"
-            # Prevenir bloqueos si GitHub se desincroniza
-            git pull --rebase origin main || git pull --rebase origin master || true
+            git commit -m "🤖 Bot Artículos: Actualización estructural y sitemap"
+            git pull --rebase origin main || true
             git push
           fi
-
-      - name: Notificar y Desplegar en Vercel
-        if: success() && github.event.inputs.accion == '2_publicar_borrador'
-        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
