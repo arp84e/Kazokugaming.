@@ -4,301 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadgets & Hardware | KazokuGaming</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PASO 4: INTEGRACIÓN CON SUPABASE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between">
-
-    <!-- VISTA DEL CATÁLOGO -->
-    <main id="catalog-view" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Enciclopedia de Hardware</span>
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mt-4 mb-4">💻 Gadgets & Hardware</h1>
-            <p class="text-lg text-slate-400">Análisis técnico detallado y especificaciones de las mejores plataformas del mercado.</p>
+<body class="text-slate-200 min-h-screen flex flex-col">
+    <div id="header-container"></div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Tech & Gears</span>
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl mt-4 mb-4">Enciclopedia de Hardware</h1>
+            <p class="text-slate-400 max-w-2xl mx-auto">Análisis técnicos generados por la IA y reseñas reales (conectadas a Supabase) de la comunidad de KazokuGaming.</p>
         </div>
-
-        <section class="mb-16">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 border-b border-slate-800/60 pb-4">
-                <div class="flex items-center space-x-3">
-                    <div class="h-8 w-1 bg-emerald-500 rounded-full"></div>
-                    <h2 class="text-2xl font-bold text-white tracking-tight">Laptops Gaming</h2>
+        
+        <div id="grid-hardware" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        
+        <!-- Modal Supabase Opiniones -->
+        <div id="modal-opiniones" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md hidden z-50 flex items-center justify-center p-4 transition-opacity">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative">
+                <div class="p-6 border-b border-slate-800/80 flex justify-between items-center bg-slate-900/80 sticky top-0 z-10">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-white">Foro del Componente</h2>
+                        <p class="text-xs text-cyan-400 font-bold uppercase mt-1">Conectado a Supabase ⚡</p>
+                    </div>
+                    <button onclick="cerrarModal()" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-full flex items-center justify-center transition">&times;</button>
                 </div>
-                <div class="flex bg-slate-950/60 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
-                    <button onclick="filtrarGama('all')" id="btn-gama-all" class="px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 transition cursor-pointer">Todas</button>
-                    <button onclick="filtrarGama('baja')" id="btn-gama-baja" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Entrada</button>
-                    <button onclick="filtrarGama('media')" id="btn-gama-media" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Media</button>
-                    <button onclick="filtrarGama('alta')" id="btn-gama-alta" class="px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">Alta / Ultra</button>
+                
+                <div class="p-6 overflow-y-auto flex-grow bg-slate-900/50 space-y-4" id="lista-opiniones">
+                    <p class="text-center text-slate-500 py-10">Sincronizando base de datos...</p>
+                </div>
+                
+                <div class="p-6 bg-slate-950/80 border-t border-slate-800/80">
+                    <form id="form-opinion" class="space-y-4">
+                        <div class="flex space-x-4">
+                            <input type="text" id="forum-name" placeholder="Tu apodo pro" required class="w-1/2 bg-slate-800/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 border border-slate-700 transition placeholder-slate-500">
+                            <select id="forum-rating" class="w-1/2 bg-slate-800/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 border border-slate-700 transition">
+                                <option value="5">⭐⭐⭐⭐⭐ ¡Imprescindible!</option>
+                                <option value="4">⭐⭐⭐⭐ Muy Bueno</option>
+                                <option value="3">⭐⭐⭐ Cumple</option>
+                                <option value="2">⭐⭐ Regular</option>
+                                <option value="1">⭐ Dinero a la basura</option>
+                            </select>
+                        </div>
+                        <textarea id="forum-comment" rows="3" placeholder="Escribe tu opinión técnica, ¿lo recomiendas para gaming?" required class="w-full bg-slate-800/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 border border-slate-700 transition placeholder-slate-500 resize-none"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-slate-950 font-extrabold py-3 rounded-xl transition shadow-[0_0_15px_rgba(6,182,212,0.3)]">Publicar Análisis en el Foro</button>
+                    </form>
                 </div>
             </div>
-            <div id="container-laptops" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </section>
-
-        <section class="mb-16">
-            <div class="flex items-center space-x-3 mb-8">
-                <div class="h-8 w-1 bg-cyan-500 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Ecosistemas, Consolas y Handhelds</h2>
-            </div>
-            <div id="container-handhelds" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </section>
+        </div>
     </main>
-
-    <!-- VISTA DE DETALLES PROFUNDOS -->
-    <main id="details-view" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        <button onclick="hideDetails()" class="mb-8 flex items-center space-x-2 text-sm text-slate-400 hover:text-cyan-400 transition group cursor-pointer">
-            <span>&larr;</span> <span>Volver al catálogo de hardware</span>
-        </button>
-        <div id="details-content"></div>
-    </main>
-
-    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-sm text-slate-500">
-        &copy; 2026 KazokuGaming. Enciclopedia Técnica de Hardware.
-    </footer>
-
     <script src="header.js"></script>
     <script>
-        // Catálogo base integrado por defecto de KazokuGaming
-        const baseHardwareData = {
-            'lenovo-loq-15': { title: 'Lenovo LOQ 15', brand: 'Lenovo', category: 'laptop', tier: 'baja', desc: 'El nuevo punto de referencia económico actual.', specs: [{ label: 'Gráfica', value: 'NVIDIA RTX 4050' }], pros: ['Precio competitivo.'], contras: ['Chasis de plástico.'] },
-            'steam-deck': { title: 'Steam Deck OLED', brand: 'Valve', category: 'handheld', desc: 'La madurez absoluta de las consolas portátiles.', specs: [{ label: 'Pantalla', value: '7.4" OLED HDR' }], pros: ['Pantalla brutal', 'Eficiencia de batería'], contras: ['Menor potencia bruta.'] },
-            'ps5': { title: 'PlayStation 5', brand: 'Sony', category: 'console', desc: 'Revisión de mitad de generación con reescalado por IA PSSR.', specs: [{ label: 'Tecnología', value: 'PSSR & RayTracing Pro' }], pros: ['60 FPS estables a alta resolución'], contras: ['Precio elevado de salida'] }
-        };
+        // CONFIGURACIÓN DE SUPABASE (PASO 4)
+        // Sustituye con tus credenciales reales en tu entorno local.
+        const SUPABASE_URL = 'TU_SUPABASE_URL';
+        const SUPABASE_KEY = 'TU_SUPABASE_ANON_KEY';
+        let supabaseClient = null;
+        try {
+            supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        } catch(e) { console.log('Supabase no inicializado, modo mock activado.'); }
 
-        let hardwareData = { ...baseHardwareData };
-        let gamaActual = 'all';
-        let idActualAbierto = '';
+        let idActualAbierto = null;
 
-        // Sincronización activa con la base de datos JSON del bot
-        async function inicializarEnciclopedia() {
-            try {
-                const respuesta = await fetch('hardware.json');
-                if (respuesta.ok) {
-                    const datosBot = await respuesta.json();
-                    hardwareData = { ...baseHardwareData, ...datosBot };
-                }
-            } catch (e) {
-                console.log("Aviso: No se detectó archivo hardware.json externo, usando catálogo base.", e);
-            }
-            renderizarTarjetas();
-        }
-
-        function renderizarTarjetas() {
-            document.getElementById('container-laptops').innerHTML = '';
-            document.getElementById('container-handhelds').innerHTML = '';
-
-            Object.keys(hardwareData).forEach(id => {
-                const equipo = hardwareData[id];
-                if (equipo.category === 'laptop') {
-                    if (gamaActual === 'all' || gamaActual == equipo.tier) {
-                        document.getElementById('container-laptops').innerHTML += crearTarjetaHTML(id, equipo);
-                    }
-                } else {
-                    document.getElementById('container-handhelds').innerHTML += crearTarjetaHTML(id, equipo);
-                }
+        fetch('hardware.json')
+            .then(res => res.json())
+            .then(data => {
+                const equipos = Array.isArray(data) ? data : (data.hardware || []);
+                const html = equipos.map(hw => `
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] flex flex-col h-full">
+                        <div class="relative w-full aspect-video overflow-hidden">
+                            <img src="${hw.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400'}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-black text-cyan-500 tracking-widest uppercase mb-2">${hw.categoria || 'Hardware'}</span>
+                            <h3 class="text-xl font-extrabold text-white mb-2 leading-tight">${hw.nombre}</h3>
+                            <div class="flex-grow"></div>
+                            <button onclick="abrirModal('${hw.id}')" class="mt-6 w-full bg-slate-800 hover:bg-slate-700 text-cyan-400 font-bold py-2.5 rounded-xl transition border border-slate-700">Ver Foro del Componente →</button>
+                        </div>
+                    </div>`).join('');
+                document.getElementById('grid-hardware').innerHTML = html;
+            })
+            .catch(() => {
+                document.getElementById('grid-hardware').innerHTML = '<p class="text-center col-span-full text-slate-500">Aún no hay hardware analizado.</p>';
             });
+
+        function abrirModal(id) {
+            idActualAbierto = id;
+            document.getElementById('modal-opiniones').classList.remove('hidden');
+            cargarOpinionesSupabase(id);
         }
 
-        function filtrarGama(gama) {
-            gamaActual = gama;
-            ['all', 'baja', 'media', 'alta'].forEach(b => {
-                document.getElementById(`btn-gama-${b}`).className = b === gama 
-                    ? "px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 transition cursor-pointer" 
-                    : "px-4 py-2 rounded-lg text-slate-400 hover:text-white transition cursor-pointer";
-            });
-            renderizarTarjetas();
+        function cerrarModal() {
+            document.getElementById('modal-opiniones').classList.add('hidden');
         }
 
-        function crearTarjetaHTML(id, equipo) {
-            let colorBorde = equipo.category === 'laptop' ? 'hover:border-emerald-500/50' : 'hover:border-cyan-500/50';
-            let notaBadge = equipo.score ? `<span class="bg-slate-950 border border-cyan-500/30 text-cyan-400 text-[10px] px-2 py-0.5 rounded-md font-bold">⭐ IA: ${equipo.score}/100</span>` : '';
-            return `
-                <div onclick="showDetails('${id}')" class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm ${colorBorde} hover:bg-slate-900/70 hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col justify-between animate-fade-in">
-                    <div class="p-6 space-y-4">
-                        <div class="flex justify-between items-start gap-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">${equipo.title}</h3>
-                                <div class="flex gap-2 mt-1">${notaBadge}</div>
-                            </div>
-                            <span class="text-xs px-2.5 py-1 rounded-lg font-semibold border bg-slate-800 border-slate-700 text-slate-300 shrink-0">${equipo.brand}</span>
+        async function cargarOpinionesSupabase(hardware_id) {
+            const contenedor = document.getElementById('lista-opiniones');
+            contenedor.innerHTML = '<div class="text-center text-cyan-500 py-10 animate-pulse">Consultando Supabase...</div>';
+            
+            if (!supabaseClient || SUPABASE_URL === 'TU_SUPABASE_URL') {
+                // MODO DEMO CUANDO NO HAY KEYS CONFIGURADAS
+                setTimeout(() => {
+                    contenedor.innerHTML = `
+                        <div class="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl mb-6 text-xs text-amber-400 font-medium text-center">
+                            ⚠️ Modo Local: Inserta tus credenciales de Supabase en el código para ver y guardar datos reales.
                         </div>
-                        <p class="text-sm text-slate-400 leading-relaxed line-clamp-3">${equipo.desc}</p>
-                    </div>
-                    <div class="p-6 bg-slate-950/40 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
-                        <span class="text-cyan-400 font-bold bg-cyan-500/10 px-2 py-1 rounded w-fit">Análisis Completo &rarr;</span>
-                        <span class="font-semibold text-slate-500 uppercase text-[10px]">${equipo.category}</span>
-                    </div>
-                </div>`;
-        }
-
-        function showDetails(hardwareId) {
-            idActualAbierto = hardwareId;
-            const data = hardwareData[hardwareId];
-            if (!data) return;
-
-            let specsHTML = data.specs.map(spec => `
-                <div class="flex justify-between py-3 border-b border-slate-800/60 text-sm gap-4">
-                    <span class="text-slate-400 font-medium">${spec.label}</span>
-                    <span class="text-white text-right font-semibold">${spec.value}</span>
-                </div>`).join('');
-
-            let prosHTML = data.pros.map(pro => `<li class="flex items-start space-x-2 text-sm"><span class="text-emerald-400 font-bold">✓</span><span>${pro}</span></li>`).join('');
-            let contrasHTML = data.contras.map(c => `<li class="flex items-start space-x-2 text-sm"><span class="text-rose-400 font-bold">✗</span><span>${c}</span></li>`).join('');
-
-            // Secciones dinámicas para reportes nuevos ampliados de la IA
-            let bloquesExtraHTML = '';
-            if (data.analysis_design) {
-                bloquesExtraHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-800/80 pt-8">
-                        <div class="space-y-3">
-                            <h3 class="text-base font-bold text-emerald-400 tracking-wider uppercase">📐 Diseño, Chasis y Refrigeración</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed text-justify">${data.analysis_design}</p>
-                        </div>
-                        <div class="space-y-3">
-                            <h3 class="text-base font-bold text-cyan-400 tracking-wider uppercase">🕹️ Rendimiento de Campo e In-Game</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed text-justify">${data.analysis_performance}</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-950/50 border border-slate-800 rounded-2xl p-6 mt-4">
-                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">⚖️ Veredicto del Laboratorio</h3>
-                        <p class="text-slate-200 text-sm italic leading-relaxed">"${data.verdict}"</p>
-                    </div>`;
-            }
-
-            const scoreCircular = data.score ? `
-                <div class="flex items-center space-x-4 bg-slate-950 p-4 rounded-2xl border border-slate-800">
-                    <div class="text-3xl font-black text-cyan-400">${data.score}<span class="text-xs text-slate-500">/100</span></div>
-                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nota técnica<br>Kazoku Analista</div>
-                </div>` : '';
-
-            document.getElementById('details-content').innerHTML = `
-                <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-6 md:p-10 backdrop-blur-md space-y-8 animate-fade-in">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
-                        <div>
-                            <span class="text-xs font-bold text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 inline-block mb-2">${data.brand}</span>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight">${data.title}</h2>
-                        </div>
-                        ${scoreCircular}
-                    </div>
-
-                    <div class="w-full max-h-[400px] overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
-                        <img src="${data.imagen || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800'}" class="w-full h-full object-cover">
-                    </div>
-
-                    <p class="text-slate-300 font-medium text-base border-l-2 border-cyan-500 pl-4">${data.desc}</p>
-
-                    ${bloquesExtraHTML}
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <div class="bg-emerald-500/5 border border-emerald-500/10 rounded-2xl p-5 space-y-3">
-                                <h4 class="text-xs font-bold tracking-wider uppercase text-emerald-400">Puntos Fuertes</h4>
-                                <ul class="space-y-2">${prosHTML}</ul>
-                            </div>
-                            <div class="bg-rose-500/5 border border-rose-500/10 rounded-2xl p-5 space-y-3">
-                                <h4 class="text-xs font-bold tracking-wider uppercase text-rose-400">Desventajas</h4>
-                                <ul class="space-y-2">${contrasHTML}</ul>
-                            </div>
-                        </div>
-                        <div class="bg-slate-950/40 border border-slate-800/60 rounded-2xl p-6 h-fit">
-                            <h4 class="text-xs font-bold tracking-wider uppercase text-cyan-500 mb-2">Ficha de Componentes</h4>
-                            <div class="divide-y divide-slate-800/40">${specsHTML}</div>
-                        </div>
-                    </div>
-
-                    <!-- 💬 SISTEMA DE FORO: OPINIONES DE MIEMBROS -->
-                    <div class="border-t border-slate-800 pt-10 space-y-6">
-                        <h3 class="text-xl font-bold text-white flex items-center space-x-2">
-                            <span>💬 Opiniones del Foro Kazoku</span>
-                        </h3>
-                        
-                        <form onsubmit="guardarOpinionForo(event)" class="bg-slate-950/60 border border-slate-800/80 p-6 rounded-2xl space-y-4">
-                            <h4 class="text-sm font-semibold text-slate-300">Publicar tu veredicto de usuario</h4>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input type="text" id="forum-name" required placeholder="Tu Nickname" class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500">
-                                <div class="flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5">
-                                    <span class="text-xs text-slate-400">Puntuación:</span>
-                                    <select id="forum-rating" class="bg-transparent text-amber-400 font-bold text-sm focus:outline-none w-full">
-                                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-                                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
-                                        <option value="3">⭐⭐⭐ (3/5)</option>
-                                        <option value="2">⭐⭐ (2/5)</option>
-                                        <option value="1">⭐ (1/5)</option>
-                                    </select>
+                        <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-5 relative">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-900/50 text-cyan-400 flex items-center justify-center font-bold">K</div>
+                                    <span class="font-bold text-white">KazokuDev</span>
                                 </div>
+                                <span class="text-yellow-500 text-sm tracking-widest drop-shadow-md">⭐⭐⭐⭐⭐</span>
                             </div>
-                            <textarea id="forum-comment" required rows="3" placeholder="¿Qué te parece este equipo? Comparte pros/contras reales con el resto de la comunidad..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-cyan-500"></textarea>
-                            <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider py-3 px-6 rounded-xl transition cursor-pointer">Postear en el Hilo</button>
-                        </form>
-
-                        <div id="opinions-list" class="space-y-4"></div>
-                    </div>
-                </div>`;
-
-            document.getElementById('catalog-view').classList.add('hidden');
-            document.getElementById('details-view').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            renderizarOpinionesLocalStorage(hardwareId);
-        }
-
-        function hideDetails() {
-            document.getElementById('details-view').classList.add('hidden');
-            document.getElementById('catalog-view').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // 💾 CONTROL DE OPINIONES POR LOCALSTORAGE
-        function renderizarOpinionesLocalStorage(id) {
-            const listaContenedor = document.getElementById('opinions-list');
-            const opiniones = JSON.parse(localStorage.getItem(`kazoku_revs_${id}`)) || [];
-
-            if (opiniones.length === 0) {
-                listaContenedor.innerHTML = `<p class="text-slate-500 text-xs italic py-4 text-center bg-slate-900/10 border border-dashed border-slate-800/60 rounded-xl">No hay aportes en el hilo aún. ¡Sé el primero en dejar tu reseña!</p>`;
+                            <p class="text-sm text-slate-300 leading-relaxed">Excelente componente, rinde espectacular. El paso 4 de la migración a Supabase le da un toque muy profesional a la web.</p>
+                        </div>`;
+                }, 800);
                 return;
             }
 
-            listaContenedor.innerHTML = opiniones.map(op => `
-                <div class="bg-slate-900/30 border border-slate-800/60 p-5 rounded-xl space-y-2 animate-fade-in">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-200">${op.name}</span>
-                        <span class="text-amber-400 font-medium">${"⭐".repeat(op.rating)}</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed text-justify">${op.comment}</p>
-                    <div class="text-[10px] text-slate-600 font-medium">${op.date}</div>
-                </div>`).join('');
+            try {
+                const { data, error } = await supabaseClient
+                    .from('opiniones_hardware')
+                    .select('*')
+                    .eq('hardware_id', hardware_id)
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (!data || data.length === 0) {
+                    contenedor.innerHTML = '<p class="text-center text-slate-500 py-10">Sé el primero en opinar sobre este componente.</p>';
+                    return;
+                }
+
+                contenedor.innerHTML = data.map(op => `
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-slate-700 text-white flex items-center justify-center font-bold">${op.autor.charAt(0).toUpperCase()}</div>
+                                <span class="font-bold text-white">${op.autor}</span>
+                            </div>
+                            <span class="text-yellow-500 text-sm tracking-widest drop-shadow-md">${"⭐".repeat(op.rating)}</span>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">${op.comentario}</p>
+                    </div>`).join('');
+            } catch (err) {
+                contenedor.innerHTML = '<p class="text-center text-red-400 py-10">Error al conectar con Supabase.</p>';
+            }
         }
 
-        function guardarOpinionForo(e) {
+        document.getElementById('form-opinion').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const nameInput = document.getElementById('forum-name');
-            const ratingInput = document.getElementById('forum-rating');
-            const commentInput = document.getElementById('forum-comment');
+            if(!supabaseClient || SUPABASE_URL === 'TU_SUPABASE_URL') {
+                alert("Debes configurar tus credenciales reales de Supabase en el archivo hardware.html");
+                return;
+            }
 
-            const nuevaOpinion = {
-                name: nameInput.value,
-                rating: parseInt(ratingInput.value),
-                comment: commentInput.value,
-                date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute:'2-digit' })
-            };
+            const autor = document.getElementById('forum-name').value;
+            const rating = parseInt(document.getElementById('forum-rating').value);
+            const comentario = document.getElementById('forum-comment').value;
 
-            const opiniones = JSON.parse(localStorage.getItem(`kazoku_revs_${idActualAbierto}`)) || [];
-            opiniones.unshift(nuevaOpinion); // Los más nuevos arriba
+            try {
+                const { error } = await supabaseClient.from('opiniones_hardware').insert([
+                    { hardware_id: idActualAbierto, autor, rating, comentario }
+                ]);
+                if (error) throw error;
+            } catch (err) {
+                console.error(err);
+            }
 
-            localStorage.setItem(`kazoku_revs_${idActualAbierto}`, JSON.stringify(opiniones));
-            
-            // Resetear formulario y refrescar la lista
-            commentInput.value = '';
-            nameInput.value = '';
-            renderizarOpinionesLocalStorage(idActualAbierto);
-        }
-
-        window.onload = inicializarEnciclopedia;
+            document.getElementById('forum-comment').value = '';
+            cargarOpinionesSupabase(idActualAbierto);
+        });
     </script>
 </body>
 </html>
