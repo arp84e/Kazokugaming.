@@ -80,8 +80,7 @@
                                     <span class="text-slate-500">${articulo.fecha}</span>
                                     <span class="text-cyan-600 font-semibold">⏳ ${tiempo} min de lectura</span>
                                 </div>
-                                <a href="articulo.html?id=${articulo.id}" class="bg-slate-800 hover:bg-cyan-600 hover:text-white text-cyan-400 px-3 py-1.5 rounded-lg transition-colors font-bold">Leer →</a>
-                            </div>
+                          <a href="articulos/${articulo.id.replace('art-', '')}.html" class="bg-slate-800 hover:bg-cyan-600 hover:text-white text-cyan-400 px-3 py-1.5 rounded-lg transition-colors font-bold">Leer →</a>                            </div>
                         </div>
                     </article>
                 `;
