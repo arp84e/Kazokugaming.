@@ -4,29 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       juegos:
-        description: '🎮 Título(s) del o los juegos (separados por ; si son varios)'
+        description: '🎮 Título(s) del o los juegos (separados por ;)'
         required: true
         type: string
-      calificacion:
-        description: '⭐ Calificación (Solo para el primer juego. Ej: 9.2)'
-        required: false
-        type: string
-        default: ''
-      plataformas:
-        description: '🖥️ Plataformas (Solo para el primer juego. Ej: PC, PS5, Xbox Series X)'
-        required: false
-        type: string
-        default: ''
-      requisitos:
-        description: '📋 Requisitos en bruto (Solo para el primer juego)'
-        required: false
-        type: string
-        default: ''
-      analisis:
-        description: '✍️ Análisis base para reescribir anti-copyright (Solo para el primer juego)'
-        required: false
-        type: string
-        default: ''
       sobrescribir:
         description: '⚠️ ¿Borrar catálogo anterior de Telemetría?'
         required: false
@@ -39,39 +19,42 @@ permissions:
 jobs:
   analizar-telemetria:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Instalar dependencias
         run: pip install google-genai requests
 
-      - name: Ejecutar Bot de Telemetría Multi-Cuadro
+      - name: Ejecutar Bot de Telemetría
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
           INPUT_JUEGOS: ${{ inputs.juegos }}
-          INPUT_CALIFICACION: ${{ inputs.calificacion }}
-          INPUT_PLATAFORMAS: ${{ inputs.plataformas }}
-          INPUT_REQUISITOS: ${{ inputs.requisitos }}
-          INPUT_ANALISIS: ${{ inputs.analisis }}
           SOBRESCRIBIR: ${{ inputs.sobrescribir }}
         run: python scraper_telemetria.py
+
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
 
       - name: Commit y Push de los cambios
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
-          git add telemetria.json
+          
+          git add telemetria.json || true
+          git add telemetria/ || true
+          git add sitemap.xml || true
+          
           if git diff --staged --quiet; then
-            echo "Sin cambios en telemetria.json."
+            echo "No hay variaciones de telemetría."
           else
-            git commit -m "🤖 Telemetría Avanzada: Expedientes actualizados"
+            git commit -m "🤖 Bot Telemetría: Indexación estática avanzada y sitemap"
+            git pull --rebase origin main || true
             git push
           fi
