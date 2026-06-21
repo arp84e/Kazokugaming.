@@ -10,7 +10,7 @@ from google.genai import types
 from duckduckgo_search import DDGS
 from datetime import datetime
 
-print("=== 🤖 KAZOKUBOT V5.0: MOTOR SEO ANTI-ERRORES Y GESTOR TOTAL ===")
+print("=== 🤖 KAZOKUBOT V6.0: MOTOR DE AUTO-MAQUETACIÓN Y EDICIÓN ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -19,12 +19,11 @@ categoria = os.environ.get("INPUT_CATEGORIA", "Tecnología")
 enlaces_manuales = os.environ.get("INPUT_ENLACES", "")
 imagen_ok = os.environ.get("INPUT_IMAGEN_OK", "1")
 palabras_clave_imagenes = os.environ.get("INPUT_PALABRAS_CLAVE_IMAGENES", "")
-id_borrar = os.environ.get("INPUT_ID_BORRAR", "")
+id_objetivo = os.environ.get("INPUT_ID_OBJETIVO", "")
 api_key = os.environ.get("GEMINI_API_KEY")
 
 if not api_key:
-    print("❌ ERROR: No se configuró GEMINI_API_KEY.")
-    sys.exit(1)
+    sys.exit("❌ ERROR: No se configuró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
 archivo_borrador = "articulos_borrador.json"
@@ -37,180 +36,85 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# ==========================================================
-# ACCIÓN 1: GENERAR BORRADOR
-# ==========================================================
-if accion == "1_generar_borrador":
-    if not tema:
-        print("❌ ERROR: Debes especificar un tema para el artículo.")
-        sys.exit(1)
-
-    contexto_noticias_web = ""
-    print(f"🔍 1. Investigando en la red sobre: '{tema}'...")
-    try:
-        with DDGS() as ddgs:
-            for r in ddgs.text(tema, max_results=6):
-                contexto_noticias_web += f"Fuente: {r['title']}\nDatos: {r['body']}\n\n"
-    except Exception as e:
-        print(f"⚠️ Alerta DDGS: {e}")
-
-    contexto_enlaces_manuales = ""
-    if enlaces_manuales:
-        print("🔗 2. Extrayendo datos de enlaces manuales...")
-        for url in enlaces_manuales.split(","):
-            url = url.strip()
-            if not url: continue
-            try:
-                res_web = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-                soup = BeautifulSoup(res_web.text, 'html.parser')
-                for s in soup(["script", "style", "nav", "footer"]): s.decompose()
-                contexto_enlaces_manuales += " ".join(soup.get_text().split())[:2500] + "\n\n"
-            except: pass
-
-    print("🧠 3. Solicitando redacción profesional a Gemini...")
-    prompt = f"""
-    Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
-    Usa esta info:
-    {contexto_noticias_web}
-    {contexto_enlaces_manuales}
-    
-    REGLA VITAL DE FORMATO PARA EL CUERPO: 
-    - Devuelve HTML puro con <p>, <h2>, <h3>, <ul>, <li> y <strong>.
-    - ESTÁ ESTRICTAMENTE PROHIBIDO usar estilos en línea (NO uses 'style=', NO uses colores). Todo debe ser limpio para que el CSS de la web tome el control.
-    - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
-    """
-
-    try:
-        response = client.models.generate_content(
-            model="gemini-3.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-        )
-        borrador_data = json.loads(response.text)
-        borrador_data["categoria"] = categoria
-        
-        # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES
-        termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
-        print(f"🖼️ 4. Buscando imágenes precisas para: '{termino_img}'...")
-        
-        imagenes_encontradas = []
-        try:
-            with DDGS() as ddgs:
-                # Quitamos el filtro 'license' para asegurar resultados precisos a la palabra clave
-                res_images = [r for r in ddgs.images(termino_img, max_results=30)]
-                for r in res_images:
-                    if r.get('image') and r.get('image').startswith('http'):
-                        imagenes_encontradas.append(r.get('image'))
-                    if len(imagenes_encontradas) >= 10: break
-        except Exception as img_err:
-            print(f"⚠️ Error al buscar imágenes: {img_err}")
-
-        # Auto-sanación con IA Generativa si no encuentra suficientes
-        termino_url = urllib.parse.quote(termino_img)
-        while len(imagenes_encontradas) < 10:
-            random_id = len(imagenes_encontradas) + 1
-            # Pollinations genera imágenes libres de copyright basadas en la palabra clave al vuelo!
-            imagenes_encontradas.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20wallpaper%20high%20quality%20{random_id}?width=1200&height=675&nologo=true")
-
-        borrador_data["imagenes_candidatas"] = imagenes_encontradas[:10]
-        borrador_data["palabra_clave_usada"] = termino_img # Guardamos la palabra clave para la auto-sanación HTML
-        
-        with open(archivo_borrador, "w", encoding="utf-8") as f:
-            json.dump(borrador_data, f, ensure_ascii=False, indent=2)
-            
-        print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
-        print("="*80)
-        print(f"🖼️ CATÁLOGO DE 10 IMÁGENES ENCONTRADAS PARA '{termino_img}':")
-        for idx, url in enumerate(borrador_data["imagenes_candidatas"], 1):
-            print(f" 🔹 [{idx}]: {url}")
-        print("="*80)
-        
-    except Exception as e:
-        print(f"❌ ERROR EN BORRADOR: {e}")
-        sys.exit(1)
-
-# ==========================================================
-# ACCIÓN 2: PUBLICAR BORRADOR
-# ==========================================================
-elif accion == "2_publicar_borrador":
-    if not os.path.exists(archivo_borrador):
-        print("❌ ERROR: No hay borrador para publicar.")
-        sys.exit(1)
-        
-    with open(archivo_borrador, "r", encoding="utf-8") as f:
-        borrador = json.load(f)
-        
-    candidatas = borrador.get("imagenes_candidatas", [])
-    termino_img_fallback = urllib.parse.quote(borrador.get("palabra_clave_usada", "gaming"))
-    
-    imagenes_seleccionadas = []
-    imagen_ok_limpio = str(imagen_ok).strip()
-    
-    if imagen_ok_limpio.lower() == "todas":
-        imagenes_seleccionadas = candidatas
-    else:
-        indices = [int(x.strip()) - 1 for x in imagen_ok_limpio.split(",") if x.strip().isdigit()]
-        for idx in indices:
-            if 0 <= idx < len(candidatas): imagenes_seleccionadas.append(candidatas[idx])
-                
-    if not imagenes_seleccionadas:
-        imagenes_seleccionadas = [candidatas[0]] if candidatas else [f"https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true"]
-        
-    imagen_principal = imagenes_seleccionadas[0]
-    slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
-    
-    nuevo = {
-        "id": f"art-{slug}",
-        "titulo": borrador["titulo"],
-        "resumen": borrador["resumen"],
-        "cuerpo": borrador["cuerpo"],
-        "categoria": borrador["categoria"],
-        "imagen": imagen_principal,
-        "fecha": datetime.now().strftime("%d %b, %Y")
-    }
-    
-    lista = []
-    if os.path.exists(archivo_oficial):
-        with open(archivo_oficial, "r", encoding="utf-8") as f:
-            try:
-                lista = json.load(f)
-                if isinstance(lista, dict): lista = lista.get("articulos", [])
-            except: pass
-            
-    lista.insert(0, nuevo)
-    with open(archivo_oficial, "w", encoding="utf-8") as f:
-        json.dump(lista, f, ensure_ascii=False, indent=2)
-
+# 🛠️ FUNCIÓN MAESTRA: CONSTRUCTOR DE HTML CON IMÁGENES INTERCALADAS
+def construir_y_guardar_html(articulo_dict):
+    slug = articulo_dict["id"].replace("art-", "")
     os.makedirs("articulos", exist_ok=True)
     html_filename = f"articulos/{slug}.html"
     
-    palabras = len(re.sub('<[^<]+?>', '', nuevo["cuerpo"]).split())
-    tiempo_lectura = max(1, round(palabras / 200))
-
+    imagenes_seleccionadas = articulo_dict.get("imagenes_art", [articulo_dict.get("imagen")])
+    termino_img_fallback = "gaming"
+    
+    # Inserción de imágenes entre párrafos
+    cuerpo_html = articulo_dict["cuerpo"]
+    soup = BeautifulSoup(cuerpo_html, 'html.parser')
+    bloques_texto = [b for b in soup.find_all(['p', 'h2', 'h3']) if len(b.get_text(strip=True)) > 30]
+    
     html_galeria = ""
     if len(imagenes_seleccionadas) > 1:
-        html_galeria += '''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">'''
-        for i, img_sec in enumerate(imagenes_seleccionadas[1:]):
-            fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true"
-            # referrerpolicy="no-referrer" evita que las webs bloqueen la imagen. onerror hace que si falla, cargue una imagen IA de respaldo.
-            html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/10] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
-        html_galeria += '''</div></div>'''
+        imagenes_extra = imagenes_seleccionadas[1:]
+        num_bloques = len(bloques_texto)
+        
+        if num_bloques > 0:
+            # Distribuir imágenes proporcionalmente a lo largo del texto
+            imgs_a_insertar = imagenes_extra[:num_bloques]
+            imgs_sobrantes = imagenes_extra[num_bloques:]
+            step = max(1, num_bloques // (len(imgs_a_insertar) + 1))
+            
+            for i, img_url in enumerate(imgs_a_insertar):
+                target_idx = (i + 1) * step
+                if target_idx >= num_bloques: target_idx = num_bloques - 1
+                
+                fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true"
+                img_tag = soup.new_tag('img', src=img_url)
+                img_tag['class'] = "w-full aspect-[16/9] rounded-3xl overflow-hidden my-10 shadow-2xl border border-slate-700/50 object-cover"
+                img_tag['loading'] = "lazy"
+                img_tag['referrerpolicy'] = "no-referrer"
+                img_tag['onerror'] = f"this.src='{fallback}'"
+                
+                bloques_texto[target_idx].insert_after(img_tag)
+                
+            articulo_dict["cuerpo"] = str(soup)
+            
+            # Si sobran imágenes que no caben en el texto, van a la galería inferior
+            if imgs_sobrantes:
+                html_galeria += '''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'''
+                for i, img_sec in enumerate(imgs_sobrantes):
+                    fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20gallery%20{i}?width=1200&height=675&nologo=true"
+                    html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/9] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
+                html_galeria += '''</div></div>'''
 
-    # CSS forzado con !important para garantizar contraste perfecto y legibilidad anulando la IA
+    palabras = len(re.sub('<[^<]+?>', '', articulo_dict["cuerpo"]).split())
+    tiempo_lectura = max(1, round(palabras / 200))
+    fecha_iso = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+00:00")
+
+    json_ld_data = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": articulo_dict["titulo"],
+      "image": imagenes_seleccionadas,
+      "datePublished": fecha_iso,
+      "dateModified": fecha_iso,
+      "author": {"@type": "Organization", "name": "KazokuGaming"},
+      "publisher": {"@type": "Organization", "name": "KazokuGaming", "logo": {"@type": "ImageObject", "url": "https://kazokugaming.com/favicon.png"}},
+      "description": articulo_dict["resumen"]
+    }
+    json_ld_str = json.dumps(json_ld_data, ensure_ascii=False)
+
     plantilla_html = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{nuevo["titulo"]} | KazokuGaming</title>
+    <title>{articulo_dict["titulo"]} | KazokuGaming</title>
     <link rel="icon" type="image/png" href="../favicon.png">
+    <script type="application/ld+json">{json_ld_str}</script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }}
-        /* Forzador absoluto de legibilidad */
         .prose-custom * {{ color: #cbd5e1 !important; background-color: transparent !important; font-family: inherit !important; line-height: 1.8 !important; }}
-        .prose-custom h2, .prose-custom h3 {{ color: #f8fafc !important; font-weight: 800 !important; margin-top: 2em !important; margin-bottom: 1em !important; border-left: 4px solid #06b6d4; padding-left: 12px; }}
+        .prose-custom h2, .prose-custom h3 {{ color: #f8fafc !important; font-weight: 800 !important; margin-top: 2.5em !important; margin-bottom: 1em !important; border-left: 4px solid #06b6d4; padding-left: 12px; }}
         .prose-custom strong, .prose-custom b {{ color: #22d3ee !important; font-weight: 700 !important; }}
         .prose-custom p {{ margin-bottom: 1.5em !important; font-size: 1.125rem !important; }}
         .prose-custom ul {{ list-style-type: disc !important; margin-left: 1.5em !important; margin-bottom: 1.5em !important; }}
@@ -220,16 +124,16 @@ elif accion == "2_publicar_borrador":
     <div id="header-container"></div>
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div class="mb-8">
-            <span class="text-xs bg-cyan-900/30 text-cyan-400 px-3 py-1 rounded border border-cyan-800/50 uppercase font-bold tracking-widest">{nuevo["categoria"]}</span>
-            <span class="text-slate-500 text-xs ml-3 border-l border-slate-700 pl-3">⏳ {tiempo_lectura} min de lectura</span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 mb-4 leading-tight">{nuevo["titulo"]}</h1>
-            <p class="text-lg text-slate-400">{nuevo["resumen"]}</p>
+            <span class="text-xs bg-cyan-900/30 text-cyan-400 px-3 py-1 rounded border border-cyan-800/50 uppercase font-bold tracking-widest">{articulo_dict["categoria"]}</span>
+            <span class="text-slate-500 text-xs ml-3 border-l border-slate-700 pl-3">⏳ {tiempo_lectura} min de lectura • Editado</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 mb-4 leading-tight">{articulo_dict["titulo"]}</h1>
+            <p class="text-lg text-slate-400">{articulo_dict["resumen"]}</p>
         </div>
-        <div class="w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-2xl border border-slate-800/50 bg-slate-900">
-            <img src="{nuevo["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true'">
+        <div class="w-full aspect-[16/9] rounded-3xl overflow-hidden mb-10 shadow-2xl border border-slate-800/50 bg-slate-900">
+            <img src="{articulo_dict["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='https://image.pollinations.ai/prompt/gaming%20cover?width=1200&height=675&nologo=true'">
         </div>
         <div class="prose-custom bg-slate-900/40 p-8 sm:p-10 rounded-3xl border border-slate-700/50 shadow-lg">
-            {nuevo["cuerpo"]}
+            {articulo_dict["cuerpo"]}
         </div>
         {html_galeria}
     </main>
@@ -239,51 +143,171 @@ elif accion == "2_publicar_borrador":
 
     with open(html_filename, "w", encoding="utf-8") as hf:
         hf.write(plantilla_html)
+    print(f"🚀 ¡MAQUETACIÓN ESTÁTICA EXITOSA! Creado en: {html_filename}")
+
+# ==========================================================
+# ACCIÓN 1: GENERAR BORRADOR
+# ==========================================================
+if accion == "1_generar_borrador":
+    if not tema: sys.exit("❌ ERROR: Especifica un tema.")
+    
+    contexto = ""
+    try:
+        with DDGS() as ddgs:
+            for r in ddgs.text(tema, max_results=5): contexto += f"Fuente: {r['title']}\nDatos: {r['body']}\n\n"
+    except: pass
+
+    if enlaces_manuales:
+        for url in enlaces_manuales.split(","):
+            if not url.strip(): continue
+            try:
+                soup = BeautifulSoup(requests.get(url.strip(), timeout=10).text, 'html.parser')
+                for s in soup(["script", "style", "nav", "footer"]): s.decompose()
+                contexto += " ".join(soup.get_text().split())[:2000] + "\n\n"
+            except: pass
+
+    prompt = f"""Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
+    Usa esta info: {contexto}
+    REGLA VITAL: Devuelve HTML puro con <p>, <h2>, <ul>, <li> y <strong>. SIN ESTILOS CSS EN LÍNEA.
+    Devuelve un JSON estricto con: 'titulo', 'resumen' y 'cuerpo'."""
+
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.5-flash", contents=prompt,
+            config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+        )
+        borrador_data = json.loads(response.text)
+        borrador_data["categoria"] = categoria
         
-    os.remove(archivo_borrador)
-    print(f"🚀 ¡PUBLICACIÓN GLOBAL EMITIDA! Artículo legible y estático creado en: {html_filename}")
+        termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
+        imagenes = []
+        try:
+            with DDGS() as ddgs:
+                for r in [r for r in ddgs.images(termino_img, max_results=30)]:
+                    if r.get('image') and r.get('image').startswith('http'): imagenes.append(r.get('image'))
+                    if len(imagenes) >= 10: break
+        except: pass
+
+        termino_url = urllib.parse.quote(termino_img)
+        while len(imagenes) < 10:
+            imagenes.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20high%20quality%20{len(imagenes)}?width=1200&height=675&nologo=true")
+
+        borrador_data["imagenes_candidatas"] = imagenes[:10]
+        
+        with open(archivo_borrador, "w", encoding="utf-8") as f:
+            json.dump(borrador_data, f, ensure_ascii=False, indent=2)
+            
+        print(f"🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}\nImágenes compiladas. Ejecuta Acción 2 para maquetar.")
+    except Exception as e:
+        sys.exit(f"❌ ERROR: {e}")
+
+# ==========================================================
+# ACCIÓN 2: PUBLICAR BORRADOR
+# ==========================================================
+elif accion == "2_publicar_borrador":
+    if not os.path.exists(archivo_borrador): sys.exit("❌ ERROR: No hay borrador.")
+    with open(archivo_borrador, "r", encoding="utf-8") as f: borrador = json.load(f)
+        
+    candidatas = borrador.get("imagenes_candidatas", [])
+    imagenes_seleccionadas = []
+    
+    if str(imagen_ok).strip().lower() == "todas":
+        imagenes_seleccionadas = candidatas
+    else:
+        indices = [int(x.strip()) - 1 for x in str(imagen_ok).split(",") if x.strip().isdigit()]
+        imagenes_seleccionadas = [candidatas[i] for i in indices if 0 <= i < len(candidatas)]
+                
+    if not imagenes_seleccionadas: imagenes_seleccionadas = [candidatas[0]] if candidatas else ["https://image.pollinations.ai/prompt/gaming?width=1200&height=675&nologo=true"]
+        
+    slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
+    nuevo = {
+        "id": f"art-{slug}",
+        "titulo": borrador["titulo"],
+        "resumen": borrador["resumen"],
+        "cuerpo": borrador["cuerpo"],
+        "categoria": borrador["categoria"],
+        "imagen": imagenes_seleccionadas[0],
+        "imagenes_art": imagenes_seleccionadas,
+        "fecha": datetime.now().strftime("%d %b, %Y")
+    }
+    
+    lista = []
+    if os.path.exists(archivo_oficial):
+        with open(archivo_oficial, "r", encoding="utf-8") as f:
+            try: lista = json.load(f).get("articulos", []) if isinstance(json.load(f), dict) else json.load(f)
+            except: pass
+            
+    lista.insert(0, nuevo)
+    with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(lista, f, ensure_ascii=False, indent=2)
+
+    construir_y_guardar_html(nuevo)
 
 # ==========================================================
 # ACCIÓN 3: ELIMINAR ARTÍCULO
 # ==========================================================
 elif accion == "3_eliminar_articulo":
-    if not id_borrar:
-        print("❌ ERROR: Para eliminar, debes escribir el ID o título del artículo.")
-        sys.exit(1)
-        
+    if not id_objetivo: sys.exit("❌ ERROR: Especifica ID o título.")
     if os.path.exists(archivo_oficial):
         with open(archivo_oficial, "r", encoding="utf-8") as f:
-            try:
-                data = json.load(f)
-                lista = data if isinstance(data, list) else data.get("articulos", [])
-            except:
-                lista = []
-                
-        nueva_lista = []
-        eliminados = 0
-        
-        for art in lista:
-            # Busca coincidencia parcial en el ID o en el Título ignorando mayúsculas
-            if id_borrar.lower() in art["id"].lower() or id_borrar.lower() in art["titulo"].lower():
-                slug = art["id"].replace("art-", "")
-                ruta_html = f"articulos/{slug}.html"
-                
-                # Borrar el archivo HTML estático si existe
-                if os.path.exists(ruta_html):
-                    os.remove(ruta_html)
-                    print(f"🗑️ Archivo HTML destruido: {ruta_html}")
-                    
-                print(f"🗑️ Artículo eliminado de la base de datos: {art['titulo']}")
-                eliminados += 1
-            else:
-                nueva_lista.append(art)
-                
-        if eliminados > 0:
-            with open(archivo_oficial, "w", encoding="utf-8") as f:
-                json.dump(nueva_lista, f, ensure_ascii=False, indent=2)
-            print(f"✅ Proceso terminado. Se eliminaron {eliminados} artículo(s).")
+            lista = json.load(f)
+        nueva_lista = [a for a in lista if id_objetivo.lower() not in a["id"].lower() and id_objetivo.lower() not in a["titulo"].lower()]
+        if len(nueva_lista) < len(lista):
+            with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(nueva_lista, f, ensure_ascii=False, indent=2)
+            print("✅ Artículo(s) eliminado(s) de la base de datos.")
         else:
-            print(f"⚠️ No se encontró ningún artículo que coincida con '{id_borrar}'.")
-            sys.exit(1)
-    else:
-        print("⚠️ No existe la base de datos de artículos.")
+            sys.exit("⚠️ No se encontró el artículo.")
+
+# ==========================================================
+# ACCIÓN 4: MODIFICAR / MEJORAR ARTÍCULO EXISTENTE
+# ==========================================================
+elif accion == "4_modificar_articulo":
+    if not id_objetivo: sys.exit("❌ ERROR: Especifica el ID o título del artículo a modificar.")
+    if not tema: sys.exit("❌ ERROR: En la casilla 'Tema', escribe qué deseas mejorar (Ej: Añade un párrafo sobre optimización).")
+    
+    if os.path.exists(archivo_oficial):
+        with open(archivo_oficial, "r", encoding="utf-8") as f:
+            lista = json.load(f)
+            
+        articulo_encontrado = None
+        for i, art in enumerate(lista):
+            if id_objetivo.lower() in art["id"].lower() or id_objetivo.lower() in art["titulo"].lower():
+                articulo_encontrado = art
+                indice = i
+                break
+                
+        if not articulo_encontrado:
+            sys.exit("⚠️ No se encontró el artículo a modificar.")
+            
+        print(f"✏️ Modificando artículo: {articulo_encontrado['titulo']}")
+        print("🧠 Enviando instrucciones de mejora a la IA...")
+        
+        prompt = f"""Eres el redactor jefe. Toma este artículo existente y aplica las siguientes modificaciones/mejoras: '{tema}'.
+        TÍTULO ACTUAL: {articulo_encontrado['titulo']}
+        RESUMEN ACTUAL: {articulo_encontrado['resumen']}
+        CUERPO ACTUAL: {articulo_encontrado['cuerpo']}
+        
+        REGLA VITAL: Mantén el formato en HTML limpio (<p>, <h2>, <ul>). NO uses estilos en línea.
+        Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo' actualizado."""
+
+        try:
+            response = client.models.generate_content(
+                model="gemini-3.5-flash", contents=prompt,
+                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+            )
+            data_modificada = json.loads(response.text)
+            
+            # Actualizamos el artículo en la base de datos conservando su ID y sus imágenes originales
+            lista[indice]["titulo"] = data_modificada["titulo"]
+            lista[indice]["resumen"] = data_modificada["resumen"]
+            lista[indice]["cuerpo"] = data_modificada["cuerpo"]
+            # No modificamos la fecha para no dañar el orden cronológico original de tu feed, 
+            # el SEO reconocerá la actualización por los Metadatos.
+            
+            with open(archivo_oficial, "w", encoding="utf-8") as f: 
+                json.dump(lista, f, ensure_ascii=False, indent=2)
+                
+            construir_y_guardar_html(lista[indice])
+            print(f"✅ ¡Artículo modificado, sobreescrito y actualizado con éxito!")
+            
+        except Exception as e:
+            sys.exit(f"❌ ERROR AL MODIFICAR: {e}")
