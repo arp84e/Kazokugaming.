@@ -7,7 +7,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (DATOS ENRIQUECIDOS) ===")
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
 juegos_input = os.environ.get("INPUT_JUEGOS", "")
@@ -45,7 +45,7 @@ for titulo in juegos_input.split(";"):
     id_juego = re.sub(r'[^a-z0-9]+', '-', titulo.lower()).strip('-')
     imagen_real = buscar_portada(titulo)
     
-    prompt = f"Analiza en profundidad el rendimiento técnico de {titulo} en PC. Devuelve únicamente un JSON estricto con: sinopsis (máximo 2 líneas), motor_grafico, plataformas, calificacion (de 0.0 a 10), analisis_detallado (HTML limpio usando <p> y <strong>), requisitos_minimos (lista de 4 strings de componentes), requisitos_recomendados (lista de 4 strings de componentes)."
+    prompt = f"Analiza en profundidad el rendimiento técnico de {titulo} en PC. Devuelve únicamente un JSON estricto con: sinopsis (máximo 2 líneas), motor_grafico, plataformas, calificacion (de 1.0 a 10), analisis_detallado (HTML limpio usando <p> y <strong>), requisitos_minimos (lista de 4 strings de componentes), requisitos_recomendados (lista de 4 strings de componentes)."
     
     try:
         res = client.models.generate_content(
@@ -77,7 +77,7 @@ for titulo in juegos_input.split(";"):
         else:
             estructura_final["juegos"].append(nuevo_juego)
 
-        # --- GENERACIÓN HTML ESTÁTICO (PASO 1) + RADAR INTEGRADO (PASO 2) ---
+        # --- GENERACIÓN HTML ESTÁTICO + RADAR + DATOS ESTRUCTURADOS CON ESTRELLAS ---
         os.makedirs("telemetria", exist_ok=True)
         html_juego_filename = f"telemetria/{id_juego}.html"
         
@@ -92,6 +92,35 @@ for titulo in juegos_input.split(";"):
     <title>{titulo} | Análisis Técnico & Telemetría</title>
     <meta name="description" content="{nuevo_juego["sinopsis"]}">
     <link rel="icon" type="image/png" href="../favicon.png">
+    
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "{titulo}",
+      "description": "{nuevo_juego["sinopsis"]}",
+      "image": "{nuevo_juego["imagen"]}",
+      "author": {{
+        "@type": "Organization",
+        "name": "KazokuGaming"
+      }},
+      "review": {{
+        "@type": "Review",
+        "author": {{
+          "@type": "Person",
+          "name": "KazokuBot"
+        }},
+        "reviewRating": {{
+          "@type": "Rating",
+          "ratingValue": "{nuevo_juego["calificacion"]}",
+          "bestRating": "10",
+          "worstRating": "1"
+        }},
+        "reviewBody": "Análisis de rendimiento de telemetría y especificaciones de hardware optimizadas para PC en KazokuGaming."
+      }}
+    }}
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style> body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }} </style>
