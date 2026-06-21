@@ -5,124 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KazokuGaming | Artículos y Análisis</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } </style>
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col justify-between">
-
+    <div id="header-container"></div>
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        <div class="text-center max-w-3xl mx-auto mb-10">
-            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Espacio Editorial</span>
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mt-4 mb-4">Artículos y Análisis Pro</h1>
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]">Espacio Editorial (SEO Ready)</span>
+            <h1 class="text-4xl font-extrabold text-white sm:text-6xl mt-6 mb-6 tracking-tight">Artículos y Análisis Pro</h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">Páginas generadas en HTML estático por IA para un posicionamiento perfecto en Google.</p>
         </div>
 
-        <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 mb-12 shadow-lg max-w-4xl mx-auto backdrop-blur-sm">
-            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div class="w-full md:w-1/2">
-                    <input type="text" id="buscador" placeholder="Buscar por título o palabra clave..." class="w-full bg-slate-950 border border-slate-700 text-sm text-white rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all">
-                </div>
-                <div class="flex flex-wrap gap-2 justify-center" id="botones-filtros">
-                    <button data-cat="Todos" class="filtro-btn bg-cyan-600 text-slate-950 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition">Todos</button>
-                    <button data-cat="Tecnología" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Tecnología</button>
-                    <button data-cat="Videojuegos" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Videojuegos</button>
-                    <button data-cat="Análisis" class="filtro-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition border border-slate-700">Análisis</button>
-                </div>
-            </div>
+        <div id="grid-articulos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <p class="text-center col-span-full text-slate-500 py-20">Generando portada...</p>
         </div>
-
-        <div id="articulosLoading" class="flex flex-col items-center justify-center py-10 space-y-4">
-            <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-cyan-400"></div>
-        </div>
-
-        <div id="articulosContenedor" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden"></div>
-        <p id="mensaje-vacio" class="hidden text-center text-slate-500 py-10">No se encontraron artículos con esa búsqueda.</p>
     </main>
-
     <script src="header.js"></script>
     <script>
-        let todosLosArticulos = [];
-
-        function calcularTiempoLectura(textoHTML) {
-            const textoPlano = textoHTML.replace(/<[^>]*>?/gm, '');
-            const palabras = textoPlano.trim().split(/\s+/).length;
-            return Math.ceil(palabras / 200); // 200 palabras por minuto
-        }
-
-        function renderizarTarjetas(lista) {
-            const contenedor = document.getElementById('articulosContenedor');
-            const vacio = document.getElementById('mensaje-vacio');
-            contenedor.innerHTML = "";
-            
-            if(lista.length === 0) {
-                contenedor.classList.add('hidden');
-                vacio.classList.remove('hidden');
-                return;
-            }
-
-            vacio.classList.add('hidden');
-            contenedor.classList.remove('hidden');
-
-            lista.forEach(articulo => {
-                const tiempo = calcularTiempoLectura(articulo.cuerpo || articulo.resumen);
-                contenedor.innerHTML += `
-                    <article class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-cyan-900 hover:bg-slate-900/80 transition-all duration-300 flex flex-col shadow-lg">
-                        <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
-                            <img src="${articulo.imagen}" alt="${articulo.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-cyan-600/90 text-white text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded shadow-md">${articulo.categoria}</span>
+        fetch('articulos.json')
+            .then(res => res.json())
+            .then(data => {
+                const articulos = Array.isArray(data) ? data : (data.articulos || []);
+                const html = articulos.map(a => {
+                    // PASO 1: Ajuste de link a la página estática generada por el bot
+                    const idLimpio = a.id.replace('art-', '');
+                    return `
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/40 transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] group flex flex-col h-full">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="${a.imagen}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-in-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute bottom-4 left-4 text-[10px] font-black text-cyan-400 uppercase tracking-widest bg-slate-900/80 px-3 py-1 rounded border border-slate-700/50 backdrop-blur-sm">${a.categoria}</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-lg font-bold text-white leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors mb-3">${articulo.titulo}</h4>
-                                <p class="text-sm text-slate-400 line-clamp-3 mb-4">${articulo.resumen}</p>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
-                                <div class="flex flex-col space-y-1">
-                                    <span class="text-slate-500">${articulo.fecha}</span>
-                                    <span class="text-cyan-600 font-semibold">⏳ ${tiempo} min de lectura</span>
-                                </div>
-                          <a href="articulos/${articulo.id.replace('art-', '')}.html" class="bg-slate-800 hover:bg-cyan-600 hover:text-white text-cyan-400 px-3 py-1.5 rounded-lg transition-colors font-bold">Leer →</a>                            </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-extrabold text-white mb-3 leading-snug group-hover:text-cyan-400 transition">${a.titulo}</h3>
+                            <p class="text-sm text-slate-400 line-clamp-3 mb-8 flex-grow leading-relaxed">${a.resumen}</p>
+                            
+                            <a href="articulos/${idLimpio}.html" class="inline-flex items-center justify-center w-full bg-slate-800 hover:bg-cyan-600 hover:text-slate-950 text-cyan-400 font-bold py-3 rounded-xl transition-colors border border-slate-700 hover:border-cyan-500">
+                                Leer Artículo
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
                         </div>
-                    </article>
-                `;
+                    </div>`
+                }).join('');
+                document.getElementById('grid-articulos').innerHTML = html;
             });
-        }
-
-        async function init() {
-            try {
-                const res = await fetch('articulos.json');
-                todosLosArticulos = await res.json();
-                document.getElementById('articulosLoading').classList.add('hidden');
-                renderizarTarjetas(todosLosArticulos);
-            } catch (e) {
-                document.getElementById('articulosLoading').innerHTML = "<p class='text-red-400'>Error al cargar los artículos.</p>";
-            }
-        }
-
-        // Lógica de Filtros y Búsqueda
-        document.getElementById('buscador').addEventListener('input', (e) => {
-            const texto = e.target.value.toLowerCase();
-            const filtrados = todosLosArticulos.filter(a => a.titulo.toLowerCase().includes(texto) || a.resumen.toLowerCase().includes(texto));
-            renderizarTarjetas(filtrados);
-        });
-
-        document.querySelectorAll('.filtro-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                // Estilos de botones
-                document.querySelectorAll('.filtro-btn').forEach(b => {
-                    b.classList.remove('bg-cyan-600', 'text-slate-950');
-                    b.classList.add('bg-slate-800', 'text-slate-300');
-                });
-                e.target.classList.remove('bg-slate-800', 'text-slate-300');
-                e.target.classList.add('bg-cyan-600', 'text-slate-950');
-
-                // Filtrado
-                const cat = e.target.getAttribute('data-cat');
-                if(cat === 'Todos') renderizarTarjetas(todosLosArticulos);
-                else renderizarTarjetas(todosLosArticulos.filter(a => a.categoria === cat));
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
