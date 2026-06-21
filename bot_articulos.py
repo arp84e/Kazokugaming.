@@ -4,8 +4,9 @@ import json
 import re
 from google import genai
 from google.genai import types
+from datetime import datetime
 
-print("=== 🤖 KAZOKUBOT V3: MEGA MOTOR EDITORIAL ===")
+print("=== 🤖 KAZOKUBOT V3: MEGA MOTOR EDITORIAL (SEO ENRIQUECIDO) ===")
 
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
 tema = os.environ.get("INPUT_TEMA", "")
@@ -56,7 +57,6 @@ elif accion == "2_publicar_borrador":
         
     idx_foto = int(imagen_ok) - 1 if int(imagen_ok) in [1,2,3] else 0
     slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
-    from datetime import datetime
     
     nuevo = {
         "id": f"art-{slug}",
@@ -81,12 +81,13 @@ elif accion == "2_publicar_borrador":
     with open(archivo_oficial, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=2)
 
-    # --- PASO 1: GENERACIÓN HTML ESTÁTICO INDIVIDUAL + ICONO ---
+    # --- PASO 1: GENERACIÓN HTML ESTÁTICO INDIVIDUAL + FAVICON + DATOS ESTRUCTURADOS ---
     os.makedirs("articulos", exist_ok=True)
     html_filename = f"articulos/{slug}.html"
     
     palabras = len(re.sub('<[^<]+?>', '', nuevo["cuerpo"]).split())
     tiempo_lectura = max(1, round(palabras / 200))
+    fecha_iso = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+00:00")
 
     plantilla_html = f'''<!DOCTYPE html>
 <html lang="es">
@@ -96,6 +97,32 @@ elif accion == "2_publicar_borrador":
     <title>{nuevo["titulo"]} | KazokuGaming</title>
     <meta name="description" content="{nuevo["resumen"]}">
     <link rel="icon" type="image/png" href="../favicon.png">
+    
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{nuevo["titulo"]}",
+      "image": ["{nuevo["imagen"]}"],
+      "datePublished": "{fecha_iso}",
+      "dateModified": "{fecha_iso}",
+      "author": {{
+        "@type": "Organization",
+        "name": "KazokuGaming",
+        "url": "https://kazokugaming.com"
+      }},
+      "publisher": {{
+        "@type": "Organization",
+        "name": "KazokuGaming",
+        "logo": {{
+          "@type": "ImageObject",
+          "url": "https://kazokugaming.com/favicon.png"
+        }}
+      }},
+      "description": "{nuevo["resumen"]}"
+    }}
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
