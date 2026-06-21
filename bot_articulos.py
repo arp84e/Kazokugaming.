@@ -2,17 +2,22 @@ import os
 import sys
 import json
 import re
+import requests
+from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
+from duckduckgo_search import DDGS
 from datetime import datetime
 
-print("=== 🤖 KAZOKUBOT V3.5: MOTOR EDITORIAL MULTI-IMAGEN ===")
+print("=== 🤖 KAZOKUBOT V4.5: MOTOR ULTRA-SEO CON SELECCIÓN PERSONALIZADA DE IMÁGENES ===")
 
+# Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
 tema = os.environ.get("INPUT_TEMA", "")
 categoria = os.environ.get("INPUT_CATEGORIA", "Tecnología")
 enlaces_manuales = os.environ.get("INPUT_ENLACES", "")
 imagen_ok = os.environ.get("INPUT_IMAGEN_OK", "1")
+palabras_clave_imagenes = os.environ.get("INPUT_PALABRAS_CLAVE_IMAGENES", "")
 api_key = os.environ.get("GEMINI_API_KEY")
 
 if not api_key:
@@ -31,7 +36,54 @@ seguridad = [
 ]
 
 if accion == "1_generar_borrador":
-    prompt = f"Escribe un artículo periodístico completamente nuevo, con un estilo editorial propio y pro-gaming sobre: {tema}. Debe encajar en la categoría {categoria}. Devuelve estrictamente un objeto JSON con las siguientes llaves: titulo, resumen, cuerpo (usa código HTML limpio con etiquetas p, h2, h3, ul, li; sin markdown), imagenes_candidatas (una lista con 3 URLs de imágenes de Unsplash en alta definición de tamaño 1200x675 o similar que encajen perfectamente con el tema)."
+    if not tema:
+        print("❌ ERROR: Debes especificar un tema para el artículo.")
+        sys.exit(1)
+
+    contexto_noticias_web = ""
+    print(f"🔍 1. Investigando en la red información reciente sobre: '{tema}'...")
+    try:
+        with DDGS() as ddgs:
+            for r in ddgs.text(tema, max_results=6):
+                contexto_noticias_web += f"Fuente: {r['title']}\nDatos: {r['body']}\n\n"
+    except Exception as e:
+        print(f"⚠️ Alerta: No se pudo complementar con búsqueda web automática: {e}")
+
+    contexto_enlaces_manuales = ""
+    if enlaces_manuales:
+        print("🔗 2. Extrayendo datos directamente de los enlaces manuales suministrados...")
+        for url in enlaces_manuales.split(","):
+            url = url.strip()
+            if not url: continue
+            try:
+                res_web = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}, timeout=10)
+                soup = BeautifulSoup(res_web.text, 'html.parser')
+                for s in soup(["script", "style", "header", "footer", "nav"]):
+                    s.decompose()
+                texto_limpio = " ".join(soup.get_text().split())[:2500]
+                contexto_enlaces_manuales += f"Contenido de Referencia ({url}):\n{texto_limpio}\n\n"
+            except Exception as e:
+                print(f"⚠️ No se pudo raspar la URL {url}: {e}")
+
+    print("🧠 3. Solicitando a Gemini redacción profesional analítica e inédita...")
+    prompt = f"""
+    Eres el redactor jefe técnico y especialista en periodismo de videojuegos de KazokuGaming. Tu misión es escribir un artículo de prensa de nivel excepcional, profundamente analítico, profesional y 100% original sobre el tema: '{tema}'.
+    
+    Para asegurar la máxima veracidad, actualidad y frescura, debes fusionar de manera analítica la información de las siguientes fuentes de la red:
+    
+    [INFORMACIÓN RECIENTE DE INTERNET]
+    {contexto_noticias_web}
+    
+    [DATOS EXTRAÍDOS DE ENLACES ESPECÍFICOS]
+    {contexto_enlaces_manuales}
+    
+    Reglas estrictas de redacción para evitar plagios y mejorar SEO:
+    1. No copies frases textuales de las fuentes; reescribe, sintetiza y aporta un enfoque crítico/editorial propio del ecosistema gaming.
+    2. Estructura el artículo de forma elegante y madura.
+    3. Devuelve estrictamente un objeto JSON con las llaves: 'titulo', 'resumen' y 'cuerpo'.
+    4. El 'cuerpo' debe contener exclusivamente código HTML limpio utilizando párrafos (<p>), subtítulos (<h2>, <h3>), listas (<ul>, <li>) y énfasis (<strong>). No uses markdown, ni bloques de código formateados (```html).
+    """
+
     try:
         response = client.models.generate_content(
             model="gemini-3.5-flash",
@@ -40,45 +92,88 @@ if accion == "1_generar_borrador":
         )
         borrador_data = json.loads(response.text)
         borrador_data["categoria"] = categoria
+        
+        # 🖼️ BÚSQUEDA DE IMÁGENES LIBRES DE COPYRIGHT (HASTA 10)
+        termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
+        print(f"🖼️ 4. Buscando en la red imágenes libres de derechos para: '{termino_img}'...")
+        
+        imagenes_encontradas = []
+        try:
+            with DDGS() as ddgs:
+                res_images = [r for r in ddgs.images(termino_img, max_results=30, license='Public')]
+                for r in res_images:
+                    img_url = r.get('image')
+                    if img_url and (img_url.startswith('http://') or img_url.startswith('https://')):
+                        imagenes_encontradas.append(img_url)
+                    if len(imagenes_encontradas) >= 10:
+                        break
+        except Exception as img_err:
+            print(f"⚠️ Error al buscar imágenes en DuckDuckGo: {img_err}")
+
+        if len(imagenes_encontradas) < 10:
+            respaldos = [
+                "[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200](https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200](https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200](https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200](https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200](https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1512512578047-dfb367046420?q=80&w=1200](https://images.unsplash.com/photo-1512512578047-dfb367046420?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1200](https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200](https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200)",
+                "[https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=1200](https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=1200)"
+            ]
+            while len(imagenes_encontradas) < 10:
+                imagenes_encontradas.append(respaldos[len(imagenes_encontradas) % len(respaldos)])
+
+        borrador_data["imagenes_candidatas"] = imagenes_encontradas[:10]
+        
         with open(archivo_borrador, "w", encoding="utf-8") as f:
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
             
-        print(f"🎉 ¡BORRADOR CREADO! Título: {borrador_data['titulo']}")
-        
-        # 🌟 MEJORA: IMPRIMIR LAS IMÁGENES EN LA CONSOLA DE GITHUB PARA EL USUARIO
-        print("\n" + "="*60)
-        print("🖼️  ENLACES DE LAS IMÁGENES SUGERIDAS POR LA IA (CÓPIALAS PARA VERLAS):")
-        print("="*60)
-        for i, url in enumerate(borrador_data.get("imagenes_candidatas", []), 1):
-            print(f" 🔹 OPCIÓN [{i}]: {url}")
-        print("="*60)
-        print("👉 Evalúa cuál te gusta y selecciónala al ejecutar la acción '2_publicar_borrador'.")
-        print("👉 Si deseas usarlas todas en el artículo, selecciona la opción 'Todas'.\n")
+        print(f"🎉 ¡BORRADOR EDITORIAL PREPARADO! Título: {borrador_data['titulo']}")
+        print("\n" + "="*80)
+        print("🖼️  CATÁLOGO DE 10 IMÁGENES COMPILADAS (LIBRES DE DERECHOS):")
+        print("="*80)
+        for idx, url in enumerate(borrador_data["imagenes_candidatas"], 1):
+            print(f" 🔹 OPCIÓN [{idx}]: {url}")
+        print("="*80)
+        print("👉 Evalúa los recursos y selecciona los índices correspondientes para publicar.")
+        print("👉 Ejemplo de selección múltiple personalizada: 1,3,4,7,9")
+        print("👉 Para inyectar las 10 imágenes en una galería responsiva escribe: Todas\n")
         
     except Exception as e:
-        print(f"❌ ERROR CON LA IA: {e}")
+        print(f"❌ ERROR CRÍTICO EN PROCESO DE BORRADOR: {e}")
         sys.exit(1)
 
 elif accion == "2_publicar_borrador":
     if not os.path.exists(archivo_borrador):
-        print("❌ No hay ningún borrador listo para publicar. Ejecuta primero la acción 1.")
+        print("❌ ERROR: No hay ningún borrador listo para compilar. Ejecuta la Acción 1 primero.")
         sys.exit(1)
         
     with open(archivo_borrador, "r", encoding="utf-8") as f:
         borrador = json.load(f)
         
-    candidatas = borrador.get("imagenes_candidatas", ["https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"])
+    candidatas = borrador.get("imagenes_candidatas", [])
     
-    # 🌟 MEJORA: LÓGICA DE SELECCIÓN INDIVIDUAL O MULTI-IMAGEN
+    # 🌟 LÓGICA DE SELECCIÓN MULTIPLE PERSONALIZADA (EJ: 1,3,4,7)
     imagenes_seleccionadas = []
-    if imagen_ok == "Todas":
+    imagen_ok_limpio = str(imagen_ok).strip()
+    
+    if imagen_ok_limpio.lower() == "todas":
         imagenes_seleccionadas = candidatas
-        imagen_principal = candidatas[0] if len(candidatas) > 0 else "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
     else:
-        idx_foto = int(imagen_ok) - 1 if imagen_ok in ["1", "2", "3"] else 0
-        if idx_foto >= len(candidatas): idx_foto = 0
-        imagen_principal = candidatas[idx_foto]
-        imagenes_seleccionadas = [imagen_principal]
+        # Extraemos los números de la cadena ingresada por el usuario
+        indices_usuario = [int(x.strip()) - 1 for x in imagen_ok_limpio.split(",") if x.strip().isdigit()]
+        for idx in indices_usuario:
+            if 0 <= idx < len(candidatas):
+                imagenes_seleccionadas.append(candidatas[idx])
+                
+    # Si la lista quedó vacía por un error de formato, asignamos la primera por defecto
+    if not imagenes_seleccionadas:
+        imagenes_seleccionadas = [candidatas[0]] if candidatas else ["[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)"]
+        
+    imagen_principal = imagenes_seleccionadas[0]
 
     slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
     
@@ -88,10 +183,10 @@ elif accion == "2_publicar_borrador":
         "resumen": borrador["resumen"],
         "cuerpo": borrador["cuerpo"],
         "categoria": borrador["categoria"],
-        "imagen": imagen_principal, # Se mantiene para compatibilidad con index.html
-        "imagenes_art": imagenes_seleccionadas, # Guardamos el array completo en la base de datos
+        "imagen": imagen_principal,
+        "imagenes_art": imagenes_seleccionadas,
         "fecha": datetime.now().strftime("%d %b, %Y"),
-        "enlace": enlaces_manuales.split(",")[0].strip() if enlaces_manuales else "https://kazokugaming.com"
+        "enlace": enlaces_manuales.split(",")[0].strip() if enlaces_manuales else "[https://kazokugaming.com](https://kazokugaming.com)"
     }
     
     lista = []
@@ -106,7 +201,7 @@ elif accion == "2_publicar_borrador":
     with open(archivo_oficial, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=2)
 
-    # --- GENERACIÓN HTML ESTÁTICO INDIVIDUAL ---
+    # GENERACIÓN DEL TEMPLATE HTML ESTÁTICO (SEO)
     os.makedirs("articulos", exist_ok=True)
     html_filename = f"articulos/{slug}.html"
     
@@ -114,28 +209,26 @@ elif accion == "2_publicar_borrador":
     tiempo_lectura = max(1, round(palabras / 200))
     fecha_iso = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+00:00")
 
-    # 🌟 MEJORA: CONSTRUIR LA GALERÍA VISUAL SI SE ELIGIÓ MÁS DE UNA IMAGEN
+    # DISEÑO DE LA GALERÍA EXTENDIDA CON LAS IMÁGENES SELECCIONADAS
     html_galeria = ""
     if len(imagenes_seleccionadas) > 1:
         html_galeria += '''
-        <div class="mt-12 pt-8 border-t border-slate-800/80">
-            <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider text-xs border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'''
+        <div class="mt-12 pt-8 border-t border-slate-800/60">
+            <h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Soporte Multimedia Ampliado</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">'''
         
-        # Mostramos las imágenes secundarias restantes
         for img_sec in imagenes_seleccionadas[1:]:
             html_galeria += f'''
-                <div class="rounded-2xl overflow-hidden border border-slate-800/60 shadow-lg aspect-[16/10] bg-slate-950">
-                    <img src="{img_sec}" class="w-full h-full object-cover hover:scale-102 transition duration-500" alt="Contenido adicional" loading="lazy">
+                <div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/10] bg-slate-950 group">
+                    <img src="{img_sec}" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" alt="Recurso multimedia libre" loading="lazy" onerror="this.src='[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600)'">
                 </div>'''
                 
         html_galeria += '''
             </div>
         </div>'''
 
-    # Evitamos errores de llaves cruzadas convirtiendo el JSON-LD de SEO en un string puro desde Python
     json_ld_data = {
-      "@context": "https://schema.org",
+      "@context": "[https://schema.org](https://schema.org)",
       "@type": "NewsArticle",
       "headline": nuevo["titulo"],
       "image": imagenes_seleccionadas,
@@ -144,14 +237,14 @@ elif accion == "2_publicar_borrador":
       "author": {
         "@type": "Organization",
         "name": "KazokuGaming",
-        "url": "https://kazokugaming.com"
+        "url": "[https://kazokugaming.com](https://kazokugaming.com)"
       },
       "publisher": {
         "@type": "Organization",
         "name": "KazokuGaming",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kazokugaming.com/favicon.png"
+          "url": "[https://kazokugaming.com/favicon.png](https://kazokugaming.com/favicon.png)"
         }
       },
       "description": nuevo["resumen"]
@@ -171,8 +264,8 @@ elif accion == "2_publicar_borrador":
     {json_ld_str}
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap)" rel="stylesheet">
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }}
         .prose-custom p {{ margin-bottom: 1.5em; line-height: 1.8; }}
@@ -191,7 +284,7 @@ elif accion == "2_publicar_borrador":
             <p class="text-lg text-slate-400">{nuevo["resumen"]}</p>
         </div>
         <div class="w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-2xl border border-slate-800/50">
-            <img src="{nuevo["imagen"]}" class="w-full h-full object-cover" alt="{nuevo["titulo"]}">
+            <img src="{nuevo["imagen"]}" class="w-full h-full object-cover" alt="{nuevo["titulo"]}" onerror="this.src='[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)'">
         </div>
         <div class="prose-custom text-lg text-slate-300 bg-slate-900/20 p-8 sm:p-10 rounded-3xl border border-slate-800/40 shadow-inner">
             {nuevo["cuerpo"]}
@@ -208,4 +301,4 @@ elif accion == "2_publicar_borrador":
         hf.write(plantilla_html)
         
     os.remove(archivo_borrador)
-    print(f"🚀 ¡PUBLICADO EXITOSAMENTE! HTML creado en: {html_filename}")
+    print(f"🚀 ¡PUBLICACIÓN GLOBAL EMITIDA! HTML estructurado en: {html_filename}")
