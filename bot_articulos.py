@@ -151,6 +151,9 @@ if accion == "1_generar_borrador":
         
     print(f"🎉 ¡BORRADOR CREADO! Título: {borrador_data['titulo']}")
 
+# =====================================================================
+# INYECTAR ESTA LÓGICA EN bot_articulos.py DENTRO DE "2_publicar_borrador"
+# =====================================================================
 elif accion == "2_publicar_borrador":
     if not os.path.exists(archivo_borrador):
         print("❌ No hay borrador.")
@@ -183,6 +186,57 @@ elif accion == "2_publicar_borrador":
     lista.insert(0, nuevo)
     with open(archivo_oficial, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=2)
+
+    # 🌎 [NUEVO] GENERACIÓN DEL ARCHIVO HTML ESTÁTICO REAL PARA SEO
+    os.makedirs("articulos", exist_ok=True)
+    html_filename = f"articulos/{slug}.html"
+    
+    # Calculamos el tiempo de lectura para el HTML estático
+    palabras = len(re.sub('<[^<]+?>', '', nuevo["cuerpo"]).split())
+    tiempo_lectura = max(1, round(palabras / 200))
+
+    plantilla_html = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{nuevo["titulo"]} | KazokuGaming</title>
+    <meta name="description" content="{nuevo["resumen"]}">
+    <meta property="og:title" content="{nuevo["titulo"]} | KazokuGaming">
+    <meta property="og:description" content="{nuevo["resumen"]}">
+    <meta property="og:image" content="{nuevo["imagen"]}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; scroll-behavior: smooth; }}
+        ::-webkit-scrollbar {{ width: 6px; }}
+        ::-webkit-scrollbar-thumb {{ background: #1e293b; border-radius: 10px; }}
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div id="cuerpo-global" class="flex flex-col lg:flex-row gap-12 relative">
+            <div class="lg:w-3/4 w-full" id="area-articulo">
+                <div class="mb-8">
+                    <span class="text-xs bg-cyan-900/30 text-cyan-400 px-3 py-1 rounded border border-cyan-800/50 uppercase font-bold tracking-widest">{nuevo["categoria"]}</span>
+                    <span class="text-slate-500 text-xs ml-3 border-l border-slate-700 pl-3">⏳ {tiempo_lectura} min de lectura</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 mb-4 leading-tight">{nuevo["titulo"]}</h1>
+                    <p class="text-lg text-slate-400">{nuevo["resumen"]}</p>
+                </div>
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 shadow-2xl shadow-black">
+                    <img src="{nuevo["imagen"]}" class="w-full h-full object-cover" alt="{nuevo["titulo"]}">
+                </div>
+                <div class="prose-custom text-lg text-slate-300">{nuevo["cuerpo"]}</div>
+            </div>
+        </div>
+    </main>
+    <script src="../header.js"></script>
+</body>
+</html>"""
+
+    with open(html_filename, "w", encoding="utf-8") as hf:
+        hf.write(plantilla_html)
+    print(f"🌎 HTML Estático creado en: {html_filename}")
         
     os.remove(archivo_borrador)
     print(f"🚀 ¡PUBLICADO! {nuevo['titulo']}")
