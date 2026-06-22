@@ -10,7 +10,7 @@ from google import genai
 from google.genai import types
 from datetime import datetime
 
-# Silenciar las advertencias inofensivas de librerías de terceros (como el aviso de DDGS)
+# Silenciar las advertencias inofensivas de librerías de terceros
 warnings.filterwarnings("ignore")
 
 # Importación segura compatible con cualquier versión de la librería
@@ -22,7 +22,7 @@ except ImportError:
     except ImportError:
         sys.exit("❌ ERROR CRÍTICO: No se pudo cargar el motor de búsqueda de imágenes. Verifica la instalación.")
 
-print("=== 🤖 KAZOKUBOT V6.2: MOTOR DE AUTO-MAQUETACIÓN Y EXTRACCIÓN BLINDADA ===")
+print("=== 🤖 KAZOKUBOT V6.3: MOTOR DE EDICIÓN CON CATÁLOGO VISUAL ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -142,7 +142,7 @@ def construir_y_guardar_html(articulo_dict):
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <div class="mb-8">
             <span class="text-xs bg-cyan-900/30 text-cyan-400 px-3 py-1 rounded border border-cyan-800/50 uppercase font-bold tracking-widest">{articulo_dict["categoria"]}</span>
-            <span class="text-slate-500 text-xs ml-3 border-l border-slate-700 pl-3">⏳ {tiempo_lectura} min de lectura • Editado</span>
+            <span class="text-slate-500 text-xs ml-3 border-l border-slate-700 pl-3">⏳ {tiempo_lectura} min de lectura</span>
             <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 mb-4 leading-tight">{articulo_dict["titulo"]}</h1>
             <p class="text-lg text-slate-400">{articulo_dict["resumen"]}</p>
         </div>
@@ -215,7 +215,17 @@ if accion == "1_generar_borrador":
         with open(archivo_borrador, "w", encoding="utf-8") as f:
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
             
-        print(f"🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}\nImágenes compiladas. Ejecuta Acción 2 para maquetar.")
+        print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
+        
+        # 🌟 AQUÍ ESTÁ EL BLOQUE RESTAURADO PARA MOSTRAR LAS IMÁGENES 🌟
+        print("\n" + "="*80)
+        print(f"🖼️ CATÁLOGO DE 10 IMÁGENES COMPILADAS PARA '{termino_img}':")
+        print("="*80)
+        for idx, url in enumerate(borrador_data["imagenes_candidatas"], 1):
+            print(f" 🔹 OPCIÓN [{idx}]: {url}")
+        print("="*80)
+        print("👉 Haz clic en los enlaces para verlas. Luego, ejecuta la Acción 2 y escribe los números que quieras (ej: 1,3,4) o 'Todas'.\n")
+        
     except Exception as e:
         sys.exit(f"❌ ERROR: {e}")
 
