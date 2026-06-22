@@ -4,13 +4,25 @@ import json
 import re
 import requests
 import urllib.parse
+import warnings
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
-from duckduckgo_search import DDGS
 from datetime import datetime
 
-print("=== 🤖 KAZOKUBOT V6.1: MOTOR DE AUTO-MAQUETACIÓN Y EXTRACCIÓN BLINDADA ===")
+# Silenciar las advertencias inofensivas de librerías de terceros (como el aviso de DDGS)
+warnings.filterwarnings("ignore")
+
+# Importación segura compatible con cualquier versión de la librería
+try:
+    from duckduckgo_search import DDGS
+except ImportError:
+    try:
+        from ddgs import DDGS
+    except ImportError:
+        sys.exit("❌ ERROR CRÍTICO: No se pudo cargar el motor de búsqueda de imágenes. Verifica la instalación.")
+
+print("=== 🤖 KAZOKUBOT V6.2: MOTOR DE AUTO-MAQUETACIÓN Y EXTRACCIÓN BLINDADA ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -38,12 +50,10 @@ seguridad = [
 
 # 🛠️ FUNCIÓN PARA LIMPIAR JSON SUCIO DE LA IA
 def extraer_json_seguro(texto_ia):
-    # Busca exclusivamente desde la primera llave { hasta la última }
     match = re.search(r'\{.*\}', texto_ia.strip(), re.DOTALL)
     if match:
         return json.loads(match.group(0))
     else:
-        # Intento de rescate estándar si la regex falla
         return json.loads(texto_ia.replace("```json", "").replace("```", "").strip())
 
 # 🛠️ FUNCIÓN MAESTRA: CONSTRUCTOR DE HTML CON IMÁGENES INTERCALADAS
@@ -55,7 +65,6 @@ def construir_y_guardar_html(articulo_dict):
     imagenes_seleccionadas = articulo_dict.get("imagenes_art", [articulo_dict.get("imagen")])
     termino_img_fallback = "gaming"
     
-    # Inserción de imágenes entre párrafos
     cuerpo_html = articulo_dict["cuerpo"]
     soup = BeautifulSoup(cuerpo_html, 'html.parser')
     bloques_texto = [b for b in soup.find_all(['p', 'h2', 'h3']) if len(b.get_text(strip=True)) > 30]
@@ -66,7 +75,6 @@ def construir_y_guardar_html(articulo_dict):
         num_bloques = len(bloques_texto)
         
         if num_bloques > 0:
-            # Distribuir imágenes proporcionalmente a lo largo del texto
             imgs_a_insertar = imagenes_extra[:num_bloques]
             imgs_sobrantes = imagenes_extra[num_bloques:]
             step = max(1, num_bloques // (len(imgs_a_insertar) + 1))
@@ -86,7 +94,6 @@ def construir_y_guardar_html(articulo_dict):
                 
             articulo_dict["cuerpo"] = str(soup)
             
-            # Si sobran imágenes que no caben en el texto, van a la galería inferior
             if imgs_sobrantes:
                 html_galeria += '''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'''
                 for i, img_sec in enumerate(imgs_sobrantes):
@@ -187,7 +194,6 @@ if accion == "1_generar_borrador":
             config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
         )
         
-        # Uso del extractor blindado para saltarse el Extra Data error
         borrador_data = extraer_json_seguro(response.text)
         borrador_data["categoria"] = categoria
         
@@ -307,7 +313,6 @@ elif accion == "4_modificar_articulo":
                 config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
             )
             
-            # Uso del extractor blindado para evitar errores
             data_modificada = extraer_json_seguro(response.text)
             
             lista[indice]["titulo"] = data_modificada["titulo"]
