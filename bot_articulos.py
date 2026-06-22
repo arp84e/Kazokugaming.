@@ -10,7 +10,7 @@ from google.genai import types
 from duckduckgo_search import DDGS
 from datetime import datetime
 
-print("=== 🤖 KAZOKUBOT V6.0: MOTOR DE AUTO-MAQUETACIÓN Y EDICIÓN ===")
+print("=== 🤖 KAZOKUBOT V6.1: MOTOR DE AUTO-MAQUETACIÓN Y EXTRACCIÓN BLINDADA ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -35,6 +35,16 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
+
+# 🛠️ FUNCIÓN PARA LIMPIAR JSON SUCIO DE LA IA
+def extraer_json_seguro(texto_ia):
+    # Busca exclusivamente desde la primera llave { hasta la última }
+    match = re.search(r'\{.*\}', texto_ia.strip(), re.DOTALL)
+    if match:
+        return json.loads(match.group(0))
+    else:
+        # Intento de rescate estándar si la regex falla
+        return json.loads(texto_ia.replace("```json", "").replace("```", "").strip())
 
 # 🛠️ FUNCIÓN MAESTRA: CONSTRUCTOR DE HTML CON IMÁGENES INTERCALADAS
 def construir_y_guardar_html(articulo_dict):
@@ -176,7 +186,9 @@ if accion == "1_generar_borrador":
             model="gemini-3.5-flash", contents=prompt,
             config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
         )
-        borrador_data = json.loads(response.text)
+        
+        # Uso del extractor blindado para saltarse el Extra Data error
+        borrador_data = extraer_json_seguro(response.text)
         borrador_data["categoria"] = categoria
         
         termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
@@ -294,14 +306,13 @@ elif accion == "4_modificar_articulo":
                 model="gemini-3.5-flash", contents=prompt,
                 config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
             )
-            data_modificada = json.loads(response.text)
             
-            # Actualizamos el artículo en la base de datos conservando su ID y sus imágenes originales
+            # Uso del extractor blindado para evitar errores
+            data_modificada = extraer_json_seguro(response.text)
+            
             lista[indice]["titulo"] = data_modificada["titulo"]
             lista[indice]["resumen"] = data_modificada["resumen"]
             lista[indice]["cuerpo"] = data_modificada["cuerpo"]
-            # No modificamos la fecha para no dañar el orden cronológico original de tu feed, 
-            # el SEO reconocerá la actualización por los Metadatos.
             
             with open(archivo_oficial, "w", encoding="utf-8") as f: 
                 json.dump(lista, f, ensure_ascii=False, indent=2)
