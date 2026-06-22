@@ -61,12 +61,12 @@ jobs:
           python-version: '3.11'
           
       - name: Instalar dependencias
-        # Se restaura la librería oficial duckduckgo-search
         run: pip install google-genai requests duckduckgo-search beautifulsoup4 urllib3
         
       - name: Ejecutar el motor del Bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONWARNINGS: "ignore"
           INPUT_ACCION: ${{ github.event.inputs.accion }}
           INPUT_TEMA: ${{ github.event.inputs.tema_articulo }}
           INPUT_CATEGORIA: ${{ github.event.inputs.categoria }}
