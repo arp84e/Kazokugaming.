@@ -61,8 +61,8 @@ jobs:
           python-version: '3.11'
           
       - name: Instalar dependencias
-        # Se ha actualizado duckduckgo-search al nuevo formato ddgs para evitar advertencias
-        run: pip install google-genai requests ddgs beautifulsoup4 urllib3
+        # Se restaura la librería oficial duckduckgo-search
+        run: pip install google-genai requests duckduckgo-search beautifulsoup4 urllib3
         
       - name: Ejecutar el motor del Bot
         env:
