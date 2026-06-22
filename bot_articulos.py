@@ -9,6 +9,10 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 from datetime import datetime
+import warnings
+
+# Silenciar las advertencias inofensivas de librerías de terceros
+warnings.filterwarnings("ignore")
 
 # Importación de buscador
 try:
@@ -16,7 +20,7 @@ try:
 except ImportError:
     from ddgs import DDGS
 
-print("=== 🤖 KAZOKUBOT V6.4: MOTOR BLINDADO CON ANTI-SATURACIÓN DE IA ===")
+print("=== 🤖 KAZOKUBOT V6.5: MOTOR BLINDADO (RESTAURACIÓN DE IMÁGENES PÚBLICAS) ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -77,7 +81,9 @@ def construir_y_guardar_html(articulo_dict):
     html_filename = f"articulos/{slug}.html"
     
     imagenes_seleccionadas = articulo_dict.get("imagenes_art", [articulo_dict.get("imagen")])
-    termino_img_fallback = "gaming"
+    
+    # Respaldo absoluto para evitar recuadros rotos
+    fallback_seguro = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
     
     cuerpo_html = articulo_dict["cuerpo"]
     soup = BeautifulSoup(cuerpo_html, 'html.parser')
@@ -97,12 +103,11 @@ def construir_y_guardar_html(articulo_dict):
                 target_idx = (i + 1) * step
                 if target_idx >= num_bloques: target_idx = num_bloques - 1
                 
-                fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true"
                 img_tag = soup.new_tag('img', src=img_url)
                 img_tag['class'] = "w-full aspect-[16/9] rounded-3xl overflow-hidden my-10 shadow-2xl border border-slate-700/50 object-cover"
                 img_tag['loading'] = "lazy"
                 img_tag['referrerpolicy'] = "no-referrer"
-                img_tag['onerror'] = f"this.src='{fallback}'"
+                img_tag['onerror'] = f"this.src='{fallback_seguro}'"
                 
                 bloques_texto[target_idx].insert_after(img_tag)
                 
@@ -111,8 +116,7 @@ def construir_y_guardar_html(articulo_dict):
             if imgs_sobrantes:
                 html_galeria += '''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'''
                 for i, img_sec in enumerate(imgs_sobrantes):
-                    fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20gallery%20{i}?width=1200&height=675&nologo=true"
-                    html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/9] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
+                    html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/9] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback_seguro}'"></div>'''
                 html_galeria += '''</div></div>'''
 
     palabras = len(re.sub('<[^<]+?>', '', articulo_dict["cuerpo"]).split())
@@ -161,7 +165,7 @@ def construir_y_guardar_html(articulo_dict):
             <p class="text-lg text-slate-400">{articulo_dict["resumen"]}</p>
         </div>
         <div class="w-full aspect-[16/9] rounded-3xl overflow-hidden mb-10 shadow-2xl border border-slate-800/50 bg-slate-900">
-            <img src="{articulo_dict["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='https://image.pollinations.ai/prompt/gaming%20cover?width=1200&height=675&nologo=true'">
+            <img src="{articulo_dict["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='{fallback_seguro}'">
         </div>
         <div class="prose-custom bg-slate-900/40 p-8 sm:p-10 rounded-3xl border border-slate-700/50 shadow-lg">
             {articulo_dict["cuerpo"]}
@@ -213,14 +217,29 @@ if accion == "1_generar_borrador":
         imagenes = []
         try:
             with DDGS() as ddgs:
-                for r in [r for r in ddgs.images(termino_img, max_results=30)]:
-                    if r.get('image') and r.get('image').startswith('http'): imagenes.append(r.get('image'))
+                # 🌟 RESTAURADO: FILTRO 'Public' para evitar webs que bloquean imágenes
+                for r in ddgs.images(termino_img, max_results=30, license='Public'):
+                    if r.get('image') and r.get('image').startswith('http'): 
+                        imagenes.append(r.get('image'))
                     if len(imagenes) >= 10: break
         except: pass
 
-        termino_url = urllib.parse.quote(termino_img)
+        # 🌟 RESTAURADO: Lista inquebrantable de Unsplash en caso de que el tema sea muy raro
+        respaldos = [
+            "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
+            "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200",
+            "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200",
+            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200",
+            "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200",
+            "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200",
+            "https://images.unsplash.com/photo-1512512578047-dfb367046420?q=80&w=1200",
+            "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1200",
+            "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200",
+            "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=1200"
+        ]
+
         while len(imagenes) < 10:
-            imagenes.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20high%20quality%20{len(imagenes)}?width=1200&height=675&nologo=true")
+            imagenes.append(respaldos[len(imagenes) % len(respaldos)])
 
         borrador_data["imagenes_candidatas"] = imagenes[:10]
         
@@ -255,7 +274,8 @@ elif accion == "2_publicar_borrador":
         indices = [int(x.strip()) - 1 for x in str(imagen_ok).split(",") if x.strip().isdigit()]
         imagenes_seleccionadas = [candidatas[i] for i in indices if 0 <= i < len(candidatas)]
                 
-    if not imagenes_seleccionadas: imagenes_seleccionadas = [candidatas[0]] if candidatas else ["https://image.pollinations.ai/prompt/gaming?width=1200&height=675&nologo=true"]
+    if not imagenes_seleccionadas: 
+        imagenes_seleccionadas = [candidatas[0]] if candidatas else ["https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"]
         
     slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
     nuevo = {
