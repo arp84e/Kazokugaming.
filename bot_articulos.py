@@ -2,27 +2,21 @@ import os
 import sys
 import json
 import re
+import time
 import requests
 import urllib.parse
-import warnings
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 from datetime import datetime
 
-# Silenciar las advertencias inofensivas de librerías de terceros
-warnings.filterwarnings("ignore")
-
-# Importación segura compatible con cualquier versión de la librería
+# Importación de buscador
 try:
     from duckduckgo_search import DDGS
 except ImportError:
-    try:
-        from ddgs import DDGS
-    except ImportError:
-        sys.exit("❌ ERROR CRÍTICO: No se pudo cargar el motor de búsqueda de imágenes. Verifica la instalación.")
+    from ddgs import DDGS
 
-print("=== 🤖 KAZOKUBOT V6.3: MOTOR DE EDICIÓN CON CATÁLOGO VISUAL ===")
+print("=== 🤖 KAZOKUBOT V6.4: MOTOR BLINDADO CON ANTI-SATURACIÓN DE IA ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -47,6 +41,26 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
+
+# 🛠️ SISTEMA DE AUTO-REINTENTO PARA SERVIDORES SATURADOS O LÍMITES DE CUOTA
+def generar_texto_ia_con_reintentos(prompt_text, retries=3):
+    for intento in range(retries):
+        try:
+            response = client.models.generate_content(
+                model="gemini-3.5-flash", 
+                contents=prompt_text,
+                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+            )
+            return response
+        except Exception as e:
+            error_str = str(e).upper()
+            if "503" in error_str or "UNAVAILABLE" in error_str or "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                print(f"⚠️ Servidores de Google al límite de capacidad (Intento {intento+1}/{retries}). Esperando 15 segundos...")
+                time.sleep(15)
+                if intento == retries - 1:
+                    raise Exception("❌ Los servidores de la API siguen saturados. Por favor, intenta de nuevo en un par de minutos.")
+            else:
+                raise e
 
 # 🛠️ FUNCIÓN PARA LIMPIAR JSON SUCIO DE LA IA
 def extraer_json_seguro(texto_ia):
@@ -189,10 +203,8 @@ if accion == "1_generar_borrador":
     Devuelve un JSON estricto con: 'titulo', 'resumen' y 'cuerpo'."""
 
     try:
-        response = client.models.generate_content(
-            model="gemini-3.5-flash", contents=prompt,
-            config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-        )
+        # Se reemplaza por nuestra nueva función anti-caídas
+        response = generar_texto_ia_con_reintentos(prompt)
         
         borrador_data = extraer_json_seguro(response.text)
         borrador_data["categoria"] = categoria
@@ -216,8 +228,6 @@ if accion == "1_generar_borrador":
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
             
         print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
-        
-        # 🌟 AQUÍ ESTÁ EL BLOQUE RESTAURADO PARA MOSTRAR LAS IMÁGENES 🌟
         print("\n" + "="*80)
         print(f"🖼️ CATÁLOGO DE 10 IMÁGENES COMPILADAS PARA '{termino_img}':")
         print("="*80)
@@ -318,10 +328,8 @@ elif accion == "4_modificar_articulo":
         Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo' actualizado."""
 
         try:
-            response = client.models.generate_content(
-                model="gemini-3.5-flash", contents=prompt,
-                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-            )
+            # Se reemplaza por la función anti-caídas
+            response = generar_texto_ia_con_reintentos(prompt)
             
             data_modificada = extraer_json_seguro(response.text)
             
