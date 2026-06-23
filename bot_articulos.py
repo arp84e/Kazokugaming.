@@ -1,4 +1,9 @@
+# SILENCIADOR ABSOLUTO DE ADVERTENCIAS (Debe ir en las primeras líneas)
+import warnings
 import os
+warnings.filterwarnings("ignore")
+os.environ["PYTHONWARNINGS"] = "ignore"
+
 import sys
 import json
 import re
@@ -9,12 +14,8 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 from datetime import datetime
-import warnings
 
-# Silenciar las advertencias inofensivas de librerías de terceros
-warnings.filterwarnings("ignore")
-
-# Importación segura del buscador DuckDuckGo
+# Importación segura del buscador DuckDuckGo sin arrojar mensajes en consola
 try:
     from duckduckgo_search import DDGS
 except ImportError:
@@ -23,7 +24,7 @@ except ImportError:
     except ImportError:
         sys.exit("❌ ERROR CRÍTICO: No se pudo cargar el motor de búsqueda. Verifica la instalación.")
 
-print("=== 🤖 KAZOKUBOT V7.0: MOTOR DE MÁXIMA PRECISIÓN Y RASTREO AMPLIADO ===")
+print("=== 🤖 KAZOKUBOT V7.1: MOTOR BLINDADO CON ENFRIAMIENTO PROGRESIVO ===")
 
 # Captura de variables de entorno de GitHub
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
@@ -49,8 +50,9 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 🛠️ SISTEMA DE AUTO-REINTENTO PARA SERVIDORES SATURADOS O LÍMITES DE CUOTA
-def generar_texto_ia_con_reintentos(prompt_text, retries=3):
+# 🛠️ SISTEMA DE ENFRIAMIENTO PROGRESIVO PARA BURLAR LÍMITES DE CUOTA
+def generar_texto_ia_con_reintentos(prompt_text, retries=5):
+    espera_segundos = 20
     for intento in range(retries):
         try:
             response = client.models.generate_content(
@@ -61,11 +63,12 @@ def generar_texto_ia_con_reintentos(prompt_text, retries=3):
             return response
         except Exception as e:
             error_str = str(e).upper()
-            if "503" in error_str or "UNAVAILABLE" in error_str or "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
-                print(f"⚠️ Servidores de Google al límite de capacidad (Intento {intento+1}/{retries}). Esperando 15 segundos...")
-                time.sleep(15)
+            if any(err in error_str for err in ["503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "QUOTA"]):
+                print(f"⚠️ Tráfico al límite en la API de Google (Intento {intento+1}/{retries}). Enfriando motor por {espera_segundos} segundos...")
+                time.sleep(espera_segundos)
+                espera_segundos += 20 # Aumento progresivo: 20s, 40s, 60s, 80s
                 if intento == retries - 1:
-                    raise Exception("❌ Los servidores de la API siguen saturados. Por favor, intenta de nuevo en un par de minutos.")
+                    raise Exception("❌ Los servidores de la API siguen saturados tras varios minutos. Intenta de nuevo más tarde.")
             else:
                 raise e
 
@@ -194,14 +197,13 @@ if accion == "1_generar_borrador":
     try:
         with DDGS() as ddgs:
             print(f"🔍 Rastreando noticias recientes y artículos web sobre: '{tema}'...")
-            # 🌟 MEJORA: Rastreo doble para mayor precisión periodística
             try:
-                for r in ddgs.news(tema, max_results=5):
+                for r in ddgs.news(tema, max_results=4):
                     contexto += f"NOTICIA: {r.get('title', '')}\nDatos: {r.get('body', '')}\n\n"
             except: pass
             
             try:
-                for r in ddgs.text(tema, max_results=5):
+                for r in ddgs.text(tema, max_results=4):
                     contexto += f"WEB: {r.get('title', '')}\nDatos: {r.get('body', '')}\n\n"
             except: pass
     except Exception as e:
@@ -215,9 +217,13 @@ if accion == "1_generar_borrador":
                 res_web = requests.get(url.strip(), headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
                 soup = BeautifulSoup(res_web.text, 'html.parser')
                 for s in soup(["script", "style", "nav", "footer", "aside"]): s.decompose()
-                contexto += " ".join(soup.get_text().split())[:2500] + "\n\n"
+                contexto += " ".join(soup.get_text().split())[:2000] + "\n\n"
             except Exception as e:
                 print(f"⚠️ Aviso extrayendo URL: {e}")
+
+    # Limite de seguridad para evitar saturación masiva de la cuota en Gemini
+    if len(contexto) > 25000:
+        contexto = contexto[:25000]
 
     prompt = f"""Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
     Usa esta info fresca: {contexto}
@@ -231,25 +237,20 @@ if accion == "1_generar_borrador":
         borrador_data = extraer_json_seguro(response.text)
         borrador_data["categoria"] = categoria
         
-        # 🌟 MEJORA MÁXIMA EN BÚSQUEDA DE IMÁGENES
         termino_base = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
         print(f"🖼️ Buscando imágenes de ALTA CALIDAD para: '{termino_base}'...")
         
         imagenes = []
         try:
             with DDGS() as ddgs:
-                # Quitamos restricción de licencia para usar el Fair Use de prensa y filtramos por tamaño Grande (HD/4K)
                 for r in ddgs.images(termino_base, max_results=40, size="Large"):
                     img_url = r.get('image', '')
-                    # Filtro de calidad: Evitamos SVG, iconos y logos que arruinan la maquetación
                     if img_url.startswith('http') and not any(x in img_url.lower() for x in ['.svg', 'logo', 'icon', 'avatar']): 
                         imagenes.append(img_url)
                     if len(imagenes) >= 10: break
         except Exception as e:
             print(f"⚠️ Aviso buscador de imágenes: {e}")
 
-        # 🌟 NUEVO FALLBACK INTELIGENTE: 
-        # Si no encuentra 10 reales, la IA generará imágenes estrictamente de TU TEMA en lugar de teclados genéricos.
         borrador_data["palabra_clave_usada"] = termino_base
         termino_url = urllib.parse.quote(termino_base)
         while len(imagenes) < 10:
