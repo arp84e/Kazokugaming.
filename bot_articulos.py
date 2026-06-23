@@ -56,16 +56,32 @@ if accion == "1_generar_borrador":
 
     contexto_enlaces_manuales = ""
     if enlaces_manuales:
-        print("🔗 2. Extrayendo datos de enlaces manuales...")
-        for url in enlaces_manuales.split(","):
-            url = url.strip()
-            if not url: continue
+        enlaces_lista = [url.strip() for url in enlaces_manuales.split(",") if url.strip()]
+        print(f"🔗 2. Procesando {len(enlaces_lista)} enlaces manuales individualmente...")
+        
+        for index, url in enumerate(enlaces_lista, 1):
             try:
+                # 2.1 Extraer texto de la web
                 res_web = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
                 soup = BeautifulSoup(res_web.text, 'html.parser')
-                for s in soup(["script", "style", "nav", "footer"]): s.decompose()
-                contexto_enlaces_manuales += " ".join(soup.get_text().split())[:2500] + "\n\n"
-            except: pass
+                for s in soup(["script", "style", "nav", "footer", "header", "aside"]): s.decompose()
+                texto_crudo = " ".join(soup.get_text().split())[:3000] # Tomamos un poco más de contexto
+                
+                # 2.2 Crear un mini-borrador por cada enlace usando Gemini
+                print(f"   🧠 Generando Análisis Previo {index}/{len(enlaces_lista)}...")
+                prompt_mini = f"Resume y extrae los puntos más importantes, datos técnicos y citas clave del siguiente texto extraído de una web. Establécelo como 'Análisis {index}':\n\n{texto_crudo}"
+                
+                res_mini = client.models.generate_content(
+                    model="gemini-3.5-flash",
+                    contents=prompt_mini,
+                    config=types.GenerateContentConfig(safety_settings=seguridad)
+                )
+                
+                # 2.3 Acumular los análisis estructurados
+                contexto_enlaces_manuales += f"--- ANÁLISIS DEL ENLACE {index} ---\n{res_mini.text}\n\n"
+                
+            except Exception as e:
+                print(f"   ⚠️ Error procesando enlace {index} ({url}): {e}")
 
     print("🧠 3. Solicitando redacción profesional a Gemini...")
     prompt = f"""
