@@ -12,9 +12,8 @@ on:
           - '1_generar_borrador'
           - '2_publicar_borrador'
           - '3_eliminar_articulo'
-          - '4_modificar_articulo'
       tema_articulo:
-        description: '📝 Tema (Acción 1) o Instrucciones de Mejora (Acción 4)'
+        description: '📝 Tema o Título (Usar en Acción 1)'
         required: false
         type: string
       categoria:
@@ -40,8 +39,8 @@ on:
         required: false
         type: string
         default: '1'
-      id_articulo_objetivo:
-        description: '🎯 Al ELIMINAR o MODIFICAR, escribe el título o el ID del artículo'
+      id_articulo_borrar:
+        description: '🗑️ Al ELIMINAR (Acción 3), escribe el título exacto o el ID del artículo'
         required: false
         type: string
 
@@ -66,20 +65,19 @@ jobs:
       - name: Ejecutar el motor del Bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PYTHONWARNINGS: "ignore"
           INPUT_ACCION: ${{ github.event.inputs.accion }}
           INPUT_TEMA: ${{ github.event.inputs.tema_articulo }}
           INPUT_CATEGORIA: ${{ github.event.inputs.categoria }}
           INPUT_ENLACES: ${{ github.event.inputs.enlaces_oficiales }}
           INPUT_PALABRAS_CLAVE_IMAGENES: ${{ github.event.inputs.palabras_clave_imagenes }}
           INPUT_IMAGEN_OK: ${{ github.event.inputs.imagen_elegida }}
-          INPUT_ID_OBJETIVO: ${{ github.event.inputs.id_articulo_objetivo }}
+          INPUT_ID_BORRAR: ${{ github.event.inputs.id_articulo_borrar }}
         run: python bot_articulos.py
         
       - name: Actualizar Mapa del Sitio XML
         run: python generar_sitemap.py
         
-      - name: Guardar cambios en el repositorio
+      - name: Guardar cambios en el repositorio (Git Commit)
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
