@@ -1,4 +1,4 @@
-# SILENCIADOR ABSOLUTO DE ADVERTENCIAS (Debe ir en las primeras líneas)
+# SILENCIADOR ABSOLUTO DE ADVERTENCIAS
 import warnings
 import os
 warnings.filterwarnings("ignore")
@@ -15,7 +15,7 @@ from google import genai
 from google.genai import types
 from datetime import datetime
 
-# Importación segura del buscador DuckDuckGo sin arrojar mensajes en consola
+# Importación segura del buscador DuckDuckGo
 try:
     from duckduckgo_search import DDGS
 except ImportError:
@@ -24,9 +24,9 @@ except ImportError:
     except ImportError:
         sys.exit("❌ ERROR CRÍTICO: No se pudo cargar el motor de búsqueda. Verifica la instalación.")
 
-print("=== 🤖 KAZOKUBOT V7.1: MOTOR BLINDADO CON ENFRIAMIENTO PROGRESIVO ===")
+print("=== 🤖 KAZOKUBOT V8.0: MOTOR MAP-REDUCE (ANÁLISIS FRACCIONADO) ===")
 
-# Captura de variables de entorno de GitHub
+# Captura de variables de entorno
 accion = os.environ.get("INPUT_ACCION", "1_generar_borrador")
 tema = os.environ.get("INPUT_TEMA", "")
 categoria = os.environ.get("INPUT_CATEGORIA", "Tecnología")
@@ -50,37 +50,39 @@ seguridad = [
     types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
 ]
 
-# 🛠️ SISTEMA DE ENFRIAMIENTO PROGRESIVO PARA BURLAR LÍMITES DE CUOTA
-def generar_texto_ia_con_reintentos(prompt_text, retries=5):
+# 🛠️ SISTEMA DE ENFRIAMIENTO PROGRESIVO
+def generar_texto_ia_con_reintentos(prompt_text, es_json=False, retries=5):
     espera_segundos = 20
+    # Si pedimos JSON, configuramos el mime_type, si no, texto plano
+    configuracion = types.GenerateContentConfig(safety_settings=seguridad)
+    if es_json:
+        configuracion.response_mime_type = "application/json"
+        
     for intento in range(retries):
         try:
             response = client.models.generate_content(
                 model="gemini-3.5-flash", 
                 contents=prompt_text,
-                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+                config=configuracion
             )
             return response
         except Exception as e:
             error_str = str(e).upper()
             if any(err in error_str for err in ["503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "QUOTA"]):
-                print(f"⚠️ Tráfico al límite en la API de Google (Intento {intento+1}/{retries}). Enfriando motor por {espera_segundos} segundos...")
+                print(f"   ⏳ Google saturado (Intento {intento+1}/{retries}). Enfriando por {espera_segundos}s...")
                 time.sleep(espera_segundos)
-                espera_segundos += 20 # Aumento progresivo: 20s, 40s, 60s, 80s
+                espera_segundos += 15 
                 if intento == retries - 1:
-                    raise Exception("❌ Los servidores de la API siguen saturados tras varios minutos. Intenta de nuevo más tarde.")
+                    raise Exception("❌ Los servidores siguen saturados. Intenta más tarde.")
             else:
                 raise e
 
-# 🛠️ FUNCIÓN PARA LIMPIAR JSON SUCIO DE LA IA
 def extraer_json_seguro(texto_ia):
     match = re.search(r'\{.*\}', texto_ia.strip(), re.DOTALL)
-    if match:
-        return json.loads(match.group(0))
-    else:
-        return json.loads(texto_ia.replace("```json", "").replace("```", "").strip())
+    if match: return json.loads(match.group(0))
+    else: return json.loads(texto_ia.replace("```json", "").replace("```", "").strip())
 
-# 🛠️ FUNCIÓN MAESTRA: CONSTRUCTOR DE HTML CON IMÁGENES INTERCALADAS
+# 🛠️ CONSTRUCTOR DE HTML
 def construir_y_guardar_html(articulo_dict):
     slug = articulo_dict["id"].replace("art-", "")
     os.makedirs("articulos", exist_ok=True)
@@ -183,200 +185,201 @@ def construir_y_guardar_html(articulo_dict):
 </body>
 </html>'''
 
-    with open(html_filename, "w", encoding="utf-8") as hf:
-        hf.write(plantilla_html)
+    with open(html_filename, "w", encoding="utf-8") as hf: hf.write(plantilla_html)
     print(f"🚀 ¡MAQUETACIÓN ESTÁTICA EXITOSA! Creado en: {html_filename}")
 
 # ==========================================================
-# ACCIÓN 1: GENERAR BORRADOR
+# ACCIÓN 1: GENERAR BORRADORES PARCIALES (MAP)
 # ==========================================================
 if accion == "1_generar_borrador":
     if not tema: sys.exit("❌ ERROR: Especifica un tema.")
     
-    contexto = ""
+    fuentes_procesadas = []
+    print(f"🔎 INICIANDO INVESTIGACIÓN FRACCIONADA SOBRE: '{tema}'")
+    
+    # PASO 1: Búsqueda Web General
+    print("\n🌐 [FASE 1] Rastreando noticias generales en la red...")
+    contexto_web = ""
     try:
         with DDGS() as ddgs:
-            print(f"🔍 Rastreando noticias recientes y artículos web sobre: '{tema}'...")
-            try:
-                for r in ddgs.news(tema, max_results=4):
-                    contexto += f"NOTICIA: {r.get('title', '')}\nDatos: {r.get('body', '')}\n\n"
-            except: pass
-            
-            try:
-                for r in ddgs.text(tema, max_results=4):
-                    contexto += f"WEB: {r.get('title', '')}\nDatos: {r.get('body', '')}\n\n"
-            except: pass
-    except Exception as e:
-        print(f"⚠️ Aviso en DuckDuckGo Web: {e}")
+            for r in ddgs.news(tema, max_results=3): contexto_web += f"{r.get('title', '')}: {r.get('body', '')}\n"
+            for r in ddgs.text(tema, max_results=3): contexto_web += f"{r.get('title', '')}: {r.get('body', '')}\n"
+    except: pass
+    
+    if contexto_web:
+        print("🧠 Generando Borrador Global a partir de resultados web...")
+        prompt_web = f"Resume detalladamente la información más importante sobre '{tema}' basándote exclusivamente en estos datos recientes: {contexto_web[:15000]}"
+        try:
+            res_web = generar_texto_ia_con_reintentos(prompt_web, es_json=False)
+            fuentes_procesadas.append(f"--- REPORTE DE BÚSQUEDA WEB ---\n{res_web.text}")
+            print("✅ Borrador Web guardado con éxito.")
+            time.sleep(12) # Pausa técnica obligatoria
+        except Exception as e: print(f"⚠️ Falló el borrador web: {e}")
 
+    # PASO 2: Análisis Individual de Enlaces Manuales
     if enlaces_manuales:
-        print("🔗 Procesando enlaces manuales...")
-        for url in enlaces_manuales.split(","):
-            if not url.strip(): continue
+        print("\n🔗 [FASE 2] Analizando enlaces manuales individualmente...")
+        urls = [u.strip() for u in enlaces_manuales.split(",") if u.strip()]
+        for idx, url in enumerate(urls, 1):
+            print(f"📡 Leyendo Enlace {idx}/{len(urls)}: {url}")
             try:
-                res_web = requests.get(url.strip(), headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+                res_web = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
                 soup = BeautifulSoup(res_web.text, 'html.parser')
                 for s in soup(["script", "style", "nav", "footer", "aside"]): s.decompose()
-                contexto += " ".join(soup.get_text().split())[:2000] + "\n\n"
-            except Exception as e:
-                print(f"⚠️ Aviso extrayendo URL: {e}")
-
-    # Limite de seguridad para evitar saturación masiva de la cuota en Gemini
-    if len(contexto) > 25000:
-        contexto = contexto[:25000]
-
-    prompt = f"""Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
-    Usa esta info fresca: {contexto}
-    REGLA VITAL: Devuelve HTML puro con <p>, <h2>, <ul>, <li> y <strong>. SIN ESTILOS CSS EN LÍNEA.
-    Devuelve un JSON estricto con: 'titulo', 'resumen' y 'cuerpo'."""
-
-    try:
-        print("🧠 Procesando datos con Gemini AI...")
-        response = generar_texto_ia_con_reintentos(prompt)
-        
-        borrador_data = extraer_json_seguro(response.text)
-        borrador_data["categoria"] = categoria
-        
-        termino_base = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
-        print(f"🖼️ Buscando imágenes de ALTA CALIDAD para: '{termino_base}'...")
-        
-        imagenes = []
-        try:
-            with DDGS() as ddgs:
-                for r in ddgs.images(termino_base, max_results=40, size="Large"):
-                    img_url = r.get('image', '')
-                    if img_url.startswith('http') and not any(x in img_url.lower() for x in ['.svg', 'logo', 'icon', 'avatar']): 
-                        imagenes.append(img_url)
-                    if len(imagenes) >= 10: break
-        except Exception as e:
-            print(f"⚠️ Aviso buscador de imágenes: {e}")
-
-        borrador_data["palabra_clave_usada"] = termino_base
-        termino_url = urllib.parse.quote(termino_base)
-        while len(imagenes) < 10:
-            imagenes.append(f"https://image.pollinations.ai/prompt/{termino_url}%20epic%20high%20quality%20{len(imagenes)}?width=1200&height=675&nologo=true")
-
-        borrador_data["imagenes_candidatas"] = imagenes[:10]
-        
-        with open(archivo_borrador, "w", encoding="utf-8") as f:
-            json.dump(borrador_data, f, ensure_ascii=False, indent=2)
-            
-        print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
-        print("\n" + "="*80)
-        print(f"🖼️ CATÁLOGO DE 10 IMÁGENES DE ALTA PRECISIÓN PARA '{termino_base}':")
-        print("="*80)
-        for idx, url in enumerate(borrador_data["imagenes_candidatas"], 1):
-            print(f" 🔹 OPCIÓN [{idx}]: {url}")
-        print("="*80)
-        print("👉 Haz clic en los enlaces para revisarlas. Luego ejecuta la Acción 2 y escribe los números deseados (ej: 1,3,4) o 'Todas'.\n")
-        
-    except Exception as e:
-        sys.exit(f"❌ ERROR CRÍTICO: {e}")
-
-# ==========================================================
-# ACCIÓN 2: PUBLICAR BORRADOR
-# ==========================================================
-elif accion == "2_publicar_borrador":
-    if not os.path.exists(archivo_borrador): sys.exit("❌ ERROR: No hay borrador.")
-    with open(archivo_borrador, "r", encoding="utf-8") as f: borrador = json.load(f)
-        
-    candidatas = borrador.get("imagenes_candidatas", [])
-    imagenes_seleccionadas = []
-    
-    if str(imagen_ok).strip().lower() == "todas":
-        imagenes_seleccionadas = candidatas
-    else:
-        indices = [int(x.strip()) - 1 for x in str(imagen_ok).split(",") if x.strip().isdigit()]
-        imagenes_seleccionadas = [candidatas[i] for i in indices if 0 <= i < len(candidatas)]
+                texto_limpio = " ".join(soup.get_text().split())[:15000] # Límite seguro
                 
-    if not imagenes_seleccionadas: 
-        termino_url_fallback = urllib.parse.quote(borrador.get("palabra_clave_usada", "gaming"))
-        imagenes_seleccionadas = [candidatas[0]] if candidatas else [f"https://image.pollinations.ai/prompt/{termino_url_fallback}?width=1200&height=675&nologo=true"]
-        
-    slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
-    nuevo = {
-        "id": f"art-{slug}",
-        "titulo": borrador["titulo"],
-        "resumen": borrador["resumen"],
-        "cuerpo": borrador["cuerpo"],
-        "categoria": borrador["categoria"],
-        "imagen": imagenes_seleccionadas[0],
-        "imagenes_art": imagenes_seleccionadas,
-        "palabra_clave_usada": borrador.get("palabra_clave_usada", "gaming"),
-        "fecha": datetime.now().strftime("%d %b, %Y")
+                print(f"🧠 Generando Borrador {idx} para este enlace específico...")
+                prompt_enlace = f"Actúa como analista. Extrae y resume los puntos técnicos y noticias más relevantes de este texto sobre '{tema}':\n\n{texto_limpio}"
+                res_enlace = generar_texto_ia_con_reintentos(prompt_enlace, es_json=False)
+                fuentes_procesadas.append(f"--- REPORTE ENLACE {idx} ({url}) ---\n{res_enlace.text}")
+                print(f"✅ Borrador {idx} guardado.")
+                time.sleep(15) # Pausa para evitar el error 429 de Quota
+                
+            except Exception as e:
+                print(f"⚠️ Error procesando el enlace {idx}: {e}")
+
+    if not fuentes_procesadas:
+        sys.exit("❌ ERROR: No se pudo generar ningún borrador. Verifica tu conexión o enlaces.")
+
+    # PASO 3: Compilar Imágenes
+    termino_base = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
+    print(f"\n🖼️ [FASE 3] Buscando imágenes de ALTA CALIDAD para: '{termino_base}'...")
+    imagenes = []
+    try:
+        with DDGS() as ddgs:
+            for r in ddgs.images(termino_base, max_results=40, size="Large"):
+                img_url = r.get('image', '')
+                if img_url.startswith('http') and not any(x in img_url.lower() for x in ['.svg', 'logo', 'icon']): 
+                    imagenes.append(img_url)
+                if len(imagenes) >= 10: break
+    except: pass
+
+    termino_url = urllib.parse.quote(termino_base)
+    while len(imagenes) < 10:
+        imagenes.append(f"https://image.pollinations.ai/prompt/{termino_url}%20epic%20high%20quality%20{len(imagenes)}?width=1200&height=675&nologo=true")
+
+    # Guardar paquete de datos intermedio
+    paquete_borrador = {
+        "tema": tema,
+        "categoria": categoria,
+        "palabra_clave_usada": termino_base,
+        "imagenes_candidatas": imagenes[:10],
+        "borradores_recopilados": fuentes_procesadas
     }
     
-    lista = []
-    if os.path.exists(archivo_oficial):
-        with open(archivo_oficial, "r", encoding="utf-8") as f:
-            try: lista = json.load(f).get("articulos", []) if isinstance(json.load(f), dict) else json.load(f)
-            except: pass
-            
-    lista.insert(0, nuevo)
-    with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(lista, f, ensure_ascii=False, indent=2)
-
-    construir_y_guardar_html(nuevo)
+    with open(archivo_borrador, "w", encoding="utf-8") as f:
+        json.dump(paquete_borrador, f, ensure_ascii=False, indent=2)
+        
+    print("\n🎉 ¡FASE DE INVESTIGACIÓN COMPLETADA!")
+    print("\n" + "="*80)
+    print(f"🖼️ CATÁLOGO DE IMÁGENES PREPARADAS:")
+    for idx, url in enumerate(paquete_borrador["imagenes_candidatas"], 1): print(f" 🔹 OPCIÓN [{idx}]: {url}")
+    print("="*80)
+    print("👉 Ejecuta ahora la Acción 2 para que el Redactor Jefe una todos estos borradores en un Artículo Único.\n")
 
 # ==========================================================
-# ACCIÓN 3: ELIMINAR ARTÍCULO
+# ACCIÓN 2: FUSIONAR BORRADORES Y PUBLICAR (REDUCE)
+# ==========================================================
+elif accion == "2_publicar_borrador":
+    if not os.path.exists(archivo_borrador): sys.exit("❌ ERROR: No hay paquete de investigación. Ejecuta Acción 1.")
+    with open(archivo_borrador, "r", encoding="utf-8") as f: paquete = json.load(f)
+        
+    print(f"🧠 [REDACTOR JEFE] Fusionando {len(paquete['borradores_recopilados'])} borradores para crear el artículo final...")
+    
+    info_consolidada = "\n\n".join(paquete["borradores_recopilados"])
+    
+    prompt_final = f"""Eres el redactor jefe de KazokuGaming. Tu tarea es tomar todos los siguientes reportes/borradores de tus investigadores y fusionarlos en UN ÚNICO artículo maestro sobre '{paquete['tema']}'.
+    
+    El artículo final debe estar muy bien estructurado, ser profundamente analítico, tener un estilo original pro-gaming y leerse de forma coherente y continua (sin mencionar que viene de varias fuentes).
+    
+    BORRADORES RECOPILADOS:
+    {info_consolidada}
+    
+    REGLA VITAL: Devuelve tu respuesta como un objeto JSON estricto con las llaves: 'titulo', 'resumen' y 'cuerpo'.
+    En el 'cuerpo' usa código HTML limpio con etiquetas <p>, <h2>, <h3>, <ul>, <li> y <strong>. ESTÁ PROHIBIDO usar estilos (style=)."""
+
+    try:
+        response = generar_texto_ia_con_reintentos(prompt_final, es_json=True)
+        datos_finales = extraer_json_seguro(response.text)
+        
+        # Selección de imágenes
+        candidatas = paquete.get("imagenes_candidatas", [])
+        if str(imagen_ok).strip().lower() == "todas": imagenes_seleccionadas = candidatas
+        else:
+            indices = [int(x.strip()) - 1 for x in str(imagen_ok).split(",") if x.strip().isdigit()]
+            imagenes_seleccionadas = [candidatas[i] for i in indices if 0 <= i < len(candidatas)]
+            
+        if not imagenes_seleccionadas: imagenes_seleccionadas = [candidatas[0]]
+            
+        slug = re.sub(r'[^a-z0-9]+', '-', datos_finales["titulo"].lower()).strip('-')
+        nuevo_articulo = {
+            "id": f"art-{slug}",
+            "titulo": datos_finales["titulo"],
+            "resumen": datos_finales["resumen"],
+            "cuerpo": datos_finales["cuerpo"],
+            "categoria": paquete["categoria"],
+            "imagen": imagenes_seleccionadas[0],
+            "imagenes_art": imagenes_seleccionadas,
+            "palabra_clave_usada": paquete.get("palabra_clave_usada", "gaming"),
+            "fecha": datetime.now().strftime("%d %b, %Y")
+        }
+        
+        lista = []
+        if os.path.exists(archivo_oficial):
+            with open(archivo_oficial, "r", encoding="utf-8") as f:
+                try: lista = json.load(f).get("articulos", []) if isinstance(json.load(f), dict) else json.load(f)
+                except: pass
+                
+        lista.insert(0, nuevo_articulo)
+        with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(lista, f, ensure_ascii=False, indent=2)
+
+        construir_y_guardar_html(nuevo_articulo)
+        os.remove(archivo_borrador) # Limpiar el caché de la investigación
+        print("✅ ¡INVESTIGACIONES FUSIONADAS Y ARTÍCULO PUBLICADO CON ÉXITO!")
+        
+    except Exception as e:
+        sys.exit(f"❌ ERROR CRÍTICO AL FUSIONAR: {e}")
+
+# ==========================================================
+# ACCIONES 3 y 4 (MANTENIMIENTO)
 # ==========================================================
 elif accion == "3_eliminar_articulo":
     if not id_objetivo: sys.exit("❌ ERROR: Especifica ID o título.")
     if os.path.exists(archivo_oficial):
-        with open(archivo_oficial, "r", encoding="utf-8") as f:
-            lista = json.load(f)
+        with open(archivo_oficial, "r", encoding="utf-8") as f: lista = json.load(f)
         nueva_lista = [a for a in lista if id_objetivo.lower() not in a["id"].lower() and id_objetivo.lower() not in a["titulo"].lower()]
         if len(nueva_lista) < len(lista):
             with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(nueva_lista, f, ensure_ascii=False, indent=2)
-            print("✅ Artículo(s) eliminado(s) de la base de datos.")
-        else:
-            sys.exit("⚠️ No se encontró el artículo.")
+            print("✅ Artículo(s) eliminado(s).")
+        else: sys.exit("⚠️ No se encontró el artículo.")
 
-# ==========================================================
-# ACCIÓN 4: MODIFICAR / MEJORAR ARTÍCULO EXISTENTE
-# ==========================================================
 elif accion == "4_modificar_articulo":
-    if not id_objetivo: sys.exit("❌ ERROR: Especifica el ID o título del artículo a modificar.")
-    if not tema: sys.exit("❌ ERROR: En la casilla 'Tema', escribe qué deseas mejorar (Ej: Añade un párrafo sobre optimización).")
+    if not id_objetivo: sys.exit("❌ ERROR: Especifica el ID o título a modificar.")
+    if not tema: sys.exit("❌ ERROR: Escribe qué deseas mejorar en la casilla Tema.")
     
     if os.path.exists(archivo_oficial):
-        with open(archivo_oficial, "r", encoding="utf-8") as f:
-            lista = json.load(f)
-            
+        with open(archivo_oficial, "r", encoding="utf-8") as f: lista = json.load(f)
         articulo_encontrado = None
         for i, art in enumerate(lista):
             if id_objetivo.lower() in art["id"].lower() or id_objetivo.lower() in art["titulo"].lower():
-                articulo_encontrado = art
-                indice = i
-                break
+                articulo_encontrado = art; indice = i; break
                 
-        if not articulo_encontrado:
-            sys.exit("⚠️ No se encontró el artículo a modificar.")
-            
+        if not articulo_encontrado: sys.exit("⚠️ No se encontró el artículo a modificar.")
+        
         print(f"✏️ Modificando artículo: {articulo_encontrado['titulo']}")
-        print("🧠 Enviando instrucciones de mejora a la IA...")
-        
-        prompt = f"""Eres el redactor jefe. Toma este artículo existente y aplica las siguientes modificaciones/mejoras: '{tema}'.
-        TÍTULO ACTUAL: {articulo_encontrado['titulo']}
-        RESUMEN ACTUAL: {articulo_encontrado['resumen']}
-        CUERPO ACTUAL: {articulo_encontrado['cuerpo']}
-        
-        REGLA VITAL: Mantén el formato en HTML limpio (<p>, <h2>, <ul>). NO uses estilos en línea.
-        Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo' actualizado."""
+        prompt = f"""Mejora este artículo según estas instrucciones: '{tema}'.
+        TÍTULO: {articulo_encontrado['titulo']}\nRESUMEN: {articulo_encontrado['resumen']}\nCUERPO: {articulo_encontrado['cuerpo']}
+        Devuelve JSON estricto con: 'titulo', 'resumen' y 'cuerpo' (HTML limpio)."""
 
         try:
-            response = generar_texto_ia_con_reintentos(prompt)
+            response = generar_texto_ia_con_reintentos(prompt, es_json=True)
             data_modificada = extraer_json_seguro(response.text)
             
             lista[indice]["titulo"] = data_modificada["titulo"]
             lista[indice]["resumen"] = data_modificada["resumen"]
             lista[indice]["cuerpo"] = data_modificada["cuerpo"]
             
-            with open(archivo_oficial, "w", encoding="utf-8") as f: 
-                json.dump(lista, f, ensure_ascii=False, indent=2)
-                
+            with open(archivo_oficial, "w", encoding="utf-8") as f: json.dump(lista, f, ensure_ascii=False, indent=2)
             construir_y_guardar_html(lista[indice])
-            print(f"✅ ¡Artículo modificado, sobreescrito y actualizado con éxito!")
-            
-        except Exception as e:
-            sys.exit(f"❌ ERROR AL MODIFICAR: {e}")
+            print(f"✅ ¡Artículo actualizado con éxito!")
+        except Exception as e: sys.exit(f"❌ ERROR AL MODIFICAR: {e}")
