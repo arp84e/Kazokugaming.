@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import urllib.parse
+import time # Añadido para el control de tiempos y pausas
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -54,6 +55,7 @@ if accion == "1_generar_borrador":
     except Exception as e:
         print(f"⚠️ Alerta DDGS: {e}")
 
+    # --- NUEVO SISTEMA DE PROCESAMIENTO DE ENLACES (MAP-REDUCE + BACKOFF) ---
     contexto_enlaces_manuales = ""
     if enlaces_manuales:
         enlaces_lista = [url.strip() for url in enlaces_manuales.split(",") if url.strip()]
@@ -61,28 +63,44 @@ if accion == "1_generar_borrador":
         
         for index, url in enumerate(enlaces_lista, 1):
             try:
-                # 2.1 Extraer texto de la web
+                # 2.1 Extraer texto de la web limpiando la basura
                 res_web = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
                 soup = BeautifulSoup(res_web.text, 'html.parser')
                 for s in soup(["script", "style", "nav", "footer", "header", "aside"]): s.decompose()
-                texto_crudo = " ".join(soup.get_text().split())[:3000] # Tomamos un poco más de contexto
+                texto_crudo = " ".join(soup.get_text().split())[:3000]
                 
-                # 2.2 Crear un mini-borrador por cada enlace usando Gemini
+                # 2.2 Crear un mini-borrador con sistema anti-bloqueos
                 print(f"   🧠 Generando Análisis Previo {index}/{len(enlaces_lista)}...")
                 prompt_mini = f"Resume y extrae los puntos más importantes, datos técnicos y citas clave del siguiente texto extraído de una web. Establécelo como 'Análisis {index}':\n\n{texto_crudo}"
                 
-                res_mini = client.models.generate_content(
-                    model="gemini-3.5-flash",
-                    contents=prompt_mini,
-                    config=types.GenerateContentConfig(safety_settings=seguridad)
-                )
+                intentos = 0
+                res_mini_texto = ""
                 
-                # 2.3 Acumular los análisis estructurados
-                contexto_enlaces_manuales += f"--- ANÁLISIS DEL ENLACE {index} ---\n{res_mini.text}\n\n"
+                while intentos < 3:
+                    try:
+                        res_mini = client.models.generate_content(
+                            model="gemini-1.5-flash", # Motor estable
+                            contents=prompt_mini,
+                            config=types.GenerateContentConfig(safety_settings=seguridad)
+                        )
+                        res_mini_texto = res_mini.text
+                        break 
+                    except Exception as e_ia:
+                        intentos += 1
+                        tiempo_espera = intentos * 10 
+                        print(f"     ⏳ Servidor ocupado (Intento {intentos}/3). Esperando {tiempo_espera}s...")
+                        time.sleep(tiempo_espera)
+                
+                # 2.3 Acumular los análisis
+                if res_mini_texto:
+                    contexto_enlaces_manuales += f"--- ANÁLISIS DEL ENLACE {index} ---\n{res_mini_texto}\n\n"
+                else:
+                    print(f"   ⚠️ Se omitió el enlace {index} tras fallar los reintentos.")
                 
             except Exception as e:
-                print(f"   ⚠️ Error procesando enlace {index} ({url}): {e}")
+                print(f"   ⚠️ Error leyendo la web {index} ({url}): {e}")
 
+    # --- GENERACIÓN DEL ARTÍCULO FINAL ---
     print("🧠 3. Solicitando redacción profesional a Gemini...")
     prompt = f"""
     Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
@@ -96,13 +114,30 @@ if accion == "1_generar_borrador":
     - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
     """
 
+    # Sistema anti-errores también para la generación final
+    intentos_principal = 0
+    borrador_data = None
+    
+    while intentos_principal < 3:
+        try:
+            response = client.models.generate_content(
+                model="gemini-1.5-flash", # Motor estable
+                contents=prompt,
+                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+            )
+            borrador_data = json.loads(response.text)
+            break
+        except Exception as e:
+            intentos_principal += 1
+            tiempo_espera = intentos_principal * 10
+            print(f"   ⏳ IA procesando artículo final (Intento {intentos_principal}/3). Esperando {tiempo_espera}s...")
+            time.sleep(tiempo_espera)
+
+    if not borrador_data:
+         print("❌ ERROR CRÍTICO: No se pudo generar el artículo tras varios intentos.")
+         sys.exit(1)
+
     try:
-        response = client.models.generate_content(
-            model="gemini-3.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-        )
-        borrador_data = json.loads(response.text)
         borrador_data["categoria"] = categoria
         
         # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES
@@ -112,7 +147,6 @@ if accion == "1_generar_borrador":
         imagenes_encontradas = []
         try:
             with DDGS() as ddgs:
-                # Quitamos el filtro 'license' para asegurar resultados precisos a la palabra clave
                 res_images = [r for r in ddgs.images(termino_img, max_results=30)]
                 for r in res_images:
                     if r.get('image') and r.get('image').startswith('http'):
@@ -125,11 +159,10 @@ if accion == "1_generar_borrador":
         termino_url = urllib.parse.quote(termino_img)
         while len(imagenes_encontradas) < 10:
             random_id = len(imagenes_encontradas) + 1
-            # Pollinations genera imágenes libres de copyright basadas en la palabra clave al vuelo!
             imagenes_encontradas.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20wallpaper%20high%20quality%20{random_id}?width=1200&height=675&nologo=true")
 
         borrador_data["imagenes_candidatas"] = imagenes_encontradas[:10]
-        borrador_data["palabra_clave_usada"] = termino_img # Guardamos la palabra clave para la auto-sanación HTML
+        borrador_data["palabra_clave_usada"] = termino_img 
         
         with open(archivo_borrador, "w", encoding="utf-8") as f:
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
@@ -142,7 +175,7 @@ if accion == "1_generar_borrador":
         print("="*80)
         
     except Exception as e:
-        print(f"❌ ERROR EN BORRADOR: {e}")
+        print(f"❌ ERROR AL GUARDAR EL BORRADOR: {e}")
         sys.exit(1)
 
 # ==========================================================
@@ -208,11 +241,9 @@ elif accion == "2_publicar_borrador":
         html_galeria += '''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">'''
         for i, img_sec in enumerate(imagenes_seleccionadas[1:]):
             fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true"
-            # referrerpolicy="no-referrer" evita que las webs bloqueen la imagen. onerror hace que si falla, cargue una imagen IA de respaldo.
             html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/10] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
         html_galeria += '''</div></div>'''
 
-    # CSS forzado con !important para garantizar contraste perfecto y legibilidad anulando la IA
     plantilla_html = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -224,7 +255,6 @@ elif accion == "2_publicar_borrador":
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }}
-        /* Forzador absoluto de legibilidad */
         .prose-custom * {{ color: #cbd5e1 !important; background-color: transparent !important; font-family: inherit !important; line-height: 1.8 !important; }}
         .prose-custom h2, .prose-custom h3 {{ color: #f8fafc !important; font-weight: 800 !important; margin-top: 2em !important; margin-bottom: 1em !important; border-left: 4px solid #06b6d4; padding-left: 12px; }}
         .prose-custom strong, .prose-custom b {{ color: #22d3ee !important; font-weight: 700 !important; }}
@@ -279,12 +309,10 @@ elif accion == "3_eliminar_articulo":
         eliminados = 0
         
         for art in lista:
-            # Busca coincidencia parcial en el ID o en el Título ignorando mayúsculas
             if id_borrar.lower() in art["id"].lower() or id_borrar.lower() in art["titulo"].lower():
                 slug = art["id"].replace("art-", "")
                 ruta_html = f"articulos/{slug}.html"
                 
-                # Borrar el archivo HTML estático si existe
                 if os.path.exists(ruta_html):
                     os.remove(ruta_html)
                     print(f"🗑️ Archivo HTML destruido: {ruta_html}")
