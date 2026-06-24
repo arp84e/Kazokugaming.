@@ -82,19 +82,27 @@ if accion == "1_generar_borrador":
     - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
     """
 
-    # --- SISTEMA PROFESIONAL DE REDUNDANCIA EN CASCADA ---
-    # El bot intentará usar estos modelos en orden. Si uno falla, pasa al siguiente.
-    modelos_disponibles = ["gemini-3.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    # --- SISTEMA PROFESIONAL DE REDUNDANCIA EN CASCADA (ACTUALIZADO) ---
+    # Eliminamos las versiones 1.5 obsoletas y agregamos las vigentes
+    modelos_disponibles = [
+        "gemini-3.5-flash", 
+        "gemini-3.5-pro", 
+        "gemini-3.0-flash", 
+        "gemini-2.5-flash"
+    ]
+    
     exito_ia = False
     borrador_data = {}
 
     for modelo in modelos_disponibles:
         if exito_ia:
-            break # Si ya tuvo éxito, sale de la lista de modelos
+            break 
             
         print(f"\n🚀 Intentando contactar al servidor del modelo: [{modelo}]...")
-        max_reintentos = 2
-        tiempo_espera = 5 
+        # Le damos 3 intentos al modelo principal, 2 a los de respaldo
+        max_reintentos = 3 if modelo == "gemini-3.5-flash" else 2
+        # Tiempos de espera más relajados para darle tiempo al servidor a recuperarse
+        tiempo_espera = 15 if modelo == "gemini-3.5-flash" else 8 
         
         for intento in range(max_reintentos):
             try:
@@ -108,17 +116,17 @@ if accion == "1_generar_borrador":
                 borrador_data["categoria"] = categoria
                 exito_ia = True
                 print(f"   ✅ ¡Conexión exitosa usando el modelo {modelo}!")
-                break # Rompe el bucle de reintentos
+                break 
                 
             except Exception as e:
                 print(f"   ⚠️ Fallo temporal con {modelo}: {e}")
                 if intento < max_reintentos - 1:
                     print(f"   ⏳ Esperando {tiempo_espera}s antes de volver a intentar con este modelo...")
                     time.sleep(tiempo_espera)
-                    tiempo_espera *= 2
+                    tiempo_espera *= 1.5 # Aumenta el tiempo progresivamente
 
     if not exito_ia:
-        print("\n❌ ERROR CRÍTICO: Todos los modelos de Google están colapsados en este momento. Inténtalo en unos minutos.")
+        print("\n❌ ERROR CRÍTICO: Todos los servidores modernos de Google están saturados en este momento. Inténtalo en 5 minutos.")
         sys.exit(1)
     # -----------------------------------------------------------------
 
