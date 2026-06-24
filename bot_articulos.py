@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 
-# CORRECCIÓN 1: Nueva importación de la librería renombrada
+# Usamos la librería ddgs actualizada
 from ddgs import DDGS
 from datetime import datetime
 
@@ -84,8 +84,8 @@ if accion == "1_generar_borrador":
 
     try:
         response = client.models.generate_content(
-            # CORRECCIÓN 2: Actualizado al modelo real y existente
-            model="gemini-2.0-flash",
+            # SOLUCIÓN: Actualizado al modelo vigente de última generación de Google
+            model="gemini-3.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
         )
@@ -99,7 +99,6 @@ if accion == "1_generar_borrador":
         imagenes_encontradas = []
         try:
             with DDGS() as ddgs:
-                # Quitamos el filtro 'license' para asegurar resultados precisos a la palabra clave
                 res_images = [r for r in ddgs.images(termino_img, max_results=30)]
                 for r in res_images:
                     if r.get('image') and r.get('image').startswith('http'):
@@ -108,15 +107,14 @@ if accion == "1_generar_borrador":
         except Exception as img_err:
             print(f"⚠️ Error al buscar imágenes: {img_err}")
 
-        # Auto-sanación con IA Generativa si no encuentra suficientes
+        # Auto-sanación con IA Generativa si faltan imágenes
         termino_url = urllib.parse.quote(termino_img)
         while len(imagenes_encontradas) < 10:
             random_id = len(imagenes_encontradas) + 1
-            # Pollinations genera imágenes libres de copyright basadas en la palabra clave al vuelo!
             imagenes_encontradas.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20wallpaper%20high%20quality%20{random_id}?width=1200&height=675&nologo=true")
 
         borrador_data["imagenes_candidatas"] = imagenes_encontradas[:10]
-        borrador_data["palabra_clave_usada"] = termino_img # Guardamos la palabra clave para la auto-sanación HTML
+        borrador_data["palabra_clave_usada"] = termino_img
         
         with open(archivo_borrador, "w", encoding="utf-8") as f:
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
@@ -129,7 +127,6 @@ if accion == "1_generar_borrador":
         print("="*80)
         
     except Exception as e:
-        # CORRECCIÓN 3: Imprimir el error exacto y técnico para no ocultarlo nunca
         print(f"❌ DETALLE TÉCNICO DEL ERROR DE GEMINI/PYTHON: {e}")
         print("❌ ERROR CRÍTICO: No se pudo generar el artículo.")
         sys.exit(1)
@@ -207,7 +204,7 @@ elif accion == "2_publicar_borrador":
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nuevo["titulo"]} | KazokuGaming</title>
     <link rel="icon" type="image/png" href="../favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }}
