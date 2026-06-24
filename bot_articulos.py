@@ -5,6 +5,7 @@ import re
 import requests
 import urllib.parse
 import time
+import random # <- NUEVA LIBRERÍA: Para generar semillas aleatorias y evitar imágenes repetidas
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -70,6 +71,7 @@ if accion == "1_generar_borrador":
             except: pass
 
     print("🧠 3. Solicitando redacción profesional a Gemini...")
+    # --- AHORA GEMINI TAMBIÉN ES DIRECTOR DE ARTE ---
     prompt = f"""
     Eres el redactor jefe de KazokuGaming. Escribe un artículo de prensa excepcional, profundo y 100% original sobre: '{tema}'.
     Usa esta info:
@@ -78,30 +80,19 @@ if accion == "1_generar_borrador":
     
     REGLA VITAL DE FORMATO PARA EL CUERPO: 
     - Devuelve HTML puro con <p>, <h2>, <h3>, <ul>, <li> y <strong>.
-    - ESTÁ ESTRICTAMENTE PROHIBIDO usar estilos en línea (NO uses 'style=', NO uses colores). Todo debe ser limpio para que el CSS de la web tome el control.
-    - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
+    - ESTÁ ESTRICTAMENTE PROHIBIDO usar estilos en línea (NO uses 'style=', NO uses colores). Todo debe ser limpio.
+    - Devuelve un JSON con: 'titulo', 'resumen', 'cuerpo' y 'prompt_imagen'.
+    - 'prompt_imagen': ACTÚA COMO DIRECTOR DE ARTE. Escribe un texto corto EN INGLÉS (máx 15 palabras) describiendo una imagen hiperrealista y espectacular para ilustrar este artículo. Ej: "Valve steam machine console, high tech gaming, cyberpunk, 8k".
     """
 
-    # --- SISTEMA PROFESIONAL DE REDUNDANCIA EN CASCADA (ACTUALIZADO) ---
-    # Eliminamos las versiones 1.5 obsoletas y agregamos las vigentes
-    modelos_disponibles = [
-        "gemini-3.5-flash", 
-        "gemini-3.5-pro", 
-        "gemini-3.0-flash", 
-        "gemini-2.5-flash"
-    ]
-    
+    modelos_disponibles = ["gemini-3.5-flash", "gemini-3.5-pro", "gemini-3.0-flash", "gemini-2.5-flash"]
     exito_ia = False
     borrador_data = {}
 
     for modelo in modelos_disponibles:
-        if exito_ia:
-            break 
-            
+        if exito_ia: break 
         print(f"\n🚀 Intentando contactar al servidor del modelo: [{modelo}]...")
-        # Le damos 3 intentos al modelo principal, 2 a los de respaldo
         max_reintentos = 3 if modelo == "gemini-3.5-flash" else 2
-        # Tiempos de espera más relajados para darle tiempo al servidor a recuperarse
         tiempo_espera = 15 if modelo == "gemini-3.5-flash" else 8 
         
         for intento in range(max_reintentos):
@@ -117,49 +108,57 @@ if accion == "1_generar_borrador":
                 exito_ia = True
                 print(f"   ✅ ¡Conexión exitosa usando el modelo {modelo}!")
                 break 
-                
             except Exception as e:
                 print(f"   ⚠️ Fallo temporal con {modelo}: {e}")
                 if intento < max_reintentos - 1:
                     print(f"   ⏳ Esperando {tiempo_espera}s antes de volver a intentar con este modelo...")
                     time.sleep(tiempo_espera)
-                    tiempo_espera *= 1.5 # Aumenta el tiempo progresivamente
+                    tiempo_espera *= 1.5 
 
     if not exito_ia:
         print("\n❌ ERROR CRÍTICO: Todos los servidores modernos de Google están saturados en este momento. Inténtalo en 5 minutos.")
         sys.exit(1)
-    # -----------------------------------------------------------------
 
     try:
-        # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES
+        # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES Y DIRECTOR DE ARTE IA
         termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
-        print(f"\n🖼️ 4. Buscando imágenes precisas para: '{termino_img}'...")
+        print(f"\n🖼️ 4. Procesando apartado visual...")
+        
+        # Obtenemos la instrucción en inglés perfecta que nos dio Gemini
+        prompt_ia_ingles = borrador_data.get("prompt_imagen", f"{termino_img} gaming high quality")
+        print(f"   🎨 Director de Arte IA sugiere: '{prompt_ia_ingles}'")
+        termino_url = urllib.parse.quote(prompt_ia_ingles + ", masterpiece, hyperrealistic")
         
         imagenes_encontradas = []
+        
+        # Intentamos rescatar fotos reales de internet (máximo 3 para asegurar calidad)
         try:
             with DDGS() as ddgs:
-                res_images = [r for r in ddgs.images(termino_img, max_results=30)]
+                query_ddgs = termino_img if "gam" in termino_img.lower() else f"{termino_img} gaming"
+                res_images = [r for r in ddgs.images(query_ddgs, max_results=10)]
                 for r in res_images:
-                    if r.get('image') and r.get('image').startswith('http'):
-                        imagenes_encontradas.append(r.get('image'))
-                    if len(imagenes_encontradas) >= 10: break
+                    img_url = r.get('image', '')
+                    if img_url.startswith('http') and any(ext in img_url.lower() for ext in ['.jpg', '.jpeg', '.png', '.webp']):
+                        imagenes_encontradas.append(img_url)
+                    if len(imagenes_encontradas) >= 3: 
+                        break
         except Exception as img_err:
-            print(f"⚠️ Error al buscar imágenes: {img_err}")
+            print(f"   ⚠️ Buscador de imágenes reales falló: {img_err}")
 
-        termino_url = urllib.parse.quote(termino_img)
+        # GENERACIÓN CON IA: El secreto matemático para no repetir imágenes
         while len(imagenes_encontradas) < 10:
-            random_id = len(imagenes_encontradas) + 1
-            imagenes_encontradas.append(f"https://image.pollinations.ai/prompt/{termino_url}%20gaming%20wallpaper%20high%20quality%20{random_id}?width=1200&height=675&nologo=true")
+            semilla = random.randint(1, 9999999) # <- Genera un número del 1 al 9 millones
+            imagenes_encontradas.append(f"https://image.pollinations.ai/prompt/{termino_url}?width=1200&height=675&nologo=true&seed={semilla}")
 
         borrador_data["imagenes_candidatas"] = imagenes_encontradas[:10]
-        borrador_data["palabra_clave_usada"] = termino_img
+        borrador_data["palabra_clave_usada"] = prompt_ia_ingles
         
         with open(archivo_borrador, "w", encoding="utf-8") as f:
             json.dump(borrador_data, f, ensure_ascii=False, indent=2)
             
         print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
         print("="*80)
-        print(f"🖼️ CATÁLOGO DE 10 IMÁGENES ENCONTRADAS PARA '{termino_img}':")
+        print(f"🖼️ CATÁLOGO DE 10 IMÁGENES ÚNICAS Y RELEVANTES:")
         for idx, url in enumerate(borrador_data["imagenes_candidatas"], 1):
             print(f" 🔹 [{idx}]: {url}")
         print("="*80)
@@ -180,7 +179,7 @@ elif accion == "2_publicar_borrador":
         borrador = json.load(f)
         
     candidatas = borrador.get("imagenes_candidatas", [])
-    termino_img_fallback = urllib.parse.quote(borrador.get("palabra_clave_usada", "gaming"))
+    termino_img_fallback = urllib.parse.quote(borrador.get("palabra_clave_usada", "gaming") + ", masterpiece")
     
     imagenes_seleccionadas = []
     imagen_ok_limpio = str(imagen_ok).strip()
@@ -193,7 +192,7 @@ elif accion == "2_publicar_borrador":
             if 0 <= idx < len(candidatas): imagenes_seleccionadas.append(candidatas[idx])
                 
     if not imagenes_seleccionadas:
-        imagenes_seleccionadas = [candidatas[0]] if candidatas else [f"https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true"]
+        imagenes_seleccionadas = [candidatas[0]] if candidatas else [f"https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true&seed=1"]
         
     imagen_principal = imagenes_seleccionadas[0]
     slug = re.sub(r'[^a-z0-9]+', '-', borrador["titulo"].lower()).strip('-')
@@ -230,7 +229,7 @@ elif accion == "2_publicar_borrador":
     if len(imagenes_seleccionadas) > 1:
         html_galeria += f'''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">'''
         for i, img_sec in enumerate(imagenes_seleccionadas[1:]):
-            fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true"
+            fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true&seed={i+100}"
             html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/10] bg-slate-950 group"><img src="{img_sec}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
         html_galeria += '''</div></div>'''
 
@@ -262,7 +261,7 @@ elif accion == "2_publicar_borrador":
             <p class="text-lg text-slate-400">{nuevo["resumen"]}</p>
         </div>
         <div class="w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-2xl border border-slate-800/50 bg-slate-900">
-            <img src="{nuevo["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true'">
+            <img src="{nuevo["imagen"]}" referrerpolicy="no-referrer" class="w-full h-full object-cover" onerror="this.src='https://image.pollinations.ai/prompt/{termino_img_fallback}?width=1200&height=675&nologo=true&seed=99'">
         </div>
         <div class="prose-custom bg-slate-900/40 p-8 sm:p-10 rounded-3xl border border-slate-700/50 shadow-lg">
             {nuevo["cuerpo"]}
