@@ -4,12 +4,11 @@ import json
 import re
 import requests
 import urllib.parse
-import time # <- NUEVA LIBRERÍA AÑADIDA PARA CONTROLAR EL TIEMPO
+import time
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 
-# Usamos la librería ddgs actualizada
 from ddgs import DDGS
 from datetime import datetime
 
@@ -83,37 +82,50 @@ if accion == "1_generar_borrador":
     - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
     """
 
-    # --- SISTEMA PROFESIONAL DE REINTENTOS ANTI-CAÍDAS (ERROR 503) ---
-    max_reintentos = 3
-    tiempo_espera = 10 # Empezaremos esperando 10 segundos
+    # --- SISTEMA PROFESIONAL DE REDUNDANCIA EN CASCADA ---
+    # El bot intentará usar estos modelos en orden. Si uno falla, pasa al siguiente.
+    modelos_disponibles = ["gemini-3.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    exito_ia = False
+    borrador_data = {}
 
-    for intento in range(max_reintentos):
-        try:
-            print(f"   ⏳ IA procesando artículo final (Intento {intento + 1}/{max_reintentos})...")
-            response = client.models.generate_content(
-                model="gemini-3.5-flash", # Usando tu versión actual confirmada
-                contents=prompt,
-                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-            )
-            borrador_data = json.loads(response.text)
-            borrador_data["categoria"] = categoria
-            break # Si la conexión es exitosa, rompemos el bucle y continuamos con el script
+    for modelo in modelos_disponibles:
+        if exito_ia:
+            break # Si ya tuvo éxito, sale de la lista de modelos
+            
+        print(f"\n🚀 Intentando contactar al servidor del modelo: [{modelo}]...")
+        max_reintentos = 2
+        tiempo_espera = 5 
+        
+        for intento in range(max_reintentos):
+            try:
+                print(f"   ⏳ Procesando con {modelo} (Intento {intento + 1}/{max_reintentos})...")
+                response = client.models.generate_content(
+                    model=modelo,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+                )
+                borrador_data = json.loads(response.text)
+                borrador_data["categoria"] = categoria
+                exito_ia = True
+                print(f"   ✅ ¡Conexión exitosa usando el modelo {modelo}!")
+                break # Rompe el bucle de reintentos
+                
+            except Exception as e:
+                print(f"   ⚠️ Fallo temporal con {modelo}: {e}")
+                if intento < max_reintentos - 1:
+                    print(f"   ⏳ Esperando {tiempo_espera}s antes de volver a intentar con este modelo...")
+                    time.sleep(tiempo_espera)
+                    tiempo_espera *= 2
 
-        except Exception as e:
-            print(f"⚠️ Aviso del servidor en el intento {intento + 1}: {e}")
-            if intento < max_reintentos - 1:
-                print(f"   ⏳ Servidores de Google muy ocupados. Esperando {tiempo_espera} segundos antes de reintentar...")
-                time.sleep(tiempo_espera)
-                tiempo_espera *= 2 # Multiplicamos por 2 para el próximo reintento (20s, 40s...)
-            else:
-                print("❌ ERROR CRÍTICO: No se pudo generar el artículo tras varios intentos. Inténtalo de nuevo más tarde.")
-                sys.exit(1)
+    if not exito_ia:
+        print("\n❌ ERROR CRÍTICO: Todos los modelos de Google están colapsados en este momento. Inténtalo en unos minutos.")
+        sys.exit(1)
     # -----------------------------------------------------------------
 
     try:
         # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES
         termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
-        print(f"🖼️ 4. Buscando imágenes precisas para: '{termino_img}'...")
+        print(f"\n🖼️ 4. Buscando imágenes precisas para: '{termino_img}'...")
         
         imagenes_encontradas = []
         try:
@@ -126,7 +138,6 @@ if accion == "1_generar_borrador":
         except Exception as img_err:
             print(f"⚠️ Error al buscar imágenes: {img_err}")
 
-        # Auto-sanación con IA Generativa si faltan imágenes
         termino_url = urllib.parse.quote(termino_img)
         while len(imagenes_encontradas) < 10:
             random_id = len(imagenes_encontradas) + 1
