@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import urllib.parse
+import time # <- NUEVA LIBRERÍA AÑADIDA PARA CONTROLAR EL TIEMPO
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -82,16 +83,34 @@ if accion == "1_generar_borrador":
     - Devuelve un JSON con: 'titulo', 'resumen' y 'cuerpo'.
     """
 
+    # --- SISTEMA PROFESIONAL DE REINTENTOS ANTI-CAÍDAS (ERROR 503) ---
+    max_reintentos = 3
+    tiempo_espera = 10 # Empezaremos esperando 10 segundos
+
+    for intento in range(max_reintentos):
+        try:
+            print(f"   ⏳ IA procesando artículo final (Intento {intento + 1}/{max_reintentos})...")
+            response = client.models.generate_content(
+                model="gemini-3.5-flash", # Usando tu versión actual confirmada
+                contents=prompt,
+                config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
+            )
+            borrador_data = json.loads(response.text)
+            borrador_data["categoria"] = categoria
+            break # Si la conexión es exitosa, rompemos el bucle y continuamos con el script
+
+        except Exception as e:
+            print(f"⚠️ Aviso del servidor en el intento {intento + 1}: {e}")
+            if intento < max_reintentos - 1:
+                print(f"   ⏳ Servidores de Google muy ocupados. Esperando {tiempo_espera} segundos antes de reintentar...")
+                time.sleep(tiempo_espera)
+                tiempo_espera *= 2 # Multiplicamos por 2 para el próximo reintento (20s, 40s...)
+            else:
+                print("❌ ERROR CRÍTICO: No se pudo generar el artículo tras varios intentos. Inténtalo de nuevo más tarde.")
+                sys.exit(1)
+    # -----------------------------------------------------------------
+
     try:
-        response = client.models.generate_content(
-            # SOLUCIÓN: Actualizado al modelo vigente de última generación de Google
-            model="gemini-3.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(safety_settings=seguridad, response_mime_type="application/json")
-        )
-        borrador_data = json.loads(response.text)
-        borrador_data["categoria"] = categoria
-        
         # 🖼️ BÚSQUEDA AVANZADA DE IMÁGENES
         termino_img = palabras_clave_imagenes if palabras_clave_imagenes.strip() else tema
         print(f"🖼️ 4. Buscando imágenes precisas para: '{termino_img}'...")
@@ -127,8 +146,7 @@ if accion == "1_generar_borrador":
         print("="*80)
         
     except Exception as e:
-        print(f"❌ DETALLE TÉCNICO DEL ERROR DE GEMINI/PYTHON: {e}")
-        print("❌ ERROR CRÍTICO: No se pudo generar el artículo.")
+        print(f"❌ DETALLE TÉCNICO DEL ERROR FINAL: {e}")
         sys.exit(1)
 
 # ==========================================================
@@ -204,7 +222,7 @@ elif accion == "2_publicar_borrador":
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nuevo["titulo"]} | KazokuGaming</title>
     <link rel="icon" type="image/png" href="../favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }}
