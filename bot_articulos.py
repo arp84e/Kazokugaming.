@@ -6,7 +6,7 @@ import requests
 import urllib.parse
 import time
 import random
-import base64 # <- NUEVA LIBRERÍA: Necesaria para codificar y guardar las imágenes puras de Nano Banana
+import base64 
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -23,7 +23,8 @@ categoria = os.environ.get("INPUT_CATEGORIA", "Tecnología")
 enlaces_manuales = os.environ.get("INPUT_ENLACES", "")
 imagen_ok = os.environ.get("INPUT_IMAGEN_OK", "1")
 palabras_clave_imagenes = os.environ.get("INPUT_PALABRAS_CLAVE_IMAGENES", "")
-prompt_nano_banana = os.environ.get("INPUT_PROMPT_NANO_BANANA", "")
+url_imagen_manual = os.environ.get("INPUT_URL_IMAGEN_MANUAL", "").strip()
+prompt_nano_banana = os.environ.get("INPUT_PROMPT_NANO_BANANA", "").strip()
 id_borrar = os.environ.get("INPUT_ID_BORRAR", "")
 api_key = os.environ.get("GEMINI_API_KEY")
 
@@ -126,37 +127,62 @@ if accion == "1_generar_borrador":
         
         imagenes_encontradas = []
         
-        # --- NUEVO: INTEGRACIÓN NANO BANANA (Gemini Flash Image) ---
-        if prompt_nano_banana.strip():
+        # --- NUEVO: INTEGRACIÓN IMAGEN MANUAL Y NANO BANANA ---
+        if url_imagen_manual and not prompt_nano_banana:
+            # Caso 1: Solo proporcionó URL (Quiere usarla sin IA)
+            print(f"   🖼️ Usando imagen manual original sin IA: {url_imagen_manual}")
+            imagenes_encontradas.append(url_imagen_manual)
+            
+        elif prompt_nano_banana:
+            # Caso 2 y 3: Solicitó Nano Banana (Con o sin imagen base)
             print(f"   🍌 Solicitando a Nano Banana con tu prompt: '{prompt_nano_banana}'")
+            contents_payload = []
+            
+            if url_imagen_manual:
+                print(f"   🔗 Descargando imagen base para que Nano Banana la modifique...")
+                try:
+                    res_img = requests.get(url_imagen_manual, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+                    if res_img.status_code == 200:
+                        mime_type = res_img.headers.get('Content-Type', 'image/jpeg')
+                        contents_payload.append(types.Part.from_bytes(data=res_img.content, mime_type=mime_type))
+                        print("   ✅ Imagen base descargada e inyectada al motor de IA.")
+                    else:
+                        print(f"   ⚠️ La URL base devolvió error {res_img.status_code}. Generando desde cero.")
+                except Exception as e:
+                    print(f"   ⚠️ Error descargando la imagen manual: {e}. Generando desde cero.")
+            
+            contents_payload.append(prompt_nano_banana)
+            
             try:
                 img_response = client.models.generate_content(
-                    model="gemini-3.1-flash-image", # Modelo de imagen optimizado
-                    contents=[prompt_nano_banana],
+                    model="gemini-3.1-flash-image",
+                    contents=contents_payload,
                     config=types.GenerateContentConfig(
                         response_modalities=["IMAGE"],
                         image_config=types.ImageConfig(aspect_ratio="16:9")
                     )
                 )
                 
-                # Transformamos la imagen pura a Base64 temporalmente para incrustarla en el JSON
                 for part in img_response.candidates[0].content.parts:
                     if part.inline_data:
                         img_bytes = part.inline_data.data
                         img_b64 = base64.b64encode(img_bytes).decode('utf-8')
-                        mime_type = getattr(part.inline_data, "mime_type", "image/jpeg")
-                        data_uri = f"data:{mime_type};base64,{img_b64}"
+                        mime = getattr(part.inline_data, "mime_type", "image/jpeg")
+                        data_uri = f"data:{mime};base64,{img_b64}"
                         imagenes_encontradas.append(data_uri)
-                        print("   ✅ ¡Imagen hiperrealista generada por Nano Banana y almacenada en memoria!")
+                        print("   ✅ ¡Imagen generada/modificada por Nano Banana con éxito!")
                         break
             except Exception as e:
-                print(f"   ⚠️ Fallo al usar Nano Banana, pasando a Plan B: {e}")
+                print(f"   ⚠️ Fallo al usar Nano Banana: {e}")
+                if url_imagen_manual:
+                    print("   ⚠️ Usando la imagen manual original como Plan B de respaldo.")
+                    imagenes_encontradas.append(url_imagen_manual)
 
         prompt_ia_ingles = borrador_data.get("prompt_imagen", f"{termino_img} gaming high quality")
         
-        # --- PLAN B DE RESPALDO (Si no se pidió Nano Banana o si falló) ---
+        # --- RELLENO DEL CATÁLOGO DE RESPALDO (Galería) ---
         if not imagenes_encontradas:
-            print(f"   🎨 Director de Arte IA sugiere usar red externa: '{prompt_ia_ingles}'")
+            print(f"   🎨 Director de Arte IA sugiere buscar: '{prompt_ia_ingles}'")
             try:
                 with DDGS() as ddgs:
                     query_ddgs = termino_img if "gam" in termino_img.lower() else f"{termino_img} gaming"
@@ -183,8 +209,8 @@ if accion == "1_generar_borrador":
         print(f"\n🎉 ¡BORRADOR PREPARADO! Título: {borrador_data['titulo']}")
         print("="*80)
         print("🖼️ CATÁLOGO DE IMÁGENES PREPARADO")
-        if prompt_nano_banana.strip():
-            print(" 🔹 [1]: <Imagen renderizada nativamente por Nano Banana>")
+        if url_imagen_manual or prompt_nano_banana:
+            print(" 🔹 [1]: <Imagen Primaria Personalizada / Nano Banana>")
         
     except Exception as e:
         print(f"❌ DETALLE TÉCNICO DEL ERROR FINAL: {e}")
@@ -218,10 +244,8 @@ elif accion == "2_publicar_borrador":
     os.makedirs("articulos", exist_ok=True)
     rutas_imagenes_finales = []
     
-    # --- SISTEMA INTELIGENTE DE EXTRACCIÓN DE IMÁGENES (Guarda localmente las Base64) ---
     for idx_img, img_data in enumerate(imagenes_seleccionadas):
         if img_data.startswith("data:image"):
-            # ¡Es una imagen de Nano Banana! La decodificamos y la guardamos como archivo nativo .jpg
             header, encoded = img_data.split(",", 1)
             ext = header.split(";")[0].split("/")[1]
             if ext == "jpeg": ext = "jpg"
@@ -234,7 +258,7 @@ elif accion == "2_publicar_borrador":
                 f.write(base64.b64decode(encoded))
                 
             rutas_imagenes_finales.append(f"articulos/{img_filename}")
-            print(f"   📸 Nano Banana: Imagen convertida a archivo físico en '{img_path}'")
+            print(f"   📸 Imagen de Nano Banana convertida a archivo físico: '{img_path}'")
         else:
             rutas_imagenes_finales.append(img_data)
             
@@ -249,7 +273,7 @@ elif accion == "2_publicar_borrador":
         "resumen": borrador["resumen"],
         "cuerpo": borrador["cuerpo"],
         "categoria": borrador["categoria"],
-        "imagen": imagen_principal, # Se guarda la ruta relativa "articulos/img-X.jpg" para el grid principal
+        "imagen": imagen_principal,
         "fecha": datetime.now().strftime("%d %b, %Y")
     }
     
@@ -274,7 +298,6 @@ elif accion == "2_publicar_borrador":
         html_galeria += f'''<div class="mt-12 pt-8 border-t border-slate-800/60"><h3 class="text-xs font-black text-cyan-400 uppercase tracking-widest mb-6 border-l-4 border-cyan-500 pl-3">Galería Multimedia</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">'''
         for i, img_sec in enumerate(rutas_imagenes_finales[1:]):
             fallback = f"https://image.pollinations.ai/prompt/{termino_img_fallback}%20extra%20{i}?width=1200&height=675&nologo=true&seed={i+100}"
-            # Ajuste de ruta relativa si la imagen está guardada localmente
             img_sec_html = f"../{img_sec}" if not str(img_sec).startswith("http") else img_sec
             html_galeria += f'''<div class="rounded-2xl overflow-hidden border border-slate-800/50 shadow-md aspect-[16/10] bg-slate-950 group"><img src="{img_sec_html}" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='{fallback}'"></div>'''
         html_galeria += '''</div></div>'''
