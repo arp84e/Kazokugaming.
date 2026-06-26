@@ -30,8 +30,12 @@ on:
         description: '🔗 Enlaces Manuales (Usar en Acción 1 - Sepáralos por comas)'
         required: false
         type: string
+      prompt_nano_banana:
+        description: '🍌 Prompt para imagen (Nano Banana) (Ej: "Consola cyberpunk, hiperrealista")'
+        required: false
+        type: string
       palabras_clave_imagenes:
-        description: '🔑 Palabras clave para buscar las imágenes (Usar en Acción 1)'
+        description: '🔑 Palabras clave extra para galería (Opcional)'
         required: false
         type: string
       imagen_elegida:
@@ -60,7 +64,6 @@ jobs:
           python-version: '3.11'
           
       - name: Instalar dependencias
-        # CORRECCIÓN: Usamos 'ddgs' en lugar de 'duckduckgo-search'
         run: pip install google-genai requests ddgs beautifulsoup4 urllib3
         
       - name: Ejecutar el motor del Bot
@@ -70,6 +73,7 @@ jobs:
           INPUT_TEMA: ${{ github.event.inputs.tema_articulo }}
           INPUT_CATEGORIA: ${{ github.event.inputs.categoria }}
           INPUT_ENLACES: ${{ github.event.inputs.enlaces_oficiales }}
+          INPUT_PROMPT_NANO_BANANA: ${{ github.event.inputs.prompt_nano_banana }}
           INPUT_PALABRAS_CLAVE_IMAGENES: ${{ github.event.inputs.palabras_clave_imagenes }}
           INPUT_IMAGEN_OK: ${{ github.event.inputs.imagen_elegida }}
           INPUT_ID_BORRAR: ${{ github.event.inputs.id_articulo_borrar }}
