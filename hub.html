@@ -17,7 +17,7 @@
         
         <div class="mb-10 max-w-xl">
             <div class="relative flex items-center bg-slate-900 border border-slate-800 rounded-xl p-1.5 shadow-lg">
-                <input type="text" id="inputJugadorHub" placeholder="Buscar otro jugador..." class="flex-grow bg-transparent text-white px-4 py-2 focus:outline-none text-sm">
+                <input type="text" id="inputJugadorHub" placeholder="Buscar jugador (Ej: MagnusCarlsen, Hikaru...)" class="flex-grow bg-transparent text-white px-4 py-2 focus:outline-none text-sm">
                 <button id="btnBuscarHub" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm py-2 px-6 rounded-lg transition">Buscar</button>
             </div>
         </div>
@@ -25,27 +25,23 @@
         <div class="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-10 mb-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xl relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-cyan-400 to-indigo-500"></div>
 
-            <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-slate-800 shrink-0 shadow-lg shadow-cyan-500/20">
-                <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=200" alt="Avatar" class="w-full h-full object-cover">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-slate-800 shrink-0 shadow-lg shadow-cyan-500/20 bg-slate-950 flex items-center justify-center">
+                <img id="avatarJugador" src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=200" alt="Avatar" class="w-full h-full object-cover">
             </div>
 
             <div class="text-center sm:text-left flex-grow">
                 <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-                    <h1 id="playerName" class="text-3xl sm:text-4xl font-black text-white tracking-tight">Jugador Desconocido</h1>
-                    <span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-widest inline-block w-max mx-auto sm:mx-0">
+                    <h1 id="playerName" class="text-3xl sm:text-4xl font-black text-white tracking-tight">Esperando búsqueda...</h1>
+                    <span id="playerStatus" class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-widest inline-block w-max mx-auto sm:mx-0">
                         Nivel PRO
                     </span>
                 </div>
-                <p class="text-slate-400 text-sm mb-4">Jugando desde 2021 • Vinculado a PC y PlayStation</p>
+                <p class="text-slate-400 text-sm mb-4">Datos extraídos en vivo desde bases de datos públicas.</p>
                 
                 <div class="flex flex-wrap justify-center sm:justify-start gap-4">
                     <div class="bg-slate-950/50 border border-slate-800/80 rounded-xl px-4 py-2 flex flex-col">
-                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">K/D Global</span>
-                        <span id="kdGlobal" class="text-lg font-black text-white">0.00</span>
-                    </div>
-                    <div class="bg-slate-950/50 border border-slate-800/80 rounded-xl px-4 py-2 flex flex-col">
-                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Horas Jugadas</span>
-                        <span id="horasJugadas" class="text-lg font-black text-white">0h</span>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Seguidores</span>
+                        <span id="followersGlobal" class="text-lg font-black text-white">0</span>
                     </div>
                 </div>
             </div>
@@ -56,37 +52,41 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 hover:border-red-500/50 transition group relative overflow-hidden">
-                <div class="absolute -right-10 -top-10 w-32 h-32 bg-red-500/10 rounded-full blur-2xl group-hover:bg-red-500/20 transition"></div>
+            
+            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 hover:border-green-500/50 transition group relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-green-500/10 rounded-full blur-2xl group-hover:bg-green-500/20 transition"></div>
                 <div class="flex justify-between items-start mb-6 relative z-10">
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Riot Games</span>
-                        <h3 class="text-2xl font-black text-white">Valorant</h3>
+                        <span class="text-xs font-bold tracking-widest text-green-500 uppercase">Chess.com API</span>
+                        <h3 class="text-2xl font-black text-white">Ajedrez</h3>
                     </div>
-                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-xs border border-slate-700">DIA</div>
+                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-xs border border-slate-700">CH</div>
                 </div>
                 <div class="space-y-4 relative z-10">
                     <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <span class="text-sm text-slate-400">Win Rate</span>
-                        <span id="winRateVal" class="text-sm font-bold text-white text-right">0%</span>
+                        <span class="text-sm text-slate-400">Jugador desde</span>
+                        <span id="fechaIngreso" class="text-sm font-bold text-white text-right">--</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                        <span class="text-sm text-slate-400">País</span>
+                        <span id="paisJugador" class="text-sm font-bold text-white text-right">--</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-slate-400">Estado</span>
+                        <span id="estadoJugador" class="text-sm font-bold text-green-400 text-right">--</span>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 hover:border-cyan-400/50 transition group relative overflow-hidden">
-                <div class="absolute -right-10 -top-10 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl group-hover:bg-cyan-400/20 transition"></div>
+            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 hover:border-cyan-400/50 transition group relative overflow-hidden opacity-50 grayscale">
                 <div class="flex justify-between items-start mb-6 relative z-10">
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Epic Games</span>
+                        <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Próximamente</span>
                         <h3 class="text-2xl font-black text-white">Fortnite</h3>
                     </div>
-                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-xs border border-slate-700">BP</div>
                 </div>
                 <div class="space-y-4 relative z-10">
-                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <span class="text-sm text-slate-400">Victorias</span>
-                        <span id="victoriasFortnite" class="text-sm font-bold text-yellow-400 text-right">0</span>
-                    </div>
+                    <p class="text-xs text-slate-500">Requiere conexión mediante servidor privado (Node.js).</p>
                 </div>
             </div>
         </div>
@@ -96,49 +96,89 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Revisamos si en la URL viene el parámetro "?jugador=Nombre"
             const parametros = new URLSearchParams(window.location.search);
             const jugadorRecibido = parametros.get('jugador');
 
-            // Función principal que simula conectar a la base de datos
-            function buscarEstadisticas(nombre) {
+            // LA FUNCIÓN ASÍNCRONA (NUESTRO MESERO DIGITAL)
+            async function buscarEstadisticas(nombre) {
                 if(!nombre) return;
 
                 const nombreEl = document.getElementById('playerName');
                 
-                // Efecto de "Cargando..."
-                nombreEl.innerText = "Conectando con servidores...";
+                // 1. Damos un aviso visual de que estamos buscando
+                nombreEl.innerText = "Consultando servidores...";
                 nombreEl.classList.add('animate-pulse', 'text-cyan-400');
+                nombreEl.classList.remove('text-red-500'); // Limpiamos errores previos
 
-                // Simulamos que la API tarda 1.5 segundos en responder
-                setTimeout(() => {
-                    // Quitamos la animación
+                try {
+                    // 2. HACEMOS LA LLAMADA A LA API REAL (fetch)
+                    // Esta URL es pública y devuelve datos en formato JSON
+                    const respuesta = await fetch(`https://api.chess.com/pub/player/${nombre.toLowerCase()}`);
+                    
+                    // 3. Revisamos si el servidor nos dice que el jugador no existe (Error 404)
+                    if (!respuesta.ok) {
+                        throw new Error("Jugador no encontrado");
+                    }
+
+                    // 4. Transformamos la respuesta de texto a un Objeto de JavaScript (JSON)
+                    const datos = await respuesta.json();
+
+                    // 5. INYECTAMOS LOS DATOS REALES EN NUESTRO HTML
                     nombreEl.classList.remove('animate-pulse', 'text-cyan-400');
-                    // Ponemos el nombre en mayúsculas
-                    nombreEl.innerText = nombre.toUpperCase();
+                    nombreEl.innerText = datos.username; // El nombre real con sus mayúsculas
+                    
+                    // Actualizamos el avatar si tiene, si no, dejamos uno por defecto
+                    if(datos.avatar) {
+                        document.getElementById('avatarJugador').src = datos.avatar;
+                    } else {
+                        document.getElementById('avatarJugador').src = "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=200";
+                    }
 
-                    // Generamos estadísticas falsas/aleatorias para la demostración
-                    document.getElementById('kdGlobal').innerText = (Math.random() * (2.8 - 0.7) + 0.7).toFixed(2);
-                    document.getElementById('horasJugadas').innerText = Math.floor(Math.random() * 4000 + 100) + "h";
-                    document.getElementById('winRateVal').innerText = Math.floor(Math.random() * (70 - 40) + 40) + "%";
-                    document.getElementById('victoriasFortnite').innerText = Math.floor(Math.random() * 500);
+                    // Actualizamos estadísticas
+                    document.getElementById('followersGlobal').innerText = datos.followers.toLocaleString();
+                    document.getElementById('playerStatus').innerText = datos.title || "Jugador Casual";
+                    
+                    // Calculamos el año de ingreso basado en la fecha de la API (que viene en segundos)
+                    const anio = new Date(datos.joined * 1000).getFullYear();
+                    document.getElementById('fechaIngreso').innerText = anio;
+                    
+                    document.getElementById('estadoJugador').innerText = datos.status;
+                    
+                    // Extraemos el código del país de una sub-URL que nos da la API
+                    const paisCode = datos.url ? "Ver Perfil" : "Desconocido"; 
+                    document.getElementById('paisJugador').innerHTML = `<a href="${datos.url}" target="_blank" class="text-cyan-400 hover:underline">Ver Oficial</a>`;
 
-                }, 1500);
+                } catch (error) {
+                    // 6. SI ALGO SALE MAL, AVISAMOS AL USUARIO
+                    nombreEl.classList.remove('animate-pulse', 'text-cyan-400');
+                    nombreEl.innerText = "Jugador no encontrado";
+                    nombreEl.classList.add('text-red-500');
+                    
+                    // Limpiamos los datos
+                    document.getElementById('followersGlobal').innerText = "0";
+                    document.getElementById('avatarJugador').src = "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=200";
+                }
             }
 
-            // Si llegamos desde index.html con un nombre, ejecutamos la búsqueda
+            // Ejecutamos la búsqueda si venimos desde el inicio
             if(jugadorRecibido) {
                 buscarEstadisticas(jugadorRecibido);
             }
 
-            // Si el usuario usa la barra de búsqueda pequeñita que está dentro del mismo hub
+            // Evento para el botón de buscar de esta misma página
             document.getElementById('btnBuscarHub').addEventListener('click', () => {
                 const nuevoNombre = document.getElementById('inputJugadorHub').value.trim();
                 if(nuevoNombre) {
-                    // Actualiza la URL arriba sin recargar la página (Magia de Single Page Application)
                     window.history.pushState({}, '', '?jugador=' + encodeURIComponent(nuevoNombre));
                     buscarEstadisticas(nuevoNombre);
-                    document.getElementById('inputJugadorHub').value = ''; // Limpiar la barra
+                    document.getElementById('inputJugadorHub').value = '';
+                }
+            });
+
+            // Permitir buscar con la tecla Enter
+            document.getElementById('inputJugadorHub').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('btnBuscarHub').click();
                 }
             });
         });
