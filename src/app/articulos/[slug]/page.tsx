@@ -65,7 +65,7 @@ export default async function ArticleDetailPage({ params }: ArticlePageProps) {
             <img 
               src={article.image_url} 
               alt={article.title}
-              className="w-full height-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         )}
