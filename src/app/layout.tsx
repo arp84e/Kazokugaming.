@@ -1,5 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'KazokuGaming | Videojuegos, Tecnología e IA',
@@ -21,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="antialiased min-h-screen flex flex-col justify-between">
-        {/* Aquí irá el Navbar en el futuro */}
+      <body className="antialiased min-h-screen bg-[#0B0F19] text-white flex flex-col justify-between">
+        <Navbar />
         <main className="flex-grow">{children}</main>
-        {/* Aquí irá el Footer en el futuro */}
+        <Footer />
       </body>
     </html>
   );
