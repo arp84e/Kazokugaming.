@@ -1,13 +1,16 @@
 import Link from 'next/link';
 
-const trendingMock = [
-  { id: '1', title: 'Guía de Optimización: Windows 11 para Gaming en 2026', views: '12K', comments: 45, category: 'Guías' },
-  { id: '2', title: 'Review: Steam Deck OLED 2 ¿Vale la pena el salto de hardware?', views: '9.5K', comments: 88, category: 'Reviews' },
-  { id: '3', title: 'Cómo integrar la API de Gemini 1.5 en tus scripts de automatización', views: '8.2K', comments: 32, category: 'IA' },
-  { id: '4', title: 'Los mejores teclados mecánicos custom por menos de 100€', views: '6.1K', comments: 19, category: 'Tecnología' },
-];
+interface TrendingGridProps {
+  articles: any[];
+}
 
-export default function TrendingGrid() {
+export default function TrendingGrid({ articles }: TrendingGridProps) {
+  // Si la base de datos está vacía o cargando, evitamos errores devolviendo null
+  if (!articles || articles.length === 0) return null;
+
+  // Tomamos un máximo de 4 artículos para mantener la cuadrícula simétrica de la Home
+  const trendingArticles = articles.slice(0, 4);
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-2xl font-bold tracking-tight mb-8 flex items-center gap-3">
@@ -16,27 +19,34 @@ export default function TrendingGrid() {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {trendingMock.map((item) => (
+        {trendingArticles.map((item) => (
           <div 
             key={item.id} 
             className="bg-[#171D2D] border border-[#20293D] rounded-xl p-5 hover:border-[#66C0F4]/40 transition-all duration-300 flex flex-col justify-between group"
           >
             <div className="space-y-3">
+              {/* Categoría real extraída mediante la relación de Supabase */}
               <span className="text-xs font-semibold text-[#66C0F4] tracking-wider uppercase">
-                {item.category}
+                {item.categories?.name || 'General'}
               </span>
+              
+              {/* Título enlazado dinámicamente mediante su slug único */}
               <h3 className="text-base font-bold text-white group-hover:text-[#66C0F4] transition-colors line-clamp-3">
-                <Link href="#">{item.title}</Link>
+                <Link href={`/articulos/${item.slug}`}>
+                  {item.title}
+                </Link>
               </h3>
             </div>
 
-            {/* Métricas interactivas simuladas */}
+            {/* Métricas reales vinculadas a la base de datos */}
             <div className="flex items-center justify-between text-xs text-gray-500 mt-6 pt-3 border-t border-[#20293D]">
               <span className="flex items-center gap-1">
-                👁️ {item.views} lecturas
+                👁️ {item.view_count ?? 0} lecturas
               </span>
+              
+              {/* Nota: Dejamos el contador de comentarios en 0 de momento, ya que los implementaremos en la FASE 3 */}
               <span className="flex items-center gap-1">
-                💬 {item.comments}
+                💬 0
               </span>
             </div>
           </div>
