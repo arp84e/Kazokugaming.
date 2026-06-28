@@ -4,20 +4,17 @@ import TrendingGrid from '@/components/home/TrendingGrid';
 import NewsletterBlock from '@/components/home/NewsletterBlock';
 import { Article } from '@/types/database';
 
-// Forzamos que la página busque datos actualizados siempre (Dynamic Rendering)
 export const revalidate = 0;
 
 export default async function HomePage() {
   const supabase = await createClient();
 
-  // Obtenemos los artículos publicados junto con los nombres de sus categorías relacionales
   const { data: articles } = await supabase
     .from('articles')
     .select('*, categories(name)')
     .eq('status', 'published')
     .order('published_at', { ascending: false });
 
-  // Fallback seguro si la base de datos está vacía temporalmente
   const safeArticles: Article[] = articles || [];
 
   return (
