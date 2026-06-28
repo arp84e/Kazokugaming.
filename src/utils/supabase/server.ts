@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 export async function createClient() {
-  const cookieStore = await cookies(); // Requerido asíncronamente en Next.js 15
+  const cookieStore = await cookies();
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -18,7 +18,7 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             );
           } catch {
-            // Entorno de Server Component, las mutaciones se ignoran de forma segura aquí
+            // Ignorado de forma segura en Server Components
           }
         },
       },
