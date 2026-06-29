@@ -26,7 +26,7 @@ export default async function HomePage() {
         <div className="max-w-4xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#66C0F4]/20 bg-[#171D2D] text-sm text-[#66C0F4]">
             <span className="w-2 h-2 rounded-full bg-[#00A8FF] animate-pulse" />
-            KAZOKUGAMING • Live Local
+            KAZOKUGAMING • Portada Conectada
           </div>
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white">
             KAZOKU<span className="text-[#66C0F4]">GAMING</span>
