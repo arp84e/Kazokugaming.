@@ -322,28 +322,28 @@
     {
       "id": "assassins-creed-shadows",
       "titulo": "Assassins Creed Shadows",
-      "fecha": "15 de noviembre de 2024",
-      "plataformas": "PC (Ubisoft Connect, Epic Games Store), PlayStation 5, Xbox Series X|S, Mac (Apple App Store)",
-      "calificacion": "No disponible (juego no lanzado)",
-      "motor_grafico": "Anvil Engine (versión propietaria y mejorada de AnvilNext)",
-      "tecnologias": "AMD FSR (FidelityFX Super Resolution), NVIDIA DLSS (Deep Learning Super Sampling), Intel XeSS (Xe Super Sampling), Ray Tracing (probable para sombras, oclusión ambiental e iluminación global), HDR",
-      "rendimiento": "Objetivo principal: 1440p a 60 FPS con ajustes altos/muy altos. Para 4K, se recomendarán 30-60 FPS con DLSS/FSR/XeSS y hardware de gama alta. En consolas, se espera 4K dinámico a 30 FPS o 1440p a 60 FPS (modo rendimiento).",
-      "sinopsis": "Assassin's Creed Shadows se ambienta en el Japón feudal de finales del siglo XVI, en el ocaso del periodo Sengoku. El juego sigue las historias entrelazadas de Naoe, una shinobi asesina y protectora de la libertad, y Yasuke, un samurái africano histórico, buscando un nuevo camino en su vida. Los jugadores explorarán un vasto mundo abierto, desde castillos fortificados y bulliciosas ciudades hasta serenos santuarios y paisajes rurales, enfrentándose a intrigas políticas y conflictos violentos mientras forjan un nuevo futuro para Japón.",
-      "analisis_detallado": "<p>El Anvil Engine, pilar de la franquicia Assassin's Creed, ha sido significativamente evolucionado para Shadows. Esta iteración promete gráficos de vanguardia, con un enfoque particular en la fidelidad ambiental y la iluminación global. Se esperan modelos de personajes altamente detallados, animaciones faciales y corporales más realistas, y una reconstrucción meticulosa del Japón feudal. La densidad de la vegetación, la arquitectura japonesa y los efectos climáticos dinámicos serán clave para la inmersión. En cuanto a las físicas, el motor busca ofrecer una interacción ambiental creíble, desde el movimiento de la hierba bajo los pies hasta la destrucción parcial de objetos y elementos del entorno, contribuyendo a un mundo más dinámico y reactivo.</p><p>La escala y complejidad de un mundo abierto como el de Assassin's Creed Shadows plantean desafíos considerables en términos de rendimiento. La optimización del Anvil Engine será crucial para mantener una tasa de fotogramas fluida, especialmente con largas distancias de dibujado, multitudes de NPC y efectos visuales intensivos. Las tecnologías de escalado como DLSS, FSR y XeSS serán fundamentales para alcanzar altas resoluciones y framerates en PC, aliviando la carga sobre la GPU. Para asegurar 60 FPS estables a 1440p, se requerirá hardware moderno de gama media-alta, mientras que el juego a 4K con ray tracing demandará las tarjetas gráficas más potentes del mercado. Se anticipa que las consolas de nueva generación ofrecerán modos gráficos balanceados entre fidelidad visual y rendimiento.</p>",
+      "fecha": "04 Jul, 2026",
+      "plataformas": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X/S"
+      ],
+      "calificacion": 8.5,
+      "motor_grafico": "AnvilPipeline",
+      "sinopsis": "Assassin's Creed Shadows traslada la acción al Japón feudal con una impresionante evolución tecnológica que exprime el hardware de PC a través de una iluminación y físicas sumamente realistas.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Assassin's Creed Shadows</strong> en PC destaca por la implementación del renovado motor <strong>AnvilPipeline</strong>. Esta versión introduce mejoras sustanciales en la iluminación global por trazado de rayos (RTGI) y reflejos adaptativos, ofreciendo estampas visuales del Japón feudal fotorrealistas pero con un alto coste de procesamiento.</p><p>La optimización de la <strong>CPU</strong> es un factor crítico en esta entrega. El sistema de clima dinámico y la interacción física con la vegetación y estructuras exigen procesadores con excelente rendimiento multihilo. Las tarjetas gráficas modernas se benefician enormemente de las tecnologías de reescalado como <strong>DLSS, FSR y XeSS</strong>, indispensables para mantener tasas de fotogramas estables a resoluciones 4K o con trazado de rayos activo.</p><p>Finalmente, los tiempos de carga se han reducido drásticamente gracias al uso obligatorio de unidades de almacenamiento <strong>SSD</strong>, lo que permite una transición fluida en su vasto mapa sin cortes perceptibles, consolidando un apartado técnico vanguardista pero sumamente exigente.</p>",
       "requisitos": {
         "minimos": [
-          "SO: Windows 10 (64-bit)",
           "Procesador: Intel Core i7-8700K o AMD Ryzen 5 3600",
-          "Memoria: 16 GB RAM",
-          "Gráficos: NVIDIA GeForce RTX 2060 (6GB) o AMD Radeon RX 5700 XT (8GB)",
-          "Almacenamiento: 100 GB SSD"
+          "Memoria: 16 GB de RAM (modo Dual-Channel)",
+          "Gráficos: NVIDIA GeForce GTX 1070 (8 GB) o AMD Radeon RX 5700 XT (8 GB)",
+          "Almacenamiento: SSD con 100 GB de espacio disponible"
         ],
         "recomendados": [
-          "SO: Windows 10/11 (64-bit)",
-          "Procesador: Intel Core i7-12700K o AMD Ryzen 7 5800X3D",
-          "Memoria: 16 GB RAM (o 32 GB para 4K)",
-          "Gráficos: NVIDIA GeForce RTX 3070 (8GB) o AMD Radeon RX 6700 XT (12GB) para 1440p 60FPS; NVIDIA GeForce RTX 4070 Ti (12GB) o AMD Radeon RX 7900 XT (20GB) para 4K",
-          "Almacenamiento: 100 GB NVMe SSD"
+          "Procesador: Intel Core i5-11600K o AMD Ryzen 5 5600X",
+          "Memoria: 16 GB de RAM (modo Dual-Channel)",
+          "Gráficos: NVIDIA GeForce RTX 3070 (8 GB) o AMD Radeon RX 6800 XT (16 GB)",
+          "Almacenamiento: SSD NVMe con 100 GB de espacio disponible"
         ]
       },
       "imagen": "https://media.rawg.io/media/games/526/526881e0f5f8c1550e51df3801f96ea3.jpg"
