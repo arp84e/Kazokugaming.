@@ -1,0 +1,60 @@
+name: Bot Telemetría (Manual Avanzado)
+
+on:
+  workflow_dispatch:
+    inputs:
+      juegos:
+        description: '🎮 Título(s) del o los juegos (separados por ;)'
+        required: true
+        type: string
+      sobrescribir:
+        description: '⚠️ ¿Borrar catálogo anterior de Telemetría?'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  analizar-telemetria:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install google-genai requests
+
+      - name: Ejecutar Bot de Telemetría
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          INPUT_JUEGOS: ${{ inputs.juegos }}
+          SOBRESCRIBIR: ${{ inputs.sobrescribir }}
+        run: python scraper_telemetria.py
+
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
+
+      - name: Commit y Push de los cambios
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          
+          git add telemetria.json || true
+          git add telemetria/ || true
+          git add sitemap.xml || true
+          
+          if git diff --staged --quiet; then
+            echo "No hay variaciones de telemetría."
+          else
+            git commit -m "🤖 Bot Telemetría: Indexación estática avanzada y sitemap"
+            git pull --rebase origin main || true
+            git push
+          fi
