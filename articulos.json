@@ -1,0 +1,17 @@
+{
+  "articulos": [
+    {
+      "id": "art-guia-optimizacion-pc-2026",
+      "titulo": "Guía Definitiva para Optimizar tu PC Gaming",
+      "slug": "guia-optimizacion-pc-2026",
+      "categoria": "Guías",
+      "tags": ["Hardware", "Rendimiento", "Optimización"],
+      "autor": "KazokuTeam",
+      "imagen": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=1200",
+      "fecha": "05 Jul, 2026",
+      "tiempo_lectura": "5 min",
+      "meta_descripcion": "Aprende a exprimir cada FPS de tu ordenador con esta guía técnica de optimización para PC Gaming.",
+      "contenido": "<p class='mb-4'>Tener el hardware más potente no sirve de nada si tu sistema operativo está limitando los fotogramas. En esta guía técnica abordaremos los ajustes críticos que debes realizar para liberar el 100% de tu GPU y CPU.</p><h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'>1. Desactiva procesos en segundo plano</h3><p class='mb-4'>Windows ejecuta docenas de servicios de telemetría que consumen ciclos de CPU valiosos. Utilizar herramientas de debloat puede incrementar tu rendimiento hasta en un 15% en títulos competitivos.</p><h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'>2. Perfiles de Energía y XMP</h3><p class='mb-4'>Asegúrate de que tu plan de energía de Windows esté configurado en 'Alto Rendimiento' y de haber activado el perfil XMP en la BIOS de tu placa base para que tu memoria RAM funcione a su máxima frecuencia.</p>"
+    }
+  ]
+}
