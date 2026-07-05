@@ -3,15 +3,17 @@ import json
 import time
 import re
 import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
 import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (MOTOR DUAL DE IMÁGENES) ===")
+print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA HÍBRIDO) ===")
 
 # 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
-rawg_key = os.environ.get("RAWG_API_KEY") # Reciclamos tu clave de RAWG
+rawg_key = os.environ.get("RAWG_API_KEY")
 if not api_key:
     print("❌ ERROR: No se encontró GEMINI_API_KEY.")
     exit(1)
@@ -19,13 +21,34 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 archivo_articulos = "articulos.json"
 
-# 2. Leer los temas desde GitHub Actions
+# 2. Lógica Híbrida: Curación Manual vs. Piloto Automático
 temas_input = os.environ.get("INPUT_TEMAS", "")
-if not temas_input:
-    print("❌ ERROR: No se escribieron temas para redactar.")
-    exit(1)
+temas_a_redactar = []
 
-temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
+if temas_input and temas_input.strip():
+    print("🛠️ MODO: CURACIÓN MANUAL (Prioridad activada)")
+    temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
+else:
+    print("🌍 MODO: PILOTO AUTOMÁTICO (Buscando tendencias de las últimas 24h...)")
+    # Utilizamos el feed de noticias global buscando "videojuegos" o "tecnología"
+    url_rss = "https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es"
+    try:
+        req = urllib.request.Request(url_rss, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            xml_data = response.read()
+        root = ET.fromstring(xml_data)
+        
+        # Extraemos los 3 temas más virales
+        for item in root.findall('.//item')[:3]:
+            titulo_completo = item.find('title').text
+            # Limpiamos el nombre del medio de comunicación al final del titular
+            titulo_limpio = titulo_completo.rsplit(' - ', 1)[0]
+            temas_a_redactar.append({"tema": titulo_limpio, "categoria": "Noticias"})
+            print(f"📡 Tendencia detectada: {titulo_limpio}")
+            
+    except Exception as e:
+        print(f"⚠️ Error al leer tendencias: {e}")
+        temas_a_redactar = [{"tema": "Las innovaciones tecnológicas más esperadas en el gaming actual", "categoria": "Tecnología"}]
 
 # 3. Cargar la base de datos existente
 datos_web = {"articulos": []}
@@ -34,13 +57,13 @@ if os.path.exists(archivo_articulos):
         try:
             datos_web = json.load(f)
         except Exception as e:
-            print(f"⚠️ Aviso: JSON previo no válido. Se creará uno nuevo. Error: {e}")
+            print(f"⚠️ Aviso: JSON previo no válido. Error: {e}")
 
 # 4. El Prompt Maestro Avanzado
 prompt_sistema = """
 Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
 Tu estilo es profesional, analítico, directo y con un tono táctico/entusiasta.
-Escribe un artículo completo y optimizado para SEO sobre el tema proporcionado.
+Escribe un artículo completo y optimizado para SEO sobre la siguiente noticia o tema.
 
 REGLAS DE FORMATO ESTRICTAS:
 1. Devuelve ÚNICAMENTE un objeto JSON válido.
@@ -69,15 +92,15 @@ for item in temas_a_redactar:
     id_articulo = f"art-{slug}"[:50]
     
     if any(art["id"] == id_articulo for art in datos_web["articulos"]):
-        print(f"⏭️ Saltando: '{tema}' (Ya existe).")
+        print(f"⏭️ Saltando: '{tema}' (El artículo ya fue publicado hoy).")
         continue
 
-    print(f"✍️ Redactando artículo: {tema}...")
+    print(f"\n✍️ Redactando artículo: {tema}...")
     
     try:
         response = client.models.generate_content(
             model='gemini-3.5-flash',
-            contents=f"Tema a redactar: {tema}",
+            contents=f"Tema/Noticia a redactar: {tema}",
             config=types.GenerateContentConfig(
                 system_instruction=prompt_sistema,
                 response_mime_type="application/json",
@@ -90,7 +113,6 @@ for item in temas_a_redactar:
         # --- MOTOR DUAL DE IMÁGENES ---
         imagen_final = ""
         
-        # Motor 1: API de RAWG (Si la IA dice que es un videojuego)
         if articulo_generado.get("es_videojuego") and rawg_key:
             try:
                 nombre_juego = urllib.parse.quote(articulo_generado["prompt_imagen"])
@@ -101,7 +123,6 @@ for item in temas_a_redactar:
             except Exception as e:
                 print(f"⚠️ RAWG no encontró la imagen: {e}")
         
-        # Motor 2: Generación en Tiempo Real por IA (Si no es videojuego o RAWG falló)
         if not imagen_final:
             prompt_seguro = urllib.parse.quote(articulo_generado["prompt_imagen"] + ", highly detailed, 8k resolution, professional photography")
             imagen_final = f"https://image.pollinations.ai/prompt/{prompt_seguro}?width=1200&height=720&nologo=true"
@@ -122,7 +143,7 @@ for item in temas_a_redactar:
         }
         
         datos_web["articulos"].insert(0, articulo_final)
-        print(f"✅ ¡Artículo guardado! Imagen obtenida y verificada.")
+        print(f"✅ ¡Artículo guardado exitosamente!")
         
         print("⏳ Pausa de enfriamiento (15s)...")
         time.sleep(15)
@@ -135,4 +156,4 @@ for item in temas_a_redactar:
 with open(archivo_articulos, "w", encoding="utf-8") as f:
     json.dump(datos_web, f, ensure_ascii=False, indent=2)
 
-print("\n🚀 ¡PROCESO FINALIZADO! Artículos actualizados.")
+print("\n🚀 ¡PROCESO FINALIZADO! La base de datos está actualizada.")
