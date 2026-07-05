@@ -7,21 +7,23 @@ from google.genai import types
 
 print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA ===")
 
-# 1. Configuración de API y Archivo
+# 1. Configuración de API
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
-    print("❌ ERROR: No se encontró GEMINI_API_KEY en las variables de entorno.")
+    print("❌ ERROR: No se encontró GEMINI_API_KEY.")
     exit(1)
 
 client = genai.Client(api_key=api_key)
 archivo_articulos = "articulos.json"
 
-# 2. Tu lista de temas a redactar (Puedes poner 10, 20 o 50 temas aquí)
-temas_a_redactar = [
-    {"tema": "Los mejores monitores OLED para PS5 y Xbox Series X en 2026", "categoria": "Hardware"},
-    {"tema": "Análisis profundo de la nueva arquitectura de Unreal Engine 6", "categoria": "Tecnología"},
-    {"tema": "Cómo la Inteligencia Artificial está cambiando el diseño de niveles en los videojuegos", "categoria": "Inteligencia Artificial"}
-]
+# 2. Leer los temas desde GitHub Actions
+temas_input = os.environ.get("INPUT_TEMAS", "")
+if not temas_input:
+    print("❌ ERROR: No se escribieron temas para redactar.")
+    exit(1)
+
+# Separar los temas por punto y coma (;) y asignarles una categoría por defecto
+temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
 
 # 3. Cargar la base de datos existente
 datos_web = {"articulos": []}
@@ -30,9 +32,9 @@ if os.path.exists(archivo_articulos):
         try:
             datos_web = json.load(f)
         except Exception as e:
-            print(f"⚠️ Aviso: No se pudo leer el JSON previo. Se creará uno nuevo. Error: {e}")
+            print(f"⚠️ Aviso: No se pudo leer el JSON previo. Error: {e}")
 
-# 4. El Prompt Maestro (El "Cerebro" del Periodista)
+# 4. El Prompt Maestro
 prompt_sistema = """
 Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
 Tu estilo es profesional, analítico, directo y con un tono táctico/entusiasta.
@@ -42,13 +44,13 @@ REGLAS DE FORMATO ESTRICTAS:
 1. Debes devolver ÚNICAMENTE un objeto JSON válido.
 2. El campo 'contenido' debe estar en formato HTML limpio usando <p class='mb-4'> para párrafos, <h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'> para subtítulos, y <strong> para resaltar texto. No uses Markdown dentro del HTML.
 3. Genera un mínimo de 3 subtítulos detallados.
-4. Para la 'imagen', genera una URL de Unsplash representativa usando este formato: https://images.unsplash.com/photo-[ID-ALEATORIO]?q=80&w=1200&auto=format&fit=crop&query=[tu-palabra-clave-en-ingles]
+4. Para la 'imagen', genera una URL de Unsplash representativa usando este formato: https://images.unsplash.com/photo-[ID-ALEATORIO]?q=80&w=1200&auto=format&fit=crop&query=[tu-palabra-clave-en-ingles-muy-corta]
 
 ESTRUCTURA JSON REQUERIDA:
 {
-  "titulo": "Título SEO atractivo y clickbait pero profesional",
+  "titulo": "Título SEO atractivo pero profesional",
   "meta_descripcion": "Resumen de 150 caracteres para Google",
-  "tags": ["Tag1", "Tag2", "Tag3", "Tag4"],
+  "tags": ["Tag1", "Tag2", "Tag3"],
   "tiempo_lectura": "X min",
   "imagen": "URL de Unsplash generada",
   "contenido": "Todo el HTML aquí"
@@ -60,11 +62,9 @@ for item in temas_a_redactar:
     tema = item["tema"]
     categoria = item["categoria"]
     
-    # Generar un ID único basado en el tema
     slug = re.sub(r'[^a-z0-9]+', '-', tema.lower()).strip('-')
-    id_articulo = f"art-{slug}"[:50] # Limitamos la longitud del ID
+    id_articulo = f"art-{slug}"[:50]
     
-    # Verificar si el artículo ya existe para no duplicarlo
     if any(art["id"] == id_articulo for art in datos_web["articulos"]):
         print(f"⏭️ Saltando: '{tema}' (Ya existe).")
         continue
@@ -72,21 +72,18 @@ for item in temas_a_redactar:
     print(f"✍️ Redactando artículo: {tema}...")
     
     try:
-        # Llamada a la IA (Forzando la salida en JSON puro)
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=f"Tema a redactar: {tema}",
             config=types.GenerateContentConfig(
                 system_instruction=prompt_sistema,
                 response_mime_type="application/json",
-                temperature=0.7 # Equilibrio entre creatividad y precisión
+                temperature=0.7
             )
         )
         
-        # Procesar la respuesta
         articulo_generado = json.loads(response.text)
         
-        # Ensamblar el artículo final con los datos fijos
         articulo_final = {
             "id": id_articulo,
             "titulo": articulo_generado["titulo"],
@@ -101,22 +98,18 @@ for item in temas_a_redactar:
             "contenido": articulo_generado["contenido"]
         }
         
-        # Añadir a la base de datos
-        datos_web["articulos"].insert(0, articulo_final) # Lo inserta al principio (más reciente)
+        datos_web["articulos"].insert(0, articulo_final)
         print(f"✅ ¡Artículo guardado con éxito!")
         
-        # SISTEMA ANTI-COLAPSO: Espera de 15 segundos entre artículos
-        # Es crítico para evitar el error "RESOURCE_EXHAUSTED" si generas decenas de artículos
-        print("⏳ Pausa de enfriamiento de la API (15s)...")
+        print("⏳ Pausa de enfriamiento (15s)...")
         time.sleep(15)
 
     except Exception as e:
         print(f"❌ Error al generar '{tema}': {e}")
-        # Pausa extra de seguridad si hay error
         time.sleep(30)
 
-# 6. Guardar todo en el archivo articulos.json
+# 6. Guardar todo en el archivo
 with open(archivo_articulos, "w", encoding="utf-8") as f:
     json.dump(datos_web, f, ensure_ascii=False, indent=2)
 
-print("\n🚀 ¡PROCESO FINALIZADO! La base de datos de artículos ha sido actualizada.")
+print("\n🚀 ¡PROCESO FINALIZADO! Artículos actualizados.")
