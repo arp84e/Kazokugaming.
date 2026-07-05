@@ -9,7 +9,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA HÍBRIDO + RESILIENCIA) ===")
+print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA BLINDADO) ===")
 
 # 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -45,7 +45,7 @@ else:
             
     except Exception as e:
         print(f"⚠️ Error al leer tendencias: {e}")
-        temas_a_redactar = [{"tema": "Las innovaciones tecnológicas más esperadas en el gaming actual", "categoria": "Tecnología"}]
+        temas_a_redactar = [{"tema": "Las innovaciones tecnológicas más esperadas en el gaming", "categoria": "Tecnología"}]
 
 # 3. Cargar la base de datos existente
 datos_web = {"articulos": []}
@@ -56,17 +56,17 @@ if os.path.exists(archivo_articulos):
         except Exception as e:
             print(f"⚠️ Aviso: JSON previo no válido. Error: {e}")
 
-# 4. El Prompt Maestro Avanzado
+# 4. El Prompt Maestro Ultra-Estricto
 prompt_sistema = """
 Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
 Tu estilo es profesional, analítico, directo y con un tono táctico/entusiasta.
-Escribe un artículo completo y optimizado para SEO sobre la siguiente noticia o tema.
+Escribe un artículo completo y optimizado para SEO.
 
-REGLAS DE FORMATO ESTRICTAS:
-1. Devuelve ÚNICAMENTE un objeto JSON válido.
-2. El 'contenido' debe ser HTML limpio usando <p class='mb-4'>, <h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'>, y <strong>. No uses Markdown.
-3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es hardware o tecnología general.
-4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego. Si es false, escribe una descripción corta en INGLÉS para generar una imagen por IA.
+REGLAS DE FORMATO JSON ULTRA-ESTRICTAS (CRÍTICO):
+1. Devuelve ÚNICAMENTE un objeto JSON válido. Cero texto fuera del JSON.
+2. En el 'contenido' (que es HTML), DEBES usar SIEMPRE comillas simples para los atributos (ej. <p class='mb-4'>). NUNCA uses comillas dobles (") dentro del HTML porque romperás el formato JSON.
+3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es hardware o tecnología.
+4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego. Si es false, escribe una descripción corta en INGLÉS para la IA.
 
 ESTRUCTURA JSON REQUERIDA:
 {
@@ -76,7 +76,7 @@ ESTRUCTURA JSON REQUERIDA:
   "tiempo_lectura": "X min",
   "es_videojuego": true,
   "prompt_imagen": "texto",
-  "contenido": "HTML aquí"
+  "contenido": "HTML aquí usando comillas simples para clases"
 }
 """
 
@@ -95,6 +95,7 @@ for item in temas_a_redactar:
     print(f"\n✍️ Redactando artículo: {tema}...")
     
     try:
+        respuesta_texto = ""
         # --- SISTEMA DE RESPALDO (FALLBACK) DE IA ---
         try:
             print("🧠 Intentando con servidor principal (3.5-flash)...")
@@ -107,8 +108,9 @@ for item in temas_a_redactar:
                     temperature=0.7
                 )
             )
+            respuesta_texto = response.text
         except Exception as e_principal:
-            print(f"⚠️ Servidor principal congestionado o falló: {e_principal}")
+            print(f"⚠️ Servidor principal falló: {e_principal}")
             print("🔄 Activando servidor de respaldo (2.5-flash)...")
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
@@ -119,8 +121,21 @@ for item in temas_a_redactar:
                     temperature=0.7
                 )
             )
+            respuesta_texto = response.text
         
-        articulo_generado = json.loads(response.text)
+        # --- FILTRO DE LIMPIEZA (SANITIZACIÓN DE JSON) ---
+        texto_limpio = respuesta_texto.strip()
+        # Si la IA añade bloques de código Markdown por error, los eliminamos
+        if texto_limpio.startswith("```json"):
+            texto_limpio = texto_limpio[7:]
+        elif texto_limpio.startswith("```"):
+            texto_limpio = texto_limpio[3:]
+        if texto_limpio.endswith("```"):
+            texto_limpio = texto_limpio[:-3]
+        texto_limpio = texto_limpio.strip()
+
+        # Convertir texto a diccionario de Python
+        articulo_generado = json.loads(texto_limpio)
         
         # --- MOTOR DUAL DE IMÁGENES ---
         imagen_final = ""
@@ -128,7 +143,7 @@ for item in temas_a_redactar:
         if articulo_generado.get("es_videojuego") and rawg_key:
             try:
                 nombre_juego = urllib.parse.quote(articulo_generado["prompt_imagen"])
-                url_rawg = f"https://api.rawg.io/api/games?key={rawg_key}&search={nombre_juego}&page_size=1"
+                url_rawg = f"[https://api.rawg.io/api/games?key=](https://api.rawg.io/api/games?key=){rawg_key}&search={nombre_juego}&page_size=1"
                 r = requests.get(url_rawg, timeout=10).json()
                 if r.get("results") and len(r["results"]) > 0:
                     imagen_final = r["results"][0].get("background_image", "")
@@ -137,7 +152,7 @@ for item in temas_a_redactar:
         
         if not imagen_final:
             prompt_seguro = urllib.parse.quote(articulo_generado["prompt_imagen"] + ", highly detailed, 8k resolution, professional photography")
-            imagen_final = f"https://image.pollinations.ai/prompt/{prompt_seguro}?width=1200&height=720&nologo=true"
+            imagen_final = f"[https://image.pollinations.ai/prompt/](https://image.pollinations.ai/prompt/){prompt_seguro}?width=1200&height=720&nologo=true"
         
         # --- ENSAMBLAJE FINAL ---
         articulo_final = {
