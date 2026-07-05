@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 KAZOKU<span class="text-slate-100 font-normal">GAMING</span>
             </a>
             
-            <nav class="hidden md:flex space-x-8 items-center">
+          <nav class="hidden md:flex space-x-8 items-center">
                 <a href="${prefix}index.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Inicio</a>
+                <a href="${prefix}noticias.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Noticias</a>
                 <a href="${prefix}telemetria.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Telemetría</a>
                 <a href="${prefix}radar.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Radar</a>
                 <a href="${prefix}foro.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition flex items-center gap-2">
