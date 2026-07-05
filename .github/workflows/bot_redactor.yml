@@ -1,0 +1,52 @@
+name: Bot Redactor IA (Artículos)
+
+on:
+  workflow_dispatch:
+    inputs:
+      temas:
+        description: '📝 Temas a redactar (separados por ; si son varios)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  redactar-articulos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install google-genai
+
+      - name: Ejecutar Bot Redactor
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INPUT_TEMAS: ${{ inputs.temas }}
+        run: python redactor_ia.py
+
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
+
+      - name: Commit y Push de los cambios
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          
+          git add articulos.json || true
+          git add sitemap.xml || true
+          
+          if git diff --staged --quiet; then
+            echo "No hay artículos nuevos."
+          else
+            git commit -m "🤖 Bot Redactor: Nuevos artículos publicados y sitemap actualizado"
+            git pull --rebase origin main || true
+            git push
+          fi
