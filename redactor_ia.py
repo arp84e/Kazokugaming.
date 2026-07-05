@@ -2,14 +2,16 @@ import os
 import json
 import time
 import re
-import random
+import urllib.parse
+import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA ===")
+print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (MOTOR DUAL DE IMÁGENES) ===")
 
-# 1. Configuración de API
+# 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
+rawg_key = os.environ.get("RAWG_API_KEY") # Reciclamos tu clave de RAWG
 if not api_key:
     print("❌ ERROR: No se encontró GEMINI_API_KEY.")
     exit(1)
@@ -25,51 +27,40 @@ if not temas_input:
 
 temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
 
-# 3. Galería de imágenes reales y verificadas (Gaming, Tech, Hardware)
-imagenes_reales = [
-    "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200", # Setup Gaming
-    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200", # Retro/Neon Gaming
-    "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200", # Mando / Consola
-    "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200", # Teclado PC RGB
-    "https://images.unsplash.com/photo-1612287230202-1ff1d85d1e4e?q=80&w=1200", # Mando PS5
-    "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200", # Gafas VR
-    "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200", # Hardware / Placa Base
-    "https://images.unsplash.com/photo-1600861194942-f884bfb03658?q=80&w=1200", # Neon Tech
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200", # Código / IA
-    "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=1200"  # Tarjeta Gráfica
-]
-
-# 4. Cargar la base de datos existente
+# 3. Cargar la base de datos existente
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
     with open(archivo_articulos, "r", encoding="utf-8") as f:
         try:
             datos_web = json.load(f)
         except Exception as e:
-            print(f"⚠️ Aviso: No se pudo leer el JSON previo. Error: {e}")
+            print(f"⚠️ Aviso: JSON previo no válido. Se creará uno nuevo. Error: {e}")
 
-# 5. El Prompt Maestro (Sin pedirle que invente URLs)
+# 4. El Prompt Maestro Avanzado
 prompt_sistema = """
 Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
 Tu estilo es profesional, analítico, directo y con un tono táctico/entusiasta.
 Escribe un artículo completo y optimizado para SEO sobre el tema proporcionado.
 
 REGLAS DE FORMATO ESTRICTAS:
-1. Debes devolver ÚNICAMENTE un objeto JSON válido.
-2. El campo 'contenido' debe estar en formato HTML limpio usando <p class='mb-4'> para párrafos, <h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'> para subtítulos, y <strong> para resaltar texto. No uses Markdown dentro del HTML.
-3. Genera un mínimo de 3 subtítulos detallados.
+1. Devuelve ÚNICAMENTE un objeto JSON válido.
+2. El 'contenido' debe ser HTML limpio usando <p class='mb-4'>, <h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'>, y <strong>. No uses Markdown.
+3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es hardware o tecnología general.
+4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego (ej. "Cyberpunk 2077"). Si es false, escribe una descripción corta en INGLÉS para generar una imagen por IA (ej. "A glowing gaming PC setup in a dark room").
 
 ESTRUCTURA JSON REQUERIDA:
 {
   "titulo": "Título SEO atractivo pero profesional",
   "meta_descripcion": "Resumen de 150 caracteres para Google",
-  "tags": ["Tag1", "Tag2", "Tag3"],
+  "tags": ["Tag1", "Tag2"],
   "tiempo_lectura": "X min",
-  "contenido": "Todo el HTML aquí"
+  "es_videojuego": true,
+  "prompt_imagen": "texto",
+  "contenido": "HTML aquí"
 }
 """
 
-# 6. Bucle de Redacción Automatizada
+# 5. Bucle de Redacción y Generación de Imágenes
 for item in temas_a_redactar:
     tema = item["tema"]
     categoria = item["categoria"]
@@ -96,9 +87,26 @@ for item in temas_a_redactar:
         
         articulo_generado = json.loads(response.text)
         
-        # Seleccionar una imagen real al azar de nuestra galería
-        imagen_asignada = random.choice(imagenes_reales)
+        # --- MOTOR DUAL DE IMÁGENES ---
+        imagen_final = ""
         
+        # Motor 1: API de RAWG (Si la IA dice que es un videojuego)
+        if articulo_generado.get("es_videojuego") and rawg_key:
+            try:
+                nombre_juego = urllib.parse.quote(articulo_generado["prompt_imagen"])
+                url_rawg = f"https://api.rawg.io/api/games?key={rawg_key}&search={nombre_juego}&page_size=1"
+                r = requests.get(url_rawg, timeout=10).json()
+                if r.get("results") and len(r["results"]) > 0:
+                    imagen_final = r["results"][0].get("background_image", "")
+            except Exception as e:
+                print(f"⚠️ RAWG no encontró la imagen: {e}")
+        
+        # Motor 2: Generación en Tiempo Real por IA (Si no es videojuego o RAWG falló)
+        if not imagen_final:
+            prompt_seguro = urllib.parse.quote(articulo_generado["prompt_imagen"] + ", highly detailed, 8k resolution, professional photography")
+            imagen_final = f"https://image.pollinations.ai/prompt/{prompt_seguro}?width=1200&height=720&nologo=true"
+        
+        # --- ENSAMBLAJE FINAL ---
         articulo_final = {
             "id": id_articulo,
             "titulo": articulo_generado["titulo"],
@@ -106,7 +114,7 @@ for item in temas_a_redactar:
             "categoria": categoria,
             "tags": articulo_generado["tags"],
             "autor": "KazokuBot IA",
-            "imagen": imagen_asignada,
+            "imagen": imagen_final,
             "fecha": time.strftime("%d %b, %Y"),
             "tiempo_lectura": articulo_generado["tiempo_lectura"],
             "meta_descripcion": articulo_generado["meta_descripcion"],
@@ -114,7 +122,7 @@ for item in temas_a_redactar:
         }
         
         datos_web["articulos"].insert(0, articulo_final)
-        print(f"✅ ¡Artículo guardado con éxito y con imagen verificada!")
+        print(f"✅ ¡Artículo guardado! Imagen obtenida y verificada.")
         
         print("⏳ Pausa de enfriamiento (15s)...")
         time.sleep(15)
@@ -123,7 +131,7 @@ for item in temas_a_redactar:
         print(f"❌ Error al generar '{tema}': {e}")
         time.sleep(30)
 
-# 7. Guardar todo en el archivo
+# 6. Guardar todo
 with open(archivo_articulos, "w", encoding="utf-8") as f:
     json.dump(datos_web, f, ensure_ascii=False, indent=2)
 
