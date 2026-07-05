@@ -2,6 +2,7 @@ import os
 import json
 import time
 import re
+import random
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -9,7 +10,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA BLINDADO) ===")
+print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (MOTOR DE IMÁGENES ESTABLE) ===")
 
 # 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -21,7 +22,21 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 archivo_articulos = "articulos.json"
 
-# 2. Lógica Híbrida: Curación Manual vs. Piloto Automático
+# 2. Banco de Imágenes de Respaldo Premium (100% Estables)
+imagenes_respaldo = [
+    "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200", # Setup Gaming
+    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200", # Retro/Neon Gaming
+    "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200", # Mando / Consola
+    "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200", # Teclado PC RGB
+    "https://images.unsplash.com/photo-1612287230202-1ff1d85d1e4e?q=80&w=1200", # Mando PS5
+    "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200", # Gafas VR
+    "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1200", # Hardware / Placa Base
+    "https://images.unsplash.com/photo-1600861194942-f884bfb03658?q=80&w=1200", # Neon Tech
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200", # Código / IA
+    "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=1200"  # Tarjeta Gráfica
+]
+
+# 3. Lógica Híbrida
 temas_input = os.environ.get("INPUT_TEMAS", "")
 temas_a_redactar = []
 
@@ -47,7 +62,7 @@ else:
         print(f"⚠️ Error al leer tendencias: {e}")
         temas_a_redactar = [{"tema": "Las innovaciones tecnológicas más esperadas en el gaming", "categoria": "Tecnología"}]
 
-# 3. Cargar la base de datos existente
+# 4. Cargar base de datos
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
     with open(archivo_articulos, "r", encoding="utf-8") as f:
@@ -56,17 +71,17 @@ if os.path.exists(archivo_articulos):
         except Exception as e:
             print(f"⚠️ Aviso: JSON previo no válido. Error: {e}")
 
-# 4. El Prompt Maestro Ultra-Estricto
+# 5. El Prompt Maestro
 prompt_sistema = """
 Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
 Tu estilo es profesional, analítico, directo y con un tono táctico/entusiasta.
 Escribe un artículo completo y optimizado para SEO.
 
-REGLAS DE FORMATO JSON ULTRA-ESTRICTAS (CRÍTICO):
-1. Devuelve ÚNICAMENTE un objeto JSON válido. Cero texto fuera del JSON.
-2. En el 'contenido' (que es HTML), DEBES usar SIEMPRE comillas simples para los atributos (ej. <p class='mb-4'>). NUNCA uses comillas dobles (") dentro del HTML porque romperás el formato JSON.
-3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es hardware o tecnología.
-4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego. Si es false, escribe una descripción corta en INGLÉS para la IA.
+REGLAS DE FORMATO JSON ULTRA-ESTRICTAS:
+1. Devuelve ÚNICAMENTE un objeto JSON válido.
+2. En el 'contenido', usa SIEMPRE comillas simples para los atributos HTML (ej. <p class='mb-4'>). NUNCA uses comillas dobles (") dentro del HTML.
+3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es tecnología o hardware.
+4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego en inglés (ej. "The Witcher 3"). Si es false, déjalo vacío "".
 
 ESTRUCTURA JSON REQUERIDA:
 {
@@ -80,7 +95,7 @@ ESTRUCTURA JSON REQUERIDA:
 }
 """
 
-# 5. Bucle de Redacción y Generación de Imágenes
+# 6. Bucle Principal
 for item in temas_a_redactar:
     tema = item["tema"]
     categoria = item["categoria"]
@@ -89,16 +104,14 @@ for item in temas_a_redactar:
     id_articulo = f"art-{slug}"[:50]
     
     if any(art["id"] == id_articulo for art in datos_web["articulos"]):
-        print(f"⏭️ Saltando: '{tema}' (El artículo ya fue publicado hoy).")
+        print(f"⏭️ Saltando: '{tema}' (Ya existe).")
         continue
 
     print(f"\n✍️ Redactando artículo: {tema}...")
     
     try:
         respuesta_texto = ""
-        # --- SISTEMA DE RESPALDO (FALLBACK) DE IA ---
         try:
-            print("🧠 Intentando con servidor principal (3.5-flash)...")
             response = client.models.generate_content(
                 model='gemini-3.5-flash',
                 contents=f"Tema/Noticia a redactar: {tema}",
@@ -111,7 +124,6 @@ for item in temas_a_redactar:
             respuesta_texto = response.text
         except Exception as e_principal:
             print(f"⚠️ Servidor principal falló: {e_principal}")
-            print("🔄 Activando servidor de respaldo (2.5-flash)...")
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
                 contents=f"Tema/Noticia a redactar: {tema}",
@@ -123,24 +135,19 @@ for item in temas_a_redactar:
             )
             respuesta_texto = response.text
         
-        # --- FILTRO DE LIMPIEZA (SANITIZACIÓN DE JSON) ---
+        # Sanitización de JSON
         texto_limpio = respuesta_texto.strip()
-        # Si la IA añade bloques de código Markdown por error, los eliminamos
-        if texto_limpio.startswith("```json"):
-            texto_limpio = texto_limpio[7:]
-        elif texto_limpio.startswith("```"):
-            texto_limpio = texto_limpio[3:]
-        if texto_limpio.endswith("```"):
-            texto_limpio = texto_limpio[:-3]
-        texto_limpio = texto_limpio.strip()
-
-        # Convertir texto a diccionario de Python
-        articulo_generado = json.loads(texto_limpio)
+        if texto_limpio.startswith("```json"): texto_limpio = texto_limpio[7:]
+        elif texto_limpio.startswith("```"): texto_limpio = texto_limpio[3:]
+        if texto_limpio.endswith("```"): texto_limpio = texto_limpio[:-3]
         
-        # --- MOTOR DUAL DE IMÁGENES ---
+        articulo_generado = json.loads(texto_limpio.strip())
+        
+        # --- NUEVO MOTOR DE IMÁGENES A PRUEBA DE FALLOS ---
         imagen_final = ""
         
-        if articulo_generado.get("es_videojuego") and rawg_key:
+        # 1. Intentar buscar la carátula oficial si es un videojuego
+        if articulo_generado.get("es_videojuego") and rawg_key and articulo_generado.get("prompt_imagen"):
             try:
                 nombre_juego = urllib.parse.quote(articulo_generado["prompt_imagen"])
                 url_rawg = f"[https://api.rawg.io/api/games?key=](https://api.rawg.io/api/games?key=){rawg_key}&search={nombre_juego}&page_size=1"
@@ -150,11 +157,12 @@ for item in temas_a_redactar:
             except Exception as e:
                 print(f"⚠️ RAWG no encontró la imagen: {e}")
         
+        # 2. Si no es un juego, o RAWG falló, asignar una imagen premium aleatoria
         if not imagen_final:
-            prompt_seguro = urllib.parse.quote(articulo_generado["prompt_imagen"] + ", highly detailed, 8k resolution, professional photography")
-            imagen_final = f"[https://image.pollinations.ai/prompt/](https://image.pollinations.ai/prompt/){prompt_seguro}?width=1200&height=720&nologo=true"
+            imagen_final = random.choice(imagenes_respaldo)
+            print("📸 Asignando imagen premium de respaldo.")
         
-        # --- ENSAMBLAJE FINAL ---
+        # --- ENSAMBLAJE ---
         articulo_final = {
             "id": id_articulo,
             "titulo": articulo_generado["titulo"],
@@ -172,14 +180,13 @@ for item in temas_a_redactar:
         datos_web["articulos"].insert(0, articulo_final)
         print(f"✅ ¡Artículo guardado exitosamente!")
         
-        print("⏳ Pausa de enfriamiento (15s)...")
         time.sleep(15)
 
     except Exception as e_total:
         print(f"❌ Error crítico al generar '{tema}': {e_total}")
         time.sleep(30)
 
-# 6. Guardar todo
+# 7. Guardar en JSON
 with open(archivo_articulos, "w", encoding="utf-8") as f:
     json.dump(datos_web, f, ensure_ascii=False, indent=2)
 
