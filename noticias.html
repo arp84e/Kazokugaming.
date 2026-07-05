@@ -49,7 +49,7 @@
                 grid.innerHTML = articulos.map(a => `
                     <a href="articulo.html?id=${a.id}" class="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-lg shadow-black/20">
                         <div class="relative w-full aspect-video overflow-hidden">
-                            <img src="${a.imagen}" alt="Portada" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                          <img src="${a.imagen}" alt="Portada" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
