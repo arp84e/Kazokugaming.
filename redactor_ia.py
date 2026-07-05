@@ -9,7 +9,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA HÍBRIDO) ===")
+print("=== INICIANDO KAZOKUBOT: REDACTOR EN JEFE IA (SISTEMA HÍBRIDO + RESILIENCIA) ===")
 
 # 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -30,7 +30,6 @@ if temas_input and temas_input.strip():
     temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
 else:
     print("🌍 MODO: PILOTO AUTOMÁTICO (Buscando tendencias de las últimas 24h...)")
-    # Utilizamos el feed de noticias global buscando "videojuegos" o "tecnología"
     url_rss = "https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es"
     try:
         req = urllib.request.Request(url_rss, headers={'User-Agent': 'Mozilla/5.0'})
@@ -38,10 +37,8 @@ else:
             xml_data = response.read()
         root = ET.fromstring(xml_data)
         
-        # Extraemos los 3 temas más virales
         for item in root.findall('.//item')[:3]:
             titulo_completo = item.find('title').text
-            # Limpiamos el nombre del medio de comunicación al final del titular
             titulo_limpio = titulo_completo.rsplit(' - ', 1)[0]
             temas_a_redactar.append({"tema": titulo_limpio, "categoria": "Noticias"})
             print(f"📡 Tendencia detectada: {titulo_limpio}")
@@ -69,7 +66,7 @@ REGLAS DE FORMATO ESTRICTAS:
 1. Devuelve ÚNICAMENTE un objeto JSON válido.
 2. El 'contenido' debe ser HTML limpio usando <p class='mb-4'>, <h3 class='text-xl font-bold text-cyan-400 mt-8 mb-4'>, y <strong>. No uses Markdown.
 3. 'es_videojuego': true si el tema principal es un videojuego específico, false si es hardware o tecnología general.
-4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego (ej. "Cyberpunk 2077"). Si es false, escribe una descripción corta en INGLÉS para generar una imagen por IA (ej. "A glowing gaming PC setup in a dark room").
+4. 'prompt_imagen': Si es_videojuego es true, escribe SOLO el nombre oficial del juego. Si es false, escribe una descripción corta en INGLÉS para generar una imagen por IA.
 
 ESTRUCTURA JSON REQUERIDA:
 {
@@ -98,15 +95,30 @@ for item in temas_a_redactar:
     print(f"\n✍️ Redactando artículo: {tema}...")
     
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=f"Tema/Noticia a redactar: {tema}",
-            config=types.GenerateContentConfig(
-                system_instruction=prompt_sistema,
-                response_mime_type="application/json",
-                temperature=0.7
+        # --- SISTEMA DE RESPALDO (FALLBACK) DE IA ---
+        try:
+            print("🧠 Intentando con servidor principal (3.5-flash)...")
+            response = client.models.generate_content(
+                model='gemini-3.5-flash',
+                contents=f"Tema/Noticia a redactar: {tema}",
+                config=types.GenerateContentConfig(
+                    system_instruction=prompt_sistema,
+                    response_mime_type="application/json",
+                    temperature=0.7
+                )
             )
-        )
+        except Exception as e_principal:
+            print(f"⚠️ Servidor principal congestionado o falló: {e_principal}")
+            print("🔄 Activando servidor de respaldo (2.5-flash)...")
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=f"Tema/Noticia a redactar: {tema}",
+                config=types.GenerateContentConfig(
+                    system_instruction=prompt_sistema,
+                    response_mime_type="application/json",
+                    temperature=0.7
+                )
+            )
         
         articulo_generado = json.loads(response.text)
         
@@ -134,7 +146,7 @@ for item in temas_a_redactar:
             "slug": slug,
             "categoria": categoria,
             "tags": articulo_generado["tags"],
-            "autor": "KazokuBot IA",
+            "autor": "KazokuBot",
             "imagen": imagen_final,
             "fecha": time.strftime("%d %b, %Y"),
             "tiempo_lectura": articulo_generado["tiempo_lectura"],
@@ -148,8 +160,8 @@ for item in temas_a_redactar:
         print("⏳ Pausa de enfriamiento (15s)...")
         time.sleep(15)
 
-    except Exception as e:
-        print(f"❌ Error al generar '{tema}': {e}")
+    except Exception as e_total:
+        print(f"❌ Error crítico al generar '{tema}': {e_total}")
         time.sleep(30)
 
 # 6. Guardar todo
