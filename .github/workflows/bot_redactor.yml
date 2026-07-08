@@ -8,7 +8,7 @@ on:
         required: false
         type: string
   schedule:
-    - cron: '0 12 * * *' # Se ejecuta automáticamente todos los días a las 12:00 PM UTC
+    - cron: '0 12 * * *'
 
 permissions:
   contents: write
@@ -32,6 +32,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           INPUT_TEMAS: ${{ inputs.temas }}
         run: python redactor_ia.py
 
@@ -49,7 +50,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay artículos nuevos."
           else
-            git commit -m "🤖 Bot Redactor: Publicación diaria automática de tendencias"
+            git commit -m "🤖 Bot Redactor: Integración de Pexels como banco de imágenes libre"
             git pull --rebase origin main || true
             git push
           fi
