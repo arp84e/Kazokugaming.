@@ -24,12 +24,13 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 archivo_articulos = "articulos.json"
 
+# URLs limpias sin formato markdown
 imagenes_respaldo = [
-    "[https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200)",
-    "[https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200](https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200)",
-    "[https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200](https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200)",
-    "[https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200](https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200)",
-    "[https://images.unsplash.com/photo-1612287230202-1ff1d85d1e4e?q=80&w=1200](https://images.unsplash.com/photo-1612287230202-1ff1d85d1e4e?q=80&w=1200)"
+    "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
+    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200",
+    "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1200",
+    "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200",
+    "https://images.unsplash.com/photo-1612287230202-1ff1d85d1e4e?q=80&w=1200"
 ]
 
 def extraer_json_seguro(texto):
@@ -63,7 +64,6 @@ if actualizar_input and actualizar_input.strip() and len(datos_web["articulos"])
     """
     
     for articulo in datos_web["articulos"]:
-        # Actualiza si el comando es TODOS o si coincide el título
         if comando_act == "TODOS" or any(t in articulo["titulo"].lower() for t in titulos_a_actualizar):
             print(f"🖼️ Re-generando imagen para: '{articulo['titulo']}'...")
             try:
@@ -79,7 +79,7 @@ if actualizar_input and actualizar_input.strip() and len(datos_web["articulos"])
                 
                 if datos_img.get("es_videojuego") and rawg_key and prompt_img:
                     try:
-                        req_r = requests.get(f"[https://api.rawg.io/api/games?key=](https://api.rawg.io/api/games?key=){rawg_key}&search={urllib.parse.quote(prompt_img)}&page_size=1", timeout=10).json()
+                        req_r = requests.get(f"https://api.rawg.io/api/games?key={rawg_key}&search={urllib.parse.quote(prompt_img)}&page_size=1", timeout=10).json()
                         if req_r.get("results") and len(req_r["results"]) > 0:
                             imagen_final = req_r["results"][0].get("background_image", "")
                             print("🎮 Nueva imagen obtenida desde RAWG.")
@@ -87,7 +87,7 @@ if actualizar_input and actualizar_input.strip() and len(datos_web["articulos"])
                 
                 if not imagen_final and pexels_key and prompt_img:
                     try:
-                        req_p = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){urllib.parse.quote(prompt_img)}&per_page=5", headers={"Authorization": pexels_key}, timeout=10).json()
+                        req_p = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(prompt_img)}&per_page=5", headers={"Authorization": pexels_key}, timeout=10).json()
                         if req_p.get("photos") and len(req_p["photos"]) > 0:
                             imagen_final = random.choice(req_p["photos"])["src"]["landscape"]
                             print(f"📸 Nueva imagen obtenida desde Pexels ({prompt_img}).")
@@ -115,7 +115,7 @@ elif actualizar_input and actualizar_input.strip():
     print("\n🛑 Piloto automático de redacción desactivado (Solo se actualizan imágenes).")
 else:
     print("\n🌍 MODO: PILOTO AUTOMÁTICO (Buscando tendencias...)")
-    url_rss = "[https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es](https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es)"
+    url_rss = "https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es"
     try:
         req = urllib.request.Request(url_rss, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
@@ -190,7 +190,7 @@ for item in temas_a_redactar:
         if articulo_generado.get("es_videojuego") and rawg_key and prompt_img:
             try:
                 nombre_juego = urllib.parse.quote(prompt_img)
-                r = requests.get(f"[https://api.rawg.io/api/games?key=](https://api.rawg.io/api/games?key=){rawg_key}&search={nombre_juego}&page_size=1", timeout=10).json()
+                r = requests.get(f"https://api.rawg.io/api/games?key={rawg_key}&search={nombre_juego}&page_size=1", timeout=10).json()
                 if r.get("results") and len(r["results"]) > 0:
                     imagen_final = r["results"][0].get("background_image", "")
             except: pass
@@ -199,7 +199,7 @@ for item in temas_a_redactar:
             try:
                 query_pexels = urllib.parse.quote(prompt_img)
                 headers = {"Authorization": pexels_key}
-                r = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){query_pexels}&per_page=5", headers=headers, timeout=10).json()
+                r = requests.get(f"https://api.pexels.com/v1/search?query={query_pexels}&per_page=5", headers=headers, timeout=10).json()
                 if r.get("photos") and len(r["photos"]) > 0:
                     foto_elegida = random.choice(r["photos"])
                     imagen_final = foto_elegida["src"]["landscape"]
