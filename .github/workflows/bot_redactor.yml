@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       temas:
-        description: '📝 Curación Manual (Separado por ;). Déjalo vacío para Piloto Automático.'
+        description: '📝 Nuevos Artículos (Separados por ;). Déjalo vacío para Automático.'
+        required: false
+        type: string
+      actualizar:
+        description: '🖼️ Arreglar Imágenes (Escribe parte del título, o escribe TODOS)'
         required: false
         type: string
   schedule:
@@ -34,6 +38,7 @@ jobs:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           INPUT_TEMAS: ${{ inputs.temas }}
+          INPUT_ACTUALIZAR: ${{ inputs.actualizar }}
         run: python redactor_ia.py
 
       - name: Actualizar Mapa del Sitio XML
@@ -48,9 +53,9 @@ jobs:
           git add sitemap.xml || true
           
           if git diff --staged --quiet; then
-            echo "No hay artículos nuevos."
+            echo "No hay cambios en los artículos."
           else
-            git commit -m "🤖 Bot Redactor: Integración de Pexels como banco de imágenes libre"
+            git commit -m "🤖 KazokuBot: Artículos redactados o imágenes actualizadas"
             git pull --rebase origin main || true
             git push
           fi
