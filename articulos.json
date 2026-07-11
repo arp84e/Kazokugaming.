@@ -1,6 +1,36 @@
 {
   "articulos": [
     {
+      "id": "art-amazon-luna",
+      "titulo": "Amazon Luna a examen: ¿La infraestructura de AWS es suficiente para vencer en la nube?",
+      "slug": "amazon-luna",
+      "categoria": "Noticias",
+      "tags": [
+        "Amazon Luna",
+        "Cloud Gaming",
+        "Tecnologia",
+        "Review"
+      ],
+      "autor": "KazokuBot",
+      "imagen": "https://images.pexels.com/photos/16311110/pexels-photo-16311110.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "fecha": "11 Jul, 2026",
+      "tiempo_lectura": "6 min",
+      "contenido": "<p>El mercado del <i>cloud gaming</i> ha dejado de ser una promesa de futuro para convertirse en un campo de batalla táctico en el presente. Tras la caída de Google Stadia, muchos miraron con escepticismo las nuevas propuestas de juego en la nube. Sin embargo, <strong>Amazon Luna</strong> ha emergido como un competidor sumamente maduro, apalancado por la infraestructura de servidores más robusta del planeta: AWS (Amazon Web Services). En KazokuGaming destripamos técnicamente el servicio para entender si realmente puede plantar cara al gigante Xbox Cloud Gaming.</p><h2>Arquitectura Técnica y Latencia: El factor clave</h2><p>Para cualquier jugador, el talón de Aquiles del streaming es la latencia de entrada (<i>input lag</i>). Amazon ha abordado este problema no solo optimizando el software, sino diseñando hardware específico. El <strong>Luna Controller</strong> se conecta directamente a los servidores de Amazon mediante Wi-Fi, saltándose el paso de conectarse primero al dispositivo local (PC, Fire TV o móvil) a través de Bluetooth. Esta solución táctica reduce la latencia en un promedio de 15 a 30 milisegundos, una diferencia crítica en títulos que requieren precisión milimétrica.</p><h2>El Modelo de Canales: ¿Suscripción o Fragmentación?</h2><p>A diferencia del modelo de 'tarifa plana' total de Xbox Game Pass, Amazon Luna utiliza un sistema híbrido de canales:</p><ul><li><strong>Luna+:</strong> El canal base con una biblioteca rotativa de juegos de diversos géneros.</li><li><strong>Prime Gaming:</strong> Un beneficio excelente para los miembros de Amazon Prime, que permite jugar a una selección mensual de juegos sin coste adicional.</li><li><strong>Ubisoft+ y GOG:</strong> Integraciones directas que permiten a los usuarios jugar a los títulos que ya poseen en estas tiendas de PC directamente en la nube.</li></ul><p>Esta integración con tiendas externas es un movimiento estratégico brillante. Permite a los jugadores tradicionales de PC migrar a la nube sin perder su biblioteca adquirida, mitigando uno de los mayores miedos del consumidor digital: la pérdida de propiedad de sus juegos.</p><h2>Rendimiento en Combate: 1080p y Estabilidad</h2><p>Durante nuestras pruebas tácticas en conexiones de fibra simétrica de 300 Mbps y conexiones móviles 5G, Luna demostró una estabilidad soberbia. El servicio prioriza la tasa de refresco de <strong>60 FPS</strong> sacrificando, si es necesario, la resolución de manera dinámica para evitar tirones (<i>stuttering</i>). Aunque la resolución máxima está topada a 1080p, la compresión de video basada en códecs avanzados de AWS hace que la imagen se perciba nítida, incluso en pantallas grandes de TV a través de Fire TV Stick.</p><h2>Veredicto de KazokuGaming</h2><p>Amazon Luna no busca reemplazar tu PC de gama alta o tu consola de nueva generación; busca ser tu alternativa táctica de movilidad y accesibilidad. Su integración con Prime lo convierte en una opción de entrada sin fricciones para millones de usuarios. Si buscas portabilidad sin comprometer la latencia y ya estás dentro del ecosistema de Amazon, Luna es, sin duda, una de las plataformas de juego en la nube más sólidas y estables del mercado actual.</p>",
+      "meta_descripcion": "Analizamos a fondo Amazon Luna. Rendimiento, latencia, modelo de canales y tecnología de la apuesta de juego en la nube de Amazon.",
+      "seo": {
+        "keywords": "amazon luna, cloud gaming, streaming de videojuegos, luna controller, amazon prime gaming"
+      },
+      "open_graph": {
+        "og_title": "Amazon Luna: ¿El verdadero rival de Xbox Cloud Gaming?",
+        "og_description": "Analizamos a fondo el rendimiento, catálogo y tecnología de Amazon Luna, la apuesta de juego en la nube soportada por AWS.",
+        "og_type": "article"
+      },
+      "articulos_relacionados": [
+        "analisis-xbox-cloud-gaming-2024",
+        "geforce-now-vs-luna-comparativa"
+      ]
+    },
+    {
       "id": "art-mejor-que-the-walking-dead-este-proyecto-de-zo",
       "titulo": "Mejor que The Walking Dead: El prometedor proyecto de zombis que quedó en el limbo",
       "slug": "mejor-que-the-walking-dead-este-proyecto-de-zombis-qued-en-el-limbo-pero-ten-a-todo-para-triunfar",
