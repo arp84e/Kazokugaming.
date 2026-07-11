@@ -4,9 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       juego:
-        description: '🎮 Título del juego para la guía. Usa [Nombre : Año] para evitar confusiones (Ej: Alan Wake 2 : 2023)'
-        required: true
+        description: '🎮 (Opcional) Juego manual. Deja vacío para Modo Automático (3 guías tendencia).'
+        required: false
         type: string
+  schedule:
+    - cron: '0 13 * * *' # Se ejecuta automáticamente todos los días a las 13:00 UTC
 
 permissions:
   contents: write
@@ -47,7 +49,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay cambios."
           else
-            git commit -m "🤖 Bot Estratega: Nueva guía táctica verificada y generada."
+            git commit -m "🤖 Bot Estratega: Nuevas guías publicadas (Modo Automático/Manual)."
             git pull --rebase origin main || true
             git push origin main
           fi
