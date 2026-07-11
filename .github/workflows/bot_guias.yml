@@ -1,0 +1,53 @@
+name: Bot Guías Tácticas
+
+on:
+  workflow_dispatch:
+    inputs:
+      juego:
+        description: '🎮 Título del juego para crear la guía (Ej: Elden Ring)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  redactar-guia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias seguras
+        run: pip install google-genai==0.3.0 requests==2.31.0
+
+      - name: Ejecutar Bot de Guías
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          INPUT_JUEGO: ${{ inputs.juego }}
+        run: python bot_guias.py
+
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
+
+      - name: Commit y Push
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          
+          git add guias.json || true
+          git add sitemap.xml || true
+          
+          if git diff --staged --quiet; then
+            echo "No hay cambios."
+          else
+            git commit -m "🤖 Bot Estratega: Nueva guía táctica generada."
+            git pull --rebase origin main || true
+            git push origin main
+          fi
