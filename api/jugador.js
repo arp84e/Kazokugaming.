@@ -1,19 +1,34 @@
-// api/jugador.js - Tu primer servidor Backend en Vercel
+// api/jugador.js - Backend protegido en Vercel
+const rateLimit = new Map();
+
 export default async function handler(req, res) {
-    // 1. Recibimos el nombre del jugador que nos envía tu hub.html
+    // 1. SISTEMA ANTI-DOS (Rate Limiting por IP)
+    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '127.0.0.1';
+    const now = Date.now();
+    const windowMs = 60000; // Bloqueo de 1 minuto
+    
+    if (rateLimit.has(ip)) {
+        const requests = rateLimit.get(ip);
+        if (requests.count >= 15 && now - requests.startTime < windowMs) {
+            return res.status(429).json({ error: "Demasiadas peticiones. Sistema de seguridad activado, espera un minuto." });
+        }
+        if (now - requests.startTime >= windowMs) {
+            rateLimit.set(ip, { count: 1, startTime: now });
+        } else {
+            requests.count++;
+        }
+    } else {
+        rateLimit.set(ip, { count: 1, startTime: now });
+    }
+
+    // 2. LÓGICA DE LA API
     const nombreJugador = req.query.nombre;
 
     if (!nombreJugador) {
         return res.status(400).json({ error: "Falta el nombre del jugador." });
     }
 
-    // 2. AQUÍ ESTÁ LA MAGIA SEGURA
-    // En el próximo paso, aquí pondremos el código que se conecta a Epic Games y Riot
-    // usando nuestras contraseñas secretas (API Keys) que nadie podrá ver.
-    // const FORTNITE_API_KEY = process.env.FORTNITE_SECRETO;
-
-    // 3. Por ahora, simulamos que Vercel fue a buscar los datos a los 3 juegos al mismo tiempo
-    // y los empaquetamos en un solo formato estándar (JSON) para tu web.
+    // 3. RETORNO DE DATOS SIMULADOS
     const datosUnificados = {
         perfil: {
             nombre: nombreJugador.toUpperCase(),
@@ -25,15 +40,9 @@ export default async function handler(req, res) {
                 rango: "Diamante 2",
                 winRate: "54%",
                 kd: (Math.random() * (2.0 - 0.8) + 0.8).toFixed(2)
-            },
-            fortnite: {
-                victorias: Math.floor(Math.random() * 300),
-                bajas: Math.floor(Math.random() * 5000),
-                nivel: Math.floor(Math.random() * 200) + 10
             }
         }
     };
 
-    // 4. Se lo enviamos de vuelta a tu hub.html
-    res.status(200).json(datosUnificados);
+    return res.status(200).json(datosUnificados);
 }
