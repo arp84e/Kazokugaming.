@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta name="description" content="Únete al Muro de KazokuGaming. Debate sobre hardware, juegos y noticias con total privacidad.">
-    <meta property="og:title" content="Foro de la Comunidad | KazokuGaming">
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
         ::-webkit-scrollbar { width: 6px; }
@@ -21,386 +21,167 @@
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
     </style>
 </head>
-<body class="text-slate-200 h-screen w-screen flex flex-col overflow-hidden">
+<body class="text-slate-200 h-screen flex flex-col">
+
     <div id="header-container"></div>
 
-    <button id="btnAbrirPanelMovil" class="lg:hidden fixed bottom-24 right-6 z-40 bg-indigo-600 hover:bg-indigo-500 text-white p-4 rounded-full shadow-xl border border-indigo-400/20 cursor-pointer flex items-center justify-center transition-transform active:scale-95">
-        <span class="text-xl">👤</span>
-    </button>
+    <main class="flex-grow max-w-4xl mx-auto px-4 w-full flex flex-col py-6 overflow-hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl flex-grow flex flex-col overflow-hidden shadow-2xl relative">
+            
+            <div id="muro-mensajes" class="flex-grow overflow-y-auto p-4 md:p-6 space-y-4">
+                </div>
 
-    <div id="overlayPanelMovil" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-45 transition-opacity lg:hidden"></div>
+            <div class="bg-slate-950 p-4 border-t border-slate-800">
+                <div id="panel-login" class="flex flex-col md:flex-row gap-3">
+                    <input type="text" id="inputApodo" placeholder="Tu Apodo (Solo para Registro)" class="bg-slate-900 border border-slate-700 text-sm rounded-lg px-4 py-2 focus:border-cyan-500 outline-none text-white">
+                    <input type="email" id="inputEmail" placeholder="Tu Email" class="bg-slate-900 border border-slate-700 text-sm rounded-lg px-4 py-2 focus:border-cyan-500 outline-none text-white">
+                    <input type="password" id="inputPass" placeholder="Contraseña" class="bg-slate-900 border border-slate-700 text-sm rounded-lg px-4 py-2 focus:border-cyan-500 outline-none text-white">
+                    <div class="flex gap-2">
+                        <button onclick="intentarRegistro()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg text-sm transition">Registrar</button>
+                        <button onclick="intentarLogin()" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-lg text-sm transition">Entrar</button>
+                    </div>
+                </div>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full flex flex-col lg:flex-row gap-6 min-h-0 overflow-hidden">
-        
-        <div class="flex-1 min-w-0 flex flex-col h-full">
-            <div class="mb-3 shrink-0">
-                <h1 class="text-2xl font-extrabold tracking-tight text-white flex items-center">
-                    <span class="text-amber-400 mr-2">💬</span> Muro de Kazoku
-                </h1>
-                <p class="text-slate-400 text-xs mt-0.5">Comparte descubrimientos o pide consejo en tiempo real.</p>
-            </div>
-
-            <div id="muroMensajes" class="flex-1 overflow-y-auto space-y-4 pr-2 mb-4 min-h-0">
-                <p class="text-slate-500 text-sm text-center py-10 animate-pulse">Sincronizando con el satélite de comunicaciones...</p>
-            </div>
-
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm shrink-0">
-                <textarea id="mensajeInput" rows="2" disabled class="w-full bg-slate-950/50 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 resize-none transition-all disabled:opacity-50" placeholder="Debes iniciar sesión para escribir en el muro..."></textarea>
-                <div class="flex justify-between items-center mt-2">
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Respeta las normas de la comunidad</span>
-                    <button id="btnPublicar" disabled class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold px-5 py-2 rounded-lg transition shadow-md shadow-cyan-900/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                        Enviar Mensaje
-                    </button>
+                <div id="panel-chat" class="hidden flex gap-3">
+                    <input type="text" id="inputMensaje" placeholder="Escribe tu mensaje..." class="flex-grow bg-slate-900 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white" onkeypress="if(event.key === 'Enter') enviarMensaje()">
+                    <button onclick="enviarMensaje()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition shadow-[0_0_15px_rgba(6,182,212,0.4)]">ENVIAR</button>
+                    <button onclick="cerrarSesion()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 font-bold py-2 px-4 rounded-lg text-sm transition">Salir</button>
                 </div>
             </div>
         </div>
-
-        <aside id="panelLateral" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-950/95 border-l border-slate-800 p-6 z-50 translate-x-full transition-transform duration-300 ease-in-out flex flex-col gap-4 overflow-y-auto
-            lg:static lg:h-full lg:w-80 lg:max-w-none lg:bg-transparent lg:border-none lg:p-0 lg:z-auto lg:translate-x-0 lg:overflow-visible lg:flex lg:flex-col shrink-0">
-            
-            <div class="flex justify-between items-center lg:hidden border-b border-slate-800 pb-3 mb-2 shrink-0">
-                <span class="text-sm font-bold uppercase tracking-wider text-slate-400">Panel de Control</span>
-                <button id="btnCerrarPanelMovil" class="text-slate-400 hover:text-white text-xl p-1 cursor-pointer">&times;</button>
-            </div>
-
-            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-5 backdrop-blur-md shadow-2xl shrink-0" id="panelIdentidad">
-                <div id="loginFormContainer">
-                    <div class="text-center mb-4">
-                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-400 mb-2 border border-emerald-500/20">🔒</div>
-                        <h2 class="text-lg font-bold text-white tracking-tight">Acceso Privado</h2>
-                        <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Crea tu identidad sin correos. Si pierdes tu clave, perderás la cuenta.</p>
-                    </div>
-
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Tu Apodo</label>
-                            <input type="text" id="apodoInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="Ej. CyberNinja99">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Contraseña</label>
-                            <input type="password" id="passInput" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none transition" placeholder="••••••••">
-                        </div>
-                        
-                        <div class="pt-1 flex flex-col space-y-2">
-                            <button id="btnLogin" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs py-2 rounded-lg transition shadow-md cursor-pointer">
-                                Entrar al Muro
-                            </button>
-                            <button id="btnRegistro" class="w-full bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 font-bold text-xs py-2 rounded-lg transition cursor-pointer">
-                                Crear Nueva Identidad
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-4 backdrop-blur-md shadow-xl flex flex-col flex-1 min-h-0">
-                <div class="flex items-center justify-between mb-3 border-b border-slate-800/60 pb-2 shrink-0">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Conectados Net
-                    </h3>
-                    <span id="contadorConectados" class="text-[10px] bg-slate-800 px-2 py-0.5 rounded-md font-mono text-cyan-400 border border-slate-700">0</span>
-                </div>
-                <div id="listaConectados" class="flex-1 overflow-y-auto space-y-2 pr-1 text-sm text-slate-400 min-h-0">
-                    <p class="text-[11px] text-slate-500 text-center py-2 italic">Sincronizando red...</p>
-                </div>
-            </div>
-
-        </aside>
     </main>
 
-    <script src="header.js"></script>
-    
-    <script type="module">
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+    <script src="../header.js"></script>
+    <script>
+        // CONFIGURACIÓN DE SUPABASE
+        const supabaseUrl = 'https://TU_PROYECTO.supabase.co';
+        const supabaseKey = 'TU_ANON_KEY';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-        const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU';
-        const supabase = createClient(supabaseUrl, supabaseKey);
+        let usuarioActual = null;
 
-        const blacklist = ['kazokuadmin', 'gameranon22'];
-
-        const muroMensajes = document.getElementById('muroMensajes');
-        const loginFormContainer = document.getElementById('loginFormContainer');
-        const apodoInput = document.getElementById('apodoInput');
-        const passInput = document.getElementById('passInput');
-        const btnLogin = document.getElementById('btnLogin');
-        const btnRegistro = document.getElementById('btnRegistro');
-        const mensajeInput = document.getElementById('mensajeInput');
-        const btnPublicar = document.getElementById('btnPublicar');
-        
-        const btnAbrirPanelMovil = document.getElementById('btnAbrirPanelMovil');
-        const btnCerrarPanelMovil = document.getElementById('btnCerrarPanelMovil');
-        const panelLateral = document.getElementById('panelLateral');
-        const overlayPanelMovil = document.getElementById('overlayPanelMovil');
-        const listaConectados = document.getElementById('listaConectados');
-        const contadorConectados = document.getElementById('contadorConectados');
-
-        // --- SISTEMA INTERFAZ RESPONSIVE MÓVIL ---
-        function togglePanelMovil(abrir) {
-            if(abrir) {
-                panelLateral.classList.remove('translate-x-full');
-                overlayPanelMovil.classList.remove('hidden');
+        // Validar sesión al entrar
+        async function revisarSesion() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                usuarioActual = session.user;
+                document.getElementById('panel-login').classList.add('hidden');
+                document.getElementById('panel-chat').classList.remove('hidden');
             } else {
-                panelLateral.classList.add('translate-x-full');
-                overlayPanelMovil.classList.add('hidden');
-            }
-        }
-        btnAbrirPanelMovil.addEventListener('click', () => togglePanelMovil(true));
-        btnCerrarPanelMovil.addEventListener('click', () => togglePanelMovil(false));
-        overlayPanelMovil.addEventListener('click', () => togglePanelMovil(false));
-
-        async function cifrarPassword(pass) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(pass);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
-        // --- SISTEMA DE SESIONES ---
-        let usuarioActual = localStorage.getItem('kazoku_usuario');
-
-        function revisarSesion() {
-            if (usuarioActual) {
-                loginFormContainer.innerHTML = `
-                    <div class="text-center space-y-3">
-                        <div class="mx-auto w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-xl border-2 shadow-lg shadow-cyan-900/20 ${blacklist.includes(usuarioActual.toLowerCase()) ? 'bg-gradient-to-br from-indigo-500 to-cyan-500 text-white border-cyan-400' : 'bg-slate-800 text-slate-300 border-slate-700'}">
-                            ${usuarioActual.charAt(0).toUpperCase()}
-                        </div>
-                        <h3 class="text-md font-bold text-white tracking-tight">¡Hola, ${usuarioActual}!</h3>
-                        <p class="text-[11px] text-slate-400">Conectado a la red segura.</p>
-                        <button id="btnCerrarSesion" class="w-full bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 font-bold text-xs py-2 rounded-lg transition cursor-pointer">
-                            Desconectar
-                        </button>
-                    </div>
-                `;
-                document.getElementById('btnCerrarSesion').addEventListener('click', () => {
-                    localStorage.removeItem('kazoku_usuario');
-                    window.location.reload();
-                });
-                
-                mensajeInput.disabled = false;
-                mensajeInput.placeholder = "Escribe un mensaje en el muro...";
-                btnPublicar.disabled = false;
+                document.getElementById('panel-login').classList.remove('hidden');
+                document.getElementById('panel-chat').classList.add('hidden');
             }
         }
 
-        // --- TRACKING REALTIME PRESENCE (CONECTADOS REALES) ---
-        // Generamos un identificador único por pestaña para que no colisionen sesiones
-        const presKey = usuarioActual ? `user:${usuarioActual}_${Math.random().toString(36).substr(2,4)}` : `guest:${Math.random().toString(36).substr(2, 8)}`;
-        
-        const channel = supabase.channel('muro_online', {
-            config: { presence: { key: presKey } }
-        });
+        // [SEGURIDAD] Cifrado y registro delegado a Supabase
+        async function intentarRegistro() {
+            const email = document.getElementById('inputEmail').value.trim();
+            const pass = document.getElementById('inputPass').value;
+            const apodo = document.getElementById('inputApodo').value.trim();
 
-        channel
-            .on('presence', { event: 'sync' }, () => {
-                const state = channel.presenceState();
-                renderUsuariosReales(state);
-            })
-            .subscribe(async (status) => {
-                if (status === 'SUBSCRIBED') {
-                    // Publicamos nuestro estado actual en la sala invisible de Supabase
-                    await channel.track({
-                        username: usuarioActual || 'Invitado Anon',
-                        esInvitado: !usuarioActual,
-                        onlineAt: new Date().toISOString()
-                    });
-                }
+            if(!email || !pass || !apodo) { alert("Completa todos los campos"); return; }
+
+            const { data, error } = await supabase.auth.signUp({
+                email: email,
+                password: pass,
+                options: { data: { apodo: apodo } }
             });
 
-        function renderUsuariosReales(state) {
-            listaConectados.innerHTML = '';
-            const usuariosUnicos = [];
-            const nombresFiltrados = new Set();
-
-            // Extraemos y limpiamos la información que Supabase Presence recolecta de todos los navegadores abiertos
-            Object.keys(state).forEach((key) => {
-                const presences = state[key];
-                if (presences && presences.length > 0) {
-                    const datosUsuario = presences[0];
-                    
-                    if (!datosUsuario.esInvitado) {
-                        // Si es usuario registrado, evitamos duplicar su nombre si tiene varias pestañas abiertas
-                        if (!nombresFiltrados.has(datosUsuario.username)) {
-                            nombresFiltrados.add(datosUsuario.username);
-                            usuariosUnicos.push(datosUsuario);
-                        }
-                    } else {
-                        // Los invitados anónimos se añaden de forma individual siempre
-                        usuariosUnicos.push(datosUsuario);
-                    }
-                }
-            });
-
-            // Ordenamos: Miembros del Staff y usuarios primero, invitados al final
-            usuariosUnicos.sort((a, b) => {
-                const aAdmin = blacklist.includes(a.username.toLowerCase()) ? 0 : 1;
-                const bAdmin = blacklist.includes(b.username.toLowerCase()) ? 0 : 1;
-                if (aAdmin !== bAdmin) return aAdmin - bAdmin;
-                return a.esInvitado - b.esInvitado;
-            });
-
-            contadorConectados.innerText = usuariosUnicos.length;
-
-            if (usuariosUnicos.length === 0) {
-                listaConectados.innerHTML = '<p class="text-[11px] text-slate-500 text-center py-2 italic">No hay transmisiones...</p>';
-                return;
-            }
-
-            usuariosUnicos.forEach(user => {
-                const esAdmin = blacklist.includes(user.username.toLowerCase());
-                let badge = '';
-                
-                if (esAdmin) {
-                    badge = '<span class="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 rounded border border-indigo-500/30 font-bold">STAFF</span>';
-                } else if (user.esInvitado) {
-                    badge = '<span class="text-[8px] bg-slate-800 text-slate-500 px-1 rounded border border-slate-700">GUEST</span>';
-                } else {
-                    badge = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>';
-                }
-                
-                const inicial = user.username.charAt(0).toUpperCase();
-                const div = document.createElement('div');
-                div.className = 'flex items-center justify-between bg-slate-950/40 border border-slate-800/50 rounded-xl px-3 py-2 hover:border-slate-700/80 transition shrink-0';
-                div.innerHTML = `
-                    <div class="flex items-center gap-2 min-w-0">
-                        <div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300 shrink-0">
-                            ${inicial}
-                        </div>
-                        <span class="text-xs font-medium text-slate-300 truncate max-w-[120px]">${user.username}</span>
-                    </div>
-                    ${badge}
-                `;
-                listaConectados.appendChild(div);
-            });
+            if (error) alert("Error: " + error.message);
+            else alert("¡Registro exitoso! Ya puedes iniciar sesión.");
         }
 
-        // --- REGISTRO DE IDENTIDAD ---
-        btnRegistro.addEventListener('click', async () => {
-            const apodo = apodoInput.value.trim();
-            const pass = passInput.value.trim();
+        // [SEGURIDAD] Inicio de sesión protegido por Tokens
+        async function intentarLogin() {
+            const email = document.getElementById('inputEmail').value.trim();
+            const pass = document.getElementById('inputPass').value;
 
-            if(apodo.length < 3 || pass.length < 4) return alert('El apodo debe tener mínimo 3 letras y la contraseña 4.');
-            if(blacklist.includes(apodo.toLowerCase())) return alert('⚠️ Error: Este apodo está reservado.');
+            if(!email || !pass) { alert("Ingresa tu correo y contraseña"); return; }
 
-            btnRegistro.innerText = 'Creando...';
-            const hash = await cifrarPassword(pass);
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: pass
+            });
 
-            const { error } = await supabase.from('usuarios').insert([{ apodo: apodo, password: hash }]);
+            if (error) { alert("Credenciales incorrectas."); return; }
+            window.location.reload(); 
+        }
 
-            if (error) {
-                if(error.code === '23505') alert('Este apodo ya está siendo usado por otro jugador. Elige otro.');
-                else alert('Error: ' + error.message);
-            } else {
-                alert('¡Identidad creada! Haz clic en "Entrar al Muro" para conectarte.');
-            }
-            btnRegistro.innerText = 'Crear Nueva Identidad';
-        });
+        async function cerrarSesion() {
+            await supabase.auth.signOut();
+            window.location.reload();
+        }
 
-        // --- INICIAR SESIÓN ---
-        btnLogin.addEventListener('click', async () => {
-            const apodo = apodoInput.value.trim();
-            const pass = passInput.value.trim();
-            if(!apodo || !pass) return alert('Completa los datos.');
-
-            btnLogin.innerText = 'Verificando...';
-            const hash = await cifrarPassword(pass);
-
-            const { data, error } = await supabase.from('usuarios').select('*').eq('apodo', apodo).eq('password', hash);
-
-            if (error || data.length === 0) {
-                alert('Apodo o contraseña incorrectos.');
-            } else {
-                localStorage.setItem('kazoku_usuario', apodo);
-                window.location.reload();
-            }
-            btnLogin.innerText = 'Entrar al Muro';
-        });
-
-        // --- PUBLICAR MENSAJE ---
-        btnPublicar.addEventListener('click', async () => {
-            const texto = mensajeInput.value.trim();
-            if(!texto) return;
-
-            btnPublicar.disabled = true;
-            btnPublicar.innerText = '...';
-
-            const { error } = await supabase.from('mensajes').insert([{ autor_apodo: usuarioActual, contenido: texto }]);
-
-            btnPublicar.disabled = false;
-            btnPublicar.innerText = 'Enviar Mensaje';
-
-            if(error) {
-                alert('Error al publicar: ' + error.message);
-            } else {
-                mensajeInput.value = '';
-                await cargarMensajes();
-            }
-        });
-
-        // --- FUNCIÓN DEL MODERADOR (Borrar Mensajes) ---
-        window.borrarMensaje = async function(id) {
-            if(!confirm('🚨 ¿Estás seguro de que deseas eliminar este mensaje del muro?')) return;
-            const { error } = await supabase.from('mensajes').delete().eq('id', id);
-            if(error) alert('Error al borrar: ' + error.message);
-            else cargarMensajes();
-        };
-
-        // --- CARGAR EL MURO (Orden Ascendente estilo Chat) ---
         async function cargarMensajes() {
-            const { data, error } = await supabase.from('mensajes').select('*').order('created_at', { ascending: true }).limit(50);
+            const { data: mensajes, error } = await supabase
+                .from('mensajes')
+                .select('*')
+                .order('created_at', { ascending: true })
+                .limit(50);
 
-            if(error) {
-                muroMensajes.innerHTML = '<p class="text-red-400 text-sm py-4 text-center">⚠️ Error de conexión con la base de datos.</p>';
-                return;
-            }
+            if (error) return console.error(error);
 
-            muroMensajes.innerHTML = '';
-            if(data.length === 0) {
-                muroMensajes.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">El muro está vacío. ¡Sé el primero en iniciar la conversación!</p>';
-                return;
-            }
+            const muro = document.getElementById('muro-mensajes');
+            muro.innerHTML = '';
 
-            data.forEach(msg => {
-                const inicial = msg.autor_apodo.charAt(0).toUpperCase();
-                const esAdminPosteando = blacklist.includes(msg.autor_apodo.toLowerCase());
-                const soyAdminViendo = usuarioActual && blacklist.includes(usuarioActual.toLowerCase());
-                
-                const colorAvatar = esAdminPosteando ? 'bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg' : 'bg-slate-800 text-slate-400 border border-slate-700';
-                const colorNombre = esAdminPosteando ? 'text-cyan-400 font-extrabold' : 'text-white font-bold';
-                const etiquetaAdmin = esAdminPosteando ? '<span class="px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400 text-[9px] uppercase tracking-widest border border-indigo-500/30 ml-2">Staff</span>' : '';
+            mensajes.forEach(msg => {
+                const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
+                const inicial = msg.autor_apodo ? msg.autor_apodo.charAt(0).toUpperCase() : 'U';
                 
                 let botonBorrarHTML = '';
-                if (soyAdminViendo) {
-                    botonBorrarHTML = `<button onclick="borrarMensaje('${msg.id}')" class="ml-auto text-[10px] font-bold uppercase tracking-widest bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 px-2 py-1 rounded transition cursor-pointer">Eliminar</button>`;
+                // Mostrar botón solo si el mensaje es del usuario (La validación real ocurre en el backend RLS)
+                if(usuarioActual && usuarioActual.id === msg.user_id) {
+                    botonBorrarHTML = `<button onclick="borrarMensaje('${msg.id}')" class="ml-auto text-[10px] text-red-500 hover:text-red-400 cursor-pointer transition">Eliminar</button>`;
                 }
-                
-                const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
 
                 const div = document.createElement('div');
                 div.className = 'bg-slate-900/30 border border-slate-800/50 rounded-xl p-4 flex space-x-4 shrink-0 transition hover:bg-slate-900/50';
                 div.innerHTML = `
-                    <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold shrink-0 text-sm ${colorAvatar}">${inicial}</div>
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold shrink-0 text-sm bg-cyan-500/20 text-cyan-400">${inicial}</div>
                     <div class="flex-grow min-w-0">
                         <div class="flex items-center mb-1 w-full">
-                            <span class="text-sm ${colorNombre} truncate">${msg.autor_apodo}</span>
-                            ${etiquetaAdmin}
+                            <span class="text-sm font-bold text-white truncate">${msg.autor_apodo}</span>
                             <span class="text-[10px] text-slate-500 ml-3 shrink-0">${fecha}</span>
                             ${botonBorrarHTML}
                         </div>
                         <p class="text-sm text-slate-300 leading-relaxed break-words">${msg.contenido}</p>
                     </div>
                 `;
-                muroMensajes.appendChild(div);
+                muro.appendChild(div);
             });
-
-            // Auto-scroll instantáneo al fondo al cargar
-            muroMensajes.scrollTop = muroMensajes.scrollHeight;
+            muro.scrollTop = muro.scrollHeight;
         }
 
-        // Inicializadores de la aplicación
+        async function enviarMensaje() {
+            if(!usuarioActual) return;
+            const input = document.getElementById('inputMensaje');
+            const contenido = input.value.trim();
+            if(!contenido) return;
+
+            const apodoMeta = usuarioActual.user_metadata?.apodo || 'Jugador';
+
+            const { error } = await supabase.from('mensajes').insert([{
+                user_id: usuarioActual.id,
+                autor_apodo: apodoMeta,
+                contenido: contenido
+            }]);
+
+            if (error) alert("Error al enviar: " + error.message);
+            else { input.value = ''; cargarMensajes(); }
+        }
+
+        async function borrarMensaje(id) {
+            const { error } = await supabase.from('mensajes').delete().eq('id', id);
+            if(error) alert("Acción bloqueada: No tienes permisos en el servidor.");
+            else cargarMensajes();
+        }
+
+        // Websockets nativos para recarga en tiempo real
+        supabase.channel('mensajes_realtime')
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'mensajes' }, payload => {
+                cargarMensajes();
+            }).subscribe();
+
         revisarSesion();
         cargarMensajes();
     </script>
