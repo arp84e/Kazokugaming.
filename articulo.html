@@ -7,12 +7,14 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
     
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-        .contenido-articulo p { color: #cbd5e1; line-height: 1.8; font-size: 1.125rem; }
+        .contenido-articulo p { color: #cbd5e1; line-height: 1.8; font-size: 1.125rem; margin-bottom: 1rem; }
+        .contenido-articulo h2 { font-size: 1.8rem; font-weight: bold; color: #fff; margin-top: 2rem; margin-bottom: 1rem; }
+        .contenido-articulo h3 { font-size: 1.4rem; font-weight: bold; color: #66C0F4; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+        .contenido-articulo ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
         .contenido-articulo strong { color: #ffffff; }
         .contenido-articulo a { color: #66C0F4; text-decoration: underline; }
     </style>
@@ -22,7 +24,7 @@
     <div id="header-container"></div>
 
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
-        <div class="text-center py-20 text-slate-500 animate-pulse">Cargando artículo...</div>
+        <div class="text-center py-20 text-slate-500 animate-pulse">Desplegando expediente informativo...</div>
     </main>
 
     <script src="../header.js"></script>
@@ -42,20 +44,87 @@
                 .then(data => {
                     const articulo = data.articulos.find(a => a.id === idArticulo);
                     if (articulo) {
+                        // --- 1. INYECCIÓN DE SEO Y OPEN GRAPH ---
                         document.title = `${articulo.titulo} | KazokuGaming`;
                         
+                        // Meta Descripción & Keywords
+                        const metasNormales = {
+                            'description': articulo.meta_descripcion,
+                            'keywords': articulo.seo?.keywords || ''
+                        };
+                        
+                        for (let [name, content] of Object.entries(metasNormales)) {
+                            if (content) {
+                                let meta = document.createElement('meta');
+                                meta.name = name;
+                                meta.content = content;
+                                document.head.appendChild(meta);
+                            }
+                        }
+
+                        // Open Graph (Para Discord, Twitter, Facebook)
+                        if (articulo.open_graph) {
+                            const ogTags = {
+                                'og:title': articulo.open_graph.og_title || articulo.titulo,
+                                'og:description': articulo.open_graph.og_description || articulo.meta_descripcion,
+                                'og:image': articulo.imagen,
+                                'og:type': articulo.open_graph.og_type || 'article',
+                                'og:url': window.location.href,
+                                'twitter:card': 'summary_large_image'
+                            };
+                            for (let [property, content] of Object.entries(ogTags)) {
+                                let meta = document.createElement('meta');
+                                meta.setAttribute(property.startsWith('twitter') ? 'name' : 'property', property);
+                                meta.content = content;
+                                document.head.appendChild(meta);
+                            }
+                        }
+
+                        // --- 2. RENDERIZADO DEL ARTÍCULO ---
                         const tagsHTML = articulo.tags.map(tag => 
                             `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-semibold rounded-full border border-slate-700">${tag}</span>`
                         ).join('');
 
-                        // [SEGURIDAD] Sanitización del contenido
                         const contenidoLimpio = DOMPurify.sanitize(articulo.contenido);
 
+                        // --- 3. WIDGET DE ARTÍCULOS RELACIONADOS ---
+                        let htmlRelacionados = '';
+                        if (articulo.articulos_relacionados && articulo.articulos_relacionados.length > 0) {
+                            // Buscar en toda la DB slugs que coincidan (y que no sea el mismo post)
+                            const relacionados = data.articulos.filter(a => 
+                                articulo.articulos_relacionados.includes(a.slug) && a.id !== articulo.id
+                            ).slice(0, 2); // Máximo 2 para mantener diseño limpio
+
+                            if (relacionados.length > 0) {
+                                htmlRelacionados = `
+                                    <div class="mt-16 pt-10 border-t border-slate-800/80">
+                                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                            <span class="text-cyan-500">▶</span> Artículos Relacionados
+                                        </h3>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            ${relacionados.map(rel => `
+                                                <a href="articulo.html?id=${rel.id}" class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/40 transition flex flex-col h-full shadow-lg">
+                                                    <div class="w-full h-32 overflow-hidden bg-slate-950">
+                                                        <img src="${rel.imagen}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400'">
+                                                    </div>
+                                                    <div class="p-4 flex flex-col flex-grow">
+                                                        <span class="text-[9px] font-bold tracking-widest text-cyan-400 uppercase mb-1">${rel.categoria}</span>
+                                                        <h4 class="text-sm font-bold text-white line-clamp-2 group-hover:text-cyan-300 transition">${rel.titulo}</h4>
+                                                    </div>
+                                                </a>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }
+
+                        // --- INYECCIÓN FINAL AL DOM ---
                         contenedor.innerHTML = `
                             <article class="animate-fade-in-up">
                                 <div class="mb-8 text-center">
                                     <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">${articulo.categoria}</span>
-                                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
+                                    <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
                                     <div class="flex items-center justify-center gap-4 text-sm text-slate-400 font-medium">
                                         <div class="flex items-center gap-2">
                                             <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
@@ -70,17 +139,20 @@
                                     </div>
                                 </div>
 
-                                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl bg-slate-900">
+                                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl bg-slate-900 relative">
                                    <img src="${articulo.imagen}" alt="${articulo.titulo}" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200'" class="w-full h-full object-cover">
+                                   <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
                                 </div>
 
                                 <div class="contenido-articulo max-w-3xl mx-auto">
                                     ${contenidoLimpio}
                                 </div>
 
-                                <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap gap-2">
+                                <div class="mt-10 pt-6 flex flex-wrap gap-2">
                                     ${tagsHTML}
                                 </div>
+                                
+                                ${htmlRelacionados}
                             </article>
                         `;
                     } else {
