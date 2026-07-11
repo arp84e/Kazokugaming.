@@ -7,13 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://kazokugaming.com/noticias.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kazokugaming.com/telemetria.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/hardware.html</loc>
+    <loc>https://kazokugaming.com/guias.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -31,163 +37,169 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/amazon-luna.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-amazon-luna</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/mejor-que-the-walking-dead-este-proyecto-de-zo.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-mejor-que-the-walking-dead-este-proyecto-de-zo</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/las-m-quinas-de-refrescos-como-herramienta-de-.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-las-m-quinas-de-refrescos-como-herramienta-de-</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/los-videojuegos-podr-an-mejorar-ligeramente-la.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-los-videojuegos-podr-an-mejorar-ligeramente-la</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/ia-y-doblaje-de-videojuegos-los-actores-de-dob.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-ia-y-doblaje-de-videojuegos-los-actores-de-dob</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/alemania-no-pone-ni-un-euro-m-s-para-conservar.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-alemania-no-pone-ni-un-euro-m-s-para-conservar</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/las-3-aplicaciones-a-lo-tinder-para-videojuego.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-las-3-aplicaciones-a-lo-tinder-para-videojuego</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/sony-y-el-adi-s-a-los-videojuegos-f-sicos.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-sony-y-el-adi-s-a-los-videojuegos-f-sicos</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/microsoft-anuncia-3-200-despidos-en-xbox-en-un.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-microsoft-anuncia-3-200-despidos-en-xbox-en-un</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/los-lanzamientos-de-videojuegos-m-s-destacados.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-los-lanzamientos-de-videojuegos-m-s-destacados</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/boosteroid-cloud-gaming.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-boosteroid-cloud-gaming</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/usar-el-m-vil-como-consola-port-til.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-usar-el-m-vil-como-consola-port-til</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/los-5-mejores-juegos-indie-de-2026.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-los-5-mejores-juegos-indie-de-2026</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/articulos/rese-a-t-cnica-de-la-rtx-5090.html</loc>
+    <loc>https://kazokugaming.com/articulo.html?id=art-rese-a-t-cnica-de-la-rtx-5090</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/borderlands-4.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=borderlands-4</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/elden-ring.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=elden-ring</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/resident-evil-4.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=resident-evil-4</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/cyberpunk-2077.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=cyberpunk-2077</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/half-life-2-the-last-of-us.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=half-life-2-the-last-of-us</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/silent-hill-f.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=silent-hill-f</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/bloodborne.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=bloodborne</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/sekiro-shadows-die-twice.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=sekiro-shadows-die-twice</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/minecraft.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=minecraft</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/hollow-knight.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=hollow-knight</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/devil-may-cry-5.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=devil-may-cry-5</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/assassins-creed-shadows.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=assassins-creed-shadows</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/telemetria/borderlands-3.html</loc>
+    <loc>https://kazokugaming.com/juego.html?id=borderlands-3</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-alan-wake-2</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
