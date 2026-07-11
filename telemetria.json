@@ -376,6 +376,109 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg"
+    },
+    {
+      "id": "black-myth-wukong",
+      "titulo": "Black Myth: Wukong",
+      "fecha": "11 Jul, 2026",
+      "plataformas": "PC, PlayStation 5, Xbox Series X/S",
+      "calificacion": 8.2,
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": [
+        "NVIDIA DLSS 3",
+        "AMD FSR 3",
+        "Intel XeSS",
+        "Frame Generation",
+        "Path Tracing (Full Ray Tracing)",
+        "Unreal Engine Lumen",
+        "Unreal Engine Nanite"
+      ],
+      "sinopsis": "Inspirado en la clásica novela china 'Viaje al Oeste', encarnas al Predestinado en un espectacular viaje repleto de desafíos, mitología y combates colosales contra deidades y criaturas místicas.",
+      "analisis_detallado": "<p><strong>Black Myth: Wukong</strong> es un auténtico portento visual que se posiciona como uno de los mayores referentes gráficos de la generación gracias al uso intensivo de <strong>Unreal Engine 5</strong>. El juego destaca por la implementación de tecnologías de vanguardia como <strong>Nanite</strong> para una geometría hiperdetallada sin pérdida de rendimiento aparente, y <strong>Lumen</strong> para una iluminación global dinámica sobresaliente. En tarjetas gráficas de gama alta de NVIDIA, el título ofrece soporte para <strong>Path Tracing (Full Ray Tracing)</strong>, logrando reflejos, sombras y cáusticas en el agua con un fotorrealismo impresionante.</p><p>Sin embargo, este despliegue visual conlleva un coste de rendimiento sumamente elevado. El juego es extremadamente exigente con la GPU y la CPU, haciendo que el uso de tecnologías de escalado como <strong>DLSS, FSR o XeSS</strong> sea prácticamente obligatorio incluso para jugar a resoluciones estándar como 1080p. Además, el rendimiento se ve empañado por problemas de <strong>stuttering de compilación de shaders</strong> (a pesar de contar con una precompilación inicial) y tirones por carga de zonas (<strong>traversal stutter</strong>), un mal endémico de Unreal Engine que afecta la fluidez en momentos de exploración y combate.</p><p>Para optimizar la experiencia, los análisis técnicos recomiendan evitar a toda costa el ajuste gráfico 'Cinematográfico', el cual penaliza el rendimiento de forma desproporcionada. Configurar el juego en el ajuste 'Alto' o 'Muy Alto' y activar la generación de fotogramas (<strong>Frame Generation</strong>) es la mejor ruta para alcanzar unos 60 FPS estables y disfrutar de esta obra mitológica sin sacrificar la espectacularidad visual.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-8400 / AMD Ryzen 5 1600",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 8GB",
+          "Almacenamiento: 130 GB de espacio disponible (SSD recomendado)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700 / AMD Ryzen 5 5500",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce RTX 2060 / AMD Radeon RX 5700 XT / Intel Arc A750",
+          "Almacenamiento: 130 GB de espacio disponible en SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg"
+    },
+    {
+      "id": "alan-wake-2",
+      "titulo": "Alan Wake 2",
+      "fecha": "11 Jul, 2026",
+      "plataformas": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X/S"
+      ],
+      "calificacion": 9.0,
+      "motor_grafico": "Northlight Engine",
+      "tecnologias": [
+        "NVIDIA DLSS 3.5 (Super Resolution, Frame Generation, Ray Reconstruction)",
+        "AMD FSR 2",
+        "Intel XeSS",
+        "Path Tracing / Ray Tracing",
+        "Mesh Shading"
+      ],
+      "sinopsis": "Una secuela de terror psicológico donde el escritor Alan Wake y la agente del FBI Saga Anderson luchan por escapar de una pesadilla sobrenatural en el misterioso pueblo de Bright Falls.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Alan Wake 2</strong> en PC representa un hito visual y uno de los mayores desafíos de hardware de la generación. Desarrollado con el motor <strong>Northlight Engine</strong> de Remedy, el juego destaca por su uso intensivo de tecnologías de vanguardia como el <strong>Path Tracing</strong> (trazado de trayectorias completo), la reconstrucción de rayos y los <strong>Mesh Shaders</strong>. Inicialmente, la dependencia de esta última tecnología afectó gravemente a tarjetas gráficas antiguas sin soporte de hardware dedicado (como la serie GTX 10 de Nvidia). Sin embargo, gracias a parches de optimización posteriores, el rendimiento en estas arquitecturas mejoró sustancialmente, haciendo viable el juego en una base de usuarios mucho más amplia.</p><p>Para alcanzar una tasa de fotogramas fluida a resoluciones altas con el trazado de rayos activado, el uso de tecnologías de escalado como <strong>DLSS 3.5</strong> (con Frame Generation y Ray Reconstruction) se vuelve prácticamente indispensable, incluso en tarjetas de gama alta como la RTX 4080 o RTX 4090. Para usuarios de AMD e Intel, el soporte de <strong>FSR 2</strong> y <strong>XeSS</strong> ofrece alternativas sólidas de escalado. En términos generales, el juego está excelentemente optimizado para exprimir el hardware moderno, ofreciendo una atmósfera y un fotorrealismo inigualables a cambio de una alta demanda de recursos, especialmente de memoria VRAM.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: Intel Core i5-7600K o AMD Ryzen 5 1600",
+          "GPU: NVIDIA GeForce GTX 1070 o AMD Radeon RX 5600 XT",
+          "RAM: 16 GB",
+          "Almacenamiento: 90 GB SSD"
+        ],
+        "recomendados": [
+          "CPU: Intel Core i7-10700K o AMD Ryzen 7 3700X",
+          "GPU: NVIDIA GeForce RTX 3070 o AMD Radeon RX 6700 XT",
+          "RAM: 16 GB",
+          "Almacenamiento: 90 GB SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg"
+    },
+    {
+      "id": "senua-s-saga-hellblade-ii",
+      "titulo": "Senua's Saga: Hellblade II",
+      "fecha": "11 Jul, 2026",
+      "plataformas": "PC, Xbox Series X/S",
+      "calificacion": 8.5,
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": [
+        "NVIDIA DLSS 3 (Super Resolution & Frame Generation)",
+        "AMD FSR 3",
+        "Intel XeSS",
+        "Unreal Engine 5 (Nanite & Lumen)",
+        "NVIDIA Reflex",
+        "TSR (Temporal Super Resolution)"
+      ],
+      "sinopsis": "Senua regresa en una brutal aventura de supervivencia a través de los mitos y el tormento de la Islandia vikinga. Una experiencia cinematográfica profunda que aprovecha el máximo potencial tecnológico actual.",
+      "analisis_detallado": "<p><strong>Senua's Saga: Hellblade II</strong> representa uno de los techos gráficos de la generación actual, desarrollado bajo el motor <strong>Unreal Engine 5</strong>. El título hace un uso intensivo de tecnologías de vanguardia como <strong>Nanite</strong> para la geometría virtualizada y <strong>Lumen</strong> para la iluminación global y reflejos dinámicos en tiempo real, prescindiendo del trazado de rayos tradicional por hardware para lograr una atmósfera fotorrealista sobrecogedora.</p><p>En el apartado de rendimiento en PC, el juego resulta sumamente exigente. El consumo de <strong>VRAM</strong> oscila entre los 8 GB en resoluciones estándar y supera los 12 GB en 4K al activar la generación de fotogramas. Afortunadamente, cuenta con un excelente soporte para tecnologías de escalado como <strong>DLSS 3</strong>, <strong>FSR 3</strong> y <strong>XeSS</strong>, las cuales resultan prácticamente indispensables para alcanzar tasas de fotogramas fluidas (60 FPS o más) en tarjetas gráficas de gama media y alta.</p><p>Aunque la compilación de sombreadores (shaders) es rápida y el juego carece de cuellos de botella graves en la CPU, se han reportado algunos tirones ocasionales de frame-pacing en la versión de PC en comparación con la consistencia de los 30 FPS de Xbox Series X. No obstante, con la optimización adecuada y el uso de reconstructores de imagen, la versión de PC ofrece la experiencia visual definitiva de esta obra cinematográfica.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600",
+          "Tarjeta gráfica: NVIDIA GTX 1070 / AMD RX 5700 / Intel Arc A580 (6 GB VRAM)",
+          "Memoria RAM: 16 GB RAM",
+          "Almacenamiento: 70 GB SSD"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-10700K / AMD Ryzen 5 5600X",
+          "Tarjeta gráfica: NVIDIA RTX 3080 / AMD RX 6800 XT / Intel Arc A770 (10 GB VRAM)",
+          "Memoria RAM: 16 GB RAM",
+          "Almacenamiento: 70 GB SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/b5c/b5ced2e44396160e62ff8d70e3adda71.jpg"
     }
   ]
 }
