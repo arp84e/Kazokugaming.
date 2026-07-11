@@ -7,7 +7,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS TÁCTICAS (ANTI-CONFUSIÓN V2) ===")
+print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS TÁCTICAS (VERSIÓN EXTENDIDA V3) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
@@ -37,7 +37,6 @@ if not entrada_usuario:
     exit(1)
 
 # --- SISTEMA DE VERIFICACIÓN DE FORMATO Y CONTEXTO ---
-# Detecta si el usuario mandó el formato "Juego : Año"
 año_especifico = ""
 juego_limpio = entrada_usuario
 
@@ -56,63 +55,65 @@ if any(g["id"] == id_guia for g in datos_web["guias"]):
     print(f"⏭️ La guía para '{juego_limpio}' ya existe en el archivo guias.json. Saliendo...")
     exit(0)
 
-print(f"\n🔍 Investigando y redactando guía táctica en internet para: {juego_limpio}...")
+print(f"\n🔍 Investigando y redactando guía táctica EXTENSA en internet para: {juego_limpio}...")
 
-# Modificamos dinámicamente el prompt con restricciones en base a la entrada
-filtro_temporal = f"Lanzado específicamente en el año {año_especifico}." if año_especifico else "Asegúrate de no confundir este juego con precuelas, secuelas, remakes o ediciones anteriores del mismo nombre."
+filtro_temporal = f"Lanzado específicamente en el año {año_especifico}." if año_especifico else "Asegúrate de no confundir este juego con precuelas, secuelas, remakes o ediciones anteriores."
 
+# --- NUEVO PROMPT EXTENDIDO PARA GUÍAS PROFUNDAS ---
 prompt_sistema = f"""
-Eres el Estratega Jefe de KazokuGaming. Tu misión es buscar información real en internet sobre el videojuego indicado y redactar una GUÍA TÁCTICA AVANZADA.
+Eres el Estratega Jefe de KazokuGaming. Tu misión es buscar información real, exhaustiva y detallada en internet sobre el videojuego indicado y redactar una GUÍA TÁCTICA AVANZADA Y COMPLETA.
 
 🚨 ADVERTENCIA CRÍTICA DE PRECISIÓN HISTÓRICA:
 El juego a analizar es: "{juego_limpio}". {filtro_temporal}
-Es OBLIGATORIO que verifiques los hechos, jefes, personajes y la trama. Si el usuario te pide la secuela (ej. Alan Wake 2), bajo ningún concepto hables de las mecánicas o sucesos de la primera edición (ej. los termos de café o Bright Falls de 2010 exclusivamente). Debes centrarte única y exclusivamente en el contenido de la edición solicitada. Redacta todo desde cero con tu propio estilo profesional, oscuro y analítico para evitar copyright.
+Es OBLIGATORIO que verifiques los hechos, mecánicas y la trama para que correspondan exactamente a la edición solicitada. Redacta todo desde cero con tu propio estilo profesional, oscuro, táctico y analítico para evitar copyright.
 
-Enfócate ÚNICAMENTE en:
-1. Tips y mecánicas tácticas avanzadas u ocultas de esta edición.
-2. Los 3 o 4 cuellos de botella / puzles / jefes más difíciles de ESTA edición específica y cómo superarlos.
-3. Ubicación de objetos ocultos o coleccionables más valiosos.
-4. Códigos, combinaciones de cajas fuertes, trucos o 'exploits' reales del juego.
+ESTRUCTURA OBLIGATORIA DE LA GUÍA (DEBE SER MUY EXTENSA):
+No escatimes en palabras. Desarrolla un HTML largo y rico en detalles, estructurado en las siguientes secciones usando etiquetas <h2> y <h3>:
+
+1. <h2>Análisis de la Amenaza (Introducción Táctica)</h2>: Contexto del juego, qué espera al jugador y la mentalidad necesaria para sobrevivir o dominar el juego.
+2. <h2>Mecánicas de Supervivencia y Combate</h2>: Explicación profunda de los sistemas del juego (parrys, esquivas, economía, gestión de recursos, cordura, estamina, etc.) y tips ocultos que el tutorial no enseña.
+3. <h2>Arsenal y Mejores Builds</h2>: Cuáles son las mejores armas, habilidades o equipamientos del juego, dónde encontrarlas y por qué son tácticamente superiores.
+4. <h2>Desglosando los Cuellos de Botella (Jefes y Puzles)</h2>: Estrategias detalladas paso a paso para TODOS los jefes principales o los niveles/puzles más infames. Explica sus fases, patrones de ataque y vulnerabilidades.
+5. <h2>Coleccionables Críticos y Mejoras de Inventario</h2>: Ubicaciones exactas de los objetos que realmente cambian la partida (ampliaciones de inventario, fragmentos de salud máxima, armas secretas). Ignora los coleccionables basura (como notas sin valor).
+6. <h2>Archivos Clasificados (Trucos, Códigos y Exploits)</h2>: Todas las contraseñas de cajas fuertes, candados, puertas, o atajos mecánicos reales del juego.
 
 REGLAS JSON (ESTRICTAS):
 1. ÚNICAMENTE un objeto JSON bien formateado.
 2. Usa comillas simples para atributos HTML en la variable 'contenido'.
-3. 'contenido': HTML estructurado limpio (usa <h3>, <ul>, <p>, <strong>).
+3. 'contenido': HTML estructurado MUY EXTENSO, limpio y profesional. (Usa <h2>, <h3>, <ul>, <p>, <strong>).
 
 ESTRUCTURA JSON:
 {{
-  "titulo": "Guía Táctica: [Nombre Exacto del Juego]",
-  "meta_descripcion": "Resumen de 150 caracteres enfocado en el SEO de esta edición",
-  "tags": ["Guía", "Trucos", "Secretos"],
+  "titulo": "Guía Táctica Definitiva: [Nombre Exacto]",
+  "meta_descripcion": "La guía táctica más completa: jefes, builds, coleccionables críticos y códigos para dominar el juego.",
+  "tags": ["Guía Completa", "Estrategia", "Secretos", "Jefes"],
   "tiempo_lectura": "X min",
-  "contenido": "HTML aquí",
-  "seo": {{ "keywords": "palabra1, palabra2" }},
+  "contenido": "HTML extenso aquí...",
+  "seo": {{ "keywords": "palabra1, palabra2, guia, trucos, walkthrough" }},
   "open_graph": {{
     "og_title": "Guía Definitiva de [Nombre Exacto]",
-    "og_description": "Supera las secciones más complejas de este título...",
+    "og_description": "Supera las secciones más complejas con nuestro dossier táctico.",
     "og_type": "article"
   }}
 }}
 """
 
 try:
-    # Agregamos el año directamente en el query de búsqueda para forzar a la IA a leer las fuentes correctas
-    termino_busqueda = f"Guia completa trucos secretos {juego_limpio} {año_especifico}".strip()
+    termino_busqueda = f"Guia completa paso a paso armas jefes trucos {juego_limpio} {año_especifico}".strip()
     
     response = client.models.generate_content(
         model='gemini-3.5-flash',
-        contents=f"Investiga en la web de forma rigurosa y genera la guía usando: {termino_busqueda}",
+        contents=f"Investiga minuciosamente en la web y redacta el dossier extenso para: {termino_busqueda}",
         config=types.GenerateContentConfig(
             system_instruction=prompt_sistema, 
             response_mime_type="application/json", 
-            temperature=0.3, # Bajamos la temperatura para evitar alucinaciones y hacerlo hiper-preciso
+            temperature=0.35,
             tools=[{"google_search": {}}]
         )
     )
     
     guia_generada = json.loads(extraer_json_seguro(response.text))
     
-    # Buscar portada oficial en RAWG usando el nombre limpio sin el año de la etiqueta
     imagen_final = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
     if rawg_key:
         try:
@@ -131,15 +132,15 @@ try:
         "autor": "Kazoku Estratega",
         "imagen": imagen_final,
         "fecha": time.strftime("%d %b, %Y"),
-        "tiempo_lectura": guia_generada.get("tiempo_lectura", "5 min"),
+        "tiempo_lectura": guia_generada.get("tiempo_lectura", "10 min"),
         "contenido": guia_generada["contenido"],
         "meta_descripcion": guia_generada["meta_descripcion"],
-        "seo": guia_generada.get("seo", {"keywords": f"guia {juego_limpio}, trucos, secretos"}),
+        "seo": guia_generada.get("seo", {"keywords": f"guia completa {juego_limpio}, trucos, secretos, jefes"}),
         "open_graph": guia_generada.get("open_graph", {"og_title": guia_generada["titulo"], "og_description": guia_generada["meta_descripcion"], "og_type": "article"})
     }
     
     datos_web["guias"].insert(0, guia_final)
-    print(f"✅ ¡Guía de {juego_limpio} verificada, generada y guardada con éxito en guias.json!")
+    print(f"✅ ¡Guía extensa de {juego_limpio} generada y guardada con éxito en guias.json!")
 
 except Exception as e:
     print(f"❌ Error al generar la guía: {e}")
