@@ -1,37 +1,46 @@
-# generar_sitemap.py - Generador automático de Sitemap para KazokuGaming
+# generar_sitemap.py - Actualizado con soporte para Guías Tácticas
 import json
 import os
 import time
 
-DOMINIO = "https://kazokugaming.com" # Modifica por tu dirección final adquirida
+DOMINIO = "https://kazokugaming.com"
 
 def crear_sitemap():
     print("🗺️ Reconstruyendo sitemap.xml...")
     urls = [
         "", 
+        "/noticias.html",
         "/telemetria.html",
-        "/hardware.html",
+        "/guias.html",
         "/radar.html",
         "/foro.html"
     ]
     
+    # 1. Artículos
     if os.path.exists("articulos.json"):
         with open("articulos.json", "r", encoding="utf-8") as f:
             try:
-                articulos = json.load(f)
-                if isinstance(articulos, dict): articulos = articulos.get("articulos", [])
-                for a in articulos:
-                    slug = a["id"].replace("art-", "")
-                    urls.append(f"/articulos/{slug}.html")
+                data = json.load(f)
+                for a in data.get("articulos", []):
+                    urls.append(f"/articulo.html?id={a['id']}")
             except: pass
 
+    # 2. Telemetría
     if os.path.exists("telemetria.json"):
         with open("telemetria.json", "r", encoding="utf-8") as f:
             try:
-                telemetria = json.load(f)
-                juegos = telemetria.get("juegos", [])
-                for j in juegos:
-                    urls.append(f"/telemetria/{j['id']}.html")
+                data = json.load(f)
+                for j in data.get("juegos", []):
+                    urls.append(f"/juego.html?id={j['id']}")
+            except: pass
+
+    # 3. Guías Tácticas (NUEVO)
+    if os.path.exists("guias.json"):
+        with open("guias.json", "r", encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+                for g in data.get("guias", []):
+                    urls.append(f"/guia.html?id={g['id']}")
             except: pass
 
     fecha_hoy = time.strftime("%Y-%m-%d")
@@ -39,9 +48,10 @@ def crear_sitemap():
     xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     
     for url in urls:
-        prioridad = "1.0" if url == "" else ("0.8" if not "/" in url[1:] else "0.6")
+        # Prioridad estática
+        prioridad = "1.0" if url == "" else ("0.8" if ".html" in url and "?" not in url else "0.6")
         xml_content += f'  <url>\n'
-        xml_content += f'    <loc>{DOMINIO}{url}</loc>\n'
+        xml_content += f'    <loc>{DOMINIO}{url.replace("&", "&amp;")}</loc>\n'
         xml_content += f'    <lastmod>{fecha_hoy}</lastmod>\n'
         xml_content += f'    <changefreq>daily</changefreq>\n'
         xml_content += f'    <priority>{prioridad}</priority>\n'
