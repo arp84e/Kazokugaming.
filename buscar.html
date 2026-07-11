@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Global | KazokuGaming</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style> 
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } 
+        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(30, 41, 59, 0.8); }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between">
+    
+    <div id="header-container"></div>
+    
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="mb-12 border-b border-slate-800 pb-8">
+            <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20">Base de Datos Unificada</span>
+            <h1 class="text-3xl font-extrabold text-white sm:text-5xl mt-4 mb-2 tracking-tight" id="titulo-busqueda">Buscando...</h1>
+            <p class="text-slate-400" id="contador-resultados">Analizando archivos de la plataforma.</p>
+        </div>
+
+        <div id="grid-resultados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full text-center py-20 text-slate-500 animate-pulse">
+                Consultando redes de KazokuGaming...
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-slate-950 py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 KAZOKUGAMING.</p>
+        </div>
+    </footer>
+
+    <script src="header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryRaw = urlParams.get('q');
+            const tituloSeccion = document.getElementById('titulo-busqueda');
+            const gridResultados = document.getElementById('grid-resultados');
+            const contador = document.getElementById('contador-resultados');
+
+            if (!queryRaw) {
+                tituloSeccion.innerText = "Búsqueda Vacía";
+                gridResultados.innerHTML = `<p class="text-slate-400 col-span-full text-center">No has introducido ningún término de búsqueda.</p>`;
+                contador.innerText = "";
+                return;
+            }
+
+            const query = queryRaw.toLowerCase().trim();
+            tituloSeccion.innerText = `Resultados para: "${queryRaw}"`;
+
+            // Función segura para leer archivos (si uno no existe aún, devuelve array vacío en lugar de romper la página)
+            const fetchSeguro = (url) => fetch(url).then(res => res.ok ? res.json() : {}).catch(() => ({}));
+
+            // Ejecutamos las 3 búsquedas al mismo tiempo
+            Promise.all([
+                fetchSeguro('articulos.json'),
+                fetchSeguro('telemetria.json'),
+                fetchSeguro('guias.json')
+            ]).then(([dataArticulos, dataTelemetria, dataGuias]) => {
+                
+                let resultadosUnificados = [];
+
+                // 1. Filtrar Artículos / Noticias (Etiqueta Indigo)
+                if (dataArticulos.articulos) {
+                    dataArticulos.articulos.forEach(art => {
+                        const textoCombinado = `${art.titulo} ${art.meta_descripcion} ${art.tags?.join(' ')}`.toLowerCase();
+                        if (textoCombinado.includes(query)) {
+                            resultadosUnificados.push({
+                                tipo: 'Noticia',
+                                color: 'indigo',
+                                titulo: art.titulo,
+                                desc: art.meta_descripcion,
+                                img: art.imagen,
+                                url: `articulo.html?id=${art.id}`,
+                                extra: art.fecha
+                            });
+                        }
+                    });
+                }
+
+                // 2. Filtrar Telemetría (Etiqueta Cyan)
+                if (dataTelemetria.juegos) {
+                    dataTelemetria.juegos.forEach(juego => {
+                        const textoCombinado = `${juego.titulo} ${juego.sinopsis} ${juego.plataformas}`.toLowerCase();
+                        if (textoCombinado.includes(query)) {
+                            resultadosUnificados.push({
+                                tipo: 'Telemetría',
+                                color: 'cyan',
+                                titulo: juego.titulo,
+                                desc: juego.sinopsis,
+                                img: juego.imagen,
+                                url: `juego.html?id=${juego.id}`,
+                                extra: `Nota: ${juego.calificacion} | ${juego.plataformas}`
+                            });
+                        }
+                    });
+                }
+
+                // 3. Filtrar Guías Tácticas (Etiqueta Emerald)
+                if (dataGuias.guias) {
+                    dataGuias.guias.forEach(guia => {
+                        const textoCombinado = `${guia.titulo} ${guia.juego} ${guia.meta_descripcion}`.toLowerCase();
+                        if (textoCombinado.includes(query)) {
+                            resultadosUnificados.push({
+                                tipo: 'Guía Táctica',
+                                color: 'emerald',
+                                titulo: guia.titulo,
+                                desc: guia.meta_descripcion,
+                                img: guia.imagen,
+                                url: `guia.html?id=${guia.id}`,
+                                extra: `⏱️ ${guia.tiempo_lectura}`
+                            });
+                        }
+                    });
+                }
+
+                // --- RENDERIZAR RESULTADOS ---
+                if (resultadosUnificados.length === 0) {
+                    contador.innerText = "0 resultados encontrados.";
+                    gridResultados.innerHTML = `
+                        <div class="col-span-full text-center py-20 bg-slate-900/50 rounded-2xl border border-slate-800">
+                            <span class="text-4xl block mb-4">🛸</span>
+                            <h3 class="text-xl font-bold text-white mb-2">No se encontraron archivos clasificados</h3>
+                            <p class="text-slate-400">Intenta utilizar nombres más cortos o términos generales.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                contador.innerText = `Se han encontrado ${resultadosUnificados.length} archivos coincidentes.`;
+
+                gridResultados.innerHTML = resultadosUnificados.map(res => `
+                    <a href="${res.url}" class="group glass-panel rounded-2xl overflow-hidden hover:border-${res.color}-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-lg">
+                        <div class="relative w-full h-48 overflow-hidden bg-slate-950">
+                            <img src="${res.img}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent"></div>
+                            
+                            <div class="absolute top-3 right-3 bg-${res.color}-500/10 border border-${res.color}-500/30 text-${res.color}-400 text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded backdrop-blur-md">
+                                ${res.tipo}
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-extrabold text-xl text-white group-hover:text-${res.color}-400 transition-colors mb-2 line-clamp-2 leading-snug">${res.titulo}</h3>
+                            <p class="text-sm text-slate-400 line-clamp-2 flex-grow mb-4">${res.desc}</p>
+                            <span class="text-xs font-bold text-slate-500 mt-auto flex justify-between items-center w-full">
+                                <span>${res.extra}</span>
+                                <span class="text-${res.color}-400 group-hover:translate-x-1 transition-transform">→</span>
+                            </span>
+                        </div>
+                    </a>
+                `).join('');
+            });
+        });
+    </script>
+</body>
+</html>
