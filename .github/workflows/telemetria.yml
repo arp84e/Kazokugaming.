@@ -1,17 +1,19 @@
-name: Bot Telemetría (Manual Avanzado)
+name: Bot Telemetría (Hardware y Rendimiento)
 
 on:
   workflow_dispatch:
     inputs:
       juegos:
-        description: '🎮 Título(s) del o los juegos (separados por ;)'
-        required: true
+        description: '🎮 (Opcional) Juego manual. Deja vacío para Modo Automático (3 juegos de PC tendencia).'
+        required: false
         type: string
       sobrescribir:
         description: '⚠️ ¿Borrar catálogo anterior de Telemetría?'
         required: false
         type: boolean
         default: false
+  schedule:
+    - cron: '0 14 * * *' # Se ejecuta a las 14:00 UTC automáticamente
 
 permissions:
   contents: write
@@ -28,7 +30,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      # [SEGURIDAD] Congelación de versiones de dependencias
       - name: Instalar dependencias seguras
         run: pip install google-genai==0.3.0 requests==2.31.0
 
@@ -43,7 +44,7 @@ jobs:
       - name: Actualizar Mapa del Sitio XML
         run: python generar_sitemap.py
 
-      - name: Commit y Push de los cambios
+      - name: Commit y Push
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
@@ -55,6 +56,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay variaciones de telemetría."
           else
-            git commit -m "🤖 Bot Telemetría: Actualización de catálogo."
+            git commit -m "🤖 Bot Telemetría: Análisis actualizado (Modo Automático/Manual)."
+            git pull --rebase origin main || true
             git push origin main
           fi
