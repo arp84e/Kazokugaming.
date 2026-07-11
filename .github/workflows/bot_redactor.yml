@@ -29,8 +29,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependencias
-        run: pip install google-genai requests
+      # [SEGURIDAD] Congelación de versiones de dependencias
+      - name: Instalar dependencias seguras
+        run: pip install google-genai==0.3.0 requests==2.31.0
 
       - name: Ejecutar Bot Redactor
         env:
@@ -55,7 +56,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay cambios en los artículos."
           else
-            git commit -m "🤖 KazokuBot: Artículos redactados o imágenes actualizadas"
-            git pull --rebase origin main || true
-            git push
+            git commit -m "🤖 Bot Editorial: Actualización de contenidos y sitemap."
+            git push origin main
           fi
