@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Táctica | KazokuGaming</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
+        .contenido-guia p { color: #cbd5e1; line-height: 1.8; font-size: 1.125rem; margin-bottom: 1.2rem; }
+        .contenido-guia h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.5rem; }
+        .contenido-guia h3 { font-size: 1.4rem; font-weight: 800; color: #10b981; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+        .contenido-guia ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #cbd5e1; }
+        .contenido-guia li { margin-bottom: 0.5rem; }
+        .contenido-guia strong { color: #ffffff; background-color: rgba(16, 185, 129, 0.1); padding: 0 4px; border-radius: 4px; border-bottom: 1px solid rgba(16, 185, 129, 0.3);}
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
+        <div class="text-center py-20 text-slate-500 animate-pulse">Descifrando datos tácticos...</div>
+    </main>
+
+    <script src="../header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const idGuia = new URLSearchParams(window.location.search).get('id');
+            const contenedor = document.getElementById('contenedor-principal');
+
+            if (!idGuia) return contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: Guía no especificada.</div>';
+
+            fetch('../guias.json')
+                .then(res => res.json())
+                .then(data => {
+                    const guia = data.guias.find(g => g.id === idGuia);
+                    if (guia) {
+                        // SEO y Open Graph
+                        document.title = `${guia.titulo} | KazokuGaming`;
+                        const metas = { 'description': guia.meta_descripcion, 'keywords': guia.seo?.keywords || '' };
+                        for (let [name, content] of Object.entries(metas)) {
+                            if (content) { let m = document.createElement('meta'); m.name = name; m.content = content; document.head.appendChild(m); }
+                        }
+
+                        if (guia.open_graph) {
+                            const ogTags = {
+                                'og:title': guia.open_graph.og_title,
+                                'og:description': guia.open_graph.og_description,
+                                'og:image': guia.imagen,
+                                'og:type': guia.open_graph.og_type
+                            };
+                            for (let [prop, cont] of Object.entries(ogTags)) {
+                                let m = document.createElement('meta'); m.setAttribute('property', prop); m.content = cont; document.head.appendChild(m);
+                            }
+                        }
+
+                        // Renderizado Seguro
+                        const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
+                        const contenidoLimpio = DOMPurify.sanitize(guia.contenido);
+
+                        contenedor.innerHTML = `
+                            <article class="animate-fade-in-up">
+                                <div class="mb-8 text-center">
+                                    <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
+                                    <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
+                                </div>
+
+                                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
+                                   <img src="${guia.imagen}" class="w-full h-full object-cover">
+                                   <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent"></div>
+                                </div>
+
+                                <div class="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-3xl mb-10 contenido-guia max-w-3xl mx-auto shadow-xl">
+                                    ${contenidoLimpio}
+                                </div>
+
+                                <div class="flex flex-wrap justify-center gap-2 mb-10">
+                                    ${tagsHTML}
+                                </div>
+                            </article>
+                        `;
+                    } else {
+                        contenedor.innerHTML = '<div class="text-center py-20 text-slate-400">El expediente no existe.</div>';
+                    }
+                })
+                .catch(() => contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error de conexión.</div>');
+        });
+    </script>
+</body>
+</html>
