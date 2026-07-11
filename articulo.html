@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-        /* Estilos para el contenido inyectado desde el JSON */
         .contenido-articulo p { color: #cbd5e1; line-height: 1.8; font-size: 1.125rem; }
         .contenido-articulo strong { color: #ffffff; }
         .contenido-articulo a { color: #66C0F4; text-decoration: underline; }
@@ -21,56 +22,50 @@
     <div id="header-container"></div>
 
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
-        <div class="text-center py-20 text-slate-500 animate-pulse" id="estado-carga">
-            Decodificando archivo de datos...
-        </div>
+        <div class="text-center py-20 text-slate-500 animate-pulse">Cargando artículo...</div>
     </main>
 
-    <footer class="border-t border-slate-900 bg-slate-950 py-10 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-            <p>&copy; 2026 KAZOKUGAMING.</p>
-        </div>
-    </footer>
-
-    <script src="header.js"></script>
+    <script src="../header.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const parametros = new URLSearchParams(window.location.search);
-            const idArticulo = parametros.get('id');
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idArticulo = urlParams.get('id');
             const contenedor = document.getElementById('contenedor-principal');
 
             if (!idArticulo) {
-                contenedor.innerHTML = '<div class="text-center py-20 text-red-400 font-bold">⚠️ Error: No se ha especificado ningún artículo.</div>';
+                contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: No se especificó un artículo.</div>';
                 return;
             }
 
-            fetch('articulos.json')
+            fetch('../articulos.json')
                 .then(res => res.json())
                 .then(data => {
                     const articulo = data.articulos.find(a => a.id === idArticulo);
-
                     if (articulo) {
-                        // Actualizar Metadatos para SEO
                         document.title = `${articulo.titulo} | KazokuGaming`;
                         
-                        let tagsHTML = articulo.tags.map(tag => 
-                            `<span class="bg-slate-800 text-slate-300 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-slate-700">${tag}</span>`
+                        const tagsHTML = articulo.tags.map(tag => 
+                            `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-semibold rounded-full border border-slate-700">${tag}</span>`
                         ).join('');
 
+                        // [SEGURIDAD] Sanitización del contenido
+                        const contenidoLimpio = DOMPurify.sanitize(articulo.contenido);
+
                         contenedor.innerHTML = `
-                            <article>
-                                <div class="mb-8 text-center sm:text-left">
-                                    <div class="flex items-center justify-center sm:justify-start gap-3 mb-4">
-                                        <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">${articulo.categoria}</span>
-                                        <span class="text-slate-500 text-sm flex items-center gap-1">⏱️ ${articulo.tiempo_lectura}</span>
-                                    </div>
-                                    <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-6 leading-tight">${articulo.titulo}</h1>
-                                    
-                                    <div class="flex items-center justify-center sm:justify-start gap-4 pb-8 border-b border-slate-800/80">
-                                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-lg border border-cyan-400">K</div>
-                                        <div class="text-left">
-                                            <p class="text-sm font-bold text-white">${articulo.autor}</p>
-                                            <p class="text-xs text-slate-500">${articulo.fecha}</p>
+                            <article class="animate-fade-in-up">
+                                <div class="mb-8 text-center">
+                                    <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">${articulo.categoria}</span>
+                                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
+                                    <div class="flex items-center justify-center gap-4 text-sm text-slate-400 font-medium">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                                            ${articulo.autor}
+                                        </div>
+                                        <span>•</span>
+                                        <div>${articulo.fecha}</div>
+                                        <span>•</span>
+                                        <div class="flex items-center gap-1">
+                                            <span>⏱️</span> ${articulo.tiempo_lectura}
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +75,7 @@
                                 </div>
 
                                 <div class="contenido-articulo max-w-3xl mx-auto">
-                                    ${articulo.contenido}
+                                    ${contenidoLimpio}
                                 </div>
 
                                 <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap gap-2">
