@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       juego:
-        description: '🎮 Título del juego para crear la guía (Ej: Elden Ring)'
+        description: '🎮 Título del juego para la guía. Usa [Nombre : Año] para evitar confusiones (Ej: Alan Wake 2 : 2023)'
         required: true
         type: string
 
@@ -47,7 +47,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay cambios."
           else
-            git commit -m "🤖 Bot Estratega: Nueva guía táctica generada."
+            git commit -m "🤖 Bot Estratega: Nueva guía táctica verificada y generada."
             git pull --rebase origin main || true
             git push origin main
           fi
