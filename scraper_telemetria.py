@@ -7,15 +7,12 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (DATOS ENRIQUECIDOS) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (MODO AUTÓNOMO) ===")
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
-juegos_input = os.environ.get("INPUT_JUEGOS", "")
+juegos_input = os.environ.get("INPUT_JUEGOS", "").strip()
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-if not juegos_input:
-    print("❌ ERROR: El campo de juegos está vacío.")
-    sys.exit(1)
 if not api_key:
     sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
@@ -23,10 +20,42 @@ client = genai.Client(api_key=api_key)
 archivo_oficial = "telemetria.json"
 
 estructura_final = {"juegos": []}
+nombres_existentes = []
 if os.path.exists(archivo_oficial) and not sobrescribir:
     with open(archivo_oficial, "r", encoding="utf-8") as f:
-        try: estructura_final = json.load(f)
+        try: 
+            estructura_final = json.load(f)
+            nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
         except: pass
+
+juegos_a_procesar = []
+
+# --- MODO AUTOMÁTICO VS MANUAL ---
+if juegos_input:
+    print("🛠️ MODO MANUAL DETECTADO.")
+    juegos_a_procesar = [j.strip() for j in juegos_input.split(";") if j.strip()]
+else:
+    print("🌍 MODO PILOTO AUTOMÁTICO: Buscando tendencias en PC...")
+    prompt_tendencias = f"""
+    Eres un analista de hardware de PC. Busca en internet cuáles son los 3 videojuegos de PC más populares, exigentes o buscados esta semana.
+    EXCLUYE ESTOS JUEGOS que ya tenemos documentados: {nombres_existentes}.
+    Devuelve ÚNICAMENTE un JSON:
+    {{ "juegos": ["Nombre del Juego 1", "Nombre del Juego 2", "Nombre del Juego 3"] }}
+    """
+    try:
+        res_tendencias = client.models.generate_content(
+            model='gemini-3.5-flash',
+            contents=prompt_tendencias,
+            config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
+        )
+        data_tendencias = json.loads(re.search(r'\{.*\}', res_tendencias.text, re.DOTALL).group(0))
+        juegos_a_procesar = data_tendencias.get("juegos", [])
+        print(f"📡 Tendencias de Hardware detectadas: {juegos_a_procesar}")
+    except Exception as e:
+        sys.exit(f"❌ Error al buscar tendencias: {e}")
+
+if not juegos_a_procesar:
+    sys.exit("❌ No hay juegos para procesar.")
 
 def buscar_portada(titulo):
     if not rawg_key: return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
@@ -38,22 +67,25 @@ def buscar_portada(titulo):
     except: pass
     return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
 
-for titulo in juegos_input.split(";"):
-    titulo = titulo.strip()
-    if not titulo: continue
-    
+for titulo in juegos_a_procesar:
     id_juego = re.sub(r'[^a-z0-9]+', '-', titulo.lower()).strip('-')
+    
+    if any(j["id"] == id_juego for j in estructura_final["juegos"]) and not sobrescribir:
+        print(f"⏭️ Saltando '{titulo}': Ya documentado.")
+        continue
+
+    print(f"\n⚙️ Analizando telemetría para: {titulo}...")
     imagen_real = buscar_portada(titulo)
     
-    prompt = f"Analiza en profundidad el rendimiento técnico de {titulo} en PC. Devuelve únicamente un JSON estricto con: sinopsis (máximo 2 líneas), motor_grafico, plataformas, calificacion (de 1.0 a 10), analisis_detallado (HTML limpio usando <p> y <strong>), requisitos_minimos (lista de 4 strings de componentes), requisitos_recomendados (lista de 4 strings de componentes)."
+    prompt = f"Busca en internet y analiza en profundidad el rendimiento técnico de {titulo} en PC. Devuelve únicamente un JSON estricto con: sinopsis (máximo 2 líneas), motor_grafico, plataformas, calificacion (de 1.0 a 10), analisis_detallado (HTML limpio usando <p> y <strong>), requisitos_minimos (lista de 4 strings de componentes), requisitos_recomendados (lista de 4 strings de componentes), tecnologias (como DLSS, FSR)."
     
     try:
         res = client.models.generate_content(
             model="gemini-3.5-flash",
             contents=prompt,
-            config=types.GenerateContentConfig(response_mime_type="application/json")
+            config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.4, tools=[{"google_search": {}}])
         )
-        data = json.loads(res.text)
+        data = json.loads(re.search(r'\{.*\}', res.text, re.DOTALL).group(0))
         
         nuevo_juego = {
             "id": id_juego,
@@ -62,6 +94,7 @@ for titulo in juegos_input.split(";"):
             "plataformas": data.get("plataformas", "PC"),
             "calificacion": data.get("calificacion", "8.0"),
             "motor_grafico": data.get("motor_grafico", "Custom Engine"),
+            "tecnologias": data.get("tecnologias", "Estándar"),
             "sinopsis": data.get("sinopsis", "Análisis técnico de telemetría y rendimiento in-game."),
             "analisis_detallado": data.get("analisis_detallado", "<p>Procesando datos técnicos...</p>"),
             "requisitos": {
@@ -71,13 +104,8 @@ for titulo in juegos_input.split(";"):
             "imagen": imagen_real
         }
         
-        idx = next((i for i, j in enumerate(estructura_final["juegos"]) if j["id"] == id_juego), None)
-        if idx is not None:
-            estructura_final["juegos"][idx] = nuevo_juego
-        else:
-            estructura_final["juegos"].append(nuevo_juego)
+        estructura_final["juegos"].append(nuevo_juego)
 
-        # --- GENERACIÓN HTML ESTÁTICO + RADAR + DATOS ESTRUCTURADOS CON ESTRELLAS ---
         os.makedirs("telemetria", exist_ok=True)
         html_juego_filename = f"telemetria/{id_juego}.html"
         
@@ -100,28 +128,16 @@ for titulo in juegos_input.split(";"):
       "name": "{titulo}",
       "description": "{nuevo_juego["sinopsis"]}",
       "image": "{nuevo_juego["imagen"]}",
-      "author": {{
-        "@type": "Organization",
-        "name": "KazokuGaming"
-      }},
+      "author": {{ "@type": "Organization", "name": "KazokuGaming" }},
       "review": {{
         "@type": "Review",
-        "author": {{
-          "@type": "Person",
-          "name": "KazokuBot"
-        }},
-        "reviewRating": {{
-          "@type": "Rating",
-          "ratingValue": "{nuevo_juego["calificacion"]}",
-          "bestRating": "10",
-          "worstRating": "1"
-        }},
-        "reviewBody": "Análisis de rendimiento de telemetría y especificaciones de hardware optimizadas para PC en KazokuGaming."
+        "author": {{ "@type": "Person", "name": "KazokuBot" }},
+        "reviewRating": {{ "@type": "Rating", "ratingValue": "{nuevo_juego["calificacion"]}", "bestRating": "10", "worstRating": "1" }}
       }}
     }}
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style> body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }} </style>
 </head>
@@ -150,7 +166,7 @@ for titulo in juegos_input.split(";"):
                         <span class="text-2xl font-black text-white mt-1">{nuevo_juego["calificacion"]}</span>
                     </div>
                 </div>
-                <p class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-6 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800 inline-block">{nuevo_juego["plataformas"]} • {nuevo_juego["motor_grafico"]}</p>
+                <p class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-6 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800 inline-block">['PC', 'Consolas'] • {nuevo_juego["motor_grafico"]}</p>
                 
                 <div class="bg-slate-900/30 border border-slate-800/60 rounded-3xl p-8 text-slate-300 leading-relaxed text-lg mb-8">
                     {nuevo_juego["analisis_detallado"]}
@@ -171,8 +187,7 @@ for titulo in juegos_input.split(";"):
     </main>
     <script src="../header.js"></script>
     <script>
-        const gameTitle = "{titulo}";
-        fetch('https://www.cheapshark.com/api/1.0/games?title=' + encodeURIComponent(gameTitle) + '&limit=1')
+        fetch('https://www.cheapshark.com/api/1.0/games?title=' + encodeURIComponent("{titulo}") + '&limit=1')
             .then(res => res.json())
             .then(data => {{
                 if(data && data.length > 0) {{
@@ -190,9 +205,12 @@ for titulo in juegos_input.split(";"):
         with open(html_juego_filename, "w", encoding="utf-8") as jf:
             jf.write(plantilla_juego)
             
+        with open(archivo_oficial, "w", encoding="utf-8") as f:
+            json.dump(estructura_final, f, ensure_ascii=False, indent=2)
+            
+        time.sleep(15)
+            
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
 
-with open(archivo_oficial, "w", encoding="utf-8") as f:
-    json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 print("✅ Sincronización de telemetría finalizada.")
