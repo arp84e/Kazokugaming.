@@ -1,4 +1,3 @@
-# generar_sitemap.py - Actualizado con soporte para Guías Tácticas
 import json
 import os
 import time
@@ -12,11 +11,9 @@ def crear_sitemap():
         "/noticias.html",
         "/telemetria.html",
         "/guias.html",
-        "/radar.html",
-        "/foro.html"
+        "/radar.html"
     ]
     
-    # 1. Artículos
     if os.path.exists("articulos.json"):
         with open("articulos.json", "r", encoding="utf-8") as f:
             try:
@@ -25,7 +22,6 @@ def crear_sitemap():
                     urls.append(f"/articulo.html?id={a['id']}")
             except: pass
 
-    # 2. Telemetría
     if os.path.exists("telemetria.json"):
         with open("telemetria.json", "r", encoding="utf-8") as f:
             try:
@@ -34,7 +30,6 @@ def crear_sitemap():
                     urls.append(f"/juego.html?id={j['id']}")
             except: pass
 
-    # 3. Guías Tácticas (NUEVO)
     if os.path.exists("guias.json"):
         with open("guias.json", "r", encoding="utf-8") as f:
             try:
@@ -48,7 +43,6 @@ def crear_sitemap():
     xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     
     for url in urls:
-        # Prioridad estática
         prioridad = "1.0" if url == "" else ("0.8" if ".html" in url and "?" not in url else "0.6")
         xml_content += f'  <url>\n'
         xml_content += f'    <loc>{DOMINIO}{url.replace("&", "&amp;")}</loc>\n'
