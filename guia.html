@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
@@ -15,7 +16,6 @@
         .contenido-guia h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.5rem; }
         .contenido-guia h3 { font-size: 1.4rem; font-weight: 800; color: #10b981; margin-top: 1.5rem; margin-bottom: 0.8rem; }
         .contenido-guia ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #cbd5e1; }
-        .contenido-guia li { margin-bottom: 0.5rem; }
         .contenido-guia strong { color: #ffffff; background-color: rgba(16, 185, 129, 0.1); padding: 0 4px; border-radius: 4px; border-bottom: 1px solid rgba(16, 185, 129, 0.3);}
     </style>
 </head>
@@ -23,259 +23,118 @@
 
     <div id="header-container"></div>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="contenedor-principal">
         <div class="text-center py-20 text-slate-500 animate-pulse">Descifrando datos tácticos...</div>
-        <!-- INYECTAR JUSTO ANTES DE CERARR </main> EN ARTICULO.HTML, JUEGO.HTML y GUIA.HTML -->
-        
-        <!-- SECCIÓN DE COMENTARIOS COMUNITARIOS -->
-        <div class="mt-16 pt-10 border-t border-slate-800/80 max-w-3xl mx-auto w-full">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <span class="text-cyan-500">💬</span> Discusión Táctica
-            </h3>
+    </main>
 
-            <!-- Panel de Login/Registro (Si no hay sesión) -->
-            <div id="panel-auth-comentarios" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 hidden shadow-xl">
-                <div class="text-center mb-5">
-                    <h4 class="text-lg font-bold text-white">Identifícate para comentar</h4>
-                    <p class="text-sm text-slate-400 mt-1">Tu perfil será válido en todo KazokuGaming.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="text" id="inputApodo" placeholder="Tu Apodo (Solo Registro)" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
-                    <input type="email" id="inputEmail" placeholder="Correo Electrónico" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
-                    <input type="password" id="inputPass" placeholder="Contraseña" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
-                </div>
-                <div class="flex gap-3 mt-5 justify-center">
-                    <button onclick="intentarRegistro()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 px-6 rounded-lg text-sm transition">Registrarse</button>
-                    <button onclick="intentarLogin()" class="bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold py-2.5 px-8 rounded-lg text-sm transition shadow-lg shadow-cyan-500/20">Entrar</button>
-                </div>
-            </div>
+    <section id="seccion-comentarios" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
+        <div class="pt-8 border-t border-slate-800/80">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-emerald-500">💬</span> Aportes Tácticos</h3>
 
-            <!-- Panel para Escribir Comentario (Si hay sesión) -->
             <div id="panel-escribir-comentario" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 mb-8 hidden shadow-xl">
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-bold text-cyan-400 flex items-center gap-2" id="usuario-activo-nombre">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Conectado
-                    </span>
+                    <span class="text-sm font-bold text-emerald-400 flex items-center gap-2" id="usuario-activo-nombre"></span>
                     <button onclick="cerrarSesion()" class="text-xs font-bold text-red-400 hover:text-red-300 transition px-3 py-1 rounded bg-red-500/10 border border-red-500/20">Desconectar</button>
                 </div>
-                <textarea id="inputComentario" rows="3" placeholder="Aporta tu estrategia, duda u opinión..." class="w-full bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white resize-none"></textarea>
+                <textarea id="inputComentario" rows="3" placeholder="Añade tu propia estrategia, truco o código..." class="w-full bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-emerald-500 outline-none text-white resize-none"></textarea>
                 <div class="flex justify-end mt-3">
-                    <button onclick="enviarComentario()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition shadow-lg shadow-cyan-500/20">Publicar Comentario</button>
+                    <button onclick="enviarComentario()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition">Aportar Estrategia</button>
                 </div>
             </div>
 
-            <!-- Lista de Comentarios -->
-            <div id="lista-comentarios" class="space-y-4">
-                <div class="text-center py-8 text-slate-500 animate-pulse">Cargando comentarios...</div>
+            <div id="alerta-registro" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center mb-8 hidden">
+                <p class="text-slate-400 mb-3">Identifícate para aportar estrategias a esta guía.</p>
+                <a href="../index.html#terminal-acceso" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-6 rounded-lg transition">Ir al Portal de Acceso</a>
             </div>
+
+            <div id="lista-comentarios" class="space-y-4"></div>
         </div>
+    </section>
 
-    <!-- Cargar SDK de Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 mt-auto text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
+
+    <script src="../header.js"></script>
     <script>
-        // --- LÓGICA DE COMENTARIOS Y SESIÓN ---
-        const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- CAMBIA ESTO
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- CAMBIA ESTO
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        const idActual = new URLSearchParams(window.location.search).get('id');
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const contenedor = document.getElementById('contenedor-principal');
+            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: Guía no especificada.</div>';
+
+            fetch('../guias.json').then(res => res.json()).then(data => {
+                const guia = data.guias.find(g => g.id === idActual);
+                if (guia) {
+                    document.title = `${guia.titulo} | KazokuGaming`;
+                    const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
+                    const contenidoLimpio = DOMPurify.sanitize(guia.contenido);
+
+                    contenedor.innerHTML = `
+                        <article class="animate-fade-in-up">
+                            <div class="mb-8 text-center">
+                                <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
+                                <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
+                            </div>
+                            <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
+                               <img src="${guia.imagen}" class="w-full h-full object-cover">
+                               <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent"></div>
+                            </div>
+                            <div class="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-3xl mb-10 contenido-guia shadow-xl">
+                                ${contenidoLimpio}
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2 mb-10">${tagsHTML}</div>
+                        </article>
+                    `;
+                    document.getElementById('seccion-comentarios').classList.remove('hidden');
+                    initSupabase();
+                } else {
+                    contenedor.innerHTML = '<div class="text-center py-20 text-slate-400">El expediente no existe.</div>';
+                }
+            }).catch(() => contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error de conexión.</div>');
+        });
+
+        // LÓGICA DE COMENTARIOS BLINDADA
+        const supabase = window.supabase.createClient('https://TU_PROYECTO.supabase.co', 'TU_ANON_KEY'); // <-- REEMPLAZAR
         let usuarioActual = null;
-        // Identificador único de la página actual para anclar los comentarios
-        const postIdActual = new URLSearchParams(window.location.search).get('id');
 
-        async function initAuth() {
+        async function initSupabase() {
             const { data: { session } } = await supabase.auth.getSession();
             usuarioActual = session?.user || null;
-            
             if(usuarioActual) {
-                document.getElementById('panel-auth-comentarios').classList.add('hidden');
                 document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Jugador'}`;
+                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
             } else {
-                document.getElementById('panel-auth-comentarios').classList.remove('hidden');
-                document.getElementById('panel-escribir-comentario').classList.add('hidden');
+                document.getElementById('alerta-registro').classList.remove('hidden');
             }
+            cargarComentarios();
         }
 
-        async function intentarRegistro() {
-            const email = document.getElementById('inputEmail').value.trim();
-            const pass = document.getElementById('inputPass').value;
-            const apodo = document.getElementById('inputApodo').value.trim();
-
-            if(!email || !pass || !apodo) return alert("Completa Apodo, Email y Contraseña para registrarte.");
-
-            const { data, error } = await supabase.auth.signUp({
-                email: email, password: pass, options: { data: { apodo: apodo } }
-            });
-
-            if (error) alert("Error: " + error.message);
-            else alert("¡Registro exitoso! Haz clic en Entrar.");
-        }
-
-        async function intentarLogin() {
-            const email = document.getElementById('inputEmail').value.trim();
-            const pass = document.getElementById('inputPass').value;
-
-            if(!email || !pass) return alert("Ingresa tu correo y contraseña.");
-
-            const { data, error } = await supabase.auth.signInWithPassword({ email: email, password: pass });
-            if (error) alert("Credenciales incorrectas.");
-            else window.location.reload(); 
-        }
-
-        async function cerrarSesion() {
-            await supabase.auth.signOut();
-            window.location.reload();
-        }
+        async function cerrarSesion() { await supabase.auth.signOut(); window.location.reload(); }
 
         async function cargarComentarios() {
-            if(!postIdActual) return;
-
-            // Pedimos solo los mensajes que coincidan con la URL de esta página
-            const { data: comentarios, error } = await supabase
-                .from('mensajes')
-                .select('*')
-                .eq('post_id', postIdActual)
-                .order('created_at', { ascending: true });
-
+            const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
             const lista = document.getElementById('lista-comentarios');
             lista.innerHTML = '';
-
-            if (error) {
-                lista.innerHTML = '<p class="text-red-400 text-center">Error al cargar discusiones.</p>';
-                return;
-            }
-
-            if (comentarios.length === 0) {
-                lista.innerHTML = '<p class="text-slate-500 text-center py-6">Nadie ha comentado aún. ¡Sé el primero!</p>';
-                return;
-            }
+            if (!comentarios || comentarios.length === 0) return lista.innerHTML = '<p class="text-slate-500 text-center py-6">Sin aportes tácticos. ¡Inicia el debate!</p>';
 
             comentarios.forEach(msg => {
                 const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
-                const inicial = msg.autor_apodo ? msg.autor_apodo.charAt(0).toUpperCase() : 'U';
-                
-                let btnBorrar = '';
-                if(usuarioActual && usuarioActual.id === msg.user_id) {
-                    btnBorrar = `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500 hover:text-red-400 transition">Eliminar</button>`;
-                }
+                let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
+                const contenidoSeguro = DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }); // Anti-XSS
 
                 const div = document.createElement('div');
                 div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
-                div.innerHTML = `
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 text-sm bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">${inicial}</div>
-                    <div class="flex-grow min-w-0">
-                        <div class="flex items-center mb-1 w-full">
-                            <span class="text-sm font-bold text-white">${msg.autor_apodo}</span>
-                            <span class="text-[10px] text-slate-500 ml-3 shrink-0">${fecha}</span>
-                            ${btnBorrar}
-                        </div>
-                        <p class="text-sm text-slate-300 leading-relaxed break-words">${msg.contenido}</p>
-                    </div>
-                `;
+                div.innerHTML = `<div class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-emerald-500/10 text-emerald-400">${msg.autor_apodo.charAt(0).toUpperCase()}</div><div class="flex-grow min-w-0"><div class="flex items-center mb-1"><span class="text-sm font-bold text-white">${msg.autor_apodo}</span><span class="text-[10px] text-slate-500 ml-3">${fecha}</span>${btnBorrar}</div><p class="text-sm text-slate-300 whitespace-pre-wrap">${contenidoSeguro}</p></div>`;
                 lista.appendChild(div);
             });
         }
 
         async function enviarComentario() {
-            if(!usuarioActual || !postIdActual) return;
             const input = document.getElementById('inputComentario');
-            const contenido = input.value.trim();
-            if(!contenido) return;
-
-            const { error } = await supabase.from('mensajes').insert([{
-                post_id: postIdActual,
-                user_id: usuarioActual.id,
-                autor_apodo: usuarioActual.user_metadata?.apodo || 'Jugador',
-                contenido: contenido
-            }]);
-
-            if (error) alert("Error al enviar: " + error.message);
-            else { input.value = ''; cargarComentarios(); }
+            if(!input.value.trim()) return;
+            await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
+            input.value = ''; cargarComentarios();
         }
-
-        async function borrarComentario(id) {
-            const { error } = await supabase.from('mensajes').delete().eq('id', id);
-            if(error) alert("Bloqueado: No tienes permisos.");
-            else cargarComentarios();
-        }
-
-        // Suscribirse a cambios en vivo solo para esta página
-        supabase.channel('comentarios_pagina')
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'mensajes', filter: `post_id=eq.${postIdActual}` }, payload => {
-                cargarComentarios();
-            }).subscribe();
-
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', () => {
-            initAuth();
-            cargarComentarios();
-        });
-    </script>
-    </main>
-
-    <script src="../header.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const idGuia = new URLSearchParams(window.location.search).get('id');
-            const contenedor = document.getElementById('contenedor-principal');
-
-            if (!idGuia) return contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: Guía no especificada.</div>';
-
-            fetch('../guias.json')
-                .then(res => res.json())
-                .then(data => {
-                    const guia = data.guias.find(g => g.id === idGuia);
-                    if (guia) {
-                        // SEO y Open Graph
-                        document.title = `${guia.titulo} | KazokuGaming`;
-                        const metas = { 'description': guia.meta_descripcion, 'keywords': guia.seo?.keywords || '' };
-                        for (let [name, content] of Object.entries(metas)) {
-                            if (content) { let m = document.createElement('meta'); m.name = name; m.content = content; document.head.appendChild(m); }
-                        }
-
-                        if (guia.open_graph) {
-                            const ogTags = {
-                                'og:title': guia.open_graph.og_title,
-                                'og:description': guia.open_graph.og_description,
-                                'og:image': guia.imagen,
-                                'og:type': guia.open_graph.og_type
-                            };
-                            for (let [prop, cont] of Object.entries(ogTags)) {
-                                let m = document.createElement('meta'); m.setAttribute('property', prop); m.content = cont; document.head.appendChild(m);
-                            }
-                        }
-
-                        // Renderizado Seguro
-                        const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
-                        const contenidoLimpio = DOMPurify.sanitize(guia.contenido);
-
-                        contenedor.innerHTML = `
-                            <article class="animate-fade-in-up">
-                                <div class="mb-8 text-center">
-                                    <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
-                                    <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
-                                </div>
-
-                                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
-                                   <img src="${guia.imagen}" class="w-full h-full object-cover">
-                                   <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent"></div>
-                                </div>
-
-                                <div class="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-3xl mb-10 contenido-guia max-w-3xl mx-auto shadow-xl">
-                                    ${contenidoLimpio}
-                                </div>
-
-                                <div class="flex flex-wrap justify-center gap-2 mb-10">
-                                    ${tagsHTML}
-                                </div>
-                            </article>
-                        `;
-                    } else {
-                        contenedor.innerHTML = '<div class="text-center py-20 text-slate-400">El expediente no existe.</div>';
-                    }
-                })
-                .catch(() => contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error de conexión.</div>');
-        });
+        async function borrarComentario(id) { await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
