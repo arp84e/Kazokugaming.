@@ -12,6 +12,7 @@
     <meta name="description" content="Especificaciones de rendimiento e informes de hardware detallados de juegos en PC.">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- [SEGURIDAD] DOMPurify para evitar inyección XSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
 
     <style>
@@ -39,64 +40,101 @@
     });
 
     function cargarExpediente(id) {
-        fetch('telemetria.json')
-            .then(res => res.json())
-            .then(data => {
-                const juego = data.juegos.find(j => j.id === id);
-                if(juego) {
-                    const htmlMinimos = juego.requisitos?.minimos?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
-                    const htmlRecomendados = juego.requisitos?.recomendados?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
-                    
-                    // [SEGURIDAD] Limpieza de reporte inyectado
-                    const analisisLimpio = DOMPurify.sanitize(juego.analisis_detallado);
-
-                    document.getElementById('pantalla-juego').innerHTML = `
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                            <div class="lg:col-span-2 space-y-8">
-                                <div>
-                                    <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
-                                    <h1 class="text-4xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
-                                    <div class="flex items-center gap-4 text-sm text-slate-400">
-                                        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
-                                        <span class="flex items-center gap-1.5 border border-slate-700 bg-slate-800 px-2.5 py-0.5 rounded text-cyan-400 font-mono">${juego.tecnologias}</span>
-                                    </div>
-                                </div>
-                                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-                                    <h3 class="text-xl font-bold text-white mb-4">Reporte Técnico</h3>
-                                    <div class="prose prose-invert prose-cyan max-w-none text-slate-300">
-                                        ${analisisLimpio}
-                                    </div>
-                                </div>
+        // Obtenemos ambos archivos JSON al mismo tiempo
+        Promise.all([
+            fetch('telemetria.json').then(res => res.ok ? res.json() : { juegos: [] }),
+            fetch('guias.json').then(res => res.ok ? res.json() : { guias: [] })
+        ])
+        .then(([dataTelemetria, dataGuias]) => {
+            const juego = dataTelemetria.juegos.find(j => j.id === id);
+            
+            if(juego) {
+                // --- 1. VERIFICACIÓN DE GUÍA DISPONIBLE ---
+                // Buscamos si existe una guía cuyo slug coincida con el ID del juego
+                const guiaRelacionada = dataGuias.guias?.find(g => g.slug === id || g.id === `guia-${id}`);
+                
+                let htmlBannerGuia = '';
+                if (guiaRelacionada) {
+                    htmlBannerGuia = `
+                        <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_0_20px_rgba(16,185,129,0.15)] relative overflow-hidden group">
+                            <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors"></div>
+                            <div class="relative z-10 text-center sm:text-left">
+                                <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 mb-2 inline-block">INTELIGENCIA DESBLOQUEADA</span>
+                                <h4 class="text-xl font-bold text-white mb-1">Dossier Táctico Disponible</h4>
+                                <p class="text-sm text-slate-400">Descubre secretos, cómo vencer a los jefes y estrategias avanzadas para este título.</p>
                             </div>
-                            <div class="space-y-6">
-                                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
-                                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
-                                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
-                                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">MIN</div>
-                                        <h3 class="text-lg font-bold text-cyan-100">Requisitos Mínimos</h3>
-                                    </div>
-                                    <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlMinimos || '<li class="text-slate-600">No disponibles.</li>'}</ul>
-                                </div>
-                                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
-                                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
-                                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
-                                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">REC</div>
-                                        <h3 class="text-lg font-bold text-cyan-100">Requisitos Recomendados</h3>
-                                    </div>
-                                    <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlRecomendados || '<li class="text-slate-600">No disponibles.</li>'}</ul>
-                                </div>
-                            </div>
+                            <a href="guia.html?id=${guiaRelacionada.id}" class="relative z-10 shrink-0 w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold py-3 px-8 rounded-xl transition-all shadow-lg shadow-emerald-900/50 hover:-translate-y-1">
+                                Leer Guía Completa →
+                            </a>
                         </div>
                     `;
-                    document.title = `${juego.titulo} | Análisis Técnico`;
-                } else {
-                    document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente de telemetría solicitado no existe.</div>`;
                 }
-            })
-            .catch(err => {
-                console.error(err);
-                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión.</div>`;
-            });
+
+                // --- 2. RENDERIZADO DEL EXPEDIENTE ---
+                const htmlMinimos = juego.requisitos?.minimos?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
+                const htmlRecomendados = juego.requisitos?.recomendados?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
+                
+                // Limpieza de reporte inyectado (Seguridad XSS)
+                const analisisLimpio = DOMPurify.sanitize(juego.analisis_detallado);
+
+                document.getElementById('pantalla-juego').innerHTML = `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-8">
+                            <div>
+                                <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
+                                <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
+                                <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
+                                    <span class="flex items-center gap-1.5 border border-slate-700 bg-slate-800 px-2.5 py-0.5 rounded text-cyan-400 font-mono text-xs uppercase tracking-wider">${juego.tecnologias}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-xl">
+                                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <span class="text-cyan-500">⚙️</span> Reporte Técnico
+                                </h3>
+                                <div class="prose prose-invert prose-cyan max-w-none text-slate-300 leading-relaxed">
+                                    ${analisisLimpio}
+                                </div>
+                            </div>
+
+                            <!-- Inyección del Banner de Guía Táctica si existe -->
+                            ${htmlBannerGuia}
+                            
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">MIN</div>
+                                    <h3 class="text-lg font-bold text-cyan-100">Requisitos Mínimos</h3>
+                                </div>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlMinimos || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                            </div>
+                            
+                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">REC</div>
+                                    <h3 class="text-lg font-bold text-cyan-100">Requisitos Recomendados</h3>
+                                </div>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlRecomendados || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.title = `${juego.titulo} | Análisis Técnico y Requisitos`;
+                
+            } else {
+                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente de telemetría solicitado no existe.</div>`;
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos de KazokuGaming.</div>`;
+        });
     }
     </script>
 </body>
