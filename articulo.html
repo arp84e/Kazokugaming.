@@ -25,7 +25,7 @@
 
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
         <div class="text-center py-20 text-slate-500 animate-pulse">Desplegando expediente informativo...</div>
-        <!-- INYECTAR JUSTO ANTES DE CERARR </main> EN ARTICULO.HTML, JUEGO.HTML y GUIA.HTML -->
+       <!-- INYECTAR JUSTO ANTES DE CERARR </main> EN ARTICULO.HTML, JUEGO.HTML y GUIA.HTML -->
         
         <!-- SECCIÓN DE COMENTARIOS COMUNITARIOS -->
         <div class="mt-16 pt-10 border-t border-slate-800/80 max-w-3xl mx-auto w-full">
@@ -74,8 +74,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         // --- LÓGICA DE COMENTARIOS Y SESIÓN ---
-        const supabaseUrl = 'https://TU_PROYECTO.supabase.co'; // <--- CAMBIA ESTO
-        const supabaseKey = 'TU_ANON_KEY'; // <--- CAMBIA ESTO
+        const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- CAMBIA ESTO
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- CAMBIA ESTO
         const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
         let usuarioActual = null;
