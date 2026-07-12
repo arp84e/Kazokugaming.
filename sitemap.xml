@@ -31,12 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/foro.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://kazokugaming.com/articulo.html?id=art-sony-tendr-el-poder-absoluto-no-habr-competenc</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>daily</changefreq>
@@ -242,6 +236,24 @@
   </url>
   <url>
     <loc>https://kazokugaming.com/juego.html?id=senua-s-saga-hellblade-ii</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-counter-strike-2</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-slay-the-spire-2</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-crimson-desert</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
