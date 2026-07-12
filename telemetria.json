@@ -479,6 +479,101 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/b5c/b5ced2e44396160e62ff8d70e3adda71.jpg"
+    },
+    {
+      "id": "palworld",
+      "titulo": "Palworld",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC, Xbox One, Xbox Series X/S, PlayStation 5",
+      "calificacion": 7.5,
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": [
+        "NVIDIA DLSS",
+        "DirectX 12",
+        "DirectX 11"
+      ],
+      "sinopsis": "Un juego de supervivencia, construcción y recolección de criaturas en un vasto mundo abierto, donde cooperas o compites junto a seres llamados Pals.",
+      "analisis_detallado": "<p>El rendimiento técnico de Palworld en PC ha experimentado una evolución notable desde su debut en acceso anticipado hasta su lanzamiento final en la versión 1.0. Desarrollado bajo el motor <strong>Unreal Engine 5</strong>, el juego destaca por ofrecer un mundo abierto colorido y con una gran distancia de dibujado, aunque esto conlleva un costo de procesamiento elevado.</p><p>El principal cuello de botella de Palworld se encuentra en la <strong>CPU</strong>, debido a la constante simulación de físicas, rutinas de inteligencia artificial y automatización de tareas de decenas de Pals trabajando simultáneamente en las bases. Esto provoca caídas de frames y problemas de <strong>frame pacing</strong> (tirones de pantalla) incluso en procesadores modernos de gama media-alta cuando la actividad en pantalla es frenética.</p><p>En el apartado gráfico, la optimización ha mejorado sustancialmente. El juego escala de manera decente en tarjetas gráficas antiguas, pero requiere hardware moderno para mantener una tasa de fotogramas estable a resoluciones superiores a 1080p. El uso de un almacenamiento <strong>SSD</strong> es estrictamente obligatorio; de lo contrario, el jugador experimentará graves problemas de carga tardía de texturas (pop-in) y tiempos de carga excesivos.</p><p>En cuanto a tecnologías de escalado, cuenta con soporte oficial para <strong>NVIDIA DLSS</strong>, el cual resulta fundamental para estabilizar el rendimiento en resoluciones altas o configuraciones ultra. Aunque el soporte nativo para AMD FSR e Intel XeSS ha sido limitado en los menús oficiales de lanzamiento, la comunidad ha logrado integrar con éxito herramientas de inyección de fotogramas que mejoran drásticamente la fluidez en tarjetas no pertenecientes a NVIDIA.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-9400F",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1660",
+          "Almacenamiento: 40 GB de espacio disponible (SSD obligatorio)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i5-12400 / AMD Ryzen 5 5600X",
+          "Memoria: 32 GB de RAM",
+          "Gráficos: NVIDIA GeForce RTX 3060 Ti / AMD Radeon RX 6700 XT",
+          "Almacenamiento: 40 GB de espacio disponible (SSD obligatorio)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/4e9/4e9c951414c732923fa72d5b1da49402.jpg"
+    },
+    {
+      "id": "assassin-s-creed-black-flag-resynced",
+      "titulo": "Assassin's Creed: Black Flag Resynced",
+      "fecha": "12 Jul, 2026",
+      "plataformas": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X/S"
+      ],
+      "calificacion": 8.5,
+      "motor_grafico": "Anvil Engine",
+      "tecnologias": [
+        "NVIDIA DLSS 4.5 [2.1.8]",
+        "AMD FSR 4",
+        "Intel XeSS 3",
+        "Ray Tracing (RTGI y Reflejos)",
+        "Frame Generation"
+      ],
+      "sinopsis": "Reconstrucción desde cero del clásico de piratas de 2013, que revive la aventura de Edward Kenway en el Caribe con gráficos de última generación, jugabilidad modernizada y contenido inédito.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Assassin's Creed Black Flag Resynced</strong> en PC destaca por ser una reconstrucción sólida y moderna gracias al motor gráfico <strong>Anvil Engine</strong>. A diferencia de otros lanzamientos recientes, Ubisoft ha realizado un excelente trabajo de optimización, ofreciendo una experiencia prácticamente libre de tirones (stuttering) y con un proceso de precompilación de sombreadores (shaders) sumamente rápido al iniciar el juego.</p><p>El juego implementa dos modos de <strong>Ray Tracing</strong>: Standard y Extended. El modo Standard activa la iluminación global por trazado de rayos (RTGI), reemplazando la iluminación estática original por un sistema dinámico en tiempo real que transforma por completo la atmósfera del Caribe. El modo Extended añade reflejos por trazado de rayos de alta calidad, aunque esto incrementa significativamente la demanda de <strong>VRAM</strong>, haciendo que tarjetas con menos de 8 GB sufran caídas de rendimiento a resoluciones elevadas.</p><p>Para mitigar el impacto en el rendimiento, el título cuenta con soporte de lanzamiento para las tecnologías de escalado más avanzadas, incluyendo <strong>NVIDIA DLSS 4.5</strong> (con generación de fotogramas), <strong>AMD FSR 4</strong> e <strong>Intel XeSS 3</strong>. Estas herramientas permiten duplicar la tasa de cuadros por segundo, logrando que configuraciones de gama media alcancen los 60 FPS estables a 1440p con trazado de rayos activado.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i7-8700K @ 3.7 GHz o AMD Ryzen 5 3600 @ 3.6 GHz [2.2.1]",
+          "Memoria: 16 GB de RAM (en modo dual-channel)",
+          "Gráficos: NVIDIA GeForce GTX 1660 (6GB) o AMD Radeon RX 5500XT (8GB)",
+          "Almacenamiento: 65 GB de espacio disponible (SSD obligatorio)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i5-10600K o AMD Ryzen 5 3600 [2.2.5]",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce RTX 3060 o AMD Radeon RX 6600XT",
+          "Almacenamiento: 65 GB de espacio disponible (SSD obligatorio)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/990/99088f6f170459244defd7afd9fce096.jpg"
+    },
+    {
+      "id": "counter-strike-2",
+      "titulo": "Counter-Strike 2",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC (Windows, Linux / SteamOS)",
+      "calificacion": 8.5,
+      "motor_grafico": "Source 2",
+      "tecnologias": [
+        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
+        "NVIDIA Reflex Low Latency"
+      ],
+      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
+      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
+          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
+          "Memoria: 16 GB de RAM de doble canal",
+          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
+          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
     }
   ]
 }
