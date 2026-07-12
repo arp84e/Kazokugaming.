@@ -27,6 +27,192 @@
         <div id="pantalla-juego" class="space-y-8 animate-fade-in-up">
             <div class="text-center py-20 text-slate-500 animate-pulse">Cargando expediente técnico...</div>
         </div>
+        <!-- INYECTAR JUSTO ANTES DE CERARR </main> EN ARTICULO.HTML, JUEGO.HTML y GUIA.HTML -->
+        
+        <!-- SECCIÓN DE COMENTARIOS COMUNITARIOS -->
+        <div class="mt-16 pt-10 border-t border-slate-800/80 max-w-3xl mx-auto w-full">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="text-cyan-500">💬</span> Discusión Táctica
+            </h3>
+
+            <!-- Panel de Login/Registro (Si no hay sesión) -->
+            <div id="panel-auth-comentarios" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 hidden shadow-xl">
+                <div class="text-center mb-5">
+                    <h4 class="text-lg font-bold text-white">Identifícate para comentar</h4>
+                    <p class="text-sm text-slate-400 mt-1">Tu perfil será válido en todo KazokuGaming.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="inputApodo" placeholder="Tu Apodo (Solo Registro)" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
+                    <input type="email" id="inputEmail" placeholder="Correo Electrónico" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
+                    <input type="password" id="inputPass" placeholder="Contraseña" class="bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white w-full">
+                </div>
+                <div class="flex gap-3 mt-5 justify-center">
+                    <button onclick="intentarRegistro()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 px-6 rounded-lg text-sm transition">Registrarse</button>
+                    <button onclick="intentarLogin()" class="bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold py-2.5 px-8 rounded-lg text-sm transition shadow-lg shadow-cyan-500/20">Entrar</button>
+                </div>
+            </div>
+
+            <!-- Panel para Escribir Comentario (Si hay sesión) -->
+            <div id="panel-escribir-comentario" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 mb-8 hidden shadow-xl">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-sm font-bold text-cyan-400 flex items-center gap-2" id="usuario-activo-nombre">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Conectado
+                    </span>
+                    <button onclick="cerrarSesion()" class="text-xs font-bold text-red-400 hover:text-red-300 transition px-3 py-1 rounded bg-red-500/10 border border-red-500/20">Desconectar</button>
+                </div>
+                <textarea id="inputComentario" rows="3" placeholder="Aporta tu estrategia, duda u opinión..." class="w-full bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white resize-none"></textarea>
+                <div class="flex justify-end mt-3">
+                    <button onclick="enviarComentario()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition shadow-lg shadow-cyan-500/20">Publicar Comentario</button>
+                </div>
+            </div>
+
+            <!-- Lista de Comentarios -->
+            <div id="lista-comentarios" class="space-y-4">
+                <div class="text-center py-8 text-slate-500 animate-pulse">Cargando comentarios...</div>
+            </div>
+        </div>
+
+    <!-- Cargar SDK de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // --- LÓGICA DE COMENTARIOS Y SESIÓN ---
+        const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- CAMBIA ESTO
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- CAMBIA ESTO
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+        let usuarioActual = null;
+        // Identificador único de la página actual para anclar los comentarios
+        const postIdActual = new URLSearchParams(window.location.search).get('id');
+
+        async function initAuth() {
+            const { data: { session } } = await supabase.auth.getSession();
+            usuarioActual = session?.user || null;
+            
+            if(usuarioActual) {
+                document.getElementById('panel-auth-comentarios').classList.add('hidden');
+                document.getElementById('panel-escribir-comentario').classList.remove('hidden');
+                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Jugador'}`;
+            } else {
+                document.getElementById('panel-auth-comentarios').classList.remove('hidden');
+                document.getElementById('panel-escribir-comentario').classList.add('hidden');
+            }
+        }
+
+        async function intentarRegistro() {
+            const email = document.getElementById('inputEmail').value.trim();
+            const pass = document.getElementById('inputPass').value;
+            const apodo = document.getElementById('inputApodo').value.trim();
+
+            if(!email || !pass || !apodo) return alert("Completa Apodo, Email y Contraseña para registrarte.");
+
+            const { data, error } = await supabase.auth.signUp({
+                email: email, password: pass, options: { data: { apodo: apodo } }
+            });
+
+            if (error) alert("Error: " + error.message);
+            else alert("¡Registro exitoso! Haz clic en Entrar.");
+        }
+
+        async function intentarLogin() {
+            const email = document.getElementById('inputEmail').value.trim();
+            const pass = document.getElementById('inputPass').value;
+
+            if(!email || !pass) return alert("Ingresa tu correo y contraseña.");
+
+            const { data, error } = await supabase.auth.signInWithPassword({ email: email, password: pass });
+            if (error) alert("Credenciales incorrectas.");
+            else window.location.reload(); 
+        }
+
+        async function cerrarSesion() {
+            await supabase.auth.signOut();
+            window.location.reload();
+        }
+
+        async function cargarComentarios() {
+            if(!postIdActual) return;
+
+            // Pedimos solo los mensajes que coincidan con la URL de esta página
+            const { data: comentarios, error } = await supabase
+                .from('mensajes')
+                .select('*')
+                .eq('post_id', postIdActual)
+                .order('created_at', { ascending: true });
+
+            const lista = document.getElementById('lista-comentarios');
+            lista.innerHTML = '';
+
+            if (error) {
+                lista.innerHTML = '<p class="text-red-400 text-center">Error al cargar discusiones.</p>';
+                return;
+            }
+
+            if (comentarios.length === 0) {
+                lista.innerHTML = '<p class="text-slate-500 text-center py-6">Nadie ha comentado aún. ¡Sé el primero!</p>';
+                return;
+            }
+
+            comentarios.forEach(msg => {
+                const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
+                const inicial = msg.autor_apodo ? msg.autor_apodo.charAt(0).toUpperCase() : 'U';
+                
+                let btnBorrar = '';
+                if(usuarioActual && usuarioActual.id === msg.user_id) {
+                    btnBorrar = `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500 hover:text-red-400 transition">Eliminar</button>`;
+                }
+
+                const div = document.createElement('div');
+                div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
+                div.innerHTML = `
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 text-sm bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">${inicial}</div>
+                    <div class="flex-grow min-w-0">
+                        <div class="flex items-center mb-1 w-full">
+                            <span class="text-sm font-bold text-white">${msg.autor_apodo}</span>
+                            <span class="text-[10px] text-slate-500 ml-3 shrink-0">${fecha}</span>
+                            ${btnBorrar}
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed break-words">${msg.contenido}</p>
+                    </div>
+                `;
+                lista.appendChild(div);
+            });
+        }
+
+        async function enviarComentario() {
+            if(!usuarioActual || !postIdActual) return;
+            const input = document.getElementById('inputComentario');
+            const contenido = input.value.trim();
+            if(!contenido) return;
+
+            const { error } = await supabase.from('mensajes').insert([{
+                post_id: postIdActual,
+                user_id: usuarioActual.id,
+                autor_apodo: usuarioActual.user_metadata?.apodo || 'Jugador',
+                contenido: contenido
+            }]);
+
+            if (error) alert("Error al enviar: " + error.message);
+            else { input.value = ''; cargarComentarios(); }
+        }
+
+        async function borrarComentario(id) {
+            const { error } = await supabase.from('mensajes').delete().eq('id', id);
+            if(error) alert("Bloqueado: No tienes permisos.");
+            else cargarComentarios();
+        }
+
+        // Suscribirse a cambios en vivo solo para esta página
+        supabase.channel('comentarios_pagina')
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'mensajes', filter: `post_id=eq.${postIdActual}` }, payload => {
+                cargarComentarios();
+            }).subscribe();
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            initAuth();
+            cargarComentarios();
+        });
+    </script>
     </main>
 
     <script src="../header.js"></script>
