@@ -1,4 +1,4 @@
-// header.js - Componente de Navegación Global y Buscador
+// header.js - Componente de Navegación Global (Sin Foro)
 document.addEventListener("DOMContentLoaded", function() {
     const isRoot = window.location.pathname.endsWith('index.html') || window.location.pathname.split('/').pop() === '';
     const prefix = isRoot ? '' : '../';
@@ -17,10 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="${prefix}telemetria.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Telemetría</a>
                 <a href="${prefix}guias.html" class="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition tracking-wide">Guías</a>
                 <a href="${prefix}radar.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition">Radar</a>
-                <a href="${prefix}foro.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    Foro
-                </a>
             </nav>
 
             <div class="flex-1 max-w-xs ml-8 relative hidden lg:block">
@@ -41,10 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="${prefix}telemetria.html" class="text-base font-semibold text-slate-300 hover:text-cyan-400 transition">Telemetría</a>
                 <a href="${prefix}guias.html" class="text-base font-bold text-emerald-400 hover:text-emerald-300 transition">Guías</a>
                 <a href="${prefix}radar.html" class="text-base font-semibold text-slate-300 hover:text-cyan-400 transition">Radar</a>
-                <a href="${prefix}foro.html" class="text-base font-semibold text-slate-300 hover:text-cyan-400 transition flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    Foro
-                </a>
                 
                 <div class="pt-5 mt-2 border-t border-slate-800">
                     <input type="text" id="buscador-global-mobile" placeholder="Buscar en KazokuGaming..." class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-500 transition">
@@ -58,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (container) {
         container.innerHTML = headerHTML;
 
-        // --- LÓGICA DEL MENÚ MÓVIL ---
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -74,20 +65,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        // --- LÓGICA DEL BUSCADOR GLOBAL ---
         function procesarBusqueda(e) {
             if (e.key === 'Enter') {
                 const query = e.target.value.trim();
-                if (query) {
-                    // Redirige a la página de búsqueda con la query segura en la URL
-                    window.location.href = `${prefix}buscar.html?q=${encodeURIComponent(query)}`;
-                }
+                if (query) window.location.href = `${prefix}buscar.html?q=${encodeURIComponent(query)}`;
             }
         }
 
         const inputDesktop = document.getElementById('buscador-global-desktop');
         const inputMobile = document.getElementById('buscador-global-mobile');
-        
         if (inputDesktop) inputDesktop.addEventListener('keypress', procesarBusqueda);
         if (inputMobile) inputMobile.addEventListener('keypress', procesarBusqueda);
     }
