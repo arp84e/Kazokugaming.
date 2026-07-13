@@ -16,7 +16,7 @@
     <div id="header-container"></div>
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="pantalla-juego">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase">Cargando expediente técnico...</div>
+        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">Cargando expediente técnico...</div>
     </main>
 
     <section id="seccion-comentarios" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
@@ -48,95 +48,113 @@
     <script src="header.js"></script>
     <script>
     const idActual = new URLSearchParams(window.location.search).get('id');
+    const pantalla = document.getElementById('pantalla-juego');
 
-    document.addEventListener('DOMContentLoaded', () => {
-        if(!idActual) return document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400">⚠️ ID no especificado.</div>`;
+    document.addEventListener('DOMContentLoaded', async () => {
+        if(!idActual) return pantalla.innerHTML = `<div class="text-center py-12 text-red-400 font-bold">⚠️ ID de juego no especificado.</div>`;
 
-        // RUTAS ARREGLADAS (Sin ../)
-        Promise.all([
-            fetch('telemetria.json').then(res => res.ok ? res.json() : { juegos: [] }),
-            fetch('guias.json').then(res => res.ok ? res.json() : { guias: [] })
-        ]).then(([dataTelemetria, dataGuias]) => {
-            const juego = dataTelemetria.juegos.find(j => j.id === idActual);
+        try {
+            // Descarga blindada
+            const reqTel = await fetch('telemetria.json').catch(() => null);
+            const reqGui = await fetch('guias.json').catch(() => null);
             
-            if(juego) {
-                const guiaRelacionada = dataGuias.guias?.find(g => g.slug === idActual || g.id === `guia-${idActual}`);
-                let htmlBannerGuia = guiaRelacionada ? `
-                    <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
-                        <div class="relative z-10 text-center sm:text-left">
-                            <span class="text-[10px] font-black text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 block mb-2">INTELIGENCIA DESBLOQUEADA</span>
-                            <h4 class="text-xl font-bold text-white">Dossier Táctico Disponible</h4>
-                        </div>
-                        <a href="guia.html?id=${guiaRelacionada.id}" class="relative z-10 w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 text-white font-extrabold py-3 px-8 rounded-xl transition">Leer Guía →</a>
-                    </div>` : '';
+            const dataTelemetria = (reqTel && reqTel.ok) ? await reqTel.json() : { juegos: [] };
+            const dataGuias = (reqGui && reqGui.ok) ? await reqGui.json() : { guias: [] };
 
-                const reqMin = juego.requisitos?.minimos?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
-                const reqRec = juego.requisitos?.recomendados?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
-                const analisisLimpio = DOMPurify.sanitize(juego.analisis_detallado);
+            const juego = dataTelemetria.juegos?.find(j => j.id === idActual);
+            
+            if(!juego) {
+                pantalla.innerHTML = `<div class="text-center py-12 text-amber-500 font-bold">⚠️ Expediente de Telemetría no encontrado.</div>`;
+                return;
+            }
 
-                document.getElementById('pantalla-juego').innerHTML = `
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div class="lg:col-span-2 space-y-8">
-                            <div>
-                                <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
-                                <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
-                                <div class="flex items-center gap-4 text-sm text-slate-400">
-                                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
-                                </div>
+            const guiaRelacionada = dataGuias.guias?.find(g => g.slug === idActual || g.id === `guia-${idActual}`);
+            let htmlBannerGuia = guiaRelacionada ? `
+                <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+                    <div class="relative z-10 text-center sm:text-left">
+                        <span class="text-[10px] font-black text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 block mb-2">INTELIGENCIA DESBLOQUEADA</span>
+                        <h4 class="text-xl font-bold text-white">Dossier Táctico Disponible</h4>
+                    </div>
+                    <a href="guia.html?id=${guiaRelacionada.id}" class="relative z-10 w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 text-white font-extrabold py-3 px-8 rounded-xl transition">Leer Guía →</a>
+                </div>` : '';
+
+            const reqMin = juego.requisitos?.minimos?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
+            const reqRec = juego.requisitos?.recomendados?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
+            const analisisLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(juego.analisis_detallado) : juego.analisis_detallado;
+
+            pantalla.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in-up">
+                    <div class="lg:col-span-2 space-y-8">
+                        <div>
+                            <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
+                            <div class="flex items-center gap-4 text-sm text-slate-400">
+                                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
                             </div>
-                            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8">
-                                <h3 class="text-xl font-bold text-white mb-6">⚙️ Reporte Técnico</h3>
-                                <div class="prose prose-invert prose-cyan max-w-none text-slate-300 leading-relaxed">${analisisLimpio}</div>
-                            </div>
-                            ${htmlBannerGuia}
                         </div>
-                        <div class="space-y-6">
-                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
-                                <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Mínimos</h3>
-                                <ul class="space-y-3 text-sm text-slate-300">${reqMin}</ul>
-                            </div>
-                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
-                                <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Recomendados</h3>
-                                <ul class="space-y-3 text-sm text-slate-300">${reqRec}</ul>
-                            </div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8">
+                            <h3 class="text-xl font-bold text-white mb-6">⚙️ Reporte Técnico</h3>
+                            <div class="prose prose-invert prose-cyan max-w-none text-slate-300 leading-relaxed">${analisisLimpio}</div>
+                        </div>
+                        ${htmlBannerGuia}
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
+                            <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Mínimos</h3>
+                            <ul class="space-y-3 text-sm text-slate-300">${reqMin}</ul>
+                        </div>
+                        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
+                            <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Recomendados</h3>
+                            <ul class="space-y-3 text-sm text-slate-300">${reqRec}</ul>
                         </div>
                     </div>
-                `;
-                document.title = `${juego.titulo} | Análisis Técnico`;
-                document.getElementById('seccion-comentarios').classList.remove('hidden');
-                initSupabase();
-            } else {
-                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400">Expediente inexistente.</div>`;
-            }
-        }).catch(err => {
-            console.error(err);
-            document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400">⚠️ Error de conexión a la base de datos de KazokuGaming.</div>`;
-        });
+                </div>
+            `;
+            document.title = `${juego.titulo} | Análisis Técnico`;
+            document.getElementById('seccion-comentarios').classList.remove('hidden');
+            
+            // Llamamos a supabase de forma segura
+            await initSupabase();
+
+        } catch (error) {
+            pantalla.innerHTML = `<div class="text-center py-12 text-red-500 font-bold">⚠️ Error crítico al renderizar: ${error.message}</div>`;
+        }
     });
 
-    // LÓGICA DE COMENTARIOS
-    const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- REEMPLAZA
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- REEMPLAZA
-    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+    // LÓGICA DE COMENTARIOS BLINDADA
+    const supabaseUrl = 'https://TU_PROYECTO.supabase.co'; // <--- REEMPLAZA
+    const supabaseKey = 'TU_ANON_KEY'; // <--- REEMPLAZA
+    let supabase = null;
     let usuarioActual = null;
 
     async function initSupabase() {
-        if(supabaseUrl.includes('TU_PROYECTO')) return;
-        const { data: { session } } = await supabase.auth.getSession();
-        usuarioActual = session?.user || null;
-        if(usuarioActual) {
-            document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-            document.getElementById('alerta-registro').classList.add('hidden');
-            document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
-        } else {
+        try {
+            if(supabaseUrl.includes('TU_PROYECTO') || typeof window.supabase === 'undefined') {
+                return document.getElementById('alerta-registro').classList.remove('hidden');
+            }
+            
+            supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+            const { data: { session } } = await supabase.auth.getSession();
+            usuarioActual = session?.user || null;
+            
+            if(usuarioActual) {
+                document.getElementById('panel-escribir-comentario').classList.remove('hidden');
+                document.getElementById('alerta-registro').classList.add('hidden');
+                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
+            } else {
+                document.getElementById('alerta-registro').classList.remove('hidden');
+            }
+            await cargarComentarios();
+        } catch(e) {
+            console.error("Supabase inactivo:", e);
             document.getElementById('alerta-registro').classList.remove('hidden');
         }
-        cargarComentarios();
     }
 
-    async function cerrarSesion() { await supabase.auth.signOut(); window.location.reload(); }
+    async function cerrarSesion() { if(supabase) await supabase.auth.signOut(); window.location.reload(); }
 
     async function cargarComentarios() {
+        if(!supabase) return;
         const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
         const lista = document.getElementById('lista-comentarios');
         lista.innerHTML = '';
@@ -145,7 +163,7 @@
         comentarios.forEach(msg => {
             const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
             let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
-            const contenidoSeguro = DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }); 
+            const contenidoSeguro = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }) : msg.contenido; 
 
             const div = document.createElement('div');
             div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
@@ -155,12 +173,13 @@
     }
 
     async function enviarComentario() {
+        if(!supabase) return;
         const input = document.getElementById('inputComentario');
         if(!input.value.trim()) return;
         await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
         input.value = ''; cargarComentarios();
     }
-    async function borrarComentario(id) { await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
+    async function borrarComentario(id) { if(supabase) await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
