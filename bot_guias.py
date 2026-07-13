@@ -7,7 +7,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS TÁCTICAS (MODO AUTÓNOMO) ===")
+print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS TÁCTICAS (MODO RESILIENTE) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
@@ -23,6 +23,27 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto.strip(), re.DOTALL)
     return match.group(0) if match else texto.strip()
 
+# --- NUEVO: SISTEMA DE REINTENTOS PARA EVITAR EL ERROR 503 ---
+def generar_con_reintentos(prompt_texto, config_ia, max_intentos=5):
+    for intento in range(max_intentos):
+        try:
+            response = client.models.generate_content(
+                model='gemini-3.5-flash',
+                contents=prompt_texto,
+                config=config_ia
+            )
+            return response
+        except Exception as e:
+            error_str = str(e).lower()
+            # Si el error es por saturación (503) o límite (429)
+            if "503" in error_str or "unavailable" in error_str or "429" in error_str or "quota" in error_str:
+                espera = (intento + 1) * 20  # Esperará 20s, 40s, 60s...
+                print(f"⚠️ Servidores de IA saturados. Reintentando en {espera} segundos... (Intento {intento+1}/{max_intentos})")
+                time.sleep(espera)
+            else:
+                raise e # Si es otro tipo de error grave, que se detenga
+    raise Exception("❌ Se superó el límite máximo de reintentos. Los servidores están caídos.")
+
 # Cargar base de datos actual para evitar duplicados
 datos_web = {"guias": []}
 nombres_existentes = []
@@ -36,7 +57,6 @@ if os.path.exists(archivo_guias):
 entrada_usuario = os.environ.get("INPUT_JUEGO", "").strip()
 juegos_a_procesar = []
 
-# --- SISTEMA DE DOBLE MODO (MANUAL VS AUTOMÁTICO) ---
 if entrada_usuario:
     print("🛠️ MODO MANUAL DETECTADO.")
     juegos_a_procesar = [entrada_usuario]
@@ -52,15 +72,8 @@ else:
     }}
     """
     try:
-        res_tendencias = client.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=prompt_tendencias,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json", 
-                temperature=0.7,
-                tools=[{"google_search": {}}]
-            )
-        )
+        config_tendencias = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
+        res_tendencias = generar_con_reintentos(prompt_tendencias, config_tendencias)
         data_tendencias = json.loads(extraer_json_seguro(res_tendencias.text))
         juegos_a_procesar = data_tendencias.get("juegos", [])
         print(f"📡 Tendencias detectadas: {juegos_a_procesar}")
@@ -122,18 +135,9 @@ for entrada in juegos_a_procesar:
 
     try:
         termino_busqueda = f"Guia paso a paso armas jefes trucos secretos {juego_limpio} {año_especifico}".strip()
+        config_guia = types.GenerateContentConfig(system_instruction=prompt_sistema, response_mime_type="application/json", temperature=0.35, tools=[{"google_search": {}}])
         
-        response = client.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=f"Investiga minuciosamente y redacta: {termino_busqueda}",
-            config=types.GenerateContentConfig(
-                system_instruction=prompt_sistema, 
-                response_mime_type="application/json", 
-                temperature=0.35,
-                tools=[{"google_search": {}}]
-            )
-        )
-        
+        response = generar_con_reintentos(f"Investiga minuciosamente y redacta: {termino_busqueda}", config_guia)
         guia_generada = json.loads(extraer_json_seguro(response.text))
         
         imagen_final = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
@@ -164,11 +168,10 @@ for entrada in juegos_a_procesar:
         datos_web["guias"].insert(0, guia_final)
         print(f"✅ ¡Guía de {juego_limpio} guardada con éxito!")
         
-        # Guardamos en cada iteración por si falla el siguiente
         with open(archivo_guias, "w", encoding="utf-8") as f:
             json.dump(datos_web, f, ensure_ascii=False, indent=2)
             
-        time.sleep(15) # Pausa táctica para evitar bloqueos de la API
+        time.sleep(15) 
 
     except Exception as e:
         print(f"❌ Error al generar la guía de {juego_limpio}: {e}")
