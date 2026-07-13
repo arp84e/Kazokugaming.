@@ -24,7 +24,7 @@
     <div id="header-container"></div>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="contenedor-principal">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase">Descifrando datos tácticos...</div>
+        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">Descifrando datos tácticos...</div>
     </main>
 
     <section id="seccion-comentarios" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
@@ -54,69 +54,86 @@
     <footer class="border-t border-slate-900 bg-slate-950 py-8 mt-auto text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
 
     <script src="header.js"></script>
-    
     <script>
         const idActual = new URLSearchParams(window.location.search).get('id');
+        const contenedor = document.getElementById('contenedor-principal');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const contenedor = document.getElementById('contenedor-principal');
-            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: Guía no especificada.</div>';
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-12 text-red-500 font-bold">⚠️ ID de guía no especificado.</div>';
 
-            // RUTA ARREGLADA A GUIAS.JSON (Sin ../)
-            fetch('guias.json').then(res => res.json()).then(data => {
-                const guia = data.guias.find(g => g.id === idActual);
-                if (guia) {
-                    document.title = `${guia.titulo} | KazokuGaming`;
-                    const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
-                    const contenidoLimpio = DOMPurify.sanitize(guia.contenido);
-
-                    contenedor.innerHTML = `
-                        <article class="animate-fade-in-up">
-                            <div class="mb-8 text-center">
-                                <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
-                                <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
-                            </div>
-                            <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
-                               <img src="${guia.imagen}" class="w-full h-full object-cover">
-                               <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent"></div>
-                            </div>
-                            <div class="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-3xl mb-10 contenido-guia shadow-xl">
-                                ${contenidoLimpio}
-                            </div>
-                            <div class="flex flex-wrap justify-center gap-2 mb-10">${tagsHTML}</div>
-                        </article>
-                    `;
-                    document.getElementById('seccion-comentarios').classList.remove('hidden');
-                    initSupabase();
-                } else {
-                    contenedor.innerHTML = '<div class="text-center py-20 text-slate-400">El expediente no existe o fue clasificado.</div>';
+            try {
+                const req = await fetch('guias.json').catch(() => null);
+                const data = (req && req.ok) ? await req.json() : { guias: [] };
+                
+                const guia = data.guias?.find(g => g.id === idActual);
+                
+                if (!guia) {
+                    contenedor.innerHTML = '<div class="text-center py-20 text-amber-500 font-bold">⚠️ El expediente no existe o fue clasificado.</div>';
+                    return;
                 }
-            }).catch(() => contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error de conexión al cargar la guía.</div>');
+
+                document.title = `${guia.titulo} | KazokuGaming`;
+                const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
+                const contenidoLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(guia.contenido) : guia.contenido;
+
+                contenedor.innerHTML = `
+                    <article class="animate-fade-in-up">
+                        <div class="mb-8 text-center">
+                            <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
+                            <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
+                        </div>
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
+                           <img src="${guia.imagen}" class="w-full h-full object-cover">
+                           <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent"></div>
+                        </div>
+                        <div class="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-3xl mb-10 contenido-guia shadow-xl">
+                            ${contenidoLimpio}
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-2 mb-10">${tagsHTML}</div>
+                    </article>
+                `;
+                document.getElementById('seccion-comentarios').classList.remove('hidden');
+                await initSupabase();
+
+            } catch (error) {
+                contenedor.innerHTML = `<div class="text-center py-20 text-red-500 font-bold">⚠️ Error crítico: ${error.message}</div>`;
+            }
         });
 
         // LÓGICA DE COMENTARIOS BLINDADA
         const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- REEMPLAZA
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- REEMPLAZA
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey); 
+        let supabase = null;
         let usuarioActual = null;
 
         async function initSupabase() {
-            if(supabaseUrl.includes('TU_PROYECTO')) return; // Protege si no hay BD configurada
-            const { data: { session } } = await supabase.auth.getSession();
-            usuarioActual = session?.user || null;
-            if(usuarioActual) {
-                document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-                document.getElementById('alerta-registro').classList.add('hidden');
-                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
-            } else {
+            try {
+                if(supabaseUrl.includes('TU_PROYECTO') || typeof window.supabase === 'undefined') {
+                    return document.getElementById('alerta-registro').classList.remove('hidden');
+                }
+                
+                supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+                const { data: { session } } = await supabase.auth.getSession();
+                usuarioActual = session?.user || null;
+                
+                if(usuarioActual) {
+                    document.getElementById('panel-escribir-comentario').classList.remove('hidden');
+                    document.getElementById('alerta-registro').classList.add('hidden');
+                    document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
+                } else {
+                    document.getElementById('alerta-registro').classList.remove('hidden');
+                }
+                await cargarComentarios();
+            } catch(e) {
+                console.error("Supabase inactivo:", e);
                 document.getElementById('alerta-registro').classList.remove('hidden');
             }
-            cargarComentarios();
         }
 
-        async function cerrarSesion() { await supabase.auth.signOut(); window.location.reload(); }
+        async function cerrarSesion() { if(supabase) await supabase.auth.signOut(); window.location.reload(); }
 
         async function cargarComentarios() {
+            if(!supabase) return;
             const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
             const lista = document.getElementById('lista-comentarios');
             lista.innerHTML = '';
@@ -125,7 +142,7 @@
             comentarios.forEach(msg => {
                 const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
                 let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
-                const contenidoSeguro = DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }); 
+                const contenidoSeguro = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }) : msg.contenido;
 
                 const div = document.createElement('div');
                 div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
@@ -135,12 +152,13 @@
         }
 
         async function enviarComentario() {
+            if(!supabase) return;
             const input = document.getElementById('inputComentario');
             if(!input.value.trim()) return;
             await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
             input.value = ''; cargarComentarios();
         }
-        async function borrarComentario(id) { await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
+        async function borrarComentario(id) { if(supabase) await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
