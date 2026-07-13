@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
@@ -24,43 +23,24 @@
 
     <div id="header-container"></div>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="contenedor-principal">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">Desplegando expediente informativo...</div>
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full" id="contenedor-principal">
+        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">
+            Desplegando expediente informativo...
+        </div>
     </main>
 
-    <section id="seccion-comentarios" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
-        <div class="pt-8 border-t border-slate-800/80">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-indigo-500">💬</span> Discusión</h3>
-
-            <div id="panel-escribir-comentario" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 mb-8 hidden shadow-xl">
-                <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-bold text-indigo-400 flex items-center gap-2" id="usuario-activo-nombre"></span>
-                    <button onclick="cerrarSesion()" class="text-xs font-bold text-red-400 hover:text-red-300 transition px-3 py-1 rounded bg-red-500/10 border border-red-500/20">Desconectar</button>
-                </div>
-                <textarea id="inputComentario" rows="3" placeholder="Aporta tu opinión..." class="w-full bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-indigo-500 outline-none text-white resize-none"></textarea>
-                <div class="flex justify-end mt-3">
-                    <button onclick="enviarComentario()" class="bg-indigo-500 hover:bg-indigo-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition">Publicar</button>
-                </div>
-            </div>
-
-            <div id="alerta-registro" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center mb-8 hidden">
-                <p class="text-slate-400 mb-3">Debes estar identificado para unirte a la discusión.</p>
-                <a href="index.html#terminal-acceso" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-6 rounded-lg transition">Ir al Portal de Acceso</a>
-            </div>
-
-            <div id="lista-comentarios" class="space-y-4"></div>
-        </div>
-    </section>
-
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 mt-auto text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
 
     <script src="header.js"></script>
     <script>
-        const idActual = new URLSearchParams(window.location.search).get('id');
-        const contenedor = document.getElementById('contenedor-principal');
-
         document.addEventListener('DOMContentLoaded', async () => {
-            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-12 text-red-500 font-bold">⚠️ Artículo no especificado.</div>';
+            const idActual = new URLSearchParams(window.location.search).get('id');
+            const contenedor = document.getElementById('contenedor-principal');
+
+            if (!idActual) {
+                contenedor.innerHTML = '<div class="text-center py-12 text-red-500 font-bold">⚠️ Artículo no especificado en la URL.</div>';
+                return;
+            }
 
             try {
                 const req = await fetch('articulos.json').catch(() => null);
@@ -69,16 +49,18 @@
                 const articulo = data.articulos?.find(a => a.id === idActual);
                 
                 if (!articulo) {
-                    contenedor.innerHTML = '<div class="text-center py-20 text-amber-500 font-bold">⚠️ El artículo no existe o fue eliminado.</div>';
+                    contenedor.innerHTML = '<div class="text-center py-20 text-amber-500 font-bold">⚠️ El artículo que buscas no existe o ha sido movido.</div>';
                     return;
                 }
 
                 document.title = `${articulo.titulo} | KazokuGaming`;
+                
                 const tagsHTML = articulo.tags.map(tag => `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-[10px] uppercase font-semibold rounded-full border border-slate-700">${tag}</span>`).join('');
+                
                 const contenidoLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(articulo.contenido) : articulo.contenido;
 
                 contenedor.innerHTML = `
-                    <article class="animate-fade-in-up">
+                    <article>
                         <div class="mb-8 text-center">
                             <span class="text-[10px] font-black tracking-widest text-indigo-400 uppercase bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">${articulo.categoria}</span>
                             <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
@@ -88,77 +70,18 @@
                            <img src="${articulo.imagen}" class="w-full h-full object-cover">
                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
                         </div>
-                        <div class="contenido-articulo max-w-3xl mx-auto">${contenidoLimpio}</div>
+                        <div class="contenido-articulo max-w-3xl mx-auto">
+                            ${contenidoLimpio}
+                        </div>
                         <div class="mt-8 mb-4 flex flex-wrap justify-center gap-2">${tagsHTML}</div>
                     </article>
                 `;
-                document.getElementById('seccion-comentarios').classList.remove('hidden');
-                await initSupabase();
 
             } catch (error) {
-                contenedor.innerHTML = `<div class="text-center py-20 text-red-500 font-bold">⚠️ Error crítico: ${error.message}</div>`;
+                console.error(error);
+                contenedor.innerHTML = `<div class="text-center py-20 text-red-500 font-bold">⚠️ Error de conexión al cargar la base de datos de artículos.</div>`;
             }
         });
-
-        // LÓGICA DE COMENTARIOS BLINDADA
-        const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- REEMPLAZA
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- REEMPLAZA
-        let supabase = null;
-        let usuarioActual = null;
-
-        async function initSupabase() {
-            try {
-                if(supabaseUrl.includes('TU_PROYECTO') || typeof window.supabase === 'undefined') {
-                    return document.getElementById('alerta-registro').classList.remove('hidden');
-                }
-                
-                supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-                const { data: { session } } = await supabase.auth.getSession();
-                usuarioActual = session?.user || null;
-                
-                if(usuarioActual) {
-                    document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-                    document.getElementById('alerta-registro').classList.add('hidden');
-                    document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
-                } else {
-                    document.getElementById('alerta-registro').classList.remove('hidden');
-                }
-                await cargarComentarios();
-            } catch(e) {
-                console.error("Supabase inactivo:", e);
-                document.getElementById('alerta-registro').classList.remove('hidden');
-            }
-        }
-
-        async function cerrarSesion() { if(supabase) await supabase.auth.signOut(); window.location.reload(); }
-
-        async function cargarComentarios() {
-            if(!supabase) return;
-            const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
-            const lista = document.getElementById('lista-comentarios');
-            lista.innerHTML = '';
-            if (!comentarios || comentarios.length === 0) return lista.innerHTML = '<p class="text-slate-500 text-center py-6">Nadie ha comentado aún. ¡Sé el primero!</p>';
-
-            comentarios.forEach(msg => {
-                const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
-                let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
-                const contenidoSeguro = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }) : msg.contenido;
-
-                const div = document.createElement('div');
-                div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
-                div.innerHTML = `<div class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-indigo-500/10 text-indigo-400">${msg.autor_apodo.charAt(0).toUpperCase()}</div><div class="flex-grow min-w-0"><div class="flex items-center mb-1"><span class="text-sm font-bold text-white">${msg.autor_apodo}</span><span class="text-[10px] text-slate-500 ml-3">${fecha}</span>${btnBorrar}</div><p class="text-sm text-slate-300 whitespace-pre-wrap">${contenidoSeguro}</p></div>`;
-                lista.appendChild(div);
-            });
-        }
-
-        async function enviarComentario() {
-            if(!supabase) return;
-            const input = document.getElementById('inputComentario');
-            if(!input.value.trim()) return;
-            await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
-            input.value = ''; cargarComentarios();
-        }
-        async function borrarComentario(id) { if(supabase) await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
