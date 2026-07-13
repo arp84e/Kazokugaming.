@@ -10,9 +10,8 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: MOTOR GRÁFICO Y REDACTOR BLINDADO (V2) ===")
+print("=== INICIANDO KAZOKUBOT: MOTOR PERIODÍSTICO (MODO RESILIENTE) ===")
 
-# 1. Configuración de APIs
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
 pexels_key = os.environ.get("PEXELS_API_KEY")
@@ -34,25 +33,41 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto.strip(), re.DOTALL)
     return match.group(0) if match else texto.strip()
 
-# Cargar base de datos
+# --- NUEVO: SISTEMA DE REINTENTOS PARA EVITAR EL ERROR 503 ---
+def generar_con_reintentos(prompt_texto, config_ia, max_intentos=5):
+    for intento in range(max_intentos):
+        try:
+            response = client.models.generate_content(
+                model='gemini-3.5-flash',
+                contents=prompt_texto,
+                config=config_ia
+            )
+            return response
+        except Exception as e:
+            error_str = str(e).lower()
+            if "503" in error_str or "unavailable" in error_str or "429" in error_str or "quota" in error_str:
+                espera = (intento + 1) * 20
+                print(f"⚠️ Servidores de IA saturados. Reintentando en {espera} segundos... (Intento {intento+1}/{max_intentos})")
+                time.sleep(espera)
+            else:
+                raise e 
+    raise Exception("❌ Se superó el límite máximo de reintentos. Los servidores están caídos.")
+
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
     with open(archivo_articulos, "r", encoding="utf-8") as f:
         try: datos_web = json.load(f)
         except: pass
 
-# =======================================================
-# MÓDULO REDACCIÓN DE NUEVOS ARTÍCULOS CON SEO Y OPENGRAPH
-# =======================================================
 temas_input = os.environ.get("INPUT_TEMAS", "")
 temas_a_redactar = []
 
 if temas_input and temas_input.strip():
-    print("\n🛠️ MODO: CURACIÓN MANUAL (Nuevos artículos)")
+    print("\n🛠️ MODO MANUAL")
     temas_a_redactar = [{"tema": t.strip(), "categoria": "Noticias"} for t in temas_input.split(";") if t.strip()]
 else:
-    print("\n🌍 MODO: PILOTO AUTOMÁTICO (Buscando tendencias...)")
-    url_rss = "https://news.google.com/rss/search?q=videojuegos+OR+tecnologia+when:1d&hl=es&gl=ES&ceid=ES:es"
+    print("\n🌍 MODO PILOTO AUTOMÁTICO (Buscando tendencias...)")
+    url_rss = "https://news.google.com/rss/search?q=videojuegos+OR+hardware+when:1d&hl=es&gl=ES&ceid=ES:es"
     try:
         req = urllib.request.Request(url_rss, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
@@ -62,41 +77,29 @@ else:
         for item in root.findall('.//item')[:3]:
             titulo_limpio = item.find('title').text.rsplit(' - ', 1)[0]
             temas_a_redactar.append({"tema": titulo_limpio, "categoria": "Noticias"})
-            print(f"📡 Tendencia: {titulo_limpio}")
+            print(f"📡 Tendencia periodística: {titulo_limpio}")
     except Exception as e:
-        print(f"⚠️ Error al leer tendencias: {e}")
+        print(f"⚠️ Error al leer RSS: {e}")
 
 prompt_sistema = """
-Eres un periodista tecnológico y de videojuegos experto de 'KazokuGaming'.
-Tu estilo es profesional, analítico y táctico. Escribe un artículo muy completo.
-
-REGLAS JSON (ESTRICTAS):
+Eres un periodista tecnológico experto de 'KazokuGaming'. Escribe un artículo completo.
+REGLAS JSON:
 1. ÚNICAMENTE un objeto JSON.
-2. En 'contenido', usa SIEMPRE comillas simples para atributos HTML.
-3. 'es_videojuego': true si es de un juego específico, false si es hardware/tech.
-4. 'prompt_imagen': Si es juego, el nombre oficial. Si es false, 1 o 2 palabras clave en INGLÉS para fotos reales (ej. "keyboard").
-5. 'seo': Incluye keywords clave separadas por comas.
-6. 'open_graph': Crea un título y descripción impactantes optimizados para compartir en redes sociales.
-7. 'articulos_relacionados': Inventa 2 slugs semánticamente probables que tengan relación con el tema.
-
-ESTRUCTURA JSON OBLIGATORIA:
+2. En 'contenido', usa comillas simples para atributos HTML.
+3. 'es_videojuego': true si es un juego, false si es hardware.
+4. 'prompt_imagen': Nombre oficial del juego o palabras en inglés para hardware (ej. "keyboard").
+ESTRUCTURA OBLIGATORIA:
 {
-  "titulo": "Título principal del post",
+  "titulo": "Título del post",
   "meta_descripcion": "Resumen 150 caracteres",
   "tags": ["Tag1", "Tag2"],
   "tiempo_lectura": "X min",
   "es_videojuego": true,
   "prompt_imagen": "texto",
   "contenido": "HTML completo aquí usando comillas simples",
-  "seo": {
-    "keywords": "palabra1, palabra2, palabra3"
-  },
-  "open_graph": {
-    "og_title": "Título corto y viral para Twitter/Discord",
-    "og_description": "Descripción gancho para redes sociales",
-    "og_type": "article"
-  },
-  "articulos_relacionados": ["slug-de-ejemplo-1", "slug-de-ejemplo-2"]
+  "seo": { "keywords": "palabras clave" },
+  "open_graph": { "og_title": "Título corto", "og_description": "Gancho viral", "og_type": "article" },
+  "articulos_relacionados": ["slug-ejemplo-1"]
 }
 """
 
@@ -107,16 +110,13 @@ for item in temas_a_redactar:
     id_articulo = f"art-{slug}"[:50]
     
     if any(art["id"] == id_articulo for art in datos_web["articulos"]):
-        print(f"⏭️ Saltando: '{tema}' (Ya existe).")
+        print(f"⏭️ Saltando: '{tema}' (Ya documentado).")
         continue
 
-    print(f"\n✍️ Redactando (SEO Avanzado): {tema}...")
+    print(f"\n✍️ Redactando Inteligencia sobre: {tema}...")
     try:
-        response = client.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=f"Tema a redactar: {tema}",
-            config=types.GenerateContentConfig(system_instruction=prompt_sistema, response_mime_type="application/json", temperature=0.7)
-        )
+        config_redactor = types.GenerateContentConfig(system_instruction=prompt_sistema, response_mime_type="application/json", temperature=0.7)
+        response = generar_con_reintentos(f"Tema a redactar: {tema}", config_redactor)
         
         texto_limpio = extraer_json_seguro(response.text)
         articulo_generado = json.loads(texto_limpio)
@@ -138,7 +138,6 @@ for item in temas_a_redactar:
         
         if not imagen_final: imagen_final = random.choice(imagenes_respaldo)
         
-        # NUEVA ESTRUCTURA COMPLETA
         articulo_final = {
             "id": id_articulo,
             "titulo": articulo_generado["titulo"],
@@ -151,20 +150,20 @@ for item in temas_a_redactar:
             "tiempo_lectura": articulo_generado.get("tiempo_lectura", "3 min"),
             "contenido": articulo_generado["contenido"],
             "meta_descripcion": articulo_generado["meta_descripcion"],
-            "seo": articulo_generado.get("seo", {"keywords": "gaming, videojuegos, pc, noticias"}),
+            "seo": articulo_generado.get("seo", {"keywords": "gaming, pc"}),
             "open_graph": articulo_generado.get("open_graph", {"og_title": articulo_generado["titulo"], "og_description": articulo_generado["meta_descripcion"], "og_type": "article"}),
             "articulos_relacionados": articulo_generado.get("articulos_relacionados", [])
         }
         
         datos_web["articulos"].insert(0, articulo_final)
-        print(f"✅ ¡Artículo guardado exitosamente!")
+        print(f"✅ ¡Archivo periodístico guardado!")
+        
+        with open(archivo_articulos, "w", encoding="utf-8") as f:
+            json.dump(datos_web, f, ensure_ascii=False, indent=2)
+            
         time.sleep(15)
 
     except Exception as e:
         print(f"❌ Error crítico: {e}")
-        time.sleep(15)
-
-with open(archivo_articulos, "w", encoding="utf-8") as f:
-    json.dump(datos_web, f, ensure_ascii=False, indent=2)
 
 print("\n🚀 ¡PROCESO FINALIZADO!")
