@@ -7,7 +7,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (MODO AUTÓNOMO) ===")
+print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (MODO RESILIENTE) ===")
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
 juegos_input = os.environ.get("INPUT_JUEGOS", "").strip()
@@ -18,6 +18,26 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 archivo_oficial = "telemetria.json"
+
+# --- NUEVO: SISTEMA DE REINTENTOS PARA EVITAR EL ERROR 503 ---
+def generar_con_reintentos(prompt_texto, config_ia, max_intentos=5):
+    for intento in range(max_intentos):
+        try:
+            response = client.models.generate_content(
+                model='gemini-3.5-flash',
+                contents=prompt_texto,
+                config=config_ia
+            )
+            return response
+        except Exception as e:
+            error_str = str(e).lower()
+            if "503" in error_str or "unavailable" in error_str or "429" in error_str or "quota" in error_str:
+                espera = (intento + 1) * 20
+                print(f"⚠️ Servidores de IA saturados. Reintentando en {espera} segundos... (Intento {intento+1}/{max_intentos})")
+                time.sleep(espera)
+            else:
+                raise e 
+    raise Exception("❌ Se superó el límite máximo de reintentos. Los servidores están caídos.")
 
 estructura_final = {"juegos": []}
 nombres_existentes = []
@@ -30,7 +50,6 @@ if os.path.exists(archivo_oficial) and not sobrescribir:
 
 juegos_a_procesar = []
 
-# --- MODO AUTOMÁTICO VS MANUAL ---
 if juegos_input:
     print("🛠️ MODO MANUAL DETECTADO.")
     juegos_a_procesar = [j.strip() for j in juegos_input.split(";") if j.strip()]
@@ -43,11 +62,8 @@ else:
     {{ "juegos": ["Nombre del Juego 1", "Nombre del Juego 2", "Nombre del Juego 3"] }}
     """
     try:
-        res_tendencias = client.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=prompt_tendencias,
-            config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
-        )
+        config_tendencias = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
+        res_tendencias = generar_con_reintentos(prompt_tendencias, config_tendencias)
         data_tendencias = json.loads(re.search(r'\{.*\}', res_tendencias.text, re.DOTALL).group(0))
         juegos_a_procesar = data_tendencias.get("juegos", [])
         print(f"📡 Tendencias de Hardware detectadas: {juegos_a_procesar}")
@@ -80,11 +96,8 @@ for titulo in juegos_a_procesar:
     prompt = f"Busca en internet y analiza en profundidad el rendimiento técnico de {titulo} en PC. Devuelve únicamente un JSON estricto con: sinopsis (máximo 2 líneas), motor_grafico, plataformas, calificacion (de 1.0 a 10), analisis_detallado (HTML limpio usando <p> y <strong>), requisitos_minimos (lista de 4 strings de componentes), requisitos_recomendados (lista de 4 strings de componentes), tecnologias (como DLSS, FSR)."
     
     try:
-        res = client.models.generate_content(
-            model="gemini-3.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.4, tools=[{"google_search": {}}])
-        )
+        config_tel = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.4, tools=[{"google_search": {}}])
+        res = generar_con_reintentos(prompt, config_tel)
         data = json.loads(re.search(r'\{.*\}', res.text, re.DOTALL).group(0))
         
         nuevo_juego = {
@@ -105,106 +118,6 @@ for titulo in juegos_a_procesar:
         }
         
         estructura_final["juegos"].append(nuevo_juego)
-
-        os.makedirs("telemetria", exist_ok=True)
-        html_juego_filename = f"telemetria/{id_juego}.html"
-        
-        req_min = "".join([f'<li class="flex items-start text-slate-400"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>{r}</span></li>' for r in nuevo_juego["requisitos"]["minimos"]])
-        req_rec = "".join([f'<li class="flex items-start text-slate-200"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>{r}</span></li>' for r in nuevo_juego["requisitos"]["recomendados"]])
-
-        plantilla_juego = f'''<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{titulo} | Análisis Técnico & Telemetría</title>
-    <meta name="description" content="{nuevo_juego["sinopsis"]}">
-    <link rel="icon" type="image/png" href="../favicon.png">
-    
-    <script type="application/ld+json">
-    {{
-      "@context": "https://schema.org",
-      "@type": "Game",
-      "name": "{titulo}",
-      "description": "{nuevo_juego["sinopsis"]}",
-      "image": "{nuevo_juego["imagen"]}",
-      "author": {{ "@type": "Organization", "name": "KazokuGaming" }},
-      "review": {{
-        "@type": "Review",
-        "author": {{ "@type": "Person", "name": "KazokuBot" }},
-        "reviewRating": {{ "@type": "Rating", "ratingValue": "{nuevo_juego["calificacion"]}", "bestRating": "10", "worstRating": "1" }}
-      }}
-    }}
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style> body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }} </style>
-</head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between">
-    <div id="header-container"></div>
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-        <div class="lg:flex lg:space-x-10 mb-12">
-            <div class="lg:w-1/3 mb-8 lg:mb-0">
-                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800 sticky top-24">
-                    <img src="{nuevo_juego["imagen"]}" alt="{titulo}" class="w-full h-auto object-cover aspect-[3/4]">
-                </div>
-                
-                <div id="radar-widget" class="mt-6 hidden animate-pulse">
-                    <div class="bg-slate-900 border border-amber-500/40 rounded-2xl p-5 text-center shadow-[0_0_25px_rgba(245,158,11,0.15)]">
-                        <span class="text-[10px] font-black text-amber-500 uppercase tracking-widest mb-2 block bg-amber-500/10 py-1 rounded">Oferta de Último Minuto</span>
-                        <p class="text-white font-black text-3xl mb-3" id="radar-price">$0.00</p>
-                        <a href="#" id="radar-link" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-extrabold py-3 rounded-xl transition">Ir a la Oferta →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="lg:w-2/3 flex flex-col justify-center">
-                <div class="flex items-start justify-between mb-4">
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight pr-4">{titulo}</h1>
-                    <div class="flex flex-col items-center justify-center w-20 h-20 min-w-[5rem] bg-slate-900 border-2 border-cyan-500 rounded-2xl shadow-[0_0_20px_rgba(6,182,212,0.25)]">
-                        <span class="text-2xl font-black text-white mt-1">{nuevo_juego["calificacion"]}</span>
-                    </div>
-                </div>
-                <p class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-6 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800 inline-block">['PC', 'Consolas'] • {nuevo_juego["motor_grafico"]}</p>
-                
-                <div class="bg-slate-900/30 border border-slate-800/60 rounded-3xl p-8 text-slate-300 leading-relaxed text-lg mb-8">
-                    {nuevo_juego["analisis_detallado"]}
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-slate-950/40 rounded-2xl p-6 border border-slate-800/80">
-                        <h3 class="font-bold text-slate-200 mb-4 border-b border-slate-800 pb-2 uppercase tracking-wider text-xs">Especificaciones Mínimas</h3>
-                        <ul class="space-y-3 text-sm">{req_min}</ul>
-                    </div>
-                    <div class="bg-cyan-950/10 rounded-2xl p-6 border border-cyan-900/30">
-                        <h3 class="font-bold text-cyan-200 mb-4 border-b border-cyan-900/40 pb-2 uppercase tracking-wider text-xs">Especificaciones Recomendadas</h3>
-                        <ul class="space-y-3 text-sm">{req_rec}</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="../header.js"></script>
-    <script>
-        fetch('https://www.cheapshark.com/api/1.0/games?title=' + encodeURIComponent("{titulo}") + '&limit=1')
-            .then(res => res.json())
-            .then(data => {{
-                if(data && data.length > 0) {{
-                    const game = data[0];
-                    document.getElementById('radar-price').innerText = '$' + parseFloat(game.cheapest).toFixed(2);
-                    document.getElementById('radar-link').href = 'https://www.cheapshark.com/redirect?dealID=' + game.cheapestDealID;
-                    const widget = document.getElementById('radar-widget');
-                    widget.classList.remove('hidden');
-                    setTimeout(() => widget.classList.remove('animate-pulse'), 1500);
-                }}
-            }});
-    </script>
-</body>
-</html>'''
-        with open(html_juego_filename, "w", encoding="utf-8") as jf:
-            jf.write(plantilla_juego)
-            
         with open(archivo_oficial, "w", encoding="utf-8") as f:
             json.dump(estructura_final, f, ensure_ascii=False, indent=2)
             
