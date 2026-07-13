@@ -25,7 +25,7 @@
     <div id="header-container"></div>
 
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="contenedor-principal">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase">Desplegando expediente informativo...</div>
+        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">Desplegando expediente informativo...</div>
     </main>
 
     <section id="seccion-comentarios" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
@@ -56,67 +56,84 @@
 
     <script src="header.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const idActual = urlParams.get('id');
+        const idActual = new URLSearchParams(window.location.search).get('id');
+        const contenedor = document.getElementById('contenedor-principal');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const contenedor = document.getElementById('contenedor-principal');
-            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error: Artículo no especificado.</div>';
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!idActual) return contenedor.innerHTML = '<div class="text-center py-12 text-red-500 font-bold">⚠️ Artículo no especificado.</div>';
 
-            // RUTA ARREGLADA (Sin ../)
-            fetch('articulos.json').then(res => res.json()).then(data => {
-                const articulo = data.articulos.find(a => a.id === idActual);
-                if (articulo) {
-                    document.title = `${articulo.titulo} | KazokuGaming`;
-                    const tagsHTML = articulo.tags.map(tag => `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-[10px] uppercase font-semibold rounded-full border border-slate-700">${tag}</span>`).join('');
-                    const contenidoLimpio = DOMPurify.sanitize(articulo.contenido);
-
-                    contenedor.innerHTML = `
-                        <article class="animate-fade-in-up">
-                            <div class="mb-8 text-center">
-                                <span class="text-[10px] font-black tracking-widest text-indigo-400 uppercase bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">${articulo.categoria}</span>
-                                <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
-                                <p class="text-sm text-slate-400">${articulo.fecha} • ⏱️ ${articulo.tiempo_lectura}</p>
-                            </div>
-                            <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
-                               <img src="${articulo.imagen}" class="w-full h-full object-cover">
-                               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
-                            </div>
-                            <div class="contenido-articulo max-w-3xl mx-auto">${contenidoLimpio}</div>
-                            <div class="mt-8 mb-4 flex flex-wrap justify-center gap-2">${tagsHTML}</div>
-                        </article>
-                    `;
-                    document.getElementById('seccion-comentarios').classList.remove('hidden');
-                    initSupabase();
-                } else {
-                    contenedor.innerHTML = '<div class="text-center py-20 text-slate-400">El artículo no existe.</div>';
+            try {
+                const req = await fetch('articulos.json').catch(() => null);
+                const data = (req && req.ok) ? await req.json() : { articulos: [] };
+                
+                const articulo = data.articulos?.find(a => a.id === idActual);
+                
+                if (!articulo) {
+                    contenedor.innerHTML = '<div class="text-center py-20 text-amber-500 font-bold">⚠️ El artículo no existe o fue eliminado.</div>';
+                    return;
                 }
-            }).catch(() => contenedor.innerHTML = '<div class="text-center py-20 text-red-500">Error de conexión al cargar el artículo.</div>');
+
+                document.title = `${articulo.titulo} | KazokuGaming`;
+                const tagsHTML = articulo.tags.map(tag => `<span class="px-3 py-1 bg-slate-800 text-slate-300 text-[10px] uppercase font-semibold rounded-full border border-slate-700">${tag}</span>`).join('');
+                const contenidoLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(articulo.contenido) : articulo.contenido;
+
+                contenedor.innerHTML = `
+                    <article class="animate-fade-in-up">
+                        <div class="mb-8 text-center">
+                            <span class="text-[10px] font-black tracking-widest text-indigo-400 uppercase bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">${articulo.categoria}</span>
+                            <h1 class="text-3xl md:text-5xl font-extrabold text-white mt-6 mb-4 tracking-tight leading-tight">${articulo.titulo}</h1>
+                            <p class="text-sm text-slate-400">${articulo.fecha} • ⏱️ ${articulo.tiempo_lectura}</p>
+                        </div>
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
+                           <img src="${articulo.imagen}" class="w-full h-full object-cover">
+                           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="contenido-articulo max-w-3xl mx-auto">${contenidoLimpio}</div>
+                        <div class="mt-8 mb-4 flex flex-wrap justify-center gap-2">${tagsHTML}</div>
+                    </article>
+                `;
+                document.getElementById('seccion-comentarios').classList.remove('hidden');
+                await initSupabase();
+
+            } catch (error) {
+                contenedor.innerHTML = `<div class="text-center py-20 text-red-500 font-bold">⚠️ Error crítico: ${error.message}</div>`;
+            }
         });
 
-        // LÓGICA DE COMENTARIOS
+        // LÓGICA DE COMENTARIOS BLINDADA
         const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- REEMPLAZA
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- REEMPLAZA
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey); 
+        let supabase = null;
         let usuarioActual = null;
 
         async function initSupabase() {
-            if(supabaseUrl.includes('TU_PROYECTO')) return;
-            const { data: { session } } = await supabase.auth.getSession();
-            usuarioActual = session?.user || null;
-            if(usuarioActual) {
-                document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-                document.getElementById('alerta-registro').classList.add('hidden');
-                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
-            } else {
+            try {
+                if(supabaseUrl.includes('TU_PROYECTO') || typeof window.supabase === 'undefined') {
+                    return document.getElementById('alerta-registro').classList.remove('hidden');
+                }
+                
+                supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+                const { data: { session } } = await supabase.auth.getSession();
+                usuarioActual = session?.user || null;
+                
+                if(usuarioActual) {
+                    document.getElementById('panel-escribir-comentario').classList.remove('hidden');
+                    document.getElementById('alerta-registro').classList.add('hidden');
+                    document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
+                } else {
+                    document.getElementById('alerta-registro').classList.remove('hidden');
+                }
+                await cargarComentarios();
+            } catch(e) {
+                console.error("Supabase inactivo:", e);
                 document.getElementById('alerta-registro').classList.remove('hidden');
             }
-            cargarComentarios();
         }
 
-        async function cerrarSesion() { await supabase.auth.signOut(); window.location.reload(); }
+        async function cerrarSesion() { if(supabase) await supabase.auth.signOut(); window.location.reload(); }
 
         async function cargarComentarios() {
+            if(!supabase) return;
             const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
             const lista = document.getElementById('lista-comentarios');
             lista.innerHTML = '';
@@ -125,7 +142,7 @@
             comentarios.forEach(msg => {
                 const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
                 let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
-                const contenidoSeguro = DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] });
+                const contenidoSeguro = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }) : msg.contenido;
 
                 const div = document.createElement('div');
                 div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
@@ -135,12 +152,13 @@
         }
 
         async function enviarComentario() {
+            if(!supabase) return;
             const input = document.getElementById('inputComentario');
             if(!input.value.trim()) return;
             await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
             input.value = ''; cargarComentarios();
         }
-        async function borrarComentario(id) { await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
+        async function borrarComentario(id) { if(supabase) await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
