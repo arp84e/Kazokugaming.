@@ -5,79 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expediente | KazokuGaming</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+
+    <meta name="description" content="Especificaciones de rendimiento e informes de hardware detallados de juegos en PC.">
     
-    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- [SEGURIDAD] DOMPurify para evitar inyección XSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
+    </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col">
+<body class="text-slate-200 min-h-screen flex flex-col justify-between">
 
     <div id="header-container"></div>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full" id="pantalla-juego">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">
-            Cargando expediente técnico...
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div id="pantalla-juego" class="space-y-8 animate-fade-in-up">
+            <div class="text-center py-20 text-slate-500 animate-pulse">Cargando expediente técnico...</div>
         </div>
     </main>
 
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
-
-    <script src="header.js"></script>
+    <script src="../header.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const idActual = new URLSearchParams(window.location.search).get('id');
-            const pantalla = document.getElementById('pantalla-juego');
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idJuego = urlParams.get('id');
 
-            if(!idActual) {
-                pantalla.innerHTML = `<div class="text-center py-12 text-red-400 font-bold">⚠️ ID de juego no especificado en la URL.</div>`;
-                return;
-            }
+        if(idJuego) cargarExpediente(idJuego);
+        else document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ ID de juego no especificado.</div>`;
+    });
 
-            try {
-                // Buscamos telemetría y guías al mismo tiempo
-                const reqTel = await fetch('telemetria.json').catch(() => null);
-                const reqGui = await fetch('guias.json').catch(() => null);
+    function cargarExpediente(id) {
+        // Obtenemos ambos archivos JSON al mismo tiempo
+        Promise.all([
+            fetch('telemetria.json').then(res => res.ok ? res.json() : { juegos: [] }),
+            fetch('guias.json').then(res => res.ok ? res.json() : { guias: [] })
+        ])
+        .then(([dataTelemetria, dataGuias]) => {
+            const juego = dataTelemetria.juegos.find(j => j.id === id);
+            
+            if(juego) {
+                // --- 1. VERIFICACIÓN DE GUÍA DISPONIBLE ---
+                // Buscamos si existe una guía cuyo slug coincida con el ID del juego
+                const guiaRelacionada = dataGuias.guias?.find(g => g.slug === id || g.id === `guia-${id}`);
                 
-                const dataTelemetria = (reqTel && reqTel.ok) ? await reqTel.json() : { juegos: [] };
-                const dataGuias = (reqGui && reqGui.ok) ? await reqGui.json() : { guias: [] };
-
-                const juego = dataTelemetria.juegos?.find(j => j.id === idActual);
-                
-                if(!juego) {
-                    pantalla.innerHTML = `<div class="text-center py-12 text-amber-500 font-bold">⚠️ El expediente de telemetría no existe.</div>`;
-                    return;
-                }
-
-                document.title = `${juego.titulo} | Análisis Técnico`;
-
-                // Verificar si existe una guía para este juego
-                const guiaRelacionada = dataGuias.guias?.find(g => g.slug === idActual || g.id === `guia-${idActual}`);
                 let htmlBannerGuia = '';
-                
-                if(guiaRelacionada) {
+                if (guiaRelacionada) {
                     htmlBannerGuia = `
-                        <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-                            <div class="text-center sm:text-left">
+                        <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_0_20px_rgba(16,185,129,0.15)] relative overflow-hidden group">
+                            <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors"></div>
+                            <div class="relative z-10 text-center sm:text-left">
                                 <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 mb-2 inline-block">INTELIGENCIA DESBLOQUEADA</span>
                                 <h4 class="text-xl font-bold text-white mb-1">Dossier Táctico Disponible</h4>
-                                <p class="text-sm text-slate-400">Descubre secretos y estrategias avanzadas para este título.</p>
+                                <p class="text-sm text-slate-400">Descubre secretos, cómo vencer a los jefes y estrategias avanzadas para este título.</p>
                             </div>
-                            <a href="guia.html?id=${guiaRelacionada.id}" class="w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold py-3 px-8 rounded-xl transition shadow-lg hover:-translate-y-1 shrink-0">
+                            <a href="guia.html?id=${guiaRelacionada.id}" class="relative z-10 shrink-0 w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold py-3 px-8 rounded-xl transition-all shadow-lg shadow-emerald-900/50 hover:-translate-y-1">
                                 Leer Guía Completa →
                             </a>
                         </div>
                     `;
                 }
 
-                // Generar listas de requisitos
-                const reqMin = juego.requisitos?.minimos?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>${r}</span></li>`).join('') || '';
-                const reqRec = juego.requisitos?.recomendados?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>${r}</span></li>`).join('') || '';
+                // --- 2. RENDERIZADO DEL EXPEDIENTE ---
+                const htmlMinimos = juego.requisitos?.minimos?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
+                const htmlRecomendados = juego.requisitos?.recomendados?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1">▸</span><span>${r}</span></li>`).join('') || '';
                 
-                // Sanitizar reporte HTML
-                const analisisLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(juego.analisis_detallado) : juego.analisis_detallado;
+                // Limpieza de reporte inyectado (Seguridad XSS)
+                const analisisLimpio = DOMPurify.sanitize(juego.analisis_detallado);
 
-                pantalla.innerHTML = `
+                document.getElementById('pantalla-juego').innerHTML = `
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div class="lg:col-span-2 space-y-8">
                             <div>
@@ -85,7 +85,7 @@
                                 <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
                                 <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
                                     <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
-                                    <span class="border border-slate-700 bg-slate-800 px-2.5 py-0.5 rounded text-cyan-400 font-mono text-xs uppercase">${juego.tecnologias}</span>
+                                    <span class="flex items-center gap-1.5 border border-slate-700 bg-slate-800 px-2.5 py-0.5 rounded text-cyan-400 font-mono text-xs uppercase tracking-wider">${juego.tecnologias}</span>
                                 </div>
                             </div>
                             
@@ -98,7 +98,9 @@
                                 </div>
                             </div>
 
+                            <!-- Inyección del Banner de Guía Táctica si existe -->
                             ${htmlBannerGuia}
+                            
                         </div>
                         
                         <div class="space-y-6">
@@ -108,7 +110,7 @@
                                     <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">MIN</div>
                                     <h3 class="text-lg font-bold text-cyan-100">Requisitos Mínimos</h3>
                                 </div>
-                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${reqMin || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlMinimos || '<li class="text-slate-600">No disponibles.</li>'}</ul>
                             </div>
                             
                             <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden">
@@ -117,16 +119,23 @@
                                     <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">REC</div>
                                     <h3 class="text-lg font-bold text-cyan-100">Requisitos Recomendados</h3>
                                 </div>
-                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${reqRec || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${htmlRecomendados || '<li class="text-slate-600">No disponibles.</li>'}</ul>
                             </div>
                         </div>
                     </div>
                 `;
-            } catch (error) {
-                console.error(error);
-                pantalla.innerHTML = `<div class="text-center py-12 text-red-500 font-bold">⚠️ Error crítico al cargar el expediente.</div>`;
+                
+                document.title = `${juego.titulo} | Análisis Técnico y Requisitos`;
+                
+            } else {
+                document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-slate-400 text-sm">⚠️ El expediente de telemetría solicitado no existe.</div>`;
             }
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('pantalla-juego').innerHTML = `<div class="text-center py-12 text-red-400 text-sm">⚠️ Error de conexión a la base de datos de KazokuGaming.</div>`;
         });
+    }
     </script>
 </body>
 </html>
