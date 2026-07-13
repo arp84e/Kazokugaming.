@@ -8,178 +8,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
     <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; } </style>
 </head>
 <body class="text-slate-200 min-h-screen flex flex-col">
 
     <div id="header-container"></div>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 w-full" id="pantalla-juego">
-        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">Cargando expediente técnico...</div>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full" id="pantalla-juego">
+        <div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xl">
+            Cargando expediente técnico...
+        </div>
     </main>
 
-    <section id="seccion-comentarios" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
-        <div class="pt-8 border-t border-slate-800/80">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span class="text-cyan-500">💬</span> Discusión Técnica</h3>
-
-            <div id="panel-escribir-comentario" class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 mb-8 hidden shadow-xl">
-                <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-bold text-cyan-400 flex items-center gap-2" id="usuario-activo-nombre"></span>
-                    <button onclick="cerrarSesion()" class="text-xs font-bold text-red-400 hover:text-red-300 transition px-3 py-1 rounded bg-red-500/10 border border-red-500/20">Desconectar</button>
-                </div>
-                <textarea id="inputComentario" rows="3" placeholder="Comenta tu rendimiento, FPS o dudas..." class="w-full bg-slate-950 border border-slate-700 text-sm rounded-lg px-4 py-3 focus:border-cyan-500 outline-none text-white resize-none"></textarea>
-                <div class="flex justify-end mt-3">
-                    <button onclick="enviarComentario()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-2 px-6 rounded-lg transition">Publicar</button>
-                </div>
-            </div>
-
-            <div id="alerta-registro" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center mb-8 hidden">
-                <p class="text-slate-400 mb-3">Debes estar identificado para debatir sobre hardware.</p>
-                <a href="index.html#terminal-acceso" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-6 rounded-lg transition">Ir al Portal de Acceso</a>
-            </div>
-
-            <div id="lista-comentarios" class="space-y-4"></div>
-        </div>
-    </section>
-
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 mt-auto text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-slate-600 text-sm">&copy; 2026 KAZOKUGAMING.</footer>
 
     <script src="header.js"></script>
     <script>
-    const idActual = new URLSearchParams(window.location.search).get('id');
-    const pantalla = document.getElementById('pantalla-juego');
+        document.addEventListener('DOMContentLoaded', async () => {
+            const idActual = new URLSearchParams(window.location.search).get('id');
+            const pantalla = document.getElementById('pantalla-juego');
 
-    document.addEventListener('DOMContentLoaded', async () => {
-        if(!idActual) return pantalla.innerHTML = `<div class="text-center py-12 text-red-400 font-bold">⚠️ ID de juego no especificado.</div>`;
-
-        try {
-            // Descarga blindada
-            const reqTel = await fetch('telemetria.json').catch(() => null);
-            const reqGui = await fetch('guias.json').catch(() => null);
-            
-            const dataTelemetria = (reqTel && reqTel.ok) ? await reqTel.json() : { juegos: [] };
-            const dataGuias = (reqGui && reqGui.ok) ? await reqGui.json() : { guias: [] };
-
-            const juego = dataTelemetria.juegos?.find(j => j.id === idActual);
-            
-            if(!juego) {
-                pantalla.innerHTML = `<div class="text-center py-12 text-amber-500 font-bold">⚠️ Expediente de Telemetría no encontrado.</div>`;
+            if(!idActual) {
+                pantalla.innerHTML = `<div class="text-center py-12 text-red-400 font-bold">⚠️ ID de juego no especificado en la URL.</div>`;
                 return;
             }
 
-            const guiaRelacionada = dataGuias.guias?.find(g => g.slug === idActual || g.id === `guia-${idActual}`);
-            let htmlBannerGuia = guiaRelacionada ? `
-                <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
-                    <div class="relative z-10 text-center sm:text-left">
-                        <span class="text-[10px] font-black text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 block mb-2">INTELIGENCIA DESBLOQUEADA</span>
-                        <h4 class="text-xl font-bold text-white">Dossier Táctico Disponible</h4>
-                    </div>
-                    <a href="guia.html?id=${guiaRelacionada.id}" class="relative z-10 w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 text-white font-extrabold py-3 px-8 rounded-xl transition">Leer Guía →</a>
-                </div>` : '';
+            try {
+                // Buscamos telemetría y guías al mismo tiempo
+                const reqTel = await fetch('telemetria.json').catch(() => null);
+                const reqGui = await fetch('guias.json').catch(() => null);
+                
+                const dataTelemetria = (reqTel && reqTel.ok) ? await reqTel.json() : { juegos: [] };
+                const dataGuias = (reqGui && reqGui.ok) ? await reqGui.json() : { guias: [] };
 
-            const reqMin = juego.requisitos?.minimos?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
-            const reqRec = juego.requisitos?.recomendados?.map(r => `<li class="flex"><span class="text-cyan-500 mr-2">▸</span><span>${r}</span></li>`).join('') || '';
-            const analisisLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(juego.analisis_detallado) : juego.analisis_detallado;
+                const juego = dataTelemetria.juegos?.find(j => j.id === idActual);
+                
+                if(!juego) {
+                    pantalla.innerHTML = `<div class="text-center py-12 text-amber-500 font-bold">⚠️ El expediente de telemetría no existe.</div>`;
+                    return;
+                }
 
-            pantalla.innerHTML = `
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in-up">
-                    <div class="lg:col-span-2 space-y-8">
-                        <div>
-                            <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
-                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
-                            <div class="flex items-center gap-4 text-sm text-slate-400">
-                                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
+                document.title = `${juego.titulo} | Análisis Técnico`;
+
+                // Verificar si existe una guía para este juego
+                const guiaRelacionada = dataGuias.guias?.find(g => g.slug === idActual || g.id === `guia-${idActual}`);
+                let htmlBannerGuia = '';
+                
+                if(guiaRelacionada) {
+                    htmlBannerGuia = `
+                        <div class="mt-8 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                            <div class="text-center sm:text-left">
+                                <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20 mb-2 inline-block">INTELIGENCIA DESBLOQUEADA</span>
+                                <h4 class="text-xl font-bold text-white mb-1">Dossier Táctico Disponible</h4>
+                                <p class="text-sm text-slate-400">Descubre secretos y estrategias avanzadas para este título.</p>
+                            </div>
+                            <a href="guia.html?id=${guiaRelacionada.id}" class="w-full sm:w-auto text-center bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold py-3 px-8 rounded-xl transition shadow-lg hover:-translate-y-1 shrink-0">
+                                Leer Guía Completa →
+                            </a>
+                        </div>
+                    `;
+                }
+
+                // Generar listas de requisitos
+                const reqMin = juego.requisitos?.minimos?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>${r}</span></li>`).join('') || '';
+                const reqRec = juego.requisitos?.recomendados?.map(r => `<li class="flex items-start"><span class="text-cyan-500 mr-2 mt-1 font-bold">▸</span><span>${r}</span></li>`).join('') || '';
+                
+                // Sanitizar reporte HTML
+                const analisisLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(juego.analisis_detallado) : juego.analisis_detallado;
+
+                pantalla.innerHTML = `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-8">
+                            <div>
+                                <span class="text-xs font-black tracking-widest text-slate-500 uppercase">${juego.plataformas}</span>
+                                <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4 tracking-tight">${juego.titulo}</h1>
+                                <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ${juego.motor_grafico}</span>
+                                    <span class="border border-slate-700 bg-slate-800 px-2.5 py-0.5 rounded text-cyan-400 font-mono text-xs uppercase">${juego.tecnologias}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-xl">
+                                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <span class="text-cyan-500">⚙️</span> Reporte Técnico
+                                </h3>
+                                <div class="prose prose-invert prose-cyan max-w-none text-slate-300 leading-relaxed">
+                                    ${analisisLimpio}
+                                </div>
+                            </div>
+
+                            ${htmlBannerGuia}
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">MIN</div>
+                                    <h3 class="text-lg font-bold text-cyan-100">Requisitos Mínimos</h3>
+                                </div>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${reqMin || '<li class="text-slate-600">No disponibles.</li>'}</ul>
+                            </div>
+                            
+                            <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-cyan-900/40 relative z-10">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">REC</div>
+                                    <h3 class="text-lg font-bold text-cyan-100">Requisitos Recomendados</h3>
+                                </div>
+                                <ul class="space-y-4 text-sm text-slate-300 relative z-10">${reqRec || '<li class="text-slate-600">No disponibles.</li>'}</ul>
                             </div>
                         </div>
-                        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8">
-                            <h3 class="text-xl font-bold text-white mb-6">⚙️ Reporte Técnico</h3>
-                            <div class="prose prose-invert prose-cyan max-w-none text-slate-300 leading-relaxed">${analisisLimpio}</div>
-                        </div>
-                        ${htmlBannerGuia}
                     </div>
-                    <div class="space-y-6">
-                        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
-                            <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Mínimos</h3>
-                            <ul class="space-y-3 text-sm text-slate-300">${reqMin}</ul>
-                        </div>
-                        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 md:p-8">
-                            <h3 class="text-lg font-bold text-cyan-100 border-b border-slate-700 pb-3 mb-4">Requisitos Recomendados</h3>
-                            <ul class="space-y-3 text-sm text-slate-300">${reqRec}</ul>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.title = `${juego.titulo} | Análisis Técnico`;
-            document.getElementById('seccion-comentarios').classList.remove('hidden');
-            
-            // Llamamos a supabase de forma segura
-            await initSupabase();
-
-        } catch (error) {
-            pantalla.innerHTML = `<div class="text-center py-12 text-red-500 font-bold">⚠️ Error crítico al renderizar: ${error.message}</div>`;
-        }
-    });
-
-    // LÓGICA DE COMENTARIOS BLINDADA
-    const supabaseUrl = 'https://gufppojjzrmvgrigblge.supabase.co'; // <--- REEMPLAZA
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1ZnBwb2pqenJtdmdyaWdibGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNjE4NDAsImV4cCI6MjA5NjkzNzg0MH0.RnYhd4pahFjWpEWZOp4I78HpxBaUeihp6FcntJeYZyU'; // <--- REEMPLAZA
-    let supabase = null;
-    let usuarioActual = null;
-
-    async function initSupabase() {
-        try {
-            if(supabaseUrl.includes('TU_PROYECTO') || typeof window.supabase === 'undefined') {
-                return document.getElementById('alerta-registro').classList.remove('hidden');
+                `;
+            } catch (error) {
+                console.error(error);
+                pantalla.innerHTML = `<div class="text-center py-12 text-red-500 font-bold">⚠️ Error crítico al cargar el expediente.</div>`;
             }
-            
-            supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-            const { data: { session } } = await supabase.auth.getSession();
-            usuarioActual = session?.user || null;
-            
-            if(usuarioActual) {
-                document.getElementById('panel-escribir-comentario').classList.remove('hidden');
-                document.getElementById('alerta-registro').classList.add('hidden');
-                document.getElementById('usuario-activo-nombre').innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> ${usuarioActual.user_metadata?.apodo || 'Agente'}`;
-            } else {
-                document.getElementById('alerta-registro').classList.remove('hidden');
-            }
-            await cargarComentarios();
-        } catch(e) {
-            console.error("Supabase inactivo:", e);
-            document.getElementById('alerta-registro').classList.remove('hidden');
-        }
-    }
-
-    async function cerrarSesion() { if(supabase) await supabase.auth.signOut(); window.location.reload(); }
-
-    async function cargarComentarios() {
-        if(!supabase) return;
-        const { data: comentarios } = await supabase.from('mensajes').select('*').eq('post_id', idActual).order('created_at', { ascending: true });
-        const lista = document.getElementById('lista-comentarios');
-        lista.innerHTML = '';
-        if (!comentarios || comentarios.length === 0) return lista.innerHTML = '<p class="text-slate-500 text-center py-6">Sin discusiones activas.</p>';
-
-        comentarios.forEach(msg => {
-            const fecha = new Date(msg.created_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' });
-            let btnBorrar = (usuarioActual && usuarioActual.id === msg.user_id) ? `<button onclick="borrarComentario('${msg.id}')" class="ml-auto text-[10px] text-red-500">Eliminar</button>` : '';
-            const contenidoSeguro = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(msg.contenido, { ALLOWED_TAGS: [] }) : msg.contenido; 
-
-            const div = document.createElement('div');
-            div.className = 'bg-slate-900/40 border border-slate-800/60 rounded-xl p-5 flex space-x-4';
-            div.innerHTML = `<div class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-cyan-500/10 text-cyan-400">${msg.autor_apodo.charAt(0).toUpperCase()}</div><div class="flex-grow min-w-0"><div class="flex items-center mb-1"><span class="text-sm font-bold text-white">${msg.autor_apodo}</span><span class="text-[10px] text-slate-500 ml-3">${fecha}</span>${btnBorrar}</div><p class="text-sm text-slate-300 whitespace-pre-wrap">${contenidoSeguro}</p></div>`;
-            lista.appendChild(div);
         });
-    }
-
-    async function enviarComentario() {
-        if(!supabase) return;
-        const input = document.getElementById('inputComentario');
-        if(!input.value.trim()) return;
-        await supabase.from('mensajes').insert([{ post_id: idActual, user_id: usuarioActual.id, autor_apodo: usuarioActual.user_metadata?.apodo || 'Agente', contenido: input.value.trim() }]);
-        input.value = ''; cargarComentarios();
-    }
-    async function borrarComentario(id) { if(supabase) await supabase.from('mensajes').delete().eq('id', id); cargarComentarios(); }
     </script>
 </body>
 </html>
