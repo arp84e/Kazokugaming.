@@ -1,6 +1,61 @@
 {
   "guias": [
     {
+      "id": "guia-dota-2",
+      "juego": "Dota 2",
+      "titulo": "Guía Táctica: Jefes, Armas y Secretos en Dota 2 (Edición 2013)",
+      "slug": "dota-2",
+      "categoria": "Guía Táctica",
+      "tags": [
+        "Dota 2",
+        "Roshan",
+        "Guia Tactica",
+        "KazokuGaming",
+        "Retro Gaming"
+      ],
+      "autor": "Kazoku Estratega",
+      "imagen": "https://media.rawg.io/media/games/6fc/6fcf4cd3b17c288821388e6085bb0fc9.jpg",
+      "fecha": "14 Jul, 2026",
+      "tiempo_lectura": "8 min",
+      "contenido": "<h2>El Azote del Foso: Roshan y la Anatomía del Control Absoluto</h2><p>En el gélido y corrupto mapa de Dota 2 de 2013, el control de Roshan no es una opción; es el eje sobre el cual gira la victoria. Este coloso neutral, ubicado en el foso del río del lado de los Dire, escala en poder cada minuto que pasa, aumentando su vida, daño y armadura. La clave táctica reside en el 'Aegis of the Immortal', un objeto que otorga una segunda vida y que redefine las peleas de equipo. A partir de su tercera muerte, Roshan suelta además el 'Cheese', un recurso de curación instantánea que puede revertir el curso de cualquier asedio. Los equipos de élite deben dominar el control de visión alrededor del foso utilizando Sentry Wards para anular la ventaja enemiga y ejecutar emboscadas letales en el estrecho cuello de botella del río.</p><h2>Armamento Prohibido: La Tienda Oculta y el Dilema de la Divine Rapier</h2><p>El verdadero poder en Dota 2 no se encuentra en la base, sino en las sombras de la Tienda Oculta (Secret Shop), resguardada en los bosques de ambos bandos. Aquí se adquieren los componentes para las armas más devastadoras del juego. Entre ellas destaca la 'Divine Rapier', el arma definitiva que otorga un colosal bono de daño físico pero que cuenta con una maldición: cae al suelo al morir el portador, pudiendo ser reclamada por el enemigo. En el meta de 2013, la decisión de comprar una Rapier es un acto de desesperación o de absoluta arrogancia. Otros artefactos cruciales como la 'Scythe of Vyse' (Guadaña de Vyse) y la 'Abyssal Blade' ofrecen el control de masas necesario para neutralizar a los carries más escurridizos antes de que puedan reaccionar.</p><h2>Secretos del Terreno: Mecánicas Ocultas del Mapa Clásico</h2><p>El mapa de 2013 es un laberinto de sombras y desniveles que premia el conocimiento técnico profundo. El 'Creep Blocking' en la senda central y el 'Pulling' en las líneas laterales son fundamentales para manipular el flujo de la batalla. Sin embargo, el verdadero secreto de los profesionales radica en los puntos ciegos de visión (Juke Spots) dentro de los bosques y el uso del terreno elevado (High Ground), que otorga un 25% de probabilidad de fallo a los ataques de rango enemigos. Dominar el posicionamiento en estas zonas oscuras permite a los iniciadores ejecutar emboscadas perfectas sin ser detectados por los observadores enemigos, transformando el mapa en un arma silenciosa a favor de tu escuadra.</p>",
+      "meta_descripcion": "Domina el foso de Roshan, el mercado negro de la Tienda Oculta y las mecánicas más oscuras del mapa clásico de Dota 2 de la mano de KazokuGaming.",
+      "seo": {
+        "keywords": "dota 2 2013, roshan dota 2, tienda oculta dota 2, divine rapier dota 2, secretos dota 2"
+      },
+      "open_graph": {
+        "og_title": "Guía Táctica: Jefes, Armas y Secretos de Dota 2 (2013)",
+        "og_description": "Análisis estratégico profundo sobre Roshan, la Tienda Oculta y las mecánicas secretas del mapa clásico de Dota 2.",
+        "og_type": "article"
+      }
+    },
+    {
+      "id": "guia-palworld",
+      "juego": "Palworld",
+      "titulo": "Guía Táctica: Jefes, Armas Legendarias y Secretos de Palworld",
+      "slug": "palworld",
+      "categoria": "Guía Táctica",
+      "tags": [
+        "Palworld",
+        "Guia Tactica",
+        "Armas Legendarias",
+        "Jefes Palworld"
+      ],
+      "autor": "Kazoku Estratega",
+      "imagen": "https://media.rawg.io/media/games/4e9/4e9c951414c732923fa72d5b1da49402.jpg",
+      "fecha": "14 Jul, 2026",
+      "tiempo_lectura": "8 min",
+      "contenido": "<h2>El Arte de la Guerra en Palworld: Más Allá de la Crianza</h2><p>En el despiadado archipiélago de Palpagos, la supervivencia no se negocia con diplomacia; se impone con plomo, acero y fuego. Como Estratega Jefe de KazokuGaming, mi deber es despojar a Palworld de su fachada colorida y revelar su verdadera naturaleza: un simulador de optimización militar y desgaste táctico lanzado en 2024. Para dominar el endgame, no basta con capturar criaturas; debes equipar a tu avatar con el armamento más devastador del juego. Los Esquemas Legendarios (nivel 4) son la cúspide del poder, multiplicando exponencialmente las estadísticas de las armas comunes. Sin embargo, sus tasas de caída rondan un cruel 3%. Aquí analizamos cómo romper las probabilidades y someter a los Jefes Alfa que custodian estos secretos.</p><h2>El Arsenal Absoluto: Armas Legendarias y Dónde Encontrarlas</h2><p>Cada arma legendaria requiere derrotar a un Jefe Alfa específico en el mapa mundi. No busques en cofres comunes lo que solo se gana con sangre:</p><p><strong>1. Lanzacohetes Legendario (Esquema de Jetragon):</strong> La joya de la corona de la destrucción masiva. Inflige un daño colosal capaz de aturdir a cualquier jefe de torre. Se obtiene al derrotar o capturar a <strong>Jetragon</strong> (Nivel 50), el dragón celestial ubicado en las coordenadas volcánicas (-788, -322).</p><p><strong>2. Rifle de Asalto Legendario (Esquema de Blazamut):</strong> La mejor arma para daño sostenido a media distancia. Ideal para desgastar barras de vida masivas. Custodiado por <strong>Blazamut</strong> (Nivel 49), oculto en la Mina Escorzo en las coordenadas (-436, -529).</p><p><strong>3. Escopeta de Bombeo Legendaria (Esquema de Suzaku):</strong> Devastadora a corta distancia. Un disparo preciso en la cabeza de un Pal puede cambiar el rumbo de cualquier incursión. Dropeado por <strong>Suzaku</strong> (Nivel 45) en la región desértica, coordenadas (404, 256).</p><p><strong>4. Pistola de Mano Legendaria (Esquema de Beakon):</strong> Una opción económica pero letal para el mid-game, con excelente precisión. Debes cazar a <strong>Beakon</strong> (Nivel 29) en las coordenadas (-345, -254).</p><p><strong>5. Ballesta Legendaria (Esquema de Bushi):</strong> Tu primer gran salto de poder táctico. Se consigue derrotando a <strong>Bushi</strong> (Nivel 23) en su mazmorra sellada en las coordenadas (-109, -468).</p><h2>Defensa Impenetrable: Armaduras y Yelmos de Grado Militar</h2><p>El ataque sin defensa es un suicidio táctico. Para resistir los embates de los jefes de nivel máximo, necesitas la protección definitiva:</p><p><strong>Yelmo de Metal Pal Legendario:</strong> Ofrece la mayor mitigación de daño a la cabeza del juego. Lo custodia <strong>Frostallion</strong> (Nivel 50), el soberano del hielo, en las coordenadas (-357, 509).</p><p><strong>Armaduras de Metal Pal Legendarias (Resistentes al Frío y al Calor):</strong> Esenciales para operar en climas extremos sin sacrificar ranuras de accesorios. Debes derrotar al dúo dinámico del desierto: <strong>Paladius</strong> y <strong>Necromus</strong> (Nivel 50) en las coordenadas (446, 681). Paladius suelta la variante resistente al frío, mientras que Necromus otorga la resistente al calor.</p><h2>El Secreto del Carnicero: Maximizando el Drop Rate</h2><p>La probabilidad de drop del 3% es ineficiente para un estratega. Para optimizar tus recursos, utiliza el método más oscuro de Palworld: <strong>El Cuchillo de Carnicero (Meat Cleaver)</strong>. Cuando capturas a un Jefe Alfa (como Jetragon o Frostallion) en lugar de matarlo, obtienes la primera oportunidad de drop. Luego, al regresar a tu base, invoca al Pal capturado y selecciónalo para desollarlo (butcher). Al ejecutar este proceso, el juego procesa una segunda tabla de botín completa, duplicando efectivamente tus posibilidades de obtener el Esquema Legendario por cada jefe capturado. Es una estrategia fría, eficiente y absolutamente necesaria.</p><h2>Incursiones de Alto Riesgo: La Plataforma Petrolífera y Mazmorras de Sakurajima</h2><p>Con las actualizaciones de 2024, el endgame se ha expandido enormemente. La <strong>Plataforma Petrolífera (Oil Rig)</strong> y las mazmorras de alta dificultad como las de Sakurajima albergan cofres de botín pesado. Aquí no solo encontrarás esquemas tradicionales, sino también tecnología avanzada como el blindaje de Hexolita y armas de plasma. Para infiltrarte con éxito, utiliza Pals de agua rápidos como Jormuntide para evitar el fuego antiaéreo pesado y limpia la zona con un enfoque de guerrilla urbana. El poder absoluto te espera; solo debes ser lo suficientemente despiadado para reclamarlo.</p>",
+      "meta_descripcion": "Domina el endgame de Palworld con la guía táctica definitiva. Localización de esquemas legendarios, jefes alfa y el oscuro secreto del carnicero.",
+      "seo": {
+        "keywords": "palworld armas legendarias, jefes palworld 2024, esquemas legendarios palworld, secretos palworld"
+      },
+      "open_graph": {
+        "og_title": "Guía Táctica: Jefes, Armas Legendarias y Secretos de Palworld",
+        "og_description": "Desbloquea el verdadero poder militar en Palworld. Analizamos los mejores esquemas legendarios, jefes alfa y exploits de optimización.",
+        "og_type": "article"
+      }
+    },
+    {
       "id": "guia-counter-strike-2",
       "juego": "Counter-Strike 2",
       "titulo": "Guía Táctica Definitiva: Counter-Strike 2",

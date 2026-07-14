@@ -295,6 +295,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-dota-2</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/guia.html?id=guia-palworld</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://kazokugaming.com/guia.html?id=guia-counter-strike-2</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>daily</changefreq>
