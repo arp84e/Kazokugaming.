@@ -574,6 +574,86 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
+    },
+    {
+      "id": "forza-horizon-6",
+      "titulo": "Forza Horizon 6",
+      "fecha": "14 Jul, 2026",
+      "plataformas": "PC, Xbox Series X/S, PlayStation 5",
+      "calificacion": "8.5",
+      "motor_grafico": "ForzaTech",
+      "tecnologias": "NVIDIA DLSS 4, AMD FSR 4, Intel XeSS 2.1, Ray Tracing (Reflejos y GI), DirectStorage",
+      "sinopsis": "La aclamada saga de conducción en mundo abierto viaja a Japón, ofreciendo un mapa masivo repleto de verticalidad que abarca desde puertos de montaña (touge) hasta una recreación detallada de Tokio, con más de 550 vehículos reales y un renovado sistema de estaciones dinámicas.",
+      "analisis_detallado": "<p>El rendimiento de <strong>Forza Horizon 6</strong> en PC demuestra una vez más la excelente optimización del motor gráfico <strong>ForzaTech</strong> de Playground Games. El juego destaca por su gran escalabilidad, permitiendo que configuraciones modestas con tarjetas gráficas como la GTX 1650 alcancen los 60 FPS estables en resolución 1080p bajo ajustes gráficos bajos.</p><p>Para los usuarios con hardware de gama alta, el título ofrece un apartado visual de nueva generación espectacular. Sin embargo, activar las opciones de <strong>Ray Tracing</strong> para reflejos e iluminación global (GI) en calidad \"Extreme\" exige un hardware sumamente potente, haciendo casi imprescindible el uso de tecnologías de escalado como <strong>DLSS</strong> o <strong>FSR</strong> para mantener una tasa de fotogramas fluida a resolución 4K.</p><p>Un punto crítico a tener en cuenta es el consumo de <strong>VRAM</strong>. Las texturas en calidad \"Extreme\" consumen una cantidad masiva de memoria de video, por lo que se recomienda configurar las texturas en \"Ultra\" para tarjetas de 8 GB o 12 GB para evitar tirones (stuttering). Finalmente, el uso de un <strong>SSD</strong> es obligatorio debido a la alta velocidad de carga requerida para el streaming del mapa de Tokio.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: Intel Core i5-8400 o AMD Ryzen 5 1600",
+          "RAM: 16 GB RAM",
+          "GPU: NVIDIA GeForce GTX 1650, AMD Radeon RX 6500 XT o Intel Arc A380",
+          "Almacenamiento: 160 GB de espacio disponible (SSD obligatorio)"
+        ],
+        "recomendados": [
+          "CPU: Intel Core i5-12400F o AMD Ryzen 5 5600X",
+          "RAM: 32 GB RAM",
+          "GPU: NVIDIA GeForce RTX 3060 Ti, AMD Radeon RX 6700 XT o Intel Arc A580",
+          "Almacenamiento: 160 GB de espacio disponible (SSD obligatorio)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"
+    },
+    {
+      "id": "monster-hunter-wilds",
+      "titulo": "Monster Hunter Wilds",
+      "fecha": "14 Jul, 2026",
+      "plataformas": "PC, PlayStation 5, Xbox Series X/S",
+      "calificacion": "8.0",
+      "motor_grafico": "RE Engine",
+      "tecnologias": "DLSS (con Frame Generation), FSR, XeSS, DirectStorage",
+      "sinopsis": "Monster Hunter Wilds es la entrega más ambiciosa de la aclamada saga de Capcom, transportando a los cazadores a un ecosistema dinámico y hostil donde el clima y los monstruos cambian en tiempo real, ofreciendo batallas colosales y una inmersión sin precedentes.",
+      "analisis_detallado": "<p>El lanzamiento de <strong>Monster Hunter Wilds</strong> en PC estuvo marcado por importantes desafíos técnicos. Inicialmente, el juego sufría de severos <strong>cuellos de botella en la CPU</strong>, problemas de gestión de VRAM, tirones constantes (stuttering) y dificultades en la compilación de shaders. Esto obligaba a la mayoría de los usuarios a depender fuertemente de tecnologías de generación de fotogramas para alcanzar tasas de refresco fluidas, incluso en equipos de gama media-alta.</p><p>Afortunadamente, tras la llegada de una <strong>gran actualización de rendimiento en enero de 2026</strong>, el panorama cambió de manera drástica. Capcom optimizó de forma sustancial el uso del procesador y la tarjeta gráfica, introduciendo nuevos ajustes de CPU y mejorando el comportamiento del paquete de texturas de alta resolución. Gracias a esto, el <strong>frame pacing</strong> se ha estabilizado notablemente y el stuttering se ha reducido al mínimo.</p><p>El título ahora escala de forma mucho más eficiente en hardware moderno. Con una GPU como la RTX 4060 o equivalente, es posible sostener 60 FPS estables a 1080p en calidad media-alta utilizando escalado. Además, la optimización ha sido tal que el juego ha recibido la verificación de <strong>'Jugable' en Steam Deck</strong>, logrando mantener una tasa de 30 FPS estables con los ajustes mínimos, algo impensable en su lanzamiento original.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: Intel Core i5-10400 / Intel Core i3-12100 / AMD Ryzen 5 3600",
+          "RAM: 16 GB",
+          "GPU: NVIDIA GeForce GTX 1660 (6GB VRAM) / AMD Radeon RX 5500 XT (8GB VRAM)",
+          "Almacenamiento: 75 GB de espacio disponible (Se requiere SSD)"
+        ],
+        "recomendados": [
+          "CPU: Intel Core i5-10400 / Intel Core i3-12100 / AMD Ryzen 5 3600",
+          "RAM: 16 GB",
+          "GPU: NVIDIA GeForce RTX 2060 Super (8GB VRAM) / AMD Radeon RX 6600 (8GB VRAM)",
+          "Almacenamiento: 75 GB de espacio disponible (Se requiere SSD)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/91b/91b4edd8fecf88b2b5ca0752321382ee.jpg"
+    },
+    {
+      "id": "s-t-a-l-k-e-r-2-heart-of-chornobyl",
+      "titulo": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "fecha": "14 Jul, 2026",
+      "plataformas": "PC, Xbox Series X/S, PS5",
+      "calificacion": "8.0",
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": "DLSS 3 (Super Resolution & Frame Generation), FSR 3.1, XeSS, TSR, Lumen, Nanite",
+      "sinopsis": "S.T.A.L.K.E.R. 2: Heart of Chornobyl es un shooter de supervivencia en primera persona ambientado en la Zona de Exclusión de Chernóbil. Explora un mundo abierto fotorrealista y dinámico, enfrentándote a peligrosas anomalías, mutantes y facciones hostiles en una lucha por la supervivencia donde tus decisiones moldean la historia.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>S.T.A.L.K.E.R. 2: Heart of Chornobyl</strong> en PC ha sido un viaje de constante evolución. Desarrollado bajo el motor <strong>Unreal Engine 5</strong>, el juego hace un uso intensivo de tecnologías de vanguardia como <strong>Lumen</strong> para la iluminación global y <strong>Nanite</strong> para la geometría virtualizada. Esto se traduce en un apartado visual fotorrealista y sobrecogedor, pero con un costo de procesamiento sumamente elevado.</p><p>En su lanzamiento original a finales de 2024, el juego sufría de graves problemas de optimización. Se registraban fuertes <strong>cuellos de botella en la CPU</strong> (especialmente en zonas con alta densidad de NPCs), tirones constantes (stuttering) y un consumo desmedido de memoria RAM y VRAM. Sin embargo, la llegada del aclamado <strong>Parche 1.7</strong> supuso un cambio radical. Esta actualización optimizó drásticamente el uso del procesador y mejoró la estabilidad general, ofreciendo una experiencia mucho más fluida y sólida en una amplia gama de configuraciones de hardware.</p><p>Para jugar a resoluciones altas (1440p o 4K) con tasas de fotogramas competitivas, el uso de tecnologías de escalado como <strong>DLSS, FSR o XeSS</strong> es prácticamente obligatorio. La implementación de <strong>Frame Generation</strong> (tanto de NVIDIA como de AMD) resulta crucial para duplicar la fluidez en tarjetas gráficas compatibles. Además, el juego exige estrictamente un <strong>SSD</strong> para evitar tiempos de carga eternos y problemas de carga de texturas al vuelo, consolidándose como uno de los títulos más exigentes y visualmente impactantes de la generación actual.</p>",
+      "requisitos": {
+        "minimos": [
+          "CPU: AMD Ryzen 5 1600X / Intel Core i7-7700K [1.1.4]",
+          "RAM: 16 GB DDR4 (Dual Channel)",
+          "GPU: AMD Radeon RX 580 8GB / NVIDIA GeForce GTX 1060 6GB / Intel Arc A750",
+          "Almacenamiento: 160 GB SSD",
+          "OS: Windows 10 / 11 (64-bit)"
+        ],
+        "recomendados": [
+          "CPU: AMD Ryzen 7 5800X / Intel Core i7-11700 [1.1.5]",
+          "RAM: 32 GB DDR4 / DDR5 (Dual Channel)",
+          "GPU: NVIDIA GeForce RTX 3070 Ti / RTX 4070 / AMD Radeon RX 6800 XT",
+          "Almacenamiento: 160 GB SSD",
+          "OS: Windows 10 / 11 (64-bit)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg"
     }
   ]
 }
