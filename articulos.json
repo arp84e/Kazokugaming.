@@ -1,6 +1,43 @@
 {
   "articulos": [
     {
+      "id": "art-extremadura-ampl-a-la-fp-a-distancia-con-nuevo",
+      "titulo": "Extremadura amplía su FP a distancia con nuevos cursos de especialización: de videojuegos a vehículos eléctricos",
+      "slug": "extremadura-ampl-a-la-fp-a-distancia-con-nuevos-cursos-de-especializaci-n-de-videojuegos-a-veh-culos-el-ctricos",
+      "categoria": "Noticias",
+      "tags": [
+        "FP a distancia",
+        "Desarrollo de Videojuegos",
+        "Extremadura",
+        "Educación",
+        "Tecnología"
+      ],
+      "autor": "KazokuBot",
+      "imagen": "https://images.pexels.com/photos/4144152/pexels-photo-4144152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "fecha": "15 Jul, 2026",
+      "tiempo_lectura": "3 min",
+      "contenido": "<p>La educación tecnológica y la formación especializada continúan ganando terreno en España. En esta ocasión, la Junta de Extremadura ha dado un paso de gigante al anunciar una notable ampliación en su oferta de <strong>Formación Profesional (FP) a distancia</strong> de cara al curso académico 2026/2027. La región incrementa en un 75% sus programas de especialización en modalidad virtual, pasando de cuatro a siete cursos que conectan de forma directa con los sectores más demandados del mercado laboral actual.</p>\n\n<h2>De los videojuegos a la transición energética: una oferta adaptada al futuro</h2>\n<p>Esta ambiciosa reestructuración responde a la necesidad de actualizar las competencias de los profesionales en áreas de alta empleabilidad. Entre las grandes novedades añadidas para este nuevo ciclo formativo destacan tres especialidades clave:</p>\n<ul>\n  <li><strong>Mantenimiento de Vehículos Híbridos y Eléctricos:</strong> Una titulación crucial para responder a la transición ecológica y a las necesidades del sector de la automoción.</li>\n  <li><strong>Recursos y Servicios en la Nube:</strong> Enfocado en la administración de infraestructuras cloud, vital para cualquier empresa digital moderna.</li>\n  <li><strong>Auditoría Energética:</strong> Orientado a la optimización del consumo y la sostenibilidad industrial.</li>\n</ul>\n\n<p>Estas nuevas de especialización se suman a la sólida base de cursos virtuales que ya se venían impartiendo con éxito y que resultan de especial interés para los apasionados del sector tecnológico y del entretenimiento interactivo:</p>\n<ul>\n  <li><strong>Desarrollo de Videojuegos y Realidad Virtual:</strong> Una de las joyas de la corona para los lectores de KazokuGaming, diseñada para formar a los futuros creadores de mundos virtuales y experiencias interactivas.</li>\n  <li><strong>Inteligencia Artificial y Big Data:</strong> Enfocado en el análisis masivo de datos y el entrenamiento de modelos de IA.</li>\n  <li><strong>Ciberseguridad en Tecnologías de la Información:</strong> Esencial para la protección de sistemas en red y entornos corporativos.</li>\n  <li><strong>Desarrollo de Aplicaciones en Python:</strong> Ideal para dominar uno de los lenguajes de programación más versátiles y demandados del mundo.</li>\n</ul>\n\n<h2>Fechas clave y cómo inscribirse</h2>\n<p>Para aquellos interesados en dar un giro a su carrera profesional o especializarse tras finalizar un grado medio o superior, los plazos de admisión ya están definidos. El periodo de solicitudes estará abierto desde el <strong>1 hasta el 14 de septiembre de 2026</strong>. Posteriormente, la lista de admitidos se publicará el 16 de septiembre.</p>\n\n<p>Cabe destacar que seis de estos siete programas se impartirán de manera 100% virtual, facilitando enormemente la conciliación familiar y laboral de los alumnos, mientras que uno de ellos contará con una modalidad semipresencial. La duración de estos cursos oscila entre las 420 y las 720 horas de formación intensiva.</p>\n\n<p>Con esta iniciativa, Extremadura no solo busca combatir el desempleo juvenil y mejorar la inserción laboral —la cual ya supera el 80% de media en la FP regional—, sino también posicionarse como un hub de talento técnico capaz de atraer a empresas del sector de los videojuegos, la ciberseguridad y la movilidad sostenible.</p>",
+      "meta_descripcion": "Extremadura expande su oferta de FP virtual para el curso 2026/2027 con nuevas especializaciones en desarrollo de videojuegos, nube y vehículos eléctricos.",
+      "seo": {
+        "keywords": "FP a distancia Extremadura, especializacion videojuegos FP, vehiculos electricos FP, cursos FP 2026, desarrollo de videojuegos Extremadura"
+      },
+      "open_graph": {
+        "og_title": "Extremadura amplía su FP virtual con videojuegos y tecnología",
+        "og_description": "¡Fórmate en el sector del futuro! Extremadura lanza nuevos cursos de especialización a distancia en videojuegos, IA y vehículos eléctricos.",
+        "og_type": "article"
+      },
+      "articulos_relacionados": [
+        {
+          "titulo": "Las mejores universidades de España para estudiar desarrollo de videojuegos",
+          "url": "/articulos/universidades-videojuegos-espana"
+        },
+        {
+          "titulo": "El auge de la realidad virtual en la educación técnica",
+          "url": "/articulos/realidad-virtual-educacion-tecnica"
+        }
+      ]
+    },
+    {
       "id": "art-criptomonedas-para-comprar-videojuegos-sony-re",
       "titulo": "¿Criptomonedas en PlayStation Store? Sony patenta un revolucionario método de pago y trading",
       "slug": "criptomonedas-para-comprar-videojuegos-sony-revolucionar-con-este-m-todo-la-playstation-store",
