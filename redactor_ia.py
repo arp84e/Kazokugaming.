@@ -34,32 +34,21 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto, re.DOTALL)
     return match.group(0) if match else texto
 
-# --- SISTEMA DE CONTINGENCIA MULTI-MODELO ---
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
     modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
-    
     for intento in range(max_intentos):
         for modelo in modelos_disponibles:
-            try:
-                response = client.models.generate_content(
-                    model=modelo,
-                    contents=prompt_texto,
-                    config=config_ia
-                )
-                return response
+            try: return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
                 error_str = str(e).lower()
-                if "503" in error_str or "unavailable" in error_str or "429" in error_str or "quota" in error_str:
-                    print(f"⚠️ Modelo {modelo} saturado. Cambiando al siguiente...")
+                if "503" in error_str or "unavailable" in error_str or "429" in error_str:
+                    print(f"⚠️ Modelo {modelo} saturado. Cambiando...")
                     continue
-                else:
-                    raise e 
-        
+                else: raise e 
         espera = 10
-        print(f"⚠️ Nodos ocupados. Reintentando en {espera} segundos... (Intento {intento+1}/{max_intentos})")
+        print(f"⚠️ Nodos ocupados. Reintentando en {espera}s... ({intento+1}/{max_intentos})")
         time.sleep(espera)
-        
-    raise Exception("❌ Los servidores están inactivos.")
+    raise Exception("❌ Servidores inactivos.")
 
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
@@ -81,7 +70,6 @@ else:
         with urllib.request.urlopen(req) as response:
             xml_data = response.read()
         root = ET.fromstring(xml_data)
-        
         for item in root.findall('.//item')[:3]:
             titulo_limpio = item.find('title').text.rsplit(' - ', 1)[0]
             temas_a_redactar.append({"tema": titulo_limpio, "categoria": "Noticias"})
@@ -91,11 +79,7 @@ else:
 
 prompt_sistema = """
 Eres un periodista tecnológico de 'KazokuGaming'. Redacta una noticia completa.
-REGLAS JSON:
-1. ÚNICAMENTE un objeto JSON.
-2. Usa comillas simples para atributos HTML en 'contenido'.
-3. 'es_videojuego': true si es un juego, false si es hardware.
-4. 'prompt_imagen': Nombre oficial del juego en inglés o palabras en inglés para hardware (ej. "keyboard").
+Devuelve ÚNICAMENTE un objeto JSON. Usa comillas simples para atributos HTML en 'contenido'.
 ESTRUCTURA:
 {
   "titulo": "Título de la Noticia",
@@ -123,7 +107,8 @@ for item in temas_a_redactar:
 
     print(f"\n✍️ Redactando: {tema}...")
     try:
-        config_redactor = types.GenerateContentConfig(system_instruction=prompt_sistema, response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
+        # CORRECCIÓN: Sin response_mime_type
+        config_redactor = types.GenerateContentConfig(system_instruction=prompt_sistema, temperature=0.7, tools=[{"google_search": {}}])
         response = generar_con_reintentos(f"Tema a investigar y redactar: {tema}", config_redactor)
         
         articulo_generado = json.loads(extraer_json_seguro(response.text))
@@ -131,14 +116,12 @@ for item in temas_a_redactar:
         imagen_final = ""
         prompt_img = articulo_generado.get("prompt_imagen", "")
         
-        # 1. Intentar buscar en RAWG si es videojuego
         if articulo_generado.get("es_videojuego") and rawg_key and prompt_img:
             try:
                 r = requests.get(f"https://api.rawg.io/api/games?key={rawg_key}&search={urllib.parse.quote(prompt_img)}&page_size=1", timeout=5).json()
                 if r.get("results"): imagen_final = r["results"][0].get("background_image", "")
             except: pass
         
-        # 2. Intentar buscar en Pexels si es hardware o falló RAWG
         if not imagen_final and pexels_key and prompt_img:
             try:
                 r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(prompt_img)}&per_page=5", headers={"Authorization": pexels_key}, timeout=5).json()
@@ -159,10 +142,7 @@ for item in temas_a_redactar:
             "fecha": time.strftime("%d %b, %Y"),
             "tiempo_lectura": articulo_generado.get("tiempo_lectura", "3 min"),
             "contenido": articulo_generado.get("contenido", "<p>Error de procesamiento...</p>"),
-            "meta_descripcion": articulo_generado.get("meta_descripcion", ""),
-            "seo": articulo_generado.get("seo", {}),
-            "open_graph": articulo_generado.get("open_graph", {}),
-            "articulos_relacionados": articulo_generado.get("articulos_relacionados", [])
+            "meta_descripcion": articulo_generado.get("meta_descripcion", "")
         }
         
         datos_web["articulos"].insert(0, articulo_final)
