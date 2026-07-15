@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Juegos | KazokuGaming</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style> 
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #03040b; overflow-x: hidden; scroll-behavior: smooth; } 
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel { background: rgba(13, 17, 30, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(139, 92, 246, 0.2); }
+        .grid-bg { background-image: linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px); background-size: 30px 30px; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-violet-500/30 selection:text-violet-200">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative">
+        <div class="absolute inset-0 z-0 grid-bg opacity-30 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            
+            <div class="mb-12 text-center md:text-left">
+                <span class="inline-flex items-center gap-2 py-1 px-3 rounded text-violet-400 text-[10px] font-mono tracking-widest uppercase mb-4 bg-violet-500/10 border border-violet-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse"></span>
+                    Base de Datos Global
+                </span>
+                <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Directorio de Juegos</h1>
+                <p class="text-slate-400 max-w-2xl">Explora nuestra inteligencia recopilada sobre el rendimiento, requisitos y análisis de los juegos más exigentes de PC, Consolas y Móviles.</p>
+            </div>
+
+            <div id="pantalla-carga" class="text-center py-20 text-violet-500 animate-pulse font-mono tracking-widest uppercase text-sm">
+                Sincronizando con los servidores...
+            </div>
+
+            <!-- Contenedor del Grid de Juegos -->
+            <div id="contenedor-juegos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hidden">
+                <!-- Las tarjetas se inyectarán aquí mediante JS -->
+            </div>
+            
+            <!-- Mensaje de error / vacío -->
+            <div id="mensaje-error" class="hidden text-center py-20 text-slate-500 font-mono text-sm border border-slate-800 rounded-2xl bg-slate-900/50">
+                La base de datos está vacía o hubo un error de conexión.
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-[#010205] py-10 text-center text-slate-600 text-sm font-mono mt-auto relative z-10">
+        &copy; 2026 KAZOKUGAMING. Motor Autónomo.
+    </footer>
+
+    <script src="header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const pantallaCarga = document.getElementById('pantalla-carga');
+            const contenedor = document.getElementById('contenedor-juegos');
+            const mensajeError = document.getElementById('mensaje-error');
+
+            try {
+                const response = await fetch('juegos.json');
+                
+                if (!response.ok) {
+                    throw new Error('Error al leer el archivo JSON');
+                }
+
+                const data = await response.json();
+                const juegos = data.juegos || [];
+
+                pantallaCarga.classList.add('hidden');
+
+                if (juegos.length === 0) {
+                    mensajeError.classList.remove('hidden');
+                    return;
+                }
+
+                contenedor.classList.remove('hidden');
+
+                // Renderizar los juegos. Los primeros 10 tendrán un badge especial de "TOP"
+                contenedor.innerHTML = juegos.map((juego, index) => {
+                    const esTop10 = index < 10;
+                    const badgeTop = esTop10 
+                        ? `<div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded shadow-lg border border-white/20">TOP ${index + 1}</div>` 
+                        : '';
+
+                    return `
+                        <a href="juego.html?id=${juego.id}" class="group glass-panel rounded-2xl overflow-hidden hover:border-violet-500/50 transition-all duration-300 hover:-translate-y-2 relative flex flex-col h-full shadow-lg">
+                            ${badgeTop}
+                            <div class="relative w-full h-48 bg-[#03040b] overflow-hidden border-b border-slate-800/80">
+                                <img src="${juego.imagen}" alt="Portada de ${juego.titulo}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#0d111e] to-transparent"></div>
+                            </div>
+                            
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg text-white mb-1 line-clamp-1 group-hover:text-violet-400 transition-colors">${juego.titulo}</h3>
+                                <div class="flex items-center gap-2 mb-4 text-xs font-mono text-slate-500">
+                                    <span>⭐ ${juego.calificacion}</span>
+                                    <span>•</span>
+                                    <span class="truncate">${juego.plataformas}</span>
+                                </div>
+                                <p class="text-sm text-slate-400 line-clamp-3 mb-4 flex-grow">${juego.sinopsis}</p>
+                                
+                                <div class="mt-auto pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-violet-400">
+                                    Ver Expediente Técnico <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+
+            } catch (error) {
+                console.error(error);
+                pantallaCarga.classList.add('hidden');
+                mensajeError.innerHTML = '⚠️ Se produjo un fallo al intentar acceder al núcleo de datos.';
+                mensajeError.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
