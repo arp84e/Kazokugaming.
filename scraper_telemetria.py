@@ -7,7 +7,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: TELEMETRÍA AVANZADA (SISTEMA MULTI-MODELO) ===")
+print("=== INICIANDO KAZOKUBOT: SISTEMA DE JUEGOS Y TOP 10 GLOBAL (PC, CONSOLAS, MÓVILES) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
@@ -18,106 +18,95 @@ if not api_key:
     sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
-archivo_oficial = "telemetria.json"
+archivo_oficial = "juegos.json" # Anteriormente telemetria.json
 
 def extraer_json_seguro(texto):
     texto = texto.strip()
     match = re.search(r'\{.*\}', texto, re.DOTALL)
     return match.group(0) if match else texto
 
-# --- SISTEMA DE CONTINGENCIA MULTI-MODELO ---
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
     modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
-    
     for intento in range(max_intentos):
         for modelo in modelos_disponibles:
             try:
-                response = client.models.generate_content(
-                    model=modelo,
-                    contents=prompt_texto,
-                    config=config_ia
-                )
-                return response
+                return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
                 error_str = str(e).lower()
-                if "503" in error_str or "unavailable" in error_str or "429" in error_str or "quota" in error_str:
-                    print(f"⚠️ Modelo {modelo} saturado. Cambiando al siguiente...")
+                if "503" in error_str or "unavailable" in error_str or "429" in error_str:
+                    print(f"⚠️ Modelo {modelo} saturado. Cambiando...")
                     continue
-                else:
-                    raise e 
-        
+                else: raise e 
         espera = 10
-        print(f"⚠️ Todos los nodos ocupados. Reintentando en {espera} segundos... (Intento {intento+1}/{max_intentos})")
+        print(f"⚠️ Nodos ocupados. Reintentando en {espera}s... ({intento+1}/{max_intentos})")
         time.sleep(espera)
-        
-    raise Exception("❌ Los servidores de IA están inactivos.")
+    raise Exception("❌ Servidores inactivos.")
 
+# Cargar base actual
 estructura_final = {"juegos": []}
-nombres_existentes = []
-if os.path.exists(archivo_oficial) and not sobrescribir:
+if os.path.exists(archivo_oficial):
     with open(archivo_oficial, "r", encoding="utf-8") as f:
-        try: 
-            estructura_final = json.load(f)
-            nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
+        try: estructura_final = json.load(f)
         except: pass
 
 juegos_a_procesar = []
+top_10_oficial = []
 
 if juegos_input:
-    print("🛠️ MODO MANUAL DETECTADO.")
+    print("🛠️ MODO MANUAL: Procesando lista delimitada...")
     juegos_a_procesar = [j.strip() for j in juegos_input.split(";") if j.strip()]
+    top_10_oficial = juegos_a_procesar 
 else:
-    print("🌍 MODO AUTOMÁTICO: Buscando exigencia de hardware en PC...")
-    prompt_tendencias = f"""
-    Eres analista de hardware. Busca los 3 juegos de PC más populares o exigentes de esta semana.
-    EXCLUYE ESTOS: {nombres_existentes}.
-    Devuelve ÚNICAMENTE un JSON estricto:
-    {{ "juegos": ["Juego 1", "Juego 2", "Juego 3"] }}
+    print("🌍 MODO AUTOMÁTICO: Escaneando múltiples fuentes para crear el Top 10 Global...")
+    prompt_top10 = """
+    Eres un analista experto en la industria del gaming. Tu tarea es buscar en internet consultando al menos 5 fuentes distintas (como bases de datos de juegos, Twitch, Steam, Google Play, App Store, revistas) el Top 10 de los videojuegos más populares, más jugados o en tendencia a nivel mundial en este preciso momento.
+    IMPORTANTE: El top debe ser global e incluir una mezcla de títulos de PC, Consolas de nueva generación y teléfonos móviles (iOS/Android).
+    Cruza los datos de las fuentes, crea tu propio TOP 10 definitivo unificado y devuélvelo ÚNICAMENTE como un JSON con esta estructura exacta:
+    { "top_10": ["Nombre del Juego 1", "Nombre del Juego 2", "Nombre del Juego 3", "Nombre del Juego 4", "Nombre del Juego 5", "Nombre del Juego 6", "Nombre del Juego 7", "Nombre del Juego 8", "Nombre del Juego 9", "Nombre del Juego 10"] }
     """
     try:
-        config_tendencias = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.7, tools=[{"google_search": {}}])
-        res_tendencias = generar_con_reintentos(prompt_tendencias, config_tendencias)
-        data_tendencias = json.loads(extraer_json_seguro(res_tendencias.text))
-        juegos_a_procesar = data_tendencias.get("juegos", [])
-        print(f"📡 Telemetría detectada para: {juegos_a_procesar}")
+        config_top = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.5, tools=[{"google_search": {}}])
+        res_top = generar_con_reintentos(prompt_top10, config_top)
+        data_top = json.loads(extraer_json_seguro(res_top.text))
+        top_10_oficial = data_top.get("top_10", [])
+        print(f"🏆 TOP 10 Global Consolidado: {top_10_oficial}")
+        juegos_a_procesar = top_10_oficial
     except Exception as e:
-        sys.exit(f"❌ Error al buscar tendencias: {e}")
-
-if not juegos_a_procesar:
-    sys.exit("❌ No hay juegos para procesar.")
+        sys.exit(f"❌ Error al generar el Top 10: {e}")
 
 def buscar_portada(titulo):
     if not rawg_key: return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
     try:
         url = f"https://api.rawg.io/api/games?key={rawg_key}&search={requests.utils.quote(titulo)}&page_size=1"
         r = requests.get(url, timeout=5).json()
-        if r.get("results"):
-            return r["results"][0].get("background_image") or "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
+        if r.get("results"): return r["results"][0].get("background_image") or "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
     except: pass
     return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
+
+nuevos_agregados = 0
 
 for titulo in juegos_a_procesar:
     id_juego = re.sub(r'[^a-z0-9]+', '-', titulo.lower()).strip('-')
     
     if any(j["id"] == id_juego for j in estructura_final.get("juegos", [])) and not sobrescribir:
-        print(f"⏭️ Saltando '{titulo}': Ya documentado.")
+        print(f"⏭️ '{titulo}' ya existe en la base de datos.")
         continue
 
-    print(f"\n⚙️ Analizando telemetría para: {titulo}...")
+    print(f"\n⚙️ Analizando datos para: {titulo}...")
     imagen_real = buscar_portada(titulo)
     
     prompt = f"""
-    Analiza el rendimiento técnico de "{titulo}" en PC. 
+    Analiza el rendimiento técnico y detalles de "{titulo}". Puede ser de PC, Consola o Móvil (Android/iOS).
     Devuelve ÚNICAMENTE un JSON estricto con la siguiente estructura:
     {{
-        "plataformas": "PC, PS5...",
-        "calificacion": "8.5",
-        "motor_grafico": "Unreal Engine 5",
-        "tecnologias": "DLSS, FSR",
+        "plataformas": "Ej: PC, PS5 / Android, iOS",
+        "calificacion": "Ej: 8.5",
+        "motor_grafico": "Ej: Unreal Engine, Unity...",
+        "tecnologias": "DLSS, Touch, Crossplay...",
         "sinopsis": "Sinopsis corta...",
-        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game...",
-        "requisitos_minimos": ["CPU...", "RAM...", "GPU...", "Almacenamiento..."],
-        "requisitos_recomendados": ["CPU...", "RAM...", "GPU...", "Almacenamiento..."]
+        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game y optimización...",
+        "requisitos_minimos": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"],
+        "requisitos_recomendados": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"]
     }}
     """
     
@@ -130,26 +119,47 @@ for titulo in juegos_a_procesar:
             "id": id_juego,
             "titulo": titulo,
             "fecha": time.strftime("%d %b, %Y"),
-            "plataformas": data.get("plataformas", "PC"),
+            "plataformas": data.get("plataformas", "Varias"),
             "calificacion": data.get("calificacion", "8.0"),
-            "motor_grafico": data.get("motor_grafico", "Custom Engine"),
+            "motor_grafico": data.get("motor_grafico", "Custom"),
             "tecnologias": data.get("tecnologias", "Estándar"),
-            "sinopsis": data.get("sinopsis", "Análisis de rendimiento in-game."),
-            "analisis_detallado": data.get("analisis_detallado", "<p>Datos en proceso...</p>"),
+            "sinopsis": data.get("sinopsis", "Análisis de rendimiento."),
+            "analisis_detallado": data.get("analisis_detallado", "<p>Datos procesados con IA.</p>"),
             "requisitos": {
-                "minimos": data.get("requisitos_minimos", ["Intel i5", "8GB RAM", "GTX 1060"]),
-                "recomendados": data.get("requisitos_recomendados", ["Intel i7", "16GB RAM", "RTX 3060"])
+                "minimos": data.get("requisitos_minimos", []),
+                "recomendados": data.get("requisitos_recomendados", [])
             },
             "imagen": imagen_real
         }
         
         estructura_final["juegos"].append(nuevo_juego)
-        with open(archivo_oficial, "w", encoding="utf-8") as f:
-            json.dump(estructura_final, f, ensure_ascii=False, indent=2)
-            
+        nuevos_agregados += 1
         time.sleep(5)
             
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
 
-print("\n✅ Sincronización de telemetría finalizada.")
+# =========================================================================
+# REORGANIZACIÓN OBLIGATORIA: El TOP 10 se posiciona al principio del JSON
+# =========================================================================
+print("\n🔄 Reorganizando la base de datos para priorizar el Top 10...")
+
+juegos_top = []
+juegos_resto = []
+top_10_lower = [t.lower() for t in top_10_oficial]
+
+for j in estructura_final["juegos"]:
+    if j["titulo"].lower() in top_10_lower:
+        juegos_top.append(j)
+    else:
+        juegos_resto.append(j)
+
+# Ordenar los juegos del top basándose en el índice de popularidad del escaneo
+juegos_top.sort(key=lambda x: top_10_lower.index(x["titulo"].lower()) if x["titulo"].lower() in top_10_lower else 999)
+
+estructura_final["juegos"] = juegos_top + juegos_resto
+
+with open(archivo_oficial, "w", encoding="utf-8") as f:
+    json.dump(estructura_final, f, ensure_ascii=False, indent=2)
+
+print(f"\n✅ Base de datos 'juegos.json' actualizada ({nuevos_agregados} nuevos) y ordenada correctamente.")
