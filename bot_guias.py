@@ -17,7 +17,7 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 archivo_guias = "guias.json"
-archivo_juegos = "juegos.json" # Ahora se alimenta de la DB de juegos principal
+archivo_juegos = "juegos.json" 
 
 def extraer_json_seguro(texto):
     texto = texto.strip()
@@ -30,12 +30,11 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
         for modelo in modelos_disponibles:
             try: return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
-                if "503" in str(e) or "unavailable" in str(e) or "429" in str(e): continue
+                if "503" in str(e).lower() or "unavailable" in str(e).lower() or "429" in str(e).lower(): continue
                 raise e
         time.sleep(10)
     raise Exception("❌ Servidores de IA caídos.")
 
-# Cargar bases de datos
 datos_guias = {"guias": []}
 if os.path.exists(archivo_guias):
     with open(archivo_guias, "r", encoding="utf-8") as f:
@@ -49,11 +48,7 @@ if os.path.exists(archivo_juegos):
         except: pass
 
 juegos_a_procesar = []
-
-# Revisar los primeros juegos (El Top 10) y ver si carecen de guía
 titulos_con_guia = [g.get("juego", "").lower() for g in datos_guias.get("guias", [])]
-
-# Tomar los primeros 10 títulos del archivo de juegos que ya fue ordenado
 primeros_juegos = datos_juegos.get("juegos", [])[:10]
 
 for j in primeros_juegos:
@@ -76,8 +71,7 @@ for juego_limpio in juegos_a_procesar:
     prompt_sistema = f"""
     Eres el Estratega Jefe de KazokuGaming. Escribe una GUÍA TÁCTICA AVANZADA.
     Juego: "{juego_limpio}".
-    Redacta todo con estilo analítico. Puede ser un juego de PC, Consola o Móvil.
-    ESTRUCTURA JSON OBLIGATORIA (usa comillas simples dentro del HTML):
+    Redacta todo con estilo analítico. Devuelve ÚNICAMENTE un objeto JSON válido (sin marcas de formato markdown) con esta estructura:
     {{
       "titulo": "Guía Táctica: [Nombre]",
       "meta_descripcion": "Resumen de 150 caracteres",
@@ -91,7 +85,8 @@ for juego_limpio in juegos_a_procesar:
 
     try:
         termino_busqueda = f"Guia completa trucos secretos mejores armas {juego_limpio}".strip()
-        config_guia = types.GenerateContentConfig(system_instruction=prompt_sistema, response_mime_type="application/json", temperature=0.35, tools=[{"google_search": {}}])
+        # CORRECCIÓN: Sin response_mime_type
+        config_guia = types.GenerateContentConfig(system_instruction=prompt_sistema, temperature=0.35, tools=[{"google_search": {}}])
         
         response = generar_con_reintentos(f"Investiga y redacta la guía de: {termino_busqueda}", config_guia)
         guia_generada = json.loads(extraer_json_seguro(response.text))
