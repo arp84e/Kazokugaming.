@@ -1,6 +1,34 @@
 {
   "guias": [
     {
+      "id": "guia-marvel-rivals",
+      "juego": "Marvel Rivals",
+      "titulo": "Guía Táctica: Jefes, Armas y Secretos en Marvel Rivals",
+      "slug": "marvel-rivals",
+      "categoria": "Guía Táctica",
+      "tags": [
+        "Marvel Rivals",
+        "Guía Táctica",
+        "Blood Hunt",
+        "Kingpin",
+        "Sinergias"
+      ],
+      "autor": "Kazoku Estratega",
+      "imagen": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg",
+      "fecha": "15 Jul, 2026",
+      "tiempo_lectura": "8 min",
+      "contenido": "<h2>El Abismo de Blood Hunt: Análisis de la Amenaza PvE</h2><p>En KazokuGaming no nos conformamos con la superficie. El modo PvE 'Blood Hunt' (Cacería de Sangre), introducido como el gran reto cooperativo de Marvel Rivals (título que redefinió el género tras su lanzamiento en 2024), no es un simple trámite de supervivencia; es un ecosistema táctico hostil. Cuatro héroes deben coordinarse para resistir hordas de vampiros y derribar a jefes brutales como Capwolf (el Capitán América licántropo), la corrupta Ratatoskr y el mismísimo Drácula. Sin embargo, el verdadero desafío de la temporada radica en desentrañar los engranajes ocultos de su dificultad Extrema para invocar al depredador definitivo de Nueva York.</p><h2>La Senda del Demonio: Cómo Desbloquear y Derrotar al Jefe Secreto (Kingpin)</h2><p>El submundo de Times Square esconde al verdadero jefe final: Wilson Fisk, el Kingpin. Para enfrentarlo en dificultad Extrema, tu escuadrón debe ejecutar tres objetivos secuenciales perfectos, representados por tres llaves en la interfaz:</p><p>1. <strong>La Barrera del Puente (Ronda 4):</strong> Deben destrozar la barrera de contención en menos de 90 segundos. El daño sostenido es vital aquí.</p><p>2. <strong>Los Capullos de Coágulo (Ronda 7):</strong> Localicen y destruyan los 4 capullos de sangre ocultos en el mapa. Esto abrirá un desvío hacia la casa del árbol de Squirrel Girl antes del encuentro con Ratatoskr.</p><p>3. <strong>Los Cristales del Castillo:</strong> En la zona previa al foso de Drácula, destruyan todos los cristales de sangre en menos de 120 segundos.</p><p>Al cumplir estos requisitos y derrotar a Drácula, se abrirá el portal hacia el Kingpin. Para vencerlo, la disciplina es innegociable. Fisk cuenta con dos mecánicas de muerte instantánea (one-shot): su trance de bastón, del cual debes liberarte agitando frenéticamente los controles de movimiento (WASD/Stick), y su explosión de área con escudo, que te obligará a buscar cobertura sólida de inmediato tras verlo saltar.</p><h2>Armas Secretas: El Poder Oculto de las Habilidades de Sinergia</h2><p>En Marvel Rivals, las armas más letales no se equipan en un inventario; se activan mediante la sinergia de equipo (Team-Up Abilities). Con la evolución del sistema, estas habilidades actúan como auténticas armas secretas que redefinen el flujo de la partida:</p><p>- <strong>Unión Voltaica (Capitán América + Thor):</strong> El escudo del Capitán se sobrecarga con la tormenta de Thor, permitiendo lanzamientos consecutivos electrificados que destrozan líneas enemigas.</p><p>- <strong>Caos Metálico (Magneto + Scarlet Witch):</strong> Magneto forja una espada de pura energía electromagnética imbuida con magia del caos, desatando proyectiles de barrido devastadores.</p><p>- <strong>Lanzamiento Gamma (Hulk + Wolverine):</strong> Hulk utiliza a Wolverine como un proyectil viviente, otorgándole inmunidad total al control de masas y un daño de impacto brutal al aterrizar.</p><h2>Mecánicas Ocultas y Secretos del Campo de Batalla</h2><p>La diferencia entre un jugador promedio y un estratega de KazokuGaming radica en el conocimiento de las reglas no escritas del juego. Primero, la física de proyectiles: héroes como Iron Man, Storm y Peni Parker no pueden infligir daño crítico (headshots) con sus ataques principales, lo que cambia por completo la prioridad de apuntado hacia el centro de masa. Segundo, la cancelación de recarga: habilidades específicas de movilidad restablecen instantáneamente el cargador de armas como las de The Punisher, permitiendo un flujo de daño ininterrumpido sin pasar por la animación estándar. Domina estas variables y controlarás el meta.</p>",
+      "meta_descripcion": "Domina el modo PvE Blood Hunt, desbloquea al jefe secreto Kingpin y descubre las sinergias ocultas que actúan como armas secretas en Marvel Rivals.",
+      "seo": {
+        "keywords": "marvel rivals, jefes marvel rivals, jefe secreto kingpin, blood hunt marvel rivals, armas secretas marvel rivals, sinergias marvel rivals"
+      },
+      "open_graph": {
+        "og_title": "Guía Táctica: Jefes, Armas y Secretos en Marvel Rivals",
+        "og_description": "Análisis estratégico para dominar el PvE Blood Hunt, derrotar a Kingpin y explotar las mecánicas ocultas de Marvel Rivals.",
+        "og_type": "article"
+      }
+    },
+    {
       "id": "guia-dota-2",
       "juego": "Dota 2",
       "titulo": "Guía Táctica: Jefes, Armas y Secretos en Dota 2 (Edición 2013)",
