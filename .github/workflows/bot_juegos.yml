@@ -1,25 +1,26 @@
-name: Bot Telemetría (Hardware y Rendimiento)
+name: Bot Juegos y Top 10 Global
 
 on:
   workflow_dispatch:
     inputs:
       juegos:
-        description: '🎮 (Opcional) Juego manual. Deja vacío para Modo Automático (3 juegos de PC tendencia).'
+        description: '🎮 Títulos manuales (separados por ;). Vacío = Top 10 Automático'
         required: false
         type: string
       sobrescribir:
-        description: '⚠️ ¿Borrar catálogo anterior de Telemetría?'
+        description: '⚠️ ¿Borrar catálogo anterior?'
         required: false
         type: boolean
         default: false
   schedule:
-    - cron: '0 14 * * *' # Se ejecuta a las 14:00 UTC automáticamente
+    # Se ejecuta automáticamente todos los días a las 08:00 UTC (ajusta la hora si lo deseas)
+    - cron: '0 8 * * *'
 
 permissions:
   contents: write
 
 jobs:
-  analizar-telemetria:
+  actualizar-juegos:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repositorio
@@ -30,33 +31,31 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependencias seguras
-        run: pip install google-genai==0.3.0 requests==2.31.0
+      - name: Instalar dependencias
+        run: pip install google-genai requests
 
-      - name: Ejecutar Bot de Telemetría
+      - name: Ejecutar Bot de Juegos y Top 10
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
           INPUT_JUEGOS: ${{ inputs.juegos }}
           SOBRESCRIBIR: ${{ inputs.sobrescribir }}
-        run: python scraper_telemetria.py
+        run: python scraper_juegos.py
 
       - name: Actualizar Mapa del Sitio XML
         run: python generar_sitemap.py
 
-      - name: Commit y Push
+      - name: Commit y Push de los cambios
         run: |
           git config --global user.name "KazokuBot"
           git config --global user.email "bot@kazokugaming.com"
           
-          git add telemetria.json || true
-          git add telemetria/ || true
+          git add juegos.json || true
           git add sitemap.xml || true
           
           if git diff --staged --quiet; then
-            echo "No hay variaciones de telemetría."
+            echo "No hay variaciones en el catálogo de juegos de hoy."
           else
-            git commit -m "🤖 Bot Telemetría: Análisis actualizado (Modo Automático/Manual)."
-            git pull --rebase origin main || true
-            git push origin main
+            git commit -m "🤖 KazokuBot: Top 10 Global y Base de Juegos actualizada"
+            git push
           fi
