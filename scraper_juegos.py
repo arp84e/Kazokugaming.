@@ -18,7 +18,7 @@ if not api_key:
     sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
-archivo_oficial = "juegos.json" # Anteriormente telemetria.json
+archivo_oficial = "juegos.json" 
 
 def extraer_json_seguro(texto):
     texto = texto.strip()
@@ -59,13 +59,14 @@ if juegos_input:
 else:
     print("🌍 MODO AUTOMÁTICO: Escaneando múltiples fuentes para crear el Top 10 Global...")
     prompt_top10 = """
-    Eres un analista experto en la industria del gaming. Tu tarea es buscar en internet consultando al menos 5 fuentes distintas (como bases de datos de juegos, Twitch, Steam, Google Play, App Store, revistas) el Top 10 de los videojuegos más populares, más jugados o en tendencia a nivel mundial en este preciso momento.
-    IMPORTANTE: El top debe ser global e incluir una mezcla de títulos de PC, Consolas de nueva generación y teléfonos móviles (iOS/Android).
-    Cruza los datos de las fuentes, crea tu propio TOP 10 definitivo unificado y devuélvelo ÚNICAMENTE como un JSON con esta estructura exacta:
+    Eres un analista experto en la industria del gaming. Busca en internet consultando al menos 5 fuentes distintas el Top 10 de los videojuegos más populares o jugados a nivel mundial en este momento.
+    El top debe ser global e incluir una mezcla de títulos de PC, Consolas y Móviles.
+    Devuelve ÚNICAMENTE un JSON con esta estructura exacta (sin texto antes ni después):
     { "top_10": ["Nombre del Juego 1", "Nombre del Juego 2", "Nombre del Juego 3", "Nombre del Juego 4", "Nombre del Juego 5", "Nombre del Juego 6", "Nombre del Juego 7", "Nombre del Juego 8", "Nombre del Juego 9", "Nombre del Juego 10"] }
     """
     try:
-        config_top = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.5, tools=[{"google_search": {}}])
+        # CORRECCIÓN: Se eliminó response_mime_type para evitar el error 400 con google_search
+        config_top = types.GenerateContentConfig(temperature=0.5, tools=[{"google_search": {}}])
         res_top = generar_con_reintentos(prompt_top10, config_top)
         data_top = json.loads(extraer_json_seguro(res_top.text))
         top_10_oficial = data_top.get("top_10", [])
@@ -96,22 +97,23 @@ for titulo in juegos_a_procesar:
     imagen_real = buscar_portada(titulo)
     
     prompt = f"""
-    Analiza el rendimiento técnico y detalles de "{titulo}". Puede ser de PC, Consola o Móvil (Android/iOS).
-    Devuelve ÚNICAMENTE un JSON estricto con la siguiente estructura:
+    Analiza el rendimiento técnico y detalles de "{titulo}". Puede ser de PC, Consola o Móvil.
+    Devuelve ÚNICAMENTE un JSON estricto con la siguiente estructura (sin formato Markdown):
     {{
         "plataformas": "Ej: PC, PS5 / Android, iOS",
         "calificacion": "Ej: 8.5",
         "motor_grafico": "Ej: Unreal Engine, Unity...",
         "tecnologias": "DLSS, Touch, Crossplay...",
         "sinopsis": "Sinopsis corta...",
-        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game y optimización...",
+        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game...",
         "requisitos_minimos": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"],
         "requisitos_recomendados": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"]
     }}
     """
     
     try:
-        config_tel = types.GenerateContentConfig(response_mime_type="application/json", temperature=0.4, tools=[{"google_search": {}}])
+        # CORRECCIÓN: Sin response_mime_type
+        config_tel = types.GenerateContentConfig(temperature=0.4, tools=[{"google_search": {}}])
         res = generar_con_reintentos(prompt, config_tel)
         data = json.loads(extraer_json_seguro(res.text))
         
@@ -139,9 +141,6 @@ for titulo in juegos_a_procesar:
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
 
-# =========================================================================
-# REORGANIZACIÓN OBLIGATORIA: El TOP 10 se posiciona al principio del JSON
-# =========================================================================
 print("\n🔄 Reorganizando la base de datos para priorizar el Top 10...")
 
 juegos_top = []
@@ -154,7 +153,6 @@ for j in estructura_final["juegos"]:
     else:
         juegos_resto.append(j)
 
-# Ordenar los juegos del top basándose en el índice de popularidad del escaneo
 juegos_top.sort(key=lambda x: top_10_lower.index(x["titulo"].lower()) if x["titulo"].lower() in top_10_lower else 999)
 
 estructura_final["juegos"] = juegos_top + juegos_resto
