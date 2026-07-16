@@ -1,6 +1,26 @@
 {
   "guias": [
     {
+      "id": "guia-honor-of-kings",
+      "juego": "Honor of Kings",
+      "titulo": "Guía Táctica: Secretos, Trucos y las Mejores Armas en Honor of Kings",
+      "slug": "honor-of-kings",
+      "categoria": "Guía Táctica",
+      "tags": [
+        "Honor of Kings",
+        "Guía Avanzada",
+        "Trucos HoK",
+        "Mejores Armas HoK",
+        "KazokuGaming"
+      ],
+      "autor": "Kazoku Estratega",
+      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg",
+      "fecha": "16 Jul, 2026",
+      "tiempo_lectura": "7 min",
+      "contenido": "<h2>Análisis de la Arena: Secretos del Macrogame en Honor of Kings</h2><p>Para ascender en las ligas de Honor of Kings (HoK), no basta con tener buenos reflejos; el verdadero dominio radica en el control del mapa y la comprensión de las mecánicas ocultas. El Valle de los Héroes se divide en tres carriles estratégicos: el Carril de Choque (Clash Lane), ideal para luchadores que buscan experiencia rápida; el Carril Central (Mid Lane), zona de magos con alta capacidad de rotación; y el Carril de Granja (Farm Lane), donde los tiradores acumulan el oro necesario para activar sus builds.</p><p><strong>El secreto del control de oleadas (Wave Management):</strong> Uno de los trucos más ignorados por los jugadores de rango medio es la congelación de línea. Al no atacar a los súbditos enemigos y solo dar el último golpe (last hit), obligas al rival a exponerse para farmear, facilitando las emboscadas (ganks) de tu junglero. Además, asegurar los objetivos neutrales como el Tirano y el Señor Supremo otorga ventajas globales masivas de daño y empuje que deciden partidas.</p><h2>Las Mejores \"Armas\" y Equipamiento Clave del Meta</h2><p>En Honor of Kings, las \"armas\" se traducen en el arsenal de objetos físicos y mágicos que definen el potencial de tu héroe. Conocer qué comprar y cuándo realizar un contra-equipamiento (counter-building) es la diferencia entre la victoria y la derrota. Aquí analizamos las armas más poderosas del juego:</p><ul><li><strong>Filo de la Eternidad (Eternity Blade):</strong> El arma definitiva para tiradores basados en daño crítico (como Lady Sun). Otorga un masivo aumento de daño físico y probabilidad de crítico, multiplicando exponencialmente tu DPS en peleas de equipo.</li><li><strong>Hacha del Tormento (Axe of Torment):</strong> La herramienta predilecta de asesinos y luchadores físicos. Ofrece penetración física plana, reducción de enfriamiento y vida máxima, ideal para destrozar objetivos frágiles en el juego temprano y medio.</li><li><strong>Rompedor del Alba (Daybreaker):</strong> Considerada la joya de la corona para los tiradores en el juego tardío. Aunque es el objeto más caro, combina velocidad de ataque, probabilidad de crítico y un porcentaje masivo de penetración física que destruye tanques sin esfuerzo.</li><li><strong>Ira del Sabio (Savant's Wrath):</strong> El arma de destrucción masiva para magos de ráfaga (como Angela o Lady Zhen). Incrementa el poder mágico total en un porcentaje abrumador, permitiendo borrar barras de vida enemigas con un solo combo.</li><li><strong>Desgarrador de Sombras (Shadow Ripper):</strong> Esencial para héroes dependientes de ataques básicos rápidos. Su pasiva aumenta la velocidad de ataque y de movimiento tras asestar un golpe crítico, permitiendo un posicionamiento dinámico excelente.</li><li><strong>Destino (Destiny):</strong> El arma defensiva/ofensiva más importante. Su pasiva anula el daño letal y te otorga inmunidad temporal, dándote esos segundos cruciales para escapar o dar la vuelta a un duelo.</li></ul><h2>Trucos Avanzados y Secretos de Combate</h2><p>Para destacar como un estratega de KazokuGaming, debes dominar mecánicas de nivel profesional que la mayoría de los jugadores pasan por alto:</p><p><strong>1. El truco del intercambio rápido de objetos (Item Swapping):</strong> En el juego tardío, cuando el oro sobra, los profesionales compran <em>Destino</em>. En el momento en que se activa su pasiva de inmunidad, entran rápidamente a la tienda, venden el objeto y compran <em>Santuario del Sabio</em> (Sage's Sanctuary) para revivir instantáneamente si caen. Este truco requiere práctica de dedos, pero duplica tu supervivencia en la batalla final.</p><p><strong>2. Optimización de Arcanas (El poder invisible):</strong> No subestimes el sistema de Arcanas. Tener una página de nivel 150 adaptada a tu rol (por ejemplo, velocidad de ataque y robo de vida para tiradores, o penetración mágica para magos) equivale a empezar la partida con un objeto de nivel medio ya comprado.</p><p><strong>3. Revelación de arbustos sin visión:</strong> Nunca entres a ciegas a un arbusto (face-checking). Muchos héroes tienen habilidades que cambian de sonido o activan efectos visuales específicos (como el aumento de velocidad de movimiento o la activación de pasivas) cuando golpean a un enemigo oculto. Usa estas herramientas para escanear el mapa de forma segura.</p>",
+      "meta_descripcion": "Domina Honor of Kings con la guía avanzada de KazokuGaming. Descubre trucos de combate, secretos del mapa y las mejores armas y builds del meta."
+    },
+    {
       "id": "guia-roblox",
       "juego": "Roblox",
       "titulo": "Guía Táctica Avanzada: Dominando Roblox",
