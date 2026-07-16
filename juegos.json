@@ -304,32 +304,6 @@
       "imagen": "https://media.rawg.io/media/screenshots/cc9/cc9b849d0824331ad50e822ab83f1a1b.jpg"
     },
     {
-      "id": "honor-of-kings",
-      "titulo": "Honor of Kings",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS (PC mediante emulador oficial)",
-      "calificacion": "8.5",
-      "motor_grafico": "Unity",
-      "tecnologias": "Crossplay, Soporte de 90Hz/120Hz, Vulkan API, Controles Táctiles Optimizados, Redes de Doble Canal",
-      "sinopsis": "Honor of Kings es el MOBA móvil 5v5 más popular del mundo. Desarrollado por TiMi Studio Group, ofrece intensas batallas estratégicas en tiempo real, un plantel diverso de héroes inspirados en la mitología y un sistema competitivo altamente equilibrado y optimizado para dispositivos móviles.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>Honor of Kings</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles. Desarrollado sobre el motor <strong>Unity</strong>, el juego logra un equilibrio casi perfecto entre calidad visual y fluidez. En dispositivos de gama alta, el título soporta tasas de refresco de hasta <strong>120 Hz</strong>, ofreciendo una experiencia de juego extremadamente fluida y responsiva, crucial para el juego competitivo.</p><p>Para los teléfonos de gama media y baja, el motor gráfico escala de manera eficiente. Los usuarios pueden ajustar detalladamente la calidad de las texturas, los efectos de las habilidades y la resolución de la pantalla. Incluso en configuraciones mínimas, el juego mantiene una tasa estable de <strong>60 FPS</strong> sin comprometer la claridad visual necesaria para distinguir los elementos en el mapa.</p><p>En el apartado de consumo energético y gestión térmica, <strong>Honor of Kings</strong> está bien optimizado, evitando el estrangulamiento térmico (thermal throttling) en sesiones de juego prolongadas, aunque el uso de los 120 FPS aumentará notablemente la temperatura en dispositivos sin refrigeración activa. Además, cuenta con tecnologías de red avanzadas para minimizar la latencia, como la reconexión rápida y el soporte de doble canal (Wi-Fi y datos móviles simultáneos) para prevenir picos de ping durante las batallas en equipo.</p>",
-      "requisitos": {
-        "minimos": [
-          "Android: CPU de 1.0 GHz, Android 5.1 o superior, 1 GB de RAM",
-          "iOS: iPhone 6 o superior, iOS 11 o superior, 1 GB de RAM",
-          "Almacenamiento: 5 GB de espacio libre disponible",
-          "Conexión a Internet estable"
-        ],
-        "recomendados": [
-          "Android: CPU de 1.6 GHz o superior, Android 12 o superior, 2 GB de RAM o más",
-          "iOS: iPhone X o superior, iOS 12 o superior, 2 GB de RAM o más",
-          "Almacenamiento: 8 GB o más de espacio libre (para recursos HD)",
-          "Conexión Wi-Fi de 5 GHz o datos móviles 4G/5G estables"
-        ]
-      },
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
-    },
-    {
       "id": "pok-mon-go",
       "titulo": "Pokémon GO",
       "fecha": "15 Jul, 2026",
@@ -1060,35 +1034,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/8d6/8d6e253b996283f3244b7999472eeaad.jpg"
-    },
-    {
-      "id": "honor-of-kings",
-      "titulo": "Honor of Kings",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "Android, iOS, HarmonyOS",
-      "calificacion": "8.0",
-      "motor_grafico": "Motor gráfico propietario de TiMi Studio Group",
-      "tecnologias": "Controles táctiles optimizados, gráficos de alta calidad, diseño de sonido inmersivo, contenido localizado (voces, skins, servidores), asistencia de IA para jugadores desconectados, juego multiplataforma (entre dispositivos móviles).",
-      "sinopsis": "Honor of Kings es un popular juego MOBA (Multiplayer Online Battle Arena) 5v5 para móviles, donde dos equipos compiten para destruir la base enemiga. Ofrece una amplia selección de héroes con habilidades únicas y partidas rápidas y estratégicas.",
-      "analisis_detallado": "<p><strong>Rendimiento In-Game y Optimización:</strong></p><p>Honor of Kings, siendo el MOBA móvil más jugado a nivel mundial, destaca por su notable optimización en una amplia gama de dispositivos móviles. El juego ha sido diseñado para ofrecer una experiencia fluida y agradable, incluso en hardware menos potente. Los jugadores reportan un rendimiento generalmente bueno, con gráficos nítidos y animaciones de héroes detalladas que dan vida a sus personalidades y poderes. La estabilidad del servidor es un punto fuerte, asegurando un emparejamiento rápido y una experiencia de juego sin interrupciones. La gestión de la temperatura del dispositivo también es eficiente, con pocos informes de sobrecalentamiento, incluso durante sesiones de juego prolongadas.</p><p>A pesar de su buena optimización general, algunos usuarios han reportado ocasionales congelamientos y caídas de framerate, especialmente en partidas intensas o en dispositivos más antiguos. Sin embargo, estas instancias parecen ser mitigables ajustando la configuración gráfica del juego. El sistema de matchmaking es percibido como equilibrado, emparejando a jugadores de diferentes niveles de habilidad, lo que contribuye a una experiencia competitiva justa. Además, el juego incorpora un sistema de IA que toma el control de los personajes de los jugadores desconectados, lo que ayuda a mantener la integridad de la partida.</p><p><strong>Gráficos y Sonido:</strong></p><p>Visualmente, Honor of Kings presenta gráficos de alta calidad para un título móvil, con efectos de habilidad llamativos y diseños de personajes bien elaborados. El diseño de sonido es inmersivo, con líneas de voz localizadas para los héroes y un anunciador que complementa la acción en el campo de batalla. La dirección artística se inclina hacia una fantasía vibrante, aunque algunos críticos señalan que, si bien es competente, no siempre se destaca por su originalidad en comparación con otros títulos del género.</p><p><strong>Controles y Jugabilidad:</strong></p><p>Los controles táctiles están bien optimizados para el juego móvil, permitiendo a los jugadores mover a sus personajes y activar habilidades con facilidad. La interfaz de usuario es intuitiva, facilitando la mejora de habilidades y la compra de objetos sin necesidad de navegar por menús complejos. La jugabilidad es la de un MOBA clásico 5v5, con partidas que duran entre 15 y 20 minutos, lo que lo hace ideal para sesiones de juego rápidas. Aunque el juego es accesible para recién llegados, ofrece suficiente profundidad estratégica para los veteranos del género.</p><p><strong>Monetización:</strong></p><p>Honor of Kings es un juego free-to-play que se monetiza a través de pases de batalla y compras dentro de la aplicación para skins y héroes. Si bien los héroes se pueden desbloquear con moneda del juego o premium, no están bloqueados detrás de un muro de pago, lo que permite a los jugadores disfrutar plenamente del juego sin gastar dinero. Sin embargo, algunos usuarios critican la cantidad de mensajes emergentes y eventos que promueven las compras, lo que puede resultar abrumador.</p>",
-      "requisitos": {
-        "minimos": [
-          "Android: CPU de 1 GHz o superior",
-          "Android: Android 5.1 o superior",
-          "Android: 1 GB de RAM o superior",
-          "iOS: iPhone 6 o superior",
-          "iOS: iOS 11 o superior",
-          "iOS: 1 GB de RAM o superior"
-        ],
-        "recomendados": [
-          "Android: Procesador de 1.6 GHz o superior",
-          "Android: 2 GB de RAM o superior",
-          "Android: Android 12 o superior",
-          "iOS: iPhone X o superior",
-          "iOS: iOS 12 o superior"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     }
   ]
 }
