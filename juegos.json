@@ -953,6 +953,113 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg"
+    },
+    {
+      "id": "crimson-desert",
+      "titulo": "Crimson Desert",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS5, Xbox Series X/S, macOS",
+      "calificacion": "8.5",
+      "motor_grafico": "BlackSpace Engine",
+      "tecnologias": "NVIDIA DLSS 4.5, AMD FSR 3.1, Ray Tracing, HDR, Ultrawide 21:9",
+      "sinopsis": "Acompaña a Kliff en un épico viaje de acción y aventura en mundo abierto a través del continente de Pywel, luchando por reconstruir su facción y sobrevivir a las amenazas que acechan la región.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Crimson Desert</strong> destaca por una optimización sumamente cuidada en PC, utilizando el motor propietario de Pearl Abyss, el <strong>BlackSpace Engine</strong>. A diferencia de otros lanzamientos contemporáneos que dependen de forma obligatoria de tecnologías de escalado para ser jugables, Crimson Desert demuestra una escalabilidad asombrosa. En resoluciones nativas de 1080p con ajustes cinematográficos, tarjetas gráficas de gama media-alta como la RTX 3080 o la RX 6900 XT logran mantener una tasa estable de 60 FPS sin mayores inconvenientes.</p><p>El juego integra de forma nativa <strong>NVIDIA DLSS 4.5</strong> y <strong>AMD FSR 3.1</strong>, permitiendo que configuraciones de hardware más modestas alcancen un rendimiento fluido. No obstante, la activación de los ajustes gráficos \"Ultra\" o \"Cinematic\" habilita automáticamente el trazado de rayos (<strong>Ray Tracing</strong>), lo cual genera un impacto severo en el rendimiento, especialmente en la iluminación global. Para jugar a 4K nativo a 60 FPS con trazado de rayos al máximo, se requiere hardware de última generación como la RTX 5070 Ti o la RX 9070 XT.</p><p>En consolas, el rendimiento está bien balanceado: tanto la <strong>PS5</strong> como la <strong>Xbox Series X</strong> ofrecen un modo rendimiento que apunta a los 60 FPS estables, mientras que la <strong>PS5 Pro</strong> saca provecho de la tecnología PSSR para ofrecer una resolución superior y trazado de rayos en modo calidad. El punto débil se encuentra en la Xbox Series S, que se ve limitada a 720p a 40 FPS en su modo rendimiento o 1080p a 30 FPS en calidad. En general, Pearl Abyss entrega un apartado visual de nueva generación que, a pesar de pequeños bugs de lanzamiento y un elevado consumo de VRAM en texturas ultra, está excelentemente optimizado.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 (64-bit)",
+          "Procesador: AMD Ryzen 5 2600X / Intel Core i5-8500",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: AMD Radeon RX 5500 XT / NVIDIA GeForce GTX 1060",
+          "Almacenamiento: 150 GB de espacio disponible (Se requiere SSD)"
+        ],
+        "recomendados": [
+          "SO: Windows 10 (64-bit)",
+          "Procesador: AMD Ryzen 5 5600 / Intel Core i5-11600K",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: AMD Radeon RX 6700 XT / NVIDIA GeForce RTX 2080",
+          "Almacenamiento: 150 GB de espacio disponible (Se requiere SSD)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/dac/dacfcdeaef957a36416f4e6d5ec76229.jpg"
+    },
+    {
+      "id": "moonlight-peaks",
+      "titulo": "Moonlight Peaks",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC (Windows, macOS), Nintendo Switch, Nintendo Switch 2, Google Play Games",
+      "calificacion": "8.0",
+      "motor_grafico": "Unity",
+      "tecnologias": "Steam Cloud, Steam Trading Cards",
+      "sinopsis": "Adéntrate en una vida vampírica en el encantador pueblo de Moonlight Peaks. Cultiva cosechas místicas, domina hechizos y pociones, y forja lazos con criaturas sobrenaturales en este acogedor simulador de vida.",
+      "analisis_detallado": "<p><strong>Moonlight Peaks</strong>, desarrollado por Little Chicken y publicado por XSEED Games y Marvelous Europe, ofrece una experiencia de simulación de vida con un giro sobrenatural que ha sido generalmente bien recibida, especialmente en PC.</p><p>Desde el punto de vista técnico, el juego se ejecuta en el motor <strong>Unity</strong>. En PC, los usuarios de Steam le han otorgado una calificación de 'Muy Positiva', con un 88% de reseñas positivas de más de 900 usuarios. El juego es visualmente <strong>hermoso y adorable</strong>, con un estilo artístico chibi que ha sido elogiado. El mapa es <strong>grande y extenso</strong>, lo que fomenta la exploración. Las mecánicas de juego son intuitivas, con controles suaves y una rueda de herramientas personalizable, lo que facilita la interacción.</p><p>La optimización del juego en PC parece ser decente, con requisitos de sistema que apuntan a una configuración de gama media. La gestión de la energía se ve facilitada por la <strong>magia</strong>, donde hechizos como 'Aquaflux' permiten regar los cultivos de manera eficiente, ahorrando resistencia para otras tareas. Además, las <strong>formas de cambio de forma</strong>, como la de 'Hellkitten' o murciélago, son cruciales para una <strong>navegación rápida</strong> por el extenso mapa y para reducir el coste de energía en ciertas acciones. El juego también incorpora un sistema de progresión basado en la historia, que desbloquea nuevas características y áreas a medida que el jugador avanza.</p><p>Sin embargo, el rendimiento no está exento de problemas. Uno de los puntos más criticados son los <strong>tiempos de carga, que son frecuentes y prolongados</strong>, especialmente al entrar y salir de edificios o áreas del mapa. Los desarrolladores han reconocido este problema y están trabajando en una solución. En las versiones de Nintendo Switch y Switch 2, se han reportado problemas con escenas cinemáticas que no se activan correctamente o festivales que no funcionan, y las correcciones para estas plataformas pueden tardar debido a las políticas de Nintendo. La falta de un <strong>guardado manual</strong> es una omisión notable, ya que el juego solo cuenta con autoguardado. Otras áreas de mejora incluyen la mezcla de efectos de sonido (algunos son demasiado altos), la necesidad de un mini-mapa con marcadores de misiones y PNJ, y una mejor interfaz para la información de inventario, almacenamiento, crafteo y precios de venta. Los usuarios de macOS también han señalado problemas de compatibilidad con pantallas Retina, lo que resulta en una resolución borrosa.</p><p>A pesar de estos inconvenientes, la jugabilidad principal de agricultura, crafteo, pesca y socialización se considera satisfactoria y modernizada, con actividades que no se sienten tediosas. La capacidad de procesar productos agrícolas en jugos, vinos y mermeladas es una forma eficaz de generar ingresos. En general, Moonlight Peaks ofrece una experiencia encantadora y única, aunque con algunas asperezas técnicas y de calidad de vida que esperan ser pulidas en futuras actualizaciones.</p>",
+      "requisitos": {
+        "minimos": [
+          "OS: Windows 10 64 bit / macOS 14+",
+          "Procesador: Intel i3 Processor / Apple M1",
+          "Memoria: 6 GB RAM (Windows) / 4 GB RAM (macOS)",
+          "Gráficos: Nvidia GeForce GTX 660 2GB / Apple M1",
+          "DirectX: Versión 10 (Windows)",
+          "Almacenamiento: 8 GB de espacio disponible"
+        ],
+        "recomendados": [
+          "OS: Windows 10 64 bit / macOS 15+",
+          "Procesador: Intel i7 Processor/Ryzen 1700+ / Apple M2",
+          "Memoria: 16 GB RAM (Windows) / 8 GB RAM (macOS)",
+          "Gráficos: Nvidia GeForce GTX960+ / Apple M2",
+          "DirectX: Versión 10 (Windows)",
+          "Almacenamiento: 8 GB de espacio disponible"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/50d/50d18894f27d3671ff0d89882c01175c.jpg"
+    },
+    {
+      "id": "neverness-to-everness",
+      "titulo": "Neverness to Everness",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS5, Android, iOS",
+      "calificacion": "8.2",
+      "motor_grafico": "Unreal Engine 5",
+      "tecnologias": "DLSS, FSR, Ray Tracing, Lumen, Nanite, Crossplay, Cross-progression",
+      "sinopsis": "Neverness to Everness es un ambicioso RPG urbano sobrenatural de mundo abierto. En la metrópolis de Hethereau, los jugadores investigan anomalías paranormales, conducen deportivos y gestionan negocios.",
+      "analisis_detallado": "<p><strong>Neverness to Everness (NTE)</strong> destaca como uno de los títulos más ambiciosos técnicamente en el panorama de los RPG de mundo abierto. Desarrollado bajo el motor <strong>Unreal Engine 5</strong>, el juego exprime al máximo tecnologías de nueva generación como <strong>Lumen</strong> para la iluminación global dinámica y <strong>Nanite</strong> para la renderización geométrica de alta densidad en la urbe de Hethereau. Esto se traduce en un apartado visual espectacular, con reflejos realistas en las carrocerías de los vehículos y superficies mojadas, pero a costa de una alta demanda de hardware.</p><p>El rendimiento en <strong>PC</strong> es sumamente exigente. A diferencia de otros títulos del género, NTE requiere obligatoriamente un <strong>SSD</strong> para mitigar el molesto <em>stuttering</em> y el <em>texture pop-in</em> que ocurren al desplazarse a altas velocidades en coche. El uso de memoria RAM es otro factor crítico, recomendando <strong>32 GB</strong> para evitar cuellos de botella. No obstante, la optimización ha mejorado notablemente desde sus fases de prueba, logrando una tasa de fotogramas más estable gracias al soporte de tecnologías de escalado como <strong>NVIDIA DLSS</strong> y <strong>AMD FSR</strong>, permitiendo alcanzar los 60 FPS estables en resoluciones 1080p y 1440p con tarjetas de gama media-alta.</p><p>En dispositivos <strong>móviles</strong>, el juego empuja los límites de los chipsets actuales. Los procesadores de gama alta como el <strong>Snapdragon 8 Gen 2/3</strong> o el chip <strong>A16 Bionic</strong> de Apple son necesarios para mantener una tasa de frames fluida sin sufrir de estrangulamiento térmico (<em>thermal throttling</em>) severo tras sesiones de juego prolongadas. En resumen, NTE es un portento técnico que ofrece una experiencia visual de consola de sobremesa en todas sus plataformas, pero que exige hardware moderno para brillar en su totalidad.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core i7-10700 o AMD Ryzen 7 3700X",
+          "Memoria RAM: 16 GB",
+          "Tarjeta Gráfica: NVIDIA GTX 1660 o AMD RX 5600 XT",
+          "Almacenamiento: 60 GB SSD (Obligatorio)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core i7-12700 o AMD Ryzen 7 5800X",
+          "Memoria RAM: 32 GB",
+          "Tarjeta Gráfica: NVIDIA RTX 3060 o AMD RX 6700 XT",
+          "Almacenamiento: 60 GB SSD (Obligatorio)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/ece/ece3b4d7546e3aaf12e164e5d2059c97.jpg"
+    },
+    {
+      "id": "katori-code-of-blade",
+      "titulo": "Katori: Code of Blade",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS, PC (a través de emulador)",
+      "calificacion": "+12 (Clasificación por edad)",
+      "motor_grafico": "No especificado",
+      "tecnologias": "PvP en tiempo real, personalización profunda de personajes",
+      "sinopsis": "Katori: Code of Blade es un juego de acción y lucha 3D ambientado en el Japón medieval. Encarnando a un joven ronin, los jugadores buscan venganza y gloria a través de intensos duelos 1v1 en una desafiante arena PvP.",
+      "analisis_detallado": "<p><strong>Katori: Code of Blade</strong> ofrece una experiencia de combate de acción en 3D ambientada en el Japón medieval, destacando por su enfoque en duelos tácticos y dinámicos. El sistema de combate es intuitivo, utilizando un joystick virtual izquierdo para el movimiento y botones a la derecha para los ataques de katana, pero requiere maestría en el cálculo de distancias y la ruptura de defensas enemigas. La precisión, el tiempo y la estrategia son cruciales, recompensando a los jugadores que dominan los combos devastadores y los golpes especiales.</p><p>Visualmente, el juego presenta gráficos de calidad con una buena iluminación, especialmente en los escenarios nocturnos, lo que contribuye a recrear una atmósfera japonesa inmersiva y limpia en dispositivos móviles. Las animaciones para los golpes especiales se perciben con un peso real, añadiendo impacto a los combates. Además de un modo historia con secuencias cinemáticas, el título incluye una desafiante arena PvP donde los jugadores pueden enfrentarse a rivales de todo el mundo, escalar ligas y aspirar al título de campeón.</p><p>En cuanto a la optimización y el rendimiento, el juego ha demostrado un funcionamiento fluido en dispositivos móviles, como el POCO F5, y se puede disfrutar en PC a través de emuladores como MEmu, que prometen un rendimiento sin interrupciones al aprovechar el potencial del PC. La personalización es un punto fuerte, permitiendo a los jugadores crear un samurái único con opciones profundas para armaduras, katanas, golpes y equipamiento, incluyendo la recolección de conjuntos raros y legendarios para mejorar los atributos del guerrero. Aunque se ha mencionado un posible error en la sección 'Dojudi' en una reseña, no parece ser un problema técnico generalizado que afecte la experiencia principal del juego.</p>",
+      "requisitos": {
+        "minimos": [
+          "Android 7.0 o superior",
+          "1.5 GB - 1.8 GB de espacio de almacenamiento"
+        ],
+        "recomendados": [
+          "No especificados"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/8d6/8d6e253b996283f3244b7999472eeaad.jpg"
     }
   ]
 }
