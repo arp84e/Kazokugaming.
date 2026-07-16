@@ -7,15 +7,15 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: SISTEMA DE JUEGOS Y TOP 10 GLOBAL (PC, CONSOLAS, MÓVILES) ===")
+print("=== INICIANDO KAZOKUBOT: SISTEMA DE JUEGOS Y TOP 10 (MODO MULTI-COMANDO) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
-juegos_input = os.environ.get("INPUT_JUEGOS", "").strip()
+comando_input = os.environ.get("INPUT_COMANDOS", "").strip().lower()
 sobrescribir = os.environ.get("SOBRESCRIBIR", "false").lower() == "true"
 
-if not api_key:
-    sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
+if not comando_input: comando_input = "top"
+if not api_key: sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
 archivo_oficial = "juegos.json" 
@@ -29,51 +29,63 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
     modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
     for intento in range(max_intentos):
         for modelo in modelos_disponibles:
-            try:
-                return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
+            try: return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
-                error_str = str(e).lower()
-                if "503" in error_str or "unavailable" in error_str or "429" in error_str:
+                if "503" in str(e) or "unavailable" in str(e) or "429" in str(e):
                     print(f"⚠️ Modelo {modelo} saturado. Cambiando...")
                     continue
                 else: raise e 
-        espera = 10
-        print(f"⚠️ Nodos ocupados. Reintentando en {espera}s... ({intento+1}/{max_intentos})")
-        time.sleep(espera)
+        time.sleep(10)
     raise Exception("❌ Servidores inactivos.")
 
 # Cargar base actual
 estructura_final = {"juegos": []}
+nombres_existentes = []
 if os.path.exists(archivo_oficial):
     with open(archivo_oficial, "r", encoding="utf-8") as f:
-        try: estructura_final = json.load(f)
+        try: 
+            estructura_final = json.load(f)
+            nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
         except: pass
 
 juegos_a_procesar = []
 top_10_oficial = []
+es_modo_top = False
 
-if juegos_input:
-    print("🛠️ MODO MANUAL: Procesando lista delimitada...")
-    juegos_a_procesar = [j.strip() for j in juegos_input.split(";") if j.strip()]
-    top_10_oficial = juegos_a_procesar 
-else:
-    print("🌍 MODO AUTOMÁTICO: Escaneando múltiples fuentes para crear el Top 10 Global...")
-    prompt_top10 = """
-    Eres un analista experto en la industria del gaming. Busca en internet consultando al menos 5 fuentes distintas el Top 10 de los videojuegos más populares o jugados a nivel mundial en este momento.
-    El top debe ser global e incluir una mezcla de títulos de PC, Consolas y Móviles.
-    Devuelve ÚNICAMENTE un JSON con esta estructura exacta (sin texto antes ni después):
-    { "top_10": ["Nombre del Juego 1", "Nombre del Juego 2", "Nombre del Juego 3", "Nombre del Juego 4", "Nombre del Juego 5", "Nombre del Juego 6", "Nombre del Juego 7", "Nombre del Juego 8", "Nombre del Juego 9", "Nombre del Juego 10"] }
+# ================= LÓGICA DE COMANDOS =================
+if comando_input == "top":
+    print("🌍 COMANDO 'TOP': Escaneando múltiples fuentes para crear el Top 10 Global...")
+    es_modo_top = True
+    prompt_busqueda = """
+    Eres analista de la industria del gaming. Busca en internet en 5 fuentes distintas el Top 10 de los videojuegos más populares o jugados a nivel mundial AHORA.
+    Mezcla títulos de PC, Consolas y Móviles.
+    Devuelve ÚNICAMENTE un JSON estricto:
+    { "resultados": ["Juego 1", "Juego 2", "Juego 3", "Juego 4", "Juego 5", "Juego 6", "Juego 7", "Juego 8", "Juego 9", "Juego 10"] }
     """
+elif comando_input.isdigit():
+    cantidad = int(comando_input)
+    print(f"🎲 COMANDO NUMÉRICO: Buscando {cantidad} juegos populares que NO tengamos...")
+    prompt_busqueda = f"""
+    Eres analista de gaming. Busca en internet {cantidad} videojuegos populares o en tendencia actualmente (mezcla de PC, Consolas y Móviles).
+    EXCLUYE OBLIGATORIAMENTE todos estos títulos que ya están en la base de datos: {nombres_existentes}.
+    Devuelve ÚNICAMENTE un JSON estricto:
+    {{ "resultados": ["Nombre 1", "Nombre 2"... hasta llegar a {cantidad}] }}
+    """
+else:
+    print(f"🛠️ COMANDO LISTA: Procesando títulos específicos solicitados...")
+    juegos_a_procesar = [j.strip() for j in os.environ.get("INPUT_COMANDOS", "").split(";") if j.strip()]
+
+# Si el comando era 'top' o un número, usamos la IA para generar la lista
+if comando_input == "top" or comando_input.isdigit():
     try:
-        # CORRECCIÓN: Se eliminó response_mime_type para evitar el error 400 con google_search
-        config_top = types.GenerateContentConfig(temperature=0.5, tools=[{"google_search": {}}])
-        res_top = generar_con_reintentos(prompt_top10, config_top)
-        data_top = json.loads(extraer_json_seguro(res_top.text))
-        top_10_oficial = data_top.get("top_10", [])
-        print(f"🏆 TOP 10 Global Consolidado: {top_10_oficial}")
-        juegos_a_procesar = top_10_oficial
+        config_busqueda = types.GenerateContentConfig(temperature=0.6, tools=[{"google_search": {}}])
+        res_busqueda = generar_con_reintentos(prompt_busqueda, config_busqueda)
+        data_busqueda = json.loads(extraer_json_seguro(res_busqueda.text))
+        juegos_a_procesar = data_busqueda.get("resultados", [])
+        print(f"📡 Nombres obtenidos: {juegos_a_procesar}")
+        if es_modo_top: top_10_oficial = juegos_a_procesar
     except Exception as e:
-        sys.exit(f"❌ Error al generar el Top 10: {e}")
+        sys.exit(f"❌ Error al ejecutar comando de búsqueda: {e}")
 
 def buscar_portada(titulo):
     if not rawg_key: return "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800"
@@ -86,34 +98,34 @@ def buscar_portada(titulo):
 
 nuevos_agregados = 0
 
+# Procesar y Analizar Rendimiento
 for titulo in juegos_a_procesar:
     id_juego = re.sub(r'[^a-z0-9]+', '-', titulo.lower()).strip('-')
     
     if any(j["id"] == id_juego for j in estructura_final.get("juegos", [])) and not sobrescribir:
-        print(f"⏭️ '{titulo}' ya existe en la base de datos.")
+        print(f"⏭️ '{titulo}' ya existe en la base de datos. Saltando...")
         continue
 
-    print(f"\n⚙️ Analizando datos para: {titulo}...")
+    print(f"\n⚙️ Analizando telemetría y rendimiento para: {titulo}...")
     imagen_real = buscar_portada(titulo)
     
     prompt = f"""
-    Analiza el rendimiento técnico y detalles de "{titulo}". Puede ser de PC, Consola o Móvil.
-    Devuelve ÚNICAMENTE un JSON estricto con la siguiente estructura (sin formato Markdown):
+    Analiza minuciosamente el rendimiento técnico de "{titulo}". (Puede ser PC, Consola o Móvil).
+    Devuelve ÚNICAMENTE un JSON estricto con esta estructura:
     {{
-        "plataformas": "Ej: PC, PS5 / Android, iOS",
+        "plataformas": "Ej: PC, PS5, Android...",
         "calificacion": "Ej: 8.5",
-        "motor_grafico": "Ej: Unreal Engine, Unity...",
-        "tecnologias": "DLSS, Touch, Crossplay...",
-        "sinopsis": "Sinopsis corta...",
-        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game...",
+        "motor_grafico": "Ej: Unreal Engine 5",
+        "tecnologias": "DLSS, Crossplay...",
+        "sinopsis": "Sinopsis corta de 2 lineas...",
+        "analisis_detallado": "HTML con <p> y <strong> analizando el rendimiento in-game y optimización...",
         "requisitos_minimos": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"],
         "requisitos_recomendados": ["Dato 1", "Dato 2", "Dato 3", "Dato 4"]
     }}
     """
     
     try:
-        # CORRECCIÓN: Sin response_mime_type
-        config_tel = types.GenerateContentConfig(temperature=0.4, tools=[{"google_search": {}}])
+        config_tel = types.GenerateContentConfig(temperature=0.35, tools=[{"google_search": {}}])
         res = generar_con_reintentos(prompt, config_tel)
         data = json.loads(extraer_json_seguro(res.text))
         
@@ -125,7 +137,7 @@ for titulo in juegos_a_procesar:
             "calificacion": data.get("calificacion", "8.0"),
             "motor_grafico": data.get("motor_grafico", "Custom"),
             "tecnologias": data.get("tecnologias", "Estándar"),
-            "sinopsis": data.get("sinopsis", "Análisis de rendimiento."),
+            "sinopsis": data.get("sinopsis", "Análisis en curso."),
             "analisis_detallado": data.get("analisis_detallado", "<p>Datos procesados con IA.</p>"),
             "requisitos": {
                 "minimos": data.get("requisitos_minimos", []),
@@ -141,23 +153,21 @@ for titulo in juegos_a_procesar:
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
 
-print("\n🔄 Reorganizando la base de datos para priorizar el Top 10...")
+# Reorganización SOLO si se utilizó el comando TOP
+if es_modo_top:
+    print("\n🔄 Reorganizando la base de datos para priorizar el Top 10 al inicio...")
+    juegos_top = []
+    juegos_resto = []
+    top_10_lower = [t.lower() for t in top_10_oficial]
 
-juegos_top = []
-juegos_resto = []
-top_10_lower = [t.lower() for t in top_10_oficial]
+    for j in estructura_final["juegos"]:
+        if j["titulo"].lower() in top_10_lower: juegos_top.append(j)
+        else: juegos_resto.append(j)
 
-for j in estructura_final["juegos"]:
-    if j["titulo"].lower() in top_10_lower:
-        juegos_top.append(j)
-    else:
-        juegos_resto.append(j)
-
-juegos_top.sort(key=lambda x: top_10_lower.index(x["titulo"].lower()) if x["titulo"].lower() in top_10_lower else 999)
-
-estructura_final["juegos"] = juegos_top + juegos_resto
+    juegos_top.sort(key=lambda x: top_10_lower.index(x["titulo"].lower()) if x["titulo"].lower() in top_10_lower else 999)
+    estructura_final["juegos"] = juegos_top + juegos_resto
 
 with open(archivo_oficial, "w", encoding="utf-8") as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ Base de datos 'juegos.json' actualizada ({nuevos_agregados} nuevos) y ordenada correctamente.")
+print(f"\n✅ Base de datos 'juegos.json' actualizada ({nuevos_agregados} juegos nuevos agregados).")
