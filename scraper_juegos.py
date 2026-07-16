@@ -20,6 +20,36 @@ if not api_key: sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 client = genai.Client(api_key=api_key)
 archivo_oficial = "juegos.json" 
 
+# Cargar base actual
+estructura_final = {"juegos": []}
+nombres_existentes = []
+if os.path.exists(archivo_oficial):
+    with open(archivo_oficial, "r", encoding="utf-8") as f:
+        try: 
+            estructura_final = json.load(f)
+            nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
+        except: pass
+
+# ================= MÓDULO DE ELIMINACIÓN =================
+if comando_input.startswith("eliminar:"):
+    ids_brutos = comando_input.replace("eliminar:", "", 1)
+    ids_a_eliminar = [i.strip() for i in ids_brutos.split(";") if i.strip()]
+    
+    print(f"🗑️ COMANDO DEPURACIÓN: Intentando eliminar los IDs: {ids_a_eliminar}")
+    
+    juegos_originales = len(estructura_final.get("juegos", []))
+    estructura_final["juegos"] = [j for j in estructura_final.get("juegos", []) if j.get("id") not in ids_a_eliminar]
+    juegos_borrados = juegos_originales - len(estructura_final["juegos"])
+    
+    if juegos_borrados > 0:
+        with open(archivo_oficial, "w", encoding="utf-8") as f:
+            json.dump(estructura_final, f, ensure_ascii=False, indent=2)
+        print(f"✅ ÉXITO: Se han eliminado {juegos_borrados} juego(s) de la base de datos.")
+    else:
+        print("⚠️ No se encontró ningún juego con ese ID en el registro.")
+    sys.exit(0) # Finaliza el script aquí si el comando era eliminar
+
+# ================= MÓDULO DE CREACIÓN =================
 def extraer_json_seguro(texto):
     texto = texto.strip()
     match = re.search(r'\{.*\}', texto, re.DOTALL)
@@ -38,21 +68,10 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
         time.sleep(10)
     raise Exception("❌ Servidores inactivos.")
 
-# Cargar base actual
-estructura_final = {"juegos": []}
-nombres_existentes = []
-if os.path.exists(archivo_oficial):
-    with open(archivo_oficial, "r", encoding="utf-8") as f:
-        try: 
-            estructura_final = json.load(f)
-            nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
-        except: pass
-
 juegos_a_procesar = []
 top_10_oficial = []
 es_modo_top = False
 
-# ================= LÓGICA DE COMANDOS =================
 if comando_input == "top":
     print("🌍 COMANDO 'TOP': Escaneando múltiples fuentes para crear el Top 10 Global...")
     es_modo_top = True
@@ -75,7 +94,6 @@ else:
     print(f"🛠️ COMANDO LISTA: Procesando títulos específicos solicitados...")
     juegos_a_procesar = [j.strip() for j in os.environ.get("INPUT_COMANDOS", "").split(";") if j.strip()]
 
-# Si el comando era 'top' o un número, usamos la IA para generar la lista
 if comando_input == "top" or comando_input.isdigit():
     try:
         config_busqueda = types.GenerateContentConfig(temperature=0.6, tools=[{"google_search": {}}])
@@ -98,7 +116,6 @@ def buscar_portada(titulo):
 
 nuevos_agregados = 0
 
-# Procesar y Analizar Rendimiento
 for titulo in juegos_a_procesar:
     id_juego = re.sub(r'[^a-z0-9]+', '-', titulo.lower()).strip('-')
     
@@ -153,7 +170,6 @@ for titulo in juegos_a_procesar:
     except Exception as e:
         print(f"❌ Error procesando {titulo}: {e}")
 
-# Reorganización SOLO si se utilizó el comando TOP
 if es_modo_top:
     print("\n🔄 Reorganizando la base de datos para priorizar el Top 10 al inicio...")
     juegos_top = []
