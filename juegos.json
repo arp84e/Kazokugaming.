@@ -1060,6 +1060,35 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/8d6/8d6e253b996283f3244b7999472eeaad.jpg"
+    },
+    {
+      "id": "honor-of-kings",
+      "titulo": "Honor of Kings",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS, HarmonyOS",
+      "calificacion": "8.0",
+      "motor_grafico": "Motor gráfico propietario de TiMi Studio Group",
+      "tecnologias": "Controles táctiles optimizados, gráficos de alta calidad, diseño de sonido inmersivo, contenido localizado (voces, skins, servidores), asistencia de IA para jugadores desconectados, juego multiplataforma (entre dispositivos móviles).",
+      "sinopsis": "Honor of Kings es un popular juego MOBA (Multiplayer Online Battle Arena) 5v5 para móviles, donde dos equipos compiten para destruir la base enemiga. Ofrece una amplia selección de héroes con habilidades únicas y partidas rápidas y estratégicas.",
+      "analisis_detallado": "<p><strong>Rendimiento In-Game y Optimización:</strong></p><p>Honor of Kings, siendo el MOBA móvil más jugado a nivel mundial, destaca por su notable optimización en una amplia gama de dispositivos móviles. El juego ha sido diseñado para ofrecer una experiencia fluida y agradable, incluso en hardware menos potente. Los jugadores reportan un rendimiento generalmente bueno, con gráficos nítidos y animaciones de héroes detalladas que dan vida a sus personalidades y poderes. La estabilidad del servidor es un punto fuerte, asegurando un emparejamiento rápido y una experiencia de juego sin interrupciones. La gestión de la temperatura del dispositivo también es eficiente, con pocos informes de sobrecalentamiento, incluso durante sesiones de juego prolongadas.</p><p>A pesar de su buena optimización general, algunos usuarios han reportado ocasionales congelamientos y caídas de framerate, especialmente en partidas intensas o en dispositivos más antiguos. Sin embargo, estas instancias parecen ser mitigables ajustando la configuración gráfica del juego. El sistema de matchmaking es percibido como equilibrado, emparejando a jugadores de diferentes niveles de habilidad, lo que contribuye a una experiencia competitiva justa. Además, el juego incorpora un sistema de IA que toma el control de los personajes de los jugadores desconectados, lo que ayuda a mantener la integridad de la partida.</p><p><strong>Gráficos y Sonido:</strong></p><p>Visualmente, Honor of Kings presenta gráficos de alta calidad para un título móvil, con efectos de habilidad llamativos y diseños de personajes bien elaborados. El diseño de sonido es inmersivo, con líneas de voz localizadas para los héroes y un anunciador que complementa la acción en el campo de batalla. La dirección artística se inclina hacia una fantasía vibrante, aunque algunos críticos señalan que, si bien es competente, no siempre se destaca por su originalidad en comparación con otros títulos del género.</p><p><strong>Controles y Jugabilidad:</strong></p><p>Los controles táctiles están bien optimizados para el juego móvil, permitiendo a los jugadores mover a sus personajes y activar habilidades con facilidad. La interfaz de usuario es intuitiva, facilitando la mejora de habilidades y la compra de objetos sin necesidad de navegar por menús complejos. La jugabilidad es la de un MOBA clásico 5v5, con partidas que duran entre 15 y 20 minutos, lo que lo hace ideal para sesiones de juego rápidas. Aunque el juego es accesible para recién llegados, ofrece suficiente profundidad estratégica para los veteranos del género.</p><p><strong>Monetización:</strong></p><p>Honor of Kings es un juego free-to-play que se monetiza a través de pases de batalla y compras dentro de la aplicación para skins y héroes. Si bien los héroes se pueden desbloquear con moneda del juego o premium, no están bloqueados detrás de un muro de pago, lo que permite a los jugadores disfrutar plenamente del juego sin gastar dinero. Sin embargo, algunos usuarios critican la cantidad de mensajes emergentes y eventos que promueven las compras, lo que puede resultar abrumador.</p>",
+      "requisitos": {
+        "minimos": [
+          "Android: CPU de 1 GHz o superior",
+          "Android: Android 5.1 o superior",
+          "Android: 1 GB de RAM o superior",
+          "iOS: iPhone 6 o superior",
+          "iOS: iOS 11 o superior",
+          "iOS: 1 GB de RAM o superior"
+        ],
+        "recomendados": [
+          "Android: Procesador de 1.6 GHz o superior",
+          "Android: 2 GB de RAM o superior",
+          "Android: Android 12 o superior",
+          "iOS: iPhone X o superior",
+          "iOS: iOS 12 o superior"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     }
   ]
 }
