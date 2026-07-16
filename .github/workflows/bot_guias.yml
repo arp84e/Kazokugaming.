@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       comandos:
-        description: 'COMANDO: "top" | Número (ej. "3") | Nombres (ej. "Juego 1; Juego 2")'
+        description: 'COMANDOS: "top" | "3" | "Halo" | "eliminar:id-guia"'
         required: false
         type: string
         default: 'top'
@@ -50,6 +50,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay variaciones en el catálogo de guías."
           else
-            git commit -m "🤖 KazokuBot: Guías tácticas agregadas"
+            git commit -m "🤖 KazokuBot: Guías tácticas actualizadas/modificadas"
             git push
           fi
