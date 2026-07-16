@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       comandos:
-        description: 'COMANDO: "top" | Número (ej. "5") | Nombres (ej. "Juego 1; Juego 2")'
+        description: 'COMANDOS: "top" | "5" | "Halo" | "eliminar:id-juego"'
         required: false
         type: string
         default: 'top'
@@ -56,6 +56,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No hay variaciones en el catálogo de juegos hoy."
           else
-            git commit -m "🤖 KazokuBot: Base de Juegos actualizada"
+            git commit -m "🤖 KazokuBot: Base de Juegos actualizada/modificada"
             git push
           fi
