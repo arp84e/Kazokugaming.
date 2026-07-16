@@ -1034,6 +1034,32 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/8d6/8d6e253b996283f3244b7999472eeaad.jpg"
+    },
+    {
+      "id": "honor-of-kings",
+      "titulo": "Honor of Kings",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS, iPadOS",
+      "calificacion": "9.0",
+      "motor_grafico": "Unity (Tuanjie Engine)",
+      "tecnologias": "Vulkan API, Metal API, Crossplay, Soporte para 120Hz, Audio Wwise, Renderizado Multihilo",
+      "sinopsis": "Honor of Kings es el MOBA móvil de 5v5 más popular del mundo, donde los jugadores eligen héroes legendarios inspirados en la mitología para destruir la base enemiga en partidas rápidas y competitivas.",
+      "analisis_detallado": "<p><strong>Honor of Kings</strong> destaca de manera sobresaliente por su excepcional nivel de optimización en dispositivos móviles. Desarrollado sobre el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio perfecto entre fidelidad visual y rendimiento técnico. En dispositivos de gama media y alta, el título mantiene unos <strong>60 FPS o 120 FPS estables</strong> sin caídas notables de frames, incluso durante las batallas grupales más caóticas donde abundan los efectos de partículas y habilidades simultáneas.</p><p>La implementación de las APIs <strong>Vulkan</strong> en Android y <strong>Metal</strong> en iOS permite una comunicación directa con el hardware, reduciendo drásticamente la sobrecarga de la CPU. Esto no solo mejora la fluidez general, sino que también optimiza el consumo de batería y mitiga el estrangulamiento térmico (thermal throttling). El juego cuenta con un sistema de renderizado multihilo que distribuye la carga de trabajo de manera eficiente entre los núcleos del procesador.</p><p>La escalabilidad técnica es otro de sus puntos fuertes. El menú de configuración ofrece un control granular sobre la calidad de las texturas, la resolución y los efectos de sombras, permitiendo que teléfonos con casi una década de antigüedad puedan ejecutar el juego de forma fluida a 30 FPS. Además, la infraestructura de red global de <strong>Level Infinite</strong> garantiza un netcode robusto con latencias mínimas y un sistema de reconexión sumamente rápido, vital para el juego competitivo.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 5.1 / iOS 11.0 o superior",
+          "Procesador: CPU Quad-Core a 1.0 GHz o superior",
+          "Memoria RAM: 1 GB (Android) / 2 GB (iOS)",
+          "Almacenamiento: 2 GB de espacio libre (instalación básica)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 12 / iOS 15.0 o superior",
+          "Procesador: CPU Octa-Core a 1.6 GHz o superior (Snapdragon 680 / Apple A13)",
+          "Memoria RAM: 4 GB o superior",
+          "Almacenamiento: 5 GB o más de espacio libre (recursos HD completos)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     }
   ]
 }
