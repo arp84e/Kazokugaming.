@@ -29,32 +29,6 @@
       "imagen": "https://media.rawg.io/media/games/3af/3af386b6e26be6741b711ae6215ef42f.jpg"
     },
     {
-      "id": "candy-crush-saga",
-      "titulo": "Candy Crush Saga",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS, Windows (PC), Web",
-      "calificacion": "8.2",
-      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
-      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
-      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
-      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
-      "requisitos": {
-        "minimos": [
-          "SO: Android 6.0 / iOS 12.0 / Windows 10",
-          "Procesador: Quad-Core 1.8 GHz",
-          "Memoria: 2 GB de RAM",
-          "Almacenamiento: 500 MB de espacio disponible"
-        ],
-        "recomendados": [
-          "SO: Android 11.0 / iOS 15.0 / Windows 11",
-          "Procesador: Octa-Core 2.4 GHz o superior",
-          "Memoria: 4 GB de RAM o más",
-          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
-    },
-    {
       "id": "minecraft",
       "titulo": "Minecraft",
       "fecha": "18 de noviembre de 2011",
@@ -84,28 +58,91 @@
       "imagen": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
     },
     {
-      "id": "free-fire",
-      "titulo": "Free Fire",
+      "id": "fortnite",
+      "titulo": "Fortnite",
       "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS, PC (a través de emuladores y Google Play Games Beta)",
-      "calificacion": "7.0",
-      "motor_grafico": "Unity Engine",
-      "tecnologias": "Controles táctiles, Multijugador en línea, Optimización de red (para estabilidad y FPS), Alta tasa de fotogramas (hasta 60 FPS o más en dispositivos compatibles)",
-      "sinopsis": "Free Fire es un popular videojuego de disparos tipo Battle Royale para móviles, donde 50 jugadores aterrizan en una isla remota, buscan armas y equipo, y luchan para ser el último superviviente. El juego enfatiza la supervivencia y la estrategia en partidas rápidas de 10 minutos.",
-      "analisis_detallado": "<p><strong>Rendimiento Técnico y Gráficos:</strong></p><p>Free Fire, desarrollado con el motor gráfico Unity, está diseñado principalmente para ofrecer una experiencia de Battle Royale fluida y accesible en una amplia gama de dispositivos móviles Android e iOS. El juego prioriza la optimización para garantizar un rendimiento estable, incluso en dispositivos de gama baja, lo que ha contribuido a su masiva popularidad. Los controles son intuitivos y fáciles de usar, lo que facilita la inmersión en la acción.</p><p>En términos de gráficos, Free Fire presenta un estilo visual colorido y animado. Si bien no busca la fidelidad gráfica más puntera en comparación con algunos títulos de consola o PC, sus gráficos son funcionales y permiten una clara identificación de los elementos del juego y los enemigos. Para los jugadores que buscan una experiencia visual mejorada, existe Free Fire MAX, una versión que ofrece gráficos, iluminación y efectos de sonido superiores.</p><p>La tasa de fotogramas (FPS) es un aspecto crucial para el rendimiento competitivo en Free Fire. Un FPS alto y estable (idealmente 60 FPS o más) es fundamental para una puntería más fluida, un mejor seguimiento de objetivos y una reducción del retraso de entrada, lo que se traduce en una ventaja competitiva significativa. Muchos jugadores profesionales optan por configuraciones gráficas medias o bajas para asegurar la máxima estabilidad de FPS, ya que los gráficos excesivos pueden introducir distracciones visuales. La optimización de la red también juega un papel vital, ya que una conexión inestable puede manifestarse como micro-stuttering o un ritmo de frames irregular, afectando la jugabilidad.</p><p><strong>Jugabilidad y Mecánicas:</strong></p><p>La jugabilidad de Free Fire se centra en partidas rápidas y llenas de acción. Los jugadores son lanzados en paracaídas a una isla, donde deben buscar armas, armaduras y otros suministros mientras la zona segura se encoge progresivamente, forzando los enfrentamientos. El juego ofrece varios modos, incluyendo el clásico Battle Royale y Duelo de Escuadras, además de modos especiales rotativos. Una característica distintiva es el sistema de personajes y mascotas, cada uno con habilidades únicas que pueden influir en la estrategia de juego.</p><p>Aunque el juego es gratuito, incluye compras dentro de la aplicación para obtener ítems como diamantes, que se utilizan para adquirir skins y otras ventajas. Esto ha generado críticas por parte de algunos usuarios, quienes perciben un elemento de 'pay-to-win' debido a las ventajas que pueden ofrecer ciertos personajes o elementos comprados. Sin embargo, su modelo free-to-play y su enfoque en la accesibilidad han sido clave para su éxito global, convirtiéndose en uno de los juegos móviles más descargados y con mayores ingresos a nivel mundial.</p>",
+      "plataformas": "PC, PlayStation 4, PlayStation 4 Pro, PlayStation 4 Slim, PlayStation 5, PlayStation 5 Pro, Xbox One, Xbox One S, Xbox One S All-Digital Edition, Xbox One X, Xbox Series X|S, Nintendo Switch, Nintendo Switch Lite, Nintendo Switch 2, Android, iOS, macOS",
+      "calificacion": "7.2",
+      "motor_grafico": "Unreal Engine 5.1",
+      "tecnologias": "Crossplay, Nanite, Lumen, Virtual Shadow Maps, Temporal Super Resolution (TSR), Touch, DLSS (desactivado temporalmente para pruebas)",
+      "sinopsis": "Fortnite es un videojuego multijugador masivo en línea desarrollado por Epic Games, lanzado en 2017. Ofrece modos como Battle Royale, Salvar el Mundo y Creativo, y ha evolucionado a una plataforma con miles de islas creadas por la comunidad, incluyendo experiencias como LEGO Fortnite, Rocket Racing y Fortnite Festival. Su modo principal, Battle Royale, es un shooter en tercera persona donde hasta cien jugadores luchan por ser el último en pie en una isla que se reduce por una tormenta, con la particularidad de la construcción de estructuras.",
+      "analisis_detallado": "<p>Fortnite, impulsado por <strong>Unreal Engine 5.1</strong>, ha experimentado una significativa evolución en su rendimiento técnico, especialmente en PC y consolas de nueva generación. La implementación de tecnologías como <strong>Nanite</strong> permite una geometría virtualizada con millones de polígonos, lo que resulta en un nivel de detalle arquitectónico y paisajístico sin precedentes, donde incluso una brizna de hierba se renderiza con gran calidad. <strong>Lumen</strong> mejora la iluminación global y los reflejos con trazado de rayos en tiempo real, ofreciendo efectos de luz más realistas y dinámicos que afectan tanto al entorno como a los personajes. Los <strong>Mapas de Sombras Virtuales</strong> amplían el detalle de las sombras, haciendo que elementos pequeños proyecten sombras precisas. Finalmente, la <strong>Superresolución Temporal (TSR)</strong> optimiza el antialiasing, mejorando la calidad gráfica incluso a altas tasas de fotogramas.</p><p>En PC, estas mejoras han endurecido los requisitos del sistema, aunque Epic Games ofrece un \"Modo Rendimiento\" que sacrifica la calidad visual para reducir el uso de memoria y aligerar la carga de la CPU y la GPU, permitiendo un rendimiento más fluido en hardware menos potente. Este modo puede reducir el tamaño de la instalación del juego al eliminar texturas de alta resolución. A pesar de estas optimizaciones, algunos usuarios han reportado problemas de rendimiento y estabilidad, incluso en PCs de gama media-alta, con cuelgues y largos tiempos de carga. Para un rendimiento óptimo, se recomienda una CPU rápida y una GPU potente, además de mantener los controladores gráficos y el sistema operativo actualizados.</p><p>En consolas, Fortnite aprovecha las capacidades de PlayStation 5 y Xbox Series X|S para ofrecer una experiencia visual mejorada con las tecnologías de Unreal Engine 5.1. En dispositivos móviles (Android e iOS), Fortnite es un juego de alta fidelidad que requiere hardware específico para funcionar correctamente, con requisitos mínimos de RAM y GPU. El juego también soporta juego cruzado (crossplay) entre todas las plataformas, permitiendo a los jugadores competir juntos independientemente de su dispositivo.</p>",
       "requisitos": {
         "minimos": [
-          "Android: OS Android 4.4 (Kitkat), CPU Dual core 1.2 GHz, RAM 1 GB, Almacenamiento 600 MB - 1.5 GB",
-          "iOS: OS iOS 9 (o 11.0+), CPU iPhone 5s (o Dual-core 1.4 GHz Typhoon), RAM 1 GB, Almacenamiento 600 MB - 1.5 GB",
-          "PC (vía emulador/Google Play Games Beta): OS Windows 7, CPU Intel/AMD Processor (Core i3 2.4GHz), RAM 2 GB, GPU Intel HD Graphics 3000, Almacenamiento 4 GB"
+          "PC: Sistema Operativo: Windows 10 de 64 bits (o Windows 7/8/10 de 64 bits o macOS Mojave 10.14.6)",
+          "PC: Procesador: Core i3-3225 3.3 GHz (o Intel Core i3 2.4 GHz)",
+          "PC: Memoria RAM: 8 GB RAM (o 4 GB de RAM)",
+          "PC: Tarjeta Gráfica: Intel HD 4000 en PC; AMD Radeon Vega 8 (o Intel HD 4000, AMD Radeon HD 7870 o GPU con DX11 equivalente)",
+          "Android: Sistema Operativo: Android OS 10.0 o superior (o Android SO 8.0 o superior)",
+          "Android: Procesador: ARM64 (o Snapdragon 820 o superior, Samsung Exynos 8 Octa 8890 o superior, Kirin 970 o superior)",
+          "Android: Memoria RAM: Mínimo 4 GB de RAM (o 3 GB o superior)",
+          "Android: GPU: Adreno 530 o superior, Mali-G71 MP20, Mali-G72 MP12 o superior",
+          "iOS: Sistema Operativo: iOS 17.6.1 o superior",
+          "iOS: Memoria RAM: Al menos 4 GB de RAM (excepto iPhone SE 2nd gen con 3GB)",
+          "iOS: Dispositivos: iPhone 11 y modelos posteriores (excepto iPhone SE de 2ª generación), iPad Pro 12.9\" (2ª gen) y posteriores, iPad Pro 11\" (1ª gen) y posteriores, iPad Air (3ª gen) y posteriores, iPad (8ª gen) y posteriores, iPad mini (5ª gen) y posteriores"
         ],
         "recomendados": [
-          "Android: OS Android 7 (o 6.0.1 Marshmallow), CPU Octa core 1.8 GHz, RAM 3 GB, Almacenamiento 3 GB",
-          "iOS: OS iOS 11+ (o 13.3), CPU iPhone 7 (o iPhone 8), RAM 3 GB, Almacenamiento 3 GB",
-          "PC (vía emulador/Google Play Games Beta): OS Windows 10 (v2004), CPU 4 CPU physical cores (Core i5 2.8GHz o Intel Core i7-2600), RAM 8 GB, GPU NVIDIA Geforce GTX 660 (o Intel UHD Graphics 630), Almacenamiento 10 GB SSD"
+          "PC: Sistema Operativo: Windows 10 de 64 bits (Windows 11 de 64 bits recomendado)",
+          "PC: CPU: Core i5-7300U de 3,5 GHz (o Core i5 / Ryzen 5 para 1080p Épico, Core i7 / Ryzen 7 para 1440p / +144 FPS)",
+          "PC: Memoria: 8 GB de RAM (o 16 GB RAM para 1080p Épico y competitivo)",
+          "PC: GPU: NVIDIA GTX 960, AMD R9 280 o GPU con DX11 equivalente (o GTX 1660 / RX 580 para 1080p Épico, RTX 4060 / RX 7600 para 1440p / +144 FPS, RTX 3060 o AMD Radeon RX 7600 XT)",
+          "PC: VRAM: 2 GB",
+          "PC: Adicional: SSD NVMe"
         ]
       },
-      "imagen": "https://media.rawg.io/media/screenshots/cc9/cc9b849d0824331ad50e822ab83f1a1b.jpg"
+      "imagen": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
+    },
+    {
+      "id": "candy-crush-saga",
+      "titulo": "Candy Crush Saga",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS, Windows (PC), Web",
+      "calificacion": "8.2",
+      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
+      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
+      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
+      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Android 6.0 / iOS 12.0 / Windows 10",
+          "Procesador: Quad-Core 1.8 GHz",
+          "Memoria: 2 GB de RAM",
+          "Almacenamiento: 500 MB de espacio disponible"
+        ],
+        "recomendados": [
+          "SO: Android 11.0 / iOS 15.0 / Windows 11",
+          "Procesador: Octa-Core 2.4 GHz o superior",
+          "Memoria: 4 GB de RAM o más",
+          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+    },
+    {
+      "id": "garena-free-fire",
+      "titulo": "Garena Free Fire",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS",
+      "calificacion": "8.0",
+      "motor_grafico": "Unity",
+      "tecnologias": "Pantalla táctil, Crossplay (Android/iOS), Soporte para 60 FPS, Renderizado de sombras dinámicas",
+      "sinopsis": "Garena Free Fire es un juego de disparos en tercera persona de tipo battle royale en el que 50 jugadores caen en una isla remota para luchar por la supervivencia. El último en quedar en pie gana.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Garena Free Fire</strong> destaca principalmente por su excelente optimización en dispositivos móviles de gama baja y media. Al estar desarrollado bajo el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio sobresaliente entre calidad visual y consumo de recursos, permitiendo que millones de jugadores con hardware limitado disfruten de una experiencia fluida.</p><p>En dispositivos de gama de entrada, el título mantiene una tasa de fotogramas estable de <strong>30 FPS</strong> con los ajustes gráficos en 'Suave'. Para terminales de gama media y alta, la opción de activar el modo de <strong>Altos FPS (60 FPS)</strong> ofrece una jugabilidad sumamente competitiva y tiempos de respuesta táctil reducidos. Sin embargo, la activación de sombras dinámicas y texturas en alta resolución puede provocar un ligero estrangulamiento térmico (thermal throttling) y un incremento notable en el consumo de batería tras sesiones de juego prolongadas.</p><p>El netcode y la latencia están sumamente optimizados, lo que permite jugar de manera competitiva incluso con conexiones móviles 3G o 4G inestables. En resumen, Free Fire sacrifica el fotorrealismo en favor de una accesibilidad técnica inigualable en el mercado móvil.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 4.1 o superior / iOS 9.0 o superior",
+          "Procesador: Dual Core 1.2 GHz",
+          "Memoria RAM: 1 GB",
+          "Almacenamiento: 1.5 GB de espacio libre"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 7.0 o superior / iOS 11.0 o superior",
+          "Procesador: Octa-Core 2.0 GHz o superior",
+          "Memoria RAM: 3 GB o más",
+          "Almacenamiento: 3 GB de espacio libre"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/a2f/a2fc4a4a2c67b74b29bc6f4959c24f93.jpg"
     },
     {
       "id": "pubg-mobile",
@@ -162,39 +199,109 @@
       "imagen": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
     },
     {
-      "id": "fortnite",
-      "titulo": "Fortnite",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "PC, PlayStation 4, PlayStation 4 Pro, PlayStation 4 Slim, PlayStation 5, PlayStation 5 Pro, Xbox One, Xbox One S, Xbox One S All-Digital Edition, Xbox One X, Xbox Series X|S, Nintendo Switch, Nintendo Switch Lite, Nintendo Switch 2, Android, iOS, macOS",
-      "calificacion": "7.2",
-      "motor_grafico": "Unreal Engine 5.1",
-      "tecnologias": "Crossplay, Nanite, Lumen, Virtual Shadow Maps, Temporal Super Resolution (TSR), Touch, DLSS (desactivado temporalmente para pruebas)",
-      "sinopsis": "Fortnite es un videojuego multijugador masivo en línea desarrollado por Epic Games, lanzado en 2017. Ofrece modos como Battle Royale, Salvar el Mundo y Creativo, y ha evolucionado a una plataforma con miles de islas creadas por la comunidad, incluyendo experiencias como LEGO Fortnite, Rocket Racing y Fortnite Festival. Su modo principal, Battle Royale, es un shooter en tercera persona donde hasta cien jugadores luchan por ser el último en pie en una isla que se reduce por una tormenta, con la particularidad de la construcción de estructuras.",
-      "analisis_detallado": "<p>Fortnite, impulsado por <strong>Unreal Engine 5.1</strong>, ha experimentado una significativa evolución en su rendimiento técnico, especialmente en PC y consolas de nueva generación. La implementación de tecnologías como <strong>Nanite</strong> permite una geometría virtualizada con millones de polígonos, lo que resulta en un nivel de detalle arquitectónico y paisajístico sin precedentes, donde incluso una brizna de hierba se renderiza con gran calidad. <strong>Lumen</strong> mejora la iluminación global y los reflejos con trazado de rayos en tiempo real, ofreciendo efectos de luz más realistas y dinámicos que afectan tanto al entorno como a los personajes. Los <strong>Mapas de Sombras Virtuales</strong> amplían el detalle de las sombras, haciendo que elementos pequeños proyecten sombras precisas. Finalmente, la <strong>Superresolución Temporal (TSR)</strong> optimiza el antialiasing, mejorando la calidad gráfica incluso a altas tasas de fotogramas.</p><p>En PC, estas mejoras han endurecido los requisitos del sistema, aunque Epic Games ofrece un \"Modo Rendimiento\" que sacrifica la calidad visual para reducir el uso de memoria y aligerar la carga de la CPU y la GPU, permitiendo un rendimiento más fluido en hardware menos potente. Este modo puede reducir el tamaño de la instalación del juego al eliminar texturas de alta resolución. A pesar de estas optimizaciones, algunos usuarios han reportado problemas de rendimiento y estabilidad, incluso en PCs de gama media-alta, con cuelgues y largos tiempos de carga. Para un rendimiento óptimo, se recomienda una CPU rápida y una GPU potente, además de mantener los controladores gráficos y el sistema operativo actualizados.</p><p>En consolas, Fortnite aprovecha las capacidades de PlayStation 5 y Xbox Series X|S para ofrecer una experiencia visual mejorada con las tecnologías de Unreal Engine 5.1. En dispositivos móviles (Android e iOS), Fortnite es un juego de alta fidelidad que requiere hardware específico para funcionar correctamente, con requisitos mínimos de RAM y GPU. El juego también soporta juego cruzado (crossplay) entre todas las plataformas, permitiendo a los jugadores competir juntos independientemente de su dispositivo.</p>",
+      "id": "counter-strike-2",
+      "titulo": "Counter-Strike 2",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC (Windows, Linux / SteamOS)",
+      "calificacion": 8.5,
+      "motor_grafico": "Source 2",
+      "tecnologias": [
+        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
+        "NVIDIA Reflex Low Latency"
+      ],
+      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
+      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
       "requisitos": {
         "minimos": [
-          "PC: Sistema Operativo: Windows 10 de 64 bits (o Windows 7/8/10 de 64 bits o macOS Mojave 10.14.6)",
-          "PC: Procesador: Core i3-3225 3.3 GHz (o Intel Core i3 2.4 GHz)",
-          "PC: Memoria RAM: 8 GB RAM (o 4 GB de RAM)",
-          "PC: Tarjeta Gráfica: Intel HD 4000 en PC; AMD Radeon Vega 8 (o Intel HD 4000, AMD Radeon HD 7870 o GPU con DX11 equivalente)",
-          "Android: Sistema Operativo: Android OS 10.0 o superior (o Android SO 8.0 o superior)",
-          "Android: Procesador: ARM64 (o Snapdragon 820 o superior, Samsung Exynos 8 Octa 8890 o superior, Kirin 970 o superior)",
-          "Android: Memoria RAM: Mínimo 4 GB de RAM (o 3 GB o superior)",
-          "Android: GPU: Adreno 530 o superior, Mali-G71 MP20, Mali-G72 MP12 o superior",
-          "iOS: Sistema Operativo: iOS 17.6.1 o superior",
-          "iOS: Memoria RAM: Al menos 4 GB de RAM (excepto iPhone SE 2nd gen con 3GB)",
-          "iOS: Dispositivos: iPhone 11 y modelos posteriores (excepto iPhone SE de 2ª generación), iPad Pro 12.9\" (2ª gen) y posteriores, iPad Pro 11\" (1ª gen) y posteriores, iPad Air (3ª gen) y posteriores, iPad (8ª gen) y posteriores, iPad mini (5ª gen) y posteriores"
+          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
+          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
         ],
         "recomendados": [
-          "PC: Sistema Operativo: Windows 10 de 64 bits (Windows 11 de 64 bits recomendado)",
-          "PC: CPU: Core i5-7300U de 3,5 GHz (o Core i5 / Ryzen 5 para 1080p Épico, Core i7 / Ryzen 7 para 1440p / +144 FPS)",
-          "PC: Memoria: 8 GB de RAM (o 16 GB RAM para 1080p Épico y competitivo)",
-          "PC: GPU: NVIDIA GTX 960, AMD R9 280 o GPU con DX11 equivalente (o GTX 1660 / RX 580 para 1080p Épico, RTX 4060 / RX 7600 para 1440p / +144 FPS, RTX 3060 o AMD Radeon RX 7600 XT)",
-          "PC: VRAM: 2 GB",
-          "PC: Adicional: SSD NVMe"
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
+          "Memoria: 16 GB de RAM de doble canal",
+          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
+          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
         ]
       },
-      "imagen": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
+      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
+    },
+    {
+      "id": "genshin-impact",
+      "titulo": "Genshin Impact",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS4, PS5, Xbox Series X/S, Android, iOS",
+      "calificacion": "9.0",
+      "motor_grafico": "Unity (Altamente modificado)",
+      "tecnologias": "NVIDIA DLSS, AMD FSR, Intel XeSS, Crossplay, Cross-save, Metal, Vulkan, DualSense Haptic Feedback",
+      "sinopsis": "Genshin Impact es un RPG de acción de mundo abierto en el que exploras el vasto continente de Teyvat. Como el Viajero, dominas los elementos, reclutas aliados diversos y buscas respuestas sobre tu familiar perdido en un mundo lleno de secretos y magia.",
+      "analisis_detallado": "<p><strong>Genshin Impact</strong> destaca por su excelente optimización multiplataforma, logrando un rendimiento sumamente sólido en una amplia gama de dispositivos. En <strong>PC</strong>, el juego ofrece un rendimiento sobresaliente, permitiendo alcanzar los 60 FPS estables con resoluciones de hasta 4K en tarjetas gráficas de gama media. La implementación de tecnologías de escalado como <strong>NVIDIA DLSS</strong>, <strong>AMD FSR</strong> y <strong>Intel XeSS</strong> ayuda a mantener la fluidez incluso en las zonas más demandantes del mapa, como Fontaine o la región de Snezhnaya.</p><p>En consolas de nueva generación como <strong>PlayStation 5</strong> y <strong>Xbox Series X</strong>, el título se ejecuta a una resolución nativa de 4K a 60 FPS casi perfectos, beneficiándose enormemente de los tiempos de carga ultrarrápidos gracias al almacenamiento SSD. Además, en PS5 se aprovecha de manera excelente la retroalimentación háptica del mando <strong>DualSense</strong>.</p><p>Por otro lado, la versión para <strong>dispositivos móviles (Android e iOS)</strong> es la más exigente debido a la inmensidad del mapa. Aunque el juego es altamente escalable, los dispositivos de gama baja y media-baja pueden sufrir de estrangulamiento térmico (thermal throttling) y caídas de frames tras sesiones prolongadas. No obstante, en dispositivos iOS de gama alta, el juego soporta hasta 120 FPS, ofreciendo una fluidez inigualable en formato portátil.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 de 64 bits",
+          "Procesador: Intel Core i5 de 6.ª generación o AMD Ryzen equivalente",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1050 o equivalente / Intel Iris Xe"
+        ],
+        "recomendados": [
+          "SO: Windows 10 / 11 de 64 bits",
+          "Procesador: Intel Core i7 de 7.ª generación o AMD Ryzen serie 5000 o superior",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 de 6 GB o superior"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
+    },
+    {
+      "id": "grand-theft-auto-v",
+      "titulo": "Grand Theft Auto V",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
+      "calificacion": "9.7",
+      "motor_grafico": "RAGE (Rockstar Advanced Game Engine) con Euphoria Physics",
+      "tecnologias": "DirectX 11, Ray Tracing (Consolas Next-Gen), NVIDIA TXAA, AMD CHS, HDR10",
+      "sinopsis": "Tres criminales muy diferentes asocian sus esfuerzos para llevar a cabo una serie de audaces y peligrosos atracos en la metrópolis de Los Santos.",
+      "analisis_detallado": "<p>Grand Theft Auto V es uno de los títulos mejor optimizados en la historia de la plataforma <strong>PC</strong>. El motor gráfico <strong>RAGE</strong> escala de manera excepcional tanto en hardware antiguo como de última generación. En resoluciones 1080p, tarjetas gráficas de gama media-baja logran mantener <strong>60 FPS estables</strong> sin mayores dificultades.</p><p>El rendimiento en consolas de actual generación (PS5 y Xbox Series X) destaca por la inclusión de modos de rendimiento a <strong>60 FPS con trazado de rayos (Ray Tracing)</strong> y tiempos de carga drásticamente reducidos gracias al almacenamiento <strong>SSD</strong>. En PC, el uso de tecnologías de antialiasing como <strong>TXAA</strong> y la alta densidad de población configurable demuestran la flexibilidad del motor, aunque el cuello de botella suele trasladarse al procesador en zonas urbanas densas.</p>",
+      "requisitos": {
+        "minimos": [
+          "Intel Core 2 Quad Q6600 2.40GHz / AMD Phenom 9850 2.5GHz",
+          "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
+          "4 GB de Memoria RAM",
+          "120 GB de espacio disponible en disco"
+        ],
+        "recomendados": [
+          "Intel Core i5 3470 3.2GHz / AMD FX-8350 4GHz",
+          "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+          "8 GB de Memoria RAM",
+          "120 GB de espacio disponible (SSD recomendado)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
+    },
+    {
+      "id": "free-fire",
+      "titulo": "Free Fire",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS, PC (a través de emuladores y Google Play Games Beta)",
+      "calificacion": "7.0",
+      "motor_grafico": "Unity Engine",
+      "tecnologias": "Controles táctiles, Multijugador en línea, Optimización de red (para estabilidad y FPS), Alta tasa de fotogramas (hasta 60 FPS o más en dispositivos compatibles)",
+      "sinopsis": "Free Fire es un popular videojuego de disparos tipo Battle Royale para móviles, donde 50 jugadores aterrizan en una isla remota, buscan armas y equipo, y luchan para ser el último superviviente. El juego enfatiza la supervivencia y la estrategia en partidas rápidas de 10 minutos.",
+      "analisis_detallado": "<p><strong>Rendimiento Técnico y Gráficos:</strong></p><p>Free Fire, desarrollado con el motor gráfico Unity, está diseñado principalmente para ofrecer una experiencia de Battle Royale fluida y accesible en una amplia gama de dispositivos móviles Android e iOS. El juego prioriza la optimización para garantizar un rendimiento estable, incluso en dispositivos de gama baja, lo que ha contribuido a su masiva popularidad. Los controles son intuitivos y fáciles de usar, lo que facilita la inmersión en la acción.</p><p>En términos de gráficos, Free Fire presenta un estilo visual colorido y animado. Si bien no busca la fidelidad gráfica más puntera en comparación con algunos títulos de consola o PC, sus gráficos son funcionales y permiten una clara identificación de los elementos del juego y los enemigos. Para los jugadores que buscan una experiencia visual mejorada, existe Free Fire MAX, una versión que ofrece gráficos, iluminación y efectos de sonido superiores.</p><p>La tasa de fotogramas (FPS) es un aspecto crucial para el rendimiento competitivo en Free Fire. Un FPS alto y estable (idealmente 60 FPS o más) es fundamental para una puntería más fluida, un mejor seguimiento de objetivos y una reducción del retraso de entrada, lo que se traduce en una ventaja competitiva significativa. Muchos jugadores profesionales optan por configuraciones gráficas medias o bajas para asegurar la máxima estabilidad de FPS, ya que los gráficos excesivos pueden introducir distracciones visuales. La optimización de la red también juega un papel vital, ya que una conexión inestable puede manifestarse como micro-stuttering o un ritmo de frames irregular, afectando la jugabilidad.</p><p><strong>Jugabilidad y Mecánicas:</strong></p><p>La jugabilidad de Free Fire se centra en partidas rápidas y llenas de acción. Los jugadores son lanzados en paracaídas a una isla, donde deben buscar armas, armaduras y otros suministros mientras la zona segura se encoge progresivamente, forzando los enfrentamientos. El juego ofrece varios modos, incluyendo el clásico Battle Royale y Duelo de Escuadras, además de modos especiales rotativos. Una característica distintiva es el sistema de personajes y mascotas, cada uno con habilidades únicas que pueden influir en la estrategia de juego.</p><p>Aunque el juego es gratuito, incluye compras dentro de la aplicación para obtener ítems como diamantes, que se utilizan para adquirir skins y otras ventajas. Esto ha generado críticas por parte de algunos usuarios, quienes perciben un elemento de 'pay-to-win' debido a las ventajas que pueden ofrecer ciertos personajes o elementos comprados. Sin embargo, su modelo free-to-play y su enfoque en la accesibilidad han sido clave para su éxito global, convirtiéndose en uno de los juegos móviles más descargados y con mayores ingresos a nivel mundial.</p>",
+      "requisitos": {
+        "minimos": [
+          "Android: OS Android 4.4 (Kitkat), CPU Dual core 1.2 GHz, RAM 1 GB, Almacenamiento 600 MB - 1.5 GB",
+          "iOS: OS iOS 9 (o 11.0+), CPU iPhone 5s (o Dual-core 1.4 GHz Typhoon), RAM 1 GB, Almacenamiento 600 MB - 1.5 GB",
+          "PC (vía emulador/Google Play Games Beta): OS Windows 7, CPU Intel/AMD Processor (Core i3 2.4GHz), RAM 2 GB, GPU Intel HD Graphics 3000, Almacenamiento 4 GB"
+        ],
+        "recomendados": [
+          "Android: OS Android 7 (o 6.0.1 Marshmallow), CPU Octa core 1.8 GHz, RAM 3 GB, Almacenamiento 3 GB",
+          "iOS: OS iOS 11+ (o 13.3), CPU iPhone 7 (o iPhone 8), RAM 3 GB, Almacenamiento 3 GB",
+          "PC (vía emulador/Google Play Games Beta): OS Windows 10 (v2004), CPU 4 CPU physical cores (Core i5 2.8GHz o Intel Core i7-2600), RAM 8 GB, GPU NVIDIA Geforce GTX 660 (o Intel UHD Graphics 630), Almacenamiento 10 GB SSD"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/cc9/cc9b849d0824331ad50e822ab83f1a1b.jpg"
     },
     {
       "id": "honor-of-kings",
@@ -249,35 +356,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/screenshots/97a/97ab26a9d092783e68190dc686916b0b.jpg"
-    },
-    {
-      "id": "counter-strike-2",
-      "titulo": "Counter-Strike 2",
-      "fecha": "12 Jul, 2026",
-      "plataformas": "PC (Windows, Linux / SteamOS)",
-      "calificacion": 8.5,
-      "motor_grafico": "Source 2",
-      "tecnologias": [
-        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
-        "NVIDIA Reflex Low Latency"
-      ],
-      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
-      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
-          "Memoria: 8 GB de RAM",
-          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
-          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
-          "Memoria: 16 GB de RAM de doble canal",
-          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
-          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
     },
     {
       "id": "borderlands-4",
