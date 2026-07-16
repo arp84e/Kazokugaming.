@@ -7,13 +7,14 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS TÁCTICAS ===")
+print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS (MODO MULTI-COMANDO) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
+comando_input = os.environ.get("INPUT_COMANDOS", "").strip().lower()
 
-if not api_key:
-    exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
+if not comando_input: comando_input = "top"
+if not api_key: exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
 archivo_guias = "guias.json"
@@ -47,48 +48,63 @@ if os.path.exists(archivo_juegos):
         try: datos_juegos = json.load(f)
         except: pass
 
-juegos_a_procesar = []
 titulos_con_guia = [g.get("juego", "").lower() for g in datos_guias.get("guias", [])]
-primeros_juegos = datos_juegos.get("juegos", [])[:10]
+juegos_a_procesar = []
 
-for j in primeros_juegos:
-    titulo = j.get("titulo", "")
-    if titulo.lower() not in titulos_con_guia:
-        juegos_a_procesar.append(titulo)
+# ================= LÓGICA DE COMANDOS =================
+if comando_input == "top":
+    print("🏆 COMANDO 'TOP': Revisando las primeras posiciones de la base de datos (Top 10)...")
+    primeros_juegos = datos_juegos.get("juegos", [])[:10]
+    for j in primeros_juegos:
+        if j.get("titulo", "").lower() not in titulos_con_guia:
+            juegos_a_procesar.append(j.get("titulo"))
+
+elif comando_input.isdigit():
+    cantidad = int(comando_input)
+    print(f"🎲 COMANDO NUMÉRICO: Buscando los próximos {cantidad} juegos del catálogo sin guía táctica...")
+    for j in datos_juegos.get("juegos", []):
+        if j.get("titulo", "").lower() not in titulos_con_guia:
+            juegos_a_procesar.append(j.get("titulo"))
+            if len(juegos_a_procesar) >= cantidad:
+                break
+
+else:
+    print("🛠️ COMANDO LISTA: Preparando guías para los nombres específicos solicitados...")
+    juegos_a_procesar = [t.strip() for t in os.environ.get("INPUT_COMANDOS", "").split(";") if t.strip()]
 
 if not juegos_a_procesar:
-    print("✅ Todos los juegos del TOP 10 actual ya tienen sus guías creadas. No hay trabajo pendiente.")
+    print("✅ Misión completada: No hay trabajo pendiente bajo este comando.")
     exit(0)
 
-print(f"📝 Se detectaron {len(juegos_a_procesar)} juegos del TOP sin guía. Redactando expedientes...")
+print(f"📝 Redactando {len(juegos_a_procesar)} expedientes tácticos...")
 
+# Generar Guías
 for juego_limpio in juegos_a_procesar:
     slug = re.sub(r'[^a-z0-9]+', '-', juego_limpio.lower()).strip('-')
     id_guia = f"guia-{slug}"[:50]
 
-    print(f"\n🔍 Redactando dossier para: {juego_limpio}...")
+    print(f"\n🔍 Investigando secretos, armas y estrategias para: {juego_limpio}...")
 
     prompt_sistema = f"""
-    Eres el Estratega Jefe de KazokuGaming. Escribe una GUÍA TÁCTICA AVANZADA.
+    Eres el Estratega de KazokuGaming. Escribe una GUÍA TÁCTICA AVANZADA.
     Juego: "{juego_limpio}".
-    Redacta todo con estilo analítico. Devuelve ÚNICAMENTE un objeto JSON válido (sin marcas de formato markdown) con esta estructura:
+    Redacta con estilo analítico. Devuelve ÚNICAMENTE un JSON estricto sin comillas backticks markdown:
     {{
       "titulo": "Guía Táctica: [Nombre]",
-      "meta_descripcion": "Resumen de 150 caracteres",
+      "meta_descripcion": "Resumen 150 caracteres",
       "tags": ["Tag1", "Tag2"],
       "tiempo_lectura": "5 min",
-      "contenido": "<h2>Análisis</h2><p>Texto...</p><h2>Mejores Builds o Trucos</h2><p>Texto...</p>",
+      "contenido": "<h2>Análisis</h2><p>Texto...</p><h2>Mejores Estrategias o builds</h2><p>Texto...</p>",
       "seo": {{ "keywords": "palabra1, palabra2" }},
       "open_graph": {{ "og_title": "Título", "og_description": "Desc", "og_type": "article" }}
     }}
     """
 
     try:
-        termino_busqueda = f"Guia completa trucos secretos mejores armas {juego_limpio}".strip()
-        # CORRECCIÓN: Sin response_mime_type
+        termino_busqueda = f"Guia de juego secretos trucos mejores armas {juego_limpio}".strip()
         config_guia = types.GenerateContentConfig(system_instruction=prompt_sistema, temperature=0.35, tools=[{"google_search": {}}])
         
-        response = generar_con_reintentos(f"Investiga y redacta la guía de: {termino_busqueda}", config_guia)
+        response = generar_con_reintentos(f"Redacta el dossier de: {termino_busqueda}", config_guia)
         guia_generada = json.loads(extraer_json_seguro(response.text))
         
         imagen_final = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
@@ -109,12 +125,12 @@ for juego_limpio in juegos_a_procesar:
             "imagen": imagen_final,
             "fecha": time.strftime("%d %b, %Y"),
             "tiempo_lectura": guia_generada.get("tiempo_lectura", "7 min"),
-            "contenido": guia_generada.get("contenido", ""),
+            "contenido": guia_generada.get("contenido", "<p>Expediente clasificado.</p>"),
             "meta_descripcion": guia_generada.get("meta_descripcion", "")
         }
         
         datos_guias["guias"].insert(0, guia_final)
-        print(f"✅ ¡Dossier de {juego_limpio} guardado!")
+        print(f"✅ ¡Dossier de {juego_limpio} redactado exitosamente!")
         
         with open(archivo_guias, "w", encoding="utf-8") as f:
             json.dump(datos_guias, f, ensure_ascii=False, indent=2)
@@ -122,6 +138,6 @@ for juego_limpio in juegos_a_procesar:
         time.sleep(5) 
 
     except Exception as e:
-        print(f"❌ Error al procesar {juego_limpio}: {e}")
+        print(f"❌ Error al procesar la guía de {juego_limpio}: {e}")
 
-print("\n🚀 PROCESO DE GUÍAS FINALIZADO.")
+print("\n🚀 PROCESO TÁCTICO FINALIZADO.")
