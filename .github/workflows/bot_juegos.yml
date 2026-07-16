@@ -3,17 +3,17 @@ name: Bot Juegos y Top 10 Global
 on:
   workflow_dispatch:
     inputs:
-      juegos:
-        description: '🎮 Títulos manuales (separados por ;). Vacío = Top 10 Automático'
+      comandos:
+        description: 'COMANDO: "top" | Número (ej. "5") | Nombres (ej. "Juego 1; Juego 2")'
         required: false
         type: string
+        default: 'top'
       sobrescribir:
-        description: '⚠️ ¿Borrar catálogo anterior?'
+        description: '⚠️ ¿Forzar sobrescritura si el juego ya existe?'
         required: false
         type: boolean
         default: false
   schedule:
-    # Se ejecuta automáticamente todos los días a las 08:00 UTC (ajusta la hora si lo deseas)
     - cron: '0 8 * * *'
 
 permissions:
@@ -34,11 +34,11 @@ jobs:
       - name: Instalar dependencias
         run: pip install google-genai requests
 
-      - name: Ejecutar Bot de Juegos y Top 10
+      - name: Ejecutar Bot de Juegos
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
-          INPUT_JUEGOS: ${{ inputs.juegos }}
+          INPUT_COMANDOS: ${{ inputs.comandos }}
           SOBRESCRIBIR: ${{ inputs.sobrescribir }}
         run: python scraper_juegos.py
 
@@ -54,8 +54,8 @@ jobs:
           git add sitemap.xml || true
           
           if git diff --staged --quiet; then
-            echo "No hay variaciones en el catálogo de juegos de hoy."
+            echo "No hay variaciones en el catálogo de juegos hoy."
           else
-            git commit -m "🤖 KazokuBot: Top 10 Global y Base de Juegos actualizada"
+            git commit -m "🤖 KazokuBot: Base de Juegos actualizada"
             git push
           fi
