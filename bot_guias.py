@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import time
 import re
@@ -14,12 +15,45 @@ rawg_key = os.environ.get("RAWG_API_KEY")
 comando_input = os.environ.get("INPUT_COMANDOS", "").strip().lower()
 
 if not comando_input: comando_input = "top"
-if not api_key: exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
+if not api_key: sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 
 client = genai.Client(api_key=api_key)
 archivo_guias = "guias.json"
 archivo_juegos = "juegos.json" 
 
+# Cargar bases de datos
+datos_guias = {"guias": []}
+if os.path.exists(archivo_guias):
+    with open(archivo_guias, "r", encoding="utf-8") as f:
+        try: datos_guias = json.load(f)
+        except: pass
+
+datos_juegos = {"juegos": []}
+if os.path.exists(archivo_juegos):
+    with open(archivo_juegos, "r", encoding="utf-8") as f:
+        try: datos_juegos = json.load(f)
+        except: pass
+
+# ================= MÓDULO DE ELIMINACIÓN =================
+if comando_input.startswith("eliminar:"):
+    ids_brutos = comando_input.replace("eliminar:", "", 1)
+    ids_a_eliminar = [i.strip() for i in ids_brutos.split(";") if i.strip()]
+    
+    print(f"🗑️ COMANDO DEPURACIÓN: Intentando eliminar las guías con IDs: {ids_a_eliminar}")
+    
+    guias_originales = len(datos_guias.get("guias", []))
+    datos_guias["guias"] = [g for g in datos_guias.get("guias", []) if g.get("id") not in ids_a_eliminar]
+    guias_borradas = guias_originales - len(datos_guias["guias"])
+    
+    if guias_borradas > 0:
+        with open(archivo_guias, "w", encoding="utf-8") as f:
+            json.dump(datos_guias, f, ensure_ascii=False, indent=2)
+        print(f"✅ ÉXITO: Se han eliminado {guias_borradas} guía(s) de la base de datos.")
+    else:
+        print("⚠️ No se encontró ninguna guía con ese ID en el registro.")
+    sys.exit(0)
+
+# ================= MÓDULO DE CREACIÓN =================
 def extraer_json_seguro(texto):
     texto = texto.strip()
     match = re.search(r'\{.*\}', texto, re.DOTALL)
@@ -36,22 +70,9 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
         time.sleep(10)
     raise Exception("❌ Servidores de IA caídos.")
 
-datos_guias = {"guias": []}
-if os.path.exists(archivo_guias):
-    with open(archivo_guias, "r", encoding="utf-8") as f:
-        try: datos_guias = json.load(f)
-        except: pass
-
-datos_juegos = {"juegos": []}
-if os.path.exists(archivo_juegos):
-    with open(archivo_juegos, "r", encoding="utf-8") as f:
-        try: datos_juegos = json.load(f)
-        except: pass
-
 titulos_con_guia = [g.get("juego", "").lower() for g in datos_guias.get("guias", [])]
 juegos_a_procesar = []
 
-# ================= LÓGICA DE COMANDOS =================
 if comando_input == "top":
     print("🏆 COMANDO 'TOP': Revisando las primeras posiciones de la base de datos (Top 10)...")
     primeros_juegos = datos_juegos.get("juegos", [])[:10]
@@ -74,11 +95,10 @@ else:
 
 if not juegos_a_procesar:
     print("✅ Misión completada: No hay trabajo pendiente bajo este comando.")
-    exit(0)
+    sys.exit(0)
 
 print(f"📝 Redactando {len(juegos_a_procesar)} expedientes tácticos...")
 
-# Generar Guías
 for juego_limpio in juegos_a_procesar:
     slug = re.sub(r'[^a-z0-9]+', '-', juego_limpio.lower()).strip('-')
     id_guia = f"guia-{slug}"[:50]
@@ -88,7 +108,7 @@ for juego_limpio in juegos_a_procesar:
     prompt_sistema = f"""
     Eres el Estratega de KazokuGaming. Escribe una GUÍA TÁCTICA AVANZADA.
     Juego: "{juego_limpio}".
-    Redacta con estilo analítico. Devuelve ÚNICAMENTE un JSON estricto sin comillas backticks markdown:
+    Redacta con estilo analítico. Devuelve ÚNICAMENTE un JSON estricto:
     {{
       "titulo": "Guía Táctica: [Nombre]",
       "meta_descripcion": "Resumen 150 caracteres",
@@ -102,7 +122,7 @@ for juego_limpio in juegos_a_procesar:
 
     try:
         termino_busqueda = f"Guia de juego secretos trucos mejores armas {juego_limpio}".strip()
-        config_guia = types.GenerateContentConfig(system_instruction=prompt_sistema, temperature=0.35, tools=[{"google_search": {}}])
+        config_guia = types.GenerateContentConfig(temperature=0.35, tools=[{"google_search": {}}])
         
         response = generar_con_reintentos(f"Redacta el dossier de: {termino_busqueda}", config_guia)
         guia_generada = json.loads(extraer_json_seguro(response.text))
