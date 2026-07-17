@@ -41,7 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-        function procBusq(e) { if (e.key === 'Enter' && e.target.value.trim()) window.location.href = `${prefix}buscar.html?q=${encodeURIComponent(e.target.value.trim())}`; }
-        document.getElementById('buscador-global-desktop')?.addEventListener('keypress', procBusq);
+        
+        // SEGURIDAD: Sanitización de la barra de búsqueda
+        function procesarBusqueda(e) {
+            if (e.key === 'Enter' && e.target.value.trim()) {
+                let busquedaSegura = e.target.value.trim().replace(/[<>]/g, '');
+                window.location.href = `${prefix}buscar.html?q=${encodeURIComponent(busquedaSegura)}`;
+            }
+        }
+        document.getElementById('buscador-global-desktop')?.addEventListener('keypress', procesarBusqueda);
     }
 });
