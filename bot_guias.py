@@ -21,7 +21,6 @@ client = genai.Client(api_key=api_key)
 archivo_guias = "guias.json"
 archivo_juegos = "juegos.json" 
 
-# Cargar bases de datos
 datos_guias = {"guias": []}
 if os.path.exists(archivo_guias):
     with open(archivo_guias, "r", encoding="utf-8") as f:
@@ -34,7 +33,6 @@ if os.path.exists(archivo_juegos):
         try: datos_juegos = json.load(f)
         except: pass
 
-# ================= MÓDULO DE ELIMINACIÓN =================
 if comando_input.startswith("eliminar:"):
     ids_brutos = comando_input.replace("eliminar:", "", 1)
     ids_a_eliminar = [i.strip() for i in ids_brutos.split(";") if i.strip()]
@@ -53,7 +51,6 @@ if comando_input.startswith("eliminar:"):
         print("⚠️ No se encontró ninguna guía con ese ID en el registro.")
     sys.exit(0)
 
-# ================= MÓDULO DE CREACIÓN =================
 def extraer_json_seguro(texto):
     texto = texto.strip()
     match = re.search(r'\{.*\}', texto, re.DOTALL)
@@ -91,7 +88,8 @@ elif comando_input.isdigit():
 
 else:
     print("🛠️ COMANDO LISTA: Preparando guías para los nombres específicos solicitados...")
-    juegos_a_procesar = [t.strip() for t in os.environ.get("INPUT_COMANDOS", "").split(";") if t.strip()]
+    # SEGURIDAD: Limpieza de inputs contra Prompt Injection
+    juegos_a_procesar = [re.sub(r'["\n\r]', '', t.strip()) for t in os.environ.get("INPUT_COMANDOS", "").split(";") if t.strip()]
 
 if not juegos_a_procesar:
     print("✅ Misión completada: No hay trabajo pendiente bajo este comando.")
