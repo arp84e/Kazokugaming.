@@ -93,6 +93,35 @@
       "imagen": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
     },
     {
+      "id": "counter-strike-2",
+      "titulo": "Counter-Strike 2",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC (Windows, Linux / SteamOS)",
+      "calificacion": 8.5,
+      "motor_grafico": "Source 2",
+      "tecnologias": [
+        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
+        "NVIDIA Reflex Low Latency"
+      ],
+      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
+      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
+          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
+          "Memoria: 16 GB de RAM de doble canal",
+          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
+          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
+    },
+    {
       "id": "candy-crush-saga",
       "titulo": "Candy Crush Saga",
       "fecha": "15 Jul, 2026",
@@ -117,6 +146,138 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+    },
+    {
+      "id": "league-of-legends",
+      "titulo": "League of Legends",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "PC (Windows, macOS)",
+      "calificacion": "9.0",
+      "motor_grafico": "Motor propio (Riot Games)",
+      "tecnologias": "DirectX 11, Metal (macOS), Riot Vanguard (Anti-cheat), Multi-threading",
+      "sinopsis": "League of Legends es un videojuego de estrategia y acción por equipos (MOBA) en el que dos equipos de cinco poderosos campeones se enfrentan para destruir el Nexo del oponente, combinando táctica, reflejos y juego cooperativo en tiempo real.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>League of Legends</strong> destaca por su excelente optimización histórica, permitiendo que el juego funcione de manera fluida incluso en ordenadores de gama baja o portátiles antiguos. Sin embargo, las actualizaciones recientes de Riot Games han elevado ligeramente el listón técnico. La transición obligatoria a <strong>DirectX 11</strong> y la implementación del sistema antitrampas a nivel de kernel, <strong>Riot Vanguard</strong>, han dejado atrás el soporte para sistemas operativos obsoletos como Windows 7 u 8, exigiendo ahora Windows 10 o Windows 11 (este último con TPM 2.0 obligatorio).</p><p>En el juego real, el motor gráfico propio de Riot ofrece una tasa de fotogramas por segundo (FPS) sumamente estable. En equipos de gama media y alta, es sumamente sencillo superar los <strong>144 FPS o incluso 240 FPS</strong> a resolución 1080p o 1440p, lo que resulta ideal para monitores de alta tasa de refresco. Los tiempos de carga se han reducido significativamente gracias a la optimización del cliente y el uso recomendado de unidades <strong>SSD</strong>.</p><p>Durante las peleas de equipo más caóticas (teamfights de 5v5 con múltiples efectos visuales y habilidades en pantalla), el rendimiento se mantiene robusto, aunque los procesadores más antiguos pueden experimentar ligeras caídas de frames debido a la carga de físicas y lógica del servidor. En la versión de macOS, la transición de OpenGL a la API gráfica <strong>Metal</strong> ha mejorado la eficiencia energética y la estabilidad en dispositivos con chips Apple Silicon, aunque la integración de Vanguard sigue requiriendo configuraciones de seguridad estrictas.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i3-530 / AMD A6-3650",
+          "Memoria RAM: 2 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce 9600GT / AMD HD 6570 / Intel HD 4600 (Compatible con DX11)",
+          "Almacenamiento: 16 GB HDD",
+          "Sistema Operativo: Windows 10 (Build 19041+) / macOS 10.13"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i5-3300 / AMD Ryzen 3 1200",
+          "Memoria RAM: 4 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce GTX 560 / AMD Radeon HD 6950 / Intel UHD 630 (Compatible con DX11)",
+          "Almacenamiento: 16 GB SSD",
+          "Sistema Operativo: Windows 11 (con TPM 2.0 y Secure Boot habilitados) / macOS 11"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
+    },
+    {
+      "id": "pubg-battlegrounds",
+      "titulo": "PUBG: Battlegrounds",
+      "fecha": "17 Jul, 2026",
+      "plataformas": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S",
+      "calificacion": "7.5",
+      "motor_grafico": "Unreal Engine 4 (con transición en desarrollo a Unreal Engine 5)",
+      "tecnologias": "NVIDIA DLSS, AMD FSR, DirectX 11/12, Crossplay, HRTF Audio",
+      "sinopsis": "El battle royale definitivo donde 100 jugadores luchan por la supervivencia en mapas masivos. Estrategia, puntería y adaptabilidad son claves para ser el último en pie.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>PUBG: Battlegrounds</strong> en PC ha recorrido un largo camino desde su caótico lanzamiento. Actualmente, bajo el motor <strong>Unreal Engine 4</strong>, el juego ofrece una experiencia mucho más sólida, aunque sigue mostrando una fuerte dependencia de la CPU. Durante los primeros minutos de la partida, especialmente en el despliegue inicial con 100 jugadores simultáneos, es habitual experimentar fluctuaciones en el frametime y ligeros tirones (stuttering), incluso en equipos de gama alta.</p><p>La optimización gráfica es sumamente maleable. La comunidad competitiva suele configurar los gráficos en 'Muy Bajo' (salvo texturas y distancia de visión) para maximizar los FPS y reducir el input lag. La inclusión de tecnologías de escalado como <strong>NVIDIA DLSS</strong> y <strong>AMD FSR</strong> ha mejorado sustancialmente la estabilidad en resoluciones 1440p y 4K, aliviando la carga sobre la GPU. Sin embargo, en tiroteos intensos dentro de ciudades densas, el procesador sigue siendo el principal cuello de botella, requiriendo memorias RAM rápidas en doble canal para evitar caídas bruscas de rendimiento.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 (64-bit)",
+          "Procesador: Intel Core i5-4430 / AMD FX-6300",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 960 2GB / AMD Radeon R7 370 2GB"
+        ],
+        "recomendados": [
+          "SO: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core i5-6600K / AMD Ryzen 5 1600",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 3GB / AMD Radeon RX 580 4GB"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/1bd/1bd2657b81eb0c99338120ad444b24ff.jpg"
+    },
+    {
+      "id": "grand-theft-auto-v",
+      "titulo": "Grand Theft Auto V",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
+      "calificacion": "9.7",
+      "motor_grafico": "RAGE (Rockstar Advanced Game Engine) con Euphoria Physics",
+      "tecnologias": "DirectX 11, Ray Tracing (Consolas Next-Gen), NVIDIA TXAA, AMD CHS, HDR10",
+      "sinopsis": "Tres criminales muy diferentes asocian sus esfuerzos para llevar a cabo una serie de audaces y peligrosos atracos en la metrópolis de Los Santos.",
+      "analisis_detallado": "<p>Grand Theft Auto V es uno de los títulos mejor optimizados en la historia de la plataforma <strong>PC</strong>. El motor gráfico <strong>RAGE</strong> escala de manera excepcional tanto en hardware antiguo como de última generación. En resoluciones 1080p, tarjetas gráficas de gama media-baja logran mantener <strong>60 FPS estables</strong> sin mayores dificultades.</p><p>El rendimiento en consolas de actual generación (PS5 y Xbox Series X) destaca por la inclusión de modos de rendimiento a <strong>60 FPS con trazado de rayos (Ray Tracing)</strong> y tiempos de carga drásticamente reducidos gracias al almacenamiento <strong>SSD</strong>. En PC, el uso de tecnologías de antialiasing como <strong>TXAA</strong> y la alta densidad de población configurable demuestran la flexibilidad del motor, aunque el cuello de botella suele trasladarse al procesador en zonas urbanas densas.</p>",
+      "requisitos": {
+        "minimos": [
+          "Intel Core 2 Quad Q6600 2.40GHz / AMD Phenom 9850 2.5GHz",
+          "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
+          "4 GB de Memoria RAM",
+          "120 GB de espacio disponible en disco"
+        ],
+        "recomendados": [
+          "Intel Core i5 3470 3.2GHz / AMD FX-8350 4GHz",
+          "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+          "8 GB de Memoria RAM",
+          "120 GB de espacio disponible (SSD recomendado)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
+    },
+    {
+      "id": "honor-of-kings",
+      "titulo": "Honor of Kings",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS, iPadOS",
+      "calificacion": "9.0",
+      "motor_grafico": "Unity (Tuanjie Engine)",
+      "tecnologias": "Vulkan API, Metal API, Crossplay, Soporte para 120Hz, Audio Wwise, Renderizado Multihilo",
+      "sinopsis": "Honor of Kings es el MOBA móvil de 5v5 más popular del mundo, donde los jugadores eligen héroes legendarios inspirados en la mitología para destruir la base enemiga en partidas rápidas y competitivas.",
+      "analisis_detallado": "<p><strong>Honor of Kings</strong> destaca de manera sobresaliente por su excepcional nivel de optimización en dispositivos móviles. Desarrollado sobre el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio perfecto entre fidelidad visual y rendimiento técnico. En dispositivos de gama media y alta, el título mantiene unos <strong>60 FPS o 120 FPS estables</strong> sin caídas notables de frames, incluso durante las batallas grupales más caóticas donde abundan los efectos de partículas y habilidades simultáneas.</p><p>La implementación de las APIs <strong>Vulkan</strong> en Android y <strong>Metal</strong> en iOS permite una comunicación directa con el hardware, reduciendo drásticamente la sobrecarga de la CPU. Esto no solo mejora la fluidez general, sino que también optimiza el consumo de batería y mitiga el estrangulamiento térmico (thermal throttling). El juego cuenta con un sistema de renderizado multihilo que distribuye la carga de trabajo de manera eficiente entre los núcleos del procesador.</p><p>La escalabilidad técnica es otro de sus puntos fuertes. El menú de configuración ofrece un control granular sobre la calidad de las texturas, la resolución y los efectos de sombras, permitiendo que teléfonos con casi una década de antigüedad puedan ejecutar el juego de forma fluida a 30 FPS. Además, la infraestructura de red global de <strong>Level Infinite</strong> garantiza un netcode robusto con latencias mínimas y un sistema de reconexión sumamente rápido, vital para el juego competitivo.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 5.1 / iOS 11.0 o superior",
+          "Procesador: CPU Quad-Core a 1.0 GHz o superior",
+          "Memoria RAM: 1 GB (Android) / 2 GB (iOS)",
+          "Almacenamiento: 2 GB de espacio libre (instalación básica)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 12 / iOS 15.0 o superior",
+          "Procesador: CPU Octa-Core a 1.6 GHz o superior (Snapdragon 680 / Apple A13)",
+          "Memoria RAM: 4 GB o superior",
+          "Almacenamiento: 5 GB o más de espacio libre (recursos HD completos)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
+    },
+    {
+      "id": "call-of-duty-warzone",
+      "titulo": "Call of Duty: Warzone",
+      "fecha": "17 Jul, 2026",
+      "plataformas": "PC, PS5, Xbox Series X/S, PS4, Xbox One",
+      "calificacion": "8.2",
+      "motor_grafico": "IW 9.0",
+      "tecnologias": "NVIDIA DLSS 3 (Frame Generation), AMD FSR 3, Intel XeSS, NVIDIA Reflex, Ray Tracing, Crossplay",
+      "sinopsis": "Call of Duty: Warzone es la experiencia Battle Royale gratuita de Activision, donde más de 100 jugadores se enfrentan en mapas masivos integrando el armamento y la jugabilidad de las entregas principales de la saga.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Call of Duty: Warzone</strong> bajo el motor <strong>IW 9.0</strong> ofrece una experiencia visualmente impactante, pero con una alta demanda de recursos, especialmente a nivel de CPU debido al cálculo de físicas, trayectorias de balas y el elevado número de jugadores simultáneos en mapas masivos como Urzikstan.</p><p>En <strong>PC</strong>, la optimización es sumamente escalable gracias a la inclusión de tecnologías de reconstrucción de imagen de última generación como <strong>DLSS 3 (con Frame Generation)</strong>, <strong>FSR 3</strong> y <strong>Intel XeSS</strong>. Estas herramientas son cruciales para alcanzar tasas de refresco competitivas (144 FPS o más) en resoluciones 1440p o 4K. No obstante, el juego sufre ocasionalmente de <em>stuttering</em> (tirones) durante la compilación de shaders en el primer inicio o tras actualizaciones de drivers, un proceso que puede tomar varios minutos y requiere un almacenamiento SSD veloz para mitigar tiempos de carga y problemas de streaming de texturas bajo demanda.</p><p>En consolas de actual generación (<strong>PS5 y Xbox Series X</strong>), el título se comporta de manera excelente, ofreciendo un modo de <strong>120 Hz</strong> con resolución dinámica que prioriza la fluidez competitiva, manteniéndose muy cerca de su objetivo de rendimiento. Por otro lado, las versiones de anterior generación (PS4 y Xbox One) sufren notablemente con caídas de resolución por debajo de 900p, tiempos de carga extremadamente largos y texturas borrosas, evidenciando que el motor IW 9.0 está diseñado con el hardware moderno en mente.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Windows 10 64-bit (última actualización)",
+          "Procesador: Intel Core i3-6100 / Core i5-2500K o AMD Ryzen 3 1200",
+          "Memoria RAM: 8 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce GTX 960 o AMD Radeon RX 470 (DirectX 12)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Windows 10/11 64-bit (última actualización)",
+          "Procesador: Intel Core i5-6600K / Core i7-4770 o AMD Ryzen 5 1400",
+          "Memoria RAM: 12 GB (16 GB recomendados para competitivo)",
+          "Tarjeta Gráfica: NVIDIA GeForce GTX 1060 o AMD Radeon RX 580"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/7e3/7e327a055bedb9b6d1be86593bef473d.jpg"
     },
     {
       "id": "garena-free-fire",
@@ -171,63 +332,6 @@
       "imagen": "https://media.rawg.io/media/screenshots/087/0879f4aab10a12ecde452f6326bac01e.jpg"
     },
     {
-      "id": "league-of-legends",
-      "titulo": "League of Legends",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "PC (Windows, macOS)",
-      "calificacion": "9.0",
-      "motor_grafico": "Motor propio (Riot Games)",
-      "tecnologias": "DirectX 11, Metal (macOS), Riot Vanguard (Anti-cheat), Multi-threading",
-      "sinopsis": "League of Legends es un videojuego de estrategia y acción por equipos (MOBA) en el que dos equipos de cinco poderosos campeones se enfrentan para destruir el Nexo del oponente, combinando táctica, reflejos y juego cooperativo en tiempo real.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>League of Legends</strong> destaca por su excelente optimización histórica, permitiendo que el juego funcione de manera fluida incluso en ordenadores de gama baja o portátiles antiguos. Sin embargo, las actualizaciones recientes de Riot Games han elevado ligeramente el listón técnico. La transición obligatoria a <strong>DirectX 11</strong> y la implementación del sistema antitrampas a nivel de kernel, <strong>Riot Vanguard</strong>, han dejado atrás el soporte para sistemas operativos obsoletos como Windows 7 u 8, exigiendo ahora Windows 10 o Windows 11 (este último con TPM 2.0 obligatorio).</p><p>En el juego real, el motor gráfico propio de Riot ofrece una tasa de fotogramas por segundo (FPS) sumamente estable. En equipos de gama media y alta, es sumamente sencillo superar los <strong>144 FPS o incluso 240 FPS</strong> a resolución 1080p o 1440p, lo que resulta ideal para monitores de alta tasa de refresco. Los tiempos de carga se han reducido significativamente gracias a la optimización del cliente y el uso recomendado de unidades <strong>SSD</strong>.</p><p>Durante las peleas de equipo más caóticas (teamfights de 5v5 con múltiples efectos visuales y habilidades en pantalla), el rendimiento se mantiene robusto, aunque los procesadores más antiguos pueden experimentar ligeras caídas de frames debido a la carga de físicas y lógica del servidor. En la versión de macOS, la transición de OpenGL a la API gráfica <strong>Metal</strong> ha mejorado la eficiencia energética y la estabilidad en dispositivos con chips Apple Silicon, aunque la integración de Vanguard sigue requiriendo configuraciones de seguridad estrictas.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i3-530 / AMD A6-3650",
-          "Memoria RAM: 2 GB",
-          "Tarjeta Gráfica: NVIDIA GeForce 9600GT / AMD HD 6570 / Intel HD 4600 (Compatible con DX11)",
-          "Almacenamiento: 16 GB HDD",
-          "Sistema Operativo: Windows 10 (Build 19041+) / macOS 10.13"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i5-3300 / AMD Ryzen 3 1200",
-          "Memoria RAM: 4 GB",
-          "Tarjeta Gráfica: NVIDIA GeForce GTX 560 / AMD Radeon HD 6950 / Intel UHD 630 (Compatible con DX11)",
-          "Almacenamiento: 16 GB SSD",
-          "Sistema Operativo: Windows 11 (con TPM 2.0 y Secure Boot habilitados) / macOS 11"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
-    },
-    {
-      "id": "counter-strike-2",
-      "titulo": "Counter-Strike 2",
-      "fecha": "12 Jul, 2026",
-      "plataformas": "PC (Windows, Linux / SteamOS)",
-      "calificacion": 8.5,
-      "motor_grafico": "Source 2",
-      "tecnologias": [
-        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
-        "NVIDIA Reflex Low Latency"
-      ],
-      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
-      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
-          "Memoria: 8 GB de RAM",
-          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
-          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
-          "Memoria: 16 GB de RAM de doble canal",
-          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
-          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
-    },
-    {
       "id": "genshin-impact",
       "titulo": "Genshin Impact",
       "fecha": "16 Jul, 2026",
@@ -252,32 +356,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
-    },
-    {
-      "id": "grand-theft-auto-v",
-      "titulo": "Grand Theft Auto V",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
-      "calificacion": "9.7",
-      "motor_grafico": "RAGE (Rockstar Advanced Game Engine) con Euphoria Physics",
-      "tecnologias": "DirectX 11, Ray Tracing (Consolas Next-Gen), NVIDIA TXAA, AMD CHS, HDR10",
-      "sinopsis": "Tres criminales muy diferentes asocian sus esfuerzos para llevar a cabo una serie de audaces y peligrosos atracos en la metrópolis de Los Santos.",
-      "analisis_detallado": "<p>Grand Theft Auto V es uno de los títulos mejor optimizados en la historia de la plataforma <strong>PC</strong>. El motor gráfico <strong>RAGE</strong> escala de manera excepcional tanto en hardware antiguo como de última generación. En resoluciones 1080p, tarjetas gráficas de gama media-baja logran mantener <strong>60 FPS estables</strong> sin mayores dificultades.</p><p>El rendimiento en consolas de actual generación (PS5 y Xbox Series X) destaca por la inclusión de modos de rendimiento a <strong>60 FPS con trazado de rayos (Ray Tracing)</strong> y tiempos de carga drásticamente reducidos gracias al almacenamiento <strong>SSD</strong>. En PC, el uso de tecnologías de antialiasing como <strong>TXAA</strong> y la alta densidad de población configurable demuestran la flexibilidad del motor, aunque el cuello de botella suele trasladarse al procesador en zonas urbanas densas.</p>",
-      "requisitos": {
-        "minimos": [
-          "Intel Core 2 Quad Q6600 2.40GHz / AMD Phenom 9850 2.5GHz",
-          "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
-          "4 GB de Memoria RAM",
-          "120 GB de espacio disponible en disco"
-        ],
-        "recomendados": [
-          "Intel Core i5 3470 3.2GHz / AMD FX-8350 4GHz",
-          "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
-          "8 GB de Memoria RAM",
-          "120 GB de espacio disponible (SSD recomendado)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
     },
     {
       "id": "free-fire",
@@ -1034,32 +1112,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/8d6/8d6e253b996283f3244b7999472eeaad.jpg"
-    },
-    {
-      "id": "honor-of-kings",
-      "titulo": "Honor of Kings",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "Android, iOS, iPadOS",
-      "calificacion": "9.0",
-      "motor_grafico": "Unity (Tuanjie Engine)",
-      "tecnologias": "Vulkan API, Metal API, Crossplay, Soporte para 120Hz, Audio Wwise, Renderizado Multihilo",
-      "sinopsis": "Honor of Kings es el MOBA móvil de 5v5 más popular del mundo, donde los jugadores eligen héroes legendarios inspirados en la mitología para destruir la base enemiga en partidas rápidas y competitivas.",
-      "analisis_detallado": "<p><strong>Honor of Kings</strong> destaca de manera sobresaliente por su excepcional nivel de optimización en dispositivos móviles. Desarrollado sobre el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio perfecto entre fidelidad visual y rendimiento técnico. En dispositivos de gama media y alta, el título mantiene unos <strong>60 FPS o 120 FPS estables</strong> sin caídas notables de frames, incluso durante las batallas grupales más caóticas donde abundan los efectos de partículas y habilidades simultáneas.</p><p>La implementación de las APIs <strong>Vulkan</strong> en Android y <strong>Metal</strong> en iOS permite una comunicación directa con el hardware, reduciendo drásticamente la sobrecarga de la CPU. Esto no solo mejora la fluidez general, sino que también optimiza el consumo de batería y mitiga el estrangulamiento térmico (thermal throttling). El juego cuenta con un sistema de renderizado multihilo que distribuye la carga de trabajo de manera eficiente entre los núcleos del procesador.</p><p>La escalabilidad técnica es otro de sus puntos fuertes. El menú de configuración ofrece un control granular sobre la calidad de las texturas, la resolución y los efectos de sombras, permitiendo que teléfonos con casi una década de antigüedad puedan ejecutar el juego de forma fluida a 30 FPS. Además, la infraestructura de red global de <strong>Level Infinite</strong> garantiza un netcode robusto con latencias mínimas y un sistema de reconexión sumamente rápido, vital para el juego competitivo.</p>",
-      "requisitos": {
-        "minimos": [
-          "Sistema Operativo: Android 5.1 / iOS 11.0 o superior",
-          "Procesador: CPU Quad-Core a 1.0 GHz o superior",
-          "Memoria RAM: 1 GB (Android) / 2 GB (iOS)",
-          "Almacenamiento: 2 GB de espacio libre (instalación básica)"
-        ],
-        "recomendados": [
-          "Sistema Operativo: Android 12 / iOS 15.0 o superior",
-          "Procesador: CPU Octa-Core a 1.6 GHz o superior (Snapdragon 680 / Apple A13)",
-          "Memoria RAM: 4 GB o superior",
-          "Almacenamiento: 5 GB o más de espacio libre (recursos HD completos)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     }
   ]
 }
