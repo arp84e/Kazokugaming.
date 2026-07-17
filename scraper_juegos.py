@@ -20,7 +20,6 @@ if not api_key: sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
 client = genai.Client(api_key=api_key)
 archivo_oficial = "juegos.json" 
 
-# Cargar base actual
 estructura_final = {"juegos": []}
 nombres_existentes = []
 if os.path.exists(archivo_oficial):
@@ -30,7 +29,6 @@ if os.path.exists(archivo_oficial):
             nombres_existentes = [j["titulo"].lower() for j in estructura_final.get("juegos", [])]
         except: pass
 
-# ================= MÓDULO DE ELIMINACIÓN =================
 if comando_input.startswith("eliminar:"):
     ids_brutos = comando_input.replace("eliminar:", "", 1)
     ids_a_eliminar = [i.strip() for i in ids_brutos.split(";") if i.strip()]
@@ -47,9 +45,8 @@ if comando_input.startswith("eliminar:"):
         print(f"✅ ÉXITO: Se han eliminado {juegos_borrados} juego(s) de la base de datos.")
     else:
         print("⚠️ No se encontró ningún juego con ese ID en el registro.")
-    sys.exit(0) # Finaliza el script aquí si el comando era eliminar
+    sys.exit(0)
 
-# ================= MÓDULO DE CREACIÓN =================
 def extraer_json_seguro(texto):
     texto = texto.strip()
     match = re.search(r'\{.*\}', texto, re.DOTALL)
@@ -92,7 +89,8 @@ elif comando_input.isdigit():
     """
 else:
     print(f"🛠️ COMANDO LISTA: Procesando títulos específicos solicitados...")
-    juegos_a_procesar = [j.strip() for j in os.environ.get("INPUT_COMANDOS", "").split(";") if j.strip()]
+    # SEGURIDAD: Limpieza de inputs contra Prompt Injection
+    juegos_a_procesar = [re.sub(r'["\n\r]', '', j.strip()) for j in os.environ.get("INPUT_COMANDOS", "").split(";") if j.strip()]
 
 if comando_input == "top" or comando_input.isdigit():
     try:
