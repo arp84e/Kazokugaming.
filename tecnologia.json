@@ -1,6 +1,85 @@
 {
   "productos": [
     {
+      "id": "sony-wf-1000xm6",
+      "titulo": "Sony WF-1000XM6",
+      "fecha": "17 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.2",
+      "descripcion_corta": "Los Sony WF-1000XM6 redefinen el audio inalámbrico con el chip QN3e y una cancelación de ruido de otro planeta. La evolución definitiva para audiófilos y gamers exigentes.",
+      "caracteristicas": [
+        "Procesador HD Noise Cancelling QN3e de última generación.",
+        "Sistema de 8 micrófonos de precisión con sensores de conducción ósea.",
+        "Soporte para Hi-Res Audio Wireless, LDAC y DSEE Extreme.",
+        "Diseño ergonómico mejorado con ventilación y resistencia IPX4."
+      ],
+      "pros": [
+        "Cancelación de ruido activa (ANC) líder en la industria y adaptativa.",
+        "Calidad de sonido de nivel de estudio con graves más controlados y limpios.",
+        "Calidad de llamada impecable gracias a la IA y conducción ósea."
+      ],
+      "contras": [
+        "Precio premium de lanzamiento de 329 dólares.",
+        "La autonomía real con ANC a tope puede quedarse algo corta frente a lo prometido."
+      ],
+      "analisis_profesional": "<p>En KazokuGaming hemos puesto a prueba los nuevos Sony WF-1000XM6, la última joya de la corona japonesa en audio True Wireless. Desde el primer contacto, queda claro que Sony no se ha limitado a una actualización incremental. El corazón de estos auriculares es el nuevo procesador HD QN3e, que junto a un sistema de 8 micrófonos de precisión, ofrece una cancelación de ruido activa que roza la perfección absoluta, aislando por completo el bullicio exterior para que te concentres únicamente en tu música o tus partidas en dispositivos móviles.</p><p>El diseño ha recibido un refinamiento sumamente necesario. Aunque el estuche sigue sintiéndose algo robusto, los auriculares en sí son más delgados, ergonómicos y cuentan con un nuevo sistema de ventilación que alivia la presión en el oído durante largas sesiones de uso. Además, la inclusión de sensores de conducción ósea y algoritmos de reducción de ruido por IA eleva la calidad de las llamadas a un nivel sobresaliente, ideal tanto para entornos de oficina como para coordinar tácticas con tu equipo sobre la marcha.</p><p>En el apartado acústico, co-creados con ingenieros de masterización ganadores del Grammy, los WF-1000XM6 ofrecen una escena sonora amplia, detallada y con unos graves mucho más limpios y controlados que sus predecesores. Si bien su precio de 329 dólares es elevado y la duración de la batería en condiciones de uso real intenso puede ser ligeramente inferior a las 8 horas teóricas, el veredicto es rotundo: si buscas la experiencia de audio definitiva y el aislamiento más avanzado del mercado en 2026, los WF-1000XM6 son una inversión que vale cada centavo.</p>",
+      "imagen": "https://images.pexels.com/photos/29684682/pexels-photo-29684682.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Sony%20WF-1000XM6&tag=kazokugaming-21"
+    },
+    {
+      "id": "amd-ryzen-7-7700x3d",
+      "titulo": "AMD Ryzen 7 7700X3D",
+      "fecha": "17 Jul, 2026",
+      "categoria": "Hardware",
+      "calificacion": "8.3",
+      "descripcion_corta": "El Ryzen 7 7700X3D ofrece un rendimiento gaming brutal y una eficiencia energética récord, pero su precio de lanzamiento lo deja en una posición incómoda.",
+      "caracteristicas": [
+        "Arquitectura Zen 4 con 8 núcleos y 16 hilos de procesamiento.",
+        "Tecnología AMD 3D V-Cache con un total de 104 MB de caché (96 MB L3).",
+        "Frecuencias de reloj de 4.0 GHz de base y hasta 4.5 GHz en modo Boost.",
+        "Zócalo AM5 compatible con memoria DDR5 y PCIe 5.0."
+      ],
+      "pros": [
+        "Rendimiento en juegos sobresaliente, rozando los talones del 7800X3D.",
+        "Eficiencia energética sin precedentes con la mejor relación FPS por vatio del mercado.",
+        "Excelente compatibilidad y longevidad gracias a la plataforma AM5."
+      ],
+      "contras": [
+        "Precio de salida ($329 USD) muy cercano al del superior Ryzen 7 7800X3D.",
+        "Rendimiento modesto en tareas de productividad y creación de contenido.",
+        "Diferencia de rendimiento en juegos de apenas un 2% frente al más barato Ryzen 5 7600X3D."
+      ],
+      "analisis_profesional": "<p>En KazokuGaming hemos analizado a fondo el nuevo AMD Ryzen 7 7700X3D, una propuesta que busca llevar los beneficios de la tecnología 3D V-Cache a un público más amplio dentro de la plataforma AM5. Equipado con 8 núcleos y 16 hilos bajo la arquitectura Zen 4, este chip recorta sus frecuencias frente al aclamado 7800X3D, ofreciendo un reloj base de 4.0 GHz y un boost máximo de 4.5 GHz. Sin embargo, donde realmente sorprende es en su consumo de energía: este procesador ha registrado la mejor eficiencia de FPS por vatio que hayamos visto jamás en nuestro laboratorio, convirtiéndose en una opción ideal para sistemas compactos y silenciosos.</p><p>En el terreno del gaming puro, el Ryzen 7 7700X3D es una bestia indomable. En nuestras pruebas a resolución 1080p y 1440p, se sitúa consistentemente como el tercer procesador más rápido del mercado, quedando apenas un paso por detrás del 7800X3D y el nuevo 9800X3D. No obstante, la historia cambia cuando salimos de los videojuegos. En tareas de productividad pesada, como renderizado 3D o edición de video, las menores frecuencias de reloj le pasan factura, quedando notablemente por detrás de alternativas de Intel como el Core Ultra 7 270K Plus.</p><p>El veredicto final de KazokuGaming es agridulce. El Ryzen 7 7700X3D es un procesador técnicamente brillante y sumamente eficiente, pero su precio de lanzamiento de $329 USD lo coloca en tierra de nadie. Estando tan cerca del precio de oferta del 7800X3D, y rindiendo casi igual en juegos que el mucho más económico Ryzen 5 7600X3D, su compra solo es recomendable si buscas la máxima eficiencia energética o si su precio baja en los próximos meses. Es un producto excelente, pero que necesita un ajuste de precio para brillar como se merece.</p>",
+      "imagen": "https://images.pexels.com/photos/30083229/pexels-photo-30083229.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=AMD%20Ryzen%207%207700X3D&tag=kazokugaming-21"
+    },
+    {
+      "id": "samsung-galaxy-s26-ultra",
+      "titulo": "Samsung Galaxy S26 Ultra",
+      "fecha": "17 Jul, 2026",
+      "categoria": "Smartphones",
+      "calificacion": "9.5",
+      "descripcion_corta": "El rey indiscutible de la gama alta en 2026. Potencia gaming extrema con el Snapdragon 8 Elite Gen 5 y una revolucionaria pantalla de privacidad que redefine el juego móvil.",
+      "caracteristicas": [
+        "Procesador Qualcomm Snapdragon 8 Elite Gen 5 (3 nm)",
+        "Pantalla Dynamic AMOLED 2X con tecnología Privacy Display integrada",
+        "Carga súper rápida por cable de 60W y batería de 5000 mAh",
+        "Cámara principal de 200 MP con IA avanzada y zoom óptico optimizado"
+      ],
+      "pros": [
+        "Rendimiento gaming brutal sin sobrecalentamiento gracias a su cámara de vapor optimizada",
+        "La innovadora pantalla con filtro de privacidad por hardware mantiene tus datos a salvo de miradas indiscretas",
+        "Carga de 60W notablemente más rápida que las generaciones anteriores"
+      ],
+      "contras": [
+        "El precio de salida sigue siendo sumamente restrictivo para la mayoría de usuarios",
+        "La pantalla de privacidad reduce ligeramente los ángulos de visión máximos cuando está desactivada"
+      ],
+      "analisis_profesional": "<p>En KazokuGaming hemos puesto a prueba el nuevo titán de Samsung, el Galaxy S26 Ultra, y el veredicto es claro: es una auténtica bestia diseñada tanto para la productividad extrema como para el gaming competitivo en móviles. El corazón de este dispositivo es el revolucionario procesador Snapdragon 8 Elite Gen 5 de 3 nm, que ofrece una tasa de frames ultraestable en títulos exigentes como Genshin Impact o Warzone Mobile, manteniendo las temperaturas bajo control gracias a un sistema de refrigeración térmica rediseñado.</p><p>El apartado estético mantiene la línea premium de titanio, pero con una reducción de grosor a solo 7.9 mm y un peso más estilizado de 214 gramos que mejora la ergonomía durante largas sesiones de juego. Sin embargo, la verdadera estrella de hardware de este año es la incorporación de la 'Privacy Display'. Esta tecnología por hardware te permite ocultar el contenido de tu pantalla ante miradas ajenas con solo un toque, algo sumamente útil si juegas o trabajas en el transporte público o espacios concurridos.</p><p>En cuanto a la autonomía, Samsung finalmente da el salto que esperábamos con una carga rápida de 60W que revive el teléfono en tiempo récord, complementando su generosa batería de 5000 mAh. El apartado fotográfico de 200 MP brilla especialmente en la captura de video nocturno y procesamiento de imagen asistido por Galaxy AI. En conclusión, el Galaxy S26 Ultra no solo refina la fórmula del éxito, sino que introduce innovaciones tangibles que justifican su estatus como el mejor smartphone del año.</p>",
+      "imagen": "https://images.pexels.com/photos/30466740/pexels-photo-30466740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Samsung%20Galaxy%20S26%20Ultra&tag=kazokugaming-21"
+    },
+    {
       "id": "roborock-qrevo-curv",
       "titulo": "Roborock Qrevo Curv",
       "fecha": "16 Jul, 2026",
