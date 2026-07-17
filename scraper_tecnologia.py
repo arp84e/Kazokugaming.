@@ -41,7 +41,6 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
         time.sleep(10)
     raise Exception("❌ Servidores inactivos.")
 
-# Cargar base actual
 estructura_final = {"productos": []}
 nombres_existentes = []
 if os.path.exists(archivo_oficial):
@@ -56,8 +55,9 @@ links_manuales = []
 
 if input_productos:
     print("🛠️ MODO MANUAL: Procesando lista delimitada...")
-    productos_a_procesar = [p.strip() for p in input_productos.split(";") if p.strip()]
-    links_manuales = [l.strip() for l in input_links.split(";")] if input_links else []
+    # SEGURIDAD: Limpieza de inputs contra Prompt Injection
+    productos_a_procesar = [re.sub(r'["\n\r]', '', p.strip()) for p in input_productos.split(";") if p.strip()]
+    links_manuales = [re.sub(r'["\n\r]', '', l.strip()) for l in input_links.split(";")] if input_links else []
 else:
     print("🌍 MODO AUTOMÁTICO: Escaneando tendencias tecnológicas (Hardware, Gadgets)...")
     prompt_top = f"""
@@ -106,7 +106,6 @@ for i, prod in enumerate(productos_a_procesar):
         res = generar_con_reintentos(prompt_review, config_rev)
         data = json.loads(extraer_json_seguro(res.text))
         
-        # Búsqueda de imagen en Pexels
         imagen_real = "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1200"
         prompt_img = data.get("prompt_imagen", "gaming technology")
         if pexels_key:
@@ -115,12 +114,10 @@ for i, prod in enumerate(productos_a_procesar):
                 if r.get("photos"): imagen_real = random.choice(r["photos"])["src"]["landscape"]
             except: pass
 
-        # Gestionar Link de Afiliado
         link_afiliado = ""
         if input_productos and i < len(links_manuales) and links_manuales[i]:
             link_afiliado = links_manuales[i]
         else:
-            # Generador automático de link de búsqueda en Amazon con tu TAG
             link_afiliado = f"https://www.amazon.es/s?k={urllib.parse.quote(prod)}&tag={TAG_AFILIADO}"
         
         nuevo_producto = {
