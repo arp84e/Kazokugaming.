@@ -1,6 +1,45 @@
 {
   "guias": [
     {
+      "id": "apex-legends",
+      "juego": "Apex Legends",
+      "fecha": "18 Jul, 2026",
+      "descripcion_corta": "Domina el battle royale con secretos de nivel profesional. Aprende a controlar el posicionamiento, optimizar tu inventario y dominar el movimiento avanzado para asegurar la victoria.",
+      "consejos_rapidos": [
+        "Domina el 'slide jump' y el 'wall bounce' para ser un objetivo extremadamente difícil de impactar en combate cerrado.",
+        "Prioriza siempre la altura (high ground) en los círculos finales; la ventaja visual y de cobertura es matemática pura.",
+        "Gestiona tu inventario con disciplina: lleva solo 2 espacios de munición por arma y prioriza escudos y granadas tácticas."
+      ],
+      "contenido_html": "<h2>1. Mecánicas de Movimiento Avanzado: La Clave del Éxito</h2><p>En Apex Legends, el movimiento es tanto tu mejor defensa como tu mejor ataque. Los jugadores profesionales no solo corren; utilizan técnicas avanzadas para romper la línea de visión del enemigo y ganar duelos.</p><ul><li><strong>Slide Jump:</strong> Deslizarse antes de saltar te otorga un impulso de velocidad crítico para cruzar zonas abiertas.</li><li><strong>Wall Bounce:</strong> Deslízate hacia una pared, salta y suelta las teclas de dirección justo al tocarla para rebotar con fuerza, desorientando al rival.</li><li><strong>Strafe Aéreo:</strong> Controlar la dirección en el aire te permite esquivar disparos de francotirador mientras te desplazas.</li></ul><h2>2. Control de Zonas y Posicionamiento Táctico</h2><p>El posicionamiento define más partidas que la puntería pura. Utiliza siempre la regla del 'High Ground' (terreno elevado) y rota temprano hacia el siguiente anillo.</p><ul><li><strong>Rotaciones tempranas:</strong> No esperes a que el anillo empiece a cerrarse. Anticipa la zona utilizando los escáneres de los personajes de reconocimiento.</li><li><strong>Uso de Coberturas Naturales:</strong> Nunca te cures en campo abierto; mantén siempre un obstáculo físico entre tú y la línea de fuego enemiga.</li></ul><h2>3. Selección de Armamento y Meta Actual</h2><p>Llevar la combinación de armas adecuada te preparará para cualquier rango de enfrentamiento. El meta competitivo exige versatilidad.</p><ul><li><strong>Fusiles de Asalto (R-301 / Flatline):</strong> Ideales para distancias medias por su daño sostenido y control de retroceso.</li><li><strong>Escopetas (Peacekeeper / Mastiff):</strong> Indispensables para combates en espacios cerrados y para rematar enemigos tras romper sus escudos.</li></ul>",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
+    },
+    {
+      "id": "rainbow-six-siege",
+      "juego": "Rainbow Six Siege",
+      "fecha": "18 Jul, 2026",
+      "descripcion_corta": "Domina el meta competitivo y escala rangos como un profesional con esta guía táctica definitiva.\nAprende a dominar la información, el control de mapas y la destrucción vertical para aplastar a tus rivales.",
+      "consejos_rapidos": [
+        "La información es poder: usa tus drones y cámaras constantemente; nunca entres a una habitación a ciegas.",
+        "Domina el 'vertical play': destruye techos o suelos blandos para forzar a los defensores a salir de sus coberturas.",
+        "Mantén la mira a la altura de la cabeza: en Siege, un solo disparo a la cabeza es eliminación instantánea (One-Shot Headshot)."
+      ],
+      "contenido_html": "<h2>Mecánicas Avanzadas y Control de Mapa</h2><p>En el plano profesional de Rainbow Six Siege, el control del mapa se decide en los primeros 45 segundos de la ronda. Como atacante, tu prioridad es limpiar los 'roamers' (defensores móviles) utilizando drones de manera coordinada. No malgastes tus drones en la fase de preparación; colócalos en los puntos de entrada clave para maximizar tu supervivencia y efectividad.</p><h2>El Arte de la Destrucción Vertical</h2><p>La destructibilidad del entorno es lo que hace único a Siege. Utilizar operadores como Buck, Sledge o Ram te permite crear líneas de visión verticales desde el piso superior o inferior. Esto rompe por completo las estrategias de anclaje de los defensores en el objetivo. Recuerda siempre cubrir tus flancos con dispositivos como el Airjab de Nomad o los Claymores mientras realizas esta tarea.</p><h2>Armas y Manejo del Retroceso</h2><ul><li><strong>F2 (Twitch):</strong> Una de las armas con mayor cadencia de fuego del juego. Requiere un control de retroceso impecable, pero su tiempo para eliminar (TTK) es inigualable.</li><li><strong>SC3000K (Zero):</strong> Excelente daño y retroceso muy noble, ideal para enfrentamientos a media distancia.</li><li><strong>MP5 (Doc/Melusi):</strong> Un clásico de la defensa. Su bajo retroceso facilita enormemente los disparos a la cabeza a larga distancia.</li></ul><h2>Posicionamiento y Ángulos de Pixeles</h2><p>Evita exponerte por completo al asomarte. Utiliza la mecánica de inclinación (lean) de forma fluida y busca 'ángulos de píxel' (pequeñas rendijas entre objetos destructibles o barricadas). El posicionamiento defensivo debe ser dinámico: si te descubren en un ángulo, rota inmediatamente. Un defensor estático es un defensor eliminado.</p>",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
+    },
+    {
+      "id": "valorant",
+      "juego": "Valorant",
+      "fecha": "18 Jul, 2026",
+      "descripcion_corta": "Domina el shooter táctico de Riot Games con secretos de nivel profesional. Aprende a controlar el mapa, perfeccionar tu puntería y liderar a tu equipo hacia el rango Radiante.",
+      "consejos_rapidos": [
+        "Mantén siempre la mira a la altura de la cabeza (crosshair placement) para asegurar bajas instantáneas.",
+        "Domina la economía del equipo; nunca compres de manera individual sin coordinar con tus compañeros.",
+        "Aprende a usar el 'counter-strafing' para detenerte al instante y disparar con precisión perfecta."
+      ],
+      "contenido_html": "<h2>Mecánicas de Precisión: El Arte del Gunplay</h2><p>Para competir en los rangos más altos de Valorant, la precisión no es negociable. El concepto fundamental es el <strong>crosshair placement</strong> (colocación de la mira). Tu mira siempre debe estar posicionada donde es más probable que aparezca la cabeza del enemigo, anticipando los ángulos comunes de defensa o ataque. Esto reduce drásticamente el tiempo de reacción necesario para asegurar una eliminación.</p><p>Otra técnica crucial es el <em>counter-strafing</em>. Consiste en pulsar la tecla opuesta de movimiento (por ejemplo, pulsar 'D' brevemente mientras te mueves hacia la izquierda con 'A') para frenar a tu personaje en seco. En Valorant, la precisión de las armas es nula mientras te mueves, por lo que dominar esta milésima de segundo de quietud es la diferencia entre un tiro perfecto y una bala perdida.</p><h2>Arsenal de Élite: Cuándo y Qué Comprar</h2><ul><li><strong>Vandal vs. Phantom:</strong> La eterna disputa. La Vandal es superior para distancias largas gracias a su capacidad de eliminar de un solo disparo a la cabeza sin importar la distancia. La Phantom brilla en distancias cortas y medias, tiene mayor cadencia de fuego, un patrón de retroceso más controlable y no deja rastro de balas a través del humo, lo que la hace ideal para defensores.</li><li><strong>Operator:</strong> El rifle de francotirador por excelencia. Capaz de cambiar el ritmo de una ronda con una sola baja. Requiere un posicionamiento defensivo sólido y agentes con habilidades de escape rápido (como Jett o Chamber) para mitigar el riesgo tras disparar.</li><li><strong>Gestión Económica:</strong> Coordina siempre las compras. Prioriza rondas de 'Eco' (guardar créditos), 'Semi-buy' o 'Full Buy'. Entrar a una ronda con equipamiento dispar debilita la cohesión táctica del equipo.</li></ul><h2>Estrategia de Posicionamiento y Control de Mapa</h2><p>El control del mapa se gana mediante el uso inteligente de la utilidad de los agentes. Los Iniciadores deben revelar zonas con su información, los Controladores bloquear líneas de visión clave con humo, y los Duelistas crear espacio para que el equipo avance. Nunca entres a un sitio de bomba sin limpiar los ángulos comunes utilizando habilidades previas. El posicionamiento cruzado (crossfire) con un compañero garantiza que, si uno cae, el otro pueda asegurar la baja de intercambio (trade), manteniendo la ventaja numérica.</p>",
+      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
+    },
+    {
       "id": "guia-honor-of-kings",
       "juego": "Honor of Kings",
       "titulo": "Guía Táctica: Secretos, Trucos y las Mejores Armas en Honor of Kings",
