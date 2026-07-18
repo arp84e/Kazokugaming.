@@ -1,0 +1,55 @@
+name: Bot Proyectos DIY y Gaming
+
+on:
+  workflow_dispatch:
+    inputs:
+      comandos:
+        description: 'COMANDOS: "top" | "3" | "Arcade Casero" | "eliminar:id"'
+        required: false
+        type: string
+        default: 'top'
+  schedule:
+    - cron: '0 14 * * *' # Se ejecuta a diario
+
+permissions:
+  contents: write
+
+jobs:
+  crear-proyectos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install google-genai requests
+
+      - name: Ejecutar Bot de Proyectos
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          INPUT_COMANDOS: ${{ inputs.comandos }}
+        run: python scraper_proyectos.py
+
+      - name: Actualizar Mapa del Sitio XML
+        run: python generar_sitemap.py
+
+      - name: Commit y Push de los cambios
+        run: |
+          git config --global user.name "KazokuBot"
+          git config --global user.email "bot@kazokugaming.com"
+          
+          git add proyectos.json || true
+          git add sitemap.xml || true
+          
+          if git diff --staged --quiet; then
+            echo "No hay proyectos nuevos hoy."
+          else
+            git commit -m "🤖 KazokuBot: Sección de Proyectos DIY actualizada"
+            git push
+          fi
