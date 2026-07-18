@@ -44,7 +44,13 @@
                     return;
                 }
                 
-                grid.innerHTML = guias.map(g => `
+                grid.innerHTML = guias.map(g => {
+                    /* Tolerancia a fallos: fallback de datos */
+                    const tituloCard = g.titulo || g.juego || 'Guía Táctica';
+                    const descripcionCard = g.meta_descripcion || g.descripcion_corta || 'Descubre los mejores secretos y trucos...';
+                    const tiempoLectura = g.tiempo_lectura || '5 min';
+                    
+                    return `
                     <a href="guia.html?id=${g.id}" class="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-lg">
                         <div class="relative w-full aspect-video overflow-hidden">
                           <img src="${g.imagen}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -52,11 +58,12 @@
                           <div class="absolute bottom-3 left-3 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase px-2 py-1 rounded">ESTRATEGIA</div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="font-extrabold text-xl text-white group-hover:text-emerald-400 transition-colors mb-2">${g.titulo}</h3>
-                            <p class="text-sm text-slate-400 line-clamp-3 mb-4 flex-grow">${g.meta_descripcion}</p>
-                            <span class="text-xs font-bold text-slate-500">${g.fecha} • ⏱️ ${g.tiempo_lectura}</span>
+                            <h3 class="font-extrabold text-xl text-white group-hover:text-emerald-400 transition-colors mb-2">${tituloCard}</h3>
+                            <p class="text-sm text-slate-400 line-clamp-3 mb-4 flex-grow">${descripcionCard}</p>
+                            <span class="text-xs font-bold text-slate-500">${g.fecha} • ⏱️ ${tiempoLectura}</span>
                         </div>
-                    </a>`).join('');
+                    </a>`
+                }).join('');
             })
             .catch(err => {
                 grid.innerHTML = '<p class="text-red-400 text-center col-span-full">⚠️ Error al cargar el archivo de guías.</p>';
