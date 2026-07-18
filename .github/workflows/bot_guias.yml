@@ -34,7 +34,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
           INPUT_COMANDOS: ${{ inputs.comandos }}
-        run: python bot_guias.py
+        run: python scraper_guias.py
 
       - name: Actualizar Mapa del Sitio XML
         run: python generar_sitemap.py
