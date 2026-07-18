@@ -52,17 +52,21 @@
                     return;
                 }
 
-                document.title = `${guia.titulo} | KazokuGaming`;
+                /* Sistema de Tolerancia a Fallos para leer formato viejo y nuevo */
+                const tituloGuia = guia.titulo || guia.juego || 'Expediente Clasificado';
+                const tagsArray = guia.tags || guia.consejos_rapidos || ['Táctica'];
+                const contenidoRaw = guia.contenido || guia.contenido_html || '<p>Información no disponible.</p>';
                 
-                const tagsHTML = guia.tags.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
+                document.title = `${tituloGuia} | KazokuGaming`;
                 
-                const contenidoLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(guia.contenido) : guia.contenido;
+                const tagsHTML = tagsArray.map(t => `<span class="px-3 py-1 bg-emerald-950/30 text-emerald-400 text-[10px] uppercase font-black tracking-widest rounded border border-emerald-500/20">${t}</span>`).join('');
+                const contenidoLimpio = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(contenidoRaw) : contenidoRaw;
 
                 contenedor.innerHTML = `
                     <article>
                         <div class="mb-8 text-center">
                             <span class="text-[10px] font-black tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30">DOSSIER TÁCTICO</span>
-                            <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${guia.titulo}</h1>
+                            <h1 class="text-4xl md:text-6xl font-black text-white mt-6 mb-6 tracking-tight leading-none">${tituloGuia}</h1>
                         </div>
                         <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10 border border-slate-800 shadow-2xl relative">
                            <img src="${guia.imagen}" class="w-full h-full object-cover">
