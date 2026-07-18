@@ -1,6 +1,85 @@
 {
   "productos": [
     {
+      "id": "asus-rog-azoth-extreme",
+      "titulo": "Asus ROG Azoth Extreme",
+      "fecha": "18 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.7",
+      "descripcion_corta": "¿Tu teclado actual sabotea tus reflejos? Domina cada partida y escribe sin fatiga con el revolucionario ROG Azoth Extreme, el arma definitiva de fibra de carbono.",
+      "caracteristicas": [
+        "Chasis de aleación de aluminio CNC de calidad aeroespacial",
+        "Placa de posicionamiento de fibra de carbono para una acústica y rigidez inigualables",
+        "Montura de junta ajustable (Gasket Mount) con interruptor físico de dureza",
+        "Pantalla táctil OLED a color integrada de 2 pulgadas con dial de control de tres vías",
+        "Tasa de sondeo inalámbrica extrema de hasta 8000 Hz con ROG Polling Rate Booster"
+      ],
+      "pros": [
+        "Sensación de escritura y acústica premium de nivel entusiasta sin necesidad de modding",
+        "Latencia prácticamente inexistente de 8000 Hz que destruye a la competencia",
+        "Versatilidad total gracias a su interruptor físico para cambiar entre tacto suave o firme al instante"
+      ],
+      "contras": [
+        "El precio es sumamente elevado, reservado solo para quienes buscan lo absoluto",
+        "El software Armoury Crate puede resultar pesado para algunos usuarios"
+      ],
+      "analisis_profesional": "<p>¿Alguna vez has sentido que tus dedos se mueven más rápido de lo que tu pantalla registra? Ese micro-retraso, esa tecla que no se activó a tiempo o la fatiga en tus muñecas tras una sesión intensa no son tu culpa: es tu hardware. Usar un teclado convencional para competir o trabajar a alto nivel es como conducir un superdeportivo con neumáticos desgastados; estás creando un <strong>cuello de botella invisible</strong> que sabotea tu rendimiento diario.</p><p>La realidad es frustrante. En el gaming competitivo, perder un milisegundo significa volver al lobby. En productividad, un teclado rígido y ruidoso destruye tu enfoque y genera fatiga acumulada. Te esfuerzas por mejorar, pero tu herramienta de trabajo y juego te frena silenciosamente, limitando tu precisión y consistencia.</p><p>Aquí es donde el <strong>Asus ROG Azoth Extreme</strong> cambia las reglas del juego. No estamos ante un periférico común, sino ante una obra maestra de ingeniería que fusiona el mundo de los teclados custom de gama ultra-alta con la tecnología inalámbrica más avanzada del planeta. Equipado con un chasis de aluminio CNC y una placa de <strong>fibra de carbono</strong>, ofrece una acústica celestial y una rigidez estructural sin precedentes. Su revolucionario sistema de <strong>montura de junta ajustable</strong> te permite cambiar, mediante un interruptor físico, entre un tacto suave y elástico para escribir sin fatiga, o uno firme y ultra-reactivo para destrozar a tus rivales con su tasa de sondeo de <strong>8000 Hz</strong>.</p><p>Es cierto, su precio es exclusivo. Pero piensa en esto: en lugar de gastar cientos de dólares y horas de frustración modificando teclados artesanales que carecen de conectividad inalámbrica estable, el Azoth Extreme te entrega la perfección absoluta lista para usar. Es una inversión directa en tu comodidad, tu salud ergonómica y tu ventaja competitiva.</p><p><strong>El stock de este nivel de ingeniería es extremadamente limitado</strong> debido a su complejo proceso de fabricación. No permitas que tu rendimiento siga limitado por un hardware obsoleto. Te sugerimos verificar el precio actual y la disponibilidad de inmediato antes de que la producción actual se agote por completo. ¡Haz clic y asegura el tuyo hoy mismo!</p>",
+      "imagen": "https://images.pexels.com/photos/18311088/pexels-photo-18311088.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Asus%20ROG%20Azoth%20Extreme&tag=kazokugaming-21"
+    },
+    {
+      "id": "wooting-80he",
+      "titulo": "Wooting 80HE",
+      "fecha": "18 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.8",
+      "descripcion_corta": "¿Sigues perdiendo duelos por culpa de milisegundos de lag? El Wooting 80HE redefine la velocidad con switches magnéticos y tecnología Rapid Trigger para que tus reflejos se traduzcan instantáneamente en victorias.",
+      "caracteristicas": [
+        "Switches Magnéticos Lekker L60 V2 (Efecto Hall)",
+        "Tasa de sondeo (Polling Rate) real de 8000Hz",
+        "Tecnología Rapid Trigger y Rappy Snappy (SOCD)",
+        "Formato 80% (TKL) con montaje Gasket Mount"
+      ],
+      "pros": [
+        "Latencia de entrada ultrabaja de 0.125 ms (Tachyon Mode)",
+        "Precisión analógica personalizable desde 0.1 mm de actuación",
+        "Software Wootility V5 sin necesidad de instalación pesada"
+      ],
+      "contras": [
+        "Precio premium en comparación con teclados mecánicos tradicionales",
+        "No cuenta con conectividad inalámbrica (enfocado 100% en rendimiento cableado)"
+      ],
+      "analisis_profesional": "<p><strong>¿Alguna vez has sentido que presionaste la tecla a tiempo, pero el juego simplemente no lo registró?</strong> No estás loco. Los teclados mecánicos tradicionales tienen un límite físico insuperable: el retraso por rebote (debounce lag) y un punto de actuación fijo. En juegos competitivos como Valorant, CS2 o Apex Legends, depender de un switch convencional es como correr una carrera de Fórmula 1 con el freno de mano puesto. Estás regalando milisegundos vitales a tus oponentes en cada counter-strafe y en cada esquiva.</p><p><strong>La frustración de perder un duelo no es por falta de habilidad, sino por un cuello de botella en tu hardware.</strong> Inviertes una fortuna en una tarjeta gráfica de última generación y un monitor de 360Hz para ver todo al instante, pero tu entrada de comandos sigue atrapada en el pasado. Cada micro-retraso acumula imprecisión, arruina tu memoria muscular y te estanca en el mismo rango de siempre. Si tu teclado tarda en desactivar la tecla cuando dejas de presionar, tu personaje seguirá moviéndose y tu primer disparo fallará por completo. Es un dolor invisible que destruye tu rendimiento.</p><p><strong>Aquí es donde el Wooting 80HE cambia las reglas del juego para siempre.</strong> Gracias a sus revolucionarios switches magnéticos de efecto Hall Lekker L60 V2, este teclado no tiene contactos físicos. Con la tecnología <strong>Rapid Trigger</strong>, la tecla se desactiva en el instante exacto en que comienzas a levantar el dedo, permitiéndote frenar y disparar con una precisión quirúrgica que roza lo irreal. Sumado a su tasa de sondeo real de <strong>8000Hz</strong> y la función <strong>Rappy Snappy</strong>, tus comandos se procesan en apenas 0.125 ms. Es, literalmente, la velocidad de la luz bajo tus dedos.</p><p>Sabemos que no es un periférico económico, pero <strong>el Wooting 80HE no es un gasto, es la inversión más inteligente que harás en tu setup.</strong> Mientras que una nueva GPU te dará unos cuantos fotogramas más, este teclado transformará directamente cómo juegas y cómo respondes bajo presión. No dejes que tu equipamiento decida tu nivel de juego. Debido a su altísima demanda global, el stock suele agotarse en cuestión de minutos y las listas de espera pueden durar meses. <strong>Te sugerimos verificar el precio actual y asegurar tu unidad hoy mismo antes de que se agote el lote actual.</strong></p>",
+      "imagen": "https://images.pexels.com/photos/19304049/pexels-photo-19304049.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Wooting%2080HE&tag=kazokugaming-21"
+    },
+    {
+      "id": "nvidia-geforce-rtx-5090",
+      "titulo": "Nvidia GeForce RTX 5090",
+      "fecha": "18 Jul, 2026",
+      "categoria": "Componentes",
+      "calificacion": "9.8",
+      "descripcion_corta": "¿Tu PC actual limita tu potencial? Desata una potencia sin precedentes y domina la IA, el renderizado y el gaming en 4K nativo con la indomable RTX 5090.",
+      "caracteristicas": [
+        "32 GB de memoria GDDR7 de última generación con bus de 512 bits",
+        "Arquitectura Blackwell con 21,760 núcleos CUDA de alta eficiencia",
+        "680 núcleos Tensor de 5.ª generación optimizados para IA y DLSS 4.5",
+        "Ancho de banda de memoria masivo de 1,792 GB/s y TDP de 575W"
+      ],
+      "pros": [
+        "Rendimiento líder absoluto en procesamiento de Inteligencia Artificial local y renderizado 3D",
+        "32 GB de VRAM que eliminan por completo los cuellos de botella en texturas y modelos de lenguaje (LLM)",
+        "Soporte exclusivo para DLSS 4.5 y trazado de rayos de 4.ª generación para un fotorrealismo sin caídas de FPS"
+      ],
+      "contras": [
+        "Consumo energético de 575W que requiere una fuente de poder robusta y eficiente",
+        "Dimensiones físicas considerables que exigen un gabinete espacioso con excelente ventilación"
+      ],
+      "analisis_profesional": "<p>¿Te ha pasado que estás en medio de un renderizado crucial o de una partida competitiva y tu sistema simplemente se ahoga? El lag, los tirones de pantalla y los cuellos de botella no solo arruinan tu experiencia, sino que destruyen tu productividad y te hacen perder tiempo valioso que se traduce en dinero real.</p><p>Ver cómo tu flujo de trabajo se detiene por falta de VRAM, o tener que reducir la calidad gráfica en tu monitor premium, es sumamente frustrante. Mientras otros creadores y profesionales avanzan a la velocidad de la luz entrenando modelos de IA locales y exportando proyectos en segundos, tú sigues esperando a que la barra de progreso se mueva. Cada minuto perdido es una oportunidad que dejas ir.</p><p>La solución definitiva ha llegado: la <strong>Nvidia GeForce RTX 5090</strong>. Con la revolucionaria arquitectura <strong>Blackwell</strong> y unos colosales <strong>32 GB de memoria GDDR7</strong>, esta tarjeta gráfica redefine los límites de lo posible. Sus 21,760 núcleos CUDA y un ancho de banda de 1,792 GB/s eliminan por completo cualquier limitación técnica, permitiéndote renderizar escenas 3D ultra complejas en tiempo récord y jugar a 4K nativo con trazado de rayos completo sin el más mínimo esfuerzo.</p><p>Aunque su costo representa una inversión importante, el valor que aporta en ahorro de tiempo y potencia bruta justifica cada centavo. No es un simple componente; es la herramienta profesional que te mantendrá a la vanguardia tecnológica durante los próximos años. El stock de este titán es extremadamente codiciado por profesionales de la IA y el diseño a nivel global. <strong>No dejes que tu hardware actual sabotee tu éxito: ¡verifica el precio actual y asegura la tuya antes de que se agote el inventario!</strong></p>",
+      "imagen": "https://images.pexels.com/photos/34552802/pexels-photo-34552802.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Nvidia%20GeForce%20RTX%205090&tag=kazokugaming-21"
+    },
+    {
       "id": "msi-mpg-321urx-qd-oled",
       "titulo": "MSI MPG 321URX QD-OLED",
       "fecha": "18 Jul, 2026",
