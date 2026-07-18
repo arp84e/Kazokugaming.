@@ -87,18 +87,21 @@ for juego in juegos_a_procesar:
     
     Redacta un dossier táctico muy detallado para dominar el juego.
     
-    Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown:
+    Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown con las siguientes claves exactas:
     {{
         "juego": "{juego}",
-        "descripcion_corta": "Gancho de 2 líneas con el beneficio principal de leer esta guía.",
-        "consejos_rapidos": ["Tip 1", "Tip 2", "Tip 3"],
-        "contenido_html": "HTML con <h2>, <p>, <ul>. Profundiza en mecánicas avanzadas, mejores armas o estrategias de posicionamiento.",
-        "prompt_portada": "Palabras en inglés muy simples para buscar una foto representativa (ej: 'cyberpunk city', 'fantasy landscape', 'military tactical')"
+        "titulo": "Guía Táctica Avanzada: Dominando {juego}",
+        "slug": "{id_guia}",
+        "categoria": "Guía Táctica",
+        "tags": ["Tag 1", "Tag 2", "Tag 3", "{juego}"],
+        "tiempo_lectura": "5 min",
+        "meta_descripcion": "Gancho de 2 líneas con el beneficio principal de leer esta guía.",
+        "contenido": "HTML con <h2>, <p>, <ul>. Profundiza en mecánicas avanzadas, mejores armas o estrategias de posicionamiento.",
+        "prompt_portada": "Palabras en inglés muy simples para buscar una foto representativa (ej: 'cyberpunk city', 'fantasy landscape')"
     }}
     """
     
     try:
-        # Configuración relajada para evitar bloqueos por mecánicas de "Shooters"
         config_guia = types.GenerateContentConfig(
             temperature=0.5,
             max_output_tokens=4000,
@@ -107,14 +110,12 @@ for juego in juegos_a_procesar:
         
         res = generar_con_reintentos(prompt_guia, config_guia)
         
-        # SISTEMA ANTI-CRASHEO: Validar si la IA bloqueó el texto
         if not res or not res.text:
             print(f"⚠️ ALERTA: Gemini devolvió una respuesta vacía para '{juego}'. Posible bloqueo de seguridad por violencia ficticia. Saltando juego...")
             continue
             
         texto_limpio = extraer_json_seguro(res.text)
         
-        # Intentar formatear el JSON de forma segura
         try:
             data = json.loads(texto_limpio)
         except json.JSONDecodeError:
@@ -132,22 +133,26 @@ for juego in juegos_a_procesar:
         nueva_guia = {
             "id": id_guia,
             "juego": data.get("juego", juego),
+            "titulo": data.get("titulo", f"Guía Táctica: {juego}"),
+            "slug": data.get("slug", id_guia),
+            "categoria": data.get("categoria", "Guía Táctica"),
+            "tags": data.get("tags", [juego, "Estrategia"]),
+            "autor": "Kazoku Estratega",
+            "imagen": imagen_real,
             "fecha": time.strftime("%d %b, %Y"),
-            "descripcion_corta": data.get("descripcion_corta", "Guía táctica avanzada."),
-            "consejos_rapidos": data.get("consejos_rapidos", []),
-            "contenido_html": data.get("contenido_html", "<p>Guía en construcción.</p>"),
-            "imagen": imagen_real
+            "tiempo_lectura": data.get("tiempo_lectura", "5 min"),
+            "contenido": data.get("contenido", "<p>Guía en construcción.</p>"),
+            "meta_descripcion": data.get("meta_descripcion", "Guía táctica avanzada.")
         }
         
         estructura_final["guias"].insert(0, nueva_guia)
         nuevos_agregados += 1
-        time.sleep(5) # Descanso entre llamadas a la API
+        time.sleep(5) 
             
     except Exception as e:
         print(f"❌ Error crítico procesando la guía de {juego}: {e}")
-        continue # Si ocurre cualquier otro error, continuamos con el siguiente de la lista
+        continue 
 
-# Solo guardamos si hay cambios reales y no hubo fallos destructivos
 with open(archivo_oficial, "w", encoding="utf-8") as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
