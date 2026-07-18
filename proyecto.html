@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos del Proyecto | KazokuGaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #03040b; } </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col">
+
+    <div id="header-container"></div>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full" id="pantalla-proyecto">
+        <div class="text-center py-20 text-sky-500 animate-pulse font-bold tracking-widest uppercase text-xl">Desencriptando planos...</div>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-[#010205] py-8 text-center text-slate-600 text-sm">
+        <p>&copy; 2026 KAZOKUGAMING. Laboratorio Maker.</p>
+        <p class="text-xs mt-2 opacity-50">Esta web participa en el Programa de Afiliados de Amazon. Puedes apoyar el proyecto comprando los materiales a través de nuestros enlaces.</p>
+    </footer>
+
+    <script src="header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const idActual = new URLSearchParams(window.location.search).get('id');
+            const pantalla = document.getElementById('pantalla-proyecto');
+
+            if(!idActual) return pantalla.innerHTML = `<div class="text-center py-12 text-red-400 font-bold">⚠️ Proyecto no especificado.</div>`;
+
+            try {
+                const response = await fetch('proyectos.json');
+                const data = await response.json();
+                const proy = data.proyectos?.find(p => p.id === idActual);
+                
+                if(!proy) return pantalla.innerHTML = `<div class="text-center py-12 text-sky-500 font-bold">⚠️ El proyecto no existe en el servidor.</div>`;
+
+                document.title = `${proy.titulo} | Proyecto DIY`;
+                
+                // Convertir la lista de materiales en una lista atractiva (ideal para poner enlaces de afiliado a futuro)
+                const htmlMateriales = proy.materiales.map(m => `<li class="flex items-start bg-slate-900/50 p-3 rounded-xl border border-slate-800"><span class="text-sky-500 mr-3 mt-0.5">⚙️</span><span class="text-slate-300 font-medium">${m}</span></li>`).join('');
+                
+                // BLOQUEO DE SEGURIDAD ESTRICTO (XSS)
+                if (typeof DOMPurify === 'undefined') {
+                    console.error("DOMPurify no cargó.");
+                    pantalla.innerHTML = `<div class="text-center py-12 text-rose-500 font-bold">⚠️ Protocolo de seguridad: Módulo de protección no disponible.</div>`;
+                    return;
+                }
+                const htmlLimpio = DOMPurify.sanitize(proy.contenido_html);
+
+                pantalla.innerHTML = `
+                    <div class="mb-10 text-center">
+                        <span class="text-xs font-black tracking-widest text-sky-400 uppercase bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">${proy.categoria}</span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mt-6 mb-6 tracking-tight leading-tight">${proy.titulo}</h1>
+                        <div class="flex justify-center items-center gap-6 text-sm font-mono text-slate-400 bg-slate-900/40 inline-flex px-6 py-2 rounded-full border border-slate-800">
+                            <span>Dificultad: <strong class="text-white">${proy.dificultad}</strong></span>
+                            <span>•</span>
+                            <span>Tiempo: <strong class="text-white">${proy.tiempo_estimado}</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                        <!-- Columna Izquierda: Materiales -->
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="w-full aspect-video md:aspect-square rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative bg-slate-900">
+                                <img src="${proy.imagen}" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="bg-slate-900/30 border border-sky-900/30 rounded-3xl p-6 shadow-[0_0_30px_rgba(14,165,233,0.05)]">
+                                <h3 class="text-xl font-black text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-4"><span class="text-sky-500">🛠️</span> Lista de Materiales</h3>
+                                <ul class="space-y-3">${htmlMateriales}</ul>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Tutorial Paso a Paso -->
+                        <div class="lg:col-span-8">
+                            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-xl">
+                                <h3 class="text-2xl font-black text-white mb-8 flex items-center gap-2"><span class="text-sky-500">📖</span> Instrucciones de Ensamblaje</h3>
+                                <div class="prose prose-invert prose-sky max-w-none text-slate-300 leading-relaxed text-[16px]">${htmlLimpio}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                pantalla.innerHTML = `<div class="text-center py-12 text-red-500 font-bold">⚠️ Error al procesar los planos.</div>`;
+            }
+        });
+    </script>
+</body>
+</html>
