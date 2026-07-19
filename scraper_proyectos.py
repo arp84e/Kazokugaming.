@@ -75,7 +75,6 @@ for proy in proyectos_a_procesar:
 
     print(f"\n⚙️ Redactando MANUAL DE INGENIERÍA EXHAUSTIVO para: {proy}...")
     
-    # ⬇️ ESTE ES EL BLOQUE QUE GENERABA EL ERROR, AHORA ESTÁ PERFECTAMENTE ALINEADO ⬇️
     prompt_tutorial = f"""
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
     El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
@@ -104,10 +103,20 @@ for proy in proyectos_a_procesar:
     """
     
     try:
-        config_tut = types.GenerateContentConfig(temperature=0.4, max_output_tokens=8192, tools=[{"google_search": {}}])
+        # 1. Configuración robusta de la IA
+        config_tut = types.GenerateContentConfig(
+            temperature=0.4, 
+            max_output_tokens=8192, 
+            response_mime_type="application/json", 
+            tools=[{"google_search": {}}]
+        )
         res = generar_con_reintentos(prompt_tutorial, config_tut)
-        data = json.loads(extraer_json_seguro(res.text))
         
+        # 2. Extracción y lectura flexible del JSON
+        texto_json = extraer_json_seguro(res.text)
+        data = json.loads(texto_json, strict=False)
+        
+        # 3. Portada
         imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
         if pexels_key:
             try:
@@ -115,6 +124,7 @@ for proy in proyectos_a_procesar:
                 if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
             except: pass
 
+        # 4. Inserción de imágenes
         html_crudo = data.get("contenido_html", "")
         etiquetas_imagen = set(re.findall(r'\[IMAGEN:\s*(.*?)\]', html_crudo, re.IGNORECASE))
         
@@ -130,6 +140,7 @@ for proy in proyectos_a_procesar:
             html_crudo = re.sub(rf'\[IMAGEN:\s*{re.escape(keyword)}\]', tag_html, html_crudo, flags=re.IGNORECASE)
             time.sleep(1)
 
+        # 5. Estructuración Final
         nuevo_proy = {
             "id": id_proy,
             "titulo": proy,
