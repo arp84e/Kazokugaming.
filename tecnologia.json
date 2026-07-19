@@ -1,6 +1,84 @@
 {
   "productos": [
     {
+      "id": "amd-ryzen-7-7800x3d",
+      "titulo": "AMD Ryzen 7 7800X3D",
+      "fecha": "19 Jul, 2026",
+      "categoria": "Componentes",
+      "calificacion": "9.8",
+      "descripcion_corta": "¿Cansado de que tu tarjeta gráfica de gama alta se ahogue por culpa de tu viejo procesador? Descubre el chip que ha destronado a toda la competencia y libera los FPS que realmente pagaste.",
+      "caracteristicas": [
+        "Tecnología AMD 3D V-Cache de segunda generación (96MB de caché L3)",
+        "8 núcleos y 16 hilos de procesamiento puro Zen 4",
+        "Frecuencia de reloj boost de hasta 5.0 GHz",
+        "Plataforma AM5 de última generación con soporte DDR5 y PCIe 5.0"
+      ],
+      "pros": [
+        "El rey indiscutible del rendimiento gaming en el mercado actual",
+        "Consumo de energía y temperaturas sorprendentemente bajos para su potencia",
+        "Plataforma AM5 con garantía de actualización por varios años"
+      ],
+      "contras": [
+        "No incluye disipador en la caja (requiere refrigeración de alta calidad)",
+        "Su rendimiento en tareas de renderizado pesado queda por detrás de procesadores con más núcleos"
+      ],
+      "analisis_profesional": "<p>Imagina que acabas de gastar una fortuna en la última tarjeta gráfica del mercado. Abres tu juego favorito esperando una fluidez absoluta, pero en su lugar experimentas tirones constantes, caídas de frames en los momentos más caóticos y una molesta sensación de inestabilidad. Ese es el temido <strong>cuello de botella</strong>. Tu procesador actual simplemente no puede procesar la física, la IA y las instrucciones de renderizado lo suficientemente rápido. Mientras tu GPU espera de brazos cruzados, tú pierdes esa partida competitiva por un micro-stuttering en el peor segundo posible. Estás desperdiciando el potencial de todo tu hardware y saboteando tu propia experiencia.</p><p>Aquí es donde el <strong>AMD Ryzen 7 7800X3D</strong> cambia las reglas del juego por completo. Gracias a su revolucionaria tecnología <strong>3D V-Cache</strong>, este procesador cuenta con una cantidad masiva de memoria caché L3 apilada verticalmente. Esto permite que el procesador acceda a los datos del juego de forma casi instantánea, eliminando los cuellos de botella y ofreciendo una tasa de frames mínimos tan alta que la suavidad visual te parecerá irreal. No es solo que ganes más FPS promedio; es que los tirones desaparecen por completo, dándote una precisión y una respuesta instantánea en cada movimiento.</p><p>Aunque algunos piensen que su precio es elevado, la realidad es que el 7800X3D rinde en gaming por encima de procesadores de la competencia que cuestan el doble y consumen el triple de energía. Es una inversión inteligente que maximiza cada centavo de tu tarjeta gráfica. Las existencias de este procesador suelen volar debido a su alta demanda entre los entusiastas del hardware. Si quieres transformar tu PC en una bestia imparable hoy mismo, te sugerimos <strong>verificar el precio actual</strong> y asegurar el tuyo antes de que el stock vuelva a desaparecer.</p>",
+      "imagen": "https://images.pexels.com/photos/5206323/pexels-photo-5206323.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=AMD%20Ryzen%207%207800X3D&tag=kazokugaming-21"
+    },
+    {
+      "id": "lg-ultragear-oled-32gs95ue",
+      "titulo": "LG UltraGear OLED 32GS95UE",
+      "fecha": "19 Jul, 2026",
+      "categoria": "Monitores",
+      "calificacion": "9.8",
+      "descripcion_corta": "¿Por qué elegir entre la nitidez del 4K y la velocidad absurda de 480Hz si puedes tener ambos con un solo botón? Domina el juego competitivo y el diseño profesional sin compromisos.",
+      "caracteristicas": [
+        "Tecnología Dual-Hz única: 4K a 240Hz o FHD a 480Hz con un solo clic",
+        "Panel WOLED de 32 pulgadas con brillo mejorado y negros perfectos",
+        "Tiempo de respuesta de 0.03ms GtG para eliminar por completo el ghosting",
+        "Tecnología Pixel Sound integrada en la pantalla para un audio inmersivo"
+      ],
+      "pros": [
+        "Versatilidad absoluta: el monitor definitivo para eSports y productividad 4K",
+        "Negros infinitos y contraste OLED con un brillo significativamente mejorado",
+        "Latencia prácticamente inexistente que te da una ventaja competitiva real"
+      ],
+      "contras": [
+        "Precio premium no apto para presupuestos ajustados",
+        "El acabado mate de la pantalla puede no gustar a los puristas del acabado brillante"
+      ],
+      "analisis_profesional": "<p>Seguro que te ha pasado: estás frente a tu pantalla decidiendo si jugar en un glorioso 4K para disfrutar de los detalles de un mundo abierto, o bajar la resolución para exprimir los hercios que necesitas para no morir en el primer segundo de tu partida competitiva. Vivir en el compromiso constante es frustrante.</p><p>Esa indecisión te cuesta dinero y rendimiento. Comprar un monitor para trabajar y otro para competir destruye tu escritorio y tu cartera. Y lo peor: jugar a shooters con lag de entrada o trabajar con textos borrosos te está frenando. Estás limitando tu potencial real por culpa de un hardware que no da la talla.</p><p>El <strong>LG UltraGear OLED 32GS95UE</strong> llega para romper las reglas del juego. Gracias a su revolucionaria tecnología Dual-Hz, pasas de un panel de productividad y cine en 4K a 240Hz a una bestia competitiva de 1080p a 480Hz con solo presionar un botón físico. Su panel WOLED de última generación ofrece un tiempo de respuesta de 0.03ms, eliminando el ghosting por completo. Sí, su precio es elevado, pero estás adquiriendo dos monitores tope de gama en un solo cuerpo de diseño futurista. Es la inversión definitiva para quienes no aceptan un 'no' por respuesta.</p><p>Las unidades de este titán suelen agotarse rápido debido a la alta demanda de creadores y pro-players. No dejes que tu setup se quede atrás; te sugiero verificar el precio actual y la disponibilidad antes de que sea demasiado tarde.</p>",
+      "imagen": "https://images.pexels.com/photos/28993116/pexels-photo-28993116.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=LG%20UltraGear%20OLED%2032GS95UE&tag=kazokugaming-21"
+    },
+    {
+      "id": "steelseries-apex-pro-tkl-gen-3",
+      "titulo": "SteelSeries Apex Pro TKL Gen 3",
+      "fecha": "19 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.8",
+      "descripcion_corta": "¿Sigues perdiendo partidas por milisegundos? Descubre el arma secreta de los profesionales que redefine la velocidad de tus dedos.",
+      "caracteristicas": [
+        "Interruptores magnéticos OmniPoint 3.0 con tecnología de Efecto Hall",
+        "Punto de actuación ultraajustable desde 0.1 mm hasta 4.0 mm",
+        "Funciones avanzadas de software: Rapid Trigger, Rapid Tap y Protection Mode",
+        "Pantalla inteligente OLED integrada para perfiles y ajustes al vuelo"
+      ],
+      "pros": [
+        "Velocidad de respuesta instantánea y totalmente personalizable por tecla",
+        "Acústica premium y pulsación ultrasuave con triple capa de espuma amortiguadora",
+        "Modo de protección exclusivo que evita pulsaciones accidentales de habilidades"
+      ],
+      "contras": [
+        "Precio premium que requiere una inversión inicial considerable",
+        "El ecosistema de software SteelSeries GG exige una pequeña curva de aprendizaje"
+      ],
+      "analisis_profesional": "<p>¿Alguna vez has sentido que tus manos no van al mismo ritmo que tus reflejos? Estás en el momento decisivo de la partida, ves al enemigo, decides moverte... y mueres. No fue tu culpa; fue el <strong>cuello de botella invisible</strong> de tu setup: un teclado convencional con milisegundos de retraso que sabotea tu talento.</p><p>Es frustrante gastar una fortuna en una tarjeta gráfica de última generación para luego perder partidas o ralentizar tu productividad por culpa de interruptores mecánicos lentos y ruidosos. Cada milisegundo de lag en la actuación, cada pulsación accidental ('fat-finger') que arruina tu habilidad definitiva, y esa fatiga en los dedos tras horas de escribir, son dolores reales que te alejan de tu verdadero potencial.</p><p>Aquí es donde el <strong>SteelSeries Apex Pro TKL Gen 3</strong> redefine las reglas. Equipado con los revolucionarios interruptores <strong>OmniPoint 3.0 con sensores de Efecto Hall</strong>, este teclado te permite ajustar el punto de actuación tecla por tecla, desde un supersónico 0.1 mm hasta un profundo 4.0 mm. Con las tecnologías <strong>Rapid Trigger</strong> y <strong>Rapid Tap (SOCD)</strong>, tus movimientos de counter-strafe y peeking en shooters serán instantáneos, deteniéndote en el acto al más mínimo levantamiento del dedo. Además, su triple capa de espuma amortiguadora y lubricación de fábrica transforman la escritura áspera en una experiencia acústica y táctil sumamente placentera para la productividad diaria.</p><p>Sabemos que es una inversión premium, pero piénsalo así: no estás comprando solo un teclado, estás adquiriendo el periférico definitivo que elimina el lag de entrada por completo y se adapta dinámicamente a tu flujo de trabajo y juego. Es hora de dejar de jugar con desventaja. <strong>Verifica el precio actual ahora mismo</strong> y da el salto al rendimiento profesional antes de que el stock vuelva a agotarse.</p>",
+      "imagen": "https://images.pexels.com/photos/9072336/pexels-photo-9072336.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=SteelSeries%20Apex%20Pro%20TKL%20Gen%203&tag=kazokugaming-21"
+    },
+    {
       "id": "asus-rog-azoth-extreme",
       "titulo": "Asus ROG Azoth Extreme",
       "fecha": "18 Jul, 2026",
