@@ -39,9 +39,13 @@ if comando_input.startswith("eliminar:"):
         print("✅ Proyecto(s) eliminado(s) con éxito.")
     sys.exit(0)
 
-def extraer_json_seguro(texto):
-    match = re.search(r'\{.*\}', texto.strip(), re.DOTALL)
-    return match.group(0) if match else texto.strip()
+def limpiar_respuesta_json(texto):
+    """Limpia cualquier bloque markdown residual que pueda enviar la IA."""
+    texto = texto.strip()
+    if texto.startswith("```json"): texto = texto[7:]
+    if texto.startswith("```"): texto = texto[3:]
+    if texto.endswith("```"): texto = texto[:-3]
+    return texto.strip()
 
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
     for intento in range(max_intentos):
@@ -58,12 +62,13 @@ proyectos_a_procesar = []
 if comando_input == "top":
     print("🌍 Buscando los mejores proyectos DIY para Gaming/Setup...")
     prompt_top = f"""
-    Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO que la gente pueda construir en casa (Ej: Máquina Arcade con Raspberry, Consola portátil impresa en 3D, Ambilight casero con Arduino, Panel de telemetría PC).
+    Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO.
     EXCLUYE: {nombres_existentes}.
     Devuelve ÚNICAMENTE un JSON: {{ "resultados": ["Proyecto 1", "Proyecto 2", "Proyecto 3"] }}
     """
     config_top = types.GenerateContentConfig(temperature=0.7, tools=[{"google_search": {}}])
-    proyectos_a_procesar = json.loads(extraer_json_seguro(generar_con_reintentos(prompt_top, config_top).text)).get("resultados", [])
+    res_top = limpiar_respuesta_json(generar_con_reintentos(prompt_top, config_top).text)
+    proyectos_a_procesar = json.loads(res_top).get("resultados", [])
 else:
     proyectos_a_procesar = [re.sub(r'["\n\r]', '', p.strip()) for p in os.environ.get("INPUT_COMANDOS", "").split(";") if p.strip()]
 
@@ -79,31 +84,30 @@ for proy in proyectos_a_procesar:
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
     El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
 
-    REGLAS ESTRICTAS DE REDACCIÓN EN 'contenido_html':
-    1. EXTENSIÓN Y ESTRUCTURA: Mínimo 1500 palabras. Debes incluir obligatoriamente las siguientes secciones con etiquetas <h2>: "1. Teoría y Funcionamiento", "2. Ensamblaje Paso a Paso", "3. Configuración del Software", "4. Calibración", y "5. Solución de Problemas".
-    2. COMILLAS (VITAL): Usa ÚNICAMENTE comillas simples (' ') para todos los atributos dentro del código HTML (ejemplo: <div class='contenedor'>). ¡NUNCA uses comillas dobles (") dentro del HTML generado porque romperás el formato de respuesta!
-    3. CÓDIGO: Si usa Arduino, Python, Linux o comandos, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
-    4. ALERTAS: Usa <blockquote> para notas, consejos o advertencias importantes durante el ensamblaje.
-    5. IMÁGENES: Usa la etiqueta [IMAGEN: palabra_en_ingles_muy_simple] al menos 6 veces a lo largo del texto.
+    REGLAS ESTRICTAS DE REDACCIÓN (¡VITAL PARA EL SISTEMA!):
+    1. EXTENSIÓN: Mínimo 1500 palabras estructuradas con <h2> y <h3>.
+    2. CÓDIGO: Si usa Arduino, Python, Linux o comandos, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
+    3. 🚫 ALERTA CRÍTICA DE FORMATO: ESTÁ ESTRICTAMENTE PROHIBIDO USAR COMILLAS DOBLES (") EN TODO TU TEXTO. Sustituye absolutamente todas las comillas dobles por comillas simples (' '), tanto en los atributos HTML como dentro de los códigos de programación.
+    4. ALERTAS: Usa <blockquote> para notas de seguridad.
+    5. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces.
 
-    Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown:
+    Devuelve ÚNICAMENTE un JSON estricto:
     {{
-        "categoria": "Ej: Robótica, Raspberry Pi, Arduino...",
-        "dificultad": "Principiante, Intermedio, Avanzado",
+        "categoria": "Robótica, Raspberry Pi, Arduino...",
+        "dificultad": "Avanzado",
         "tiempo_estimado": "Ej: 1 Fin de Semana",
-        "costo_estimado": "Ej: $50 - $100 USD",
-        "requisitos_conocimiento": "Ej: Soldadura básica, conocimientos de Linux",
-        "descripcion_corta": "Gancho de 3 líneas muy técnico y motivador.",
-        "advertencias_seguridad": ["Desconecta la corriente antes de soldar", "Cuidado con polaridades"],
-        "materiales": ["Material 1 con detalle de voltaje/modelo", "Material 2"],
+        "costo_estimado": "Ej: $50 USD",
+        "requisitos_conocimiento": "Ej: Soldadura",
+        "descripcion_corta": "Gancho motivador de 3 líneas.",
+        "advertencias_seguridad": ["Desconecta la corriente", "Usa gafas"],
+        "materiales": ["Material 1", "Material 2"],
         "herramientas": ["Herramienta 1", "Herramienta 2"],
-        "contenido_html": "HTML con la guía maestra usando SIEMPRE comillas simples para los atributos.",
-        "prompt_portada": "keyword corta en ingles para la foto del resultado final"
+        "contenido_html": "HTML con la guía maestra usando SIEMPRE comillas simples.",
+        "prompt_portada": "keyword_ingles_corta"
     }}
     """
     
     try:
-        # 1. Configuración robusta de la IA
         config_tut = types.GenerateContentConfig(
             temperature=0.4, 
             max_output_tokens=8192, 
@@ -112,27 +116,24 @@ for proy in proyectos_a_procesar:
         )
         res = generar_con_reintentos(prompt_tutorial, config_tut)
         
-        # 2. Extracción y lectura flexible del JSON
-        texto_json = extraer_json_seguro(res.text)
+        texto_json = limpiar_respuesta_json(res.text)
         data = json.loads(texto_json, strict=False)
         
-        # 3. Portada
-        imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
+        imagen_real = "[https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200](https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200)"
         if pexels_key:
             try:
-                r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(data.get('prompt_portada', 'circuit board'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
+                r = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){urllib.parse.quote(data.get('prompt_portada', 'circuit board'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
                 if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
             except: pass
 
-        # 4. Inserción de imágenes
         html_crudo = data.get("contenido_html", "")
         etiquetas_imagen = set(re.findall(r'\[IMAGEN:\s*(.*?)\]', html_crudo, re.IGNORECASE))
         
         for keyword in etiquetas_imagen:
-            img_paso = "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800"
+            img_paso = "[https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800](https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800)"
             if pexels_key:
                 try:
-                    r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(keyword.strip())}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
+                    r = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){urllib.parse.quote(keyword.strip())}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
                     if r.get("photos"): img_paso = r["photos"][0]["src"]["landscape"]
                 except: pass
             
@@ -140,7 +141,6 @@ for proy in proyectos_a_procesar:
             html_crudo = re.sub(rf'\[IMAGEN:\s*{re.escape(keyword)}\]', tag_html, html_crudo, flags=re.IGNORECASE)
             time.sleep(1)
 
-        # 5. Estructuración Final
         nuevo_proy = {
             "id": id_proy,
             "titulo": proy,
@@ -161,8 +161,12 @@ for proy in proyectos_a_procesar:
         estructura_final["proyectos"].insert(0, nuevo_proy)
         nuevos_agregados += 1
             
+    except json.JSONDecodeError as e:
+        print(f"⚠️ Error de formato en la IA para {proy}. Saltando para proteger el sistema. Detalle: {e}")
+        continue
     except Exception as e:
-        print(f"❌ Error en {proy}: {e}")
+        print(f"❌ Error al procesar {proy}: {e}")
+        continue
 
 with open(archivo_oficial, "w", encoding="utf-8") as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
