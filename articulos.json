@@ -1,6 +1,25 @@
 {
   "articulos": [
     {
+      "id": "art-emuladores-ps5",
+      "titulo": "La emulación de PS5 explota en PC: SharpEmu y KytyPS5 logran arrancar los primeros juegos comerciales",
+      "slug": "emuladores-ps5",
+      "categoria": "Noticias",
+      "tags": [
+        "Emulación",
+        "PlayStation 5",
+        "PC Gaming",
+        "SharpEmu",
+        "KytyPS5"
+      ],
+      "autor": "KazokuBot",
+      "imagen": "https://media.rawg.io/media/screenshots/94b/94be41cd69630e96169ef4a349ef8c3e.jpg",
+      "fecha": "19 Jul, 2026",
+      "tiempo_lectura": "4 min",
+      "contenido": "<p class='lead'>La escena de la emulación ha dado un salto de gigante que nadie vio venir tan pronto. En un giro de acontecimientos histórico, la emulación de <strong>PlayStation 5</strong> en PC ha pasado de ser un sueño lejano a una realidad en desarrollo activo.</p><p>En cuestión de días, dos de los proyectos más prometedores de la scene, <strong>SharpEmu</strong> y <strong>KytyPS5</strong>, han liberado sus códigos fuente al público, convirtiéndose en proyectos impulsados por la comunidad y demostrando avances increíbles al arrancar los primeros títulos comerciales en tres dimensiones.</p><h3>La gran apertura: SharpEmu y KytyPS5 se vuelven de código abierto</h3><p>El punto de inflexión se produjo a mediados de julio de 2026. El desarrollador conocido como 'Scarecrow' anunció que <strong>SharpEmu</strong>, un emulador programado desde cero en C#, dejaba de ser un proyecto personal para convertirse en una iniciativa comunitaria bajo licencia GPL-2.0. Solo un día después, el repositorio de <strong>KytyPS5</strong> (escrito en C++) se hacía público en GitHub con un primer 'commit' masivo de más de 200.000 líneas de código, que incluye soporte para compilación de shaders y su propio renderizador Vulkan.</p><p>Esta doble apertura ha desatado una auténtica 'carrera' en la comunidad de desarrollo, motivada en parte por las recientes decisiones de Sony de reducir la producción de formato físico y asegurar la preservación digital a largo plazo.</p><h3>¿Qué juegos son capaces de ejecutar actualmente?</h3><p>Aunque todavía estamos lejos de poder jugar de principio a fin a los grandes exclusivos de la consola a 60 FPS, los hitos logrados en las últimas semanas son asombrosos para una consola de la presente generación:</p><ul><li><strong>SharpEmu:</strong> Este emulador, que funciona más bien como una capa de traducción de instrucciones (similar a lo que hace Proton en Steam Deck), ya ejecuta a la perfección títulos en 2D como <em>Dreaming Sarah</em> con texturas y rendimiento sólido. Sin embargo, lo más sorprendente es que ha logrado iniciar juegos exclusivos en 3D como <strong>Astro Bot</strong> y el remake de <strong>Demon's Souls</strong>, llegando hasta sus pantallas de carga iniciales. Recientemente, el proyecto ha sumado soporte para audio, una interfaz de usuario funcional y compatibilidad nativa con el mando DualSense.</li><li><strong>KytyPS5:</strong> Por su parte, la bifurcación de Kyty ha logrado arrancar la versión de PS5 de <strong>Grand Theft Auto V</strong> hasta sus menús y ajustes de configuración. Además, ha conseguido llevar el renderizado 3D de <em>Quake II Remastered</em> directamente al 'gameplay' jugable, y muestra progresos notables con juegos como <em>Silent Hill: The Short Message</em> y <em>Disgaea 6</em>.</li></ul><h3>¿Por qué avanza tan rápido la emulación de PS5?</h3><p>A diferencia de la compleja arquitectura 'Cell' de PlayStation 3, que requirió casi una década para ser emulada con precisión en RPCS3, tanto la PS4 como la PS5 comparten una arquitectura x86-64 muy similar a la de un ordenador convencional. Esto permite que los emuladores actúen como <strong>capas de traducción</strong> en lugar de tener que emular cada componente de hardware por software, lo que reduce drásticamente el impacto en el procesador.</p><p>Con el éxito reciente de emuladores de PS4 como <em>shadPS4</em> (que ya ejecuta de forma muy decente juegos del calibre de <em>Bloodborne</em>), los desarrolladores han podido aplicar los conocimientos adquiridos directamente sobre el hardware de PS5. No obstante, los ingenieros advierten de que lograr una emulación comercialmente estable para títulos triple A aún requerirá varios años de arduo trabajo y optimización.</p><p>Desde KazokuGaming seguiremos muy de cerca la evolución de estos proyectos, que no solo abren la puerta a jugar en PC, sino que se alzan como la única garantía real para la preservación de los videojuegos en un futuro cada vez más digital.</p>",
+      "meta_descripcion": "El desarrollo de emuladores de PlayStation 5 se acelera. SharpEmu y KytyPS5 logran arrancar los primeros juegos comerciales de PS5 en PC."
+    },
+    {
       "id": "art-unicef-advierte-por-primera-vez-sobre-la-adicc",
       "titulo": "UNICEF advierte sobre el diseño adictivo en los videojuegos: 'La protección de la infancia debe ser una responsabilidad compartida'",
       "slug": "unicef-advierte-por-primera-vez-sobre-la-adicci-n-a-los-videojuegos-y-la-tecnolog-a-la-protecci-n-de-la-infancia-debe-ser-una-responsabilidad-compartida",
