@@ -1,63 +1,6 @@
 {
   "guias": [
     {
-      "id": "apex-legends",
-      "juego": "Apex Legends",
-      "titulo": "Guía Táctica Avanzada: Dominando Apex Legends",
-      "slug": "apex-legends",
-      "categoria": "Guía Táctica",
-      "tags": [
-        "Apex Legends",
-        "eSports",
-        "Guía Avanzada",
-        "Battle Royale"
-      ],
-      "autor": "Kazoku Estratega",
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
-      "fecha": "18 Jul, 2026",
-      "tiempo_lectura": "5 min",
-      "contenido": "<h2>El Arte del Movimiento: Más Allá del Desplazamiento Básico</h2><p>En Apex Legends, el movimiento es tu mejor defensa y tu ataque más letal. Como profesional, te aseguro que dominar las mecánicas de movilidad te dará una ventaja insuperable en el campo de batalla.</p><ul><li><strong>Slide Jumping:</strong> Combina el deslizamiento con el salto para maximizar tu velocidad de desplazamiento y ser un objetivo difícil de fijar.</li><li><strong>Wall Bouncing:</strong> Utiliza las paredes para rebotar y cambiar de dirección en el aire, sorprendiendo a tus enemigos en combates cercanos.</li><li><strong>Uso del High Ground:</strong> Mantener la altura te otorga una visión clara del mapa, cobertura natural y control absoluto sobre el ritmo del enfrentamiento.</li></ul><h2>Rotaciones Inteligentes y Control del Mapa</h2><p>Ganar no solo depende de tu puntería, sino de saber dónde estar antes de que empiece el caos. Anticipar las zonas y planificar tu ruta es clave para la supervivencia.</p><ul><li><strong>Predicción del Anillo:</strong> Utiliza las balizas de reconocimiento para conocer la siguiente zona y asegurar la mejor posición antes que tus rivales.</li><li><strong>Gestión de Inventario:</strong> Prioriza las baterías de escudo y la munición esencial. No sobrecargues tu mochila con objetos innecesarios; la eficiencia salva vidas.</li><li><strong>Choke Points:</strong> Identifica los cuellos de botella del mapa para emboscar a los equipos que rotan tarde o evitar quedar atrapado en ellos.</li></ul><h2>Meta de Armas y Sinergia de Leyendas</h2><p>El arsenal y la composición de tu escuadrón deben complementarse perfectamente para dominar el lobby.</p><ul><li><strong>Armas S-Tier:</strong> El R-301 para media distancia y el subfusil CAR o la escopeta Peacekeeper para distancias cortas siguen liderando el meta por su consistencia.</li><li><strong>Sinergia de Escuadrón:</strong> Combina leyendas de reconocimiento con personajes de movilidad y defensa para un equipo equilibrado.</li></ul>",
-      "meta_descripcion": "Lleva tu juego al nivel profesional con esta guía táctica de Apex Legends. Domina el posicionamiento, la rotación y el control de armas para asegurar la victoria."
-    },
-    {
-      "id": "rainbow-six-siege",
-      "juego": "Rainbow Six Siege",
-      "titulo": "Guía Táctica Avanzada: Dominando Rainbow Six Siege",
-      "slug": "rainbow-six-siege",
-      "categoria": "Guía Táctica",
-      "tags": [
-        "eSports",
-        "Estrategia",
-        "Shooter",
-        "Rainbow Six Siege"
-      ],
-      "autor": "Kazoku Estratega",
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
-      "fecha": "18 Jul, 2026",
-      "tiempo_lectura": "5 min",
-      "contenido": "<h2>1. El Arte del Control de Mapa y la Destrucción Vertical</h2><p>En Rainbow Six Siege, las paredes y los techos son tan peligrosos como los propios enemigos. Para jugar a nivel profesional, debes dominar la destrucción vertical. Utilizar operadores como Sledge o Buck para abrir el suelo sobre los puntos de defensa obliga a los defensores a rotar, exponiéndolos a líneas de tiro fáciles. Recuerda siempre coordinar con tu equipo para cubrir los flancos mientras realizas esta tarea.</p><h2>2. Gestión de Recursos y Utilidad (El \"Utility Meta\")</h2><p>Las rondas no se ganan solo con buena puntería; se ganan gestionando la utilidad. Como atacante, tu prioridad es limpiar los dispositivos defensivos (como los ADS de Jäger o los Mag-NET de Wamai) antes de ejecutar el asalto final. Usa drones de manera eficiente: nunca los desperdicies en la fase de preparación si puedes esconderlos en habitaciones clave para obtener información en tiempo real.</p><h2>3. Posicionamiento, \"Crosshair Placement\" y Ángulos de Píxel</h2><p>Un error común en rangos bajos es apuntar al suelo. Mantén siempre tu mira a la altura de la cabeza. Además, aprovecha los ángulos de píxel (líneas de visión extremadamente estrechas a través de agujeros de bala o roturas milimétricas). En defensa, el posicionamiento pasivo y la paciencia suelen batir a la agresividad innecesaria. Aprende a jugar con el tiempo de la ronda a tu favor.</p><h2>4. Armas y Configuración Recomendada</h2><ul><li><strong>R4-C (Ash):</strong> Excelente para un estilo de juego agresivo, aunque requiere un gran control del retroceso vertical.</li><li><strong>L85A2 (Sledge/Thatcher):</strong> Un rifle de asalto sumamente noble, con retroceso predecible y daño sólido, ideal para mantener ángulos largos.</li><li><strong>MP7 (Bandit/Zero):</strong> Una de las mejores subametralladoras del juego por su altísima cadencia de disparo, perfecta para combates a corta distancia.</li></ul>",
-      "meta_descripcion": "Aprende los secretos de los profesionales para dominar el control de mapa, la destrucción vertical y la gestión de recursos. Eleva tu rango al siguiente nivel con esta guía táctica definitiva."
-    },
-    {
-      "id": "valorant",
-      "juego": "Valorant",
-      "titulo": "Guía Táctica Avanzada: Dominando Valorant",
-      "slug": "valorant",
-      "categoria": "Guía Táctica",
-      "tags": [
-        "Shooter",
-        "eSports",
-        "Estrategia",
-        "Valorant"
-      ],
-      "autor": "Kazoku Estratega",
-      "imagen": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
-      "fecha": "18 Jul, 2026",
-      "tiempo_lectura": "5 min",
-      "contenido": "<h2>1. Fundamentos del Posicionamiento y la Mira (Crosshair Placement)</h2><p>Como profesional, te aseguro que el 80% de tus bajas vendrán de una mira bien colocada antes de que aparezca el enemigo. Mantén siempre la retícula a la altura de la cabeza, anticipando las esquinas comunes. Evita mirar al suelo mientras te desplazas; cada milisegundo que tardas en ajustar tu puntería vertical es una oportunidad que le das al rival para eliminarte.</p><h2>2. Dominio del Arsenal: Vandal vs. Phantom</h2><p>La elección del rifle principal define tu estilo de juego en cada ronda:</p><ul><li><strong>Vandal:</strong> Ideal para distancias largas. Su principal ventaja es que elimina de un solo disparo a la cabeza sin importar la distancia, aunque su retroceso es más difícil de controlar en ráfagas largas.</li><li><strong>Phantom:</strong> Excelente para distancias medias y cortas, o para disparar a través de pantallas de humo, ya que no revela la trazadora de las balas. Su cadencia de fuego es mayor y el retroceso es más predecible.</li></ul><h2>3. Gestión de la Economía en Equipo</h2><p>La victoria no solo se define por la puntería, sino por cómo administras tus créditos. Coordina siempre las compras con tu equipo:</p><ul><li><strong>Ronda de Compra Completa (Full Buy):</strong> Rifle (Vandal/Phantom), escudo pesado y habilidades completas.</li><li><strong>Ronda de Ahorro (Eco):</strong> Compras mínimas (pistolas o subfusiles baratos) para asegurar una compra completa en la siguiente ronda.</li><li><strong>Compra Forzada (Force Buy):</strong> Comprar lo mejor posible cuando la situación es crítica y no se puede permitir regalar otra ronda.</li></ul><h2>4. Control de Utilidades y Sinergia de Agentes</h2><p>Nunca entres a un sitio de bomba sin apoyo. Utiliza los humos de tus controladores para tapar las líneas de visión de los defensores, las cegadoras de tus iniciadores para limpiar esquinas cerradas, y las habilidades de daño de tus duelistas para forzar al enemigo a salir de sus posiciones de cobertura. La supervivencia en Valorant depende de la sincronización colectiva.</p>",
-      "meta_descripcion": "Aprende las estrategias de posicionamiento, control de economía y selección de armas que usan los profesionales para dominar las partidas clasificatorias en Valorant."
-    },
-    {
       "id": "guia-honor-of-kings",
       "juego": "Honor of Kings",
       "titulo": "Guía Táctica: Secretos, Trucos y las Mejores Armas en Honor of Kings",
