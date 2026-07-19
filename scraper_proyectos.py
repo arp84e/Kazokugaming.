@@ -75,7 +75,8 @@ for proy in proyectos_a_procesar:
 
     print(f"\n⚙️ Redactando MANUAL DE INGENIERÍA EXHAUSTIVO para: {proy}...")
     
-   prompt_tutorial = f"""
+    # ⬇️ ESTE ES EL BLOQUE QUE GENERABA EL ERROR, AHORA ESTÁ PERFECTAMENTE ALINEADO ⬇️
+    prompt_tutorial = f"""
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
     El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
 
@@ -103,12 +104,10 @@ for proy in proyectos_a_procesar:
     """
     
     try:
-        # Aumentamos el límite de tokens para permitir tutoriales inmensos
         config_tut = types.GenerateContentConfig(temperature=0.4, max_output_tokens=8192, tools=[{"google_search": {}}])
         res = generar_con_reintentos(prompt_tutorial, config_tut)
         data = json.loads(extraer_json_seguro(res.text))
         
-        # 1. Foto de Portada
         imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
         if pexels_key:
             try:
@@ -116,7 +115,6 @@ for proy in proyectos_a_procesar:
                 if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
             except: pass
 
-        # 2. Inyección de Múltiples Imágenes en el HTML
         html_crudo = data.get("contenido_html", "")
         etiquetas_imagen = set(re.findall(r'\[IMAGEN:\s*(.*?)\]', html_crudo, re.IGNORECASE))
         
