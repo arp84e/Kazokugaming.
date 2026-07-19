@@ -75,16 +75,16 @@ for proy in proyectos_a_procesar:
 
     print(f"\n⚙️ Redactando MANUAL DE INGENIERÍA EXHAUSTIVO para: {proy}...")
     
-    prompt_tutorial = f"""
+   prompt_tutorial = f"""
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
     El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
 
     REGLAS ESTRICTAS DE REDACCIÓN EN 'contenido_html':
-    1. EXTENSIÓN: Debe ser larguísimo y súper detallado (Mínimo 1000 palabras).
-    2. CÓDIGO: Si usa Arduino, Python, Linux o comandos, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
-    3. ALERTAS: Usa <blockquote> para notas, consejos o advertencias importantes durante el ensamblaje.
-    4. DIAGNÓSTICO: Obligatorio incluir una sección final con <h2>Solución de Problemas Comunes</h2>.
-    5. IMÁGENES: Usa la etiqueta [IMAGEN: palabra_en_ingles_muy_simple] al menos 5 veces a lo largo del texto (ej: [IMAGEN: soldering iron], [IMAGEN: arduino board], [IMAGEN: led strip], [IMAGEN: wires]).
+    1. EXTENSIÓN Y ESTRUCTURA: Mínimo 1500 palabras. Debes incluir obligatoriamente las siguientes secciones con etiquetas <h2>: "1. Teoría y Funcionamiento", "2. Ensamblaje Paso a Paso", "3. Configuración del Software", "4. Calibración", y "5. Solución de Problemas".
+    2. COMILLAS (VITAL): Usa ÚNICAMENTE comillas simples (' ') para todos los atributos dentro del código HTML (ejemplo: <div class='contenedor'>). ¡NUNCA uses comillas dobles (") dentro del HTML generado porque romperás el formato de respuesta!
+    3. CÓDIGO: Si usa Arduino, Python, Linux o comandos, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
+    4. ALERTAS: Usa <blockquote> para notas, consejos o advertencias importantes durante el ensamblaje.
+    5. IMÁGENES: Usa la etiqueta [IMAGEN: palabra_en_ingles_muy_simple] al menos 6 veces a lo largo del texto.
 
     Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown:
     {{
@@ -97,7 +97,7 @@ for proy in proyectos_a_procesar:
         "advertencias_seguridad": ["Desconecta la corriente antes de soldar", "Cuidado con polaridades"],
         "materiales": ["Material 1 con detalle de voltaje/modelo", "Material 2"],
         "herramientas": ["Herramienta 1", "Herramienta 2"],
-        "contenido_html": "HTML con la guía maestra. Usa <h2>, <h3>, <pre><code>, <blockquote> y [IMAGEN: keyword].",
+        "contenido_html": "HTML con la guía maestra usando SIEMPRE comillas simples para los atributos.",
         "prompt_portada": "keyword corta en ingles para la foto del resultado final"
     }}
     """
