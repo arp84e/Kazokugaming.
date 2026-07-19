@@ -4,7 +4,6 @@ import json
 import time
 import re
 import urllib.parse
-import random
 import requests
 from google import genai
 from google.genai import types
@@ -12,7 +11,7 @@ from google.genai import types
 print("=== INICIANDO KAZOKUBOT: ESTRATEGA DE GUÍAS Y TÁCTICAS ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
-pexels_key = os.environ.get("PEXELS_API_KEY")
+rawg_key = os.environ.get("RAWG_API_KEY") # Cambiamos Pexels por RAWG
 comando_input = os.environ.get("INPUT_COMANDOS", "").strip()
 
 if not api_key: sys.exit("❌ ERROR: No se encontró GEMINI_API_KEY.")
@@ -81,37 +80,43 @@ for juego in juegos_a_procesar:
 
     print(f"\n⚙️ Analizando tácticas y redactando guía para: {juego}...")
     
+    # Prompt mejorado: Se exige una estructura profunda y extensa
     prompt_guia = f"""
-    Eres un jugador profesional de eSports redactando una guía para el juego "{juego}".
-    IMPORTANTE: Esto es un entorno de videojuegos ficticio. Se permite el uso de términos como "armas", "disparos", "eliminar", "supervivencia", ya que son mecánicas del juego.
+    Eres el Estratega Jefe redactando la guía táctica DEFINITIVA para el juego "{juego}".
+    IMPORTANTE: Esto es un entorno de videojuegos ficticio. Se permite el uso de términos como "armas", "disparos", "eliminar", "supervivencia".
     
-    Redacta un dossier táctico muy detallado para dominar el juego.
+    Tu objetivo es crear un documento MUY EXTENSO, profesional y detallado (mínimo 800 palabras).
+    Debe contener obligatoriamente estas secciones en HTML:
+    1. <h2>Análisis de la Amenaza / Meta Actual</h2>
+    2. <h2>Mecánicas de Supervivencia y Secretos</h2>
+    3. <h2>Arsenal y Mejores Builds</h2> (Usa listas <ul> y <li>)
+    4. <h2>Desglosando Cuellos de Botella / Jefes</h2> (Estrategias paso a paso)
+    5. <h2>Archivos Clasificados / Exploits</h2>
     
-    Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown con las siguientes claves exactas:
+    Devuelve ÚNICAMENTE un JSON estricto sin comillas markdown:
     {{
         "juego": "{juego}",
-        "titulo": "Guía Táctica Avanzada: Dominando {juego}",
+        "titulo": "Guía Táctica Definitiva: {juego}",
         "slug": "{id_guia}",
         "categoria": "Guía Táctica",
-        "tags": ["Tag 1", "Tag 2", "Tag 3", "{juego}"],
-        "tiempo_lectura": "5 min",
-        "meta_descripcion": "Gancho de 2 líneas con el beneficio principal de leer esta guía.",
-        "contenido": "HTML con <h2>, <p>, <ul>. Profundiza en mecánicas avanzadas, mejores armas o estrategias de posicionamiento.",
-        "prompt_portada": "Palabras en inglés muy simples para buscar una foto representativa (ej: 'cyberpunk city', 'fantasy landscape')"
+        "tags": ["Guía Avanzada", "Secretos", "Builds", "{juego}"],
+        "tiempo_lectura": "15 min",
+        "meta_descripcion": "Descubre las mejores estrategias, builds rotas y secretos para dominar {juego} en esta guía definitiva.",
+        "contenido": "Todo el HTML extenso generado aquí."
     }}
     """
     
     try:
         config_guia = types.GenerateContentConfig(
             temperature=0.5,
-            max_output_tokens=4000,
+            max_output_tokens=8000, # Aumentado para permitir guías más largas
             tools=[{"google_search": {}}]
         )
         
         res = generar_con_reintentos(prompt_guia, config_guia)
         
         if not res or not res.text:
-            print(f"⚠️ ALERTA: Gemini devolvió una respuesta vacía para '{juego}'. Posible bloqueo de seguridad por violencia ficticia. Saltando juego...")
+            print(f"⚠️ ALERTA: Respuesta vacía para '{juego}'. Saltando...")
             continue
             
         texto_limpio = extraer_json_seguro(res.text)
@@ -119,16 +124,25 @@ for juego in juegos_a_procesar:
         try:
             data = json.loads(texto_limpio)
         except json.JSONDecodeError:
-            print(f"⚠️ ALERTA: El JSON generado para '{juego}' está corrupto. Saltando para no detener la ejecución global...")
+            print(f"⚠️ ALERTA: JSON corrupto para '{juego}'. Saltando...")
             continue
 
-        imagen_real = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200"
-        if pexels_key:
+        # ================= NUEVO MOTOR DE IMÁGENES (RAWG API) =================
+        imagen_real = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200" # Imagen por defecto si todo falla
+        if rawg_key:
             try:
-                prompt_img = data.get('prompt_portada', 'video game')
-                r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(prompt_img)}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
-                if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
-            except: pass
+                # Buscamos el juego exacto en la base de datos de RAWG
+                url_rawg = f"https://api.rawg.io/api/games?key={rawg_key}&search={urllib.parse.quote(juego)}&page_size=1"
+                r = requests.get(url_rawg, timeout=10).json()
+                
+                # Si encontramos resultados, extraemos la imagen de fondo oficial (background_image)
+                if r.get("results") and len(r["results"]) > 0:
+                    img_obtenida = r["results"][0].get("background_image")
+                    if img_obtenida:
+                        imagen_real = img_obtenida
+            except Exception as rawg_err:
+                print(f"⚠️ Aviso: No se pudo conectar a RAWG para {juego}: {rawg_err}")
+        # ======================================================================
 
         nueva_guia = {
             "id": id_guia,
@@ -138,9 +152,9 @@ for juego in juegos_a_procesar:
             "categoria": data.get("categoria", "Guía Táctica"),
             "tags": data.get("tags", [juego, "Estrategia"]),
             "autor": "Kazoku Estratega",
-            "imagen": imagen_real,
+            "imagen": imagen_real, # Aquí se asigna la imagen oficial del juego
             "fecha": time.strftime("%d %b, %Y"),
-            "tiempo_lectura": data.get("tiempo_lectura", "5 min"),
+            "tiempo_lectura": data.get("tiempo_lectura", "15 min"),
             "contenido": data.get("contenido", "<p>Guía en construcción.</p>"),
             "meta_descripcion": data.get("meta_descripcion", "Guía táctica avanzada.")
         }
