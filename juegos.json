@@ -29,6 +29,32 @@
       "imagen": "https://media.rawg.io/media/games/3af/3af386b6e26be6741b711ae6215ef42f.jpg"
     },
     {
+      "id": "candy-crush-saga",
+      "titulo": "Candy Crush Saga",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS, Windows (PC), Web",
+      "calificacion": "8.2",
+      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
+      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
+      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
+      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Android 6.0 / iOS 12.0 / Windows 10",
+          "Procesador: Quad-Core 1.8 GHz",
+          "Memoria: 2 GB de RAM",
+          "Almacenamiento: 500 MB de espacio disponible"
+        ],
+        "recomendados": [
+          "SO: Android 11.0 / iOS 15.0 / Windows 11",
+          "Procesador: Octa-Core 2.4 GHz o superior",
+          "Memoria: 4 GB de RAM o más",
+          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+    },
+    {
       "id": "minecraft",
       "titulo": "Minecraft",
       "fecha": "18 de noviembre de 2011",
@@ -56,6 +82,86 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+    },
+    {
+      "id": "garena-free-fire",
+      "titulo": "Garena Free Fire",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS",
+      "calificacion": "8.0",
+      "motor_grafico": "Unity",
+      "tecnologias": "Pantalla táctil, Crossplay (Android/iOS), Soporte para 60 FPS, Renderizado de sombras dinámicas",
+      "sinopsis": "Garena Free Fire es un juego de disparos en tercera persona de tipo battle royale en el que 50 jugadores caen en una isla remota para luchar por la supervivencia. El último en quedar en pie gana.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Garena Free Fire</strong> destaca principalmente por su excelente optimización en dispositivos móviles de gama baja y media. Al estar desarrollado bajo el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio sobresaliente entre calidad visual y consumo de recursos, permitiendo que millones de jugadores con hardware limitado disfruten de una experiencia fluida.</p><p>En dispositivos de gama de entrada, el título mantiene una tasa de fotogramas estable de <strong>30 FPS</strong> con los ajustes gráficos en 'Suave'. Para terminales de gama media y alta, la opción de activar el modo de <strong>Altos FPS (60 FPS)</strong> ofrece una jugabilidad sumamente competitiva y tiempos de respuesta táctil reducidos. Sin embargo, la activación de sombras dinámicas y texturas en alta resolución puede provocar un ligero estrangulamiento térmico (thermal throttling) y un incremento notable en el consumo de batería tras sesiones de juego prolongadas.</p><p>El netcode y la latencia están sumamente optimizados, lo que permite jugar de manera competitiva incluso con conexiones móviles 3G o 4G inestables. En resumen, Free Fire sacrifica el fotorrealismo en favor de una accesibilidad técnica inigualable en el mercado móvil.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 4.1 o superior / iOS 9.0 o superior",
+          "Procesador: Dual Core 1.2 GHz",
+          "Memoria RAM: 1 GB",
+          "Almacenamiento: 1.5 GB de espacio libre"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 7.0 o superior / iOS 11.0 o superior",
+          "Procesador: Octa-Core 2.0 GHz o superior",
+          "Memoria RAM: 3 GB o más",
+          "Almacenamiento: 3 GB de espacio libre"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/a2f/a2fc4a4a2c67b74b29bc6f4959c24f93.jpg"
+    },
+    {
+      "id": "pubg-mobile",
+      "titulo": "PUBG Mobile",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS",
+      "calificacion": "8.8",
+      "motor_grafico": "Unreal Engine 4",
+      "tecnologias": "Controles táctiles, Giroscopio de alta precisión, Soporte para 90Hz / 120Hz (Ultra Extreme), APIs Vulkan y Metal, Audio Dolby Atmos, Juego cruzado (Crossplay) entre Android e iOS.",
+      "sinopsis": "PUBG Mobile es la adaptación para dispositivos móviles del aclamado battle royale de Krafton. Cien jugadores caen en una isla desierta donde deben buscar armas, equipamiento y vehículos mientras el área de juego se reduce constantemente, luchando por ser el último superviviente en pie.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>PUBG Mobile</strong> ha evolucionado de manera sobresaliente desde su lanzamiento, consolidándose como uno de los referentes de optimización en dispositivos móviles. Utilizando el motor <strong>Unreal Engine 4</strong>, el juego logra un equilibrio asombroso entre fidelidad visual y fluidez, adaptándose a una inmensa gama de hardware.</p><p>En dispositivos de gama alta, la introducción del modo de <strong>120 FPS (Ultra Extreme)</strong> ha transformado por completo la experiencia competitiva. Esta tasa de refresco reduce drásticamente el retraso de entrada (input lag) y mejora la precisión en el apuntado y el control del retroceso de las armas. Sin embargo, mantener esta fluidez exige un hardware potente (procesadores como el Snapdragon 8 Gen 2 o superior, o los chips Apple A15 Bionic o superior) y genera un impacto térmico considerable, llegando a temperaturas elevadas tras sesiones prolongadas, lo que puede provocar estrangulamiento térmico si no se cuenta con refrigeración activa.</p><p>Para la gama media y baja, el juego ofrece una escalabilidad excelente. Gracias a las APIs <strong>Vulkan</strong> (en Android) y <strong>Metal</strong> (en iOS), y a la posibilidad de descargar paquetes de recursos de baja resolución de forma selectiva, dispositivos más modestos pueden mantener unos <strong>60 FPS estables</strong> en configuraciones gráficas bajas. La estabilidad de los fotogramas es sólida, aunque en momentos de alta densidad de jugadores o zonas de combate intenso se pueden experimentar ligeras caídas de frames.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 5.1.1 o superior / iOS 9.0 o superior",
+          "Procesador: Snapdragon 430 / Kirin 650 o equivalente / Apple A8 o superior",
+          "Memoria RAM: 2 GB",
+          "Almacenamiento: 4 GB de espacio libre (instalación básica)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 10 o superior / iOS 17 o superior (para soporte de 120 FPS)",
+          "Procesador: Snapdragon 8 Gen 2 / Dimensity 9200 o superior / Apple A15 Bionic o superior",
+          "Memoria RAM: 6 GB o más (8 GB recomendados para 120 FPS)",
+          "Almacenamiento: 15 GB a 30 GB de espacio libre (con todos los paquetes de texturas HD descargados)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/087/0879f4aab10a12ecde452f6326bac01e.jpg"
+    },
+    {
+      "id": "league-of-legends",
+      "titulo": "League of Legends",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "PC (Windows, macOS)",
+      "calificacion": "9.0",
+      "motor_grafico": "Motor propio (Riot Games)",
+      "tecnologias": "DirectX 11, Metal (macOS), Riot Vanguard (Anti-cheat), Multi-threading",
+      "sinopsis": "League of Legends es un videojuego de estrategia y acción por equipos (MOBA) en el que dos equipos de cinco poderosos campeones se enfrentan para destruir el Nexo del oponente, combinando táctica, reflejos y juego cooperativo en tiempo real.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>League of Legends</strong> destaca por su excelente optimización histórica, permitiendo que el juego funcione de manera fluida incluso en ordenadores de gama baja o portátiles antiguos. Sin embargo, las actualizaciones recientes de Riot Games han elevado ligeramente el listón técnico. La transición obligatoria a <strong>DirectX 11</strong> y la implementación del sistema antitrampas a nivel de kernel, <strong>Riot Vanguard</strong>, han dejado atrás el soporte para sistemas operativos obsoletos como Windows 7 u 8, exigiendo ahora Windows 10 o Windows 11 (este último con TPM 2.0 obligatorio).</p><p>En el juego real, el motor gráfico propio de Riot ofrece una tasa de fotogramas por segundo (FPS) sumamente estable. En equipos de gama media y alta, es sumamente sencillo superar los <strong>144 FPS o incluso 240 FPS</strong> a resolución 1080p o 1440p, lo que resulta ideal para monitores de alta tasa de refresco. Los tiempos de carga se han reducido significativamente gracias a la optimización del cliente y el uso recomendado de unidades <strong>SSD</strong>.</p><p>Durante las peleas de equipo más caóticas (teamfights de 5v5 con múltiples efectos visuales y habilidades en pantalla), el rendimiento se mantiene robusto, aunque los procesadores más antiguos pueden experimentar ligeras caídas de frames debido a la carga de físicas y lógica del servidor. En la versión de macOS, la transición de OpenGL a la API gráfica <strong>Metal</strong> ha mejorado la eficiencia energética y la estabilidad en dispositivos con chips Apple Silicon, aunque la integración de Vanguard sigue requiriendo configuraciones de seguridad estrictas.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i3-530 / AMD A6-3650",
+          "Memoria RAM: 2 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce 9600GT / AMD HD 6570 / Intel HD 4600 (Compatible con DX11)",
+          "Almacenamiento: 16 GB HDD",
+          "Sistema Operativo: Windows 10 (Build 19041+) / macOS 10.13"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i5-3300 / AMD Ryzen 3 1200",
+          "Memoria RAM: 4 GB",
+          "Tarjeta Gráfica: NVIDIA GeForce GTX 560 / AMD Radeon HD 6950 / Intel UHD 630 (Compatible con DX11)",
+          "Almacenamiento: 16 GB SSD",
+          "Sistema Operativo: Windows 11 (con TPM 2.0 y Secure Boot habilitados) / macOS 11"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
     },
     {
       "id": "fortnite",
@@ -119,60 +225,6 @@
       "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
     },
     {
-      "id": "league-of-legends",
-      "titulo": "League of Legends",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "PC (Windows, macOS)",
-      "calificacion": "9.0",
-      "motor_grafico": "Motor propio (Riot Games)",
-      "tecnologias": "DirectX 11, Metal (macOS), Riot Vanguard (Anti-cheat), Multi-threading",
-      "sinopsis": "League of Legends es un videojuego de estrategia y acción por equipos (MOBA) en el que dos equipos de cinco poderosos campeones se enfrentan para destruir el Nexo del oponente, combinando táctica, reflejos y juego cooperativo en tiempo real.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>League of Legends</strong> destaca por su excelente optimización histórica, permitiendo que el juego funcione de manera fluida incluso en ordenadores de gama baja o portátiles antiguos. Sin embargo, las actualizaciones recientes de Riot Games han elevado ligeramente el listón técnico. La transición obligatoria a <strong>DirectX 11</strong> y la implementación del sistema antitrampas a nivel de kernel, <strong>Riot Vanguard</strong>, han dejado atrás el soporte para sistemas operativos obsoletos como Windows 7 u 8, exigiendo ahora Windows 10 o Windows 11 (este último con TPM 2.0 obligatorio).</p><p>En el juego real, el motor gráfico propio de Riot ofrece una tasa de fotogramas por segundo (FPS) sumamente estable. En equipos de gama media y alta, es sumamente sencillo superar los <strong>144 FPS o incluso 240 FPS</strong> a resolución 1080p o 1440p, lo que resulta ideal para monitores de alta tasa de refresco. Los tiempos de carga se han reducido significativamente gracias a la optimización del cliente y el uso recomendado de unidades <strong>SSD</strong>.</p><p>Durante las peleas de equipo más caóticas (teamfights de 5v5 con múltiples efectos visuales y habilidades en pantalla), el rendimiento se mantiene robusto, aunque los procesadores más antiguos pueden experimentar ligeras caídas de frames debido a la carga de físicas y lógica del servidor. En la versión de macOS, la transición de OpenGL a la API gráfica <strong>Metal</strong> ha mejorado la eficiencia energética y la estabilidad en dispositivos con chips Apple Silicon, aunque la integración de Vanguard sigue requiriendo configuraciones de seguridad estrictas.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i3-530 / AMD A6-3650",
-          "Memoria RAM: 2 GB",
-          "Tarjeta Gráfica: NVIDIA GeForce 9600GT / AMD HD 6570 / Intel HD 4600 (Compatible con DX11)",
-          "Almacenamiento: 16 GB HDD",
-          "Sistema Operativo: Windows 10 (Build 19041+) / macOS 10.13"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i5-3300 / AMD Ryzen 3 1200",
-          "Memoria RAM: 4 GB",
-          "Tarjeta Gráfica: NVIDIA GeForce GTX 560 / AMD Radeon HD 6950 / Intel UHD 630 (Compatible con DX11)",
-          "Almacenamiento: 16 GB SSD",
-          "Sistema Operativo: Windows 11 (con TPM 2.0 y Secure Boot habilitados) / macOS 11"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
-    },
-    {
-      "id": "pubg-mobile",
-      "titulo": "PUBG Mobile",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS",
-      "calificacion": "8.8",
-      "motor_grafico": "Unreal Engine 4",
-      "tecnologias": "Controles táctiles, Giroscopio de alta precisión, Soporte para 90Hz / 120Hz (Ultra Extreme), APIs Vulkan y Metal, Audio Dolby Atmos, Juego cruzado (Crossplay) entre Android e iOS.",
-      "sinopsis": "PUBG Mobile es la adaptación para dispositivos móviles del aclamado battle royale de Krafton. Cien jugadores caen en una isla desierta donde deben buscar armas, equipamiento y vehículos mientras el área de juego se reduce constantemente, luchando por ser el último superviviente en pie.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>PUBG Mobile</strong> ha evolucionado de manera sobresaliente desde su lanzamiento, consolidándose como uno de los referentes de optimización en dispositivos móviles. Utilizando el motor <strong>Unreal Engine 4</strong>, el juego logra un equilibrio asombroso entre fidelidad visual y fluidez, adaptándose a una inmensa gama de hardware.</p><p>En dispositivos de gama alta, la introducción del modo de <strong>120 FPS (Ultra Extreme)</strong> ha transformado por completo la experiencia competitiva. Esta tasa de refresco reduce drásticamente el retraso de entrada (input lag) y mejora la precisión en el apuntado y el control del retroceso de las armas. Sin embargo, mantener esta fluidez exige un hardware potente (procesadores como el Snapdragon 8 Gen 2 o superior, o los chips Apple A15 Bionic o superior) y genera un impacto térmico considerable, llegando a temperaturas elevadas tras sesiones prolongadas, lo que puede provocar estrangulamiento térmico si no se cuenta con refrigeración activa.</p><p>Para la gama media y baja, el juego ofrece una escalabilidad excelente. Gracias a las APIs <strong>Vulkan</strong> (en Android) y <strong>Metal</strong> (en iOS), y a la posibilidad de descargar paquetes de recursos de baja resolución de forma selectiva, dispositivos más modestos pueden mantener unos <strong>60 FPS estables</strong> en configuraciones gráficas bajas. La estabilidad de los fotogramas es sólida, aunque en momentos de alta densidad de jugadores o zonas de combate intenso se pueden experimentar ligeras caídas de frames.</p>",
-      "requisitos": {
-        "minimos": [
-          "Sistema Operativo: Android 5.1.1 o superior / iOS 9.0 o superior",
-          "Procesador: Snapdragon 430 / Kirin 650 o equivalente / Apple A8 o superior",
-          "Memoria RAM: 2 GB",
-          "Almacenamiento: 4 GB de espacio libre (instalación básica)"
-        ],
-        "recomendados": [
-          "Sistema Operativo: Android 10 o superior / iOS 17 o superior (para soporte de 120 FPS)",
-          "Procesador: Snapdragon 8 Gen 2 / Dimensity 9200 o superior / Apple A15 Bionic o superior",
-          "Memoria RAM: 6 GB o más (8 GB recomendados para 120 FPS)",
-          "Almacenamiento: 15 GB a 30 GB de espacio libre (con todos los paquetes de texturas HD descargados)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/087/0879f4aab10a12ecde452f6326bac01e.jpg"
-    },
-    {
       "id": "counter-strike-2",
       "titulo": "Counter-Strike 2",
       "fecha": "12 Jul, 2026",
@@ -202,30 +254,32 @@
       "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
     },
     {
-      "id": "candy-crush-saga",
-      "titulo": "Candy Crush Saga",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS, Windows (PC), Web",
-      "calificacion": "8.2",
-      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
-      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
-      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
-      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
+      "id": "call-of-duty",
+      "titulo": "Call of Duty",
+      "fecha": "19 Jul, 2026",
+      "plataformas": "PC (Windows)",
+      "calificacion": "8.5",
+      "motor_grafico": "IW 9.0 Engine",
+      "tecnologias": "NVIDIA DLSS 3 (Frame Generation & Super Resolution), AMD FSR 3, Intel XeSS, NVIDIA Reflex, Crossplay, Variable Rate Shading (VRS), On-Demand Texture Streaming",
+      "sinopsis": "Call of Duty: Black Ops 6 es un thriller de acción y espionaje ambientado a principios de los 90, que ofrece una campaña dinámica, multijugador de primer nivel y el regreso del modo Zombis por rondas.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Call of Duty: Black Ops 6</strong> en su versión de PC destaca por una optimización sobresaliente, permitiendo que tanto equipos modernos como configuraciones de gama media-baja alcancen tasas de cuadros por segundo sumamente competitivas. El motor gráfico <strong>IW 9.0</strong> demuestra una madurez técnica notable, ofreciendo un excelente escalado de rendimiento gracias a la implementación nativa de tecnologías de reconstrucción de imagen como <strong>DLSS 3</strong>, <strong>FSR 3</strong> y <strong>XeSS</strong>.</p><p>En el apartado de consumo de recursos, el juego hace un uso intensivo pero eficiente de la memoria VRAM, especialmente si se activa la opción de <strong>On-Demand Texture Streaming</strong>, la cual optimiza el espacio en disco transmitiendo texturas en alta definición a través de internet, reduciendo el peso inicial de la instalación. Sin embargo, esto puede generar micro-tirones (stuttering) en conexiones de red inestables, por lo que se recomienda configurar esta opción en 'Mínimo' o 'Optimizado' para evitar caídas de frames en el multijugador competitivo.</p><p>La latencia de entrada se mantiene en niveles mínimos gracias a la integración de <strong>NVIDIA Reflex</strong>, un factor crucial para el juego competitivo. Las pruebas de rendimiento revelan que las tarjetas gráficas de AMD rinden excepcionalmente bien en este motor debido a su arquitectura de cómputo asíncrono, superando en ocasiones a sus contrapartes directas de NVIDIA en rasterización pura. El único punto negativo a nivel de infraestructura es la dependencia del launcher unificado <strong>Call of Duty HQ</strong>, el cual resulta pesado, confuso y propenso a requerir reinicios innecesarios al alternar entre modos de juego.</p>",
       "requisitos": {
         "minimos": [
-          "SO: Android 6.0 / iOS 12.0 / Windows 10",
-          "Procesador: Quad-Core 1.8 GHz",
-          "Memoria: 2 GB de RAM",
-          "Almacenamiento: 500 MB de espacio disponible"
+          "Sistema Operativo: Windows 10 de 64 bits (última actualización)",
+          "Procesador: AMD Ryzen 5 1400 o Intel Core i5-6600",
+          "Memoria RAM: 8 GB",
+          "Tarjeta Gráfica: AMD Radeon RX 470, NVIDIA GeForce GTX 960 / 1650 o Intel Arc A580",
+          "Almacenamiento: SSD con 102 GB de espacio disponible"
         ],
         "recomendados": [
-          "SO: Android 11.0 / iOS 15.0 / Windows 11",
-          "Procesador: Octa-Core 2.4 GHz o superior",
-          "Memoria: 4 GB de RAM o más",
-          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
+          "Sistema Operativo: Windows 10 / 11 de 64 bits (última actualización)",
+          "Procesador: AMD Ryzen 5 1600X o Intel Core i7-6700K",
+          "Memoria RAM: 12 GB",
+          "Tarjeta Gráfica: AMD Radeon RX 6600 XT o NVIDIA GeForce GTX 1080 Ti / RTX 3060",
+          "Almacenamiento: SSD con 102 GB de espacio disponible"
         ]
       },
-      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+      "imagen": "https://media.rawg.io/media/games/9c5/9c5bc0b6e67102bc96dcf1ba41509e42.jpg"
     },
     {
       "id": "honor-of-kings",
@@ -252,32 +306,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
-    },
-    {
-      "id": "garena-free-fire",
-      "titulo": "Garena Free Fire",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "Android, iOS",
-      "calificacion": "8.0",
-      "motor_grafico": "Unity",
-      "tecnologias": "Pantalla táctil, Crossplay (Android/iOS), Soporte para 60 FPS, Renderizado de sombras dinámicas",
-      "sinopsis": "Garena Free Fire es un juego de disparos en tercera persona de tipo battle royale en el que 50 jugadores caen en una isla remota para luchar por la supervivencia. El último en quedar en pie gana.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>Garena Free Fire</strong> destaca principalmente por su excelente optimización en dispositivos móviles de gama baja y media. Al estar desarrollado bajo el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio sobresaliente entre calidad visual y consumo de recursos, permitiendo que millones de jugadores con hardware limitado disfruten de una experiencia fluida.</p><p>En dispositivos de gama de entrada, el título mantiene una tasa de fotogramas estable de <strong>30 FPS</strong> con los ajustes gráficos en 'Suave'. Para terminales de gama media y alta, la opción de activar el modo de <strong>Altos FPS (60 FPS)</strong> ofrece una jugabilidad sumamente competitiva y tiempos de respuesta táctil reducidos. Sin embargo, la activación de sombras dinámicas y texturas en alta resolución puede provocar un ligero estrangulamiento térmico (thermal throttling) y un incremento notable en el consumo de batería tras sesiones de juego prolongadas.</p><p>El netcode y la latencia están sumamente optimizados, lo que permite jugar de manera competitiva incluso con conexiones móviles 3G o 4G inestables. En resumen, Free Fire sacrifica el fotorrealismo en favor de una accesibilidad técnica inigualable en el mercado móvil.</p>",
-      "requisitos": {
-        "minimos": [
-          "Sistema Operativo: Android 4.1 o superior / iOS 9.0 o superior",
-          "Procesador: Dual Core 1.2 GHz",
-          "Memoria RAM: 1 GB",
-          "Almacenamiento: 1.5 GB de espacio libre"
-        ],
-        "recomendados": [
-          "Sistema Operativo: Android 7.0 o superior / iOS 11.0 o superior",
-          "Procesador: Octa-Core 2.0 GHz o superior",
-          "Memoria RAM: 3 GB o más",
-          "Almacenamiento: 3 GB de espacio libre"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/a2f/a2fc4a4a2c67b74b29bc6f4959c24f93.jpg"
     },
     {
       "id": "pubg-battlegrounds",
