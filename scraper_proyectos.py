@@ -73,14 +73,14 @@ proyectos_a_procesar = []
 if comando_input == "top":
     print("🌍 Buscando los mejores proyectos DIY para Gaming/Setup...")
     prompt_top = f"""
-    Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO.
-    EXCLUYE: {nombres_existentes}.
+    Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO (ej: Drones autónomos, brazos robóticos ROS, impresoras CoreXY).
+    EXCLUYE estrictamente estos proyectos ya existentes: {nombres_existentes}.
     """
+    # Configuramos el esquema JSON puro sin herramientas de búsqueda conflictivas
     config_top = types.GenerateContentConfig(
         temperature=0.7, 
         response_mime_type="application/json",
-        response_schema=ListaProyectos,
-        tools=[{"google_search": {}}]
+        response_schema=ListaProyectos
     )
     res_top = generar_con_reintentos(prompt_top, config_top)
     datos_top = json.loads(res_top.text)
@@ -98,27 +98,26 @@ for proy in proyectos_a_procesar:
     
     prompt_tutorial = f"""
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
-    El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
+    El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico absoluto.
 
     REGLAS DE REDACCIÓN:
     1. EXTENSIÓN: Mínimo 1500 palabras estructuradas con etiquetas <h2> y <h3>.
     2. CÓDIGO: Si usa Arduino, Python, ROS o C++, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
-    3. ALERTAS: Usa <blockquote> para notas de seguridad.
-    4. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces.
+    3. ALERTAS: Usa <blockquote> para notas críticas de seguridad y polaridades.
+    4. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces a lo largo del texto.
     """
     
     try:
-        # Configuración blindada con el esquema Pydantic
+        # Configuración blindada con Pydantic y sin herramientas externas conflictivas
         config_tut = types.GenerateContentConfig(
             temperature=0.4, 
             max_output_tokens=8192, 
             response_mime_type="application/json",
-            response_schema=ManualMaker,
-            tools=[{"google_search": {}}]
+            response_schema=ManualMaker
         )
         res = generar_con_reintentos(prompt_tutorial, config_tut)
         
-        # Como usamos un esquema estructurado, la respuesta es 100% JSON válido de forma nativa
+        # Procesamiento directo del JSON estructurado por los servidores
         data = json.loads(res.text)
         
         imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
