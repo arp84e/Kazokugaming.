@@ -8,8 +8,10 @@ import random
 import requests
 from google import genai
 from google.genai import types
+from pydantic import BaseModel
+from typing import List
 
-print("=== INICIANDO KAZOKUBOT: INGENIERO MAKER (VERSIÓN MAESTRA) ===")
+print("=== INICIANDO KAZOKUBOT: INGENIERO MAKER (VERSIÓN MAESTRA CON ESQUEMAS) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 pexels_key = os.environ.get("PEXELS_API_KEY")
@@ -39,17 +41,26 @@ if comando_input.startswith("eliminar:"):
         print("✅ Proyecto(s) eliminado(s) con éxito.")
     sys.exit(0)
 
-def limpiar_respuesta_json(texto):
-    """Limpia cualquier bloque markdown residual que pueda enviar la IA."""
-    texto = texto.strip()
-    if texto.startswith("```json"): texto = texto[7:]
-    if texto.startswith("```"): texto = texto[3:]
-    if texto.endswith("```"): texto = texto[:-3]
-    return texto.strip()
+# --- MODELOS DE DATOS (GARANTIZAN UN FORMATO IMPERMEABLE) ---
+class ListaProyectos(BaseModel):
+    resultados: List[str]
+
+class ManualMaker(BaseModel):
+    categoria: str
+    dificultad: str
+    tiempo_estimado: str
+    costo_estimado: str
+    requisitos_conocimiento: str
+    descripcion_corta: str
+    advertencias_seguridad: List[str]
+    materiales: List[str]
+    herramientas: List[str]
+    contenido_html: str
+    portada_prompt: str
 
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
     for intento in range(max_intentos):
-        for modelo in ['gemini-3.5-flash', 'gemini-2.5-flash']:
+        for modelo in ['gemini-2.5-flash', 'gemini-3.5-flash']:
             try: return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
                 if "503" in str(e) or "429" in str(e): continue
@@ -64,11 +75,16 @@ if comando_input == "top":
     prompt_top = f"""
     Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO.
     EXCLUYE: {nombres_existentes}.
-    Devuelve ÚNICAMENTE un JSON: {{ "resultados": ["Proyecto 1", "Proyecto 2", "Proyecto 3"] }}
     """
-    config_top = types.GenerateContentConfig(temperature=0.7, tools=[{"google_search": {}}])
-    res_top = limpiar_respuesta_json(generar_con_reintentos(prompt_top, config_top).text)
-    proyectos_a_procesar = json.loads(res_top).get("resultados", [])
+    config_top = types.GenerateContentConfig(
+        temperature=0.7, 
+        response_mime_type="application/json",
+        response_schema=ListaProyectos,
+        tools=[{"google_search": {}}]
+    )
+    res_top = generar_con_reintentos(prompt_top, config_top)
+    datos_top = json.loads(res_top.text)
+    proyectos_a_procesar = datos_top.get("resultados", [])
 else:
     proyectos_a_procesar = [re.sub(r'["\n\r]', '', p.strip()) for p in os.environ.get("INPUT_COMANDOS", "").split(";") if p.strip()]
 
@@ -84,45 +100,31 @@ for proy in proyectos_a_procesar:
     Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
     El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico.
 
-    REGLAS ESTRICTAS DE REDACCIÓN (¡VITAL PARA EL SISTEMA!):
-    1. EXTENSIÓN: Mínimo 1500 palabras estructuradas con <h2> y <h3>.
-    2. CÓDIGO: Si usa Arduino, Python, Linux o comandos, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
-    3. 🚫 ALERTA CRÍTICA DE FORMATO: ESTÁ ESTRICTAMENTE PROHIBIDO USAR COMILLAS DOBLES (") EN TODO TU TEXTO. Sustituye absolutamente todas las comillas dobles por comillas simples (' '), tanto en los atributos HTML como dentro de los códigos de programación.
-    4. ALERTAS: Usa <blockquote> para notas de seguridad.
-    5. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces.
-
-    Devuelve ÚNICAMENTE un JSON estricto:
-    {{
-        "categoria": "Robótica, Raspberry Pi, Arduino...",
-        "dificultad": "Avanzado",
-        "tiempo_estimado": "Ej: 1 Fin de Semana",
-        "costo_estimado": "Ej: $50 USD",
-        "requisitos_conocimiento": "Ej: Soldadura",
-        "descripcion_corta": "Gancho motivador de 3 líneas.",
-        "advertencias_seguridad": ["Desconecta la corriente", "Usa gafas"],
-        "materiales": ["Material 1", "Material 2"],
-        "herramientas": ["Herramienta 1", "Herramienta 2"],
-        "contenido_html": "HTML con la guía maestra usando SIEMPRE comillas simples.",
-        "prompt_portada": "keyword_ingles_corta"
-    }}
+    REGLAS DE REDACCIÓN:
+    1. EXTENSIÓN: Mínimo 1500 palabras estructuradas con etiquetas <h2> y <h3>.
+    2. CÓDIGO: Si usa Arduino, Python, ROS o C++, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
+    3. ALERTAS: Usa <blockquote> para notas de seguridad.
+    4. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces.
     """
     
     try:
+        # Configuración blindada con el esquema Pydantic
         config_tut = types.GenerateContentConfig(
             temperature=0.4, 
             max_output_tokens=8192, 
-            response_mime_type="application/json", 
+            response_mime_type="application/json",
+            response_schema=ManualMaker,
             tools=[{"google_search": {}}]
         )
         res = generar_con_reintentos(prompt_tutorial, config_tut)
         
-        texto_json = limpiar_respuesta_json(res.text)
-        data = json.loads(texto_json, strict=False)
+        # Como usamos un esquema estructurado, la respuesta es 100% JSON válido de forma nativa
+        data = json.loads(res.text)
         
-        imagen_real = "[https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200](https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200)"
+        imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
         if pexels_key:
             try:
-                r = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){urllib.parse.quote(data.get('prompt_portada', 'circuit board'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
+                r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(data.get('portada_prompt', 'circuit board'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
                 if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
             except: pass
 
@@ -130,10 +132,10 @@ for proy in proyectos_a_procesar:
         etiquetas_imagen = set(re.findall(r'\[IMAGEN:\s*(.*?)\]', html_crudo, re.IGNORECASE))
         
         for keyword in etiquetas_imagen:
-            img_paso = "[https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800](https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800)"
+            img_paso = "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800"
             if pexels_key:
                 try:
-                    r = requests.get(f"[https://api.pexels.com/v1/search?query=](https://api.pexels.com/v1/search?query=){urllib.parse.quote(keyword.strip())}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
+                    r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(keyword.strip())}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
                     if r.get("photos"): img_paso = r["photos"][0]["src"]["landscape"]
                 except: pass
             
@@ -161,11 +163,8 @@ for proy in proyectos_a_procesar:
         estructura_final["proyectos"].insert(0, nuevo_proy)
         nuevos_agregados += 1
             
-    except json.JSONDecodeError as e:
-        print(f"⚠️ Error de formato en la IA para {proy}. Saltando para proteger el sistema. Detalle: {e}")
-        continue
     except Exception as e:
-        print(f"❌ Error al procesar {proy}: {e}")
+        print(f"❌ Error crítico procesando {proy}: {e}")
         continue
 
 with open(archivo_oficial, "w", encoding="utf-8") as f:
