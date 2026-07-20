@@ -619,13 +619,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/proyecto.html?id=brazo-rob-tico-colaborativo-de-m-ltiples-grados-de-libertad-6-dof-controlado-por-ros-con-kinem-tica-inversa-y-planificaci-n-de-trayectorias-avanzada-desarrollo-de-un-brazo-rob-tico-de-6-dof-utilizando-servomotores-de-alta-precisi-n-dynamixel-o-similar-y-sensores-de-fuerza-torque-implementaci-n-completa-del-software-de-control-mediante-el-robot-operating-system-ros-incluyendo-modelos-urdf-xacro-paquetes-para-cinem-tica-inversa-directa-planificaci-n-de-trayectorias-moveit-y-una-interfaz-de-usuario-para-programaci-n-de-tareas-se-puede-a-adir-un-sistema-de-realimentaci-n-h-ptica-o-un-gripper-adaptativo</loc>
+    <loc>https://kazokugaming.com/proyecto.html?id=sistema-de-head-tracking-econ-mico-para-simuladores-y-juegos-con-webcam-modificada-ir-o-sensor-imu-y-software-open-source-ej-opentrack-permitiendo-controlar-la-c-mara-con-movimientos-de-cabeza</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kazokugaming.com/proyecto.html?id=dron-aut-nomo-con-sistema-de-visi-n-por-computadora-para-navegaci-n-y-evitaci-n-de-obst-culos-din-micos-dise-o-y-construcci-n-de-un-dron-cuadric-ptero-desde-cero-integrando-un-controlador-de-vuelo-avanzado-px4-ardupilot-una-computadora-de-a-bordo-nvidia-jetson-nano-o-raspberry-pi-4-para-procesamiento-de-imagen-en-tiempo-real-c-maras-de-profundidad-intel-realsense-stereolabs-zed-y-algoritmos-de-visi-n-por-computadora-opencv-slam-para-mapeo-3d-localizaci-n-y-planificaci-n-de-rutas-aut-nomas-en-entornos-complejos-sin-gps-incluye-detecci-n-y-seguimiento-de-objetos</loc>
+    <loc>https://kazokugaming.com/proyecto.html?id=pedal-usb-programable-para-accesos-r-pidos-en-juegos-o-aplicaciones-push-to-talk-recargar-etc-con-arduino-leonardo-o-pro-micro-utilizando-un-simple-interruptor-de-pie</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazokugaming.com/proyecto.html?id=iluminaci-n-led-ambilight-para-monitor-con-raspberry-pi-zero-o-esp32-y-tira-de-leds-ws2812b-sincronizando-los-colores-con-el-contenido-de-la-pantalla-para-una-inmersi-n-total</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
