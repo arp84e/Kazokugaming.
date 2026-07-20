@@ -11,7 +11,7 @@ from google.genai import types
 from pydantic import BaseModel
 from typing import List
 
-print("=== INICIANDO KAZOKUBOT: INGENIERO MAKER (VERSIÓN MAESTRA CON ESQUEMAS) ===")
+print("=== INICIANDO KAZOKUBOT: INGENIERO MAKER (NIVEL BAJO/MEDIO) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 pexels_key = os.environ.get("PEXELS_API_KEY")
@@ -41,7 +41,7 @@ if comando_input.startswith("eliminar:"):
         print("✅ Proyecto(s) eliminado(s) con éxito.")
     sys.exit(0)
 
-# --- MODELOS DE DATOS (GARANTIZAN UN FORMATO IMPERMEABLE) ---
+# --- MODELOS DE DATOS (ESQUEMAS BLINDADOS) ---
 class ListaProyectos(BaseModel):
     resultados: List[str]
 
@@ -71,12 +71,11 @@ def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
 proyectos_a_procesar = []
 
 if comando_input == "top":
-    print("🌍 Buscando los mejores proyectos DIY para Gaming/Setup...")
+    print("🌍 Buscando proyectos DIY accesibles para Setups y Gaming...")
     prompt_top = f"""
-    Eres un ingeniero experto en DIY. Propón 3 proyectos tecnológicos nivel EXPERTO (ej: Drones autónomos, brazos robóticos ROS, impresoras CoreXY).
+    Eres un experto en cultura Maker y DIY para videojuegos. Propón 3 proyectos tecnológicos de NIVEL BAJO o MEDIO (Accesibles, fáciles de conseguir y armar en un fin de semana, por ejemplo: Iluminación LED Ambilight para monitor, Soporte motorizado para auriculares, Consola retro emulada con Raspberry Pi Zero, o Panel de control macro con Arduino).
     EXCLUYE estrictamente estos proyectos ya existentes: {nombres_existentes}.
     """
-    # Configuramos el esquema JSON puro sin herramientas de búsqueda conflictivas
     config_top = types.GenerateContentConfig(
         temperature=0.7, 
         response_mime_type="application/json",
@@ -94,21 +93,21 @@ for proy in proyectos_a_procesar:
     id_proy = re.sub(r'[^a-z0-9]+', '-', proy.lower()).strip('-')
     if any(p["id"] == id_proy for p in estructura_final.get("proyectos", [])): continue
 
-    print(f"\n⚙️ Redactando MANUAL DE INGENIERÍA EXHAUSTIVO para: {proy}...")
+    print(f"\n⚙️ Redactando guía clara y detallada para: {proy}...")
     
     prompt_tutorial = f"""
-    Eres un Ingeniero Electrónico, Programador y Creador Maker. Tu misión es redactar el MANUAL DEFINITIVO para construir: "{proy}".
-    El nivel de detalle debe ser insano, pensado para que alguien sin experiencia no se pierda, pero con rigor técnico absoluto.
+    Eres un Maker apasionado y profesor de tecnología. Tu misión es redactar una GUÍA PASO A PASO sumamente detallada, clara y amigable para construir: "{proy}".
+    El proyecto debe ser de dificultad Baja o Media, explicando cada concepto para que un principiante no se pierda.
 
     REGLAS DE REDACCIÓN:
-    1. EXTENSIÓN: Mínimo 1500 palabras estructuradas con etiquetas <h2> y <h3>.
-    2. CÓDIGO: Si usa Arduino, Python, ROS o C++, INCLUYE LOS SCRIPTS EXACTOS usando <pre><code> ... </code></pre>.
-    3. ALERTAS: Usa <blockquote> para notas críticas de seguridad y polaridades.
-    4. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 6 veces a lo largo del texto.
+    1. EXTENSIÓN: Mínimo 1200 palabras, estructuradas de forma muy visual con etiquetas <h2> y <h3>.
+    2. EXPLICACIÓN DIDÁCTICA: Explica el "por qué" de las conexiones o del código de manera sencilla.
+    3. CÓDIGO: Si usa Arduino, Python o scripts, inclúyelos limpios usando <pre><code> ... </code></pre> con comentarios en español.
+    4. ALERTAS: Usa <blockquote> para consejos útiles y precauciones básicas de seguridad.
+    5. IMÁGENES: Usa la etiqueta [IMAGEN: keyword_en_ingles_simple] al menos 5 veces para ilustrar el proceso.
     """
     
     try:
-        # Configuración blindada con Pydantic y sin herramientas externas conflictivas
         config_tut = types.GenerateContentConfig(
             temperature=0.4, 
             max_output_tokens=8192, 
@@ -116,14 +115,12 @@ for proy in proyectos_a_procesar:
             response_schema=ManualMaker
         )
         res = generar_con_reintentos(prompt_tutorial, config_tut)
-        
-        # Procesamiento directo del JSON estructurado por los servidores
         data = json.loads(res.text)
         
         imagen_real = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
         if pexels_key:
             try:
-                r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(data.get('portada_prompt', 'circuit board'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
+                r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(data.get('portada_prompt', 'gaming setup rgb'))}&per_page=1", headers={"Authorization": pexels_key}, timeout=5).json()
                 if r.get("photos"): imagen_real = r["photos"][0]["src"]["landscape"]
             except: pass
 
@@ -146,12 +143,12 @@ for proy in proyectos_a_procesar:
             "id": id_proy,
             "titulo": proy,
             "fecha": time.strftime("%d %b, %Y"),
-            "categoria": data.get("categoria", "DIY Avanzado"),
+            "categoria": data.get("categoria", "DIY Setup"),
             "dificultad": data.get("dificultad", "Intermedio"),
-            "tiempo_estimado": data.get("tiempo_estimado", "Varios días"),
-            "costo_estimado": data.get("costo_estimado", "Variable"),
-            "requisitos_conocimiento": data.get("requisitos_conocimiento", "Básicos"),
-            "descripcion_corta": data.get("descripcion_corta", "Construye tu propio setup paso a paso."),
+            "tiempo_estimado": data.get("tiempo_estimado", "Unas horas"),
+            "costo_estimado": data.get("costo_estimado", "Económico"),
+            "requisitos_conocimiento": data.get("requisitos_conocimiento", "Ninguno"),
+            "descripcion_corta": data.get("descripcion_corta", "Mejora tu espacio de juego paso a paso."),
             "advertencias_seguridad": data.get("advertencias_seguridad", []),
             "materiales": data.get("materiales", []),
             "herramientas": data.get("herramientas", []),
@@ -169,4 +166,4 @@ for proy in proyectos_a_procesar:
 with open(archivo_oficial, "w", encoding="utf-8") as f:
     json.dump(estructura_final, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ Base de proyectos actualizada con manuales exhaustivos ({nuevos_agregados} nuevos).")
+print(f"\n✅ Base de proyectos actualizada con guías prácticas nivel bajo/medio ({nuevos_agregados} nuevos).")
