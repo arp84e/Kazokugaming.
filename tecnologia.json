@@ -1,6 +1,95 @@
 {
   "productos": [
     {
+      "id": "asus-rog-harpe-ii-extreme-edition-20",
+      "titulo": "ASUS ROG Harpe II Extreme Edition 20",
+      "fecha": "20 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.8",
+      "descripcion_corta": "Deja de culpar a tu equipo. El ASUS ROG Harpe II Extreme Edition 20 no es solo un ratón, es la extensión de tu voluntad.\nDesbloquea una precisión y velocidad que nunca creíste posibles y domina cada partida, cada tarea.",
+      "caracteristicas": [
+        "Sensor óptico ROG AimPoint Pro de 50.000 DPI con 8000 Hz de tasa de sondeo",
+        "Diseño ultraligero de 47 gramos con chasis de aleación de magnesio",
+        "Switches ópticos ROG de segunda generación con 100 millones de clics de durabilidad",
+        "Conectividad trimodal: ROG SpeedNova (2.4 GHz), Bluetooth LE y USB-C con cable",
+        "Batería de larga duración con hasta 160 horas de autonomía",
+        "Diseño ambidiestro modular con botones laterales personalizables"
+      ],
+      "pros": [
+        "Precisión y respuesta inigualables para gaming competitivo y diseño gráfico",
+        "Peso pluma que reduce la fatiga y permite movimientos ultrarrápidos",
+        "Durabilidad extrema y fiabilidad en cada clic",
+        "Versatilidad de conexión para cualquier escenario de uso",
+        "Ergonomía superior para sesiones prolongadas de juego o trabajo"
+      ],
+      "contras": [
+        "Su precio lo posiciona en la gama más alta del mercado",
+        "La personalización avanzada puede requerir software adicional"
+      ],
+      "analisis_profesional": "<p><strong>¿Estás cansado de sentir que tu equipo te frena?</strong> ¿Has perdido esa partida decisiva o esa entrega crucial por un desliz, un lag imperceptible, o simplemente porque tu ratón no estuvo a la altura? Imagina la frustración de saber que tu habilidad es superior, pero tu periférico te encadena. Ese micro-segundo de retraso, esa imprecisión milimétrica que te cuesta la victoria o la perfección en tu trabajo. Tu potencial está ahí, esperando ser liberado, pero tu hardware actual se ha convertido en un cuello de botella.</p>\n\n<p>No más. Es hora de cortar esas cadenas. El <strong>ASUS ROG Harpe II Extreme Edition 20</strong> no es una simple mejora; es una declaración de intenciones. Este ratón ha sido diseñado desde cero para erradicar cada punto de dolor que has experimentado. Su sensor óptico ROG AimPoint Pro de 50.000 DPI no solo te ofrece una precisión que roza lo quirúrgico, sino que su tasa de sondeo de 8000 Hz garantiza que cada movimiento, cada clic, se registre instantáneamente, eliminando cualquier rastro de latencia. Olvídate de los \"ghost clicks\" o la fatiga en la muñeca; con un peso de tan solo 47 gramos y un chasis de aleación de magnesio, este ratón se siente como una extensión natural de tu mano, permitiéndote moverte con una agilidad y velocidad sin precedentes durante horas.</p>\n\n<p>Pero la magia no termina ahí. Los switches ópticos ROG de segunda generación, con una durabilidad de 100 millones de clics, te aseguran una respuesta táctil nítida y una longevidad que desafía los límites. Y con su conectividad trimodal (ROG SpeedNova de 2.4 GHz, Bluetooth LE y USB-C), la libertad es tuya: rendimiento ultrarrápido sin cables para el gaming, versatilidad para el trabajo o una conexión sólida para cargar mientras juegas. La batería de 160 horas te asegura que nunca te quedarás colgado en el momento más inoportuno. Este no es un gasto, es una inversión en tu rendimiento, en tus victorias, en tu productividad. ¿Cuánto vale para ti la ventaja competitiva? ¿Cuánto vale la fluidez y la precisión en tu flujo de trabajo?</p>\n\n<p>El ASUS ROG Harpe II Extreme Edition 20 no compite; redefine. Mientras otros ratones buscan un equilibrio, este lo maximiza todo: velocidad, precisión, durabilidad y confort. Es la pieza que faltaba en tu arsenal para pasar de ser bueno a ser imparable. No dejes que un periférico inferior siga limitando tu verdadero potencial. La oportunidad de elevar tu juego y tu productividad está frente a ti. <strong>Es hora de actuar. Verifica el precio actual y prepárate para experimentar la diferencia. Tu futuro rendimiento te lo agradecerá.</strong></p>",
+      "imagen": "https://images.pexels.com/photos/34095517/pexels-photo-34095517.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=ASUS%20ROG%20Harpe%20II%20Extreme%20Edition%2020&tag=kazokugaming-21"
+    },
+    {
+      "id": "logitech-g512-x",
+      "titulo": "Logitech G512 X",
+      "fecha": "20 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.4",
+      "descripcion_corta": "¿Cansado de que tu teclado te frene? Descubre la precisión y velocidad que el Logitech G512 X te ofrece, transformando cada pulsación en una victoria.",
+      "caracteristicas": [
+        "Switches Mecánicos GX (Blue, Red, Brown) y Dual Swap (Analógicos/Mecánicos)",
+        "Iluminación RGB LIGHTSYNC personalizable con Lightbar",
+        "Construcción de aleación de aluminio de grado aeronáutico",
+        "Puerto USB Passthrough integrado y Tasa de Sondeo de 8K Hz"
+      ],
+      "pros": [
+        "Versatilidad sin precedentes con switches Dual Swap (analógicos y mecánicos)",
+        "Respuesta ultrarrápida de 8K Hz para una ventaja competitiva",
+        "Durabilidad y sensación premium gracias a su construcción en aluminio",
+        "Personalización extrema con LIGHTSYNC RGB y macros"
+      ],
+      "contras": [
+        "El precio puede ser una barrera inicial para algunos presupuestos.",
+        "Ausencia de teclas multimedia dedicadas, requiriendo combinaciones FN."
+      ],
+      "analisis_profesional": "<p><strong>¿Estás harto de que tu rendimiento se vea limitado por un teclado que simplemente no da la talla?</strong> ¿Esa pulsación que no registra en el momento crítico? ¿Esa imprecisión que te cuesta la partida o un error en tu código? Conozco esa frustración. Es el dolor de saber que podrías ser mejor, más rápido, más eficiente, si tan solo tu hardware estuviera a tu altura.</p>\n\n<p>Aquí es donde entra el <strong>Logitech G512 X</strong>, y créeme, no es un teclado más. Es una declaración. Desde el primer toque, sentirás la diferencia. Olvídate del \"lag\" y las pulsaciones fantasma. Sus <strong>switches mecánicos GX avanzados</strong> (disponibles en táctil, lineal o clicky) se combinan con la revolucionaria tecnología <strong>Dual Swap de camas de switches analógicos y mecánicos</strong>. Esto te ofrece una flexibilidad inigualable, permitiéndote personalizar tu experiencia para cada juego o tarea, con una precisión y control que un teclado convencional simplemente no puede ofrecer.</p>\n\n<p>Pero el G512 X va más allá de la velocidad bruta y la personalización. Su <strong>construcción de aleación de aluminio de grado aeronáutico</strong> no solo le confiere una estética brutal y minimalista, sino que garantiza una robustez que resistirá las sesiones más intensas y el paso del tiempo. Este no es un teclado que tendrás que reemplazar en un año; es una inversión a largo plazo en tu setup. ¿Y la iluminación <strong>LIGHTSYNC RGB</strong>? No es solo un espectáculo visual; es una herramienta funcional que te permite personalizar cada tecla para resaltar comandos, enfriamientos o simplemente para que tu estación de batalla brille con tu estilo único.</p>\n\n<p>Quizás estés pensando: \"¿Realmente vale la pena invertir tanto en un teclado?\" La respuesta es un rotundo sí. Piensa en el tiempo que pasas frente a tu ordenador. Cada milisegundo de respuesta, cada pulsación cómoda y precisa, se suma a una experiencia superior. Un teclado inferior es un cuello de botella silencioso que frena tu potencial. El G512 X elimina ese cuello de botella, liberando tu verdadero rendimiento con una <strong>tasa de sondeo de 8K Hz</strong>, lo que significa respuestas prácticamente instantáneas de 0.125ms. Mientras otros se conforman con lo básico, tú estarás un paso adelante, dominando cada tarea, cada partida. Su <strong>puerto USB Passthrough</strong> es la cereza del pastel, ofreciéndote una comodidad inigualable para conectar tu ratón o auriculares directamente, manteniendo tu escritorio ordenado y tus 1ms de respuesta siempre listos.</p>\n\n<p>No dejes que el hardware obsoleto te detenga un día más. El Logitech G512 X no es un lujo, es una necesidad para cualquiera que se tome en serio su rendimiento digital. Es la herramienta que te permitirá superar tus límites. <strong>La oferta actual no durará para siempre.</strong> Es el momento de actuar y reclamar la ventaja que te mereces. <strong>Verifica el precio actual y la disponibilidad antes de que se agoten las unidades. ¡Tu setup y tu rendimiento te lo agradecerán!</strong></p>",
+      "imagen": "https://images.pexels.com/photos/32755762/pexels-photo-32755762.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Logitech%20G512%20X&tag=kazokugaming-21"
+    },
+    {
+      "id": "asus-rog-swift-pg27aqdp",
+      "titulo": "ASUS ROG Swift PG27AQDP",
+      "fecha": "20 Jul, 2026",
+      "categoria": "Monitores",
+      "calificacion": "9.6",
+      "descripcion_corta": "Rompe las barreras de tu rendimiento con una fluidez y claridad visual que nunca creíste posibles.\nEste monitor no es solo una pantalla; es tu nueva ventaja competitiva.",
+      "caracteristicas": [
+        "Panel WOLED de 27 pulgadas",
+        "Resolución QHD (2560x1440)",
+        "Frecuencia de actualización de 480Hz",
+        "Tiempo de respuesta de 0.03ms GtG",
+        "Brillo máximo HDR de 1300 nits",
+        "Contraste de 1,500,000:1",
+        "Compatibilidad con NVIDIA G-SYNC Compatible y FreeSync Premium",
+        "Tecnología ASUS OLED Care para la protección del panel"
+      ],
+      "pros": [
+        "Fluidez inigualable y movimiento cristalino gracias a los 480Hz y 0.03ms de respuesta.",
+        "Negros perfectos y contraste infinito que transforman la inmersión visual.",
+        "Colores vibrantes y una cobertura del 99% DCI-P3 para una fidelidad excepcional.",
+        "Tecnología OLED de última generación con brillo HDR de hasta 1300 nits.",
+        "Funciones de protección contra el quemado de pantalla (burn-in) y disipador de calor personalizado sin ventilador."
+      ],
+      "contras": [
+        "Precio premium, reflejo de su tecnología de vanguardia.",
+        "Posibles errores menores en el software del monitor o 'flicker' VRR en ciertas situaciones."
+      ],
+      "analisis_profesional": "<p><strong>¿Estás cansado de sentir que tu equipo te frena?</strong> ¿Experimentas ese molesto <i>lag</i>, el <i>ghosting</i> que te hace perder de vista a tus enemigos o la falta de nitidez que fatiga tus ojos en largas sesiones? En el mundo del gaming competitivo y la productividad exigente, cada milisegundo, cada píxel, cada detalle cuenta. Si tu monitor actual te ofrece imágenes borrosas, colores apagados o una respuesta lenta, estás dejando una ventaja crucial sobre la mesa.</p><p>Imagina por un momento la frustración de una derrota por un parpadeo que no viste, o la ineficiencia de un trabajo donde la precisión visual es clave y tu pantalla no está a la altura. Tu habilidad no tiene límites, pero tu hardware sí. Es hora de eliminar esos cuellos de botella y desatar tu verdadero potencial.</p><p>Aquí es donde el <strong>ASUS ROG Swift PG27AQDP</strong> entra en juego, no como un simple monitor, sino como una <strong>inversión fundamental en tu rendimiento</strong>. Este es el primer monitor OLED de 480Hz del mundo, una bestia tecnológica diseñada para pulverizar cualquier limitación. Equipado con un panel WOLED de 27 pulgadas y resolución QHD, te sumergirás en mundos con negros absolutos y un contraste infinito que solo la tecnología OLED puede ofrecer. Olvídate de los grises; cada sombra es profunda, cada luz es vibrante, con un brillo HDR pico de 1300 nits que hace que el contenido cobre vida.</p><p>Pero la verdadera magia reside en su velocidad. Con una asombrosa frecuencia de actualización de <strong>480Hz y un tiempo de respuesta GtG de tan solo 0.03ms</strong>, el PG27AQDP redefine la fluidez. Cada movimiento es cristalino, cada acción es instantánea. Verás a tus oponentes antes de que ellos te vean a ti, y tus decisiones en productividad se ejecutarán con una precisión milimétrica. La compatibilidad con NVIDIA G-SYNC Compatible y FreeSync Premium asegura una experiencia sin desgarros ni tirones, sin importar la intensidad de la acción.</p><p>Sabemos lo que piensas: ¿y el precio? Considera esto: ¿cuánto vale la ventaja competitiva? ¿Cuánto vale la inmersión total en tus juegos favoritos o la eficiencia optimizada en tu trabajo? Este monitor no es un gasto; es la pieza que faltaba para completar tu setup de alto rendimiento. ASUS ha pensado en todo, incluyendo la longevidad del panel OLED con su tecnología <strong>ASUS OLED Care</strong> y un disipador de calor personalizado que evita la necesidad de ventiladores ruidosos. Es una obra maestra de ingeniería que te ofrece lo mejor de ambos mundos: la calidad de imagen insuperable del OLED y la velocidad extrema que solo los monitores de eSports de élite pueden proporcionar.</p><p>No te conformes con menos. Si estás listo para experimentar el futuro de los monitores gaming y de productividad, el ASUS ROG Swift PG27AQDP es tu puerta de entrada. <strong>El stock es limitado para una tecnología tan avanzada, y la demanda es alta.</strong> No dejes pasar la oportunidad de transformar tu experiencia. <strong>Verifica el precio actual y asegura tu unidad hoy mismo. ¡Tu rendimiento te lo agradecerá!</strong></p>",
+      "imagen": "https://images.pexels.com/photos/20453229/pexels-photo-20453229.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=ASUS%20ROG%20Swift%20PG27AQDP&tag=kazokugaming-21"
+    },
+    {
       "id": "razer-huntsman-v3-pro-tkl",
       "titulo": "Razer Huntsman V3 Pro TKL",
       "fecha": "19 Jul, 2026",
