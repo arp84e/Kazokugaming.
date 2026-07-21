@@ -1,6 +1,96 @@
 {
   "productos": [
     {
+      "id": "rat-n-logitech-g-pro-x-superlight-2",
+      "titulo": "Ratón Logitech G Pro X Superlight 2",
+      "fecha": "21 Jul, 2026",
+      "categoria": "Periféricos",
+      "calificacion": "9.6",
+      "descripcion_corta": "¿Cansado de que tu hardware te frene? Descubre el arma secreta que los profesionales usan para dominar cada partida y cada tarea.",
+      "caracteristicas": [
+        "Sensor óptico HERO 2 de hasta 44.000 DPI",
+        "Tecnología inalámbrica LIGHTSPEED con 8000 Hz de tasa de sondeo",
+        "Peso ultraligero de 60 gramos",
+        "Switches híbridos óptico-mecánicos LIGHTFORCE",
+        "Hasta 95 horas de batería con carga USB-C"
+      ],
+      "pros": [
+        "Precisión y velocidad inigualables para gaming y productividad",
+        "Diseño ultraligero que reduce la fatiga y mejora la maniobrabilidad",
+        "Conectividad inalámbrica de latencia ultrabaja y fiabilidad profesional",
+        "Larga duración de batería para sesiones extendidas",
+        "Switches duraderos y con respuesta táctil consistente"
+      ],
+      "contras": [
+        "Precio elevado, una inversión premium",
+        "Pocos botones adicionales, enfocado en la simplicidad y el rendimiento puro"
+      ],
+      "analisis_profesional": "<p><strong>¿Te has sentido alguna vez limitado por tu ratón?</strong> Esa sensación de que tu mano va un paso por delante de lo que registra tu pantalla. Esos milisegundos de lag que te cuestan un headshot crucial, o la imprecisión en el tracking que arruina una edición de vídeo o una hoja de cálculo compleja. ¿Cuántas veces has culpado a tu equipo por un error que sabías que no era tuyo? Tu potencial está ahí, latente, pero tu hardware actual simplemente no te acompaña.</p><p><strong>Es una frustración que conocemos bien.</strong> Perder una partida por un micro-movimiento que tu ratón no registró a tiempo es exasperante. Sentir el peso de un periférico mediocre arrastrándote, causando fatiga en la muñeca o el brazo después de solo unas horas, es agotador. Cada clic impreciso, cada movimiento errático, no solo te cuesta la victoria en el juego, sino también valiosos minutos de productividad y concentración en tu trabajo. Estás invirtiendo tiempo y esfuerzo en perfeccionar tus habilidades, ¿por qué dejar que un cuello de botella tecnológico te detenga? La diferencia entre ganar y perder, entre ser eficiente o quedarte atrás, a menudo se reduce a la herramienta que tienes en tu mano.</p><p><strong>Aquí es donde el Logitech G Pro X Superlight 2 entra en juego, y no es solo un ratón; es una extensión de tu voluntad.</strong> Diseñado en colaboración con los mejores profesionales de esports, este dispositivo ha sido creado para eliminar cualquier barrera entre tú y la victoria. Con un peso asombroso de apenas <strong>60 gramos</strong>, sentirás una libertad de movimiento sin precedentes. Olvídate de la fatiga; podrás reaccionar con una velocidad y agilidad que antes solo soñabas, dominando cada situación con una facilidad pasmosa.</p><p>En su corazón late el <strong>Sensor HERO 2</strong>, una maravilla de la ingeniería capaz de alcanzar hasta <strong>44.000 DPI</strong>. Esto significa una precisión de seguimiento que redefine lo posible, capturando cada milímetro de movimiento con una fidelidad absoluta, sin suavizado ni aceleración artificial. Cada flick, cada ajuste fino, se traduce instantáneamente en pantalla, dándote una ventaja decisiva.</p><p>Pero la precisión no lo es todo sin velocidad. La tecnología <strong>LIGHTSPEED inalámbrica de 8000 Hz</strong> garantiza una conexión sin latencia, tan fiable y rápida como un cable, pero con la libertad total de movimiento. Olvídate de los retrasos; tu acción es instantánea, tu respuesta, impecable. Y con los innovadores <strong>Switches LIGHTFORCE híbridos óptico-mecánicos</strong>, cada clic se registra a la velocidad de la luz, ofreciendo una durabilidad excepcional y una respuesta táctil consistente que te hará sentir cada interacción con una confianza inquebrantable.</p><p>Además, con hasta <strong>95 horas de batería</strong> y carga USB-C, tus sesiones más largas, ya sean de juego intenso o de trabajo productivo, no se verán interrumpidas. El G Pro X Superlight 2 es más que un periférico; es una inversión en tu rendimiento, en tu comodidad y en tu capacidad para dominar cualquier desafío. Su precio es el reflejo de una ingeniería de élite y un rendimiento sin concesiones, una diferencia que se siente en cada victoria, en cada tarea completada con éxito.</p><p><strong>No dejes que un hardware inferior siga limitando tu potencial.</strong> Cada día que pospones esta mejora, estás perdiendo oportunidades de rendir al máximo. La ventaja competitiva no espera. Eleva tu juego y tu productividad hoy mismo. <strong>Verifica el precio actual del Logitech G Pro X Superlight 2 y da el salto hacia el rendimiento profesional. Tu muñeca, tu K/D y tus plazos te lo agradecerán. ¡No esperes más!</strong></p>",
+      "imagen": "https://images.pexels.com/photos/18441494/pexels-photo-18441494.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Rat%C3%B3n%20Logitech%20G%20Pro%20X%20Superlight%202&tag=kazokugaming-21"
+    },
+    {
+      "id": "procesador-amd-ryzen-5-9600x",
+      "titulo": "Procesador AMD Ryzen 5 9600X",
+      "fecha": "21 Jul, 2026",
+      "categoria": "Componentes",
+      "calificacion": "9.5",
+      "descripcion_corta": "¿Cansado de que tu PC te frene? Desbloquea el verdadero potencial de tu sistema con el Ryzen 5 9600X, la potencia que redefine el juego y la productividad.",
+      "caracteristicas": [
+        "Arquitectura AMD Zen 5",
+        "6 Núcleos / 12 Hilos",
+        "Frecuencia Boost de hasta 5.7 GHz",
+        "32MB de Caché L3",
+        "Socket AM5"
+      ],
+      "pros": [
+        "Rendimiento excepcional en gaming y aplicaciones exigentes",
+        "Multitarea fluida y eficiente",
+        "Preparado para el futuro con soporte AM5",
+        "Excelente relación rendimiento/precio en su segmento"
+      ],
+      "contras": [
+        "Requiere una placa base AM5 compatible",
+        "Puede requerir una solución de enfriamiento de alto rendimiento para exprimir su potencial al máximo"
+      ],
+      "analisis_profesional": "<p><strong>Problema:</strong> Imagina esto: estás en medio de una partida crucial, los gráficos al máximo, y de repente... un micro-congelamiento. O peor aún, intentas renderizar ese proyecto importante y tu PC se arrastra, robándote horas valiosas. ¿Te suena familiar? Ese es el dolor de un cuello de botella, la frustración de un hardware que no está a la altura de tus ambiciones.</p><p><strong>Agitación:</strong> No es solo una molestia; es una barrera que te impide disfrutar plenamente de tus juegos, competir al máximo nivel o entregar tus proyectos a tiempo. Ese 'lag' no solo te cuesta la partida, te cuesta la inmersión. Esa lentitud no solo te roba tiempo, te roba la inspiración y la eficiencia. Estás invirtiendo en software, en periféricos, pero si tu procesador es el eslabón débil, todo lo demás se desaprovecha. Estás dejando dinero y rendimiento sobre la mesa.</p><p><strong>Solución:</strong> Es hora de romper esas cadenas. Presentamos el <strong>Procesador AMD Ryzen 5 9600X</strong>, la bestia de rendimiento que tu setup ha estado pidiendo. Construido sobre la revolucionaria arquitectura Zen 5, este procesador no es solo una mejora; es una transformación. Con sus <strong>6 núcleos y 12 hilos</strong>, y una frecuencia de reloj que alcanza picos de hasta <strong>5.7 GHz</strong>, el 9600X pulveriza los cuellos de botella. ¿Gaming? Experimenta tasas de frames estratosféricas y una fluidez sin precedentes, incluso en los títulos más exigentes. ¿Productividad? Edita video 4K, compila código o ejecuta simulaciones complejas con una velocidad que antes solo soñabas. La enorme caché L3 de 32MB asegura que tus datos más críticos estén siempre al alcance, reduciendo latencias y acelerando cada tarea. El Ryzen 5 9600X no es un gasto, es una inversión estratégica. Su eficiencia energética optimizada y su compatibilidad con la plataforma AM5 te garantizan una máquina preparada para el futuro, que te seguirá el ritmo durante años. Olvídate de las actualizaciones constantes; con este procesador, estás comprando tranquilidad y rendimiento sostenido. Es superior a sus predecesores y a gran parte de la competencia en su rango, ofreciendo un equilibrio magistral entre potencia bruta y eficiencia.</p><p>No dejes que la indecisión te robe un segundo más de rendimiento. La demanda por el Ryzen 5 9600X es altísima, y las existencias vuelan. <strong>Verifica ahora mismo el precio actual y la disponibilidad</strong> antes de que sea demasiado tarde. ¡Eleva tu experiencia, domina tus tareas y juega sin límites!</p>",
+      "imagen": "https://images.pexels.com/photos/19892598/pexels-photo-19892598.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Procesador%20AMD%20Ryzen%205%209600X&tag=kazokugaming-21"
+    },
+    {
+      "id": "monitor-msi-mpg-272urx",
+      "titulo": "Monitor MSI MPG 272URX",
+      "fecha": "21 Jul, 2026",
+      "categoria": "Monitores",
+      "calificacion": "9.6",
+      "descripcion_corta": "¿Tu monitor te frena? Es hora de dejar de conformarte con menos. Desbloquea una nueva dimensión de velocidad y visualización con el MSI MPG 272URX.",
+      "caracteristicas": [
+        "Panel QD-OLED de 26.5 pulgadas (UHD) 3840x2160",
+        "Tasa de Refresco de 240Hz",
+        "Tiempo de Respuesta de 0.03ms (GtG)",
+        "Conectividad: DisplayPort 2.1, 2x HDMI 2.1, USB-C (98W PD), KVM Switch",
+        "HDR: DisplayHDR True Black 400, 1000 nits de pico",
+        "Cobertura de color 99% DCI-P3, Delta E ≤2",
+        "Compatible con NVIDIA G-Sync y AMD FreeSync Premium Pro",
+        "MSI OLED Care 2.0 con 3 años de garantía contra quemado"
+      ],
+      "pros": [
+        "Claridad de imagen y colores inigualables con negros perfectos gracias al panel QD-OLED.",
+        "Fluidez extrema en juegos y aplicaciones con 240Hz y 0.03ms de respuesta.",
+        "Resolución 4K en 27 pulgadas para una nitidez y densidad de píxeles excepcionales.",
+        "Amplia conectividad con DisplayPort 2.1, USB-C con Power Delivery y KVM integrado.",
+        "Ideal tanto para gaming de alto rendimiento como para productividad y creación de contenido.",
+        "Protección avanzada contra el quemado de pantalla con MSI OLED Care 2.0 y garantía extendida."
+      ],
+      "contras": [
+        "La opción 'OLED Care' puede ser un poco intrusiva para algunos usuarios.",
+        "Los niveles de negro pueden elevarse en habitaciones muy iluminadas, haciendo que los negros parezcan ligeramente púrpuras."
+      ],
+      "analisis_profesional": "<p>¿Estás cansado de que tu rendimiento en juegos se vea limitado por un monitor que no da la talla? ¿Experimentas <strong>lag, imágenes borrosas o colores apagados</strong> que rompen la inmersión? Quizás en tu trabajo, la falta de precisión cromática, el espacio de pantalla insuficiente o la incomodidad visual te impiden ser tan productivo y creativo como sabes que puedes ser.</p><p>Muchos monitores prometen mucho, pero al final, se convierten en el <strong>cuello de botella</strong> de tu potente PC, o en una fuente constante de frustración y fatiga visual. Las transiciones lentas, la falta de detalle en 4K o la ausencia de conectividad moderna no solo afectan tu experiencia, sino que te dejan atrás en un mundo digital que avanza a pasos agigantados.</p><p>Imagina perder esa partida crucial por un milisegundo de retraso, o no poder apreciar la belleza de un mundo abierto porque tu pantalla no puede renderizar los colores con la fidelidad que merecen. Piensa en las horas extra que pasas ajustando colores en tus proyectos o cambiando entre dispositivos por la falta de un KVM integrado. Cada pixel lento, cada color impreciso, cada puerto faltante, es un golpe a tu potencial y a tu disfrute.</p><p>Tu inversión en una tarjeta gráfica de última generación o un procesador potente se diluye si la ventana a tu mundo digital no está a la altura. Estás dejando dinero sobre la mesa en rendimiento y experiencia.</p><p>Es hora de cortar con esas limitaciones y elevar tu experiencia a un nivel estratosférico. Presentamos el <strong>MSI MPG 272URX QD-OLED</strong>, una obra maestra de ingeniería que redefine lo que un monitor de 27 pulgadas puede lograr. Este no es solo un monitor; es una <strong>declaración de intenciones</strong>, una inversión en tu rendimiento y en tu disfrute sin compromisos.</p><p>¿El secreto? Su panel <strong>QD-OLED de 26.5 pulgadas con resolución 4K UHD (3840x2160)</strong>. Olvídate de los píxeles visibles y da la bienvenida a una nitidez asombrosa y una densidad de píxeles inigualable. Pero la magia no termina ahí. Con una <strong>tasa de refresco de 240Hz</strong> y un tiempo de respuesta ultrarrápido de <strong>0.03ms (GtG)</strong>, la fluidez de movimiento es simplemente irreal. Cada acción en pantalla es instantánea, cada movimiento es nítido, eliminando por completo el desenfoque y el \"ghosting\" que te frenaban.</p><p>Los colores cobran vida como nunca antes gracias a la tecnología QD-OLED, ofreciendo <strong>negros puros e infinitos y un brillo deslumbrante</strong> en HDR (certificación DisplayHDR True Black 400). Con una cobertura del 99% DCI-P3 y un Delta E ≤2, tus juegos lucirán espectaculares y tus trabajos creativos alcanzarán una precisión cromática profesional.</p><p>¿Conectividad? El MPG 272URX viene equipado con <strong>DisplayPort 2.1, dos HDMI 2.1, y un USB-C con Power Delivery de 98W</strong>, además de un práctico <strong>KVM integrado</strong>. Conecta todos tus dispositivos y cambia entre ellos sin esfuerzo, optimizando tu espacio de trabajo y tu flujo. Además, MSI ha pensado en la durabilidad, incluyendo <strong>MSI OLED Care 2.0</strong> y una garantía de 3 años contra el quemado de pantalla, para que tu inversión esté protegida.</p><p>Este monitor no es solo superior; es una de las primeras unidades de una nueva generación de pantallas 4K QD-OLED de 27 pulgadas, ofreciendo una combinación de tamaño, resolución y velocidad que antes era inalcanzable. Mientras otros monitores de la competencia pueden ofrecer algunas de estas características, pocos combinan la robustez de la conectividad (DP 2.1, KVM) y la fiabilidad de la garantía contra el quemado de MSI en un paquete tan pulido.</p><p>No dejes que un monitor obsoleto siga saboteando tu potencial. La oportunidad de transformar radicalmente tu experiencia de juego y tu productividad está frente a ti. El <strong>MSI MPG 272URX QD-OLED</strong> no es un lujo, es la herramienta esencial que te catapultará al siguiente nivel.</p><p><strong>La demanda es altísima y las unidades son limitadas.</strong> Cada segundo que dudas es un segundo que pierdes de disfrutar de la mejor experiencia visual del mercado. No esperes a que se agote. <strong>Haz clic ahora mismo para verificar el precio actual y asegurar tu MSI MPG 272URX. ¡Tu victoria te espera!</strong></p>",
+      "imagen": "https://images.pexels.com/photos/33050959/pexels-photo-33050959.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+      "link_compra": "https://www.amazon.es/s?k=Monitor%20MSI%20MPG%20272URX&tag=kazokugaming-21"
+    },
+    {
       "id": "asus-rog-harpe-ii-extreme-edition-20",
       "titulo": "ASUS ROG Harpe II Extreme Edition 20",
       "fecha": "20 Jul, 2026",
