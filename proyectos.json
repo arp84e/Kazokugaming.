@@ -1,6 +1,40 @@
 {
   "proyectos": [
     {
+      "id": "amd-bc-250",
+      "titulo": "AMD BC 250",
+      "fecha": "21 Jul, 2026",
+      "categoria": "Electrónica y Automatización",
+      "dificultad": "Media",
+      "tiempo_estimado": "3-5 horas",
+      "costo_estimado": "20-40 USD",
+      "requisitos_conocimiento": "Nociones básicas de electrónica, manejo de Arduino IDE.",
+      "descripcion_corta": "Construye tu propio 'AMD BC 250', un monitor de ambiente básico con Arduino que mide temperatura y humedad, muestra los datos en una pantalla LCD y activa un LED de alerta según umbrales programables. Ideal para principiantes que desean adentrarse en el mundo de los sensores y la interacción con el entorno.",
+      "advertencias_seguridad": [
+        "Siempre desconecta la alimentación de tu Arduino antes de realizar cualquier conexión o desconexión de componentes.",
+        "Asegúrate de que los cables jumper estén bien conectados y no haya cortocircuitos accidentales entre pines.",
+        "Manipula los componentes electrónicos con cuidado para evitar daños por electricidad estática. Toca una superficie metálica antes de manipularlos si es posible.",
+        "Verifica la polaridad de los LEDs y otros componentes sensibles antes de conectarlos para evitar quemarlos."
+      ],
+      "materiales": [
+        "1x Placa Arduino Uno (o compatible)",
+        "1x Protoboard (placa de pruebas)",
+        "1x Sensor de Temperatura y Humedad DHT11",
+        "1x Pantalla LCD 16x2 con módulo I2C (recomendado para simplificar cableado)",
+        "1x Potenciómetro de 10k Ohm (si tu LCD no tiene módulo I2C)",
+        "1x LED (cualquier color, por ejemplo, rojo)",
+        "1x Resistencia de 220 Ohm (para el LED)",
+        "Cables jumper macho-macho",
+        "Cable USB para Arduino"
+      ],
+      "herramientas": [
+        "Computadora con el IDE de Arduino instalado",
+        "Pinzas de punta fina (opcional, para manipular cables pequeños)"
+      ],
+      "contenido_html": "<h1>Construye tu AMD BC 250: Monitor de Ambiente Básico con Arduino</h1><p>¡Hola, Makers y entusiastas de la tecnología! Soy tu profesor y estoy emocionado de guiarte en la construcción de un proyecto fascinante y educativo: el <strong>AMD BC 250</strong>. ¿Qué es exactamente el AMD BC 250? Es nuestro 'Advanced Monitoring Device - Basic Control 250', un monitor de ambiente básico que te permitirá medir la temperatura y la humedad de tu entorno, mostrar esos datos en una pantalla y, además, ¡activar un LED de alerta si las condiciones superan ciertos límites! Este proyecto es perfecto para entender cómo los microcontroladores interactúan con el mundo real a través de sensores y actuadores.</p><p>A lo largo de esta guía, no solo te mostraré cómo conectar los componentes y escribir el código, sino que también te explicaré el 'por qué' detrás de cada paso. Mi objetivo es que, al finalizar, no solo tengas un dispositivo funcional, sino que también hayas adquirido una comprensión sólida de los principios básicos de la electrónica y la programación con Arduino.</p><h2>¿Qué Aprenderemos en Este Proyecto?</h2><ul><li>Conceptos básicos de microcontroladores y Arduino.</li><li>Cómo leer datos de un sensor de temperatura y humedad (DHT11).</li><li>Cómo mostrar información en una pantalla LCD.</li><li>Cómo controlar un actuador (un LED) basándose en las lecturas del sensor.</li><li>Principios de programación básica en C++ para Arduino.</li></ul><h2>Conceptos Clave Antes de Empezar</h2><h3>Arduino: El Cerebro de Nuestro Proyecto</h3><p>Arduino es una plataforma de hardware y software de código abierto, muy popular entre makers y estudiantes. Una placa Arduino (como la Arduino Uno) es un microcontrolador, que es como un pequeño ordenador capaz de leer entradas (de sensores, botones) y controlar salidas (LEDs, motores, pantallas). Su facilidad de uso y su gran comunidad lo hacen ideal para principiantes.</p><h3>El Sensor DHT11: Nuestros Ojos y Nariz del Ambiente</h3><p>El DHT11 es un sensor digital de bajo costo que puede medir la temperatura y la humedad relativa del aire. Es muy fácil de usar con Arduino y nos proporcionará los datos que queremos mostrar en nuestra pantalla. Los sensores son componentes esenciales en la electrónica, ya que nos permiten 'sentir' el mundo físico y convertir esas sensaciones en datos que nuestro microcontrolador puede entender.</p><h3>La Pantalla LCD 16x2: La Ventana a Nuestros Datos</h3><p>Una pantalla LCD (Liquid Crystal Display) de 16x2 significa que puede mostrar 2 líneas de texto, con 16 caracteres por línea. Es una forma sencilla y efectiva de mostrar información al usuario sin necesidad de una computadora. En este proyecto, usaremos una versión con un módulo I2C, lo que simplifica enormemente el cableado al usar solo dos pines de datos en lugar de muchos.</p><h3>El LED: Nuestra Alerta Visual</h3><p>Un LED (Light Emitting Diode) es un diodo que emite luz cuando una corriente eléctrica pasa a través de él. Lo usaremos como un indicador visual simple para alertarnos si la temperatura o humedad superan un umbral que definiremos en nuestro código. Es un ejemplo básico de un 'actuador', un componente que realiza una acción física.</p><h2>Preparando el Entorno de Desarrollo</h2><p>Antes de conectar cualquier cosa, necesitamos asegurarnos de que nuestro software esté listo. Si aún no lo tienes, descarga e instala el IDE de Arduino desde la página oficial de Arduino (arduino.cc). Una vez instalado, también necesitaremos algunas librerías para que nuestro Arduino pueda 'hablar' con el sensor DHT11 y la pantalla LCD I2C.</p><h3>Instalación de Librerías</h3><ol><li>Abre el IDE de Arduino.</li><li>Ve a <code>Programa &gt; Incluir Librería &gt; Administrar Librerías...</code></li><li>En el buscador, escribe ",
+      "imagen": "https://images.pexels.com/photos/9726074/pexels-photo-9726074.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+    },
+    {
       "id": "sistema-de-head-tracking-econ-mico-para-simuladores-y-juegos-con-webcam-modificada-ir-o-sensor-imu-y-software-open-source-ej-opentrack-permitiendo-controlar-la-c-mara-con-movimientos-de-cabeza",
       "titulo": "Sistema de Head Tracking económico para simuladores y juegos con webcam modificada (IR) o sensor IMU y software open-source (ej. OpenTrack), permitiendo controlar la cámara con movimientos de cabeza.",
       "fecha": "20 Jul, 2026",
