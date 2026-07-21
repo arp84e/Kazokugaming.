@@ -58,6 +58,32 @@
       "imagen": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
     },
     {
+      "id": "candy-crush-saga",
+      "titulo": "Candy Crush Saga",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS, Windows (PC), Web",
+      "calificacion": "8.2",
+      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
+      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
+      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
+      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Android 6.0 / iOS 12.0 / Windows 10",
+          "Procesador: Quad-Core 1.8 GHz",
+          "Memoria: 2 GB de RAM",
+          "Almacenamiento: 500 MB de espacio disponible"
+        ],
+        "recomendados": [
+          "SO: Android 11.0 / iOS 15.0 / Windows 11",
+          "Procesador: Octa-Core 2.4 GHz o superior",
+          "Memoria: 4 GB de RAM o más",
+          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+    },
+    {
       "id": "fortnite",
       "titulo": "Fortnite",
       "fecha": "15 Jul, 2026",
@@ -91,35 +117,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
-    },
-    {
-      "id": "counter-strike-2",
-      "titulo": "Counter-Strike 2",
-      "fecha": "12 Jul, 2026",
-      "plataformas": "PC (Windows, Linux / SteamOS)",
-      "calificacion": 8.5,
-      "motor_grafico": "Source 2",
-      "tecnologias": [
-        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
-        "NVIDIA Reflex Low Latency"
-      ],
-      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
-      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
-          "Memoria: 8 GB de RAM",
-          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
-          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
-          "Memoria: 16 GB de RAM de doble canal",
-          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
-          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
     },
     {
       "id": "league-of-legends",
@@ -200,6 +197,61 @@
       "imagen": "https://media.rawg.io/media/screenshots/cc9/cc9b849d0824331ad50e822ab83f1a1b.jpg"
     },
     {
+      "id": "honor-of-kings",
+      "titulo": "Honor of Kings",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS, iPadOS",
+      "calificacion": "9.0",
+      "motor_grafico": "Unity (Tuanjie Engine)",
+      "tecnologias": "Vulkan API, Metal API, Crossplay, Soporte para 120Hz, Audio Wwise, Renderizado Multihilo",
+      "sinopsis": "Honor of Kings es el MOBA móvil de 5v5 más popular del mundo, donde los jugadores eligen héroes legendarios inspirados en la mitología para destruir la base enemiga en partidas rápidas y competitivas.",
+      "analisis_detallado": "<p><strong>Honor of Kings</strong> destaca de manera sobresaliente por su excepcional nivel de optimización en dispositivos móviles. Desarrollado sobre el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio perfecto entre fidelidad visual y rendimiento técnico. En dispositivos de gama media y alta, el título mantiene unos <strong>60 FPS o 120 FPS estables</strong> sin caídas notables de frames, incluso durante las batallas grupales más caóticas donde abundan los efectos de partículas y habilidades simultáneas.</p><p>La implementación de las APIs <strong>Vulkan</strong> en Android y <strong>Metal</strong> en iOS permite una comunicación directa con el hardware, reduciendo drásticamente la sobrecarga de la CPU. Esto no solo mejora la fluidez general, sino que también optimiza el consumo de batería y mitiga el estrangulamiento térmico (thermal throttling). El juego cuenta con un sistema de renderizado multihilo que distribuye la carga de trabajo de manera eficiente entre los núcleos del procesador.</p><p>La escalabilidad técnica es otro de sus puntos fuertes. El menú de configuración ofrece un control granular sobre la calidad de las texturas, la resolución y los efectos de sombras, permitiendo que teléfonos con casi una década de antigüedad puedan ejecutar el juego de forma fluida a 30 FPS. Además, la infraestructura de red global de <strong>Level Infinite</strong> garantiza un netcode robusto con latencias mínimas y un sistema de reconexión sumamente rápido, vital para el juego competitivo.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 5.1 / iOS 11.0 o superior",
+          "Procesador: CPU Quad-Core a 1.0 GHz o superior",
+          "Memoria RAM: 1 GB (Android) / 2 GB (iOS)",
+          "Almacenamiento: 2 GB de espacio libre (instalación básica)"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 12 / iOS 15.0 o superior",
+          "Procesador: CPU Octa-Core a 1.6 GHz o superior (Snapdragon 680 / Apple A13)",
+          "Memoria RAM: 4 GB o superior",
+          "Almacenamiento: 5 GB o más de espacio libre (recursos HD completos)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
+    },
+    {
+      "id": "counter-strike-2",
+      "titulo": "Counter-Strike 2",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC (Windows, Linux / SteamOS)",
+      "calificacion": 8.5,
+      "motor_grafico": "Source 2",
+      "tecnologias": [
+        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
+        "NVIDIA Reflex Low Latency"
+      ],
+      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
+      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
+          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
+          "Memoria: 16 GB de RAM de doble canal",
+          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
+          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
+    },
+    {
       "id": "grand-theft-auto-v",
       "titulo": "Grand Theft Auto V",
       "fecha": "16 Jul, 2026",
@@ -278,32 +330,6 @@
       "imagen": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
     },
     {
-      "id": "candy-crush-saga",
-      "titulo": "Candy Crush Saga",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS, Windows (PC), Web",
-      "calificacion": "8.2",
-      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
-      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
-      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
-      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
-      "requisitos": {
-        "minimos": [
-          "SO: Android 6.0 / iOS 12.0 / Windows 10",
-          "Procesador: Quad-Core 1.8 GHz",
-          "Memoria: 2 GB de RAM",
-          "Almacenamiento: 500 MB de espacio disponible"
-        ],
-        "recomendados": [
-          "SO: Android 11.0 / iOS 15.0 / Windows 11",
-          "Procesador: Octa-Core 2.4 GHz o superior",
-          "Memoria: 4 GB de RAM o más",
-          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
-    },
-    {
       "id": "garena-free-fire",
       "titulo": "Garena Free Fire",
       "fecha": "16 Jul, 2026",
@@ -356,32 +382,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/9c5/9c5bc0b6e67102bc96dcf1ba41509e42.jpg"
-    },
-    {
-      "id": "honor-of-kings",
-      "titulo": "Honor of Kings",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "Android, iOS, iPadOS",
-      "calificacion": "9.0",
-      "motor_grafico": "Unity (Tuanjie Engine)",
-      "tecnologias": "Vulkan API, Metal API, Crossplay, Soporte para 120Hz, Audio Wwise, Renderizado Multihilo",
-      "sinopsis": "Honor of Kings es el MOBA móvil de 5v5 más popular del mundo, donde los jugadores eligen héroes legendarios inspirados en la mitología para destruir la base enemiga en partidas rápidas y competitivas.",
-      "analisis_detallado": "<p><strong>Honor of Kings</strong> destaca de manera sobresaliente por su excepcional nivel de optimización en dispositivos móviles. Desarrollado sobre el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio perfecto entre fidelidad visual y rendimiento técnico. En dispositivos de gama media y alta, el título mantiene unos <strong>60 FPS o 120 FPS estables</strong> sin caídas notables de frames, incluso durante las batallas grupales más caóticas donde abundan los efectos de partículas y habilidades simultáneas.</p><p>La implementación de las APIs <strong>Vulkan</strong> en Android y <strong>Metal</strong> en iOS permite una comunicación directa con el hardware, reduciendo drásticamente la sobrecarga de la CPU. Esto no solo mejora la fluidez general, sino que también optimiza el consumo de batería y mitiga el estrangulamiento térmico (thermal throttling). El juego cuenta con un sistema de renderizado multihilo que distribuye la carga de trabajo de manera eficiente entre los núcleos del procesador.</p><p>La escalabilidad técnica es otro de sus puntos fuertes. El menú de configuración ofrece un control granular sobre la calidad de las texturas, la resolución y los efectos de sombras, permitiendo que teléfonos con casi una década de antigüedad puedan ejecutar el juego de forma fluida a 30 FPS. Además, la infraestructura de red global de <strong>Level Infinite</strong> garantiza un netcode robusto con latencias mínimas y un sistema de reconexión sumamente rápido, vital para el juego competitivo.</p>",
-      "requisitos": {
-        "minimos": [
-          "Sistema Operativo: Android 5.1 / iOS 11.0 o superior",
-          "Procesador: CPU Quad-Core a 1.0 GHz o superior",
-          "Memoria RAM: 1 GB (Android) / 2 GB (iOS)",
-          "Almacenamiento: 2 GB de espacio libre (instalación básica)"
-        ],
-        "recomendados": [
-          "Sistema Operativo: Android 12 / iOS 15.0 o superior",
-          "Procesador: CPU Octa-Core a 1.6 GHz o superior (Snapdragon 680 / Apple A13)",
-          "Memoria RAM: 4 GB o superior",
-          "Almacenamiento: 5 GB o más de espacio libre (recursos HD completos)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     },
     {
       "id": "pubg-battlegrounds",
