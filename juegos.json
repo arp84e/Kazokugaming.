@@ -58,32 +58,6 @@
       "imagen": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
     },
     {
-      "id": "candy-crush-saga",
-      "titulo": "Candy Crush Saga",
-      "fecha": "15 Jul, 2026",
-      "plataformas": "Android, iOS, Windows (PC), Web",
-      "calificacion": "8.2",
-      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
-      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
-      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
-      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
-      "requisitos": {
-        "minimos": [
-          "SO: Android 6.0 / iOS 12.0 / Windows 10",
-          "Procesador: Quad-Core 1.8 GHz",
-          "Memoria: 2 GB de RAM",
-          "Almacenamiento: 500 MB de espacio disponible"
-        ],
-        "recomendados": [
-          "SO: Android 11.0 / iOS 15.0 / Windows 11",
-          "Procesador: Octa-Core 2.4 GHz o superior",
-          "Memoria: 4 GB de RAM o más",
-          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
-    },
-    {
       "id": "fortnite",
       "titulo": "Fortnite",
       "fecha": "15 Jul, 2026",
@@ -117,6 +91,35 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
+    },
+    {
+      "id": "counter-strike-2",
+      "titulo": "Counter-Strike 2",
+      "fecha": "12 Jul, 2026",
+      "plataformas": "PC (Windows, Linux / SteamOS)",
+      "calificacion": 8.5,
+      "motor_grafico": "Source 2",
+      "tecnologias": [
+        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
+        "NVIDIA Reflex Low Latency"
+      ],
+      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
+      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
+      "requisitos": {
+        "minimos": [
+          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
+          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
+        ],
+        "recomendados": [
+          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
+          "Memoria: 16 GB de RAM de doble canal",
+          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
+          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
     },
     {
       "id": "league-of-legends",
@@ -173,6 +176,136 @@
       "imagen": "https://media.rawg.io/media/screenshots/087/0879f4aab10a12ecde452f6326bac01e.jpg"
     },
     {
+      "id": "garena-free-fire",
+      "titulo": "Garena Free Fire",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "Android, iOS",
+      "calificacion": "8.0",
+      "motor_grafico": "Unity",
+      "tecnologias": "Pantalla táctil, Crossplay (Android/iOS), Soporte para 60 FPS, Renderizado de sombras dinámicas",
+      "sinopsis": "Garena Free Fire es un juego de disparos en tercera persona de tipo battle royale en el que 50 jugadores caen en una isla remota para luchar por la supervivencia. El último en quedar en pie gana.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Garena Free Fire</strong> destaca principalmente por su excelente optimización en dispositivos móviles de gama baja y media. Al estar desarrollado bajo el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio sobresaliente entre calidad visual y consumo de recursos, permitiendo que millones de jugadores con hardware limitado disfruten de una experiencia fluida.</p><p>En dispositivos de gama de entrada, el título mantiene una tasa de fotogramas estable de <strong>30 FPS</strong> con los ajustes gráficos en 'Suave'. Para terminales de gama media y alta, la opción de activar el modo de <strong>Altos FPS (60 FPS)</strong> ofrece una jugabilidad sumamente competitiva y tiempos de respuesta táctil reducidos. Sin embargo, la activación de sombras dinámicas y texturas en alta resolución puede provocar un ligero estrangulamiento térmico (thermal throttling) y un incremento notable en el consumo de batería tras sesiones de juego prolongadas.</p><p>El netcode y la latencia están sumamente optimizados, lo que permite jugar de manera competitiva incluso con conexiones móviles 3G o 4G inestables. En resumen, Free Fire sacrifica el fotorrealismo en favor de una accesibilidad técnica inigualable en el mercado móvil.</p>",
+      "requisitos": {
+        "minimos": [
+          "Sistema Operativo: Android 4.1 o superior / iOS 9.0 o superior",
+          "Procesador: Dual Core 1.2 GHz",
+          "Memoria RAM: 1 GB",
+          "Almacenamiento: 1.5 GB de espacio libre"
+        ],
+        "recomendados": [
+          "Sistema Operativo: Android 7.0 o superior / iOS 11.0 o superior",
+          "Procesador: Octa-Core 2.0 GHz o superior",
+          "Memoria RAM: 3 GB o más",
+          "Almacenamiento: 3 GB de espacio libre"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/a2f/a2fc4a4a2c67b74b29bc6f4959c24f93.jpg"
+    },
+    {
+      "id": "valorant",
+      "titulo": "Valorant",
+      "fecha": "22 Jul, 2026",
+      "plataformas": "PC, PlayStation 5, Xbox Series X/S",
+      "calificacion": "9.2",
+      "motor_grafico": "Unreal Engine 4",
+      "tecnologias": "NVIDIA Reflex, AMD FSR, Vanguard Anti-Cheat, Crossplay (consolas)",
+      "sinopsis": "Un shooter táctico en primera persona de 5v5 donde la precisión balística se fusiona con habilidades de agentes únicos en un entorno competitivo de alta fidelidad.",
+      "analisis_detallado": "<p>El rendimiento técnico de <strong>Valorant</strong> es uno de sus mayores pilares de éxito. Diseñado desde cero para ser un título de esports altamente accesible, el juego destaca por una <strong>optimización excepcional</strong> tanto en ordenadores de gama baja como en las consolas de actual generación (PS5 y Xbox Series X/S), donde alcanza los <strong>120 FPS estables</strong>.</p><p>En PC, el motor <strong>Unreal Engine 4</strong> ha sido modificado exhaustivamente por Riot Games para minimizar la latencia de entrada (input lag). La integración de <strong>NVIDIA Reflex</strong> es crucial, reduciendo la latencia del sistema hasta en un 30%, lo que proporciona una respuesta casi instantánea en los tiroteos. Además, el netcode del juego cuenta con servidores de <strong>128 ticks</strong>, garantizando que el registro de impactos sea extremadamente preciso y libre de desincronizaciones notables.</p><p>La estabilidad de los fotogramas por segundo (framerate) es sobresaliente. Incluso en situaciones de combate intenso con múltiples habilidades de agentes activas en pantalla, el juego mantiene un rendimiento sólido sin caídas drásticas de FPS. En consolas, la adaptación del control y la optimización visual logran mantener la fluidez competitiva sin comprometer la nitidez de la imagen.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10/11 (64-bit)",
+          "Procesador: Intel Core 2 Duo E8400 / AMD Athlon 200GE",
+          "Memoria: 4 GB de RAM",
+          "Gráficos: Intel HD 4000 / AMD Radeon R5 200 (1GB VRAM)"
+        ],
+        "recomendados": [
+          "SO: Windows 10/11 (64-bit)",
+          "Procesador: Intel i3-4150 / AMD Ryzen 3 1200",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GT 730 / AMD Radeon R7 240 (2GB VRAM)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/b11/b11127b9ee3c3701bd15b9af3286d20e.jpg"
+    },
+    {
+      "id": "genshin-impact",
+      "titulo": "Genshin Impact",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS4, PS5, Xbox Series X/S, Android, iOS",
+      "calificacion": "9.0",
+      "motor_grafico": "Unity (Altamente modificado)",
+      "tecnologias": "NVIDIA DLSS, AMD FSR, Intel XeSS, Crossplay, Cross-save, Metal, Vulkan, DualSense Haptic Feedback",
+      "sinopsis": "Genshin Impact es un RPG de acción de mundo abierto en el que exploras el vasto continente de Teyvat. Como el Viajero, dominas los elementos, reclutas aliados diversos y buscas respuestas sobre tu familiar perdido en un mundo lleno de secretos y magia.",
+      "analisis_detallado": "<p><strong>Genshin Impact</strong> destaca por su excelente optimización multiplataforma, logrando un rendimiento sumamente sólido en una amplia gama de dispositivos. En <strong>PC</strong>, el juego ofrece un rendimiento sobresaliente, permitiendo alcanzar los 60 FPS estables con resoluciones de hasta 4K en tarjetas gráficas de gama media. La implementación de tecnologías de escalado como <strong>NVIDIA DLSS</strong>, <strong>AMD FSR</strong> y <strong>Intel XeSS</strong> ayuda a mantener la fluidez incluso en las zonas más demandantes del mapa, como Fontaine o la región de Snezhnaya.</p><p>En consolas de nueva generación como <strong>PlayStation 5</strong> y <strong>Xbox Series X</strong>, el título se ejecuta a una resolución nativa de 4K a 60 FPS casi perfectos, beneficiándose enormemente de los tiempos de carga ultrarrápidos gracias al almacenamiento SSD. Además, en PS5 se aprovecha de manera excelente la retroalimentación háptica del mando <strong>DualSense</strong>.</p><p>Por otro lado, la versión para <strong>dispositivos móviles (Android e iOS)</strong> es la más exigente debido a la inmensidad del mapa. Aunque el juego es altamente escalable, los dispositivos de gama baja y media-baja pueden sufrir de estrangulamiento térmico (thermal throttling) y caídas de frames tras sesiones prolongadas. No obstante, en dispositivos iOS de gama alta, el juego soporta hasta 120 FPS, ofreciendo una fluidez inigualable en formato portátil.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Windows 10 de 64 bits",
+          "Procesador: Intel Core i5 de 6.ª generación o AMD Ryzen equivalente",
+          "Memoria: 8 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1050 o equivalente / Intel Iris Xe"
+        ],
+        "recomendados": [
+          "SO: Windows 10 / 11 de 64 bits",
+          "Procesador: Intel Core i7 de 7.ª generación o AMD Ryzen serie 5000 o superior",
+          "Memoria: 16 GB de RAM",
+          "Gráficos: NVIDIA GeForce GTX 1060 de 6 GB o superior"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
+    },
+    {
+      "id": "grand-theft-auto-v",
+      "titulo": "Grand Theft Auto V",
+      "fecha": "16 Jul, 2026",
+      "plataformas": "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
+      "calificacion": "9.7",
+      "motor_grafico": "RAGE (Rockstar Advanced Game Engine) con Euphoria Physics",
+      "tecnologias": "DirectX 11, Ray Tracing (Consolas Next-Gen), NVIDIA TXAA, AMD CHS, HDR10",
+      "sinopsis": "Tres criminales muy diferentes asocian sus esfuerzos para llevar a cabo una serie de audaces y peligrosos atracos en la metrópolis de Los Santos.",
+      "analisis_detallado": "<p>Grand Theft Auto V es uno de los títulos mejor optimizados en la historia de la plataforma <strong>PC</strong>. El motor gráfico <strong>RAGE</strong> escala de manera excepcional tanto en hardware antiguo como de última generación. En resoluciones 1080p, tarjetas gráficas de gama media-baja logran mantener <strong>60 FPS estables</strong> sin mayores dificultades.</p><p>El rendimiento en consolas de actual generación (PS5 y Xbox Series X) destaca por la inclusión de modos de rendimiento a <strong>60 FPS con trazado de rayos (Ray Tracing)</strong> y tiempos de carga drásticamente reducidos gracias al almacenamiento <strong>SSD</strong>. En PC, el uso de tecnologías de antialiasing como <strong>TXAA</strong> y la alta densidad de población configurable demuestran la flexibilidad del motor, aunque el cuello de botella suele trasladarse al procesador en zonas urbanas densas.</p>",
+      "requisitos": {
+        "minimos": [
+          "Intel Core 2 Quad Q6600 2.40GHz / AMD Phenom 9850 2.5GHz",
+          "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
+          "4 GB de Memoria RAM",
+          "120 GB de espacio disponible en disco"
+        ],
+        "recomendados": [
+          "Intel Core i5 3470 3.2GHz / AMD FX-8350 4GHz",
+          "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+          "8 GB de Memoria RAM",
+          "120 GB de espacio disponible (SSD recomendado)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
+    },
+    {
+      "id": "candy-crush-saga",
+      "titulo": "Candy Crush Saga",
+      "fecha": "15 Jul, 2026",
+      "plataformas": "Android, iOS, Windows (PC), Web",
+      "calificacion": "8.2",
+      "motor_grafico": "Motor propio (King C++ Framework / Fiction Factory)",
+      "tecnologias": "Pantalla táctil (Touch), Sincronización en la nube (Cloud Save), Progreso cruzado (Cross-play)",
+      "sinopsis": "Candy Crush Saga es el legendario juego de puzles tipo conecta 3 en el que debes intercambiar y combinar caramelos de colores para avanzar a través de miles de niveles llenos de desafíos dulces y adictivos.",
+      "analisis_detallado": "<p>A nivel técnico, <strong>Candy Crush Saga</strong> destaca por su excepcional optimización en una amplia gama de dispositivos móviles y de escritorio. El juego utiliza un <strong>motor propio en C++</strong> desarrollado por King, lo que le permite mantener un rendimiento sumamente fluido de <strong>60 FPS estables</strong> incluso en terminales de gama baja. La transición de animaciones, las cascadas de caramelos y los efectos visuales de explosiones de color están diseñados para ser sumamente responsivos, eliminando cualquier rastro de latencia táctil.</p><p>Uno de los mayores logros del equipo de desarrollo es la <strong>gestión de recursos y consumo de batería</strong>. Al no depender de motores comerciales pesados como Unity o Unreal Engine para su renderizado 2D, el juego evita el estrangulamiento térmico (thermal throttling) del procesador, logrando sesiones prolongadas sin sobrecalentar el dispositivo. Además, el sistema de almacenamiento está altamente optimizado; a pesar de contar con miles de niveles y constantes actualizaciones de contenido, el tamaño de instalación inicial se mantiene sumamente controlado mediante la descarga dinámica de assets bajo demanda.</p><p>Por último, la infraestructura de red y el <strong>guardado en la nube (Cloud Save)</strong> funcionan de manera impecable. El juego permite una transición fluida (cross-play) entre dispositivos Android, iOS y PC a través de la sincronización con Facebook o una cuenta de King, asegurando que el progreso del usuario se actualice instantáneamente sin pérdidas de datos, incluso con conexiones de red inestables.</p>",
+      "requisitos": {
+        "minimos": [
+          "SO: Android 6.0 / iOS 12.0 / Windows 10",
+          "Procesador: Quad-Core 1.8 GHz",
+          "Memoria: 2 GB de RAM",
+          "Almacenamiento: 500 MB de espacio disponible"
+        ],
+        "recomendados": [
+          "SO: Android 11.0 / iOS 15.0 / Windows 11",
+          "Procesador: Octa-Core 2.4 GHz o superior",
+          "Memoria: 4 GB de RAM o más",
+          "Almacenamiento: 1 GB de espacio disponible (para actualizaciones)"
+        ]
+      },
+      "imagen": "https://media.rawg.io/media/screenshots/51d/51dd944987e4efb74b4bfd9cf0999d40.jpg"
+    },
+    {
       "id": "free-fire",
       "titulo": "Free Fire",
       "fecha": "15 Jul, 2026",
@@ -223,61 +356,6 @@
       "imagen": "https://media.rawg.io/media/screenshots/f9d/f9d6bbb80ffa345ac0151e7643e32024_20nf0bv.jpg"
     },
     {
-      "id": "counter-strike-2",
-      "titulo": "Counter-Strike 2",
-      "fecha": "12 Jul, 2026",
-      "plataformas": "PC (Windows, Linux / SteamOS)",
-      "calificacion": 8.5,
-      "motor_grafico": "Source 2",
-      "tecnologias": [
-        "AMD FSR (FidelityFX Super Resolution) [2.1.6]",
-        "NVIDIA Reflex Low Latency"
-      ],
-      "sinopsis": "La transición técnica del shooter táctico de Valve al motor Source 2, que introduce físicas de humo dinámicas y mejoras de iluminación a cambio de una mayor exigencia de hardware.",
-      "analisis_detallado": "<p>El paso de <strong>Counter-Strike: Global Offensive</strong> a <strong>Counter-Strike 2</strong> marca el salto técnico más importante en la historia de la franquicia gracias a la implementación del motor <strong>Source 2</strong>. Este cambio introduce físicas de renderizado basadas en la física (PBR), iluminación en tiempo real y un sistema de humo dinámico que interactúa de forma realista con las balas y las granadas, transformando por completo la jugabilidad táctica.</p><p>A nivel de rendimiento, el juego es significativamente más exigente que su predecesor. Mientras que CS:GO podía ejecutarse en casi cualquier hardware antiguo, CS2 es un título fuertemente <strong>dependiente de la CPU</strong>, donde la velocidad de un solo núcleo y la latencia de la memoria RAM juegan un papel crucial para mantener tasas de cuadros por segundo (FPS) estables por encima de los 240 o 360 Hz. La optimización de la GPU también es notable, aunque resoluciones más altas como 1440p o 4K requieren tarjetas gráficas modernas de gama media-alta para evitar cuellos de botella.</p><p>En el apartado de latencia, Valve ha integrado la tecnología <strong>NVIDIA Reflex</strong> para reducir el retraso de entrada, algo vital en el juego competitivo. Sin embargo, a diferencia de otros títulos modernos, el juego carece de soporte oficial para <strong>NVIDIA DLSS</strong> debido a que los algoritmos de reconstrucción temporal podrían introducir artefactos visuales o 'ghosting', lo cual afectaría la integridad competitiva. En su lugar, se incluye <strong>AMD FSR</strong> (FidelityFX Super Resolution), aunque la mayoría de los jugadores profesionales prefieren desactivarlo para mantener la máxima nitidez de imagen.</p>",
-      "requisitos": {
-        "minimos": [
-          "Procesador: Intel Core i5-750 o superior (mínimo 4 hilos de hardware) [1.1.1]",
-          "Memoria: 8 GB de RAM",
-          "Gráficos: GPU con 1 GB de VRAM compatible con DirectX 11 y Shader Model 5.0",
-          "Almacenamiento: 85 GB de espacio disponible (se recomienda SSD)"
-        ],
-        "recomendados": [
-          "Procesador: Intel Core i7-9700K o AMD Ryzen 7 2700X (o superior) [1.1.7]",
-          "Memoria: 16 GB de RAM de doble canal",
-          "Gráficos: NVIDIA GeForce RTX 2070 o AMD Radeon RX 5700 XT",
-          "Almacenamiento: SSD de alta velocidad con 85 GB libres"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/ec4/ec4b02bdb3eb5c6212992c19bc05697e.jpg"
-    },
-    {
-      "id": "grand-theft-auto-v",
-      "titulo": "Grand Theft Auto V",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
-      "calificacion": "9.7",
-      "motor_grafico": "RAGE (Rockstar Advanced Game Engine) con Euphoria Physics",
-      "tecnologias": "DirectX 11, Ray Tracing (Consolas Next-Gen), NVIDIA TXAA, AMD CHS, HDR10",
-      "sinopsis": "Tres criminales muy diferentes asocian sus esfuerzos para llevar a cabo una serie de audaces y peligrosos atracos en la metrópolis de Los Santos.",
-      "analisis_detallado": "<p>Grand Theft Auto V es uno de los títulos mejor optimizados en la historia de la plataforma <strong>PC</strong>. El motor gráfico <strong>RAGE</strong> escala de manera excepcional tanto en hardware antiguo como de última generación. En resoluciones 1080p, tarjetas gráficas de gama media-baja logran mantener <strong>60 FPS estables</strong> sin mayores dificultades.</p><p>El rendimiento en consolas de actual generación (PS5 y Xbox Series X) destaca por la inclusión de modos de rendimiento a <strong>60 FPS con trazado de rayos (Ray Tracing)</strong> y tiempos de carga drásticamente reducidos gracias al almacenamiento <strong>SSD</strong>. En PC, el uso de tecnologías de antialiasing como <strong>TXAA</strong> y la alta densidad de población configurable demuestran la flexibilidad del motor, aunque el cuello de botella suele trasladarse al procesador en zonas urbanas densas.</p>",
-      "requisitos": {
-        "minimos": [
-          "Intel Core 2 Quad Q6600 2.40GHz / AMD Phenom 9850 2.5GHz",
-          "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
-          "4 GB de Memoria RAM",
-          "120 GB de espacio disponible en disco"
-        ],
-        "recomendados": [
-          "Intel Core i5 3470 3.2GHz / AMD FX-8350 4GHz",
-          "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
-          "8 GB de Memoria RAM",
-          "120 GB de espacio disponible (SSD recomendado)"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
-    },
-    {
       "id": "call-of-duty-warzone",
       "titulo": "Call of Duty: Warzone",
       "fecha": "17 Jul, 2026",
@@ -302,58 +380,6 @@
         ]
       },
       "imagen": "https://media.rawg.io/media/games/7e3/7e327a055bedb9b6d1be86593bef473d.jpg"
-    },
-    {
-      "id": "genshin-impact",
-      "titulo": "Genshin Impact",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "PC, PS4, PS5, Xbox Series X/S, Android, iOS",
-      "calificacion": "9.0",
-      "motor_grafico": "Unity (Altamente modificado)",
-      "tecnologias": "NVIDIA DLSS, AMD FSR, Intel XeSS, Crossplay, Cross-save, Metal, Vulkan, DualSense Haptic Feedback",
-      "sinopsis": "Genshin Impact es un RPG de acción de mundo abierto en el que exploras el vasto continente de Teyvat. Como el Viajero, dominas los elementos, reclutas aliados diversos y buscas respuestas sobre tu familiar perdido en un mundo lleno de secretos y magia.",
-      "analisis_detallado": "<p><strong>Genshin Impact</strong> destaca por su excelente optimización multiplataforma, logrando un rendimiento sumamente sólido en una amplia gama de dispositivos. En <strong>PC</strong>, el juego ofrece un rendimiento sobresaliente, permitiendo alcanzar los 60 FPS estables con resoluciones de hasta 4K en tarjetas gráficas de gama media. La implementación de tecnologías de escalado como <strong>NVIDIA DLSS</strong>, <strong>AMD FSR</strong> y <strong>Intel XeSS</strong> ayuda a mantener la fluidez incluso en las zonas más demandantes del mapa, como Fontaine o la región de Snezhnaya.</p><p>En consolas de nueva generación como <strong>PlayStation 5</strong> y <strong>Xbox Series X</strong>, el título se ejecuta a una resolución nativa de 4K a 60 FPS casi perfectos, beneficiándose enormemente de los tiempos de carga ultrarrápidos gracias al almacenamiento SSD. Además, en PS5 se aprovecha de manera excelente la retroalimentación háptica del mando <strong>DualSense</strong>.</p><p>Por otro lado, la versión para <strong>dispositivos móviles (Android e iOS)</strong> es la más exigente debido a la inmensidad del mapa. Aunque el juego es altamente escalable, los dispositivos de gama baja y media-baja pueden sufrir de estrangulamiento térmico (thermal throttling) y caídas de frames tras sesiones prolongadas. No obstante, en dispositivos iOS de gama alta, el juego soporta hasta 120 FPS, ofreciendo una fluidez inigualable en formato portátil.</p>",
-      "requisitos": {
-        "minimos": [
-          "SO: Windows 10 de 64 bits",
-          "Procesador: Intel Core i5 de 6.ª generación o AMD Ryzen equivalente",
-          "Memoria: 8 GB de RAM",
-          "Gráficos: NVIDIA GeForce GTX 1050 o equivalente / Intel Iris Xe"
-        ],
-        "recomendados": [
-          "SO: Windows 10 / 11 de 64 bits",
-          "Procesador: Intel Core i7 de 7.ª generación o AMD Ryzen serie 5000 o superior",
-          "Memoria: 16 GB de RAM",
-          "Gráficos: NVIDIA GeForce GTX 1060 de 6 GB o superior"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
-    },
-    {
-      "id": "garena-free-fire",
-      "titulo": "Garena Free Fire",
-      "fecha": "16 Jul, 2026",
-      "plataformas": "Android, iOS",
-      "calificacion": "8.0",
-      "motor_grafico": "Unity",
-      "tecnologias": "Pantalla táctil, Crossplay (Android/iOS), Soporte para 60 FPS, Renderizado de sombras dinámicas",
-      "sinopsis": "Garena Free Fire es un juego de disparos en tercera persona de tipo battle royale en el que 50 jugadores caen en una isla remota para luchar por la supervivencia. El último en quedar en pie gana.",
-      "analisis_detallado": "<p>El rendimiento técnico de <strong>Garena Free Fire</strong> destaca principalmente por su excelente optimización en dispositivos móviles de gama baja y media. Al estar desarrollado bajo el motor gráfico <strong>Unity</strong>, el juego logra un equilibrio sobresaliente entre calidad visual y consumo de recursos, permitiendo que millones de jugadores con hardware limitado disfruten de una experiencia fluida.</p><p>En dispositivos de gama de entrada, el título mantiene una tasa de fotogramas estable de <strong>30 FPS</strong> con los ajustes gráficos en 'Suave'. Para terminales de gama media y alta, la opción de activar el modo de <strong>Altos FPS (60 FPS)</strong> ofrece una jugabilidad sumamente competitiva y tiempos de respuesta táctil reducidos. Sin embargo, la activación de sombras dinámicas y texturas en alta resolución puede provocar un ligero estrangulamiento térmico (thermal throttling) y un incremento notable en el consumo de batería tras sesiones de juego prolongadas.</p><p>El netcode y la latencia están sumamente optimizados, lo que permite jugar de manera competitiva incluso con conexiones móviles 3G o 4G inestables. En resumen, Free Fire sacrifica el fotorrealismo en favor de una accesibilidad técnica inigualable en el mercado móvil.</p>",
-      "requisitos": {
-        "minimos": [
-          "Sistema Operativo: Android 4.1 o superior / iOS 9.0 o superior",
-          "Procesador: Dual Core 1.2 GHz",
-          "Memoria RAM: 1 GB",
-          "Almacenamiento: 1.5 GB de espacio libre"
-        ],
-        "recomendados": [
-          "Sistema Operativo: Android 7.0 o superior / iOS 11.0 o superior",
-          "Procesador: Octa-Core 2.0 GHz o superior",
-          "Memoria RAM: 3 GB o más",
-          "Almacenamiento: 3 GB de espacio libre"
-        ]
-      },
-      "imagen": "https://media.rawg.io/media/screenshots/a2f/a2fc4a4a2c67b74b29bc6f4959c24f93.jpg"
     },
     {
       "id": "call-of-duty",
