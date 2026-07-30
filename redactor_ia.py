@@ -10,7 +10,7 @@ import requests
 from google import genai
 from google.genai import types
 
-print("=== INICIANDO KAZOKUBOT: MOTOR PERIODÍSTICO (SISTEMA MULTI-MODELO) ===")
+print("=== INICIANDO KAZOKUBOT: MOTOR PERIODÍSTICO (SISTEMA ROBUSTO) ===")
 
 api_key = os.environ.get("GEMINI_API_KEY")
 rawg_key = os.environ.get("RAWG_API_KEY")
@@ -34,47 +34,52 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto, re.DOTALL)
     return match.group(0) if match else texto
 
-def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
-    # Nombres oficiales de modelos vigentes en la SDK de Gemini
-    modelos_disponibles = ['gemini-2.5-flash', 'gemini-2.0-flash']
+def generar_con_reintentos(prompt_texto, prompt_sistema, max_intentos=3):
+    # Modelos oficiales vigentes
+    modelos = ['gemini-2.0-flash', 'gemini-1.5-flash']
     
-    for intento in range(max_intentos):
-        for modelo in modelos_disponibles:
-            try: 
+    # Intento 1: Con Búsqueda de Google habilitada
+    config_con_busqueda = types.GenerateContentConfig(
+        system_instruction=prompt_sistema,
+        temperature=0.7,
+        tools=[types.Tool(google_search=types.GoogleSearch())]
+    )
+
+    # Intento 2 (Fallback): Sin herramientas si la cuota/búsqueda falla
+    config_sin_busqueda = types.GenerateContentConfig(
+        system_instruction=prompt_sistema,
+        temperature=0.7
+    )
+
+    for modelo in modelos:
+        print(f"🤖 Intentando generación con {modelo} (Con Búsqueda Web)...")
+        for intento in range(max_intentos):
+            try:
                 return client.models.generate_content(
-                    model=modelo, 
-                    contents=prompt_texto, 
-                    config=config_ia
+                    model=modelo,
+                    contents=prompt_texto,
+                    config=config_con_busqueda
                 )
             except Exception as e:
                 error_str = str(e)
-                print(f"⚠️ Error al probar modelo {modelo}: {error_str[:120]}...")
+                print(f"⚠️ Error ({modelo} - Intento {intento+1}): {error_str[:100]}...")
                 
-                # Si falla por herramientas (Google Search), intentamos sin herramientas como respaldo directo
-                if "tool" in error_str.lower() or "search" in error_str.lower():
+                # Si es un error de cuota (429), pausamos y reintentamos sin búsqueda web
+                if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                    espera = (intento + 1) * 20
+                    print(f"🛑 Cuota alcanzada. Esperando {espera}s antes de reintentar...")
+                    time.sleep(espera)
                     try:
-                        print(f"🔄 Reintentando {modelo} sin herramientas de búsqueda...")
-                        config_simple = types.GenerateContentConfig(
-                            system_instruction=config_ia.system_instruction,
-                            temperature=config_ia.temperature
-                        )
+                        print(f"🔄 Reintentando {modelo} (Sin Búsqueda Web para ahorrar cuota)...")
                         return client.models.generate_content(
                             model=modelo,
                             contents=prompt_texto,
-                            config=config_simple
+                            config=config_sin_busqueda
                         )
                     except Exception as inner_e:
-                        print(f"⚠️ Falló reintento simple: {str(inner_e)[:120]}")
+                        print(f"⚠️ Falló modo directo sin búsqueda: {str(inner_e)[:100]}")
 
-                # Continuar al siguiente modelo si es error de sobrecarga (429/503)
-                if any(code in error_str for code in ["503", "429", "RESOURCE_EXHAUSTED", "UNAVAILABLE"]):
-                    continue
-                    
-        espera = 5
-        print(f"⏳ Esperando {espera}s antes del reintento ({intento+1}/{max_intentos})...")
-        time.sleep(espera)
-        
-    raise Exception("❌ No se pudo completar la generación con ningún modelo disponible.")
+    raise Exception("❌ Se agotaron todos los intentos y modelos disponibles.")
 
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
@@ -135,14 +140,7 @@ for item in temas_a_redactar:
 
     print(f"\n✍️ Redactando: {tema}...")
     try:
-        # Configuración con Google Search Tool usando la sintaxis del SDK oficial
-        config_redactor = types.GenerateContentConfig(
-            system_instruction=prompt_sistema, 
-            temperature=0.7,
-            tools=[types.Tool(google_search=types.GoogleSearch())]
-        )
-        
-        response = generar_con_reintentos(f"Tema a investigar y redactar: {tema}", config_redactor)
+        response = generar_con_reintentos(f"Tema a investigar y redactar: {tema}", prompt_sistema)
         
         articulo_generado = json.loads(extraer_json_seguro(response.text))
         
@@ -183,12 +181,12 @@ for item in temas_a_redactar:
         }
         
         datos_web["articulos"].insert(0, articulo_final)
-        print(f"✅ ¡Noticia guardada!")
+        print(f"✅ ¡Noticia guardada con éxito!")
         
         with open(archivo_articulos, "w", encoding="utf-8") as f:
             json.dump(datos_web, f, ensure_ascii=False, indent=2)
             
-        time.sleep(5)
+        time.sleep(10)
 
     except Exception as e:
         print(f"❌ Error al procesar noticia: {e}")
