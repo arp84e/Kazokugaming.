@@ -35,23 +35,46 @@ def extraer_json_seguro(texto):
     return match.group(0) if match else texto
 
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
-    # Modelos actualizados y respaldos válidos de la API de Gemini
-    modelos_disponibles = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash']
+    # Nombres oficiales de modelos vigentes en la SDK de Gemini
+    modelos_disponibles = ['gemini-2.5-flash', 'gemini-2.0-flash']
+    
     for intento in range(max_intentos):
         for modelo in modelos_disponibles:
             try: 
-                return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
+                return client.models.generate_content(
+                    model=modelo, 
+                    contents=prompt_texto, 
+                    config=config_ia
+                )
             except Exception as e:
-                error_str = str(e).lower()
-                if "503" in error_str or "unavailable" in error_str or "429" in error_str or "404" in error_str or "not_found" in error_str:
-                    print(f"⚠️ Modelo {modelo} no disponible o saturado. Proband con el siguiente...")
+                error_str = str(e)
+                print(f"⚠️ Error al probar modelo {modelo}: {error_str[:120]}...")
+                
+                # Si falla por herramientas (Google Search), intentamos sin herramientas como respaldo directo
+                if "tool" in error_str.lower() or "search" in error_str.lower():
+                    try:
+                        print(f"🔄 Reintentando {modelo} sin herramientas de búsqueda...")
+                        config_simple = types.GenerateContentConfig(
+                            system_instruction=config_ia.system_instruction,
+                            temperature=config_ia.temperature
+                        )
+                        return client.models.generate_content(
+                            model=modelo,
+                            contents=prompt_texto,
+                            config=config_simple
+                        )
+                    except Exception as inner_e:
+                        print(f"⚠️ Falló reintento simple: {str(inner_e)[:120]}")
+
+                # Continuar al siguiente modelo si es error de sobrecarga (429/503)
+                if any(code in error_str for code in ["503", "429", "RESOURCE_EXHAUSTED", "UNAVAILABLE"]):
                     continue
-                else: 
-                    raise e 
-        espera = 10
-        print(f"⚠️ Nodos ocupados. Reintentando en {espera}s... ({intento+1}/{max_intentos})")
+                    
+        espera = 5
+        print(f"⏳ Esperando {espera}s antes del reintento ({intento+1}/{max_intentos})...")
         time.sleep(espera)
-    raise Exception("❌ Servidores inactivos o modelos no accesibles.")
+        
+    raise Exception("❌ No se pudo completar la generación con ningún modelo disponible.")
 
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
@@ -112,11 +135,13 @@ for item in temas_a_redactar:
 
     print(f"\n✍️ Redactando: {tema}...")
     try:
+        # Configuración con Google Search Tool usando la sintaxis del SDK oficial
         config_redactor = types.GenerateContentConfig(
             system_instruction=prompt_sistema, 
-            temperature=0.7, 
-            tools=[{"google_search": {}}]
+            temperature=0.7,
+            tools=[types.Tool(google_search=types.GoogleSearch())]
         )
+        
         response = generar_con_reintentos(f"Tema a investigar y redactar: {tema}", config_redactor)
         
         articulo_generado = json.loads(extraer_json_seguro(response.text))
