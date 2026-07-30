@@ -35,26 +35,31 @@ def extraer_json_seguro(texto):
     return match.group(0) if match else texto
 
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
-    modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
+    # Modelos actualizados y respaldos válidos de la API de Gemini
+    modelos_disponibles = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash']
     for intento in range(max_intentos):
         for modelo in modelos_disponibles:
-            try: return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
+            try: 
+                return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
             except Exception as e:
                 error_str = str(e).lower()
-                if "503" in error_str or "unavailable" in error_str or "429" in error_str:
-                    print(f"⚠️ Modelo {modelo} saturado. Cambiando...")
+                if "503" in error_str or "unavailable" in error_str or "429" in error_str or "404" in error_str or "not_found" in error_str:
+                    print(f"⚠️ Modelo {modelo} no disponible o saturado. Proband con el siguiente...")
                     continue
-                else: raise e 
+                else: 
+                    raise e 
         espera = 10
         print(f"⚠️ Nodos ocupados. Reintentando en {espera}s... ({intento+1}/{max_intentos})")
         time.sleep(espera)
-    raise Exception("❌ Servidores inactivos.")
+    raise Exception("❌ Servidores inactivos o modelos no accesibles.")
 
 datos_web = {"articulos": []}
 if os.path.exists(archivo_articulos):
     with open(archivo_articulos, "r", encoding="utf-8") as f:
-        try: datos_web = json.load(f)
-        except: pass
+        try: 
+            datos_web = json.load(f)
+        except: 
+            pass
 
 temas_input = os.environ.get("INPUT_TEMAS", "")
 temas_a_redactar = []
@@ -107,8 +112,11 @@ for item in temas_a_redactar:
 
     print(f"\n✍️ Redactando: {tema}...")
     try:
-        # CORRECCIÓN: Sin response_mime_type
-        config_redactor = types.GenerateContentConfig(system_instruction=prompt_sistema, temperature=0.7, tools=[{"google_search": {}}])
+        config_redactor = types.GenerateContentConfig(
+            system_instruction=prompt_sistema, 
+            temperature=0.7, 
+            tools=[{"google_search": {}}]
+        )
         response = generar_con_reintentos(f"Tema a investigar y redactar: {tema}", config_redactor)
         
         articulo_generado = json.loads(extraer_json_seguro(response.text))
@@ -119,14 +127,18 @@ for item in temas_a_redactar:
         if articulo_generado.get("es_videojuego") and rawg_key and prompt_img:
             try:
                 r = requests.get(f"https://api.rawg.io/api/games?key={rawg_key}&search={urllib.parse.quote(prompt_img)}&page_size=1", timeout=5).json()
-                if r.get("results"): imagen_final = r["results"][0].get("background_image", "")
-            except: pass
+                if r.get("results"): 
+                    imagen_final = r["results"][0].get("background_image", "")
+            except: 
+                pass
         
         if not imagen_final and pexels_key and prompt_img:
             try:
                 r = requests.get(f"https://api.pexels.com/v1/search?query={urllib.parse.quote(prompt_img)}&per_page=5", headers={"Authorization": pexels_key}, timeout=5).json()
-                if r.get("photos"): imagen_final = random.choice(r["photos"])["src"]["landscape"]
-            except: pass
+                if r.get("photos"): 
+                    imagen_final = random.choice(r["photos"])["src"]["landscape"]
+            except: 
+                pass
         
         if not imagen_final: 
             imagen_final = random.choice(imagenes_respaldo)
