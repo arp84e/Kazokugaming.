@@ -48,15 +48,26 @@ def extraer_json_seguro(texto):
     return match.group(0) if match else texto.strip()
 
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
+    # Lista de modelos vigentes ordenados por prioridad
+    modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
+    
     for intento in range(max_intentos):
-        for modelo in ['gemini-3.5-flash', 'gemini-2.5-flash']:
+        for modelo in modelos_disponibles:
             try:
-                return client.models.generate_content(model=modelo, contents=prompt_texto, config=config_ia)
+                # Intenta generar el contenido con el modelo actual
+                return client.models.generate_content(
+                    model=modelo, 
+                    contents=prompt_texto, 
+                    config=config_ia
+                )
             except Exception as e:
-                if "503" in str(e) or "429" in str(e): continue
+                # Si el modelo no existe (404) o está saturado (503/429), pasa al siguiente
+                if "404" in str(e) or "503" in str(e) or "429" in str(e):
+                    print(f"⚠️ Aviso: El modelo '{modelo}' no respondió ({e}). Probando alternativa...")
+                    continue
                 raise e 
-        time.sleep(10)
-    raise Exception("❌ Servidores inactivos.")
+        time.sleep(5)
+    raise Exception("❌ Servidores de IA inactivos o modelos no disponibles.")
 
 temas_a_procesar = []
 
