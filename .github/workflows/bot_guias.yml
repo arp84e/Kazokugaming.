@@ -1,10 +1,10 @@
-name: Bot Guías Tácticas Automáticas
+name: Bot de Mantenimiento y Hardware
 
 on:
   workflow_dispatch:
     inputs:
       comandos:
-        description: 'COMANDOS: "top" | "3" | "Halo" | "eliminar:id-guia"'
+        description: 'COMANDOS: "top" | "Limpieza PS5" | "Cambio de análogos DualSense drift" | "eliminar:id-guia"'
         required: false
         type: string
         default: 'top'
@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  redactar-guias:
+  generar-manuales:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repositorio
@@ -29,7 +29,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install google-genai requests
 
-      - name: Ejecutar Bot de Guías
+      - name: Ejecutar Bot de Hardware
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
@@ -37,7 +37,7 @@ jobs:
         run: python scraper_guias.py
 
       - name: Actualizar Mapa del Sitio XML
-        run: python generar_sitemap.py
+        run: python generar_sitemap.py || true
 
       - name: Commit y Push de los cambios
         run: |
@@ -48,8 +48,8 @@ jobs:
           git add sitemap.xml || true
           
           if git diff --staged --quiet; then
-            echo "No hay variaciones en el catálogo de guías."
+            echo "No hay variaciones en el catálogo de hardware."
           else
-            git commit -m "🤖 KazokuBot: Guías tácticas actualizadas/modificadas"
+            git commit -m "🤖 KazokuBot: Manuales de mantenimiento/modding actualizados"
             git push
           fi
