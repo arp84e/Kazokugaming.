@@ -47,27 +47,38 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto.strip(), re.DOTALL)
     return match.group(0) if match else texto.strip()
 
+# ================= FUNCIÓN DE GENERACIÓN ROBUSTA CON CONTROL DE CUOTA =================
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
-    # Lista de modelos vigentes ordenados por prioridad
-    modelos_disponibles = ['gemini-3.5-flash', 'gemini-2.5-flash']
+    # Modelos oficiales, estables y actualmente disponibles en la API de Google Gemini
+    modelos_disponibles = ['gemini-2.0-flash', 'gemini-1.5-flash']
     
-    for intento in range(max_intentos):
+    for intento in range(1, max_intentos + 1):
         for modelo in modelos_disponibles:
             try:
-                # Intenta generar el contenido con el modelo actual
                 return client.models.generate_content(
                     model=modelo, 
                     contents=prompt_texto, 
                     config=config_ia
                 )
             except Exception as e:
-                # Si el modelo no existe (404) o está saturado (503/429), pasa al siguiente
-                if "404" in str(e) or "503" in str(e) or "429" in str(e):
-                    print(f"⚠️ Aviso: El modelo '{modelo}' no respondió ({e}). Probando alternativa...")
+                error_mensaje = str(e)
+                
+                # Manejo del límite de cuota (Rate Limit 429)
+                if "429" in error_mensaje or "RESOURCE_EXHAUSTED" in error_mensaje:
+                    tiempo_espera = 25 * intento  # Pausa progresiva (25s, 50s...)
+                    print(f"⚠️ Cuota temporal alcanzada en '{modelo}'. Esperando {tiempo_espera}s para reiniciar contador...")
+                    time.sleep(tiempo_espera)
                     continue
+                
+                # Manejo de modelo no disponible o descontinuado (404/503)
+                elif "404" in error_mensaje or "503" in error_mensaje:
+                    print(f"⚠️ Modelo '{modelo}' no disponible. Probando modelo alternativo...")
+                    continue
+                
+                # Si es un error distinto, se eleva la excepción
                 raise e 
-        time.sleep(5)
-    raise Exception("❌ Servidores de IA inactivos o modelos no disponibles.")
+                
+    raise Exception("❌ Se excedió el límite de cuota de la API. Espera unos minutos antes de volver a ejecutar.")
 
 temas_a_procesar = []
 
@@ -136,10 +147,9 @@ for tema in temas_a_procesar:
         texto_limpio = extraer_json_seguro(res.text)
         data = json.loads(texto_limpio)
 
-        # Selección de imagen de hardware
-        imagen_real = "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1200" # Foto técnica genérica
+        # Imagen por defecto técnica de hardware
+        imagen_real = "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1200"
         
-        # Intentar buscar en RAWG si menciona consolas/juegos o fallback Unsplash de electrónica
         if rawg_key:
             try:
                 url_rawg = f"https://api.rawg.io/api/games?key={rawg_key}&search={urllib.parse.quote(tema)}&page_size=1"
