@@ -47,38 +47,57 @@ def extraer_json_seguro(texto):
     match = re.search(r'\{.*\}', texto.strip(), re.DOTALL)
     return match.group(0) if match else texto.strip()
 
-# ================= FUNCIÓN DE GENERACIÓN ROBUSTA CON CONTROL DE CUOTA =================
+# ================= MOTOR MULTI-MODELO ACTUALIZADO (GEMINI 3.6 FLASH) =================
 def generar_con_reintentos(prompt_texto, config_ia, max_intentos=3):
-    # Modelos oficiales, estables y actualmente disponibles en la API de Google Gemini
-    modelos_disponibles = ['gemini-2.0-flash', 'gemini-1.5-flash']
+    """
+    Sistema de generación jerárquico. Prioriza Gemini 3.6 Flash y escala 
+    hacia modelos anteriores en caso de error 404, 429 o saturación.
+    """
+    modelos_disponibles = [
+        'gemini-3.6-flash',
+        'gemini-3.5-flash',
+        'gemini-3-flash',
+        'gemini-2.5-flash',
+        'gemini-2.0-flash',
+    ]
     
     for intento in range(1, max_intentos + 1):
         for modelo in modelos_disponibles:
             try:
+                print(f"🔄 Intentando generación con '{modelo}' (Ciclo {intento}/{max_intentos})...")
                 return client.models.generate_content(
                     model=modelo, 
                     contents=prompt_texto, 
                     config=config_ia
                 )
             except Exception as e:
-                error_mensaje = str(e)
+                err_str = str(e).lower()
                 
-                # Manejo del límite de cuota (Rate Limit 429)
-                if "429" in error_mensaje or "RESOURCE_EXHAUSTED" in error_mensaje:
-                    tiempo_espera = 25 * intento  # Pausa progresiva (25s, 50s...)
-                    print(f"⚠️ Cuota temporal alcanzada en '{modelo}'. Esperando {tiempo_espera}s para reiniciar contador...")
+                # Caso 1: Modelo no disponible en la cuenta/región o no encontrado (Error 404)
+                if "404" in err_str or "not_found" in err_str or "no longer available" in err_str:
+                    print(f"⚠️ El modelo '{modelo}' no está disponible. Pasando al siguiente modelo...")
+                    continue
+                
+                # Caso 2: Exceso de cuota o límite de peticiones por minuto (Error 429)
+                elif "429" in err_str or "resource_exhausted" in err_str or "quota" in err_str:
+                    tiempo_espera = 25 * intento
+                    print(f"⚠️ Cuota alcanzada en '{modelo}'. Esperando {tiempo_espera}s para reiniciar contador...")
                     time.sleep(tiempo_espera)
                     continue
                 
-                # Manejo de modelo no disponible o descontinuado (404/503)
-                elif "404" in error_mensaje or "503" in error_mensaje:
-                    print(f"⚠️ Modelo '{modelo}' no disponible. Probando modelo alternativo...")
+                # Caso 3: Saturación de servidor (Error 500 / 503)
+                elif "500" in err_str or "503" in err_str:
+                    print(f"⚠️ Servidor ocupado al consultar '{modelo}'. Esperando 10s...")
+                    time.sleep(10)
                     continue
                 
-                # Si es un error distinto, se eleva la excepción
-                raise e 
-                
-    raise Exception("❌ Se excedió el límite de cuota de la API. Espera unos minutos antes de volver a ejecutar.")
+                # Caso 4: Errores imprevistos
+                else:
+                    print(f"⚠️ Excepción en '{modelo}': {e}. Probando siguiente modelo...")
+                    time.sleep(5)
+                    continue
+
+    raise Exception("❌ Todos los modelos fallaron o se excedió el límite de la API de Gemini.")
 
 temas_a_procesar = []
 
@@ -147,7 +166,6 @@ for tema in temas_a_procesar:
         texto_limpio = extraer_json_seguro(res.text)
         data = json.loads(texto_limpio)
 
-        # Imagen por defecto técnica de hardware
         imagen_real = "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1200"
         
         if rawg_key:
@@ -177,7 +195,7 @@ for tema in temas_a_procesar:
         
         estructura_final["guias"].insert(0, nueva_guia)
         nuevos_agregados += 1
-        time.sleep(3) 
+        time.sleep(5) 
             
     except Exception as e:
         print(f"❌ Error procesando el tema {tema}: {e}")
