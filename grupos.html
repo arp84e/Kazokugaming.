@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAZOKUGAMING | Escuadrones y Clanes</title>
+    
+    <meta name="description" content="Únete a escuadrones, forma tu propio clan y compite en equipo en la comunidad de KazokuGaming.">
+    <!-- Fuentes tipográficas modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style> 
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; } 
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(79, 70, 229, 0.2); }
+        .bg-grid { background-image: linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-200">
+
+    <!-- Se inyecta la barra de navegación automáticamente -->
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative">
+        <div class="absolute inset-0 z-0 bg-grid opacity-60 pointer-events-none"></div>
+
+        <!-- ENCABEZADO DE LA SECCIÓN -->
+        <section class="relative pt-20 pb-16 overflow-hidden">
+            <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
+                        Encuentra tu <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Escuadrón Ideal</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-xl">
+                        Únete a clanes activos, sube de rango en equipo y prepárate para los próximos torneos de la comunidad.
+                    </p>
+                </div>
+                
+                <!-- Botón de acción principal -->
+                <button class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-3 whitespace-nowrap">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    Fundar Escuadrón
+                </button>
+            </div>
+        </section>
+
+        <!-- FILTROS DE BÚSQUEDA -->
+        <section class="relative z-10 border-y border-slate-800/50 bg-slate-900/30 py-4">
+            <div class="max-w-7xl mx-auto px-4 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+                <button class="px-5 py-2 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold rounded-full text-sm whitespace-nowrap">Todos los Juegos</button>
+                <button class="px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Valorant</button>
+                <button class="px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">League of Legends</button>
+                <button class="px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Call of Duty</button>
+            </div>
+        </section>
+
+        <!-- DIRECTORIO DE ESCUADRONES -->
+        <section class="py-16 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Escuadrón 1 -->
+                    <div class="glass-panel rounded-2xl p-6 hover:border-emerald-500/50 transition-all hover:-translate-y-1 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/10 rounded-bl-full pointer-events-none"></div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white font-black text-2xl shadow-lg">NX</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white leading-tight">Nexus Vanguard</h3>
+                                <span class="text-xs font-bold text-red-400 bg-red-400/10 px-2 py-1 rounded">Valorant</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6">Clan competitivo enfocado en torneos. Rango mínimo requerido: Ascendente.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="text-sm font-bold text-slate-300">👥 12/20 Miembros</div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-emerald-600 text-white text-sm font-bold rounded-lg transition-colors">Solicitar Ingreso</button>
+                        </div>
+                    </div>
+
+                    <!-- Escuadrón 2 -->
+                    <div class="glass-panel rounded-2xl p-6 hover:border-emerald-500/50 transition-all hover:-translate-y-1 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-bl-full pointer-events-none"></div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white font-black text-2xl shadow-lg">ST</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white leading-tight">Storm Titans</h3>
+                                <span class="text-xs font-bold text-blue-400 bg-blue-400/10 px-2 py-1 rounded">League of Legends</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6">Jugamos Clash todos los fines de semana. Ambiente chill pero buscamos ganar.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="text-sm font-bold text-slate-300">👥 5/10 Miembros</div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-emerald-600 text-white text-sm font-bold rounded-lg transition-colors">Solicitar Ingreso</button>
+                        </div>
+                    </div>
+
+                    <!-- Escuadrón 3 -->
+                    <div class="glass-panel rounded-2xl p-6 hover:border-emerald-500/50 transition-all hover:-translate-y-1 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-black text-2xl shadow-lg">GZ</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white leading-tight">Ground Zero</h3>
+                                <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-1 rounded">Call of Duty</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6">Escuadrón táctico para Warzone. Requisito: usar micrófono y comunicación activa.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="text-sm font-bold text-slate-300">👥 8/12 Miembros</div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-emerald-600 text-white text-sm font-bold rounded-lg transition-colors">Solicitar Ingreso</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Conectando jugadores en todo el mundo.</p>
+    </footer>
+
+    <!-- Importamos la cabecera compartida -->
+    <script src="header.js"></script>
+</body>
+</html>
