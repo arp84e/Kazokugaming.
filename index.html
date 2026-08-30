@@ -3,135 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KazokuGaming | El Ecosistema Definitivo</title>
+    <title>KAZOKUGAMING | Organiza, Juega y Gana</title>
     
-    <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <meta name="description" content="La red social definitiva para gamers. Encuentra escuadrones, organiza torneos y gana premios reales con contratos inteligentes.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style> 
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #03040b; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth; 
-        } 
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .glass-panel { 
-            background: rgba(13, 17, 30, 0.6); 
-            backdrop-filter: blur(16px); 
-            -webkit-backdrop-filter: blur(16px); 
-            border: 1px solid rgba(245, 158, 11, 0.2); 
-        }
-        .grid-bg { 
-            background-image: linear-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 1px), 
-            linear-gradient(90deg, rgba(245, 158, 11, 0.05) 1px, transparent 1px); 
-            background-size: 30px 30px; 
-        }
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; scroll-behavior: smooth; } 
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(79, 70, 229, 0.2); }
+        .bg-grid { background-image: linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
     </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
 
-    <!-- Aquí se inyectará el menú de navegación limpio -->
     <div id="header-container"></div>
 
-    <main class="flex-grow relative pt-20">
-        <!-- Fondos decorativos -->
-        <div class="absolute inset-0 z-0 grid-bg opacity-30 pointer-events-none"></div>
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <main class="flex-grow relative">
+        <div class="absolute inset-0 z-0 bg-grid opacity-60 pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <section class="relative pt-24 pb-32 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-600/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
             
-            <!-- Hero Section (Bienvenida) -->
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="inline-flex items-center gap-2 py-1 px-3 rounded text-amber-400 text-[10px] font-mono tracking-widest uppercase mb-4 bg-amber-500/10 border border-amber-500/20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                    Sistema en Línea
-                </span>
-                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-6">
-                    Domina tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Juego</span>
-                </h1>
-                <p class="text-lg text-slate-400 mb-8">
-                    Análisis tácticos, noticias en tiempo real, el mejor hardware y el radar definitivo para que nunca pagues de más por tus juegos favoritos.
-                </p>
-            </div>
-
-            <!-- Grid de Vistas Previas (Categorías) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-indigo-950/50 border border-indigo-500/30 text-indigo-300 text-xs font-display tracking-widest uppercase mb-8 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 1,240 Jugadores buscando partida ahora
+                </div>
                 
-                <!-- Tarjeta: Noticias -->
-                <a href="noticias.html" class="group glass-panel p-8 rounded-3xl hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">📰</div>
-                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">Noticias</h2>
-                        <p class="text-slate-400 text-sm">Mantente al día con los últimos lanzamientos, actualizaciones y movimientos de la industria del gaming.</p>
-                    </div>
-                    <div class="mt-8 flex items-center text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">
-                        Leer más <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- Tarjeta: Juegos -->
-                <a href="juegos.html" class="group glass-panel p-8 rounded-3xl hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">🎮</div>
-                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">Juegos</h2>
-                        <p class="text-slate-400 text-sm">Explora nuestra base de datos con los títulos del momento, reseñas y detalles técnicos.</p>
-                    </div>
-                    <div class="mt-8 flex items-center text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">
-                        Explorar <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- Tarjeta: Tecnología (Hardware) -->
-                <a href="tecnologia.html" class="group glass-panel p-8 rounded-3xl hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">💻</div>
-                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">Hardware</h2>
-                        <p class="text-slate-400 text-sm">Descubre nuestro catálogo cuidadosamente seleccionado con las consolas y portátiles más utilizadas por la comunidad gamer.</p>
-                    </div>
-                    <div class="mt-8 flex items-center text-sm font-bold text-amber-400 uppercase tracking-wider font-mono relative z-10">
-                        Ver catálogo <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- Tarjeta: Guías -->
-                <a href="guias.html" class="group glass-panel p-8 rounded-3xl hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full lg:col-span-2">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">📖</div>
-                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">Guías Tácticas</h2>
-                        <p class="text-slate-400 text-sm max-w-lg">Sube de nivel con nuestras estrategias detalladas. Aprende a dominar cada mapa, personaje y mecánica para superar a la competencia.</p>
-                    </div>
-                    <div class="mt-8 flex items-center text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">
-                        Aprender <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- Tarjeta: Radar (Especial) -->
-                <a href="radar.html" class="group bg-gradient-to-br from-[#0d111e] to-slate-900 p-8 rounded-3xl border border-amber-500/30 hover:border-amber-500 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full shadow-[0_0_30px_rgba(245,158,11,0.1)] hover:shadow-[0_0_40px_rgba(245,158,11,0.2)]">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-900 flex items-center justify-center mb-6 text-2xl font-black group-hover:scale-110 transition-transform shadow-lg shadow-amber-500/30">🎯</div>
-                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">Radar de Ofertas</h2>
-                        <p class="text-slate-400 text-sm">Escaneo en vivo. Encuentra los mejores descuentos en juegos antes de que desaparezcan.</p>
-                    </div>
-                    <div class="mt-8 flex items-center text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">
-                        Escanear <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </div>
-                </a>
-
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-6 leading-[1.1]">
+                    Nunca vuelvas a <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-amber-400">Jugar Solo</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Organiza partidas al instante, forma escuadrones competitivos y compite en torneos automatizados con recompensas reales.
+                </p>
+                
+                <div class="w-full max-w-3xl glass-panel p-2 rounded-2xl flex flex-col sm:flex-row gap-2 shadow-2xl shadow-indigo-900/20">
+                    <select class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
+                        <option>Elige un juego...</option>
+                        <option>Valorant</option>
+                        <option>League of Legends</option>
+                        <option>Call of Duty: Warzone</option>
+                        <option>EA Sports FC 24</option>
+                    </select>
+                    <select class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
+                        <option>Nivel / Rango...</option>
+                        <option>Casual (Para divertirse)</option>
+                        <option>Competitivo Medio</option>
+                        <option>Tryhard / Pro</option>
+                    </select>
+                    <button class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                        🔍 Buscar Match
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="py-20 relative z-10 border-y border-slate-800/50 bg-slate-900/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <h2 class="text-3xl font-black text-white">Lobbies Abiertos</h2>
+                        <p class="text-slate-400 mt-2">Únete a una partida que está por empezar.</p>
+                    </div>
+                    <a href="#" class="text-indigo-400 font-bold hover:text-indigo-300">Ver todos →</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-panel rounded-2xl p-6 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30">Valorant</span>
+                            <span class="text-slate-400 text-sm">Empieza en 5 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Rankeds Diamante/Ascendente</h3>
+                        <p class="text-sm text-slate-400 mb-6">Buscamos un main humo o iniciador para cerrar el equipo de 5.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full border-2 border-slate-900 border-dashed flex items-center justify-center text-xs text-slate-400 bg-slate-900/50">+2</div>
+                            </div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">
+                                Unirse (3/5)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl p-6 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">League of Legends</span>
+                            <span class="text-slate-400 text-sm">Empieza en 15 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Clash Fin de Semana</h3>
+                        <p class="text-sm text-slate-400 mb-6">Equipo Tier 2 buscando Top Laner que sepa jugar tanques.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-slate-900"></div>
+                            </div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">
+                                Unirse (4/5)
+                            </button>
+                        </div>
+                    </div>
+
+                     <div class="glass-panel rounded-2xl p-6 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">Minecraft</span>
+                            <span class="text-emerald-400 text-sm font-bold">¡Iniciando ahora!</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Survival Técnico Nuevo</h3>
+                        <p class="text-sm text-slate-400 mb-6">Acabamos de abrir el server. Buscamos gente activa para construir.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                                <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-slate-900"></div>
+                            </div>
+                            <button class="px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">
+                                Entrar (2/10)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10 overflow-hidden">
+            <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-panel border-amber-500/30 p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl">🏆</div>
+                    <div class="relative z-10 md:w-2/3">
+                        <span class="text-amber-400 font-display text-sm tracking-widest uppercase font-bold">Próximamente</span>
+                        <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-6">Torneos con <span class="text-amber-400">Premios Reales</span></h2>
+                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            Estamos integrando tecnología Web3. Muy pronto podrás participar en torneos donde los botes de premios se gestionan de forma 100% segura y automática mediante contratos inteligentes. Si ganas, el premio va directo a tu wallet.
+                        </p>
+                        <button class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+                            Notificarme el Lanzamiento Web3
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="border-t border-slate-900 bg-[#010205] py-10 text-center text-slate-600 text-sm font-mono mt-auto relative z-10">
-        &copy; 2026 KAZOKUGAMING. Todos los derechos reservados.
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Conectando jugadores en todo el mundo.</p>
     </footer>
 
-    <!-- Script de la Barra de Navegación -->
     <script src="header.js"></script>
 </body>
 </html>
