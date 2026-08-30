@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAZOKUGAMING | Torneos y Competiciones</title>
+    
+    <meta name="description" content="Compite en los mejores torneos de la comunidad. Demuestra tu habilidad y gana recompensas.">
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style> 
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; scroll-behavior: smooth; } 
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(217, 70, 239, 0.2); }
+        .bg-grid { background-image: linear-gradient(rgba(217, 70, 239, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(217, 70, 239, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+
+    <!-- El menú de navegación se carga desde header.js -->
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative">
+        <div class="absolute inset-0 z-0 bg-grid opacity-60 pointer-events-none"></div>
+
+        <!-- ENCABEZADO: HERO DE TORNEOS -->
+        <section class="relative pt-24 pb-20 overflow-hidden">
+            <!-- Resplandor fucsia de fondo -->
+            <div class="absolute top-0 right-1/2 translate-x-1/2 w-[800px] h-[500px] bg-fuchsia-600/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-fuchsia-950/50 border border-fuchsia-500/30 text-fuchsia-300 text-xs font-display tracking-widest uppercase mb-6 backdrop-blur-md">
+                    🏆 Temporada Competitiva Abierta
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
+                    Forja tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500">Leyenda</span>
+                </h1>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+                    Inscribe a tu escuadrón, compite en los cuadros eliminatorios y llévate la gloria (y los premios) a casa.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE TORNEOS DESTACADOS -->
+        <section class="py-12 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex justify-between items-end mb-8 border-b border-slate-800/50 pb-4">
+                    <div>
+                        <h2 class="text-3xl font-black text-white">Torneos Activos</h2>
+                        <p class="text-slate-400 mt-1">Inscripciones abiertas por tiempo limitado.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Tarjeta de Torneo 1 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden group hover:border-fuchsia-500/50 transition-all shadow-xl">
+                        <!-- Banner del juego -->
+                        <div class="h-48 bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-rose-600 opacity-40 mix-blend-multiply transition duration-500 group-hover:opacity-60"></div>
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Fondo Gaming" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-black/80 backdrop-blur-md text-white text-xs font-black px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-700">Valorant • 5v5</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-3xl font-black text-white drop-shadow-lg">Copa Kazoku Inverno</h3>
+                            </div>
+                        </div>
+                        
+                        <!-- Detalles del Torneo -->
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="space-y-1">
+                                    <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
+                                        📅 Inicio: <span class="text-white">Próximo Sábado, 18:00h</span>
+                                    </div>
+                                    <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
+                                        👥 Equipos: <span class="text-white">12 / 16 inscritos</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-slate-400 uppercase font-bold tracking-wider mb-1">Premio al 1º Lugar</div>
+                                    <div class="text-fuchsia-400 font-black text-lg">Random Steam Key - RED</div>
+                                    <div class="text-xs text-slate-500">+ Rango "Campeón" en Discord</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Barra de progreso de inscripción -->
+                            <div class="w-full bg-slate-900 rounded-full h-2.5 mb-6 border border-slate-800">
+                                <div class="bg-gradient-to-r from-fuchsia-500 to-rose-500 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+
+                            <button class="w-full py-4 bg-slate-800 hover:bg-fuchsia-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-fuchsia-600/25">
+                                Inscribir Escuadrón
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Torneo 2 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden group hover:border-fuchsia-500/50 transition-all shadow-xl">
+                        <!-- Banner del juego -->
+                        <div class="h-48 bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-40 mix-blend-multiply transition duration-500 group-hover:opacity-60"></div>
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Fondo Teclado" class="w-full h-full object-cover opacity-50">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-black/80 backdrop-blur-md text-white text-xs font-black px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-700">League of Legends • 1v1</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-3xl font-black text-white drop-shadow-lg">Torneo del Rey del Abismo</h3>
+                            </div>
+                        </div>
+                        
+                        <!-- Detalles del Torneo -->
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="space-y-1">
+                                    <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
+                                        📅 Inicio: <span class="text-white">Domingo, 16:00h</span>
+                                    </div>
+                                    <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
+                                        👥 Jugadores: <span class="text-white">30 / 32 inscritos</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-slate-400 uppercase font-bold tracking-wider mb-1">Premio al 1º Lugar</div>
+                                    <div class="text-cyan-400 font-black text-lg">Tarjeta Regalo 10€</div>
+                                    <div class="text-xs text-slate-500">Para Riot Points o Steam</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Barra de progreso de inscripción -->
+                            <div class="w-full bg-slate-900 rounded-full h-2.5 mb-6 border border-slate-800">
+                                <div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2.5 rounded-full" style="width: 93%"></div>
+                            </div>
+
+                            <button class="w-full py-4 bg-slate-800 hover:bg-cyan-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-cyan-600/25">
+                                Inscribirse en Solitario
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALENDARIO DE COMPETICIONES -->
+        <section class="py-16 relative z-10 bg-slate-900/40 border-t border-slate-800/50 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-black text-white mb-8 text-center">Calendario de Próximos Eventos</h3>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <!-- Evento 1 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between p-5 glass-panel rounded-2xl hover:border-slate-600 transition-colors">
+                        <div class="flex items-center gap-6 w-full md:w-auto mb-4 md:mb-0">
+                            <div class="text-center w-16">
+                                <div class="text-xs text-slate-400 uppercase font-bold">OCT</div>
+                                <div class="text-2xl font-black text-white">15</div>
+                            </div>
+                            <div class="h-10 w-px bg-slate-800 hidden md:block"></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Lanzamiento: Torneo Warzone Trios</h4>
+                                <p class="text-sm text-slate-400">Apertura de inscripciones para el evento de fin de mes.</p>
+                            </div>
+                        </div>
+                        <button class="px-4 py-2 border border-slate-700 hover:border-fuchsia-500 text-slate-300 hover:text-fuchsia-400 font-bold rounded-lg transition-colors text-sm w-full md:w-auto">
+                            Avisarme
+                        </button>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between p-5 glass-panel rounded-2xl hover:border-slate-600 transition-colors">
+                        <div class="flex items-center gap-6 w-full md:w-auto mb-4 md:mb-0">
+                            <div class="text-center w-16">
+                                <div class="text-xs text-slate-400 uppercase font-bold">NOV</div>
+                                <div class="text-2xl font-black text-white">02</div>
+                            </div>
+                            <div class="h-10 w-px bg-slate-800 hidden md:block"></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Clasificatorias Minecraft Hunger Games</h4>
+                                <p class="text-sm text-slate-400">Fase de grupos. Servidor privado KAZOKU.</p>
+                            </div>
+                        </div>
+                        <button class="px-4 py-2 border border-slate-700 hover:border-fuchsia-500 text-slate-300 hover:text-fuchsia-400 font-bold rounded-lg transition-colors text-sm w-full md:w-auto">
+                            Avisarme
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Conectando jugadores en todo el mundo.</p>
+    </footer>
+
+    <!-- Importamos el menú de navegación -->
+    <script src="header.js"></script>
+</body>
+</html>
