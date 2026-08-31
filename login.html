@@ -11,27 +11,22 @@
     <style> 
         body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow: hidden; } 
         .font-display { font-family: 'Space Grotesk', sans-serif; }
-        .glass-panel { background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); }
     </style>
 </head>
 <body class="text-slate-200 h-screen flex selection:bg-indigo-500/30 selection:text-indigo-200">
 
-    <!-- BOTÓN VOLVER (Minimalista) -->
+    <!-- BOTÓN VOLVER -->
     <a href="index.html" class="absolute top-6 left-6 z-50 flex items-center gap-2 text-slate-400 hover:text-white transition-colors font-bold bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
         Volver a la Base
     </a>
 
-    <!-- LADO IZQUIERDO: Arte visual (Oculto en móviles) -->
+    <!-- LADO IZQUIERDO: Arte visual -->
     <div class="hidden lg:flex lg:w-1/2 relative bg-slate-900 overflow-hidden items-center justify-center">
-        <!-- Overlay oscuro para dar contraste -->
         <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/40 to-[#050508] z-10 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent z-10"></div>
-        
-        <!-- Imagen de fondo épica -->
         <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Fondo Gaming" class="absolute inset-0 w-full h-full object-cover opacity-60">
         
-        <!-- Texto decorativo sobre la imagen -->
         <div class="relative z-20 p-12 text-center">
             <h2 class="text-5xl font-black text-white mb-4 tracking-tighter">Bienvenido a la<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400">Resistencia</span></h2>
             <p class="text-lg text-indigo-200/80 font-medium">Miles de jugadores te están esperando.</p>
@@ -40,11 +35,10 @@
 
     <!-- LADO DERECHO: Formulario de Acceso -->
     <div class="w-full lg:w-1/2 flex items-center justify-center relative bg-[#050508]">
-        <!-- Brillo decorativo de fondo -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="w-full max-w-md p-8 relative z-10">
-            <!-- Logo Central -->
+            <!-- Logo -->
             <div class="flex justify-center mb-10">
                 <div class="flex items-center gap-2 text-3xl font-black tracking-tighter">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">K</div>
@@ -58,89 +52,136 @@
                 <button id="btn-tab-registro" class="flex-1 py-2 text-sm font-bold text-slate-400 hover:text-white transition-all">Registrarse</button>
             </div>
 
+            <!-- Panel de Mensajes del Sistema (Errores/Éxito) -->
+            <div id="mensaje-sistema" class="hidden mb-4 p-3 rounded-lg text-sm font-bold text-center border"></div>
+
             <!-- Formulario principal -->
             <form id="form-acceso" class="space-y-5">
                 
-                <!-- Campo de Usuario (Solo se muestra en registro) -->
                 <div id="campo-usuario" class="hidden">
                     <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Nombre de Jugador (Gamertag)</label>
-                    <input type="text" placeholder="Ej: ShadowNinja99" class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
+                    <input type="text" id="input-usuario" placeholder="Ej: ShadowNinja99" class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Correo Electrónico</label>
-                    <input type="email" placeholder="tu@correo.com" class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
+                    <input type="email" id="input-email" placeholder="tu@correo.com" required class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
                 </div>
 
                 <div>
                     <div class="flex justify-between items-end mb-1">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Contraseña</label>
-                        <a href="#" id="link-recuperar" class="text-xs text-indigo-400 font-bold hover:text-indigo-300">¿Olvidaste tu clave?</a>
                     </div>
-                    <input type="password" placeholder="••••••••" class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
+                    <input type="password" id="input-password" placeholder="••••••••" required class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
                 </div>
 
                 <button type="button" id="btn-accion-principal" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] mt-4">
                     Entrar a la Base
                 </button>
             </form>
-
-            <p class="text-center text-sm text-slate-500 mt-8">
-                Al continuar, aceptas nuestros <a href="#" class="text-slate-300 hover:text-white underline">Términos de Servicio</a>.
-            </p>
         </div>
     </div>
 
-    <!-- Lógica de la interfaz -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btnLogin = document.getElementById('btn-tab-login');
-            const btnRegistro = document.getElementById('btn-tab-registro');
-            const campoUsuario = document.getElementById('campo-usuario');
-            const linkRecuperar = document.getElementById('link-recuperar');
-            const btnAccion = document.getElementById('btn-accion-principal');
+    <!-- MOTOR DE AUTENTICACIÓN FIREBASE -->
+    <script type="module">
+        // 1. Importar herramientas de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-            // Cambiar a pestaña "Registrarse"
-            btnRegistro.addEventListener('click', () => {
-                // Estilos de botones
-                btnRegistro.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
-                btnRegistro.classList.remove('text-slate-400');
-                
-                btnLogin.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
-                btnLogin.classList.add('text-slate-400');
+        // 2. Conectar tu proyecto específico
+        const firebaseConfig = {
+            apiKey: "AIzaSyCvGL-OS6zimRbZerqBKWgJ7WYERlDUn5w",
+            authDomain: "kazokugaming-758d5.firebaseapp.com",
+            projectId: "kazokugaming-758d5",
+            storageBucket: "kazokugaming-758d5.firebasestorage.app",
+            messagingSenderId: "577769463176",
+            appId: "1:577769463176:web:50753c43c302ca321aee3d"
+        };
 
-                // Mostrar/Ocultar campos
-                campoUsuario.classList.remove('hidden');
-                linkRecuperar.classList.add('hidden');
-                btnAccion.innerText = "Crear mi Cuenta";
-            });
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-            // Cambiar a pestaña "Iniciar Sesión"
-            btnLogin.addEventListener('click', () => {
-                // Estilos de botones
-                btnLogin.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
-                btnLogin.classList.remove('text-slate-400');
-                
-                btnRegistro.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
-                btnRegistro.classList.add('text-slate-400');
+        // 3. Controladores de la interfaz visual
+        let modoRegistro = false;
+        const btnLogin = document.getElementById('btn-tab-login');
+        const btnRegistro = document.getElementById('btn-tab-registro');
+        const campoUsuario = document.getElementById('campo-usuario');
+        const btnAccion = document.getElementById('btn-accion-principal');
+        const mensajeSistema = document.getElementById('mensaje-sistema');
 
-                // Mostrar/Ocultar campos
-                campoUsuario.classList.add('hidden');
-                linkRecuperar.classList.remove('hidden');
-                btnAccion.innerText = "Entrar a la Base";
-            });
+        // Función para mostrar mensajes visuales
+        const mostrarMensaje = (texto, tipo) => {
+            mensajeSistema.classList.remove('hidden', 'bg-red-500/20', 'border-red-500', 'text-red-400', 'bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
+            if (tipo === 'error') {
+                mensajeSistema.classList.add('bg-red-500/20', 'border-red-500', 'text-red-400');
+            } else {
+                mensajeSistema.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
+            }
+            mensajeSistema.innerText = texto;
+        };
 
-            // Simular inicio de sesión (Redirige al home)
-            btnAccion.addEventListener('click', () => {
-                // Aquí agregaremos la conexión real a la base de datos más adelante.
-                // Por ahora, simulamos que el login fue exitoso y volvemos al inicio.
-                btnAccion.innerText = "Conectando...";
-                btnAccion.classList.add('animate-pulse');
-                
-                setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 800);
-            });
+        // Cambiar a "Registrarse"
+        btnRegistro.addEventListener('click', () => {
+            modoRegistro = true;
+            btnRegistro.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+            btnRegistro.classList.remove('text-slate-400');
+            btnLogin.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+            btnLogin.classList.add('text-slate-400');
+            campoUsuario.classList.remove('hidden');
+            btnAccion.innerText = "Crear mi Cuenta";
+            mensajeSistema.classList.add('hidden');
+        });
+
+        // Cambiar a "Iniciar Sesión"
+        btnLogin.addEventListener('click', () => {
+            modoRegistro = false;
+            btnLogin.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+            btnLogin.classList.remove('text-slate-400');
+            btnRegistro.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+            btnRegistro.classList.add('text-slate-400');
+            campoUsuario.classList.add('hidden');
+            btnAccion.innerText = "Entrar a la Base";
+            mensajeSistema.classList.add('hidden');
+        });
+
+        // 4. Lógica central de autenticación
+        btnAccion.addEventListener('click', () => {
+            const email = document.getElementById('input-email').value;
+            const password = document.getElementById('input-password').value;
+
+            if (!email || !password) {
+                mostrarMensaje("Por favor, completa todos los campos.", "error");
+                return;
+            }
+
+            btnAccion.innerText = "Conectando...";
+            btnAccion.disabled = true;
+
+            if (modoRegistro) {
+                // Ejecuta la creación de cuenta en Firebase
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        mostrarMensaje("¡Cuenta creada con éxito! Entrando...", "exito");
+                        setTimeout(() => window.location.href = "index.html", 1500);
+                    })
+                    .catch((error) => {
+                        mostrarMensaje("Error al registrar: " + error.message, "error");
+                        btnAccion.innerText = "Crear mi Cuenta";
+                        btnAccion.disabled = false;
+                    });
+            } else {
+                // Ejecuta el inicio de sesión en Firebase
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        mostrarMensaje("¡Acceso autorizado!", "exito");
+                        setTimeout(() => window.location.href = "index.html", 1000);
+                    })
+                    .catch((error) => {
+                        mostrarMensaje("Credenciales incorrectas. Intenta de nuevo.", "error");
+                        btnAccion.innerText = "Entrar a la Base";
+                        btnAccion.disabled = false;
+                    });
+            }
         });
     </script>
 </body>
