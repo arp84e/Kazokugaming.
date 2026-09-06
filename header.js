@@ -16,16 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
             
             <!-- NAVEGACIÓN DESKTOP -->
             <nav class="hidden md:flex space-x-8 items-center bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800">
-                <a href="${prefix}index.html" class="text-sm font-bold text-slate-300 hover:text-indigo-400 transition flex items-center gap-2">🎯 Partidas</a>
-                <a href="${prefix}torneos.html" class="text-sm font-bold text-slate-300 hover:text-fuchsia-400 transition flex items-center gap-2">🏆 Torneos</a>
-                <a href="${prefix}grupos.html" class="text-sm font-bold text-slate-300 hover:text-emerald-400 transition flex items-center gap-2">🛡️ Escuadrones</a>
+                <a href="${prefix}index.html" class="text-sm font-bold text-slate-300 hover:text-indigo-400 transition flex items-center gap-2">🎯 Comunidad</a>
+                <a href="${prefix}torneos.html" class="text-sm font-bold text-slate-300 hover:text-fuchsia-400 transition flex items-center gap-2">🏆 Eventos</a>
+                <a href="${prefix}grupos.html" class="text-sm font-bold text-slate-300 hover:text-emerald-400 transition flex items-center gap-2">🛡️ Familias</a>
             </nav>
 
             <!-- PERFIL / ACCESO -->
             <div class="hidden lg:flex items-center gap-4">
-                <a href="${prefix}login.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Iniciar Sesión</a>
+                <a href="${prefix}login.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Mi Perfil</a>
                 <button id="btn-crear-evento" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:scale-105">
-                    + Crear Partida
+                    + Invitar a Jugar
                 </button>
             </div>
             
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <!-- MENÚ MÓVIL (DESPLEGABLE) -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0f] border-b border-indigo-900/50 absolute w-full left-0 top-20 shadow-2xl backdrop-blur-xl">
             <nav class="flex flex-col px-6 pt-4 pb-8 space-y-4">
-                <a href="${prefix}index.html" class="text-base font-bold text-slate-300">🎯 Buscar Partidas</a>
-                <a href="${prefix}torneos.html" class="text-base font-bold text-slate-300">🏆 Torneos Activos</a>
-                <a href="${prefix}grupos.html" class="text-base font-bold text-slate-300">🛡️ Mis Escuadrones</a>
+                <a href="${prefix}index.html" class="text-base font-bold text-slate-300">🎯 Comunidad Activa</a>
+                <a href="${prefix}torneos.html" class="text-base font-bold text-slate-300">🏆 Eventos Especiales</a>
+                <a href="${prefix}grupos.html" class="text-base font-bold text-slate-300">🛡️ Unirse a una Familia</a>
                 <hr class="border-slate-800">
-                <a href="${prefix}login.html" class="w-full py-3 bg-indigo-600 text-center block text-white font-bold rounded-xl mt-4">Iniciar Sesión</a>
+                <a href="${prefix}login.html" class="w-full py-3 bg-indigo-600 text-center block text-white font-bold rounded-xl mt-4">Mi Perfil</a>
             </nav>
         </div>
     </header>`;
