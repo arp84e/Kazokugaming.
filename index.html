@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAZOKUGAMING | Tu Comunidad Gamer</title>
     
-    <!-- Modificamos la descripción para el SEO, enfocándonos en comunidad -->
+    <!-- SEO y Descripción -->
     <meta name="description" content="Únete a KazokuGaming, la comunidad donde los verdaderos gamers se encuentran, forman escuadrones y construyen amistades duraderas.">
+    
+    <!-- Metadatos para compartir en Redes Sociales y Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kazokugaming.com/">
+    <meta property="og:title" content="KAZOKUGAMING | Tu Comunidad Gamer">
+    <meta property="og:description" content="Únete a KazokuGaming, la comunidad donde los verdaderos gamers se encuentran, forman escuadrones y construyen amistades duraderas.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta name="theme-color" content="#4f46e5">
+
     <!-- Fuentes tipográficas modernas -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <!-- Carga de Tailwind CSS para los estilos -->
@@ -30,11 +39,11 @@
     <main class="flex-grow relative">
         <div class="absolute inset-0 z-0 bg-grid opacity-60 pointer-events-none"></div>
 
+        <!-- HERO SECTION -->
         <section class="relative pt-24 pb-32 overflow-hidden">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-600/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
-                <!-- Cambiamos "Matchmaking" por algo más cálido -->
                 <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-indigo-950/50 border border-indigo-500/30 text-indigo-300 text-xs font-display tracking-widest uppercase mb-8 backdrop-blur-md">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Comunidad Activa 24/7
                 </div>
@@ -44,7 +53,6 @@
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-amber-400">Jugar Solo</span>
                 </h1>
                 
-                <!-- Ajustamos el mensaje para promover la amistad y los escuadrones -->
                 <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
                     Únete a nuestra familia, organiza partidas al instante, forma lazos duraderos y encuentra a los compañeros de equipo perfectos para cada aventura.
                 </p>
@@ -70,6 +78,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE GRUPOS -->
         <section class="py-20 relative z-10 border-t border-slate-800/50 bg-slate-900/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-10">
@@ -97,6 +106,44 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECCIÓN DE NOTICIAS Y REVIEWS -->
+        <section class="py-20 relative z-10 bg-[#050508] border-t border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <h2 class="text-3xl font-black text-white">Últimas Novedades</h2>
+                        <p class="text-slate-400 mt-2">Noticias, reseñas de hardware y guías para mejorar tu setup.</p>
+                    </div>
+                </div>
+
+                <div id="contenedor-noticias" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70&fm=webp" alt="Review de Hardware" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async">
+                            <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Hardware</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-indigo-400 transition-colors">Análisis: Nuevos componentes para gaming competitivo</h3>
+                            <p class="text-sm text-slate-400 mb-4 line-clamp-3">Descubre si vale la pena actualizar tu equipo para asegurar el mejor rendimiento en tus partidas.</p>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
+                        </div>
+                    </article>
+
+                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all hover:-translate-y-1 group">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70&fm=webp" alt="Guía de juego" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Guías</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-emerald-400 transition-colors">Cómo optimizar tu conexión y reducir la latencia</h3>
+                            <p class="text-sm text-slate-400 mb-4 line-clamp-3">Configuraciones esenciales para asegurar una comunicación fluida y sin cortes con tu escuadrón.</p>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
@@ -106,7 +153,7 @@
         <p>&copy; 2026 KAZOKUGAMING. Construyendo la mejor familia gamer.</p>
     </footer>
 
-    <!-- Modal para crear evento (Oculto por defecto) -->
+    <!-- MODAL PARA CREAR EVENTO -->
     <div id="modal-crear-partida" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="fondo-modal"></div>
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-indigo-500/30 rounded-2xl shadow-2xl shadow-indigo-900/50 overflow-hidden">
@@ -158,13 +205,12 @@
         </div>
     </div>
 
-    <!-- Script de lógica de la página (seguro y optimizado) -->
+    <!-- SCRIPT DE INTERACCIÓN -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('modal-crear-partida');
             const contenedorPartidas = document.getElementById('contenedor-partidas');
 
-            // Función de seguridad: Evita que alguien inyecte código malicioso en tus formularios (XSS)
             const sanitizarHTML = (texto) => {
                 const elemento = document.createElement('div');
                 if (texto) {
