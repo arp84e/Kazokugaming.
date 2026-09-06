@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAZOKUGAMING | Iniciar Sesión</title>
+    <title>KAZOKUGAMING | Únete a la Familia</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,8 +26,8 @@
         <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Vista en primera persona de un entorno gaming inmersivo e iluminado" class="absolute inset-0 w-full h-full object-cover opacity-60">
         
         <div class="relative z-20 p-12 text-center">
-            <h2 class="text-5xl font-black text-white mb-4 tracking-tighter">Bienvenido a la<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400">Resistencia</span></h2>
-            <p class="text-lg text-indigo-200/80 font-medium">Miles de jugadores te están esperando.</p>
+            <h2 class="text-5xl font-black text-white mb-4 tracking-tighter">Únete a la<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400">Familia</span></h2>
+            <p class="text-lg text-indigo-200/80 font-medium">Miles de jugadores te están esperando para hacer equipo.</p>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
 
             <div class="flex bg-slate-900/50 p-1 rounded-xl mb-8 border border-slate-800">
                 <button id="btn-tab-login" class="flex-1 py-2 text-sm font-bold bg-indigo-600 text-white rounded-lg shadow-md transition-all">Iniciar Sesión</button>
-                <button id="btn-tab-registro" class="flex-1 py-2 text-sm font-bold text-slate-400 hover:text-white transition-all">Registrarse</button>
+                <button id="btn-tab-registro" class="flex-1 py-2 text-sm font-bold text-slate-400 hover:text-white transition-all">Crear Perfil</button>
             </div>
 
             <div id="mensaje-sistema" class="hidden mb-4 p-3 rounded-lg text-sm font-bold text-center border"></div>
@@ -65,11 +65,11 @@
                     <div class="flex justify-between items-end mb-1">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Contraseña</label>
                     </div>
-                    <input type="password" id="input-password" placeholder="••••••••" required class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
+                    <input type="password" id="input-password" placeholder="••••••••" required minlength="6" class="w-full bg-slate-900 border border-slate-800 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
                 </div>
 
                 <button type="button" id="btn-accion-principal" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] mt-4">
-                    Entrar a la Base
+                    Entrar a la Comunidad
                 </button>
             </form>
         </div>
@@ -79,7 +79,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-        // CREDENCIALES PROTEGIDAS: Sustituidas por marcadores (Se recomienda inyección mediante build system o variables de entorno)
+        // Mantenemos la estructura de Firebase intacta
         const firebaseConfig = {
             apiKey: "TU_API_KEY",
             authDomain: "TU_PROYECTO.firebaseapp.com",
@@ -92,7 +92,6 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        // Controladores de la interfaz visual
         let modoRegistro = false;
         const btnLogin = document.getElementById('btn-tab-login');
         const btnRegistro = document.getElementById('btn-tab-registro');
@@ -117,7 +116,7 @@
             btnLogin.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
             btnLogin.classList.add('text-slate-400');
             campoUsuario.classList.remove('hidden');
-            btnAccion.innerText = "Crear mi Cuenta";
+            btnAccion.innerText = "Unirme a la Familia";
             mensajeSistema.classList.add('hidden');
         });
 
@@ -128,7 +127,7 @@
             btnRegistro.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
             btnRegistro.classList.add('text-slate-400');
             campoUsuario.classList.add('hidden');
-            btnAccion.innerText = "Entrar a la Base";
+            btnAccion.innerText = "Entrar a la Comunidad";
             mensajeSistema.classList.add('hidden');
         });
 
@@ -141,29 +140,37 @@
                 return;
             }
 
+            // Nueva validación de seguridad de contraseña
+            if (password.length < 6) {
+                mostrarMensaje("Tu contraseña debe tener al menos 6 caracteres.", "error");
+                return;
+            }
+
             btnAccion.innerText = "Conectando...";
             btnAccion.disabled = true;
 
             if (modoRegistro) {
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        mostrarMensaje("¡Cuenta creada con éxito! Entrando...", "exito");
+                        mostrarMensaje("¡Bienvenido a KazokuGaming! Entrando...", "exito");
                         setTimeout(() => window.location.href = "index.html", 1500);
                     })
                     .catch((error) => {
-                        mostrarMensaje("Error al registrar: " + error.message, "error");
-                        btnAccion.innerText = "Crear mi Cuenta";
+                        let msj = error.message;
+                        if(error.code === 'auth/email-already-in-use') msj = "Este correo ya pertenece a la familia.";
+                        mostrarMensaje(msj, "error");
+                        btnAccion.innerText = "Unirme a la Familia";
                         btnAccion.disabled = false;
                     });
             } else {
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        mostrarMensaje("¡Acceso autorizado!", "exito");
+                        mostrarMensaje("¡Qué bueno verte de nuevo!", "exito");
                         setTimeout(() => window.location.href = "index.html", 1000);
                     })
                     .catch((error) => {
                         mostrarMensaje("Credenciales incorrectas. Intenta de nuevo.", "error");
-                        btnAccion.innerText = "Entrar a la Base";
+                        btnAccion.innerText = "Entrar a la Comunidad";
                         btnAccion.disabled = false;
                     });
             }
