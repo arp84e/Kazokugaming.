@@ -214,8 +214,8 @@
                         juego,
                         descripcion: descripcion || "¡Únete y sé parte de la familia!",
                         capacidad,
-                        dueñoId: usuarioActual.uid,
-                        dueñoNombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
+                        duenoId: usuarioActual.uid,
+                        duenoNombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
                         miembros: [usuarioActual.uid],
                         creadoEn: serverTimestamp()
                     });
