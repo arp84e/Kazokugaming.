@@ -24,10 +24,11 @@ const FEEDS_NOTICIAS = [
         url: 'https://news.google.com/rss/search?q=videojuegos&hl=es-419&gl=US&ceid=US:es-419',
         fuente: 'Google Noticias',
         color: 'bg-emerald-600',
-        max: 4,
+        max: 5,
         esGoogleNews: true // el título trae " - NombreDelMedio" al final; lo separamos
     },
-    { url: 'https://feeds.ign.com/ign/all', fuente: 'IGN', color: 'bg-indigo-600', max: 2 }
+    { url: 'https://feeds.ign.com/ign/all', fuente: 'IGN', color: 'bg-indigo-600', max: 4 },
+    { url: 'https://kotaku.com/rss', fuente: 'Kotaku', color: 'bg-fuchsia-600', max: 4 }
 ];
 
 const RSS2JSON_ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=';
@@ -97,7 +98,7 @@ async function cargarFeed(feed) {
  * Usa caché en sessionStorage para no golpear el servicio de terceros en
  * cada recarga de página.
  */
-export async function cargarNoticias() {
+export async function cargarNoticias(maxTotal = 9) {
     try {
         const cacheRaw = sessionStorage.getItem(CLAVE_CACHE);
         if (cacheRaw) {
@@ -116,7 +117,8 @@ export async function cargarNoticias() {
         .filter((r) => r.status === 'fulfilled')
         .flatMap((r) => r.value)
         .filter((n) => n.titulo && n.link)
-        .sort((a, b) => b.fecha - a.fecha);
+        .sort((a, b) => b.fecha - a.fecha)
+        .slice(0, maxTotal);
 
     if (noticias.length > 0) {
         try {

@@ -210,7 +210,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // --- Últimas Novedades: noticias reales de videojuegos (IGN, Kotaku) ---
             const contenedorNoticias = document.getElementById('contenedor-noticias');
-            contenedorNoticias.innerHTML = skeletonCards(3);
+            contenedorNoticias.innerHTML = skeletonCards(6);
 
             cargarNoticias().then((noticias) => {
                 if (noticias.length === 0) {
