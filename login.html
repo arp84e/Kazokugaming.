@@ -77,22 +77,14 @@
 
     <!-- SCRIPT DE CONEXIÓN A FIREBASE -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        // Tus credenciales oficiales de KazokuGaming
-        const firebaseConfig = {
-            apiKey: "AIzaSyCvGL-OS6zimRbZerqBKWgJ7WYERlDUn5w",
-            authDomain: "kazokugaming-758d5.firebaseapp.com",
-            projectId: "kazokugaming-758d5",
-            storageBucket: "kazokugaming-758d5.firebasestorage.app",
-            messagingSenderId: "577769463176",
-            appId: "1:577769463176:web:50753c43c302ca321aee3d"
-        };
-
-        // Inicializamos la aplicación
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+        import {
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import {
+            doc, setDoc
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { auth, db, updateProfile, serverTimestamp } from './firebase-init.js';
 
         let modoRegistro = false;
         const btnLogin = document.getElementById('btn-tab-login');
@@ -133,9 +125,17 @@
             mensajeSistema.classList.add('hidden');
         });
 
-        btnAccion.addEventListener('click', () => {
-            const email = document.getElementById('input-email').value;
+        // Reglas mínimas de validación de gamertag (deben coincidir en espíritu
+        // con lo que firestore.rules exige para el documento en /usuarios/{uid})
+        const gamertagValido = (valor) => {
+            const limpio = valor.trim();
+            return limpio.length >= 3 && limpio.length <= 30;
+        };
+
+        btnAccion.addEventListener('click', async () => {
+            const email = document.getElementById('input-email').value.trim();
             const password = document.getElementById('input-password').value;
+            const gamertag = document.getElementById('input-usuario').value.trim();
 
             if (!email || !password) {
                 mostrarMensaje("Por favor, completa todos los campos.", "error");
@@ -147,35 +147,50 @@
                 return;
             }
 
+            if (modoRegistro && !gamertagValido(gamertag)) {
+                mostrarMensaje("Tu Gamertag debe tener entre 3 y 30 caracteres.", "error");
+                return;
+            }
+
             btnAccion.innerText = "Conectando...";
             btnAccion.disabled = true;
 
             if (modoRegistro) {
-                // Crear nuevo usuario
-                createUserWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        mostrarMensaje("¡Bienvenido a KazokuGaming! Entrando...", "exito");
-                        setTimeout(() => window.location.href = "index.html", 1500);
-                    })
-                    .catch((error) => {
-                        let msj = error.message;
-                        if(error.code === 'auth/email-already-in-use') msj = "Este correo ya pertenece a la familia.";
-                        mostrarMensaje(msj, "error");
-                        btnAccion.innerText = "Unirme a la Familia";
-                        btnAccion.disabled = false;
+                try {
+                    // 1. Crear el usuario en Firebase Auth
+                    const credencial = await createUserWithEmailAndPassword(auth, email, password);
+
+                    // 2. Guardar el gamertag en el perfil de Auth (para mostrarlo en el header al instante)
+                    await updateProfile(credencial.user, { displayName: gamertag });
+
+                    // 3. Crear el documento de perfil en Firestore (colección "usuarios")
+                    //    Esto es lo que firestore.rules valida y protege.
+                    await setDoc(doc(db, 'usuarios', credencial.user.uid), {
+                        gamertag: gamertag,
+                        email: email,
+                        creadoEn: serverTimestamp()
                     });
+
+                    mostrarMensaje("¡Bienvenido a KazokuGaming! Entrando...", "exito");
+                    setTimeout(() => window.location.href = "index.html", 1500);
+                } catch (error) {
+                    let msj = error.message;
+                    if (error.code === 'auth/email-already-in-use') msj = "Este correo ya pertenece a la familia.";
+                    if (error.code === 'auth/invalid-email') msj = "Ese correo no parece válido.";
+                    mostrarMensaje(msj, "error");
+                    btnAccion.innerText = "Unirme a la Familia";
+                    btnAccion.disabled = false;
+                }
             } else {
-                // Iniciar sesión existente
-                signInWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        mostrarMensaje("¡Qué bueno verte de nuevo!", "exito");
-                        setTimeout(() => window.location.href = "index.html", 1000);
-                    })
-                    .catch((error) => {
-                        mostrarMensaje("Credenciales incorrectas. Intenta de nuevo.", "error");
-                        btnAccion.innerText = "Entrar a la Comunidad";
-                        btnAccion.disabled = false;
-                    });
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    mostrarMensaje("¡Qué bueno verte de nuevo!", "exito");
+                    setTimeout(() => window.location.href = "index.html", 1000);
+                } catch (error) {
+                    mostrarMensaje("Credenciales incorrectas. Intenta de nuevo.", "error");
+                    btnAccion.innerText = "Entrar a la Comunidad";
+                    btnAccion.disabled = false;
+                }
             }
         });
     </script>
