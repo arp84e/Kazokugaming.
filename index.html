@@ -102,31 +102,8 @@
                     </div>
                 </div>
 
-                <div id="contenedor-noticias" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
-                        <div class="h-48 bg-slate-800 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70&fm=webp" alt="Review de Hardware" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async">
-                            <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Hardware</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-indigo-400 transition-colors">Análisis: Nuevos componentes para gaming competitivo</h3>
-                            <p class="text-sm text-slate-400 mb-4 line-clamp-3">Descubre si vale la pena actualizar tu equipo para asegurar el mejor rendimiento en tus partidas.</p>
-                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
-                        </div>
-                    </article>
-
-                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all hover:-translate-y-1 group">
-                        <div class="h-48 bg-slate-800 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70&fm=webp" alt="Guía de juego" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async">
-                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Guías</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-emerald-400 transition-colors">Cómo optimizar tu conexión y reducir la latencia</h3>
-                            <p class="text-sm text-slate-400 mb-4 line-clamp-3">Configuraciones esenciales para asegurar una comunicación fluida y sin cortes con tu escuadrón.</p>
-                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
-                        </div>
-                    </article>
-                </div>
+                <div id="contenedor-noticias" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                <p class="mt-6 text-xs text-slate-600 text-center sm:text-left">Titulares y resúmenes cortesía de sus fuentes originales — haz clic para leer el artículo completo en el sitio del medio.</p>
             </div>
         </section>
     </main>
@@ -215,6 +192,7 @@
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, skeletonCards } from './ui-utils.js';
+        import { cargarNoticias } from './noticias.js';
 
         const sanitizarHTML = (texto) => {
             const elemento = document.createElement('div');
@@ -230,6 +208,42 @@
         };
 
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Últimas Novedades: noticias reales de videojuegos (IGN, Kotaku) ---
+            const contenedorNoticias = document.getElementById('contenedor-noticias');
+            contenedorNoticias.innerHTML = skeletonCards(3);
+
+            cargarNoticias(3).then((noticias) => {
+                if (noticias.length === 0) {
+                    contenedorNoticias.innerHTML = `
+                        <p class="col-span-full text-slate-500 text-center py-6">
+                            No se pudieron cargar las noticias en este momento. Visita
+                            <a href="https://www.ign.com/games" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">IGN</a>
+                            o <a href="https://kotaku.com" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:underline">Kotaku</a> directamente.
+                        </p>`;
+                    return;
+                }
+
+                contenedorNoticias.innerHTML = noticias.map((n) => `
+                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
+                        <a href="${n.link}" target="_blank" rel="noopener noreferrer" class="block">
+                            <div class="h-48 bg-slate-800 relative overflow-hidden">
+                                ${n.imagen
+                                    ? `<img src="${n.imagen}" alt="${sanitizarHTML(n.titulo)}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
+                                    : `<div class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-4xl">🎮</div>`}
+                                <span class="absolute top-4 left-4 ${n.color} text-white text-xs font-bold px-3 py-1 rounded-full">${sanitizarHTML(n.fuente)}</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-indigo-400 transition-colors line-clamp-2">${sanitizarHTML(n.titulo)}</h3>
+                                <p class="text-sm text-slate-400 mb-4 line-clamp-3">${sanitizarHTML(n.resumen)}</p>
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
+                            </div>
+                        </a>
+                    </article>`).join('');
+            }).catch((error) => {
+                console.error("Error cargando noticias:", error);
+                contenedorNoticias.innerHTML = `<p class="col-span-full text-slate-500 text-center py-6">No se pudieron cargar las noticias en este momento.</p>`;
+            });
+
             const modal = document.getElementById('modal-crear-partida');
             const contenedorPartidas = document.getElementById('contenedor-partidas');
             contenedorPartidas.innerHTML = skeletonCards(3);
