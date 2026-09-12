@@ -73,9 +73,9 @@ function pintarSesionActiva(gamertag, prefix) {
     if (zona) {
         zona.innerHTML = `
             <div id="zona-notificaciones-desktop" class="relative"></div>
-            <span class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+            <a href="${prefix}perfil.html" class="text-sm font-bold text-emerald-400 flex items-center gap-2 hover:text-emerald-300 transition">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ${gamertag}
-            </span>
+            </a>
             <button id="btn-crear-evento" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:scale-105">
                 + Invitar a Jugar
             </button>
@@ -86,7 +86,7 @@ function pintarSesionActiva(gamertag, prefix) {
         });
     }
     if (zonaMovil) {
-        zonaMovil.innerHTML = `<span class="text-white">👋 ${gamertag}</span>`;
+        zonaMovil.innerHTML = `<a href="${prefix}perfil.html" class="text-white block">👋 ${gamertag} · Mi Perfil</a>`;
         zonaMovil.classList.remove('bg-indigo-600');
     }
 }
@@ -109,8 +109,12 @@ function iniciarNotificaciones(uid, prefix) {
     const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
 
     let ultimasLecturas = {};
+    let ultimasLecturasPartidas = {};
+    let ultimosNoLeidos = [];
     // Map<escuadronId, { nombre, ultimoMensajeMillis, unsubscribeMensajes }>
     const escuadronesSeguidos = new Map();
+    // Map<partidaId, { nombre, ultimoMensajeMillis, unsubscribeMensajes }>
+    const partidasSeguidas = new Map();
 
     function pintarCampanita() {
         const noLeidos = [];
@@ -118,9 +122,17 @@ function iniciarNotificaciones(uid, prefix) {
             if (info.ultimoMensajeMillis == null) return;
             const leidoEn = ultimasLecturas[escuadronId]?.toMillis ? ultimasLecturas[escuadronId].toMillis() : 0;
             if (info.ultimoMensajeMillis > leidoEn) {
-                noLeidos.push({ id: escuadronId, nombre: info.nombre });
+                noLeidos.push({ id: escuadronId, nombre: info.nombre, tipo: 'escuadrón' });
             }
         });
+        partidasSeguidas.forEach((info, partidaId) => {
+            if (info.ultimoMensajeMillis == null) return;
+            const leidoEn = ultimasLecturasPartidas[partidaId]?.toMillis ? ultimasLecturasPartidas[partidaId].toMillis() : 0;
+            if (info.ultimoMensajeMillis > leidoEn) {
+                noLeidos.push({ id: partidaId, nombre: info.nombre, tipo: 'partida' });
+            }
+        });
+        ultimosNoLeidos = noLeidos;
 
         const hayNoLeidos = noLeidos.length > 0;
         const badge = hayNoLeidos
@@ -137,9 +149,9 @@ function iniciarNotificaciones(uid, prefix) {
                 <div class="max-h-72 overflow-y-auto">
                     ${hayNoLeidos
                         ? noLeidos.map(n => `
-                            <a href="${prefix}grupos.html" class="block px-4 py-3 hover:bg-slate-900 border-b border-slate-800/50 text-sm">
+                            <a href="${prefix}${n.tipo === 'escuadrón' ? 'grupos.html' : 'index.html'}" class="block px-4 py-3 hover:bg-slate-900 border-b border-slate-800/50 text-sm">
                                 <span class="text-emerald-400 font-bold">●</span>
-                                <span class="text-slate-200">Mensajes nuevos en <strong class="text-white">${sanitizarHTML(n.nombre)}</strong></span>
+                                <span class="text-slate-200">Mensajes nuevos en ${n.tipo === 'escuadrón' ? 'el escuadrón' : 'la partida'} <strong class="text-white">${sanitizarHTML(n.nombre)}</strong></span>
                             </a>`).join('')
                         : `<p class="px-4 py-6 text-center text-slate-500 text-sm">No hay mensajes nuevos.</p>`}
                 </div>
@@ -167,13 +179,16 @@ function iniciarNotificaciones(uid, prefix) {
             panel.classList.add('hidden');
         }
         if (e.target.closest('#btn-notificaciones-movil')) {
-            window.location.href = `${prefix}grupos.html`;
+            const primero = ultimosNoLeidos[0];
+            window.location.href = `${prefix}${primero && primero.tipo === 'partida' ? 'index.html' : 'grupos.html'}`;
         }
     });
 
     // 1. Escuchar el perfil del usuario para saber qué ha leído
     onSnapshot(doc(db, 'usuarios', uid), (snap) => {
-        ultimasLecturas = snap.exists() ? (snap.data().ultimasLecturas || {}) : {};
+        const datos = snap.exists() ? snap.data() : {};
+        ultimasLecturas = datos.ultimasLecturas || {};
+        ultimasLecturasPartidas = datos.ultimasLecturasPartidas || {};
         pintarCampanita();
     });
 
@@ -208,6 +223,56 @@ function iniciarNotificaciones(uid, prefix) {
         });
 
         pintarCampanita();
+    });
+
+    // 3. Escuchar mis partidas (como autor o como interesado), y su último mensaje.
+    // Se usan dos consultas por separado (en vez de un OR) para no depender de
+    // índices compuestos especiales en Firestore.
+    let idsPartidasAutor = new Set();
+    let idsPartidasInteresado = new Set();
+    const datosPartidasCache = new Map();
+
+    function recalcularPartidasSeguidas() {
+        const idsActuales = new Set([...idsPartidasAutor, ...idsPartidasInteresado]);
+
+        partidasSeguidas.forEach((info, id) => {
+            if (!idsActuales.has(id)) {
+                info.unsubscribeMensajes?.();
+                partidasSeguidas.delete(id);
+            }
+        });
+
+        idsActuales.forEach((id) => {
+            if (partidasSeguidas.has(id)) return;
+            const data = datosPartidasCache.get(id) || {};
+            const info = { nombre: data.nivel || 'Partida', ultimoMensajeMillis: null, unsubscribeMensajes: null };
+            partidasSeguidas.set(id, info);
+
+            const qUltimoMsg = query(collection(db, 'partidas', id, 'mensajes'), orderBy('creadoEn', 'desc'), limit(1));
+            info.unsubscribeMensajes = onSnapshot(qUltimoMsg, (msgSnap) => {
+                if (!msgSnap.empty) {
+                    const ts = msgSnap.docs[0].data().creadoEn;
+                    info.ultimoMensajeMillis = ts?.toMillis ? ts.toMillis() : Date.now();
+                }
+                pintarCampanita();
+            });
+        });
+
+        pintarCampanita();
+    }
+
+    const qMisPartidasAutor = query(collection(db, 'partidas'), where('autorId', '==', uid));
+    onSnapshot(qMisPartidasAutor, (snap) => {
+        idsPartidasAutor = new Set(snap.docs.map(d => d.id));
+        snap.docs.forEach(d => datosPartidasCache.set(d.id, d.data()));
+        recalcularPartidasSeguidas();
+    });
+
+    const qMisPartidasInteresado = query(collection(db, 'partidas'), where('interesados', 'array-contains', uid));
+    onSnapshot(qMisPartidasInteresado, (snap) => {
+        idsPartidasInteresado = new Set(snap.docs.map(d => d.id));
+        snap.docs.forEach(d => datosPartidasCache.set(d.id, d.data()));
+        recalcularPartidasSeguidas();
     });
 }
 

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAZOKUGAMING | Mi Perfil</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(79, 70, 229, 0.2); }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative max-w-4xl mx-auto px-4 py-12 w-full">
+
+        <!-- Se muestra mientras se confirma sesión -->
+        <div id="zona-cargando" class="text-center py-24 text-slate-500">Cargando tu perfil...</div>
+
+        <!-- Se muestra si NO hay sesión iniciada -->
+        <div id="zona-sin-sesion" class="hidden text-center py-24">
+            <h1 class="text-3xl font-black text-white mb-4">Inicia sesión para ver tu perfil</h1>
+            <a href="login.html" class="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all">Ir a Iniciar Sesión</a>
+        </div>
+
+        <!-- Contenido real del perfil -->
+        <div id="zona-perfil" class="hidden">
+
+            <!-- TARJETA DE PERFIL -->
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 mb-10">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+                    <div id="avatar-perfil" class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center text-white font-black text-3xl shadow-lg shrink-0">?</div>
+                    <div class="flex-grow w-full">
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Gamertag</label>
+                        <input type="text" id="input-gamertag" maxlength="30" class="w-full bg-slate-900 border border-slate-700 text-white text-xl font-bold px-4 py-2.5 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500">
+                        <p id="texto-miembro-desde" class="text-xs text-slate-500 mt-2"></p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Bio</label>
+                    <textarea id="input-bio" rows="3" maxlength="200" placeholder="Cuéntale a la comunidad a qué juegas y qué buscas..." class="w-full bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 resize-none"></textarea>
+                    <p class="text-xs text-slate-500 mt-1"><span id="contador-bio">0</span>/200</p>
+                </div>
+
+                <div id="mensaje-perfil" class="hidden mb-4 p-3 rounded-lg text-sm font-bold text-center border"></div>
+
+                <button id="btn-guardar-perfil" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl transition-all">
+                    Guardar Cambios
+                </button>
+            </div>
+
+            <!-- MIS ESCUADRONES -->
+            <h2 class="text-xl font-black text-white mb-4">🛡️ Mis Escuadrones</h2>
+            <div id="lista-mis-escuadrones" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <p class="text-slate-500 col-span-full">Cargando...</p>
+            </div>
+
+            <!-- MIS TORNEOS -->
+            <h2 class="text-xl font-black text-white mb-4">🏆 Mis Torneos</h2>
+            <div id="lista-mis-torneos" class="space-y-3">
+                <p class="text-slate-500">Cargando...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Construyendo la mejor familia gamer.</p>
+    </footer>
+
+    <script type="module" src="header.js"></script>
+
+    <script type="module">
+        import {
+            collection, doc, getDoc, updateDoc, query, where, collectionGroup, onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { auth, db, onAuthStateChanged, updateProfile } from './firebase-init.js';
+
+        const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+
+        function inicialesDe(nombre) {
+            return (nombre || "??").trim().split(/\s+/).slice(0, 2).map(p => p[0]?.toUpperCase() || '').join('') || "??";
+        }
+
+        function formatearFecha(timestamp) {
+            if (!timestamp?.toDate) return '';
+            return timestamp.toDate().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const zonaCargando = document.getElementById('zona-cargando');
+            const zonaSinSesion = document.getElementById('zona-sin-sesion');
+            const zonaPerfil = document.getElementById('zona-perfil');
+            const mensajePerfil = document.getElementById('mensaje-perfil');
+            const inputGamertag = document.getElementById('input-gamertag');
+            const inputBio = document.getElementById('input-bio');
+            const contadorBio = document.getElementById('contador-bio');
+
+            inputBio.addEventListener('input', () => { contadorBio.textContent = inputBio.value.length; });
+
+            const mostrarMensaje = (texto, tipo) => {
+                mensajePerfil.classList.remove('hidden', 'bg-red-500/20', 'border-red-500', 'text-red-400', 'bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
+                mensajePerfil.classList.add(tipo === 'error' ? 'bg-red-500/20' : 'bg-emerald-500/20', tipo === 'error' ? 'border-red-500' : 'border-emerald-500', tipo === 'error' ? 'text-red-400' : 'text-emerald-400');
+                mensajePerfil.innerText = texto;
+            };
+
+            onAuthStateChanged(auth, async (user) => {
+                zonaCargando.classList.add('hidden');
+
+                if (!user) {
+                    zonaSinSesion.classList.remove('hidden');
+                    return;
+                }
+
+                zonaPerfil.classList.remove('hidden');
+
+                // --- Cargar datos del perfil ---
+                let datosUsuario = {};
+                try {
+                    const snap = await getDoc(doc(db, 'usuarios', user.uid));
+                    datosUsuario = snap.exists() ? snap.data() : {};
+                } catch (error) {
+                    console.error("No se pudo cargar el perfil:", error);
+                }
+
+                const gamertagActual = datosUsuario.gamertag || user.displayName || user.email.split('@')[0];
+                inputGamertag.value = gamertagActual;
+                inputBio.value = datosUsuario.bio || '';
+                contadorBio.textContent = inputBio.value.length;
+                document.getElementById('avatar-perfil').innerText = inicialesDe(gamertagActual);
+                document.getElementById('texto-miembro-desde').innerText = datosUsuario.creadoEn
+                    ? `Miembro desde ${formatearFecha(datosUsuario.creadoEn)}`
+                    : '';
+
+                // --- Guardar cambios ---
+                document.getElementById('btn-guardar-perfil').addEventListener('click', async () => {
+                    const nuevoGamertag = inputGamertag.value.trim();
+                    const nuevaBio = inputBio.value.trim();
+
+                    if (nuevoGamertag.length < 3 || nuevoGamertag.length > 30) {
+                        mostrarMensaje("El gamertag debe tener entre 3 y 30 caracteres.", "error");
+                        return;
+                    }
+
+                    try {
+                        await updateDoc(doc(db, 'usuarios', user.uid), {
+                            gamertag: nuevoGamertag,
+                            bio: nuevaBio
+                        });
+                        await updateProfile(user, { displayName: nuevoGamertag });
+                        document.getElementById('avatar-perfil').innerText = inicialesDe(nuevoGamertag);
+                        mostrarMensaje("Perfil actualizado.", "exito");
+                    } catch (error) {
+                        console.error("No se pudo guardar el perfil:", error);
+                        mostrarMensaje("No se pudo guardar. Inténtalo de nuevo.", "error");
+                    }
+                });
+
+                // --- Mis escuadrones ---
+                const contEscuadrones = document.getElementById('lista-mis-escuadrones');
+                const qEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', user.uid));
+                onSnapshot(qEscuadrones, (snap) => {
+                    if (snap.empty) {
+                        contEscuadrones.innerHTML = `<p class="text-slate-500 col-span-full">Aún no formas parte de ningún escuadrón. <a href="grupos.html" class="text-indigo-400 hover:underline">Explora escuadrones →</a></p>`;
+                        return;
+                    }
+                    contEscuadrones.innerHTML = snap.docs.map(d => {
+                        const e = d.data();
+                        const esDueno = e.duenoId === user.uid;
+                        return `<a href="grupos.html" class="glass-panel rounded-xl p-4 hover:border-indigo-500/50 transition-all flex items-center justify-between">
+                            <div>
+                                <p class="font-bold text-white">${sanitizarHTML(e.nombre)}</p>
+                                <p class="text-xs text-slate-400">${sanitizarHTML(e.juego)}</p>
+                            </div>
+                            ${esDueno ? '<span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-1 rounded">Dueño</span>' : ''}
+                        </a>`;
+                    }).join('');
+                }, (error) => {
+                    console.error("Error cargando escuadrones:", error);
+                    contEscuadrones.innerHTML = `<p class="text-red-400 col-span-full">No se pudieron cargar tus escuadrones.</p>`;
+                });
+
+                // --- Mis torneos (vía collectionGroup sobre "inscripciones") ---
+                const contTorneos = document.getElementById('lista-mis-torneos');
+                try {
+                    const qInscripciones = query(collectionGroup(db, 'inscripciones'), where('uid', '==', user.uid));
+                    onSnapshot(qInscripciones, async (snap) => {
+                        if (snap.empty) {
+                            contTorneos.innerHTML = `<p class="text-slate-500">Aún no te has inscrito a ningún torneo. <a href="torneos.html" class="text-fuchsia-400 hover:underline">Ver torneos →</a></p>`;
+                            return;
+                        }
+                        const filas = await Promise.all(snap.docs.map(async (inscripcionDoc) => {
+                            const torneoRef = inscripcionDoc.ref.parent.parent; // .../torneos/{id}/inscripciones/{uid} -> torneos/{id}
+                            const torneoSnap = await getDoc(torneoRef);
+                            const t = torneoSnap.exists() ? torneoSnap.data() : { titulo: 'Torneo eliminado', juego: '' };
+                            return `<a href="torneos.html" class="glass-panel rounded-xl p-4 hover:border-fuchsia-500/50 transition-all flex items-center justify-between block">
+                                <div>
+                                    <p class="font-bold text-white">${sanitizarHTML(t.titulo)}</p>
+                                    <p class="text-xs text-slate-400">${sanitizarHTML(t.juego || '')}</p>
+                                </div>
+                            </a>`;
+                        }));
+                        contTorneos.innerHTML = filas.join('');
+                    }, (error) => {
+                        console.error("Error cargando torneos:", error);
+                        contTorneos.innerHTML = `<p class="text-red-400">No se pudieron cargar tus torneos.</p>`;
+                    });
+                } catch (error) {
+                    console.error("Error en la consulta de torneos:", error);
+                    contTorneos.innerHTML = `<p class="text-red-400">No se pudieron cargar tus torneos.</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

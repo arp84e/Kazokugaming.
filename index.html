@@ -213,7 +213,7 @@
     <!-- SCRIPT DE INTERACCIÓN (conectado a Firestore) -->
     <script type="module">
         import {
-            collection, addDoc, doc, setDoc, query, orderBy, limit, onSnapshot
+            collection, addDoc, doc, setDoc, updateDoc, arrayUnion, query, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
 
@@ -325,6 +325,8 @@
                     const data = docSnap.data();
                     const clasesTema = temas[data.juego] || "bg-indigo-500/20 text-indigo-400 border-indigo-500/30";
                     const esAutor = usuarioActual && data.autorId === usuarioActual.uid;
+                    const yaUnido = usuarioActual && Array.isArray(data.interesados) && data.interesados.includes(usuarioActual.uid);
+                    const puedeVerChat = esAutor || yaUnido;
                     return `
                         <div class="glass-panel rounded-2xl p-6 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
                             <div class="flex justify-between items-start mb-4">
@@ -335,8 +337,8 @@
                             <p class="text-sm text-slate-400 mb-6">${sanitizarHTML(data.mensaje)}</p>
                             <div class="flex justify-between items-center pt-4 border-t border-slate-800">
                                 <div class="text-sm font-bold text-slate-300">Espacio para: ${sanitizarHTML(String(data.espacios))} amigos más</div>
-                                ${esAutor
-                                    ? `<button data-id="${docSnap.id}" data-titulo="${sanitizarHTML(data.nivel)}" class="btn-abrir-chat-partida px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">💬 Ver Chat</button>`
+                                ${puedeVerChat
+                                    ? `<button data-id="${docSnap.id}" data-titulo="${sanitizarHTML(data.nivel)}" class="btn-abrir-chat-partida px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">💬 Chat</button>`
                                     : `<button data-id="${docSnap.id}" data-titulo="${sanitizarHTML(data.nivel)}" class="btn-unirse-partida px-4 py-2 bg-slate-800 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors">Saludar y Unirse</button>`}
                             </div>
                         </div>`;
@@ -381,6 +383,10 @@
                         mensajesChatPartida.innerHTML = snap.docs.map(d => pintarMensajePartida(d.data())).join('');
                         mensajesChatPartida.scrollTop = mensajesChatPartida.scrollHeight;
                     }
+                    // Marca como leído cada vez que se pintan mensajes (al abrir Y si llega uno nuevo mientras está abierto)
+                    updateDoc(doc(db, 'usuarios', usuarioActual.uid), {
+                        [`ultimasLecturasPartidas.${partidaId}`]: serverTimestamp()
+                    }).catch((err) => console.error("No se pudo marcar como leído:", err));
                 }, (error) => {
                     console.error("Error en el chat de la partida:", error);
                     mensajesChatPartida.innerHTML = `<p class="text-red-400 text-center text-sm">No se pudo cargar el chat.</p>`;
@@ -402,14 +408,12 @@
                     return;
                 }
 
-                // Unirse: registrar como interesado (inmediato, sin aprobación) y abrir el chat
+                // Unirse: agregarse al array "interesados" de la partida (inmediato, sin aprobación) y abrir el chat
                 btnUnirse.disabled = true;
                 btnUnirse.innerText = "Uniéndote...";
                 try {
-                    await setDoc(doc(db, 'partidas', partidaId, 'interesados', usuarioActual.uid), {
-                        uid: usuarioActual.uid,
-                        nombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
-                        creadoEn: serverTimestamp()
+                    await updateDoc(doc(db, 'partidas', partidaId), {
+                        interesados: arrayUnion(usuarioActual.uid)
                     });
                     abrirChatPartida(partidaId, titulo);
                 } catch (error) {
