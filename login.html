@@ -84,7 +84,7 @@
         import {
             doc, setDoc
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { auth, db, updateProfile, serverTimestamp } from './firebase-init.js';
+        import { auth, db, updateProfile, sendEmailVerification, serverTimestamp } from './firebase-init.js';
 
         let modoRegistro = false;
         const btnLogin = document.getElementById('btn-tab-login');
@@ -171,8 +171,11 @@
                         creadoEn: serverTimestamp()
                     });
 
-                    mostrarMensaje("¡Bienvenido a KazokuGaming! Entrando...", "exito");
-                    setTimeout(() => window.location.href = "index.html", 1500);
+                    // 4. Enviar correo de verificación (no bloqueante: si falla, no impide el registro)
+                    sendEmailVerification(credencial.user).catch((err) => console.error("No se pudo enviar el correo de verificación:", err));
+
+                    mostrarMensaje("¡Bienvenido a KazokuGaming! Te enviamos un correo para verificar tu cuenta. Entrando...", "exito");
+                    setTimeout(() => window.location.href = "index.html", 2000);
                 } catch (error) {
                     let msj = error.message;
                     if (error.code === 'auth/email-already-in-use') msj = "Este correo ya pertenece a la familia.";

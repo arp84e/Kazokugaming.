@@ -4,7 +4,7 @@
 // campanita 🔔 con notificaciones de mensajes nuevos en los escuadrones
 // de los que el usuario es miembro.
 
-import { auth, db, onAuthStateChanged, signOut, serverTimestamp } from './firebase-init.js';
+import { auth, db, onAuthStateChanged, signOut, sendEmailVerification, serverTimestamp } from './firebase-init.js';
 import {
     doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -276,6 +276,37 @@ function iniciarNotificaciones(uid, prefix) {
     });
 }
 
+// ============================================================
+// AVISO DE CORREO SIN VERIFICAR
+// ============================================================
+function mostrarBannerVerificacion(user) {
+    if (document.getElementById('banner-verificacion-correo')) return; // ya está mostrado
+
+    const container = document.getElementById('header-container');
+    if (!container) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'banner-verificacion-correo';
+    banner.className = 'bg-amber-500/10 border-b border-amber-500/30 text-amber-300 text-xs sm:text-sm text-center py-2 px-4 sticky top-20 z-40';
+    banner.innerHTML = `
+        ⚠️ Verifica tu correo (<strong>${user.email}</strong>) para asegurar tu cuenta.
+        <button id="btn-reenviar-verificacion" class="underline hover:text-amber-100 font-bold ml-2">Reenviar correo</button>
+    `;
+    container.insertAdjacentElement('afterend', banner);
+
+    document.getElementById('btn-reenviar-verificacion').addEventListener('click', async () => {
+        const btn = document.getElementById('btn-reenviar-verificacion');
+        try {
+            await sendEmailVerification(user);
+            btn.innerText = 'Enviado ✓';
+            btn.disabled = true;
+        } catch (error) {
+            console.error("No se pudo reenviar el correo de verificación:", error);
+            alert('No se pudo reenviar el correo. Espera un momento e inténtalo de nuevo.');
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const prefix = getPrefix();
     const container = document.getElementById('header-container');
@@ -303,6 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const gamertag = user.displayName || user.email.split('@')[0];
             pintarSesionActiva(gamertag, prefix);
             iniciarNotificaciones(user.uid, prefix);
+            if (!user.emailVerified) mostrarBannerVerificacion(user);
         }
         // Si no hay usuario, se deja el estado por defecto ("Mi Perfil") ya renderizado.
     });

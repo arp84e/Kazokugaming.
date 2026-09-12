@@ -11,7 +11,8 @@ import {
     getAuth,
     onAuthStateChanged,
     signOut,
-    updateProfile
+    updateProfile,
+    sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import {
     getFirestore,
@@ -31,4 +32,26 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-export { onAuthStateChanged, signOut, updateProfile, serverTimestamp };
+// ============================================================
+// APP CHECK (protección contra abuso/spam de cuota de Firebase)
+// ============================================================
+// Desactivado por defecto porque requiere una clave de sitio de reCAPTCHA v3
+// que solo tú puedes generar (es específica de tu dominio). Para activarlo:
+//   1. Firebase Console → App Check → registra tu app web → elige reCAPTCHA v3
+//      → copia el "Site key" que te entrega.
+//   2. Pega ese valor en RECAPTCHA_SITE_KEY más abajo.
+//   3. Descomenta el bloque de abajo.
+//   4. Sube el cambio y pruébalo BIEN (crear escuadrón, enviar mensaje, etc.)
+//      ANTES de activar "Enforce" en la consola de App Check — si activas
+//      la aplicación forzada antes de probar, puedes bloquearte a ti mismo.
+//
+// const RECAPTCHA_SITE_KEY = 'PON_AQUI_TU_SITE_KEY';
+//
+// import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js";
+// initializeAppCheck(app, {
+//     provider: new ReCaptchaV3Provider(RECAPTCHA_SITE_KEY),
+//     isTokenAutoRefreshEnabled: true
+// });
+
+export { onAuthStateChanged, signOut, updateProfile, sendEmailVerification, serverTimestamp };
+
