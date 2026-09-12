@@ -212,13 +212,13 @@
             const contenedorNoticias = document.getElementById('contenedor-noticias');
             contenedorNoticias.innerHTML = skeletonCards(3);
 
-            cargarNoticias(3).then((noticias) => {
+            cargarNoticias().then((noticias) => {
                 if (noticias.length === 0) {
                     contenedorNoticias.innerHTML = `
                         <p class="col-span-full text-slate-500 text-center py-6">
                             No se pudieron cargar las noticias en este momento. Visita
-                            <a href="https://www.ign.com/games" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">IGN</a>
-                            o <a href="https://kotaku.com" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:underline">Kotaku</a> directamente.
+                            <a href="https://news.google.com/search?q=videojuegos&hl=es-419" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Google Noticias</a>
+                            o <a href="https://www.ign.com/games" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">IGN</a> directamente.
                         </p>`;
                     return;
                 }
