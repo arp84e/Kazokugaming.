@@ -350,6 +350,10 @@
                         mensajesChat.innerHTML = snap.docs.map(d => pintarMensaje(d.data())).join('');
                         mensajesChat.scrollTop = mensajesChat.scrollHeight;
                     }
+                    // Marca como leído cada vez que se pintan mensajes (al abrir Y si llega uno nuevo mientras está abierto)
+                    updateDoc(doc(db, 'usuarios', usuarioActual.uid), {
+                        [`ultimasLecturas.${escuadronChatActual}`]: serverTimestamp()
+                    }).catch((err) => console.error("No se pudo marcar como leído:", err));
                 }, (error) => {
                     console.error("Error en el chat:", error);
                     mensajesChat.innerHTML = `<p class="text-red-400 text-center text-sm">No se pudo cargar el chat.</p>`;

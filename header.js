@@ -1,11 +1,13 @@
 // header.js
-// AHORA es un módulo ES (por eso en el HTML se carga como
-// <script type="module" src="header.js"></script>).
-// Sigue inyectando la barra de navegación, y además refleja
-// si hay una sesión activa (gamertag + botón de cerrar sesión)
-// en vez de mostrar siempre "Mi Perfil".
+// Módulo ES (se carga como <script type="module" src="header.js"></script>).
+// Inyecta la navegación, refleja el estado real de sesión, y muestra una
+// campanita 🔔 con notificaciones de mensajes nuevos en los escuadrones
+// de los que el usuario es miembro.
 
-import { auth, onAuthStateChanged, signOut } from './firebase-init.js';
+import { auth, db, onAuthStateChanged, signOut, serverTimestamp } from './firebase-init.js';
+import {
+    doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 function getPrefix() {
     const path = window.location.pathname;
@@ -42,9 +44,12 @@ function renderHeader(prefix) {
             </div>
 
             <!-- MENÚ MÓVIL (BOTÓN) -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 p-2 relative z-50 hover:text-white transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
+            <div class="md:hidden flex items-center gap-1 relative z-50">
+                <div id="zona-notificaciones-movil"></div>
+                <button id="mobile-menu-btn" class="text-slate-300 p-2 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
         </div>
 
         <!-- MENÚ MÓVIL (DESPLEGABLE) -->
@@ -67,6 +72,7 @@ function pintarSesionActiva(gamertag, prefix) {
     const zonaMovil = document.getElementById('zona-sesion-movil');
     if (zona) {
         zona.innerHTML = `
+            <div id="zona-notificaciones-desktop" class="relative"></div>
             <span class="text-sm font-bold text-emerald-400 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ${gamertag}
             </span>
@@ -83,6 +89,126 @@ function pintarSesionActiva(gamertag, prefix) {
         zonaMovil.innerHTML = `<span class="text-white">👋 ${gamertag}</span>`;
         zonaMovil.classList.remove('bg-indigo-600');
     }
+}
+
+// ============================================================
+// NOTIFICACIONES: mensajes nuevos en los escuadrones del usuario
+// ============================================================
+// Cómo funciona: cada usuario guarda en su propio documento
+// (usuarios/{uid}.ultimasLecturas.{escuadronId}) la fecha de la última vez
+// que abrió el chat de ese escuadrón. Aquí comparamos esa fecha contra el
+// mensaje más reciente de cada escuadrón del que el usuario es miembro.
+// Evita inicializar las notificaciones más de una vez por carga de página
+// (onAuthStateChanged puede disparar más de una vez en la misma sesión).
+let notificacionesIniciadas = false;
+
+function iniciarNotificaciones(uid, prefix) {
+    if (notificacionesIniciadas) return;
+    notificacionesIniciadas = true;
+
+    const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+
+    let ultimasLecturas = {};
+    // Map<escuadronId, { nombre, ultimoMensajeMillis, unsubscribeMensajes }>
+    const escuadronesSeguidos = new Map();
+
+    function pintarCampanita() {
+        const noLeidos = [];
+        escuadronesSeguidos.forEach((info, escuadronId) => {
+            if (info.ultimoMensajeMillis == null) return;
+            const leidoEn = ultimasLecturas[escuadronId]?.toMillis ? ultimasLecturas[escuadronId].toMillis() : 0;
+            if (info.ultimoMensajeMillis > leidoEn) {
+                noLeidos.push({ id: escuadronId, nombre: info.nombre });
+            }
+        });
+
+        const hayNoLeidos = noLeidos.length > 0;
+        const badge = hayNoLeidos
+            ? `<span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] font-black rounded-full flex items-center justify-center border-2 border-[#0a0a0f]">${noLeidos.length > 9 ? '9+' : noLeidos.length}</span>`
+            : '';
+
+        const htmlBoton = `
+            <button id="btn-notificaciones" class="relative text-slate-300 hover:text-white transition p-2" aria-label="Notificaciones">
+                <span class="text-xl">🔔</span>
+                ${badge}
+            </button>
+            <div id="panel-notificaciones" class="hidden absolute right-0 top-12 w-72 bg-[#0a0a0f] border border-slate-800 rounded-xl shadow-2xl overflow-hidden z-50">
+                <div class="p-3 border-b border-slate-800 text-sm font-bold text-white">Notificaciones</div>
+                <div class="max-h-72 overflow-y-auto">
+                    ${hayNoLeidos
+                        ? noLeidos.map(n => `
+                            <a href="${prefix}grupos.html" class="block px-4 py-3 hover:bg-slate-900 border-b border-slate-800/50 text-sm">
+                                <span class="text-emerald-400 font-bold">●</span>
+                                <span class="text-slate-200">Mensajes nuevos en <strong class="text-white">${sanitizarHTML(n.nombre)}</strong></span>
+                            </a>`).join('')
+                        : `<p class="px-4 py-6 text-center text-slate-500 text-sm">No hay mensajes nuevos.</p>`}
+                </div>
+            </div>`;
+
+        const zonaDesktop = document.getElementById('zona-notificaciones-desktop');
+        const zonaMovil = document.getElementById('zona-notificaciones-movil');
+        if (zonaDesktop) zonaDesktop.innerHTML = htmlBoton;
+        if (zonaMovil) zonaMovil.innerHTML = `
+            <button id="btn-notificaciones-movil" class="relative text-slate-300 hover:text-white transition p-2" aria-label="Notificaciones">
+                <span class="text-xl">🔔</span>
+                ${hayNoLeidos ? '<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border border-[#0a0a0f]"></span>' : ''}
+            </button>`;
+
+        // Reabrir/cerrar el desplegable (delegado a nivel de documento, ver abajo)
+    }
+
+    // Desplegable: clic en la campanita lo abre/cierra; clic fuera lo cierra.
+    document.addEventListener('click', (e) => {
+        const panel = document.getElementById('panel-notificaciones');
+        if (!panel) return;
+        if (e.target.closest('#btn-notificaciones')) {
+            panel.classList.toggle('hidden');
+        } else if (!e.target.closest('#panel-notificaciones')) {
+            panel.classList.add('hidden');
+        }
+        if (e.target.closest('#btn-notificaciones-movil')) {
+            window.location.href = `${prefix}grupos.html`;
+        }
+    });
+
+    // 1. Escuchar el perfil del usuario para saber qué ha leído
+    onSnapshot(doc(db, 'usuarios', uid), (snap) => {
+        ultimasLecturas = snap.exists() ? (snap.data().ultimasLecturas || {}) : {};
+        pintarCampanita();
+    });
+
+    // 2. Escuchar de qué escuadrones es miembro, y para cada uno, su último mensaje
+    const qMisEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', uid));
+    onSnapshot(qMisEscuadrones, (snap) => {
+        const idsActuales = new Set(snap.docs.map(d => d.id));
+
+        // Dejar de escuchar escuadrones de los que ya no somos miembros
+        escuadronesSeguidos.forEach((info, id) => {
+            if (!idsActuales.has(id)) {
+                info.unsubscribeMensajes?.();
+                escuadronesSeguidos.delete(id);
+            }
+        });
+
+        // Empezar a escuchar los escuadrones nuevos
+        snap.docs.forEach((d) => {
+            if (escuadronesSeguidos.has(d.id)) return;
+            const nombre = d.data().nombre || 'Escuadrón';
+            const info = { nombre, ultimoMensajeMillis: null, unsubscribeMensajes: null };
+            escuadronesSeguidos.set(d.id, info);
+
+            const qUltimoMsg = query(collection(db, 'escuadrones', d.id, 'mensajes'), orderBy('creadoEn', 'desc'), limit(1));
+            info.unsubscribeMensajes = onSnapshot(qUltimoMsg, (msgSnap) => {
+                if (!msgSnap.empty) {
+                    const ts = msgSnap.docs[0].data().creadoEn;
+                    info.ultimoMensajeMillis = ts?.toMillis ? ts.toMillis() : Date.now();
+                }
+                pintarCampanita();
+            });
+        });
+
+        pintarCampanita();
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -111,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (user) {
             const gamertag = user.displayName || user.email.split('@')[0];
             pintarSesionActiva(gamertag, prefix);
+            iniciarNotificaciones(user.uid, prefix);
         }
         // Si no hay usuario, se deja el estado por defecto ("Mi Perfil") ya renderizado.
     });
