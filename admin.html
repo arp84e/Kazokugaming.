@@ -70,7 +70,15 @@
             </div>
 
             <h2 class="text-xl font-black text-white mb-4">Torneos publicados</h2>
-            <div id="lista-torneos" class="space-y-3"></div>
+            <div id="lista-torneos" class="space-y-3 mb-12"></div>
+
+            <h2 class="text-xl font-black text-white mb-4">Moderación de escuadrones</h2>
+            <p class="text-slate-400 text-sm mb-4">Puedes eliminar cualquier escuadrón, aunque no lo hayas creado tú.</p>
+            <div id="lista-escuadrones" class="space-y-3 mb-12"></div>
+
+            <h2 class="text-xl font-black text-white mb-4">Moderación de publicaciones (partidas)</h2>
+            <p class="text-slate-400 text-sm mb-4">Puedes eliminar cualquier publicación de "Invitar a Jugar" en index.html.</p>
+            <div id="lista-partidas" class="space-y-3"></div>
         </div>
     </main>
 
@@ -78,7 +86,7 @@
 
     <script type="module">
         import {
-            collection, addDoc, deleteDoc, doc, query, orderBy, onSnapshot
+            collection, addDoc, deleteDoc, doc, query, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
 
@@ -165,6 +173,69 @@
                             <button data-id="${d.id}" class="btn-borrar-torneo text-red-400 hover:text-red-300 font-bold text-sm">Eliminar</button>
                         </div>`;
                     }).join('');
+                });
+
+                // --- Moderación genérica: pinta una lista con botón "Eliminar" ---
+                // coleccion: nombre de la colección en Firestore.
+                // contenedorId: id del <div> donde se pinta la lista.
+                // etiquetaBtn: clase CSS única para el botón de borrar de esta lista.
+                // renderItem: función que recibe (id, datos) y devuelve el HTML de la fila.
+                function moderarColeccion({ coleccion, contenedorId, etiquetaBtn, renderItem, vacioTexto, ordenarPor = 'creadoEn', maximo = 50 }) {
+                    const contenedor = document.getElementById(contenedorId);
+
+                    contenedor.addEventListener('click', async (e) => {
+                        const btn = e.target.closest(`.${etiquetaBtn}`);
+                        if (!btn) return;
+                        if (!confirm("¿Eliminar este elemento? Esta acción no se puede deshacer.")) return;
+                        try {
+                            await deleteDoc(doc(db, coleccion, btn.dataset.id));
+                        } catch (error) {
+                            console.error(error);
+                            alert("No se pudo eliminar. Revisa que tu correo siga en la lista de administradores de firestore.rules.");
+                        }
+                    });
+
+                    const q2 = query(collection(db, coleccion), orderBy(ordenarPor, 'desc'), limit(maximo));
+                    onSnapshot(q2, (snap) => {
+                        if (snap.empty) {
+                            contenedor.innerHTML = `<p class="text-slate-500">${vacioTexto}</p>`;
+                            return;
+                        }
+                        contenedor.innerHTML = snap.docs.map(d => renderItem(d.id, d.data(), etiquetaBtn)).join('');
+                    }, (error) => {
+                        console.error(error);
+                        contenedor.innerHTML = `<p class="text-red-400">No se pudo cargar la lista.</p>`;
+                    });
+                }
+
+                moderarColeccion({
+                    coleccion: 'escuadrones',
+                    contenedorId: 'lista-escuadrones',
+                    etiquetaBtn: 'btn-borrar-escuadron',
+                    vacioTexto: 'Todavía no hay escuadrones creados.',
+                    renderItem: (id, e, etiquetaBtn) => `
+                        <div class="flex justify-between items-center bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                            <div>
+                                <p class="font-bold text-white">${sanitizarHTML(e.nombre)}</p>
+                                <p class="text-xs text-slate-400">${sanitizarHTML(e.juego)} · fundado por ${sanitizarHTML(e.duenoNombre || '—')} · ${Array.isArray(e.miembros) ? e.miembros.length : 1}/${sanitizarHTML(String(e.capacidad))} miembros</p>
+                            </div>
+                            <button data-id="${id}" class="${etiquetaBtn} text-red-400 hover:text-red-300 font-bold text-sm">Eliminar</button>
+                        </div>`
+                });
+
+                moderarColeccion({
+                    coleccion: 'partidas',
+                    contenedorId: 'lista-partidas',
+                    etiquetaBtn: 'btn-borrar-partida',
+                    vacioTexto: 'Todavía no hay publicaciones activas.',
+                    renderItem: (id, p, etiquetaBtn) => `
+                        <div class="flex justify-between items-center bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                            <div>
+                                <p class="font-bold text-white">${sanitizarHTML(p.nivel)} · ${sanitizarHTML(p.juego)}</p>
+                                <p class="text-xs text-slate-400">por ${sanitizarHTML(p.autorNombre || '—')}: "${sanitizarHTML(p.mensaje || '')}"</p>
+                            </div>
+                            <button data-id="${id}" class="${etiquetaBtn} text-red-400 hover:text-red-300 font-bold text-sm">Eliminar</button>
+                        </div>`
                 });
             });
         });
