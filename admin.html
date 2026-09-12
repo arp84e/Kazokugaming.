@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAZOKUGAMING | Panel de Administración</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative max-w-4xl mx-auto px-4 py-16 w-full">
+
+        <!-- Se muestra solo si NO tienes permisos de administrador -->
+        <div id="zona-sin-permiso" class="hidden text-center py-24">
+            <h1 class="text-3xl font-black text-white mb-4">Acceso restringido</h1>
+            <p class="text-slate-400">Esta sección es solo para administradores de KazokuGaming.</p>
+        </div>
+
+        <!-- Se muestra mientras se confirma el estado de sesión -->
+        <div id="zona-cargando" class="text-center py-24 text-slate-500">Verificando acceso...</div>
+
+        <!-- Panel real (solo visible tras confirmar permisos) -->
+        <div id="zona-admin" class="hidden">
+            <h1 class="text-3xl font-black text-white mb-2">Panel de Torneos</h1>
+            <p class="text-slate-400 mb-8">Crea y elimina torneos. Se publican al instante en <code class="text-fuchsia-400">torneos.html</code>.</p>
+
+            <div id="mensaje-admin" class="hidden mb-6 p-3 rounded-lg text-sm font-bold text-center border"></div>
+
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 mb-10 space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-300 mb-1">Título del torneo</label>
+                    <input type="text" id="input-titulo" placeholder="Ej: Copa Kazoku Invierno" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-1">Videojuego</label>
+                        <input type="text" id="input-juego" placeholder="Ej: Valorant" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-1">Formato</label>
+                        <input type="text" id="input-formato" placeholder="Ej: 5v5" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-1">Fecha / hora (texto libre)</label>
+                        <input type="text" id="input-fecha" placeholder="Ej: Sábado 18:00h" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-1">Cupo máximo</label>
+                        <input type="number" id="input-cupo" min="2" max="500" value="16" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-300 mb-1">Recompensa</label>
+                    <input type="text" id="input-recompensa" placeholder="Ej: Rango Campeón en Discord" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                </div>
+                <button id="btn-crear-torneo" class="w-full py-4 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-black rounded-xl transition-all">
+                    Publicar Torneo
+                </button>
+            </div>
+
+            <h2 class="text-xl font-black text-white mb-4">Torneos publicados</h2>
+            <div id="lista-torneos" class="space-y-3"></div>
+        </div>
+    </main>
+
+    <script type="module" src="header.js"></script>
+
+    <script type="module">
+        import {
+            collection, addDoc, deleteDoc, doc, query, orderBy, onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+
+        // Debe coincidir EXACTAMENTE con la lista de esAdmin() en firestore.rules.
+        // Esto solo controla qué ve la interfaz; el permiso real lo aplica Firestore.
+        const CORREOS_ADMIN = ['tu-correo-admin@ejemplo.com'];
+
+        const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const zonaCargando = document.getElementById('zona-cargando');
+            const zonaSinPermiso = document.getElementById('zona-sin-permiso');
+            const zonaAdmin = document.getElementById('zona-admin');
+            const mensajeAdmin = document.getElementById('mensaje-admin');
+            const lista = document.getElementById('lista-torneos');
+
+            const mostrarMensaje = (texto, tipo) => {
+                mensajeAdmin.classList.remove('hidden', 'bg-red-500/20', 'border-red-500', 'text-red-400', 'bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
+                mensajeAdmin.classList.add(tipo === 'error' ? 'bg-red-500/20' : 'bg-emerald-500/20', tipo === 'error' ? 'border-red-500' : 'border-emerald-500', tipo === 'error' ? 'text-red-400' : 'text-emerald-400');
+                mensajeAdmin.innerText = texto;
+            };
+
+            onAuthStateChanged(auth, (user) => {
+                zonaCargando.classList.add('hidden');
+                if (!user || !CORREOS_ADMIN.includes(user.email)) {
+                    zonaSinPermiso.classList.remove('hidden');
+                    return;
+                }
+                zonaAdmin.classList.remove('hidden');
+
+                document.getElementById('btn-crear-torneo').addEventListener('click', async () => {
+                    const titulo = document.getElementById('input-titulo').value.trim();
+                    const juego = document.getElementById('input-juego').value.trim();
+                    const formato = document.getElementById('input-formato').value.trim();
+                    const fecha = document.getElementById('input-fecha').value.trim();
+                    const cupoMax = parseInt(document.getElementById('input-cupo').value, 10) || 16;
+                    const recompensa = document.getElementById('input-recompensa').value.trim();
+
+                    if (!titulo || !juego) {
+                        mostrarMensaje("Título y videojuego son obligatorios.", "error");
+                        return;
+                    }
+
+                    try {
+                        await addDoc(collection(db, 'torneos'), {
+                            titulo, juego, formato, fecha, cupoMax, recompensa,
+                            creadoPor: user.uid,
+                            creadoEn: serverTimestamp()
+                        });
+                        mostrarMensaje("Torneo publicado.", "exito");
+                        ['input-titulo', 'input-juego', 'input-formato', 'input-fecha', 'input-recompensa'].forEach(id => document.getElementById(id).value = '');
+                        document.getElementById('input-cupo').value = '16';
+                    } catch (error) {
+                        console.error(error);
+                        mostrarMensaje("No se pudo publicar. ¿Tu correo está en la lista de admins de firestore.rules?", "error");
+                    }
+                });
+
+                lista.addEventListener('click', async (e) => {
+                    const btn = e.target.closest('.btn-borrar-torneo');
+                    if (!btn) return;
+                    if (!confirm("¿Eliminar este torneo? Esta acción no se puede deshacer.")) return;
+                    try {
+                        await deleteDoc(doc(db, 'torneos', btn.dataset.id));
+                    } catch (error) {
+                        console.error(error);
+                        alert("No se pudo eliminar.");
+                    }
+                });
+
+                const q = query(collection(db, 'torneos'), orderBy('creadoEn', 'desc'));
+                onSnapshot(q, (snap) => {
+                    if (snap.empty) {
+                        lista.innerHTML = `<p class="text-slate-500">Todavía no hay torneos publicados.</p>`;
+                        return;
+                    }
+                    lista.innerHTML = snap.docs.map(d => {
+                        const t = d.data();
+                        return `<div class="flex justify-between items-center bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                            <div>
+                                <p class="font-bold text-white">${sanitizarHTML(t.titulo)}</p>
+                                <p class="text-xs text-slate-400">${sanitizarHTML(t.juego)} · cupo ${sanitizarHTML(String(t.cupoMax))}</p>
+                            </div>
+                            <button data-id="${d.id}" class="btn-borrar-torneo text-red-400 hover:text-red-300 font-bold text-sm">Eliminar</button>
+                        </div>`;
+                    }).join('');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
