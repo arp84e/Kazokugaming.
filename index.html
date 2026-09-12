@@ -217,7 +217,18 @@
             const contenedorPartidas = document.getElementById('contenedor-partidas');
             let usuarioActual = null;
 
-            onAuthStateChanged(auth, (user) => { usuarioActual = user; });
+            onAuthStateChanged(auth, (user) => {
+                usuarioActual = user;
+                // Si venimos redirigidos desde otra página con la intención de crear una partida...
+                if (window.location.hash === '#crear-partida') {
+                    history.replaceState(null, '', window.location.pathname);
+                    if (user) {
+                        modal.classList.remove('hidden');
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                }
+            });
 
             // --- Abrir / cerrar modal ---
             document.addEventListener('click', (e) => {

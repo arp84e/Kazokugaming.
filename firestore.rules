@@ -77,21 +77,44 @@ service cloud.firestore {
     }
 
     // ---------- TORNEOS (torneos.html) ----------
-    // torneos/{id} { titulo, juego, fecha, cupoMax, inscritos: number, creadoPor }
+    // torneos/{id} { titulo, juego, formato, fecha, recompensa, cupoMax, creadoPor, creadoEn }
+    //
+    // Reservado a administradores. En vez de custom claims (que exigen el
+    // Admin SDK / Cloud Functions, difíciles de gestionar solo con GitHub
+    // Pages), usamos una lista de correos autorizados. Sustituye el correo
+    // de ejemplo por el(los) tuyo(s) antes de publicar estas reglas.
+    function esAdmin() {
+      return request.auth != null &&
+             request.auth.token.email in [
+               'tu-correo-admin@ejemplo.com'
+             ];
+    }
+
     match /torneos/{torneoId} {
       allow read: if true;
-      // la creación/edición de torneos queda reservada a administradores
-      // (gestionar manualmente desde la consola o con un custom claim "admin")
-      allow write: if request.auth != null &&
-                   request.auth.token.admin == true;
+      allow write: if esAdmin();
 
-      // Inscripciones de un equipo o jugador a un torneo
+      // Inscripciones de un equipo o jugador a un torneo.
+      // El conteo de inscritos NUNCA se guarda como número editable por el
+      // cliente: se calcula contando los documentos de esta subcolección
+      // (getCountFromServer), así nadie puede falsear el cupo desde la consola.
       match /inscripciones/{uid} {
         allow create: if request.auth != null && request.auth.uid == uid;
         allow read: if request.auth != null;
         allow delete: if request.auth != null && request.auth.uid == uid;
         allow update: if false;
       }
+    }
+
+    // ---------- RECORDATORIOS ("Avisarme" en torneos.html) ----------
+    // recordatorios/{uid}_{eventoId} { uid, eventoId, creadoEn }
+    match /recordatorios/{recordatorioId} {
+      allow create: if request.auth != null &&
+                    request.resource.data.uid == request.auth.uid &&
+                    recordatorioId == (request.auth.uid + '_' + request.resource.data.eventoId);
+      allow read, delete: if request.auth != null &&
+                    resource.data.uid == request.auth.uid;
+      allow update: if false;
     }
 
     // Cualquier otra colección no listada queda bloqueada por defecto.

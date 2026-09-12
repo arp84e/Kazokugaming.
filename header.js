@@ -96,6 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
+    // El botón "+ Invitar a Jugar" solo tiene su acción propia dentro de index.html.
+    // Si se pulsa desde cualquier otra página, llevamos a la persona a index.html
+    // y le indicamos (vía hash) que abra el modal de crear partida al llegar.
+    const enIndex = window.location.pathname.endsWith('index.html') || window.location.pathname.split('/').pop() === '';
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#btn-crear-evento') && !enIndex) {
+            window.location.href = `${prefix}index.html#crear-partida`;
+        }
+    });
+
     // Refleja el estado real de autenticación en cuanto Firebase lo confirme
     onAuthStateChanged(auth, (user) => {
         if (user) {
