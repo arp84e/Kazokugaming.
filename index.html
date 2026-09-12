@@ -88,9 +88,7 @@
                     </div>
                 </div>
 
-                <div id="contenedor-partidas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <p id="estado-partidas" class="text-slate-500 col-span-full text-center py-8">Cargando partidas activas...</p>
-                </div>
+                <div id="contenedor-partidas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
 
@@ -216,6 +214,7 @@
             collection, addDoc, doc, setDoc, updateDoc, arrayUnion, query, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+        import { showToast, skeletonCards } from './ui-utils.js';
 
         const sanitizarHTML = (texto) => {
             const elemento = document.createElement('div');
@@ -233,6 +232,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('modal-crear-partida');
             const contenedorPartidas = document.getElementById('contenedor-partidas');
+            contenedorPartidas.innerHTML = skeletonCards(3);
             let usuarioActual = null;
             let ultimoSnapshotPartidas = null;
 
@@ -296,9 +296,10 @@
                     document.getElementById('input-mensaje').value = "";
                     document.getElementById('input-jugadores').value = "1";
                     cerrarModal();
+                    showToast("¡Partida publicada! Ya la ven todos.", "exito");
                 } catch (error) {
                     console.error("No se pudo publicar la partida:", error);
-                    alert("No se pudo publicar la partida. Inténtalo de nuevo.");
+                    showToast("No se pudo publicar la partida. Inténtalo de nuevo.", "error");
                 } finally {
                     btnPublicar.disabled = false;
                     btnPublicar.innerText = "Invitar a Jugar";
@@ -420,7 +421,7 @@
                     console.error("No se pudo unir a la partida:", error);
                     btnUnirse.disabled = false;
                     btnUnirse.innerText = "Saludar y Unirse";
-                    alert("No se pudo unir a la partida. Inténtalo de nuevo.");
+                    showToast("No se pudo unir a la partida. Inténtalo de nuevo.", "error");
                 }
             });
 
@@ -439,7 +440,7 @@
                     });
                 } catch (error) {
                     console.error("No se pudo enviar el mensaje:", error);
-                    alert("No se pudo enviar el mensaje.");
+                    showToast("No se pudo enviar el mensaje.", "error");
                 }
             });
         });

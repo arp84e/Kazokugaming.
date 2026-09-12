@@ -46,7 +46,7 @@ function renderHeader(prefix) {
             <!-- MENÚ MÓVIL (BOTÓN) -->
             <div class="md:hidden flex items-center gap-1 relative z-50">
                 <div id="zona-notificaciones-movil"></div>
-                <button id="mobile-menu-btn" class="text-slate-300 p-2 hover:text-white transition">
+                <button id="mobile-menu-btn" class="text-slate-300 p-2 hover:text-white transition" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -315,7 +315,29 @@ document.addEventListener("DOMContentLoaded", function () {
     container.innerHTML = renderHeader(prefix);
 
     document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-menu-btn');
+        const abierto = menu.classList.toggle('hidden') === false; // toggle devuelve true si quedó "hidden" (cerrado)
+        btn.setAttribute('aria-expanded', String(abierto));
+    });
+
+    // Cerrar el menú móvil automáticamente al tocar cualquier enlace de navegación
+    document.getElementById('mobile-menu')?.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Cerrar el menú móvil con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const menu = document.getElementById('mobile-menu');
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                document.getElementById('mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
 
     // El botón "+ Invitar a Jugar" solo tiene su acción propia dentro de index.html.

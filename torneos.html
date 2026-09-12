@@ -50,9 +50,7 @@
                     </div>
                 </div>
 
-                <div id="contenedor-torneos" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <p class="text-slate-500 col-span-full text-center py-8">Cargando torneos...</p>
-                </div>
+                <div id="contenedor-torneos" class="grid grid-cols-1 lg:grid-cols-2 gap-8"></div>
             </div>
         </section>
 
@@ -115,6 +113,7 @@
             collection, doc, setDoc, query, orderBy, onSnapshot, getCountFromServer
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+        import { showToast, skeletonCards } from './ui-utils.js';
 
         const sanitizarHTML = (texto) => {
             const el = document.createElement('div');
@@ -124,6 +123,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const contenedor = document.getElementById('contenedor-torneos');
+            contenedor.innerHTML = skeletonCards(2);
             let usuarioActual = null;
 
             onAuthStateChanged(auth, (user) => { usuarioActual = user; });
@@ -150,7 +150,7 @@
                         console.error("No se pudo guardar el recordatorio:", error);
                         btn.innerText = textoOriginal;
                         btn.disabled = false;
-                        alert("No se pudo activar el recordatorio. Inténtalo de nuevo.");
+                        showToast("No se pudo activar el recordatorio. Inténtalo de nuevo.", "error");
                     }
                 });
             });
@@ -180,7 +180,7 @@
                     console.error("No se pudo completar la inscripción:", error);
                     btn.innerText = textoOriginal;
                     btn.disabled = false;
-                    alert("No se pudo completar la inscripción. Inténtalo de nuevo.");
+                    showToast("No se pudo completar la inscripción. Inténtalo de nuevo.", "error");
                 }
             });
 

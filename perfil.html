@@ -58,15 +58,11 @@
 
             <!-- MIS ESCUADRONES -->
             <h2 class="text-xl font-black text-white mb-4">🛡️ Mis Escuadrones</h2>
-            <div id="lista-mis-escuadrones" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                <p class="text-slate-500 col-span-full">Cargando...</p>
-            </div>
+            <div id="lista-mis-escuadrones" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"></div>
 
             <!-- MIS TORNEOS -->
             <h2 class="text-xl font-black text-white mb-4">🏆 Mis Torneos</h2>
-            <div id="lista-mis-torneos" class="space-y-3">
-                <p class="text-slate-500">Cargando...</p>
-            </div>
+            <div id="lista-mis-torneos" class="space-y-3"></div>
         </div>
     </main>
 
@@ -84,6 +80,7 @@
             collection, doc, getDoc, updateDoc, query, where, collectionGroup, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, updateProfile } from './firebase-init.js';
+        import { skeletonCards, skeletonRows } from './ui-utils.js';
 
         const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
 
@@ -167,6 +164,7 @@
 
                 // --- Mis escuadrones ---
                 const contEscuadrones = document.getElementById('lista-mis-escuadrones');
+                contEscuadrones.innerHTML = skeletonCards(2);
                 const qEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', user.uid));
                 onSnapshot(qEscuadrones, (snap) => {
                     if (snap.empty) {
@@ -191,6 +189,7 @@
 
                 // --- Mis torneos (vía collectionGroup sobre "inscripciones") ---
                 const contTorneos = document.getElementById('lista-mis-torneos');
+                contTorneos.innerHTML = skeletonRows(2);
                 try {
                     const qInscripciones = query(collectionGroup(db, 'inscripciones'), where('uid', '==', user.uid));
                     onSnapshot(qInscripciones, async (snap) => {

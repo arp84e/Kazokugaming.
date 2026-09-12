@@ -89,6 +89,7 @@
             collection, addDoc, deleteDoc, doc, query, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+        import { showToast, showConfirm, skeletonRows } from './ui-utils.js';
 
         // Debe coincidir EXACTAMENTE con la lista de esAdmin() en firestore.rules.
         // Esto solo controla qué ve la interfaz; el permiso real lo aplica Firestore.
@@ -145,15 +146,18 @@
                     }
                 });
 
+                lista.innerHTML = skeletonRows(2);
+
                 lista.addEventListener('click', async (e) => {
                     const btn = e.target.closest('.btn-borrar-torneo');
                     if (!btn) return;
-                    if (!confirm("¿Eliminar este torneo? Esta acción no se puede deshacer.")) return;
+                    if (!await showConfirm("Esta acción no se puede deshacer.", { titulo: "¿Eliminar este torneo?", danger: true })) return;
                     try {
                         await deleteDoc(doc(db, 'torneos', btn.dataset.id));
+                        showToast("Torneo eliminado.", "exito");
                     } catch (error) {
                         console.error(error);
-                        alert("No se pudo eliminar.");
+                        showToast("No se pudo eliminar.", "error");
                     }
                 });
 
@@ -182,16 +186,18 @@
                 // renderItem: función que recibe (id, datos) y devuelve el HTML de la fila.
                 function moderarColeccion({ coleccion, contenedorId, etiquetaBtn, renderItem, vacioTexto, ordenarPor = 'creadoEn', maximo = 50 }) {
                     const contenedor = document.getElementById(contenedorId);
+                    contenedor.innerHTML = skeletonRows(2);
 
                     contenedor.addEventListener('click', async (e) => {
                         const btn = e.target.closest(`.${etiquetaBtn}`);
                         if (!btn) return;
-                        if (!confirm("¿Eliminar este elemento? Esta acción no se puede deshacer.")) return;
+                        if (!await showConfirm("Esta acción no se puede deshacer.", { titulo: "¿Eliminar este elemento?", danger: true })) return;
                         try {
                             await deleteDoc(doc(db, coleccion, btn.dataset.id));
+                            showToast("Elemento eliminado.", "exito");
                         } catch (error) {
                             console.error(error);
-                            alert("No se pudo eliminar. Revisa que tu correo siga en la lista de administradores de firestore.rules.");
+                            showToast("No se pudo eliminar. Revisa que tu correo siga en la lista de administradores de firestore.rules.", "error");
                         }
                     });
 

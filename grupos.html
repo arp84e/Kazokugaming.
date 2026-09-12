@@ -63,9 +63,7 @@
         <!-- DIRECTORIO DE ESCUADRONES -->
         <section class="py-16 relative z-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div id="contenedor-escuadrones" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <p class="text-slate-500 col-span-full text-center py-8">Cargando escuadrones...</p>
-                </div>
+                <div id="contenedor-escuadrones" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
     </main>
@@ -169,6 +167,7 @@
             collection, addDoc, doc, setDoc, deleteDoc, updateDoc, arrayUnion, query, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+        import { showToast, skeletonCards, skeletonRows } from './ui-utils.js';
 
         const sanitizarHTML = (texto) => {
             const el = document.createElement('div');
@@ -190,6 +189,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('modal-fundar-escuadron');
             const contenedor = document.getElementById('contenedor-escuadrones');
+            contenedor.innerHTML = skeletonCards(3);
             const mensajeEscuadron = document.getElementById('mensaje-escuadron');
             let usuarioActual = null;
             let escuadronesCache = [];
@@ -304,7 +304,7 @@
                     console.error("No se pudo enviar la solicitud:", error);
                     btn.innerText = textoOriginal;
                     btn.disabled = false;
-                    alert("No se pudo enviar la solicitud. Inténtalo de nuevo.");
+                    showToast("No se pudo enviar la solicitud. Inténtalo de nuevo.", "error");
                 }
             });
 
@@ -339,7 +339,7 @@
 
                 escuadronChatActual = btn.dataset.id;
                 document.getElementById('titulo-chat').innerText = `💬 ${btn.dataset.nombre}`;
-                mensajesChat.innerHTML = `<p class="text-slate-500 text-center text-sm">Cargando mensajes...</p>`;
+                mensajesChat.innerHTML = skeletonRows(3);
                 modalChat.classList.remove('hidden');
 
                 const qMsg = query(collection(db, 'escuadrones', escuadronChatActual, 'mensajes'), orderBy('creadoEn', 'asc'), limit(100));
@@ -375,7 +375,7 @@
                     });
                 } catch (error) {
                     console.error("No se pudo enviar el mensaje:", error);
-                    alert("No se pudo enviar el mensaje.");
+                    showToast("No se pudo enviar el mensaje.", "error");
                 }
             });
 
@@ -397,7 +397,7 @@
 
                 const escuadronId = btn.dataset.id;
                 document.getElementById('titulo-solicitudes').innerText = `📋 ${btn.dataset.nombre}`;
-                listaSolicitudes.innerHTML = `<p class="text-slate-500 text-center text-sm">Cargando...</p>`;
+                listaSolicitudes.innerHTML = skeletonRows(2);
                 modalSolicitudes.classList.remove('hidden');
 
                 const qSol = query(collection(db, 'escuadrones', escuadronId, 'solicitudes'), orderBy('creadoEn', 'asc'));
@@ -439,7 +439,7 @@
                     await deleteDoc(doc(db, 'escuadrones', escuadronId, 'solicitudes', uid));
                 } catch (error) {
                     console.error("No se pudo procesar la solicitud:", error);
-                    alert("No se pudo procesar la solicitud.");
+                    showToast("No se pudo procesar la solicitud.", "error");
                     btn.disabled = false;
                 }
             });
