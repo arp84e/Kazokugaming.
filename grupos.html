@@ -195,10 +195,16 @@
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, showReportPrompt, skeletonCards, skeletonRows } from './ui-utils.js';
 
+        // Escapa & < > " ' para que el resultado sea seguro tanto dentro de
+        // contenido de texto (entre etiquetas) como dentro de atributos HTML
+        // (data-nombre="...", alt="...", etc.). El truco de textContent/innerHTML
+        // NO escapa comillas, lo cual es inseguro cuando el valor se usa dentro
+        // de un atributo — por eso esta versión reemplaza manualmente cada
+        // carácter peligroso.
         const sanitizarHTML = (texto) => {
-            const el = document.createElement('div');
-            el.textContent = texto ?? '';
-            return el.innerHTML;
+            return String(texto ?? '').replace(/[&<>"']/g, (c) => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
         };
 
         const coloresPorJuego = {

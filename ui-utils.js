@@ -10,6 +10,15 @@
 //   showToast('No se pudo enviar el mensaje.', 'error');
 //   if (await showConfirm('¿Eliminar este torneo?', { danger: true })) { ... }
 
+// Escapa & < > " ' — usado internamente para que cualquier texto dinámico
+// (p. ej. el nombre de un escuadrón o el gamertag de otro usuario) que se
+// pase como "titulo" a showConfirm/showReportPrompt no pueda inyectar HTML.
+function escaparHTML(t) {
+    return String(t ?? '').replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+}
+
 function asegurarContenedorToasts() {
     let cont = document.getElementById('toast-contenedor');
     if (!cont) {
@@ -43,7 +52,7 @@ export function showToast(mensaje, tipo = 'info', duracionMs = 4500) {
     const estilo = ESTILOS_TOAST[tipo] || ESTILOS_TOAST.info;
 
     toast.className = `pointer-events-auto max-w-sm w-full sm:w-auto text-white text-sm font-semibold px-4 py-3 rounded-xl border shadow-2xl flex items-start gap-2 opacity-0 translate-y-2 transition-all duration-300 ${estilo}`;
-    toast.innerHTML = `<span class="shrink-0">${ICONOS_TOAST[tipo] || ICONOS_TOAST.info}</span><span>${mensaje}</span>`;
+    toast.innerHTML = `<span class="shrink-0">${ICONOS_TOAST[tipo] || ICONOS_TOAST.info}</span><span>${escaparHTML(mensaje)}</span>`;
     cont.appendChild(toast);
 
     // Forzar reflow para que la transición de entrada se anime
@@ -78,11 +87,11 @@ export function showConfirm(mensaje, opciones = {}) {
         overlay.innerHTML = `
             <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
             <div class="relative w-full max-w-sm bg-[#0a0a0f] border ${danger ? 'border-red-500/40' : 'border-slate-700'} rounded-2xl shadow-2xl p-6">
-                <h3 class="text-lg font-black text-white mb-2">${titulo}</h3>
-                <p class="text-sm text-slate-400 mb-6">${mensaje}</p>
+                <h3 class="text-lg font-black text-white mb-2">${escaparHTML(titulo)}</h3>
+                <p class="text-sm text-slate-400 mb-6">${escaparHTML(mensaje)}</p>
                 <div class="flex justify-end gap-3">
-                    <button data-accion="cancelar" class="px-4 py-2 text-slate-300 hover:text-white font-bold text-sm transition-colors">${cancelarTexto}</button>
-                    <button data-accion="confirmar" class="px-4 py-2 ${danger ? 'bg-red-600 hover:bg-red-500' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm rounded-xl transition-colors">${confirmarTexto}</button>
+                    <button data-accion="cancelar" class="px-4 py-2 text-slate-300 hover:text-white font-bold text-sm transition-colors">${escaparHTML(cancelarTexto)}</button>
+                    <button data-accion="confirmar" class="px-4 py-2 ${danger ? 'bg-red-600 hover:bg-red-500' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm rounded-xl transition-colors">${escaparHTML(confirmarTexto)}</button>
                 </div>
             </div>`;
         document.body.appendChild(overlay);
@@ -119,7 +128,7 @@ export function showReportPrompt(opciones = {}) {
         overlay.innerHTML = `
             <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
             <div class="relative w-full max-w-sm bg-[#0a0a0f] border border-red-500/30 rounded-2xl shadow-2xl p-6">
-                <h3 class="text-lg font-black text-white mb-2">${titulo}</h3>
+                <h3 class="text-lg font-black text-white mb-2">${escaparHTML(titulo)}</h3>
                 <p class="text-sm text-slate-400 mb-3">Cuéntanos brevemente qué pasa. Un administrador lo revisará.</p>
                 <textarea id="ui-utils-motivo-reporte" rows="3" maxlength="300" placeholder="Ej: contenido ofensivo, spam, suplantación..." class="w-full bg-slate-900 border border-slate-700 text-white px-3 py-2 rounded-xl outline-none focus:ring-2 focus:ring-red-500 resize-none mb-2"></textarea>
                 <p id="ui-utils-error-reporte" class="hidden text-xs text-red-400 mb-2">Escribe brevemente el motivo antes de enviar.</p>

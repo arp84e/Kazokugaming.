@@ -95,7 +95,8 @@
         import { auth, db, onAuthStateChanged, updateProfile } from './firebase-init.js';
         import { skeletonCards, skeletonRows } from './ui-utils.js';
 
-        const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+        // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
+        const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
         function inicialesDe(nombre) {
             return (nombre || "??").trim().split(/\s+/).slice(0, 2).map(p => p[0]?.toUpperCase() || '').join('') || "??";

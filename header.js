@@ -67,6 +67,9 @@ function renderHeader(prefix) {
     </header>`;
 }
 
+// Escapa & < > " ' (seguro tanto en texto como dentro de atributos HTML)
+const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
 function pintarSesionActiva(gamertag, prefix) {
     const zona = document.getElementById('zona-sesion');
     const zonaMovil = document.getElementById('zona-sesion-movil');
@@ -74,7 +77,7 @@ function pintarSesionActiva(gamertag, prefix) {
         zona.innerHTML = `
             <div id="zona-notificaciones-desktop" class="relative"></div>
             <a href="${prefix}perfil.html" class="text-sm font-bold text-emerald-400 flex items-center gap-2 hover:text-emerald-300 transition">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ${gamertag}
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> ${sanitizarHTML(gamertag)}
             </a>
             <button id="btn-crear-evento" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:scale-105">
                 + Invitar a Jugar
@@ -86,7 +89,7 @@ function pintarSesionActiva(gamertag, prefix) {
         });
     }
     if (zonaMovil) {
-        zonaMovil.innerHTML = `<a href="${prefix}perfil.html" class="text-white block">👋 ${gamertag} · Mi Perfil</a>`;
+        zonaMovil.innerHTML = `<a href="${prefix}perfil.html" class="text-white block">👋 ${sanitizarHTML(gamertag)} · Mi Perfil</a>`;
         zonaMovil.classList.remove('bg-indigo-600');
     }
 }
@@ -105,8 +108,6 @@ let notificacionesIniciadas = false;
 function iniciarNotificaciones(uid, prefix) {
     if (notificacionesIniciadas) return;
     notificacionesIniciadas = true;
-
-    const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
 
     let ultimasLecturas = {};
     let ultimasLecturasPartidas = {};
@@ -289,7 +290,7 @@ function mostrarBannerVerificacion(user) {
     banner.id = 'banner-verificacion-correo';
     banner.className = 'bg-amber-500/10 border-b border-amber-500/30 text-amber-300 text-xs sm:text-sm text-center py-2 px-4 sticky top-20 z-40';
     banner.innerHTML = `
-        ⚠️ Verifica tu correo (<strong>${user.email}</strong>) para asegurar tu cuenta.
+        ⚠️ Verifica tu correo (<strong>${sanitizarHTML(user.email)}</strong>) para asegurar tu cuenta.
         <button id="btn-reenviar-verificacion" class="underline hover:text-amber-100 font-bold ml-2">Reenviar correo</button>
     `;
     container.insertAdjacentElement('afterend', banner);

@@ -112,7 +112,8 @@
         // Esto solo controla qué ve la interfaz; el permiso real lo aplica Firestore.
         const CORREOS_ADMIN = ['ajrojasp84e+1@gmail.com'];
 
-        const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+        // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
+        const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
         document.addEventListener('DOMContentLoaded', () => {
             const zonaCargando = document.getElementById('zona-cargando');

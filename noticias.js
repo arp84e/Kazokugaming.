@@ -45,12 +45,18 @@ function limpiarYRecortar(html, maxLen) {
     return texto;
 }
 
-function esUrlHttpsValida(url) {
+// Valida que una URL sea https:// y devuelve su forma NORMALIZADA (url.href),
+// nunca la cadena original. Esto importa porque el constructor URL() acepta
+// cadenas "raras" (p. ej. con una comilla incrustada) sin lanzar error, pero al
+// normalizarlas esos caracteres quedan porcentaje-codificados — así, aunque el
+// feed de un tercero (rss2json/Google Noticias/IGN/Kotaku) devolviera algo
+// manipulado, nunca llega una comilla real al HTML.
+function normalizarUrlHttpsOVacio(url) {
     try {
         const u = new URL(url);
-        return u.protocol === 'https:';
+        return u.protocol === 'https:' ? u.href : null;
     } catch {
-        return false;
+        return null;
     }
 }
 
@@ -122,8 +128,8 @@ async function cargarFeed(feed) {
             return {
                 titulo,
                 resumen: limpiarYRecortar(item.description, 140),
-                link: item.link,
-                imagen: esUrlHttpsValida(item.thumbnail) ? item.thumbnail : (esUrlHttpsValida(item.enclosure?.link) ? item.enclosure.link : null),
+                link: normalizarUrlHttpsOVacio(item.link),
+                imagen: normalizarUrlHttpsOVacio(item.thumbnail) || normalizarUrlHttpsOVacio(item.enclosure?.link),
                 fuente,
                 color: feed.color,
                 fecha: item.pubDate ? new Date(item.pubDate).getTime() : 0
