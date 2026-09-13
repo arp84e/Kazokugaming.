@@ -72,6 +72,10 @@
                 </button>
             </div>
 
+            <h2 class="text-xl font-black text-white mb-4">🚩 Reportes de la comunidad</h2>
+            <p class="text-slate-400 text-sm mb-4">Reportes enviados por usuarios sobre escuadrones, partidas o perfiles. Márcalos como revisados cuando los atiendas.</p>
+            <div id="lista-reportes" class="space-y-3 mb-12"></div>
+
             <h2 class="text-xl font-black text-white mb-4">Torneos publicados</h2>
             <div id="lista-torneos" class="space-y-3 mb-12"></div>
 
@@ -89,7 +93,7 @@
 
     <script type="module">
         import {
-            collection, addDoc, deleteDoc, doc, query, orderBy, limit, onSnapshot
+            collection, addDoc, deleteDoc, doc, updateDoc, query, where, orderBy, limit, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, showConfirm, skeletonRows } from './ui-utils.js';
@@ -245,6 +249,67 @@
                             </div>
                             <button data-id="${id}" class="${etiquetaBtn} text-red-400 hover:text-red-300 font-bold text-sm">Eliminar</button>
                         </div>`
+                });
+
+                // --- Bandeja de reportes ---
+                const enlacePorTipo = (tipo, objetivoId) => {
+                    if (tipo === 'escuadron') return 'grupos.html';
+                    if (tipo === 'partida') return 'index.html';
+                    if (tipo === 'usuario') return `usuario.html?uid=${encodeURIComponent(objetivoId)}`;
+                    return null;
+                };
+
+                const listaReportes = document.getElementById('lista-reportes');
+                listaReportes.innerHTML = skeletonRows(2);
+
+                listaReportes.addEventListener('click', async (e) => {
+                    const btnRevisado = e.target.closest('.btn-reporte-revisado');
+                    const btnBorrar = e.target.closest('.btn-reporte-borrar');
+                    if (!btnRevisado && !btnBorrar) return;
+
+                    try {
+                        if (btnRevisado) {
+                            await updateDoc(doc(db, 'reportes', btnRevisado.dataset.id), { estado: 'revisado' });
+                            showToast("Reporte marcado como revisado.", "exito");
+                        } else {
+                            if (!await showConfirm("Esta acción no se puede deshacer.", { titulo: "¿Eliminar este reporte?", danger: true })) return;
+                            await deleteDoc(doc(db, 'reportes', btnBorrar.dataset.id));
+                            showToast("Reporte eliminado.", "exito");
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        showToast("No se pudo procesar el reporte.", "error");
+                    }
+                });
+
+                const qReportes = query(collection(db, 'reportes'), where('estado', '==', 'pendiente'), orderBy('creadoEn', 'desc'), limit(50));
+                onSnapshot(qReportes, (snap) => {
+                    if (snap.empty) {
+                        listaReportes.innerHTML = `<p class="text-slate-500">No hay reportes pendientes. 🎉</p>`;
+                        return;
+                    }
+                    listaReportes.innerHTML = snap.docs.map((d) => {
+                        const r = d.data();
+                        const etiquetas = { escuadron: '🛡️ Escuadrón', partida: '🎮 Partida', usuario: '👤 Usuario' };
+                        const href = enlacePorTipo(r.tipo, r.objetivoId);
+                        return `<div class="bg-slate-900/60 border border-red-500/20 rounded-xl p-4">
+                            <div class="flex justify-between items-start gap-3 mb-2">
+                                <div>
+                                    <span class="text-xs font-bold text-red-400 bg-red-400/10 px-2 py-1 rounded">${etiquetas[r.tipo] || r.tipo}</span>
+                                    ${href ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-white font-bold text-sm ml-2 hover:underline">${sanitizarHTML(r.objetivoNombre || '')}</a>` : `<span class="text-white font-bold text-sm ml-2">${sanitizarHTML(r.objetivoNombre || '')}</span>`}
+                                </div>
+                                <span class="text-xs text-slate-500 whitespace-nowrap">por ${sanitizarHTML(r.reportadoPorNombre || '—')}</span>
+                            </div>
+                            <p class="text-sm text-slate-300 mb-3">"${sanitizarHTML(r.motivo)}"</p>
+                            <div class="flex gap-2">
+                                <button data-id="${d.id}" class="btn-reporte-revisado px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg">Marcar revisado</button>
+                                <button data-id="${d.id}" class="btn-reporte-borrar px-3 py-1.5 bg-slate-800 hover:bg-red-600 text-white text-xs font-bold rounded-lg">Eliminar reporte</button>
+                            </div>
+                        </div>`;
+                    }).join('');
+                }, (error) => {
+                    console.error("Error cargando reportes:", error);
+                    listaReportes.innerHTML = `<p class="text-red-400">No se pudieron cargar los reportes.</p>`;
                 });
             });
         });

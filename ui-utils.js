@@ -104,6 +104,59 @@ export function showConfirm(mensaje, opciones = {}) {
 }
 
 /**
+ * Muestra un modal para reportar contenido inapropiado: pide un motivo breve
+ * y devuelve una Promesa que resuelve con el texto del motivo, o null si la
+ * persona canceló.
+ * @param {{titulo?: string}} opciones
+ * @returns {Promise<string|null>}
+ */
+export function showReportPrompt(opciones = {}) {
+    const { titulo = '🚩 Reportar contenido' } = opciones;
+
+    return new Promise((resolve) => {
+        const overlay = document.createElement('div');
+        overlay.className = 'fixed inset-0 z-[250] flex items-center justify-center p-4';
+        overlay.innerHTML = `
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+            <div class="relative w-full max-w-sm bg-[#0a0a0f] border border-red-500/30 rounded-2xl shadow-2xl p-6">
+                <h3 class="text-lg font-black text-white mb-2">${titulo}</h3>
+                <p class="text-sm text-slate-400 mb-3">Cuéntanos brevemente qué pasa. Un administrador lo revisará.</p>
+                <textarea id="ui-utils-motivo-reporte" rows="3" maxlength="300" placeholder="Ej: contenido ofensivo, spam, suplantación..." class="w-full bg-slate-900 border border-slate-700 text-white px-3 py-2 rounded-xl outline-none focus:ring-2 focus:ring-red-500 resize-none mb-2"></textarea>
+                <p id="ui-utils-error-reporte" class="hidden text-xs text-red-400 mb-2">Escribe brevemente el motivo antes de enviar.</p>
+                <div class="flex justify-end gap-3 mt-2">
+                    <button data-accion="cancelar" class="px-4 py-2 text-slate-300 hover:text-white font-bold text-sm transition-colors">Cancelar</button>
+                    <button data-accion="confirmar" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold text-sm rounded-xl transition-colors">Enviar reporte</button>
+                </div>
+            </div>`;
+        document.body.appendChild(overlay);
+
+        const textarea = overlay.querySelector('#ui-utils-motivo-reporte');
+        textarea.focus();
+
+        const cerrar = (resultado) => {
+            overlay.remove();
+            resolve(resultado);
+        };
+
+        overlay.querySelector('[data-accion="confirmar"]').addEventListener('click', () => {
+            const motivo = textarea.value.trim();
+            if (!motivo) {
+                overlay.querySelector('#ui-utils-error-reporte').classList.remove('hidden');
+                return;
+            }
+            cerrar(motivo);
+        });
+        overlay.querySelector('[data-accion="cancelar"]').addEventListener('click', () => cerrar(null));
+        overlay.querySelector('.absolute.inset-0').addEventListener('click', () => cerrar(null));
+
+        const onEsc = (e) => {
+            if (e.key === 'Escape') { cerrar(null); document.removeEventListener('keydown', onEsc); }
+        };
+        document.addEventListener('keydown', onEsc);
+    });
+}
+
+/**
  * HTML de tarjetas "esqueleto" (pulso) para usar como placeholder mientras
  * carga una grilla de tarjetas (escuadrones, torneos, partidas...).
  */

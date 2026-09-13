@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAZOKUGAMING | Perfil de Jugador</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(79, 70, 229, 0.2); }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative max-w-4xl mx-auto px-4 py-12 w-full">
+
+        <div id="zona-cargando" class="flex flex-col items-center justify-center gap-3 py-24 text-slate-500">
+            <span class="w-6 h-6 border-2 border-slate-700 border-t-indigo-500 rounded-full animate-spin"></span>
+            Cargando perfil...
+        </div>
+
+        <div id="zona-no-encontrado" class="hidden text-center py-24">
+            <h1 class="text-3xl font-black text-white mb-4">No encontramos este perfil</h1>
+            <a href="index.html" class="inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all">Volver al inicio</a>
+        </div>
+
+        <div id="zona-perfil" class="hidden">
+
+            <!-- Aviso si el usuario está viendo su propio perfil desde aquí -->
+            <div id="aviso-perfil-propio" class="hidden mb-6 p-3 rounded-lg text-sm font-bold text-center bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
+                Este es tu perfil público. <a href="perfil.html" class="underline hover:text-white">Ir a editarlo →</a>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 mb-10">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-2 justify-between">
+                    <div class="flex items-center gap-6">
+                        <div id="avatar-perfil" class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center text-white font-black text-3xl shadow-lg shrink-0">?</div>
+                        <div>
+                            <h1 id="texto-gamertag" class="text-2xl font-black text-white"></h1>
+                            <p id="texto-miembro-desde" class="text-xs text-slate-500 mt-1"></p>
+                        </div>
+                    </div>
+                    <button id="btn-reportar-usuario" class="text-xs font-bold text-slate-500 hover:text-red-400 transition-colors border border-slate-800 hover:border-red-500/40 px-3 py-1.5 rounded-full whitespace-nowrap">🚩 Reportar</button>
+                </div>
+                <p id="texto-bio" class="text-slate-400 mt-4"></p>
+            </div>
+
+            <h2 class="text-xl font-black text-white mb-4">🛡️ Escuadrones</h2>
+            <div id="lista-escuadrones" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"></div>
+
+            <h2 class="text-xl font-black text-white mb-4">🏆 Torneos</h2>
+            <div id="lista-torneos" class="space-y-3"></div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Construyendo la mejor familia gamer.</p>
+    </footer>
+
+    <script type="module" src="header.js"></script>
+
+    <script type="module">
+        import {
+            collection, doc, getDoc, addDoc, query, where, collectionGroup, onSnapshot, serverTimestamp as fsServerTimestamp
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { auth, db, onAuthStateChanged } from './firebase-init.js';
+        import { showToast, showReportPrompt, skeletonCards, skeletonRows } from './ui-utils.js';
+
+        const sanitizarHTML = (t) => { const el = document.createElement('div'); el.textContent = t ?? ''; return el.innerHTML; };
+
+        function inicialesDe(nombre) {
+            return (nombre || "??").trim().split(/\s+/).slice(0, 2).map(p => p[0]?.toUpperCase() || '').join('') || "??";
+        }
+
+        function formatearFecha(timestamp) {
+            if (!timestamp?.toDate) return '';
+            return timestamp.toDate().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const uidPerfil = new URLSearchParams(window.location.search).get('uid');
+            const zonaCargando = document.getElementById('zona-cargando');
+            const zonaNoEncontrado = document.getElementById('zona-no-encontrado');
+            const zonaPerfil = document.getElementById('zona-perfil');
+
+            if (!uidPerfil) {
+                zonaCargando.classList.add('hidden');
+                zonaNoEncontrado.classList.remove('hidden');
+                return;
+            }
+
+            let usuarioActual = null;
+            onAuthStateChanged(auth, (user) => {
+                usuarioActual = user;
+                if (user && user.uid === uidPerfil) {
+                    document.getElementById('aviso-perfil-propio').classList.remove('hidden');
+                }
+            });
+
+            (async () => {
+                let datosUsuario;
+                try {
+                    const snap = await getDoc(doc(db, 'usuarios', uidPerfil));
+                    if (!snap.exists()) throw new Error('no existe');
+                    datosUsuario = snap.data();
+                } catch {
+                    zonaCargando.classList.add('hidden');
+                    zonaNoEncontrado.classList.remove('hidden');
+                    return;
+                }
+
+                zonaCargando.classList.add('hidden');
+                zonaPerfil.classList.remove('hidden');
+
+                const gamertag = datosUsuario.gamertag || 'Jugador';
+                document.getElementById('texto-gamertag').textContent = gamertag;
+                document.getElementById('avatar-perfil').textContent = inicialesDe(gamertag);
+                document.getElementById('texto-bio').textContent = datosUsuario.bio || 'Este jugador todavía no ha escrito una bio.';
+                document.getElementById('texto-miembro-desde').textContent = datosUsuario.creadoEn
+                    ? `Miembro desde ${formatearFecha(datosUsuario.creadoEn)}`
+                    : '';
+
+                document.getElementById('btn-reportar-usuario').addEventListener('click', async () => {
+                    if (!usuarioActual) { window.location.href = 'login.html'; return; }
+                    const motivo = await showReportPrompt({ titulo: `🚩 Reportar a ${gamertag}` });
+                    if (motivo === null) return;
+                    try {
+                        await addDoc(collection(db, 'reportes'), {
+                            tipo: 'usuario',
+                            objetivoId: uidPerfil,
+                            objetivoNombre: gamertag,
+                            motivo,
+                            reportadoPor: usuarioActual.uid,
+                            reportadoPorNombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
+                            estado: 'pendiente',
+                            creadoEn: fsServerTimestamp()
+                        });
+                        showToast("Reporte enviado. Gracias por ayudar a mantener la comunidad sana.", "exito");
+                    } catch (error) {
+                        console.error("No se pudo enviar el reporte:", error);
+                        showToast("No se pudo enviar el reporte.", "error");
+                    }
+                });
+
+                // --- Escuadrones de este jugador ---
+                const contEscuadrones = document.getElementById('lista-escuadrones');
+                contEscuadrones.innerHTML = skeletonCards(2);
+                const qEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', uidPerfil));
+                onSnapshot(qEscuadrones, (snap) => {
+                    if (snap.empty) {
+                        contEscuadrones.innerHTML = `<p class="text-slate-500 col-span-full">Todavía no forma parte de ningún escuadrón.</p>`;
+                        return;
+                    }
+                    contEscuadrones.innerHTML = snap.docs.map(d => {
+                        const e = d.data();
+                        const esDueno = e.duenoId === uidPerfil;
+                        return `<a href="grupos.html" class="glass-panel rounded-xl p-4 hover:border-indigo-500/50 transition-all flex items-center justify-between">
+                            <div>
+                                <p class="font-bold text-white">${sanitizarHTML(e.nombre)}</p>
+                                <p class="text-xs text-slate-400">${sanitizarHTML(e.juego)}</p>
+                            </div>
+                            ${esDueno ? '<span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-1 rounded">Dueño</span>' : ''}
+                        </a>`;
+                    }).join('');
+                }, (error) => {
+                    console.error("Error cargando escuadrones:", error);
+                    contEscuadrones.innerHTML = `<p class="text-red-400 col-span-full">No se pudieron cargar los escuadrones.</p>`;
+                });
+
+                // --- Torneos de este jugador ---
+                const contTorneos = document.getElementById('lista-torneos');
+                contTorneos.innerHTML = skeletonRows(2);
+                try {
+                    const qInscripciones = query(collectionGroup(db, 'inscripciones'), where('uid', '==', uidPerfil));
+                    onSnapshot(qInscripciones, async (snap) => {
+                        if (snap.empty) {
+                            contTorneos.innerHTML = `<p class="text-slate-500">Todavía no se ha inscrito a ningún torneo.</p>`;
+                            return;
+                        }
+                        const filas = await Promise.all(snap.docs.map(async (inscripcionDoc) => {
+                            const torneoRef = inscripcionDoc.ref.parent.parent;
+                            const torneoSnap = await getDoc(torneoRef);
+                            const t = torneoSnap.exists() ? torneoSnap.data() : { titulo: 'Torneo eliminado', juego: '' };
+                            return `<a href="torneos.html" class="glass-panel rounded-xl p-4 hover:border-fuchsia-500/50 transition-all flex items-center justify-between block">
+                                <div>
+                                    <p class="font-bold text-white">${sanitizarHTML(t.titulo)}</p>
+                                    <p class="text-xs text-slate-400">${sanitizarHTML(t.juego || '')}</p>
+                                </div>
+                            </a>`;
+                        }));
+                        contTorneos.innerHTML = filas.join('');
+                    }, (error) => {
+                        console.error("Error cargando torneos:", error);
+                        contTorneos.innerHTML = `<p class="text-red-400">No se pudieron cargar los torneos.</p>`;
+                    });
+                } catch (error) {
+                    console.error("Error en la consulta de torneos:", error);
+                    contTorneos.innerHTML = `<p class="text-red-400">No se pudieron cargar los torneos.</p>`;
+                }
+            })();
+        });
+    </script>
+</body>
+</html>
