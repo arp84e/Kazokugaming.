@@ -307,6 +307,17 @@ function mostrarBannerVerificacion(user) {
     });
 }
 
+// Registro del Service Worker (PWA): habilita instalar el sitio como app y
+// cachea el "shell" estático para que cargue más rápido. Se registra desde
+// aquí porque header.js ya se carga en casi todas las páginas.
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch((err) => {
+            console.warn('No se pudo registrar el Service Worker:', err);
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const prefix = getPrefix();
     const container = document.getElementById('header-container');

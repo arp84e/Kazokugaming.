@@ -15,7 +15,9 @@ import {
     sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import {
-    getFirestore,
+    initializeFirestore,
+    persistentLocalCache,
+    persistentSingleTabManager,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
@@ -30,7 +32,15 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+
+// Persistencia offline: los datos ya vistos (escuadrones, torneos, chats)
+// quedan guardados en el dispositivo (IndexedDB) para que la app cargue al
+// instante y siga funcionando con conexión intermitente en móvil, como una
+// app nativa. "persistentSingleTabManager" evita conflictos si el usuario
+// abre el sitio en varias pestañas a la vez (solo una mantiene la caché activa).
+export const db = initializeFirestore(app, {
+    localCache: persistentLocalCache({ tabManager: persistentSingleTabManager() })
+});
 
 // ============================================================
 // APP CHECK (protección contra abuso/spam de cuota de Firebase)
