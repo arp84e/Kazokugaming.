@@ -21,7 +21,10 @@
     <main class="flex-grow relative max-w-4xl mx-auto px-4 py-12 w-full">
 
         <!-- Se muestra mientras se confirma sesión -->
-        <div id="zona-cargando" class="text-center py-24 text-slate-500">Cargando tu perfil...</div>
+        <div id="zona-cargando" class="flex flex-col items-center justify-center gap-3 py-24 text-slate-500">
+            <span class="w-6 h-6 border-2 border-slate-700 border-t-indigo-500 rounded-full animate-spin"></span>
+            Cargando tu perfil...
+        </div>
 
         <!-- Se muestra si NO hay sesión iniciada -->
         <div id="zona-sin-sesion" class="hidden text-center py-24">

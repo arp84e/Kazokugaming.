@@ -57,6 +57,14 @@
                 <button data-juego="League of Legends" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">League of Legends</button>
                 <button data-juego="Call of Duty" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Call of Duty</button>
                 <button data-juego="Minecraft" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Minecraft</button>
+                <button data-juego="Fortnite" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Fortnite</button>
+                <button data-juego="Free Fire" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Free Fire</button>
+                <button data-juego="EA FC" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">EA FC</button>
+                <button data-juego="Apex Legends" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Apex Legends</button>
+                <button data-juego="CS2" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Counter-Strike 2</button>
+                <button data-juego="Rocket League" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Rocket League</button>
+                <button data-juego="Roblox" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Roblox</button>
+                <button data-juego="Brawl Stars" class="btn-filtro px-5 py-2 hover:bg-slate-800 text-slate-400 font-bold rounded-full text-sm transition-colors whitespace-nowrap">Brawl Stars</button>
             </div>
         </section>
 
@@ -74,7 +82,7 @@
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-emerald-500/30 rounded-2xl shadow-2xl shadow-emerald-900/50 overflow-hidden">
             <div class="flex justify-between items-center p-6 border-b border-slate-800">
                 <h3 class="text-xl font-black text-white">Fundar tu Escuadrón</h3>
-                <button id="btn-cerrar-modal-escuadron-x" class="text-slate-400 hover:text-white transition-colors">
+                <button id="btn-cerrar-modal-escuadron-x" class="text-slate-400 hover:text-white transition-colors" aria-label="Cerrar">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
@@ -95,6 +103,14 @@
                             <option value="League of Legends">League of Legends</option>
                             <option value="Call of Duty">Call of Duty</option>
                             <option value="Minecraft">Minecraft</option>
+                            <option value="Fortnite">Fortnite</option>
+                            <option value="Free Fire">Free Fire</option>
+                            <option value="EA FC">EA FC</option>
+                            <option value="Apex Legends">Apex Legends</option>
+                            <option value="CS2">Counter-Strike 2</option>
+                            <option value="Rocket League">Rocket League</option>
+                            <option value="Roblox">Roblox</option>
+                            <option value="Brawl Stars">Brawl Stars</option>
                         </select>
                     </div>
                     <div>
@@ -132,7 +148,7 @@
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden max-h-[80vh] flex flex-col">
             <div class="flex justify-between items-center p-6 border-b border-slate-800">
                 <h3 id="titulo-solicitudes" class="text-xl font-black text-white">Solicitudes pendientes</h3>
-                <button id="btn-cerrar-solicitudes" class="text-slate-400 hover:text-white transition-colors">
+                <button id="btn-cerrar-solicitudes" class="text-slate-400 hover:text-white transition-colors" aria-label="Cerrar">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
@@ -146,7 +162,7 @@
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[70vh]">
             <div class="flex justify-between items-center p-4 border-b border-slate-800">
                 <h3 id="titulo-chat" class="text-lg font-black text-white">Chat del Escuadrón</h3>
-                <button id="btn-cerrar-chat" class="text-slate-400 hover:text-white transition-colors">
+                <button id="btn-cerrar-chat" class="text-slate-400 hover:text-white transition-colors" aria-label="Cerrar chat">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
@@ -179,7 +195,15 @@
             "Valorant": ["from-red-500", "to-orange-500", "text-red-400", "bg-red-400/10"],
             "League of Legends": ["from-blue-500", "to-indigo-500", "text-blue-400", "bg-blue-400/10"],
             "Call of Duty": ["from-amber-500", "to-yellow-500", "text-amber-400", "bg-amber-400/10"],
-            "Minecraft": ["from-emerald-500", "to-green-500", "text-emerald-400", "bg-emerald-400/10"]
+            "Minecraft": ["from-emerald-500", "to-green-500", "text-emerald-400", "bg-emerald-400/10"],
+            "Fortnite": ["from-violet-500", "to-purple-500", "text-violet-400", "bg-violet-400/10"],
+            "Free Fire": ["from-orange-500", "to-rose-500", "text-orange-400", "bg-orange-400/10"],
+            "EA FC": ["from-lime-500", "to-green-500", "text-lime-400", "bg-lime-400/10"],
+            "Apex Legends": ["from-rose-500", "to-red-600", "text-rose-400", "bg-rose-400/10"],
+            "CS2": ["from-yellow-500", "to-orange-600", "text-yellow-400", "bg-yellow-400/10"],
+            "Rocket League": ["from-cyan-500", "to-sky-500", "text-cyan-400", "bg-cyan-400/10"],
+            "Roblox": ["from-pink-500", "to-fuchsia-500", "text-pink-400", "bg-pink-400/10"],
+            "Brawl Stars": ["from-yellow-400", "to-amber-500", "text-yellow-300", "bg-yellow-400/10"]
         };
 
         function inicialesDe(nombre) {
@@ -193,7 +217,21 @@
             const mensajeEscuadron = document.getElementById('mensaje-escuadron');
             let usuarioActual = null;
             let escuadronesCache = [];
-            let filtroActual = 'Todos';
+
+            // Si venimos desde el buscador del inicio (index.html?juego=X → grupos.html?juego=X),
+            // pre-seleccionamos ese filtro en vez de "Todos los Juegos".
+            const juegoDesdeUrl = new URLSearchParams(window.location.search).get('juego');
+            const botonFiltroInicial = juegoDesdeUrl && document.querySelector(`.btn-filtro[data-juego="${CSS.escape(juegoDesdeUrl)}"]`);
+            let filtroActual = botonFiltroInicial ? juegoDesdeUrl : 'Todos';
+            if (botonFiltroInicial) {
+                document.querySelectorAll('.btn-filtro').forEach(b => {
+                    b.classList.remove('bg-emerald-500/20', 'text-emerald-400', 'border', 'border-emerald-500/30');
+                    b.classList.add('text-slate-400');
+                });
+                botonFiltroInicial.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border', 'border-emerald-500/30');
+                botonFiltroInicial.classList.remove('text-slate-400');
+                botonFiltroInicial.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
 
             onAuthStateChanged(auth, (user) => { usuarioActual = user; pintarEscuadrones(); });
 
@@ -256,6 +294,7 @@
                     document.getElementById('input-descripcion-escuadron').value = '';
                     document.getElementById('input-capacidad-escuadron').value = '10';
                     cerrarModal();
+                    showToast("¡Escuadrón fundado! Ya aparece en el directorio.", "exito");
                 } catch (error) {
                     console.error("No se pudo fundar el escuadrón:", error);
                     mostrarMensajeEscuadron("No se pudo fundar el escuadrón. Inténtalo de nuevo.", "error");
@@ -435,8 +474,12 @@
                 try {
                     if (btnAceptar) {
                         await updateDoc(doc(db, 'escuadrones', escuadronId), { miembros: arrayUnion(uid) });
+                        await deleteDoc(doc(db, 'escuadrones', escuadronId, 'solicitudes', uid));
+                        showToast("Solicitud aceptada. ¡Nuevo miembro en el escuadrón!", "exito");
+                    } else {
+                        await deleteDoc(doc(db, 'escuadrones', escuadronId, 'solicitudes', uid));
+                        showToast("Solicitud rechazada.", "info");
                     }
-                    await deleteDoc(doc(db, 'escuadrones', escuadronId, 'solicitudes', uid));
                 } catch (error) {
                     console.error("No se pudo procesar la solicitud:", error);
                     showToast("No se pudo procesar la solicitud.", "error");
@@ -491,6 +534,14 @@
             }, (error) => {
                 console.error("Error escuchando escuadrones:", error);
                 contenedor.innerHTML = `<p class="text-red-400 col-span-full text-center py-8">No se pudieron cargar los escuadrones.</p>`;
+            });
+
+            // --- Cerrar el modal abierto (el que sea) con la tecla Escape ---
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== 'Escape') return;
+                if (!modal.classList.contains('hidden')) cerrarModal();
+                else if (!modalSolicitudes.classList.contains('hidden')) cerrarSolicitudes();
+                else if (!modalChat.classList.contains('hidden')) cerrarChat();
             });
         });
     </script>

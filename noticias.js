@@ -12,7 +12,8 @@
 //      (MeriStation, Vandal, HobbyConsolas, Xataka, etc.) sin que tengamos
 //      que adivinar la URL de RSS exacta de cada uno — cada resultado enlaza
 //      al medio original.
-//   2. IGN (feed oficial en inglés): referencia internacional adicional.
+//   2. IGN y Kotaku (feeds oficiales en inglés): referencia internacional
+//      adicional, y respaldo si Google Noticias no responde.
 //
 // Usa el servicio gratuito rss2json.com como puente, porque los navegadores no
 // pueden leer XML de RSS directamente por las políticas de CORS de la mayoría
@@ -32,8 +33,9 @@ const FEEDS_NOTICIAS = [
 ];
 
 const RSS2JSON_ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=';
-const CLAVE_CACHE = 'kazoku_noticias_cache_v2';
+const CLAVE_CACHE = 'kazoku_noticias_cache_v3';
 const DURACION_CACHE_MS = 20 * 60 * 1000; // 20 minutos
+const TIMEOUT_POR_FEED_MS = 8000; // si una fuente tarda más de 8s, la damos por perdida y seguimos con las demás
 
 function limpiarYRecortar(html, maxLen) {
     const div = document.createElement('div');
@@ -64,70 +66,127 @@ function separarFuenteDeGoogleNews(tituloCrudo) {
     };
 }
 
+// Normaliza un título para poder comparar si dos noticias de fuentes
+// distintas son "la misma historia" (mismo suceso cubierto por dos medios).
+function normalizarTitulo(titulo) {
+    return titulo
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // quita acentos
+        .replace(/[^a-z0-9\s]/g, '') // quita puntuación
+        .trim()
+        .slice(0, 45); // comparamos solo el inicio: suele bastar para detectar la misma noticia
+}
+
+/**
+ * Convierte un timestamp en milisegundos a texto relativo en español,
+ * p. ej. "hace 2 horas", "hace 3 días". Si no hay Intl.RelativeTimeFormat
+ * disponible (muy improbable en 2026) devuelve cadena vacía.
+ */
+export function formatearTiempoRelativo(timestampMs) {
+    if (!timestampMs) return '';
+    const diffSegundos = Math.round((timestampMs - Date.now()) / 1000);
+
+    try {
+        const rtf = new Intl.RelativeTimeFormat('es', { numeric: 'auto' });
+        const abs = Math.abs(diffSegundos);
+        if (abs < 60) return rtf.format(Math.round(diffSegundos), 'second');
+        if (abs < 3600) return rtf.format(Math.round(diffSegundos / 60), 'minute');
+        if (abs < 86400) return rtf.format(Math.round(diffSegundos / 3600), 'hour');
+        if (abs < 604800) return rtf.format(Math.round(diffSegundos / 86400), 'day');
+        return rtf.format(Math.round(diffSegundos / 604800), 'week');
+    } catch {
+        return '';
+    }
+}
+
 async function cargarFeed(feed) {
-    const resp = await fetch(RSS2JSON_ENDPOINT + encodeURIComponent(feed.url));
-    if (!resp.ok) throw new Error(`rss2json respondió ${resp.status} para ${feed.fuente}`);
-    const data = await resp.json();
-    if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error(`Feed inválido: ${feed.fuente}`);
+    const controlador = new AbortController();
+    const timeoutId = setTimeout(() => controlador.abort(), TIMEOUT_POR_FEED_MS);
 
-    return data.items.slice(0, feed.max || 3).map((item) => {
-        let titulo = (item.title || '').trim();
-        let fuente = feed.fuente;
+    try {
+        const resp = await fetch(RSS2JSON_ENDPOINT + encodeURIComponent(feed.url), { signal: controlador.signal });
+        if (!resp.ok) throw new Error(`rss2json respondió ${resp.status} para ${feed.fuente}`);
+        const data = await resp.json();
+        if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error(`Feed inválido: ${feed.fuente}`);
 
-        if (feed.esGoogleNews) {
-            const separado = separarFuenteDeGoogleNews(titulo);
-            titulo = separado.titulo;
-            fuente = separado.fuente;
-        }
+        return data.items.slice(0, feed.max || 3).map((item) => {
+            let titulo = (item.title || '').trim();
+            let fuente = feed.fuente;
 
-        return {
-            titulo,
-            resumen: limpiarYRecortar(item.description, 140),
-            link: item.link,
-            imagen: esUrlHttpsValida(item.thumbnail) ? item.thumbnail : (esUrlHttpsValida(item.enclosure?.link) ? item.enclosure.link : null),
-            fuente,
-            color: feed.color,
-            fecha: item.pubDate ? new Date(item.pubDate).getTime() : 0
-        };
-    });
+            if (feed.esGoogleNews) {
+                const separado = separarFuenteDeGoogleNews(titulo);
+                titulo = separado.titulo;
+                fuente = separado.fuente;
+            }
+
+            return {
+                titulo,
+                resumen: limpiarYRecortar(item.description, 140),
+                link: item.link,
+                imagen: esUrlHttpsValida(item.thumbnail) ? item.thumbnail : (esUrlHttpsValida(item.enclosure?.link) ? item.enclosure.link : null),
+                fuente,
+                color: feed.color,
+                fecha: item.pubDate ? new Date(item.pubDate).getTime() : 0
+            };
+        });
+    } finally {
+        clearTimeout(timeoutId);
+    }
 }
 
 /**
  * Devuelve una lista de noticias reales de videojuegos (título, resumen corto,
- * imagen y enlace al artículo original), combinando varias fuentes.
- * Usa caché en sessionStorage para no golpear el servicio de terceros en
- * cada recarga de página.
+ * imagen, fecha y enlace al artículo original), combinando varias fuentes,
+ * ya sin duplicados de la misma historia cubierta por más de un medio.
+ *
+ * @param {number} maxTotal    Cuántas noticias devolver como máximo, tras combinar y filtrar.
+ * @param {boolean} forzar     Si es true, ignora la caché y vuelve a consultar los feeds.
  */
-export async function cargarNoticias(maxTotal = 9) {
-    try {
-        const cacheRaw = sessionStorage.getItem(CLAVE_CACHE);
-        if (cacheRaw) {
-            const cache = JSON.parse(cacheRaw);
-            if (Date.now() - cache.timestamp < DURACION_CACHE_MS && Array.isArray(cache.noticias) && cache.noticias.length > 0) {
-                return cache.noticias;
+export async function cargarNoticias(maxTotal = 9, forzar = false) {
+    if (!forzar) {
+        try {
+            const cacheRaw = sessionStorage.getItem(CLAVE_CACHE);
+            if (cacheRaw) {
+                const cache = JSON.parse(cacheRaw);
+                if (Date.now() - cache.timestamp < DURACION_CACHE_MS && Array.isArray(cache.noticias) && cache.noticias.length > 0) {
+                    return { noticias: cache.noticias, actualizadoEn: cache.timestamp, deCache: true };
+                }
             }
+        } catch {
+            // caché corrupta o no disponible: seguimos con la carga normal
         }
-    } catch {
-        // caché corrupta o no disponible: seguimos con la carga normal
     }
 
     const resultados = await Promise.allSettled(FEEDS_NOTICIAS.map(cargarFeed));
 
-    const noticias = resultados
+    const candidatas = resultados
         .filter((r) => r.status === 'fulfilled')
         .flatMap((r) => r.value)
         .filter((n) => n.titulo && n.link)
-        .sort((a, b) => b.fecha - a.fecha)
-        .slice(0, maxTotal);
+        .sort((a, b) => b.fecha - a.fecha);
 
+    // Deduplicar: si dos fuentes cubren la misma noticia, nos quedamos solo
+    // con la primera que aparece (ya viene ordenada por fecha, la más reciente gana).
+    const titulosVistos = new Set();
+    const noticias = [];
+    for (const n of candidatas) {
+        const clave = normalizarTitulo(n.titulo);
+        if (clave && titulosVistos.has(clave)) continue;
+        if (clave) titulosVistos.add(clave);
+        noticias.push(n);
+        if (noticias.length >= maxTotal) break;
+    }
+
+    const actualizadoEn = Date.now();
     if (noticias.length > 0) {
         try {
-            sessionStorage.setItem(CLAVE_CACHE, JSON.stringify({ timestamp: Date.now(), noticias }));
+            sessionStorage.setItem(CLAVE_CACHE, JSON.stringify({ timestamp: actualizadoEn, noticias }));
         } catch {
             // sessionStorage llena o bloqueada: no es crítico, simplemente no cacheamos
         }
     }
 
-    return noticias;
+    return { noticias, actualizadoEn, deCache: false };
 }
+
 

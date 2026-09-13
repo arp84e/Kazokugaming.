@@ -39,19 +39,25 @@ export const db = getFirestore(app);
 // que solo tú puedes generar (es específica de tu dominio). Para activarlo:
 //   1. Firebase Console → App Check → registra tu app web → elige reCAPTCHA v3
 //      → copia el "Site key" que te entrega.
-//   2. Pega ese valor en RECAPTCHA_SITE_KEY más abajo.
-//   3. Descomenta el bloque de abajo.
-//   4. Sube el cambio y pruébalo BIEN (crear escuadrón, enviar mensaje, etc.)
-//      ANTES de activar "Enforce" en la consola de App Check — si activas
-//      la aplicación forzada antes de probar, puedes bloquearte a ti mismo.
-//
-// const RECAPTCHA_SITE_KEY = 'PON_AQUI_TU_SITE_KEY';
-//
-// import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js";
-// initializeAppCheck(app, {
-//     provider: new ReCaptchaV3Provider(RECAPTCHA_SITE_KEY),
-//     isTokenAutoRefreshEnabled: true
-// });
+//   2. Pega ese valor en RECAPTCHA_SITE_KEY aquí abajo.
+//   3. Cambia APP_CHECK_HABILITADO a true.
+//   4. Sube el cambio y pruébalo A FONDO (crear escuadrón, enviar mensaje,
+//      inscribirte a un torneo) ANTES de activar "Enforce" (aplicación
+//      forzada) en la consola de App Check — si activas la aplicación
+//      forzada sin probar antes, puedes bloquearte a ti mismo fuera de tu
+//      propia app.
+const APP_CHECK_HABILITADO = false;
+const RECAPTCHA_SITE_KEY = 'PON_AQUI_TU_SITE_KEY';
+
+if (APP_CHECK_HABILITADO && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'PON_AQUI_TU_SITE_KEY') {
+    const { initializeAppCheck, ReCaptchaV3Provider } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js");
+    initializeAppCheck(app, {
+        provider: new ReCaptchaV3Provider(RECAPTCHA_SITE_KEY),
+        isTokenAutoRefreshEnabled: true
+    });
+} else if (APP_CHECK_HABILITADO) {
+    console.warn('App Check está habilitado pero falta poner tu RECAPTCHA_SITE_KEY real en firebase-init.js');
+}
 
 export { onAuthStateChanged, signOut, updateProfile, sendEmailVerification, serverTimestamp };
 

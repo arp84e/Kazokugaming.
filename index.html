@@ -58,20 +58,28 @@
                 </p>
                 
                 <div class="w-full max-w-3xl glass-panel p-2 rounded-2xl flex flex-col sm:flex-row gap-2 shadow-2xl shadow-indigo-900/20">
-                    <select class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
-                        <option>Elige un juego...</option>
-                        <option>Valorant</option>
-                        <option>League of Legends</option>
-                        <option>Minecraft</option>
-                        <option>Call of Duty: Warzone</option>
+                    <select id="hero-select-juego" class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
+                        <option value="">Elige un juego...</option>
+                        <option value="Valorant">Valorant</option>
+                        <option value="League of Legends">League of Legends</option>
+                        <option value="Call of Duty">Call of Duty: Warzone</option>
+                        <option value="Minecraft">Minecraft</option>
+                        <option value="Fortnite">Fortnite</option>
+                        <option value="Free Fire">Free Fire</option>
+                        <option value="EA FC">EA FC</option>
+                        <option value="Apex Legends">Apex Legends</option>
+                        <option value="CS2">Counter-Strike 2</option>
+                        <option value="Rocket League">Rocket League</option>
+                        <option value="Roblox">Roblox</option>
+                        <option value="Brawl Stars">Brawl Stars</option>
                     </select>
-                    <select class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
+                    <select id="hero-select-ambiente" class="bg-slate-900 border-none text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none flex-1 font-semibold cursor-pointer appearance-none">
                         <option>Ambiente que buscas...</option>
                         <option>Casual (Hacer amigos)</option>
                         <option>Competitivo (Mejorar juntos)</option>
                         <option>Estrategia y Coordinación</option>
                     </select>
-                    <button class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                    <button id="btn-buscar-companeros" type="button" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
                         🔍 Buscar Compañeros
                     </button>
                 </div>
@@ -79,7 +87,7 @@
         </section>
 
         <!-- SECCIÓN DE GRUPOS -->
-        <section class="py-20 relative z-10 border-t border-slate-800/50 bg-slate-900/30">
+        <section id="grupos-buscando-gente" class="py-20 relative z-10 border-t border-slate-800/50 bg-slate-900/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-10">
                     <div>
@@ -95,10 +103,16 @@
         <!-- SECCIÓN DE NOTICIAS Y REVIEWS -->
         <section class="py-20 relative z-10 bg-[#050508] border-t border-slate-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-end mb-10">
+                <div class="flex flex-wrap justify-between items-end gap-3 mb-10">
                     <div>
                         <h2 class="text-3xl font-black text-white">Últimas Novedades</h2>
-                        <p class="text-slate-400 mt-2">Noticias, reseñas de hardware y guías para mejorar tu setup.</p>
+                        <p class="text-slate-400 mt-2">Noticias reales de videojuegos, en español.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span id="noticias-actualizado-en" class="text-xs text-slate-500"></span>
+                        <button id="btn-actualizar-noticias" class="text-xs font-bold text-slate-400 hover:text-white border border-slate-700 hover:border-slate-500 px-3 py-1.5 rounded-full transition-colors flex items-center gap-1.5">
+                            <span id="icono-actualizar-noticias">↻</span> Actualizar
+                        </button>
                     </div>
                 </div>
 
@@ -121,7 +135,7 @@
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-indigo-500/30 rounded-2xl shadow-2xl shadow-indigo-900/50 overflow-hidden">
             <div class="flex justify-between items-center p-6 border-b border-slate-800">
                 <h3 class="text-xl font-black text-white">Convocar a la Comunidad</h3>
-                <button id="btn-cerrar-modal-x" class="text-slate-400 hover:text-white transition-colors">
+                <button id="btn-cerrar-modal-x" class="text-slate-400 hover:text-white transition-colors" aria-label="Cerrar">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
@@ -132,8 +146,16 @@
                     <select id="input-juego" class="w-full bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                         <option value="Valorant">Valorant</option>
                         <option value="League of Legends">League of Legends</option>
-                        <option value="Minecraft">Minecraft</option>
                         <option value="Call of Duty">Call of Duty: Warzone</option>
+                        <option value="Minecraft">Minecraft</option>
+                        <option value="Fortnite">Fortnite</option>
+                        <option value="Free Fire">Free Fire</option>
+                        <option value="EA FC">EA FC</option>
+                        <option value="Apex Legends">Apex Legends</option>
+                        <option value="CS2">Counter-Strike 2</option>
+                        <option value="Rocket League">Rocket League</option>
+                        <option value="Roblox">Roblox</option>
+                        <option value="Brawl Stars">Brawl Stars</option>
                     </select>
                 </div>
                 
@@ -173,7 +195,7 @@
         <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-indigo-500/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[70vh]">
             <div class="flex justify-between items-center p-4 border-b border-slate-800">
                 <h3 id="titulo-chat-partida" class="text-lg font-black text-white">Chat de la Partida</h3>
-                <button id="btn-cerrar-chat-partida" class="text-slate-400 hover:text-white transition-colors">
+                <button id="btn-cerrar-chat-partida" class="text-slate-400 hover:text-white transition-colors" aria-label="Cerrar chat">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
@@ -192,7 +214,7 @@
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, skeletonCards } from './ui-utils.js';
-        import { cargarNoticias } from './noticias.js';
+        import { cargarNoticias, formatearTiempoRelativo } from './noticias.js';
 
         const sanitizarHTML = (texto) => {
             const elemento = document.createElement('div');
@@ -204,45 +226,85 @@
             "Valorant": "bg-red-500/20 text-red-400 border-red-500/30",
             "League of Legends": "bg-blue-500/20 text-blue-400 border-blue-500/30",
             "Minecraft": "bg-green-500/20 text-green-400 border-green-500/30",
-            "Call of Duty": "bg-amber-500/20 text-amber-400 border-amber-500/30"
+            "Call of Duty": "bg-amber-500/20 text-amber-400 border-amber-500/30",
+            "Fortnite": "bg-violet-500/20 text-violet-400 border-violet-500/30",
+            "Free Fire": "bg-orange-500/20 text-orange-400 border-orange-500/30",
+            "EA FC": "bg-lime-500/20 text-lime-400 border-lime-500/30",
+            "Apex Legends": "bg-rose-500/20 text-rose-400 border-rose-500/30",
+            "CS2": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+            "Rocket League": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+            "Roblox": "bg-pink-500/20 text-pink-400 border-pink-500/30",
+            "Brawl Stars": "bg-amber-400/20 text-amber-300 border-amber-400/30"
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Últimas Novedades: noticias reales de videojuegos (IGN, Kotaku) ---
+            // --- Buscador decorativo del hero: lleva a un filtro real en Familias, o baja a Partidas ---
+            document.getElementById('btn-buscar-companeros').addEventListener('click', () => {
+                const juego = document.getElementById('hero-select-juego').value;
+                if (juego) {
+                    window.location.href = `grupos.html?juego=${encodeURIComponent(juego)}`;
+                } else {
+                    document.getElementById('grupos-buscando-gente')?.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            // --- Últimas Novedades: noticias reales de videojuegos, en español ---
             const contenedorNoticias = document.getElementById('contenedor-noticias');
-            contenedorNoticias.innerHTML = skeletonCards(6);
+            const textoActualizadoEn = document.getElementById('noticias-actualizado-en');
+            const btnActualizarNoticias = document.getElementById('btn-actualizar-noticias');
+            const iconoActualizarNoticias = document.getElementById('icono-actualizar-noticias');
 
-            cargarNoticias().then((noticias) => {
-                if (noticias.length === 0) {
-                    contenedorNoticias.innerHTML = `
-                        <p class="col-span-full text-slate-500 text-center py-6">
-                            No se pudieron cargar las noticias en este momento. Visita
-                            <a href="https://news.google.com/search?q=videojuegos&hl=es-419" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Google Noticias</a>
-                            o <a href="https://www.ign.com/games" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">IGN</a> directamente.
-                        </p>`;
-                    return;
+            async function cargarYPintarNoticias(forzar = false) {
+                if (forzar) {
+                    btnActualizarNoticias.disabled = true;
+                    iconoActualizarNoticias.classList.add('animate-spin');
+                } else {
+                    contenedorNoticias.innerHTML = skeletonCards(6);
                 }
 
-                contenedorNoticias.innerHTML = noticias.map((n) => `
-                    <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
-                        <a href="${n.link}" target="_blank" rel="noopener noreferrer" class="block">
-                            <div class="h-48 bg-slate-800 relative overflow-hidden">
-                                ${n.imagen
-                                    ? `<img src="${n.imagen}" alt="${sanitizarHTML(n.titulo)}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
-                                    : `<div class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-4xl">🎮</div>`}
-                                <span class="absolute top-4 left-4 ${n.color} text-white text-xs font-bold px-3 py-1 rounded-full">${sanitizarHTML(n.fuente)}</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-indigo-400 transition-colors line-clamp-2">${sanitizarHTML(n.titulo)}</h3>
-                                <p class="text-sm text-slate-400 mb-4 line-clamp-3">${sanitizarHTML(n.resumen)}</p>
-                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
-                            </div>
-                        </a>
-                    </article>`).join('');
-            }).catch((error) => {
-                console.error("Error cargando noticias:", error);
-                contenedorNoticias.innerHTML = `<p class="col-span-full text-slate-500 text-center py-6">No se pudieron cargar las noticias en este momento.</p>`;
-            });
+                try {
+                    const { noticias, actualizadoEn } = await cargarNoticias(9, forzar);
+
+                    textoActualizadoEn.textContent = actualizadoEn ? `Actualizado ${formatearTiempoRelativo(actualizadoEn)}` : '';
+
+                    if (noticias.length === 0) {
+                        contenedorNoticias.innerHTML = `
+                            <p class="col-span-full text-slate-500 text-center py-6">
+                                No se pudieron cargar las noticias en este momento. Visita
+                                <a href="https://news.google.com/search?q=videojuegos&hl=es-419" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Google Noticias</a>
+                                o <a href="https://www.ign.com/games" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">IGN</a> directamente.
+                            </p>`;
+                        return;
+                    }
+
+                    contenedorNoticias.innerHTML = noticias.map((n) => `
+                        <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
+                            <a href="${n.link}" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="h-48 bg-slate-800 relative overflow-hidden">
+                                    ${n.imagen
+                                        ? `<img src="${n.imagen}" alt="${sanitizarHTML(n.titulo)}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
+                                        : `<div class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-4xl">🎮</div>`}
+                                    <span class="absolute top-4 left-4 ${n.color} text-white text-xs font-bold px-3 py-1 rounded-full">${sanitizarHTML(n.fuente)}</span>
+                                    ${n.fecha ? `<span class="absolute bottom-4 right-4 bg-black/70 text-slate-300 text-xs font-bold px-2 py-1 rounded-full">${sanitizarHTML(formatearTiempoRelativo(n.fecha))}</span>` : ''}
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white mb-2 leading-tight group-hover:text-indigo-400 transition-colors line-clamp-2">${sanitizarHTML(n.titulo)}</h3>
+                                    <p class="text-sm text-slate-400 mb-4 line-clamp-3">${sanitizarHTML(n.resumen)}</p>
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
+                                </div>
+                            </a>
+                        </article>`).join('');
+                } catch (error) {
+                    console.error("Error cargando noticias:", error);
+                    contenedorNoticias.innerHTML = `<p class="col-span-full text-slate-500 text-center py-6">No se pudieron cargar las noticias en este momento.</p>`;
+                    if (forzar) showToast("No se pudieron actualizar las noticias.", "error");
+                } finally {
+                    btnActualizarNoticias.disabled = false;
+                    iconoActualizarNoticias.classList.remove('animate-spin');
+                }
+            }
+
+            cargarYPintarNoticias(false);
+            btnActualizarNoticias.addEventListener('click', () => cargarYPintarNoticias(true));
 
             const modal = document.getElementById('modal-crear-partida');
             const contenedorPartidas = document.getElementById('contenedor-partidas');
@@ -456,6 +518,13 @@
                     console.error("No se pudo enviar el mensaje:", error);
                     showToast("No se pudo enviar el mensaje.", "error");
                 }
+            });
+
+            // --- Cerrar el modal abierto (el que sea) con la tecla Escape ---
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== 'Escape') return;
+                if (!modal.classList.contains('hidden')) cerrarModal();
+                else if (!modalChatPartida.classList.contains('hidden')) cerrarChatPartida();
             });
         });
     </script>

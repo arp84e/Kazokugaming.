@@ -26,7 +26,10 @@
         </div>
 
         <!-- Se muestra mientras se confirma el estado de sesión -->
-        <div id="zona-cargando" class="text-center py-24 text-slate-500">Verificando acceso...</div>
+        <div id="zona-cargando" class="flex flex-col items-center justify-center gap-3 py-24 text-slate-500">
+            <span class="w-6 h-6 border-2 border-slate-700 border-t-fuchsia-500 rounded-full animate-spin"></span>
+            Verificando acceso...
+        </div>
 
         <!-- Panel real (solo visible tras confirmar permisos) -->
         <div id="zona-admin" class="hidden">
