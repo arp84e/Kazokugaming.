@@ -64,9 +64,14 @@
 
                 <div id="mensaje-perfil" class="hidden mb-4 p-3 rounded-lg text-sm font-bold text-center border"></div>
 
-                <button id="btn-guardar-perfil" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl transition-all">
-                    Guardar Cambios
-                </button>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button id="btn-guardar-perfil" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl transition-all">
+                        Guardar Cambios
+                    </button>
+                    <button id="btn-cerrar-sesion-perfil" class="px-6 py-3 text-slate-400 hover:text-red-400 font-bold rounded-xl transition-colors ml-auto">
+                        Cerrar sesión
+                    </button>
+                </div>
             </div>
 
             <!-- MIS ESCUADRONES -->
@@ -92,7 +97,7 @@
         import {
             collection, doc, getDoc, updateDoc, query, where, collectionGroup, onSnapshot
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { auth, db, onAuthStateChanged, updateProfile } from './firebase-init.js';
+        import { auth, db, onAuthStateChanged, updateProfile, signOut } from './firebase-init.js';
         import { skeletonCards, skeletonRows } from './ui-utils.js';
 
         // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
@@ -133,6 +138,10 @@
                 }
 
                 zonaPerfil.classList.remove('hidden');
+
+                document.getElementById('btn-cerrar-sesion-perfil').addEventListener('click', () => {
+                    signOut(auth).then(() => window.location.href = 'index.html');
+                });
 
                 // --- Cargar datos del perfil ---
                 let datosUsuario = {};

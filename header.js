@@ -43,28 +43,28 @@ function renderHeader(prefix) {
                 </button>
             </div>
 
-            <!-- MENÚ MÓVIL (BOTÓN) -->
+            <!-- MÓVIL: solo la campanita de notificaciones (la navegación va en la barra inferior) -->
             <div class="md:hidden flex items-center gap-1 relative z-50">
                 <div id="zona-notificaciones-movil"></div>
-                <button id="mobile-menu-btn" class="text-slate-300 p-2 hover:text-white transition" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
             </div>
         </div>
+    </header>
 
-        <!-- MENÚ MÓVIL (DESPLEGABLE) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0f] border-b border-indigo-900/50 absolute w-full left-0 top-20 shadow-2xl backdrop-blur-xl">
-            <nav class="flex flex-col px-6 pt-4 pb-8 space-y-4">
-                <a href="${prefix}index.html" class="text-base font-bold text-slate-300">🎯 Comunidad Activa</a>
-                <a href="${prefix}torneos.html" class="text-base font-bold text-slate-300">🏆 Eventos Especiales</a>
-                <a href="${prefix}grupos.html" class="text-base font-bold text-slate-300">🛡️ Unirse a una Familia</a>
-                <hr class="border-slate-800">
-                <div id="zona-sesion-movil" class="w-full py-3 bg-indigo-600 text-center block text-white font-bold rounded-xl mt-4">
-                    <a href="${prefix}login.html" class="block">Mi Perfil</a>
-                </div>
-            </nav>
-        </div>
-    </header>`;
+    <!-- BARRA DE NAVEGACIÓN INFERIOR (solo móvil, estilo app) -->
+    <nav id="barra-movil-inferior" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0a0a0f]/95 backdrop-blur-xl border-t border-indigo-900/50 flex items-stretch justify-around" style="padding-bottom: env(safe-area-inset-bottom);">
+        <a href="${prefix}index.html" data-pagina="index.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
+            <span class="text-xl leading-none">🎯</span> Inicio
+        </a>
+        <a href="${prefix}grupos.html" data-pagina="grupos.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
+            <span class="text-xl leading-none">🛡️</span> Familias
+        </a>
+        <a href="${prefix}torneos.html" data-pagina="torneos.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
+            <span class="text-xl leading-none">🏆</span> Eventos
+        </a>
+        <a id="barra-movil-perfil" href="${prefix}login.html" data-pagina="perfil.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
+            <span class="text-xl leading-none">👤</span> Perfil
+        </a>
+    </nav>`;
 }
 
 // Escapa & < > " ' (seguro tanto en texto como dentro de atributos HTML)
@@ -72,7 +72,6 @@ const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': 
 
 function pintarSesionActiva(gamertag, prefix) {
     const zona = document.getElementById('zona-sesion');
-    const zonaMovil = document.getElementById('zona-sesion-movil');
     if (zona) {
         zona.innerHTML = `
             <div id="zona-notificaciones-desktop" class="relative"></div>
@@ -88,10 +87,10 @@ function pintarSesionActiva(gamertag, prefix) {
             signOut(auth).then(() => window.location.href = `${prefix}index.html`);
         });
     }
-    if (zonaMovil) {
-        zonaMovil.innerHTML = `<a href="${prefix}perfil.html" class="text-white block">👋 ${sanitizarHTML(gamertag)} · Mi Perfil</a>`;
-        zonaMovil.classList.remove('bg-indigo-600');
-    }
+    // La pestaña "Perfil" de la barra inferior móvil pasa a apuntar a perfil.html
+    // (en vez de login.html) una vez que sabemos que hay sesión iniciada.
+    const tabPerfil = document.getElementById('barra-movil-perfil');
+    if (tabPerfil) tabPerfil.href = `${prefix}perfil.html`;
 }
 
 // ============================================================
@@ -326,29 +325,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.innerHTML = renderHeader(prefix);
 
-    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        const btn = document.getElementById('mobile-menu-btn');
-        const abierto = menu.classList.toggle('hidden') === false; // toggle devuelve true si quedó "hidden" (cerrado)
-        btn.setAttribute('aria-expanded', String(abierto));
-    });
+    // Espacio para que la barra inferior móvil no tape el contenido final de la página
+    document.body.classList.add('pb-20', 'md:pb-0');
 
-    // Cerrar el menú móvil automáticamente al tocar cualquier enlace de navegación
-    document.getElementById('mobile-menu')?.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
-            document.getElementById('mobile-menu').classList.add('hidden');
-            document.getElementById('mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    // Cerrar el menú móvil con la tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const menu = document.getElementById('mobile-menu');
-            if (menu && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-                document.getElementById('mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
-            }
+    // Resaltar en la barra inferior la pestaña de la página actual
+    const nombrePaginaActual = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.barra-movil-item').forEach((item) => {
+        if (item.dataset.pagina === nombrePaginaActual) {
+            item.classList.remove('text-slate-400');
+            item.classList.add('text-indigo-400');
         }
     });
 
@@ -370,6 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
             iniciarNotificaciones(user.uid, prefix);
             if (!user.emailVerified) mostrarBannerVerificacion(user);
         }
-        // Si no hay usuario, se deja el estado por defecto ("Mi Perfil") ya renderizado.
+        // Si no hay usuario, se deja el estado por defecto ("Mi Perfil" / login) ya renderizado.
     });
 });

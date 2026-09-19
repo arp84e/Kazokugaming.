@@ -123,7 +123,7 @@
             collection, doc, setDoc, query, orderBy, onSnapshot, getCountFromServer
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
-        import { showToast, skeletonCards } from './ui-utils.js';
+        import { showToast, compartirEnlace, skeletonCards } from './ui-utils.js';
 
         // Escapa & < > " ' para que el resultado sea seguro tanto dentro de
         // contenido de texto (entre etiquetas) como dentro de atributos HTML
@@ -173,6 +173,16 @@
 
             // --- Inscribirse a un torneo (calcula el cupo real vía subcolección) ---
             contenedor.addEventListener('click', async (e) => {
+                const btnCompartir = e.target.closest('.btn-compartir-torneo');
+                if (btnCompartir) {
+                    compartirEnlace({
+                        titulo: `Torneo "${btnCompartir.dataset.titulo}" en KazokuGaming`,
+                        texto: `¡Inscríbete al torneo "${btnCompartir.dataset.titulo}" de ${btnCompartir.dataset.juego} en KazokuGaming!`,
+                        url: `${window.location.origin}${window.location.pathname}`
+                    });
+                    return;
+                }
+
                 const btn = e.target.closest('.btn-inscribirse');
                 if (!btn) return;
 
@@ -209,6 +219,7 @@
                         <div class="absolute top-4 left-4">
                             <span class="bg-black/80 backdrop-blur-md text-white text-xs font-black px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-700">${sanitizarHTML(t.juego)} • ${sanitizarHTML(t.formato || '')}</span>
                         </div>
+                        <button data-titulo="${sanitizarHTML(t.titulo)}" data-juego="${sanitizarHTML(t.juego)}" class="btn-compartir-torneo absolute top-4 right-4 bg-black/80 backdrop-blur-md hover:bg-fuchsia-600 text-white text-sm px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors" aria-label="Compartir torneo" title="Compartir">📤</button>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-3xl font-black text-white drop-shadow-lg">${sanitizarHTML(t.titulo)}</h3>
                         </div>

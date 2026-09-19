@@ -19,6 +19,56 @@ function escaparHTML(t) {
     }[c]));
 }
 
+/**
+ * Comparte un enlace usando el Share Sheet nativo del dispositivo si está
+ * disponible (la mayoría de navegadores móviles); si no, muestra un mini
+ * menú con "Compartir por WhatsApp" y "Copiar enlace".
+ * @param {{titulo: string, texto: string, url: string}} datos
+ */
+export async function compartirEnlace({ titulo, texto, url }) {
+    if (navigator.share) {
+        try {
+            await navigator.share({ title: titulo, text: texto, url });
+        } catch {
+            // el usuario canceló el share sheet nativo: no hacemos nada más
+        }
+        return;
+    }
+
+    // Sin Web Share API (típico en escritorio): mini menú propio
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 z-[250] flex items-center justify-center p-4';
+    overlay.innerHTML = `
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-xs bg-[#0a0a0f] border border-slate-700 rounded-2xl shadow-2xl p-5">
+            <h3 class="text-base font-black text-white mb-4">Compartir</h3>
+            <div class="space-y-2">
+                <a data-accion="whatsapp" href="https://wa.me/?text=${encodeURIComponent(`${texto} ${url}`)}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-4 py-3 bg-slate-900 hover:bg-slate-800 rounded-xl text-sm font-bold text-white transition-colors">
+                    <span class="text-xl">💬</span> WhatsApp
+                </a>
+                <button data-accion="copiar" class="w-full flex items-center gap-3 px-4 py-3 bg-slate-900 hover:bg-slate-800 rounded-xl text-sm font-bold text-white transition-colors">
+                    <span class="text-xl">🔗</span> Copiar enlace
+                </button>
+            </div>
+            <button data-accion="cerrar" class="w-full mt-3 px-4 py-2 text-slate-400 hover:text-white text-sm font-bold">Cancelar</button>
+        </div>`;
+    document.body.appendChild(overlay);
+
+    const cerrar = () => overlay.remove();
+    overlay.querySelector('[data-accion="whatsapp"]').addEventListener('click', cerrar);
+    overlay.querySelector('[data-accion="cerrar"]').addEventListener('click', cerrar);
+    overlay.querySelector('.absolute.inset-0').addEventListener('click', cerrar);
+    overlay.querySelector('[data-accion="copiar"]').addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(url);
+            showToast('Enlace copiado al portapapeles.', 'exito');
+        } catch {
+            showToast('No se pudo copiar el enlace.', 'error');
+        }
+        cerrar();
+    });
+}
+
 function asegurarContenedorToasts() {
     let cont = document.getElementById('toast-contenedor');
     if (!cont) {
