@@ -54,6 +54,7 @@
                         <div>
                             <h1 id="texto-gamertag" class="text-2xl font-black text-white"></h1>
                             <p id="texto-miembro-desde" class="text-xs text-slate-500 mt-1"></p>
+                            <div id="contenedor-insignias" class="flex flex-wrap gap-2 mt-2"></div>
                         </div>
                     </div>
                     <button id="btn-reportar-usuario" class="text-xs font-bold text-slate-500 hover:text-red-400 transition-colors border border-slate-800 hover:border-red-500/40 px-3 py-1.5 rounded-full whitespace-nowrap">🚩 Reportar</button>
@@ -61,10 +62,10 @@
                 <p id="texto-bio" class="text-slate-400 mt-4"></p>
             </div>
 
-            <h2 class="text-xl font-black text-white mb-4">🛡️ Escuadrones</h2>
+            <h2 class="text-xl font-black text-white mb-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-[0.9em] h-[0.9em] align-[-0.1em]"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6l-8-3Z"/></svg> Escuadrones</h2>
             <div id="lista-escuadrones" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"></div>
 
-            <h2 class="text-xl font-black text-white mb-4">🏆 Torneos</h2>
+            <h2 class="text-xl font-black text-white mb-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-[0.9em] h-[0.9em] align-[-0.1em]"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a2 2 0 0 0 2 4"/><path d="M16 5h3a2 2 0 0 1-2 4"/><path d="M12 12v3"/><path d="M9 20h6"/><path d="M10 15h4l1 5H9l1-5Z"/></svg> Torneos</h2>
             <div id="lista-torneos" class="space-y-3"></div>
         </div>
     </main>
@@ -83,7 +84,7 @@
             collection, doc, getDoc, addDoc, query, where, collectionGroup, onSnapshot, serverTimestamp as fsServerTimestamp
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged } from './firebase-init.js';
-        import { showToast, showReportPrompt, skeletonCards, skeletonRows } from './ui-utils.js';
+        import { showToast, showReportPrompt, skeletonCards, skeletonRows, calcularInsignias, renderInsignias } from './ui-utils.js';
 
         // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
         const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -165,8 +166,26 @@
                 // --- Escuadrones de este jugador ---
                 const contEscuadrones = document.getElementById('lista-escuadrones');
                 contEscuadrones.innerHTML = skeletonCards(2);
+                let numEscuadronesActual = 0;
+                let esFundadorActual = false;
+                let numTorneosActual = 0;
+
+                function actualizarInsignias() {
+                    const insignias = calcularInsignias({
+                        esFundador: esFundadorActual,
+                        numEscuadrones: numEscuadronesActual,
+                        numTorneos: numTorneosActual,
+                        creadoEn: datosUsuario.creadoEn
+                    });
+                    renderInsignias(document.getElementById('contenedor-insignias'), insignias);
+                }
+
                 const qEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', uidPerfil));
                 onSnapshot(qEscuadrones, (snap) => {
+                    numEscuadronesActual = snap.size;
+                    esFundadorActual = snap.docs.some(d => d.data().duenoId === uidPerfil);
+                    actualizarInsignias();
+
                     if (snap.empty) {
                         contEscuadrones.innerHTML = `<p class="text-slate-500 col-span-full">Todavía no forma parte de ningún escuadrón.</p>`;
                         return;
@@ -193,6 +212,9 @@
                 try {
                     const qInscripciones = query(collectionGroup(db, 'inscripciones'), where('uid', '==', uidPerfil));
                     onSnapshot(qInscripciones, async (snap) => {
+                        numTorneosActual = snap.size;
+                        actualizarInsignias();
+
                         if (snap.empty) {
                             contTorneos.innerHTML = `<p class="text-slate-500">Todavía no se ha inscrito a ningún torneo.</p>`;
                             return;

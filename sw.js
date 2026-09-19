@@ -26,6 +26,7 @@ const ARCHIVOS_SHELL = [
     'firebase-init.js',
     'ui-utils.js',
     'noticias.js',
+    'iconos.js',
     'manifest.json',
     'icons/icon-192.png',
     'icons/icon-512.png'

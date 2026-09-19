@@ -38,7 +38,7 @@
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
                 <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-fuchsia-950/50 border border-fuchsia-500/30 text-fuchsia-300 text-xs font-display tracking-widest uppercase mb-6 backdrop-blur-md">
-                    🏆 Temporada Competitiva Abierta
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-[0.9em] h-[0.9em] align-[-0.1em]"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a2 2 0 0 0 2 4"/><path d="M16 5h3a2 2 0 0 1-2 4"/><path d="M12 12v3"/><path d="M9 20h6"/><path d="M10 15h4l1 5H9l1-5Z"/></svg> Temporada Competitiva Abierta
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
@@ -210,9 +210,44 @@
                 }
             });
 
+            // Convierte el campo "fecha" del torneo (Timestamp real, o texto libre
+            // si el torneo es de antes de este cambio) a texto legible + epoch ms
+            // para poder calcular la cuenta regresiva en vivo.
+            function formatearFechaTorneo(fecha) {
+                if (!fecha) return { texto: 'Por confirmar', epochMs: null };
+                if (typeof fecha.toDate === 'function') {
+                    const d = fecha.toDate();
+                    return {
+                        texto: d.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }),
+                        epochMs: d.getTime()
+                    };
+                }
+                return { texto: String(fecha), epochMs: null }; // torneo antiguo con fecha en texto libre
+            }
+
+            function formatearCuentaRegresiva(epochMs) {
+                const diff = epochMs - Date.now();
+                if (diff <= 0) return '¡Ya empezó! 🔥';
+                const dias = Math.floor(diff / 86400000);
+                const horas = Math.floor((diff % 86400000) / 3600000);
+                const minutos = Math.floor((diff % 3600000) / 60000);
+                if (dias > 0) return `Empieza en ${dias}d ${horas}h`;
+                if (horas > 0) return `Empieza en ${horas}h ${minutos}m`;
+                return `Empieza en ${minutos}m`;
+            }
+
+            // Actualiza todas las cuentas regresivas visibles cada 30 segundos
+            setInterval(() => {
+                document.querySelectorAll('.cuenta-regresiva').forEach((el) => {
+                    const epoch = Number(el.dataset.fechaEpoch);
+                    if (epoch) el.textContent = formatearCuentaRegresiva(epoch);
+                });
+            }, 30000);
+
             function pintarTorneo(t) {
                 const div = document.createElement('div');
                 div.className = "glass-panel rounded-3xl overflow-hidden group hover:border-fuchsia-500/50 transition-all shadow-xl";
+                const infoFecha = formatearFechaTorneo(t.fecha);
                 div.innerHTML = `
                     <div class="h-48 bg-slate-800 relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-rose-600 opacity-40 mix-blend-multiply"></div>
@@ -223,12 +258,13 @@
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-3xl font-black text-white drop-shadow-lg">${sanitizarHTML(t.titulo)}</h3>
                         </div>
+                        ${infoFecha.epochMs ? `<span class="cuenta-regresiva absolute bottom-4 right-4 bg-fuchsia-600/90 text-white text-xs font-black px-2.5 py-1 rounded-full" data-fecha-epoch="${infoFecha.epochMs}">${sanitizarHTML(formatearCuentaRegresiva(infoFecha.epochMs))}</span>` : ''}
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-6">
                             <div class="space-y-1">
                                 <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
-                                    📅 Inicio: <span class="text-white">${sanitizarHTML(t.fecha || 'Por confirmar')}</span>
+                                    📅 Inicio: <span class="text-white">${sanitizarHTML(infoFecha.texto)}</span>
                                 </div>
                                 <div class="text-sm font-bold text-slate-300 flex items-center gap-2">
                                     👥 Inscritos: <span class="text-white contador-inscritos">…</span> / ${sanitizarHTML(String(t.cupoMax))}

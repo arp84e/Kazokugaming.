@@ -65,8 +65,8 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-bold text-slate-300 mb-1">Fecha / hora (texto libre)</label>
-                        <input type="text" id="input-fecha" placeholder="Ej: Sábado 18:00h" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                        <label class="block text-sm font-bold text-slate-300 mb-1">Fecha y hora de inicio</label>
+                        <input type="datetime-local" id="input-fecha" class="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-300 mb-1">Cupo máximo</label>
@@ -103,9 +103,10 @@
 
     <script type="module">
         import {
-            collection, addDoc, deleteDoc, doc, updateDoc, query, where, orderBy, limit, onSnapshot
+            collection, addDoc, deleteDoc, doc, updateDoc, query, where, orderBy, limit, onSnapshot, Timestamp
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
+        import { iconoEscudo, iconoUsuario } from './iconos.js';
         import { showToast, showConfirm, skeletonRows } from './ui-utils.js';
 
         // Debe coincidir EXACTAMENTE con la lista de esAdmin() en firestore.rules.
@@ -140,7 +141,7 @@
                     const titulo = document.getElementById('input-titulo').value.trim();
                     const juego = document.getElementById('input-juego').value.trim();
                     const formato = document.getElementById('input-formato').value.trim();
-                    const fecha = document.getElementById('input-fecha').value.trim();
+                    const valorFecha = document.getElementById('input-fecha').value; // formato "YYYY-MM-DDTHH:mm" o vacío
                     const cupoMax = parseInt(document.getElementById('input-cupo').value, 10) || 16;
                     const recompensa = document.getElementById('input-recompensa').value.trim();
 
@@ -148,6 +149,11 @@
                         mostrarMensaje("Título y videojuego son obligatorios.", "error");
                         return;
                     }
+
+                    // Guardamos la fecha como Timestamp real (no texto) para poder mostrar
+                    // una cuenta regresiva en vivo en torneos.html. Si se deja vacía, el
+                    // torneo queda como "Por confirmar".
+                    const fecha = valorFecha ? Timestamp.fromDate(new Date(valorFecha)) : null;
 
                     try {
                         await addDoc(collection(db, 'torneos'), {
@@ -301,7 +307,7 @@
                     }
                     listaReportes.innerHTML = snap.docs.map((d) => {
                         const r = d.data();
-                        const etiquetas = { escuadron: '🛡️ Escuadrón', partida: '🎮 Partida', usuario: '👤 Usuario' };
+                        const etiquetas = { escuadron: `${iconoEscudo()} Escuadrón`, partida: '🎮 Partida', usuario: `${iconoUsuario()} Usuario` };
                         const href = enlacePorTipo(r.tipo, r.objetivoId);
                         return `<div class="bg-slate-900/60 border border-red-500/20 rounded-xl p-4">
                             <div class="flex justify-between items-start gap-3 mb-2">

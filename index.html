@@ -90,13 +90,31 @@
                         <option>Estrategia y Coordinación</option>
                     </select>
                     <button id="btn-buscar-companeros" type="button" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
-                        🔍 Buscar Compañeros
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-[0.9em] h-[0.9em] align-[-0.1em]"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Buscar Compañeros
                     </button>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN DE GRUPOS -->
+        <!-- ESTADÍSTICAS DE LA COMUNIDAD (números reales, animados) -->
+        <section id="seccion-estadisticas" class="py-14 relative z-10 border-t border-slate-800/50">
+            <div class="max-w-4xl mx-auto px-4 grid grid-cols-3 gap-4 sm:gap-8 text-center">
+                <div>
+                    <div id="stat-escuadrones" class="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">0</div>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 font-semibold">Escuadrones activos</p>
+                </div>
+                <div>
+                    <div id="stat-torneos" class="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-400">0</div>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 font-semibold">Torneos organizados</p>
+                </div>
+                <div>
+                    <div id="stat-jugadores" class="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">0</div>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 font-semibold">Jugadores registrados</p>
+                </div>
+            </div>
+        </section>
+
         <section id="grupos-buscando-gente" class="py-20 relative z-10 border-t border-slate-800/50 bg-slate-900/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-10">
@@ -220,7 +238,7 @@
     <!-- SCRIPT DE INTERACCIÓN (conectado a Firestore) -->
     <script type="module">
         import {
-            collection, addDoc, doc, setDoc, updateDoc, arrayUnion, query, orderBy, limit, onSnapshot
+            collection, addDoc, doc, setDoc, updateDoc, arrayUnion, query, orderBy, limit, onSnapshot, getCountFromServer
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, showReportPrompt, skeletonCards } from './ui-utils.js';
@@ -254,6 +272,41 @@
         };
 
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Estadísticas de la comunidad: se cargan y animan solo cuando entran en vista ---
+            function animarConteo(el, destino, duracionMs = 1200) {
+                const inicio = performance.now();
+                function frame(ahora) {
+                    const t = Math.min((ahora - inicio) / duracionMs, 1);
+                    el.textContent = Math.floor(t * destino).toLocaleString('es-ES');
+                    if (t < 1) requestAnimationFrame(frame);
+                    else el.textContent = destino.toLocaleString('es-ES');
+                }
+                requestAnimationFrame(frame);
+            }
+
+            const seccionStats = document.getElementById('seccion-estadisticas');
+            if (seccionStats && 'IntersectionObserver' in window) {
+                const observadorStats = new IntersectionObserver((entradas) => {
+                    entradas.forEach(async (entrada) => {
+                        if (!entrada.isIntersecting) return;
+                        observadorStats.disconnect();
+                        try {
+                            const [esc, tor, usr] = await Promise.all([
+                                getCountFromServer(collection(db, 'escuadrones')),
+                                getCountFromServer(collection(db, 'torneos')),
+                                getCountFromServer(collection(db, 'usuarios'))
+                            ]);
+                            animarConteo(document.getElementById('stat-escuadrones'), esc.data().count);
+                            animarConteo(document.getElementById('stat-torneos'), tor.data().count);
+                            animarConteo(document.getElementById('stat-jugadores'), usr.data().count);
+                        } catch (error) {
+                            console.error("No se pudieron cargar las estadísticas:", error);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observadorStats.observe(seccionStats);
+            }
+
             // --- Buscador decorativo del hero: lleva a un filtro real en Familias, o baja a Partidas ---
             document.getElementById('btn-buscar-companeros').addEventListener('click', () => {
                 const juego = document.getElementById('hero-select-juego').value;

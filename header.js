@@ -6,8 +6,9 @@
 
 import { auth, db, onAuthStateChanged, signOut, sendEmailVerification, serverTimestamp } from './firebase-init.js';
 import {
-    doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit
+    doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit, getDocs
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { iconoInicio, iconoEscudo, iconoTrofeo, iconoUsuario, iconoCampana, iconoBuscar, iconoCerrar } from './iconos.js';
 
 function getPrefix() {
     const path = window.location.pathname;
@@ -30,39 +31,56 @@ function renderHeader(prefix) {
 
             <!-- NAVEGACIÓN DESKTOP -->
             <nav class="hidden md:flex space-x-8 items-center bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800">
-                <a href="${prefix}index.html" class="text-sm font-bold text-slate-300 hover:text-indigo-400 transition flex items-center gap-2">🎯 Comunidad</a>
-                <a href="${prefix}torneos.html" class="text-sm font-bold text-slate-300 hover:text-fuchsia-400 transition flex items-center gap-2">🏆 Eventos</a>
-                <a href="${prefix}grupos.html" class="text-sm font-bold text-slate-300 hover:text-emerald-400 transition flex items-center gap-2">🛡️ Familias</a>
+                <a href="${prefix}index.html" class="text-sm font-bold text-slate-300 hover:text-indigo-400 transition flex items-center gap-2">${iconoInicio()} Comunidad</a>
+                <a href="${prefix}torneos.html" class="text-sm font-bold text-slate-300 hover:text-fuchsia-400 transition flex items-center gap-2">${iconoTrofeo()} Eventos</a>
+                <a href="${prefix}grupos.html" class="text-sm font-bold text-slate-300 hover:text-emerald-400 transition flex items-center gap-2">${iconoEscudo()} Familias</a>
             </nav>
 
             <!-- PERFIL / ACCESO (se rellena según el estado de sesión) -->
             <div id="zona-sesion" class="hidden lg:flex items-center gap-4">
+                <button id="btn-abrir-busqueda" class="text-slate-300 hover:text-white transition p-2" aria-label="Buscar">${iconoBuscar()}</button>
                 <a href="${prefix}login.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Mi Perfil</a>
                 <button id="btn-crear-evento" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:scale-105">
                     + Invitar a Jugar
                 </button>
             </div>
 
-            <!-- MÓVIL: solo la campanita de notificaciones (la navegación va en la barra inferior) -->
+            <!-- MÓVIL: buscador + campanita de notificaciones (la navegación va en la barra inferior) -->
             <div class="md:hidden flex items-center gap-1 relative z-50">
+                <button id="btn-abrir-busqueda-movil" class="text-slate-300 hover:text-white transition p-2" aria-label="Buscar">${iconoBuscar()}</button>
                 <div id="zona-notificaciones-movil"></div>
             </div>
         </div>
     </header>
 
+    <!-- MODAL: BUSCADOR GLOBAL -->
+    <div id="modal-busqueda-global" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-24 px-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="fondo-busqueda-global"></div>
+        <div class="relative w-full max-w-lg bg-[#0a0a0f] border border-slate-700 rounded-2xl shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-slate-800 flex items-center gap-3">
+                <span class="text-lg shrink-0">${iconoBuscar()}</span>
+                <input id="input-busqueda-global" type="text" placeholder="Buscar escuadrones, torneos, jugadores..." class="flex-1 bg-transparent text-white outline-none placeholder-slate-500" autocomplete="off">
+                <button id="btn-cerrar-busqueda-global" class="text-slate-400 hover:text-white transition-colors shrink-0" aria-label="Cerrar">${iconoCerrar()}</button>
+            </div>
+            <div id="resultados-busqueda-global" class="max-h-96 overflow-y-auto p-2">
+                <p class="text-slate-500 text-sm text-center py-6">Escribe para buscar...</p>
+            </div>
+        </div>
+    </div>
+
     <!-- BARRA DE NAVEGACIÓN INFERIOR (solo móvil, estilo app) -->
     <nav id="barra-movil-inferior" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0a0a0f]/95 backdrop-blur-xl border-t border-indigo-900/50 flex items-stretch justify-around" style="padding-bottom: env(safe-area-inset-bottom);">
         <a href="${prefix}index.html" data-pagina="index.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
-            <span class="text-xl leading-none">🎯</span> Inicio
+            <span class="text-lg leading-none">${iconoInicio()}</span> Inicio
         </a>
         <a href="${prefix}grupos.html" data-pagina="grupos.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
-            <span class="text-xl leading-none">🛡️</span> Familias
+            <span class="text-lg leading-none">${iconoEscudo()}</span> Familias
         </a>
         <a href="${prefix}torneos.html" data-pagina="torneos.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
-            <span class="text-xl leading-none">🏆</span> Eventos
+            <span class="text-lg leading-none">${iconoTrofeo()}</span> Eventos
         </a>
         <a id="barra-movil-perfil" href="${prefix}login.html" data-pagina="perfil.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
-            <span class="text-xl leading-none">👤</span> Perfil
+            <span class="text-lg leading-none">${iconoUsuario()}</span> Perfil
         </a>
     </nav>`;
 }
@@ -141,7 +159,7 @@ function iniciarNotificaciones(uid, prefix) {
 
         const htmlBoton = `
             <button id="btn-notificaciones" class="relative text-slate-300 hover:text-white transition p-2" aria-label="Notificaciones">
-                <span class="text-xl">🔔</span>
+                <span class="text-lg">${iconoCampana()}</span>
                 ${badge}
             </button>
             <div id="panel-notificaciones" class="hidden absolute right-0 top-12 w-72 bg-[#0a0a0f] border border-slate-800 rounded-xl shadow-2xl overflow-hidden z-50">
@@ -162,7 +180,7 @@ function iniciarNotificaciones(uid, prefix) {
         if (zonaDesktop) zonaDesktop.innerHTML = htmlBoton;
         if (zonaMovil) zonaMovil.innerHTML = `
             <button id="btn-notificaciones-movil" class="relative text-slate-300 hover:text-white transition p-2" aria-label="Notificaciones">
-                <span class="text-xl">🔔</span>
+                <span class="text-lg">${iconoCampana()}</span>
                 ${hayNoLeidos ? '<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border border-[#0a0a0f]"></span>' : ''}
             </button>`;
 
@@ -277,6 +295,109 @@ function iniciarNotificaciones(uid, prefix) {
 }
 
 // ============================================================
+// BUSCADOR GLOBAL: escuadrones, torneos y jugadores
+// ============================================================
+// Se cargan una sola vez por carga de página (no en cada tecla) y se
+// filtran en el navegador — suficiente para el tamaño de una comunidad
+// como esta, sin necesitar un servicio de búsqueda aparte.
+let datosBusquedaCache = null;
+
+function normalizarBusqueda(t) {
+    return String(t ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+async function cargarDatosBusqueda() {
+    if (datosBusquedaCache) return datosBusquedaCache;
+    const [esc, tor, usr] = await Promise.all([
+        getDocs(query(collection(db, 'escuadrones'), limit(200))),
+        getDocs(query(collection(db, 'torneos'), limit(100))),
+        getDocs(query(collection(db, 'usuarios'), limit(300)))
+    ]);
+    datosBusquedaCache = {
+        escuadrones: esc.docs.map(d => ({ id: d.id, ...d.data() })),
+        torneos: tor.docs.map(d => ({ id: d.id, ...d.data() })),
+        usuarios: usr.docs.map(d => ({ id: d.id, ...d.data() }))
+    };
+    return datosBusquedaCache;
+}
+
+async function realizarBusquedaGlobal(texto, prefix) {
+    const cont = document.getElementById('resultados-busqueda-global');
+    const consulta = normalizarBusqueda(texto.trim());
+    if (!consulta) {
+        cont.innerHTML = `<p class="text-slate-500 text-sm text-center py-6">Escribe para buscar...</p>`;
+        return;
+    }
+    cont.innerHTML = `<p class="text-slate-500 text-sm text-center py-6">Buscando...</p>`;
+
+    let datos;
+    try {
+        datos = await cargarDatosBusqueda();
+    } catch (error) {
+        console.error("Error cargando datos de búsqueda:", error);
+        cont.innerHTML = `<p class="text-red-400 text-sm text-center py-6">No se pudo buscar en este momento.</p>`;
+        return;
+    }
+
+    const escMatch = datos.escuadrones.filter(e => normalizarBusqueda(e.nombre).includes(consulta)).slice(0, 5);
+    const torMatch = datos.torneos.filter(t => normalizarBusqueda(t.titulo).includes(consulta)).slice(0, 5);
+    const usrMatch = datos.usuarios.filter(u => normalizarBusqueda(u.gamertag).includes(consulta)).slice(0, 5);
+
+    if (!escMatch.length && !torMatch.length && !usrMatch.length) {
+        cont.innerHTML = `<p class="text-slate-500 text-sm text-center py-6">Sin resultados para "${sanitizarHTML(texto)}".</p>`;
+        return;
+    }
+
+    const seccion = (titulo, items, render) => items.length
+        ? `<div class="px-3 py-1.5 text-[10px] font-black text-slate-500 uppercase tracking-wider mt-2">${titulo}</div>${items.map(render).join('')}`
+        : '';
+
+    cont.innerHTML =
+        seccion('Escuadrones', escMatch, (e) => `
+            <a href="${prefix}grupos.html?juego=${encodeURIComponent(e.juego || '')}" class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm text-slate-200 transition-colors">
+                <span class="shrink-0">${iconoEscudo()}</span> <span class="truncate">${sanitizarHTML(e.nombre)}</span> <span class="text-slate-500 text-xs shrink-0">· ${sanitizarHTML(e.juego || '')}</span>
+            </a>`) +
+        seccion('Torneos', torMatch, (t) => `
+            <a href="${prefix}torneos.html" class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm text-slate-200 transition-colors">
+                <span class="shrink-0">${iconoTrofeo()}</span> <span class="truncate">${sanitizarHTML(t.titulo)}</span>
+            </a>`) +
+        seccion('Jugadores', usrMatch, (u) => `
+            <a href="${prefix}usuario.html?uid=${encodeURIComponent(u.id)}" class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-slate-800 text-sm text-slate-200 transition-colors">
+                <span class="shrink-0">👤</span> <span class="truncate">${sanitizarHTML(u.gamertag || 'Jugador')}</span>
+            </a>`);
+}
+
+function iniciarBusquedaGlobal(prefix) {
+    const modal = document.getElementById('modal-busqueda-global');
+    const input = document.getElementById('input-busqueda-global');
+    if (!modal || !input) return;
+
+    const abrir = () => {
+        modal.classList.remove('hidden');
+        input.value = '';
+        input.focus();
+        document.getElementById('resultados-busqueda-global').innerHTML = `<p class="text-slate-500 text-sm text-center py-6">Escribe para buscar...</p>`;
+    };
+    const cerrar = () => modal.classList.add('hidden');
+
+    document.getElementById('btn-abrir-busqueda')?.addEventListener('click', abrir);
+    document.getElementById('btn-abrir-busqueda-movil')?.addEventListener('click', abrir);
+    document.getElementById('btn-cerrar-busqueda-global')?.addEventListener('click', cerrar);
+    document.getElementById('fondo-busqueda-global')?.addEventListener('click', cerrar);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) cerrar();
+    });
+
+    let temporizador = null;
+    input.addEventListener('input', () => {
+        clearTimeout(temporizador);
+        const valor = input.value;
+        temporizador = setTimeout(() => realizarBusquedaGlobal(valor, prefix), 200);
+    });
+}
+
+// ============================================================
 // AVISO DE CORREO SIN VERIFICAR
 // ============================================================
 function mostrarBannerVerificacion(user) {
@@ -336,6 +457,8 @@ document.addEventListener("DOMContentLoaded", function () {
             item.classList.add('text-indigo-400');
         }
     });
+
+    iniciarBusquedaGlobal(prefix);
 
     // El botón "+ Invitar a Jugar" solo tiene su acción propia dentro de index.html.
     // Si se pulsa desde cualquier otra página, llevamos a la persona a index.html

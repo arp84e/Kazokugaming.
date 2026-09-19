@@ -69,6 +69,49 @@ export async function compartirEnlace({ titulo, texto, url }) {
     });
 }
 
+/**
+ * Calcula qué insignias le corresponden a un jugador según datos que ya
+ * existen (nada nuevo que guardar en Firestore). Devuelve un arreglo de
+ * { emoji, nombre, color } listo para pintar como chips.
+ */
+export function calcularInsignias({ esFundador, numEscuadrones, numTorneos, creadoEn }) {
+    const insignias = [];
+
+    if (esFundador) {
+        insignias.push({ emoji: '👑', nombre: 'Fundador', color: 'bg-amber-400/10 text-amber-300 border-amber-400/30' });
+    }
+    if (numEscuadrones >= 3) {
+        insignias.push({ emoji: '🤝', nombre: 'Sociable', color: 'bg-emerald-400/10 text-emerald-300 border-emerald-400/30' });
+    }
+    if (numTorneos >= 1) {
+        insignias.push({ emoji: '⚔️', nombre: 'Competidor', color: 'bg-fuchsia-400/10 text-fuchsia-300 border-fuchsia-400/30' });
+    }
+    if (creadoEn && typeof creadoEn.toDate === 'function') {
+        const dias = (Date.now() - creadoEn.toDate().getTime()) / 86400000;
+        if (dias >= 30) {
+            insignias.push({ emoji: '🎖️', nombre: 'Veterano', color: 'bg-indigo-400/10 text-indigo-300 border-indigo-400/30' });
+        }
+    }
+    return insignias;
+}
+
+/**
+ * Pinta las insignias calculadas dentro de un contenedor.
+ * @param {HTMLElement} contenedor
+ * @param {Array<{emoji:string, nombre:string, color:string}>} insignias
+ */
+export function renderInsignias(contenedor, insignias) {
+    if (!contenedor) return;
+    if (insignias.length === 0) {
+        contenedor.innerHTML = '';
+        return;
+    }
+    contenedor.innerHTML = insignias.map((ins) => `
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold border ${ins.color}">
+            ${ins.emoji} ${ins.nombre}
+        </span>`).join('');
+}
+
 function asegurarContenedorToasts() {
     let cont = document.getElementById('toast-contenedor');
     if (!cont) {
