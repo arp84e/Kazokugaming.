@@ -1,16 +1,23 @@
 // noticias.js
-// Carga noticias REALES de videojuegos y tecnología, en español, y las
-// muestra como titular + imagen + resumen corto + enlace al artículo
-// original. Nunca reproduce el artículo completo: esto es el mismo patrón
-// que usa cualquier agregador de noticias (Google News, Feedly, Apple
-// News...) y por diseño evita problemas de derechos de autor, siempre que
-// se mantenga así — no ampliar los resúmenes ni quitar el enlace/atribución.
+// Carga noticias REALES de videojuegos y tecnología y las muestra como
+// titular + imagen + resumen corto + enlace al artículo original. Nunca
+// reproduce el artículo completo: esto es el mismo patrón que usa cualquier
+// agregador de noticias (Google News, Feedly, Apple News...) y por diseño
+// evita problemas de derechos de autor, siempre que se mantenga así — no
+// ampliar los resúmenes ni quitar el enlace/atribución.
 //
-// Fuentes: dos búsquedas de Google Noticias en español ("videojuegos" y
-// "tecnología"), que agregan automáticamente artículos de múltiples medios
-// hispanohablantes (MeriStation, Vandal, HobbyConsolas, Xataka, etc.) sin
-// que tengamos que adivinar la URL de RSS exacta de cada uno — cada
-// resultado enlaza al medio original.
+// Fuentes:
+//   - Tecnología: Xataka (feed oficial confirmado, en español, CON imagen
+//     real en cada noticia — feeds.weblogssl.com/xataka2).
+//   - Videojuegos: IGN (feed oficial confirmado, con imagen real, pero en
+//     inglés) + Google Noticias en español "videojuegos" (sin imagen
+//     garantizada, pero en español) como complemento/respaldo.
+//
+// No pude confirmar con certeza un feed de un medio de videojuegos en
+// español que garantice imagen en cada noticia (lo intenté con Vandal,
+// 3DJuegos y HobbyConsolas sin éxito) — por eso Videojuegos combina ambas.
+// Si el usuario confirma él mismo la URL de RSS de algún medio de
+// videojuegos en español con imágenes, se puede agregar aquí fácilmente.
 //
 // Usa el servicio gratuito rss2json.com como puente, porque los navegadores no
 // pueden leer XML de RSS directamente por las políticas de CORS de la mayoría
@@ -22,26 +29,20 @@ function googleNewsRss(consulta) {
 }
 
 const FEEDS_NOTICIAS = [
+    { url: 'http://feeds.weblogssl.com/xataka2', categoria: 'Tecnología', fuente: 'Xataka', color: 'bg-sky-600', max: 6 },
+    { url: 'https://feeds.ign.com/ign/all', categoria: 'Videojuegos', fuente: 'IGN', color: 'bg-emerald-600', max: 4 },
     {
         url: googleNewsRss('videojuegos'),
         categoria: 'Videojuegos',
         fuente: 'Google Noticias',
         color: 'bg-emerald-600',
-        max: 6,
+        max: 4,
         esGoogleNews: true // el título trae " - NombreDelMedio" al final; lo separamos
-    },
-    {
-        url: googleNewsRss('tecnología'),
-        categoria: 'Tecnología',
-        fuente: 'Google Noticias',
-        color: 'bg-sky-600',
-        max: 6,
-        esGoogleNews: true
     }
 ];
 
 const RSS2JSON_ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=';
-const CLAVE_CACHE = 'kazoku_noticias_cache_v4';
+const CLAVE_CACHE = 'kazoku_noticias_cache_v5';
 const DURACION_CACHE_MS = 20 * 60 * 1000; // 20 minutos
 const TIMEOUT_POR_FEED_MS = 8000; // si una fuente tarda más de 8s, la damos por perdida y seguimos con las demás
 
@@ -57,7 +58,7 @@ function limpiarYRecortar(html, maxLen) {
 // nunca la cadena original. Esto importa porque el constructor URL() acepta
 // cadenas "raras" (p. ej. con una comilla incrustada) sin lanzar error, pero al
 // normalizarlas esos caracteres quedan porcentaje-codificados — así, aunque el
-// feed de un tercero (rss2json/Google Noticias/IGN/Kotaku) devolviera algo
+// feed de un tercero (rss2json/Google Noticias/IGN) devolviera algo
 // manipulado, nunca llega una comilla real al HTML.
 function normalizarUrlHttpsOVacio(url) {
     try {
@@ -66,6 +67,30 @@ function normalizarUrlHttpsOVacio(url) {
     } catch {
         return null;
     }
+}
+
+// rss2json no siempre rellena "thumbnail"/"enclosure" aunque el HTML del
+// resumen sí traiga una imagen incrustada (es el caso de Xataka: cada
+// noticia empieza con <img src="...">). Como respaldo, buscamos la primera
+// imagen dentro del HTML del resumen/contenido nosotros mismos.
+function primeraImagenEnHtml(html) {
+    if (!html) return null;
+    const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return match ? match[1] : null;
+}
+
+function extraerImagen(item) {
+    const candidatas = [
+        item.thumbnail,
+        item.enclosure && item.enclosure.link,
+        primeraImagenEnHtml(item.content),
+        primeraImagenEnHtml(item.description)
+    ];
+    for (const candidata of candidatas) {
+        const normalizada = normalizarUrlHttpsOVacio(candidata);
+        if (normalizada) return normalizada;
+    }
+    return null;
 }
 
 // Google Noticias pone el nombre del medio al final del título, separado por
@@ -137,7 +162,7 @@ async function cargarFeed(feed) {
                 titulo,
                 resumen: limpiarYRecortar(item.description, 140),
                 link: normalizarUrlHttpsOVacio(item.link),
-                imagen: normalizarUrlHttpsOVacio(item.thumbnail) || normalizarUrlHttpsOVacio(item.enclosure?.link),
+                imagen: extraerImagen(item),
                 fuente,
                 categoria: feed.categoria,
                 color: feed.color,
@@ -212,5 +237,3 @@ export async function cargarNoticias(maxTotal = 10, forzar = false) {
 
     return { noticias, actualizadoEn, deCache: false };
 }
-
-
