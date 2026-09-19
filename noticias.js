@@ -1,39 +1,47 @@
 // noticias.js
-// Carga noticias REALES de videojuegos y las muestra como titular + imagen +
-// resumen corto + enlace al artículo original. Nunca reproduce el artículo
-// completo: esto es el mismo patrón que usa cualquier agregador de noticias
-// (Google News, Feedly, Apple News...) y por diseño evita problemas de
-// derechos de autor, siempre que se mantenga así — no ampliar los resúmenes
-// ni quitar el enlace/atribución.
+// Carga noticias REALES de videojuegos y tecnología, en español, y las
+// muestra como titular + imagen + resumen corto + enlace al artículo
+// original. Nunca reproduce el artículo completo: esto es el mismo patrón
+// que usa cualquier agregador de noticias (Google News, Feedly, Apple
+// News...) y por diseño evita problemas de derechos de autor, siempre que
+// se mantenga así — no ampliar los resúmenes ni quitar el enlace/atribución.
 //
-// Fuentes:
-//   1. Búsqueda de Google Noticias en español ("videojuegos"): agrega
-//      automáticamente artículos de múltiples medios hispanohablantes
-//      (MeriStation, Vandal, HobbyConsolas, Xataka, etc.) sin que tengamos
-//      que adivinar la URL de RSS exacta de cada uno — cada resultado enlaza
-//      al medio original.
-//   2. IGN y Kotaku (feeds oficiales en inglés): referencia internacional
-//      adicional, y respaldo si Google Noticias no responde.
+// Fuentes: dos búsquedas de Google Noticias en español ("videojuegos" y
+// "tecnología"), que agregan automáticamente artículos de múltiples medios
+// hispanohablantes (MeriStation, Vandal, HobbyConsolas, Xataka, etc.) sin
+// que tengamos que adivinar la URL de RSS exacta de cada uno — cada
+// resultado enlaza al medio original.
 //
 // Usa el servicio gratuito rss2json.com como puente, porque los navegadores no
 // pueden leer XML de RSS directamente por las políticas de CORS de la mayoría
 // de sitios de noticias. Es un servicio de terceros ajeno a Anthropic/Firebase;
 // si en el futuro deja de funcionar, ver SETUP.md para alternativas.
 
+function googleNewsRss(consulta) {
+    return `https://news.google.com/rss/search?q=${encodeURIComponent(consulta)}&hl=es-419&gl=US&ceid=US:es-419`;
+}
+
 const FEEDS_NOTICIAS = [
     {
-        url: 'https://news.google.com/rss/search?q=videojuegos&hl=es-419&gl=US&ceid=US:es-419',
+        url: googleNewsRss('videojuegos'),
+        categoria: 'Videojuegos',
         fuente: 'Google Noticias',
         color: 'bg-emerald-600',
-        max: 5,
+        max: 6,
         esGoogleNews: true // el título trae " - NombreDelMedio" al final; lo separamos
     },
-    { url: 'https://feeds.ign.com/ign/all', fuente: 'IGN', color: 'bg-indigo-600', max: 4 },
-    { url: 'https://kotaku.com/rss', fuente: 'Kotaku', color: 'bg-fuchsia-600', max: 4 }
+    {
+        url: googleNewsRss('tecnología'),
+        categoria: 'Tecnología',
+        fuente: 'Google Noticias',
+        color: 'bg-sky-600',
+        max: 6,
+        esGoogleNews: true
+    }
 ];
 
 const RSS2JSON_ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=';
-const CLAVE_CACHE = 'kazoku_noticias_cache_v3';
+const CLAVE_CACHE = 'kazoku_noticias_cache_v4';
 const DURACION_CACHE_MS = 20 * 60 * 1000; // 20 minutos
 const TIMEOUT_POR_FEED_MS = 8000; // si una fuente tarda más de 8s, la damos por perdida y seguimos con las demás
 
@@ -131,6 +139,7 @@ async function cargarFeed(feed) {
                 link: normalizarUrlHttpsOVacio(item.link),
                 imagen: normalizarUrlHttpsOVacio(item.thumbnail) || normalizarUrlHttpsOVacio(item.enclosure?.link),
                 fuente,
+                categoria: feed.categoria,
                 color: feed.color,
                 fecha: item.pubDate ? new Date(item.pubDate).getTime() : 0
             };
@@ -148,7 +157,7 @@ async function cargarFeed(feed) {
  * @param {number} maxTotal    Cuántas noticias devolver como máximo, tras combinar y filtrar.
  * @param {boolean} forzar     Si es true, ignora la caché y vuelve a consultar los feeds.
  */
-export async function cargarNoticias(maxTotal = 9, forzar = false) {
+export async function cargarNoticias(maxTotal = 10, forzar = false) {
     if (!forzar) {
         try {
             const cacheRaw = sessionStorage.getItem(CLAVE_CACHE);
@@ -174,14 +183,23 @@ export async function cargarNoticias(maxTotal = 9, forzar = false) {
     // Deduplicar: si dos fuentes cubren la misma noticia, nos quedamos solo
     // con la primera que aparece (ya viene ordenada por fecha, la más reciente gana).
     const titulosVistos = new Set();
-    const noticias = [];
+    const sinDuplicados = [];
     for (const n of candidatas) {
         const clave = normalizarTitulo(n.titulo);
         if (clave && titulosVistos.has(clave)) continue;
         if (clave) titulosVistos.add(clave);
-        noticias.push(n);
-        if (noticias.length >= maxTotal) break;
+        sinDuplicados.push(n);
     }
+
+    // Repartir el cupo entre categorías para que ninguna se quede sin espacio
+    // si, por ejemplo, "Tecnología" tuviera ese día muchas más noticias
+    // recientes que "Videojuegos" (o viceversa).
+    const categorias = [...new Set(sinDuplicados.map((n) => n.categoria))];
+    const cupoPorCategoria = Math.ceil(maxTotal / Math.max(categorias.length, 1));
+    const noticias = categorias
+        .flatMap((cat) => sinDuplicados.filter((n) => n.categoria === cat).slice(0, cupoPorCategoria))
+        .sort((a, b) => b.fecha - a.fecha)
+        .slice(0, maxTotal);
 
     const actualizadoEn = Date.now();
     if (noticias.length > 0) {
