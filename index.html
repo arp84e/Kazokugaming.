@@ -292,13 +292,24 @@
                         return;
                     }
 
-                    contenedorNoticias.innerHTML = noticias.map((n) => `
+                    const placeholderPorCategoria = {
+                        'Videojuegos': { grad: 'from-emerald-600/30 via-slate-900 to-slate-950', icono: '🎮', patron: 'rgba(16,185,129,0.15)' },
+                        'Tecnología': { grad: 'from-sky-600/30 via-slate-900 to-slate-950', icono: '💻', patron: 'rgba(14,165,233,0.15)' }
+                    };
+
+                    contenedorNoticias.innerHTML = noticias.map((n) => {
+                        const ph = placeholderPorCategoria[n.categoria] || { grad: 'from-slate-700/30 via-slate-900 to-slate-950', icono: '📰', patron: 'rgba(148,163,184,0.15)' };
+                        return `
                         <article class="glass-panel rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
                             <a href="${sanitizarHTML(n.link)}" target="_blank" rel="noopener noreferrer" class="block">
                                 <div class="h-48 bg-slate-800 relative overflow-hidden">
                                     ${n.imagen
                                         ? `<img src="${n.imagen}" alt="${sanitizarHTML(n.titulo)}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
-                                        : `<div class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-4xl">🎮</div>`}
+                                        : `<div class="w-full h-full bg-gradient-to-br ${ph.grad} flex flex-col items-center justify-center gap-2 relative overflow-hidden group-hover:brightness-110 transition-all"
+                                                style="background-image: radial-gradient(circle at 20% 30%, ${ph.patron} 0, transparent 45%), radial-gradient(circle at 80% 70%, ${ph.patron} 0, transparent 45%);">
+                                                <span class="text-5xl drop-shadow-lg">${ph.icono}</span>
+                                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">${sanitizarHTML(n.categoria || '')}</span>
+                                           </div>`}
                                     <span class="absolute top-4 left-4 ${n.color} text-white text-xs font-bold px-3 py-1 rounded-full">${sanitizarHTML(n.fuente)}</span>
                                     ${n.fecha ? `<span class="absolute bottom-4 right-4 bg-black/70 text-slate-300 text-xs font-bold px-2 py-1 rounded-full">${sanitizarHTML(formatearTiempoRelativo(n.fecha))}</span>` : ''}
                                 </div>
@@ -308,7 +319,8 @@
                                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Leer artículo →</span>
                                 </div>
                             </a>
-                        </article>`).join('');
+                        </article>`;
+                    }).join('');
                 } catch (error) {
                     console.error("Error cargando noticias:", error);
                     contenedorNoticias.innerHTML = `<p class="col-span-full text-slate-500 text-center py-6">No se pudieron cargar las noticias en este momento.</p>`;
