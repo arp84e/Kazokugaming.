@@ -481,7 +481,9 @@
 
                 contenedorPartidas.innerHTML = snapshot.docs.map((docSnap) => {
                     const data = docSnap.data();
-                    const clasesTema = temas[data.juego] || "bg-indigo-500/20 text-indigo-400 border-indigo-500/30";
+                    const clasesTema = Object.prototype.hasOwnProperty.call(temas, data.juego)
+                        ? temas[data.juego]
+                        : "bg-indigo-500/20 text-indigo-400 border-indigo-500/30";
                     const esAutor = usuarioActual && data.autorId === usuarioActual.uid;
                     const yaUnido = usuarioActual && Array.isArray(data.interesados) && data.interesados.includes(usuarioActual.uid);
                     const puedeVerChat = esAutor || yaUnido;

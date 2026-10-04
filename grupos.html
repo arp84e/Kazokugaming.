@@ -551,7 +551,10 @@
                 }
 
                 contenedor.innerHTML = lista.map((e) => {
-                    const [de1, de2, textoColor, fondoColor] = coloresPorJuego[e.juego] || ["from-indigo-500", "to-fuchsia-500", "text-indigo-400", "bg-indigo-400/10"];
+                    // hasOwnProperty: evita que un valor como "constructor" devuelva una función en vez de colores
+                    const [de1, de2, textoColor, fondoColor] = Object.prototype.hasOwnProperty.call(coloresPorJuego, e.juego)
+                        ? coloresPorJuego[e.juego]
+                        : ["from-indigo-500", "to-fuchsia-500", "text-indigo-400", "bg-indigo-400/10"];
                     const miembrosArr = Array.isArray(e.miembros) ? e.miembros : [];
                     const miembros = miembrosArr.length;
                     const lleno = miembros >= e.capacidad;

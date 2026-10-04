@@ -95,7 +95,11 @@
 
             <h2 class="text-xl font-black text-white mb-4">Moderación de publicaciones (partidas)</h2>
             <p class="text-slate-400 text-sm mb-4">Puedes eliminar cualquier publicación de "Invitar a Jugar" en index.html.</p>
-            <div id="lista-partidas" class="space-y-3"></div>
+            <div id="lista-partidas" class="space-y-3 mb-12"></div>
+
+            <h2 class="text-xl font-black text-white mb-4">Moderación del muro</h2>
+            <p class="text-slate-400 text-sm mb-4">Las 50 publicaciones más recientes del muro. Puedes eliminar cualquiera (por ejemplo, si el filtro automático dejó pasar algo).</p>
+            <div id="lista-muro-admin" class="space-y-3"></div>
         </div>
     </main>
 
@@ -106,7 +110,7 @@
             collection, addDoc, deleteDoc, doc, updateDoc, query, where, orderBy, limit, onSnapshot, Timestamp
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
-        import { iconoEscudo, iconoUsuario } from './iconos.js';
+        import { iconoEscudo, iconoUsuario, iconoMuro } from './iconos.js';
         import { showToast, showConfirm, skeletonRows } from './ui-utils.js';
 
         // Debe coincidir EXACTAMENTE con la lista de esAdmin() en firestore.rules.
@@ -268,10 +272,26 @@
                         </div>`
                 });
 
+                moderarColeccion({
+                    coleccion: 'muro',
+                    contenedorId: 'lista-muro-admin',
+                    etiquetaBtn: 'btn-borrar-post-muro',
+                    vacioTexto: 'Todavía no hay publicaciones en el muro.',
+                    renderItem: (id, p, etiquetaBtn) => `
+                        <div class="flex justify-between items-start gap-4 bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                            <div class="min-w-0">
+                                <p class="font-bold text-white text-sm">${sanitizarHTML(p.autorNombre || '—')}${p.juego ? ` <span class="text-xs font-normal text-slate-500">· ${sanitizarHTML(p.juego)}</span>` : ''}</p>
+                                <p class="text-sm text-slate-300 break-words">${sanitizarHTML(p.texto || '')}</p>
+                            </div>
+                            <button data-id="${id}" class="${etiquetaBtn} text-red-400 hover:text-red-300 font-bold text-sm shrink-0">Eliminar</button>
+                        </div>`
+                });
+
                 // --- Bandeja de reportes ---
                 const enlacePorTipo = (tipo, objetivoId) => {
                     if (tipo === 'escuadron') return 'grupos.html';
                     if (tipo === 'partida') return 'index.html';
+                    if (tipo === 'post') return 'muro.html';
                     if (tipo === 'usuario') return `usuario.html?uid=${encodeURIComponent(objetivoId)}`;
                     return null;
                 };
@@ -282,10 +302,16 @@
                 listaReportes.addEventListener('click', async (e) => {
                     const btnRevisado = e.target.closest('.btn-reporte-revisado');
                     const btnBorrar = e.target.closest('.btn-reporte-borrar');
-                    if (!btnRevisado && !btnBorrar) return;
+                    const btnPost = e.target.closest('.btn-reporte-eliminar-post');
+                    if (!btnRevisado && !btnBorrar && !btnPost) return;
 
                     try {
-                        if (btnRevisado) {
+                        if (btnPost) {
+                            if (!await showConfirm("Se borrará la publicación del muro y el reporte quedará como revisado.", { titulo: "¿Eliminar la publicación reportada?", danger: true, confirmarTexto: "Eliminar" })) return;
+                            await deleteDoc(doc(db, 'muro', btnPost.dataset.post));
+                            await updateDoc(doc(db, 'reportes', btnPost.dataset.id), { estado: 'revisado' });
+                            showToast("Publicación eliminada y reporte revisado.", "exito");
+                        } else if (btnRevisado) {
                             await updateDoc(doc(db, 'reportes', btnRevisado.dataset.id), { estado: 'revisado' });
                             showToast("Reporte marcado como revisado.", "exito");
                         } else {
@@ -307,7 +333,7 @@
                     }
                     listaReportes.innerHTML = snap.docs.map((d) => {
                         const r = d.data();
-                        const etiquetas = { escuadron: `${iconoEscudo()} Escuadrón`, partida: '🎮 Partida', usuario: `${iconoUsuario()} Usuario` };
+                        const etiquetas = { escuadron: `${iconoEscudo()} Escuadrón`, partida: '🎮 Partida', usuario: `${iconoUsuario()} Usuario`, post: `${iconoMuro()} Publicación` };
                         const href = enlacePorTipo(r.tipo, r.objetivoId);
                         return `<div class="bg-slate-900/60 border border-red-500/20 rounded-xl p-4">
                             <div class="flex justify-between items-start gap-3 mb-2">
@@ -318,7 +344,8 @@
                                 <span class="text-xs text-slate-500 whitespace-nowrap">por ${sanitizarHTML(r.reportadoPorNombre || '—')}</span>
                             </div>
                             <p class="text-sm text-slate-300 mb-3">"${sanitizarHTML(r.motivo)}"</p>
-                            <div class="flex gap-2">
+                            <div class="flex flex-wrap gap-2">
+                                ${r.tipo === 'post' ? `<button data-id="${d.id}" data-post="${sanitizarHTML(r.objetivoId)}" class="btn-reporte-eliminar-post px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-lg">Eliminar publicación</button>` : ''}
                                 <button data-id="${d.id}" class="btn-reporte-revisado px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg">Marcar revisado</button>
                                 <button data-id="${d.id}" class="btn-reporte-borrar px-3 py-1.5 bg-slate-800 hover:bg-red-600 text-white text-xs font-bold rounded-lg">Eliminar reporte</button>
                             </div>

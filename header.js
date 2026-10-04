@@ -8,7 +8,7 @@ import { auth, db, onAuthStateChanged, signOut, sendEmailVerification, serverTim
 import {
     doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit, getDocs
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-import { iconoInicio, iconoEscudo, iconoTrofeo, iconoUsuario, iconoCampana, iconoBuscar, iconoCerrar } from './iconos.js';
+import { iconoInicio, iconoEscudo, iconoTrofeo, iconoUsuario, iconoCampana, iconoBuscar, iconoCerrar, iconoMuro } from './iconos.js';
 
 function getPrefix() {
     const path = window.location.pathname;
@@ -32,6 +32,7 @@ function renderHeader(prefix) {
             <!-- NAVEGACIÓN DESKTOP -->
             <nav class="hidden md:flex space-x-8 items-center bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800">
                 <a href="${prefix}index.html" class="text-sm font-bold text-slate-300 hover:text-indigo-400 transition flex items-center gap-2">${iconoInicio()} Comunidad</a>
+                <a href="${prefix}muro.html" class="text-sm font-bold text-slate-300 hover:text-cyan-400 transition flex items-center gap-2">${iconoMuro()} Muro</a>
                 <a href="${prefix}torneos.html" class="text-sm font-bold text-slate-300 hover:text-fuchsia-400 transition flex items-center gap-2">${iconoTrofeo()} Eventos</a>
                 <a href="${prefix}grupos.html" class="text-sm font-bold text-slate-300 hover:text-emerald-400 transition flex items-center gap-2">${iconoEscudo()} Familias</a>
             </nav>
@@ -72,6 +73,9 @@ function renderHeader(prefix) {
     <nav id="barra-movil-inferior" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0a0a0f]/95 backdrop-blur-xl border-t border-indigo-900/50 flex items-stretch justify-around" style="padding-bottom: env(safe-area-inset-bottom);">
         <a href="${prefix}index.html" data-pagina="index.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
             <span class="text-lg leading-none">${iconoInicio()}</span> Inicio
+        </a>
+        <a href="${prefix}muro.html" data-pagina="muro.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
+            <span class="text-lg leading-none">${iconoMuro()}</span> Muro
         </a>
         <a href="${prefix}grupos.html" data-pagina="grupos.html" class="barra-movil-item flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-bold text-slate-400 transition-colors">
             <span class="text-lg leading-none">${iconoEscudo()}</span> Familias

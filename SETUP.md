@@ -11,6 +11,7 @@
 | Página | Qué hace |
 |---|---|
 | `index.html` | Partidas rápidas en tiempo real (Firestore), noticias reales en español, chat por partida |
+| `muro.html` | Muro de la comunidad: publicaciones en tiempo real con filtro de contenido, reacciones 🔥, reportes y filtro por juego |
 | `grupos.html` | Crear/filtrar escuadrones reales, solicitudes de ingreso con aprobación del dueño, chat por escuadrón |
 | `torneos.html` | Torneos reales, inscripción con cupo contado en vivo, recordatorios ("Avisarme") |
 | `admin.html` | Publicar/eliminar torneos, moderar escuadrones y partidas, gestionar reportes — solo para los correos admin |
@@ -160,7 +161,45 @@ La validación de URLs de imágenes de noticias usaba la cadena original del fee
 
 **Lo que tienes que hacer:** subir `torneos.html` y `ui-utils.js` actualizados. No requiere ningún cambio en Firebase ni en `firestore.rules`.
 
-## 12. Esquema de datos (Firestore)
+## 12. El Muro (`muro.html`) y su moderación
+
+El muro es una página donde los miembros publican mensajes cortos (hasta 280 caracteres), con un juego opcional, y reaccionan con 🔥. Las publicaciones aparecen en tiempo real. Está en el menú de escritorio y como pestaña en la barra inferior del móvil.
+
+### Cómo se modera: cuatro capas
+Ningún filtro automático es perfecto, así que no depende de una sola barrera:
+
+1. **Filtro en el navegador** (`moderacion.js`): avisa mientras la persona escribe y bloquea antes de publicar. Detecta insultos, groserías, contenido sexual, odio, amenazas y acoso, enlaces, teléfonos/correos, estafas y publicidad, gritos en mayúsculas y repeticiones. Entiende intentos de esquivarlo como `p.u.t.a`, `pvta`, `m13rd4`, `puuuuta`, `p*ta`, letras de otros alfabetos y texto con tipografías "raras". No bloquea por palabras sueltas dentro de otras (por ejemplo, `computadora`, `ridículo` o `Puerto Rico` pasan sin problema).
+2. **Respaldo en `firestore.rules`**: protege **aunque alguien se salte la página** y escriba directo contra la base de datos. Verifica la estructura de la publicación, que el nombre mostrado sea el gamertag real (evita suplantar a otros), que la fecha la ponga el servidor, y bloquea los términos más graves, los enlaces y los correos.
+3. **Botón 🚩 Reportar** en cada publicación, que llega a la bandeja de reportes.
+4. **Panel de administración** (`admin.html`): la bandeja de reportes tiene un botón **"Eliminar publicación"** que borra la publicación reportada y marca el reporte como revisado de una vez. Además hay una lista con las 50 publicaciones más recientes del muro, para borrar cualquiera.
+
+### Para publicar hay que tener el correo verificado
+Es una decisión de seguridad deliberada: es la medida más eficaz contra cuentas falsas y bots, y el muro es lo más expuesto al abuso. Quien no verificó su correo puede leer y dar 🔥, pero para publicar ve un aviso con botones "Reenviar correo" y "Ya lo verifiqué". **Si prefieres no exigirlo**: borra la línea `request.auth.token.email_verified == true` de la regla del muro en `firestore.rules` y pon `REQUIERE_CORREO_VERIFICADO = false` en `muro.html`.
+
+### Qué tienes que hacer
+1. Sube todos los archivos nuevos y actualizados (los nuevos son `muro.html` y `moderacion.js`).
+2. **Vuelve a publicar `firestore.rules`** en la consola de Firebase. Sin esto, el muro no puede guardar nada.
+3. **Pruébalo con esta secuencia:** (a) publica un mensaje normal, debería aparecer al instante; (b) escribe algo que el filtro debería bloquear (por ejemplo, un enlace) y comprueba que te avisa antes de publicar; (c) da 🔥 y quítalo; (d) repórtalo desde otra cuenta y comprueba que llega al panel de administración.
+4. Si al publicar sale un error de permisos: casi siempre es (a) correo sin verificar, (b) reglas sin republicar, o (c) el gamertag del perfil no coincide con el mostrado. Si ocurre con un mensaje normal y todo lo anterior está bien, avísame: las reglas del muro incluyen expresiones regulares que pude probar con la misma lógica, pero **no pude ejecutarlas en el emulador de Firebase**, así que conviene confirmarlas en tu proyecto real.
+
+### Limitaciones que conviene conocer
+- **Falsos negativos:** hay formas de esquivar el filtro que no cubre, por ejemplo partir una palabra en dos (`pu ta`), jerga muy local, o el sarcasmo y la ironía (el filtro no entiende el contexto). Para eso están los reportes y el panel.
+- **Falsos positivos:** un filtro estricto a veces bloquea algo inocente. Se probó con decenas de frases normales de gamers, pero puede haber casos que no previmos.
+- **Frecuencia de publicación:** la espera de 20 segundos entre publicaciones y el aviso de mensaje repetido funcionan solo en el navegador; alguien técnico puede saltárselos. La protección real contra el abuso masivo es **App Check** (ver sección 4b).
+- **Las publicaciones no se editan** (solo se pueden eliminar), y el texto se guarda en un solo párrafo, sin saltos de línea.
+- **Las reglas** solo cubren los términos más graves, porque no pueden normalizar acentos ni letras parecidas como lo hace el filtro del navegador.
+
+### Cómo ajustar el filtro
+- **Severidad:** en `moderacion.js`, `NIVEL_FILTRO` puede ser `'estricto'` (también bloquea groserías suaves como "mierda", "joder" o "carajo", y es el valor por defecto) o `'moderado'` (solo lo grave).
+- **Palabras:** edita las listas al inicio de `moderacion.js` (en minúsculas y sin acentos; la ñ sí se conserva). Si agregas una palabra *grave*, considera añadirla también a la expresión de `firestore.rules` para que el respaldo la cubra.
+
+### Un error que encontré de paso (y corregí)
+Las páginas de escuadrones y partidas usaban un diccionario de colores indexado por el nombre del juego. Como las reglas no validaban ese campo, alguien podía crear un escuadrón con el juego `constructor` y **romper la página de escuadrones para todos**. Ahora el código consulta el diccionario de forma segura y las reglas validan el campo (`juego` hasta 30 caracteres, `descripcion` hasta 280).
+
+### Siguiente paso recomendado
+Este mismo filtro puede proteger también los otros textos libres del sitio (gamertag, bio, nombre y descripción de escuadrones, mensajes de chat y de partidas), que hoy no pasan por ninguna revisión. Es un cambio pequeño porque `revisarTexto()` ya existe.
+
+## 13. Esquema de datos (Firestore)
 
 ```
 usuarios/{uid}                        { gamertag, email, bio, creadoEn, ultimasLecturas: {...}, ultimasLecturasPartidas: {...} }
@@ -172,7 +211,8 @@ escuadrones/{id}/mensajes/{id}        { texto, autorId, autorNombre, creadoEn }
 torneos/{id}                          { titulo, juego, formato, fecha: Timestamp|null, recompensa, cupoMax, creadoPor, creadoEn }
 torneos/{id}/inscripciones/{uid}      { uid, nombre, creadoEn }
 recordatorios/{uid}_{eventoId}        { uid, eventoId, creadoEn }
-reportes/{id}                         { tipo: 'escuadron'|'partida'|'usuario', objetivoId, objetivoNombre, motivo, reportadoPor, reportadoPorNombre, estado, creadoEn }
+muro/{id}                             { texto, autorId, autorNombre, juego, likes: [uid,...], creadoEn }
+reportes/{id}                         { tipo: 'escuadron'|'partida'|'usuario'|'post', objetivoId, objetivoNombre, motivo, reportadoPor, reportadoPorNombre, estado, creadoEn }
 ```
 
 Todo lo anterior está protegido por `firestore.rules` — no hay ninguna colección abierta a escritura libre.

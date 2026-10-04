@@ -31,25 +31,52 @@
     ],
     "shortcuts": [
         {
+            "name": "Muro",
+            "short_name": "Muro",
+            "description": "Ver y publicar en el muro de la comunidad",
+            "url": "muro.html",
+            "icons": [
+                {
+                    "src": "icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
             "name": "Familias",
             "short_name": "Familias",
             "description": "Ver y unirte a escuadrones",
             "url": "grupos.html",
-            "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+            "icons": [
+                {
+                    "src": "icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
         },
         {
             "name": "Eventos",
             "short_name": "Eventos",
             "description": "Ver torneos activos",
             "url": "torneos.html",
-            "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+            "icons": [
+                {
+                    "src": "icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
         },
         {
             "name": "Mi Perfil",
             "short_name": "Perfil",
             "description": "Ver y editar tu perfil",
             "url": "perfil.html",
-            "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+            "icons": [
+                {
+                    "src": "icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
         }
     ]
 }

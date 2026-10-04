@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PWA: instalable como app en móvil -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kazoku">
+    <title>KAZOKUGAMING | El Muro</title>
+
+    <meta name="description" content="El muro de la comunidad KazokuGaming: comparte tus logros, tus dudas y buenos momentos con otros gamers, en un ambiente de respeto.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #050508; overflow-x: hidden; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(34, 211, 238, 0.16); }
+        .bg-grid { background-image: linear-gradient(rgba(34, 211, 238, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 211, 238, 0.045) 1px, transparent 1px); background-size: 40px 40px; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { scrollbar-width: none; }
+
+        /* Entrada suave de las publicaciones */
+        @keyframes subirSuave { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        .post-nuevo { animation: subirSuave 0.45s ease-out both; }
+
+        /* "Pop" al dar fuego */
+        @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.4); } 100% { transform: scale(1); } }
+        .like-pop { animation: pop 0.35s ease-out; }
+
+        /* Respeta a quien prefiere menos movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            .post-nuevo, .like-pop { animation: none; }
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+
+    <div id="header-container"></div>
+
+    <main class="flex-grow relative">
+        <div class="absolute inset-0 z-0 bg-grid opacity-60 pointer-events-none"></div>
+
+        <!-- HERO -->
+        <section class="relative pt-14 pb-8 overflow-hidden">
+            <div class="absolute top-0 left-1/4 w-[480px] h-[480px] bg-cyan-600/15 rounded-full blur-[130px] pointer-events-none z-0"></div>
+            <div class="absolute top-10 right-1/4 w-[380px] h-[380px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+            <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-300 text-xs font-display tracking-widest uppercase mb-5 backdrop-blur-md">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Comunidad en vivo
+                </div>
+                <h1 class="text-5xl md:text-6xl font-black text-white tracking-tight mb-3 leading-tight">
+                    El <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400">Muro</span>
+                </h1>
+                <p class="text-slate-400 max-w-md mx-auto">Comparte tus logros, tus dudas y tus mejores partidas. Aquí se viene a sumar, siempre con respeto.</p>
+            </div>
+        </section>
+
+        <section class="relative z-10 pb-16">
+            <div class="max-w-2xl mx-auto px-4">
+
+                <!-- COMPOSER: sin sesión -->
+                <div id="composer-login" class="hidden glass-panel rounded-2xl p-6 mb-6 text-center">
+                    <p class="text-white font-bold mb-1">Únete a la conversación</p>
+                    <p class="text-slate-400 text-sm mb-4">Inicia sesión para publicar y dar fuego a los mensajes de la comunidad.</p>
+                    <a href="login.html" class="inline-block px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all">Iniciar sesión</a>
+                </div>
+
+                <!-- COMPOSER: correo sin verificar -->
+                <div id="composer-verificar" class="hidden glass-panel rounded-2xl p-6 mb-6 border-amber-500/30">
+                    <p class="text-amber-300 font-bold mb-1">Verifica tu correo para publicar</p>
+                    <p class="text-slate-400 text-sm mb-4">Para mantener el muro libre de spam y cuentas falsas, solo publican quienes confirmaron su correo. Revisa tu bandeja (y la carpeta de spam). Dar fuego y leer sigue disponible.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button id="btn-reenviar-verificacion-muro" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-xl transition-colors">Reenviar correo</button>
+                        <button id="btn-ya-verifique" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold rounded-xl transition-colors">Ya lo verifiqué</button>
+                    </div>
+                </div>
+
+                <!-- COMPOSER: publicar -->
+                <div id="composer" class="hidden mb-6 p-[1px] rounded-2xl bg-gradient-to-r from-cyan-500/50 via-indigo-500/40 to-fuchsia-500/50">
+                    <div class="rounded-2xl bg-[#0a0a0f] p-4 sm:p-5">
+                        <div class="flex gap-3">
+                            <div id="composer-avatar" class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center text-white font-black shrink-0">?</div>
+                            <div class="flex-1 min-w-0">
+                                <textarea id="muro-texto" rows="3" maxlength="280" aria-label="Escribe tu publicación" placeholder="¿Qué estás jugando hoy?" class="w-full bg-transparent text-white placeholder-slate-500 outline-none resize-none leading-relaxed"></textarea>
+
+                                <p id="muro-error" role="alert" class="hidden text-sm rounded-lg px-3 py-2 mb-2 border"></p>
+
+                                <div class="flex items-center justify-between gap-3 flex-wrap pt-3 border-t border-slate-800">
+                                    <div class="flex items-center gap-3">
+                                        <select id="muro-juego" aria-label="Juego de la publicación (opcional)" class="bg-slate-900 border border-slate-700 text-slate-200 text-sm font-semibold px-3 py-2 rounded-xl outline-none focus:ring-2 focus:ring-cyan-500">
+                                            <option value="">Sin juego</option>
+                                            <option value="Valorant">Valorant</option>
+                                            <option value="League of Legends">League of Legends</option>
+                                            <option value="Call of Duty">Call of Duty</option>
+                                            <option value="Minecraft">Minecraft</option>
+                                            <option value="Fortnite">Fortnite</option>
+                                            <option value="Free Fire">Free Fire</option>
+                                            <option value="EA FC">EA FC</option>
+                                            <option value="Apex Legends">Apex Legends</option>
+                                            <option value="CS2">Counter-Strike 2</option>
+                                            <option value="Rocket League">Rocket League</option>
+                                            <option value="Roblox">Roblox</option>
+                                            <option value="Brawl Stars">Brawl Stars</option>
+                                        </select>
+                                        <span id="muro-contador" class="text-xs font-semibold text-slate-500 tabular-nums">280</span>
+                                    </div>
+                                    <button id="btn-publicar" class="px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-black rounded-xl transition-all shadow-lg shadow-cyan-600/20 disabled:opacity-50 disabled:cursor-not-allowed">Publicar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <details class="mt-4 group">
+                            <summary class="text-xs font-bold text-slate-500 hover:text-slate-300 cursor-pointer select-none">Normas del muro (qué no se permite)</summary>
+                            <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc pl-5">
+                                <li>Insultos, groserías y burlas hacia otras personas.</li>
+                                <li>Mensajes discriminatorios o de odio, amenazas y acoso (ni en broma).</li>
+                                <li>Contenido sexual o sugerente: el muro es para todo público.</li>
+                                <li>Enlaces, teléfonos, correos u otros datos personales (por seguridad de todos).</li>
+                                <li>Publicidad, venta de cuentas, regalos "gratis" y posibles estafas.</li>
+                                <li>Escribir todo en mayúsculas o repetir letras y palabras en exceso.</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-slate-500">El filtro automático no es perfecto. Si ves algo que no debería estar aquí, usa el botón 🚩 de la publicación y un administrador lo revisará.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- FILTRO POR JUEGO (se genera solo con los juegos que existan en el muro) -->
+                <div id="barra-filtros-muro" class="flex gap-2 overflow-x-auto pb-3 mb-3 scrollbar-hide"></div>
+
+                <!-- ESTADO: cargando / vacío / error -->
+                <div id="estado-muro"></div>
+
+                <!-- LISTA DE PUBLICACIONES -->
+                <div id="lista-muro" class="space-y-4"></div>
+
+                <p id="sin-resultados-filtro" class="hidden text-slate-500 text-center py-10">No hay publicaciones de ese juego todavía.</p>
+
+                <div class="text-center mt-8">
+                    <button id="btn-ver-mas" class="hidden px-6 py-2.5 border border-slate-700 hover:border-cyan-500 text-slate-300 hover:text-cyan-300 font-bold rounded-xl transition-colors text-sm">Ver más publicaciones</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800/50 bg-[#020203] py-12 text-center text-slate-500 text-sm relative z-10">
+        <div class="flex justify-center gap-2 text-2xl font-black tracking-tighter mb-4 opacity-50">
+            <span class="text-white">KAZOKU<span class="text-indigo-400">GAMING</span></span>
+        </div>
+        <p>&copy; 2026 KAZOKUGAMING. Construyendo la mejor familia gamer.</p>
+    </footer>
+
+    <script type="module" src="header.js"></script>
+
+    <script type="module">
+        import {
+            collection, addDoc, doc, getDoc, updateDoc, deleteDoc, arrayUnion, arrayRemove,
+            query, orderBy, limit, onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { auth, db, onAuthStateChanged, serverTimestamp, sendEmailVerification } from './firebase-init.js';
+        import { showToast, showConfirm, showReportPrompt } from './ui-utils.js';
+        import { revisarTexto, MAX_CARACTERES } from './moderacion.js';
+        import { formatearTiempoRelativo } from './noticias.js';
+        import { iconoFuego } from './iconos.js';
+
+        // ---------- Configuración ----------
+        // Debe coincidir con la línea "email_verified" de la regla del muro en firestore.rules:
+        // si la quitas allá (para no exigir correo verificado), ponla en false aquí también.
+        const REQUIERE_CORREO_VERIFICADO = true;
+        const COOLDOWN_MS = 20000;            // espera mínima entre publicaciones (solo en el navegador)
+        const PUBLICACIONES_POR_PAGINA = 20;
+
+        const PLACEHOLDERS = [
+            '¿Qué estás jugando hoy?',
+            'Cuéntale a la comunidad tu mejor jugada…',
+            '¿Buscas equipo? Cuéntanos qué juegas…',
+            'Comparte un logro, una duda o un buen momento…'
+        ];
+
+        const TEMAS_JUEGO = {
+            'Valorant': 'bg-red-500/15 text-red-300 border-red-500/30',
+            'League of Legends': 'bg-blue-500/15 text-blue-300 border-blue-500/30',
+            'Minecraft': 'bg-green-500/15 text-green-300 border-green-500/30',
+            'Call of Duty': 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+            'Fortnite': 'bg-violet-500/15 text-violet-300 border-violet-500/30',
+            'Free Fire': 'bg-orange-500/15 text-orange-300 border-orange-500/30',
+            'EA FC': 'bg-lime-500/15 text-lime-300 border-lime-500/30',
+            'Apex Legends': 'bg-rose-500/15 text-rose-300 border-rose-500/30',
+            'CS2': 'bg-yellow-500/15 text-yellow-300 border-yellow-500/30',
+            'Rocket League': 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
+            'Roblox': 'bg-pink-500/15 text-pink-300 border-pink-500/30',
+            'Brawl Stars': 'bg-amber-400/15 text-amber-200 border-amber-400/30'
+        };
+        const TEMA_JUEGO_DEFECTO = 'bg-slate-500/15 text-slate-300 border-slate-500/30';
+
+        const GRADIENTES_AVATAR = [
+            'from-indigo-500 to-fuchsia-500', 'from-emerald-500 to-cyan-500', 'from-amber-500 to-rose-500',
+            'from-sky-500 to-indigo-500', 'from-pink-500 to-orange-500', 'from-lime-500 to-emerald-500',
+            'from-violet-500 to-sky-500', 'from-rose-500 to-fuchsia-500'
+        ];
+
+        // ---------- Utilidades ----------
+        // Escapa & < > " ' (seguro en texto y en atributos HTML)
+        const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const $ = (id) => document.getElementById(id);
+
+        function inicialesDe(nombre) {
+            return (nombre || '??').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() || '').join('') || '??';
+        }
+
+        function gradienteAvatar(nombre) {
+            let h = 0;
+            for (const c of String(nombre ?? '')) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+            return GRADIENTES_AVATAR[h % GRADIENTES_AVATAR.length];
+        }
+
+        // Si la fecha aún es null es porque la publicación acaba de crearse y el servidor no confirmó la hora
+        const msDe = (data) => (data.creadoEn && typeof data.creadoEn.toMillis === 'function') ? data.creadoEn.toMillis() : Date.now();
+
+        function skeletonPosts(n = 3) {
+            const uno = `
+                <div class="glass-panel rounded-2xl p-5 animate-pulse">
+                    <div class="flex gap-3">
+                        <div class="w-11 h-11 rounded-xl bg-slate-800"></div>
+                        <div class="flex-1 space-y-2"><div class="h-3 bg-slate-800 rounded w-1/3"></div><div class="h-3 bg-slate-800 rounded w-1/5"></div></div>
+                    </div>
+                    <div class="h-3 bg-slate-800 rounded w-full mt-4"></div>
+                    <div class="h-3 bg-slate-800 rounded w-4/5 mt-2"></div>
+                </div>`;
+            return `<div class="space-y-4">${uno.repeat(n)}</div>`;
+        }
+
+        // ---------- Estado ----------
+        let usuarioActual = null;
+        let gamertagActual = null;
+        const postsPorId = new Map();       // id -> datos
+        const elementosPorId = new Map();   // id -> <article>
+        let limiteActual = PUBLICACIONES_POR_PAGINA;
+        let cancelarSuscripcion = null;
+        let primeraCarga = true;
+        let filtroJuego = 'Todos';
+
+        const lista = $('lista-muro');
+        const estado = $('estado-muro');
+        const barraFiltros = $('barra-filtros-muro');
+        const btnVerMas = $('btn-ver-mas');
+
+        // ---------- Tarjeta de publicación ----------
+        function htmlTarjeta(id, data) {
+            const uid = usuarioActual?.uid;
+            const likes = Array.isArray(data.likes) ? data.likes : [];
+            const meGusta = !!uid && likes.includes(uid);
+            const esMia = !!uid && data.autorId === uid;
+            const nombre = data.autorNombre || 'Jugador';
+            const juego = data.juego || '';
+            const ms = msDe(data);
+
+            return `
+                <div class="flex items-start gap-3">
+                    <a href="usuario.html?uid=${encodeURIComponent(data.autorId || '')}" class="w-11 h-11 rounded-xl bg-gradient-to-br ${gradienteAvatar(nombre)} flex items-center justify-center text-white font-black shrink-0 shadow-lg" aria-label="Ver perfil de ${sanitizarHTML(nombre)}">${sanitizarHTML(inicialesDe(nombre))}</a>
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <a href="usuario.html?uid=${encodeURIComponent(data.autorId || '')}" class="font-bold text-white hover:text-cyan-300 truncate transition-colors">${sanitizarHTML(nombre)}</a>
+                            <span class="tiempo-post text-xs text-slate-500" data-ms="${ms}">${sanitizarHTML(formatearTiempoRelativo(ms))}</span>
+                        </div>
+                        ${juego ? `<span class="inline-block mt-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${Object.prototype.hasOwnProperty.call(TEMAS_JUEGO, juego) ? TEMAS_JUEGO[juego] : TEMA_JUEGO_DEFECTO}">${sanitizarHTML(juego)}</span>` : ''}
+                    </div>
+                    <button data-accion="reportar" class="text-slate-600 hover:text-red-400 transition-colors text-xs shrink-0" aria-label="Reportar publicación" title="Reportar">🚩</button>
+                </div>
+
+                <p class="mt-3 text-slate-200 leading-relaxed break-words">${sanitizarHTML(data.texto)}</p>
+
+                <div class="mt-4 flex items-center gap-5">
+                    <button data-accion="fuego" aria-pressed="${meGusta}" aria-label="Dar fuego" class="btn-like flex items-center gap-1.5 text-sm font-bold transition-colors ${meGusta ? 'text-orange-400' : 'text-slate-500 hover:text-orange-400'}">
+                        <span class="text-xl leading-none flex">${iconoFuego(meGusta ? 'fill-current' : '')}</span>
+                        <span class="contador-likes tabular-nums">${likes.length}</span>
+                    </button>
+                    ${esMia ? `<button data-accion="borrar" class="text-xs font-semibold text-slate-600 hover:text-red-400 transition-colors">Eliminar</button>` : ''}
+                </div>`;
+        }
+
+        function construirTarjeta(id, data) {
+            const el = document.createElement('article');
+            el.className = 'glass-panel rounded-2xl p-4 sm:p-5 hover:border-cyan-500/40 transition-colors';
+            el.dataset.id = id;
+            el.dataset.juego = data.juego || '';
+            el.innerHTML = htmlTarjeta(id, data);
+            return el;
+        }
+
+        function refrescarTarjeta(el, id, data) {
+            el.dataset.juego = data.juego || '';
+            el.innerHTML = htmlTarjeta(id, data);
+        }
+
+        // ---------- Filtro por juego ----------
+        function pintarFiltros() {
+            const juegos = new Map();
+            postsPorId.forEach((d) => {
+                const j = String(d.juego || '').trim();
+                if (j && !juegos.has(j)) juegos.set(j, j);
+            });
+            if (filtroJuego !== 'Todos' && !juegos.has(filtroJuego)) filtroJuego = 'Todos';
+
+            if (juegos.size < 2) { barraFiltros.innerHTML = ''; return; }
+
+            const activo = 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30';
+            const inactivo = 'hover:bg-slate-800 text-slate-400';
+            const boton = (valor, etiqueta) => `<button data-juego="${sanitizarHTML(valor)}" class="btn-filtro-muro px-4 py-1.5 font-bold rounded-full text-sm whitespace-nowrap transition-colors ${filtroJuego === valor ? activo : inactivo}">${sanitizarHTML(etiqueta)}</button>`;
+            barraFiltros.innerHTML = boton('Todos', 'Todos') + [...juegos.keys()].map((j) => boton(j, j)).join('');
+        }
+
+        function aplicarFiltro() {
+            let visibles = 0;
+            elementosPorId.forEach((el) => {
+                const coincide = filtroJuego === 'Todos' || el.dataset.juego === filtroJuego;
+                el.classList.toggle('hidden', !coincide);
+                if (coincide) visibles++;
+            });
+            $('sin-resultados-filtro').classList.toggle('hidden', !(postsPorId.size > 0 && visibles === 0));
+        }
+
+        barraFiltros.addEventListener('click', (e) => {
+            const btn = e.target.closest('.btn-filtro-muro');
+            if (!btn) return;
+            filtroJuego = btn.dataset.juego;
+            pintarFiltros();
+            aplicarFiltro();
+        });
+
+        // ---------- Suscripción en tiempo real ----------
+        function actualizarEstadoVacio() {
+            if (postsPorId.size === 0) {
+                estado.innerHTML = `
+                    <div class="glass-panel rounded-2xl p-10 text-center">
+                        <p class="text-4xl mb-3">💬</p>
+                        <p class="text-white font-bold mb-1">Aún no hay publicaciones</p>
+                        <p class="text-slate-400 text-sm">¡Sé la primera persona en escribir algo en el muro!</p>
+                    </div>`;
+            } else {
+                estado.innerHTML = '';
+            }
+        }
+
+        function suscribir() {
+            if (cancelarSuscripcion) cancelarSuscripcion();
+            lista.innerHTML = '';
+            postsPorId.clear();
+            elementosPorId.clear();
+            primeraCarga = true;
+            estado.innerHTML = skeletonPosts(3);
+
+            const q = query(collection(db, 'muro'), orderBy('creadoEn', 'desc'), limit(limiteActual));
+            cancelarSuscripcion = onSnapshot(q, (snap) => {
+                snap.docChanges().forEach((cambio) => {
+                    const id = cambio.doc.id;
+                    const data = cambio.doc.data();
+
+                    if (cambio.type === 'added') {
+                        postsPorId.set(id, data);
+                        const el = construirTarjeta(id, data);
+                        el.classList.add('post-nuevo');
+                        if (primeraCarga) el.style.animationDelay = `${Math.min(cambio.newIndex, 10) * 50}ms`;
+                        lista.insertBefore(el, lista.children[cambio.newIndex] || null);
+                        elementosPorId.set(id, el);
+                    } else if (cambio.type === 'modified') {
+                        postsPorId.set(id, data);
+                        const el = elementosPorId.get(id);
+                        if (!el) return;
+                        refrescarTarjeta(el, id, data);
+                        if (cambio.oldIndex !== cambio.newIndex) {
+                            el.remove();
+                            lista.insertBefore(el, lista.children[cambio.newIndex] || null);
+                        }
+                    } else if (cambio.type === 'removed') {
+                        postsPorId.delete(id);
+                        elementosPorId.get(id)?.remove();
+                        elementosPorId.delete(id);
+                    }
+                });
+
+                primeraCarga = false;
+                actualizarEstadoVacio();
+                pintarFiltros();
+                aplicarFiltro();
+                btnVerMas.classList.toggle('hidden', snap.size < limiteActual);
+            }, (error) => {
+                console.error('Error escuchando el muro:', error);
+                estado.innerHTML = `<p class="text-red-400 text-center py-10">No se pudo cargar el muro. Inténtalo de nuevo en un momento.</p>`;
+            });
+        }
+
+        btnVerMas.addEventListener('click', () => {
+            limiteActual += PUBLICACIONES_POR_PAGINA;
+            suscribir();
+        });
+
+        // Refrescar los "hace X minutos" cada minuto
+        setInterval(() => {
+            document.querySelectorAll('.tiempo-post').forEach((el) => {
+                el.textContent = formatearTiempoRelativo(Number(el.dataset.ms));
+            });
+        }, 60000);
+
+        // ---------- Acciones sobre las publicaciones (fuego, reportar, eliminar) ----------
+        lista.addEventListener('click', async (e) => {
+            const boton = e.target.closest('button[data-accion]');
+            if (!boton) return;
+            const articulo = boton.closest('article');
+            const id = articulo?.dataset.id;
+            const data = postsPorId.get(id);
+            if (!id || !data) return;
+
+            const accion = boton.dataset.accion;
+
+            if (accion === 'fuego') {
+                if (!usuarioActual) { window.location.href = 'login.html'; return; }
+                const likes = Array.isArray(data.likes) ? data.likes : [];
+                const yaDioFuego = likes.includes(usuarioActual.uid);
+                boton.classList.add('like-pop');
+                setTimeout(() => boton.classList.remove('like-pop'), 400);
+                try {
+                    await updateDoc(doc(db, 'muro', id), {
+                        likes: yaDioFuego ? arrayRemove(usuarioActual.uid) : arrayUnion(usuarioActual.uid)
+                    });
+                } catch (error) {
+                    console.error('No se pudo registrar el fuego:', error);
+                    showToast('No se pudo registrar tu reacción. Inténtalo de nuevo.', 'error');
+                }
+                return;
+            }
+
+            if (accion === 'reportar') {
+                if (!usuarioActual) { window.location.href = 'login.html'; return; }
+                const motivo = await showReportPrompt({ titulo: '🚩 Reportar publicación' });
+                if (motivo === null) return;
+                try {
+                    // objetivoNombre (máx. 100 caracteres en las reglas): autor + inicio del mensaje
+                    const resumen = `${String(data.autorNombre || '').slice(0, 25)}: ${String(data.texto || '').slice(0, 60)}`;
+                    await addDoc(collection(db, 'reportes'), {
+                        tipo: 'post',
+                        objetivoId: id,
+                        objetivoNombre: resumen,
+                        motivo,
+                        reportadoPor: usuarioActual.uid,
+                        reportadoPorNombre: gamertagActual || usuarioActual.displayName || usuarioActual.email.split('@')[0],
+                        estado: 'pendiente',
+                        creadoEn: serverTimestamp()
+                    });
+                    showToast('Reporte enviado. Gracias por ayudar a mantener la comunidad sana.', 'exito');
+                } catch (error) {
+                    console.error('No se pudo enviar el reporte:', error);
+                    showToast('No se pudo enviar el reporte.', 'error');
+                }
+                return;
+            }
+
+            if (accion === 'borrar') {
+                if (!await showConfirm('Esta acción no se puede deshacer.', { titulo: '¿Eliminar tu publicación?', danger: true, confirmarTexto: 'Eliminar' })) return;
+                try {
+                    await deleteDoc(doc(db, 'muro', id));
+                    showToast('Publicación eliminada.', 'exito');
+                } catch (error) {
+                    console.error('No se pudo eliminar:', error);
+                    showToast('No se pudo eliminar la publicación.', 'error');
+                }
+            }
+        });
+
+        // ---------- Composer (publicar) ----------
+        const textarea = $('muro-texto');
+        const selectJuego = $('muro-juego');
+        const contador = $('muro-contador');
+        const errorBox = $('muro-error');
+        const btnPublicar = $('btn-publicar');
+
+        textarea.placeholder = PLACEHOLDERS[Math.floor(Math.random() * PLACEHOLDERS.length)];
+
+        function mostrarErrorComposer(resultado) {
+            const esAutolesion = resultado.categoria === 'autolesion';
+            errorBox.className = esAutolesion
+                ? 'text-sm rounded-lg px-3 py-2 mb-2 border bg-indigo-500/10 border-indigo-500/30 text-indigo-200'
+                : 'text-sm rounded-lg px-3 py-2 mb-2 border bg-red-500/10 border-red-500/30 text-red-300';
+            errorBox.textContent = resultado.mensaje;
+        }
+        const ocultarErrorComposer = () => errorBox.classList.add('hidden');
+
+        // Revisión en vivo mientras escribe (para avisar ANTES de darle a publicar)
+        let temporizadorRevision = null;
+        textarea.addEventListener('input', () => {
+            const restantes = MAX_CARACTERES - textarea.value.length;
+            contador.textContent = restantes;
+            contador.className = `text-xs font-semibold tabular-nums ${restantes < 20 ? 'text-amber-400' : 'text-slate-500'}`;
+
+            clearTimeout(temporizadorRevision);
+            temporizadorRevision = setTimeout(() => {
+                const texto = textarea.value.trim();
+                if (!texto) { ocultarErrorComposer(); return; }
+                const r = revisarTexto(texto);
+                if (!r.ok && r.categoria !== 'vacio' && r.categoria !== 'corto') mostrarErrorComposer(r);
+                else ocultarErrorComposer();
+            }, 350);
+        });
+
+        // Límites de frecuencia SOLO en el navegador (ayudan a la gente honesta; no son una barrera de seguridad)
+        function leerLocal(clave) { try { return localStorage.getItem(clave); } catch { return null; } }
+        function guardarLocal(clave, valor) { try { localStorage.setItem(clave, valor); } catch { /* sin almacenamiento: se ignora */ } }
+
+        async function publicar() {
+            if (!usuarioActual) { window.location.href = 'login.html'; return; }
+
+            const resultado = revisarTexto(textarea.value);
+            if (!resultado.ok) {
+                mostrarErrorComposer(resultado);
+                return;
+            }
+
+            const ultimoMs = Number(leerLocal('muro_ultimo_post_ms') || 0);
+            const espera = COOLDOWN_MS - (Date.now() - ultimoMs);
+            if (espera > 0) {
+                showToast(`Espera ${Math.ceil(espera / 1000)} s antes de publicar de nuevo.`, 'info');
+                return;
+            }
+            if (leerLocal('muro_ultimo_texto') === resultado.texto && Date.now() - ultimoMs < 10 * 60 * 1000) {
+                mostrarErrorComposer({ categoria: 'repeticion', mensaje: 'Ya publicaste ese mismo mensaje hace poco.' });
+                return;
+            }
+
+            ocultarErrorComposer();
+            btnPublicar.disabled = true;
+            btnPublicar.textContent = 'Publicando...';
+
+            try {
+                await addDoc(collection(db, 'muro'), {
+                    texto: resultado.texto,
+                    autorId: usuarioActual.uid,
+                    autorNombre: gamertagActual,
+                    juego: selectJuego.value,
+                    likes: [],
+                    creadoEn: serverTimestamp()
+                });
+                guardarLocal('muro_ultimo_post_ms', String(Date.now()));
+                guardarLocal('muro_ultimo_texto', resultado.texto);
+                textarea.value = '';
+                contador.textContent = MAX_CARACTERES;
+                contador.className = 'text-xs font-semibold tabular-nums text-slate-500';
+                showToast('¡Publicado en el muro!', 'exito');
+            } catch (error) {
+                console.error('No se pudo publicar:', error);
+                const sinPermiso = error && error.code === 'permission-denied';
+                showToast(sinPermiso
+                    ? 'No se pudo publicar. Comprueba que tu correo esté verificado y que el mensaje cumpla las normas.'
+                    : 'No se pudo publicar. Inténtalo de nuevo.', 'error');
+            } finally {
+                btnPublicar.disabled = false;
+                btnPublicar.textContent = 'Publicar';
+            }
+        }
+
+        btnPublicar.addEventListener('click', publicar);
+        textarea.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); publicar(); }
+        });
+
+        // ---------- Quién ve qué en la zona de publicar ----------
+        async function prepararComposer(user) {
+            const zonas = { login: $('composer-login'), verificar: $('composer-verificar'), composer: $('composer') };
+            Object.values(zonas).forEach((z) => z.classList.add('hidden'));
+
+            if (!user) { zonas.login.classList.remove('hidden'); return; }
+
+            // El nombre que se muestra debe ser el gamertag real del perfil (las reglas lo comprueban)
+            try {
+                const snap = await getDoc(doc(db, 'usuarios', user.uid));
+                gamertagActual = snap.exists() ? (snap.data().gamertag || null) : null;
+            } catch (error) {
+                console.error('No se pudo leer el perfil:', error);
+                gamertagActual = null;
+            }
+            if (!gamertagActual) gamertagActual = user.displayName || user.email.split('@')[0];
+
+            const avatar = $('composer-avatar');
+            avatar.textContent = inicialesDe(gamertagActual);
+            avatar.className = `w-11 h-11 rounded-xl bg-gradient-to-br ${gradienteAvatar(gamertagActual)} flex items-center justify-center text-white font-black shrink-0`;
+
+            if (REQUIERE_CORREO_VERIFICADO && !user.emailVerified) {
+                // Quizá ya lo verificó en otra pestaña: recargamos el usuario y renovamos el token
+                try {
+                    await user.reload();
+                    if (user.emailVerified) await user.getIdToken(true);
+                } catch (error) {
+                    console.error('No se pudo recargar el usuario:', error);
+                }
+            }
+
+            if (REQUIERE_CORREO_VERIFICADO && !user.emailVerified) {
+                zonas.verificar.classList.remove('hidden');
+                return;
+            }
+            zonas.composer.classList.remove('hidden');
+        }
+
+        $('btn-reenviar-verificacion-muro').addEventListener('click', async () => {
+            try {
+                await sendEmailVerification(usuarioActual);
+                showToast('Correo enviado. Revisa tu bandeja y la carpeta de spam.', 'exito');
+            } catch (error) {
+                console.error(error);
+                showToast('No se pudo reenviar el correo. Espera un momento e inténtalo de nuevo.', 'error');
+            }
+        });
+        $('btn-ya-verifique').addEventListener('click', async () => {
+            await prepararComposer(usuarioActual);
+            if ($('composer').classList.contains('hidden')) {
+                showToast('Todavía no aparece como verificado. Abre el enlace del correo y vuelve a intentarlo.', 'info');
+            }
+        });
+
+        // ---------- Arranque ----------
+        onAuthStateChanged(auth, async (user) => {
+            usuarioActual = user;
+            await prepararComposer(user);
+            // Reconstruir las tarjetas ya pintadas para que muestren "me gusta" propio y botón de eliminar
+            postsPorId.forEach((data, id) => {
+                const el = elementosPorId.get(id);
+                if (el) refrescarTarjeta(el, id, data);
+            });
+        });
+
+        suscribir();
+    </script>
+</body>
+</html>
