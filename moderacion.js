@@ -152,7 +152,7 @@ const ODIO = new Set([
 
 // Contenido sexual (se bloquea siempre)
 const SEXUAL = new Set([
-    'porno', 'pornografia', 'porn', 'pornhub', 'xxx', 'hentai', 'onlyfans',
+    'porno', 'pornografia', 'porn', 'pornhub', 'hentai', 'onlyfans',
     'nudes', 'nude', ...formas('desnud', ['o', 'a', 'os', 'as']),
     ...formas('teta', ['', 's']), ...formas('pezon', ['', 'es']),
     ...formas('pene', ['', 's']), ...formas('vagina', ['', 's']),
@@ -242,42 +242,93 @@ const REGEX_RED_SOCIAL = /\b(whatsapp|wasap|telegram|instagram|insta|snapchat|sn
 export const MENSAJES = {
     vacio: 'Escribe algo para publicar.',
     corto: 'Escribe un poco más para poder publicar.',
-    largo: `El mensaje es demasiado largo (máximo ${MAX_CARACTERES} caracteres).`,
-    groseria: 'Tu mensaje tiene lenguaje vulgar u ofensivo. Reescríbelo con respeto para poder publicarlo.',
+    groseria: 'Tu mensaje tiene lenguaje vulgar u ofensivo. Reescríbelo con respeto.',
     insulto: 'Parece que el mensaje insulta o menosprecia a alguien. En KazokuGaming nos tratamos con respeto.',
     odio: 'No se permiten mensajes discriminatorios ni de odio hacia ninguna persona o grupo.',
-    sexual: 'El muro es para todo público: no se permite contenido sexual ni sugerente.',
+    sexual: 'En KazokuGaming el contenido es para todo público: no se permite contenido sexual ni sugerente.',
     amenaza: 'No se permiten amenazas ni mensajes de acoso, ni siquiera en broma.',
-    enlace: 'Por seguridad no se permiten enlaces en el muro (suelen usarse para estafas y virus).',
-    contacto: 'Por seguridad, no compartas teléfonos, correos ni otros datos de contacto en el muro. Usa el chat de tu escuadrón.',
+    enlace: 'Por seguridad no se permiten enlaces (suelen usarse para estafas y virus). Si quieres compartir tu Discord, escribe solo tu nombre de usuario.',
+    contacto: 'Por seguridad, no compartas teléfonos, correos ni otros datos de contacto.',
     spam: 'Este mensaje parece publicidad o una posible estafa (cuentas, regalos gratis, dinero fácil).',
     mayusculas: 'Evita escribir todo en MAYÚSCULAS: se interpreta como gritar.',
     repeticion: 'Evita repetir letras o palabras en exceso.',
-    autolesion: 'Lamentamos que estés pasando por un momento difícil, y no queremos que lo vivas solo/a. Este mensaje no se publicará en el muro, pero tu bienestar importa mucho más que cualquier partida: habla con alguien de confianza o busca una línea de ayuda emocional en tu país. 💜'
+    autolesion: 'Lamentamos que estés pasando por un momento difícil, y no queremos que lo vivas solo/a. Este mensaje no se publicará, pero tu bienestar importa mucho más que cualquier partida: habla con alguien de confianza o busca una línea de ayuda emocional en tu país. 💜'
 };
 
-const resultadoBloqueado = (categoria) => ({ ok: false, categoria, mensaje: MENSAJES[categoria] });
+// Variante de los mensajes cuando lo que se revisa es un NOMBRE (gamertag, nombre de escuadrón)
+const MENSAJES_NOMBRE = {
+    groseria: 'Ese nombre contiene lenguaje vulgar u ofensivo. Elige otro.',
+    insulto: 'Ese nombre insulta o menosprecia a alguien. Elige otro.',
+    odio: 'Ese nombre es discriminatorio o de odio. Elige otro.',
+    sexual: 'Ese nombre tiene contenido sexual o sugerente. Elige otro.',
+    amenaza: 'Ese nombre contiene una amenaza. Elige otro.',
+    enlace: 'Los nombres no pueden contener enlaces. Elige otro.',
+    contacto: 'Los nombres no pueden contener teléfonos ni correos. Elige otro.',
+    spam: 'Ese nombre parece publicidad o una estafa. Elige otro.'
+};
+
+// ============================================================
+// CONTEXTOS: no es lo mismo una publicación, un chat o un gamertag
+// ============================================================
+//  longitud  : si este módulo valida el largo (si es false, lo valida quien llama)
+//  estilo    : revisar MAYÚSCULAS y repeticiones (en chat y nombres se permiten: "NOOOO", "JAJAJA", "XxPROxX")
+//  autolesion: bloquear y ofrecer apoyo (en un chat privado de escuadrón NO: bloquearle el mensaje a quien
+//              se desahoga con sus compañeros sería contraproducente)
+//  nombre    : separar CamelCase ("MierdaMan" -> "Mierda Man") y buscar palabras graves incrustadas
+export const CONTEXTOS = {
+    publicacion: { min: MIN_CARACTERES, max: MAX_CARACTERES, longitud: true, estilo: true, autolesion: true, nombre: false },
+    bio:         { min: 0, max: 200, longitud: true, estilo: true, autolesion: true, nombre: false },
+    descripcion: { min: 0, max: 280, longitud: true, estilo: true, autolesion: true, nombre: false },
+    chat:        { min: 1, max: 500, longitud: true, estilo: false, autolesion: false, nombre: false },
+    nombre:      { min: 0, max: 100, longitud: false, estilo: false, autolesion: false, nombre: true }
+};
+
+// En nombres (gamertag, escuadrón) la gente pega las palabras sin espacios ("mierdaman"),
+// así que, SOLO ahí, se buscan estas palabras graves y largas dentro del nombre completo.
+// (Solo palabras de 5+ letras que no aparecen dentro de palabras normales.)
+const EMBEBIDAS = {
+    groseria: ['hijueputa', 'hijoputa', 'hijodeputa', 'malparido', 'malparida', 'pendejo', 'pendeja', 'cabron', 'mierda', 'gilipollas', 'gonorrea', 'culero'],
+    odio: ['maricon', 'negrata', 'sudaca'],
+    sexual: ['pornografia', 'porno', 'hentai', 'onlyfans']
+};
+
+const crearBloqueo = (categoria, cfg, mensajeExtra) => ({
+    ok: false,
+    categoria,
+    mensaje: mensajeExtra ?? ((cfg.nombre && MENSAJES_NOMBRE[categoria]) || MENSAJES[categoria])
+});
 
 // ============================================================
 // REVISIÓN PRINCIPAL
 // ============================================================
 /**
- * Revisa un texto antes de publicarlo.
+ * Revisa un texto antes de publicarlo o guardarlo.
  * @param {string} textoOriginal
+ * @param {{contexto?: 'publicacion'|'bio'|'descripcion'|'chat'|'nombre'}} opciones
  * @returns {{ok: true, texto: string} | {ok: false, categoria: string, mensaje: string}}
  */
-export function revisarTexto(textoOriginal) {
+export function revisarTexto(textoOriginal, opciones = {}) {
+    const cfg = CONTEXTOS[opciones.contexto] ?? CONTEXTOS.publicacion;
+    const resultadoBloqueado = (categoria, mensajeExtra) => crearBloqueo(categoria, cfg, mensajeExtra);
+
     // 1) Limpieza: un solo párrafo, sin espacios repetidos
     const texto = String(textoOriginal ?? '').replace(/\s+/g, ' ').trim();
 
-    if (!texto) return resultadoBloqueado('vacio');
-    if (texto.length < MIN_CARACTERES) return resultadoBloqueado('corto');
-    if (texto.length > MAX_CARACTERES) return resultadoBloqueado('largo');
+    if (!texto) return cfg.min === 0 || !cfg.longitud ? { ok: true, texto: '' } : resultadoBloqueado('vacio');
+    if (cfg.longitud) {
+        if (texto.length < cfg.min) return resultadoBloqueado('corto');
+        if (texto.length > cfg.max) return resultadoBloqueado('largo', `El mensaje es demasiado largo (máximo ${cfg.max} caracteres).`);
+    }
 
     const minusculas = texto.toLowerCase();
 
     // 2) Normalización y variantes de comparación
-    const normalizado = desLeet(normalizarBase(texto));
+    // En nombres, "MierdaMan" se separa en "Mierda Man" ANTES de pasar a minúsculas
+    // (2.ª pasada: "AMatar" -> "A Matar", cuando una mayúscula sola precede a una palabra con mayúscula inicial)
+    const paraAnalizar = cfg.nombre
+        ? texto.replace(/([a-záéíóúüñ])([A-ZÁÉÍÓÚÜÑ])/g, '$1 $2').replace(/([A-ZÁÉÍÓÚÜÑ])([A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ])/g, '$1 $2')
+        : texto;
+    const normalizado = desLeet(normalizarBase(paraAnalizar));
     const palabras = normalizado.split(/[^a-zñ]+/).filter(Boolean);
     const palabrasUnidas = unirLetrasSueltas(palabras);
     // Candidatas a comparar: las palabras tal cual + variante con v->u ("pvta") + comodines ("p*ta")
@@ -294,7 +345,7 @@ export function revisarTexto(textoOriginal) {
         candidatasColapsadas.some((p) => SETS_COLAPSADOS[idx].has(p));
 
     // 3) Autolesión primero: no se publica, pero se responde con cuidado (no como "infracción")
-    if (PATRONES_AUTOLESION.some((r) => r.test(textoPlano))) return resultadoBloqueado('autolesion');
+    if (cfg.autolesion && PATRONES_AUTOLESION.some((r) => r.test(textoPlano))) return resultadoBloqueado('autolesion');
 
     // 4) Amenazas y acoso
     if (PATRONES_AMENAZA.some((r) => r.test(textoPlano))) return resultadoBloqueado('amenaza');
@@ -310,13 +361,23 @@ export function revisarTexto(textoOriginal) {
     if (hayPalabra(GROSERIAS, 0)) return resultadoBloqueado('groseria');
     if (NIVEL_FILTRO === 'estricto' && hayPalabra(GROSERIAS_SUAVES, 1)) return resultadoBloqueado('groseria');
 
+    // 7b) Solo nombres: palabras graves pegadas sin espacios ("mierdaman")
+    if (cfg.nombre) {
+        const compacto = normalizado.replace(/[^a-zñ]+/g, '');
+        const compactoColapsado = colapsar(compacto);
+        for (const [categoria, lista] of Object.entries(EMBEBIDAS)) {
+            if (lista.some((p) => compacto.includes(p) || compactoColapsado.includes(colapsar(p)))) return resultadoBloqueado(categoria);
+        }
+    }
+
     // 8) Enlaces, datos personales y estafas
     if (REGEX_CORREO.test(minusculas) || REGEX_TELEFONO.test(texto) || REGEX_RED_SOCIAL.test(minusculas)) return resultadoBloqueado('contacto');
     if (REGEX_ENLACE.test(minusculas) || REGEX_ENLACE_SIN_ESPACIOS.test(minusculas.replace(/\s+/g, ''))) return resultadoBloqueado('enlace');
     if (PATRONES_CONTACTO.some((r) => r.test(textoPlano))) return resultadoBloqueado('contacto');
     if (PATRONES_SPAM.some((r) => r.test(textoPlano))) return resultadoBloqueado('spam');
 
-    // 9) Estilo: gritos y repeticiones
+    // 9) Estilo: gritos y repeticiones (no en chats ni nombres)
+    if (!cfg.estilo) return { ok: true, texto };
     const letras = texto.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/g, '');
     const mayus = texto.replace(/[^A-ZÁÉÍÓÚÜÑ]/g, '');
     if (letras.length >= 12 && mayus.length / letras.length > 0.7) return resultadoBloqueado('mayusculas');

@@ -196,10 +196,42 @@ Es una decisión de seguridad deliberada: es la medida más eficaz contra cuenta
 ### Un error que encontré de paso (y corregí)
 Las páginas de escuadrones y partidas usaban un diccionario de colores indexado por el nombre del juego. Como las reglas no validaban ese campo, alguien podía crear un escuadrón con el juego `constructor` y **romper la página de escuadrones para todos**. Ahora el código consulta el diccionario de forma segura y las reglas validan el campo (`juego` hasta 30 caracteres, `descripcion` hasta 280).
 
-### Siguiente paso recomendado
-Este mismo filtro puede proteger también los otros textos libres del sitio (gamertag, bio, nombre y descripción de escuadrones, mensajes de chat y de partidas), que hoy no pasan por ninguna revisión. Es un cambio pequeño porque `revisarTexto()` ya existe.
+### Siguiente paso
+El filtro ahora también protege el resto de los textos libres del sitio: ver la sección 13.
 
-## 13. Esquema de datos (Firestore)
+## 13. El filtro protege todo el sitio (no solo el muro)
+
+El mismo filtro (`moderacion.js`) ahora revisa los textos libres que antes no pasaban por ninguna revisión. Cada lugar usa un **contexto** distinto, porque no es lo mismo una publicación que un chat o un gamertag:
+
+| Dónde | Qué se revisa | Particularidades |
+|---|---|---|
+| Registro (`login.html`) | Gamertag | Contexto *nombre* |
+| Perfil (`perfil.html`) | Gamertag y bio | *nombre* y *bio* |
+| Fundar escuadrón (`grupos.html`) | Nombre y descripción | *nombre* y *descripción* |
+| Mensaje de una partida (`index.html`) | Mensaje | *descripción* |
+| Chat de escuadrón y chat de partida | Cada mensaje | Contexto *chat* |
+| Muro (`muro.html`) | Publicación | Como antes |
+
+**Diferencias entre contextos (y por qué):**
+- **Nombres** (gamertag, escuadrón): los nombres suelen escribirse pegados (`MierdaMan`, `HijoDePuta99`), así que el filtro separa el CamelCase y, solo aquí, busca palabras graves incrustadas dentro del nombre. Se permiten mayúsculas y estilos clásicos como `xXx_Gamer_xXx` (por eso quité `xxx` de la lista: también atrapaba "besos xxx").
+- **Chats**: se permiten mayúsculas, repeticiones y mensajes de una sola letra ("NOOOOO", "JAJAJA", "k"), porque en un chat es lo normal. Y **no se bloquean los mensajes de desahogo emocional**: en un chat privado de escuadrón, quien se abre con sus compañeros debe poder hacerlo, y bloquearle el mensaje sería contraproducente. Si prefieres tratarlos como en el muro, en `moderacion.js` pon `autolesion: true` en `CONTEXTOS.chat`.
+- **Si un mensaje de chat se bloquea**, no se borra de la caja: la persona ve el motivo y puede corregirlo.
+
+**Lo que NO se revisa, a propósito:** el motivo de un *reporte* (quien reporta debe poder citar lo ofensivo para que el administrador lo vea) y los torneos (solo los crea el administrador).
+
+### Capa de respaldo en `firestore.rules`
+Los mismos lugares tienen su respaldo en las reglas (términos graves, enlaces y correos). En las **actualizaciones** solo se revisa lo que cambia: así, quien ya tenía un gamertag o un escuadrón con un nombre de antes del filtro puede seguir marcando mensajes como leídos o aceptando miembros sin que nada falle. La lista del servidor incluye `mierda`: si pones `NIVEL_FILTRO = 'moderado'` en `moderacion.js`, quítala también de esa lista.
+
+### Importante: el filtro solo actúa sobre lo NUEVO
+Lo que ya existía antes de este cambio (gamertags, bios, nombres de escuadrones, mensajes) **no se revisa de forma retroactiva**. Para eso están los reportes y el panel de administración. Una excepción: si alguien con un gamertag antiguo y ofensivo entra a su perfil y pulsa "Guardar", tendrá que cambiarlo, porque al guardar se revisa el perfil completo.
+
+### Qué tienes que hacer
+1. Sube `moderacion.js`, `login.html`, `perfil.html`, `grupos.html` e `index.html` actualizados.
+2. **Vuelve a publicar `firestore.rules`** (si no lo haces, el respaldo del servidor no se activa).
+3. Pruébalo: (a) en el registro, intenta el gamertag `MierdaMan`; (b) funda un escuadrón con un nombre ofensivo; (c) escribe un insulto en un chat y comprueba que el mensaje se queda en la caja con el motivo; (d) pon un enlace en tu bio; (e) comprueba que un gamertag normal como `xXx_Gamer_xXx` y un chat con "JAJAJA NOOOO" sí pasan.
+4. Si un gamertag o nombre legítimo se bloquea por error, dímelo (por ejemplo, un nombre como `PorNoob` contiene "porno" y se bloquearía): en nombres la búsqueda de palabras incrustadas es más agresiva a propósito.
+
+## 14. Esquema de datos (Firestore)
 
 ```
 usuarios/{uid}                        { gamertag, email, bio, creadoEn, ultimasLecturas: {...}, ultimasLecturasPartidas: {...} }

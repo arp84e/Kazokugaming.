@@ -95,6 +95,7 @@
             doc, setDoc
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, updateProfile, sendEmailVerification, serverTimestamp } from './firebase-init.js';
+        import { revisarTexto } from './moderacion.js';
 
         let modoRegistro = false;
         const btnLogin = document.getElementById('btn-tab-login');
@@ -160,6 +161,15 @@
             if (modoRegistro && !gamertagValido(gamertag)) {
                 mostrarMensaje("Tu Gamertag debe tener entre 3 y 30 caracteres.", "error");
                 return;
+            }
+
+            // El gamertag se muestra en todo el sitio: no debe ser ofensivo, sexual, un enlace ni datos de contacto
+            if (modoRegistro) {
+                const revision = revisarTexto(gamertag, { contexto: 'nombre' });
+                if (!revision.ok) {
+                    mostrarMensaje(revision.mensaje, "error");
+                    return;
+                }
             }
 
             btnAccion.innerText = "Conectando...";

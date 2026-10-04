@@ -194,6 +194,7 @@
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, showReportPrompt, compartirEnlace, skeletonCards, skeletonRows } from './ui-utils.js';
+        import { revisarTexto } from './moderacion.js';
 
         // Escapa & < > " ' para que el resultado sea seguro tanto dentro de
         // contenido de texto (entre etiquetas) como dentro de atributos HTML
@@ -288,6 +289,18 @@
                 }
                 if (capacidad < 2 || capacidad > 50) {
                     mostrarMensajeEscuadron("La capacidad debe estar entre 2 y 50 miembros.", "error");
+                    return;
+                }
+
+                // El nombre y la descripción se ven en el directorio público: se revisan igual que el muro
+                const revisionNombre = revisarTexto(nombre, { contexto: 'nombre' });
+                if (!revisionNombre.ok) {
+                    mostrarMensajeEscuadron(revisionNombre.mensaje, "error");
+                    return;
+                }
+                const revisionDescripcion = revisarTexto(descripcion, { contexto: 'descripcion' });
+                if (!revisionDescripcion.ok) {
+                    mostrarMensajeEscuadron(`La descripción: ${revisionDescripcion.mensaje}`, "error");
                     return;
                 }
 
@@ -456,10 +469,17 @@
                 const texto = inputChat.value.trim();
                 if (!texto || !escuadronChatActual || !usuarioActual) return;
 
+                // Si el mensaje no pasa el filtro, NO se borra del campo: así puede corregirlo
+                const revision = revisarTexto(texto, { contexto: 'chat' });
+                if (!revision.ok) {
+                    showToast(revision.mensaje, 'error', 6500);
+                    return;
+                }
+
                 inputChat.value = '';
                 try {
                     await addDoc(collection(db, 'escuadrones', escuadronChatActual, 'mensajes'), {
-                        texto: texto.slice(0, 500),
+                        texto: revision.texto,
                         autorId: usuarioActual.uid,
                         autorNombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
                         creadoEn: serverTimestamp()

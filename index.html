@@ -242,6 +242,7 @@
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { showToast, showReportPrompt, skeletonCards } from './ui-utils.js';
+        import { revisarTexto } from './moderacion.js';
         import { cargarNoticias, formatearTiempoRelativo } from './noticias.js';
 
         // Escapa & < > " ' para que el resultado sea seguro tanto dentro de
@@ -434,7 +435,14 @@
                 const juego = document.getElementById('input-juego').value;
                 const nivel = document.getElementById('input-nivel').value;
                 const espacios = parseInt(document.getElementById('input-jugadores').value, 10) || 1;
-                const mensaje = (document.getElementById('input-mensaje').value || "Buscando nuevos amigos para pasarla bien.").slice(0, 280);
+
+                // El mensaje de la partida es público: se revisa igual que el muro. Si lo deja vacío, usamos el texto por defecto.
+                const revisionMensaje = revisarTexto(document.getElementById('input-mensaje').value, { contexto: 'descripcion' });
+                if (!revisionMensaje.ok) {
+                    showToast(revisionMensaje.mensaje, 'error', 6500);
+                    return;
+                }
+                const mensaje = revisionMensaje.texto || "Buscando nuevos amigos para pasarla bien.";
 
                 btnPublicar.disabled = true;
                 btnPublicar.innerText = "Publicando...";
@@ -614,10 +622,17 @@
                 const texto = inputChatPartida.value.trim();
                 if (!texto || !partidaChatActual || !usuarioActual) return;
 
+                // Si el mensaje no pasa el filtro, NO se borra del campo: así puede corregirlo
+                const revision = revisarTexto(texto, { contexto: 'chat' });
+                if (!revision.ok) {
+                    showToast(revision.mensaje, 'error', 6500);
+                    return;
+                }
+
                 inputChatPartida.value = '';
                 try {
                     await addDoc(collection(db, 'partidas', partidaChatActual, 'mensajes'), {
-                        texto: texto.slice(0, 500),
+                        texto: revision.texto,
                         autorId: usuarioActual.uid,
                         autorNombre: usuarioActual.displayName || usuarioActual.email.split('@')[0],
                         creadoEn: serverTimestamp()

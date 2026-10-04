@@ -100,6 +100,7 @@
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, updateProfile, signOut } from './firebase-init.js';
         import { skeletonCards, skeletonRows, calcularInsignias, renderInsignias } from './ui-utils.js';
+        import { revisarTexto } from './moderacion.js';
 
         // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
         const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -169,6 +170,18 @@
 
                     if (nuevoGamertag.length < 3 || nuevoGamertag.length > 30) {
                         mostrarMensaje("El gamertag debe tener entre 3 y 30 caracteres.", "error");
+                        return;
+                    }
+
+                    // El gamertag y la bio son públicos: se revisan igual que lo que se publica en el muro
+                    const revisionNombre = revisarTexto(nuevoGamertag, { contexto: 'nombre' });
+                    if (!revisionNombre.ok) {
+                        mostrarMensaje(revisionNombre.mensaje, "error");
+                        return;
+                    }
+                    const revisionBio = revisarTexto(nuevaBio, { contexto: 'bio' });
+                    if (!revisionBio.ok) {
+                        mostrarMensaje(`Tu bio: ${revisionBio.mensaje}`, "error");
                         return;
                     }
 
