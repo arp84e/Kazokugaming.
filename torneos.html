@@ -60,6 +60,18 @@
                     </div>
                 </div>
 
+                <!-- Filtros por juego (se generan solos según los torneos que existan) y orden -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                    <div id="barra-filtros-torneos" class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide"></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <label for="orden-torneos" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Ordenar</label>
+                        <select id="orden-torneos" class="bg-slate-900 border border-slate-700 text-white text-sm font-semibold px-3 py-2 rounded-xl outline-none focus:ring-2 focus:ring-fuchsia-500">
+                            <option value="proximos">Más próximos primero</option>
+                            <option value="recientes">Publicados recientemente</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div id="contenedor-torneos" class="grid grid-cols-1 lg:grid-cols-2 gap-8"></div>
             </div>
         </section>
@@ -123,7 +135,7 @@
             collection, doc, setDoc, query, orderBy, onSnapshot, getCountFromServer
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
-        import { showToast, compartirEnlace, skeletonCards } from './ui-utils.js';
+        import { showToast, compartirEnlace, agregarAlCalendario, skeletonCards } from './ui-utils.js';
 
         // Escapa & < > " ' para que el resultado sea seguro tanto dentro de
         // contenido de texto (entre etiquetas) como dentro de atributos HTML
@@ -173,6 +185,16 @@
 
             // --- Inscribirse a un torneo (calcula el cupo real vía subcolección) ---
             contenedor.addEventListener('click', async (e) => {
+                const btnCalendario = e.target.closest('.btn-calendario');
+                if (btnCalendario) {
+                    agregarAlCalendario({
+                        titulo: btnCalendario.dataset.titulo,
+                        descripcion: `Torneo de ${btnCalendario.dataset.juego} en KazokuGaming. Más info: ${window.location.origin}${window.location.pathname}`,
+                        inicioMs: Number(btnCalendario.dataset.epoch)
+                    });
+                    return;
+                }
+
                 const btnCompartir = e.target.closest('.btn-compartir-torneo');
                 if (btnCompartir) {
                     compartirEnlace({
@@ -278,9 +300,12 @@
                         <div class="w-full bg-slate-900 rounded-full h-2.5 mb-6 border border-slate-800">
                             <div class="barra-progreso bg-gradient-to-r from-fuchsia-500 to-rose-500 h-2.5 rounded-full" style="width: 0%"></div>
                         </div>
-                        <button data-id="${t.id}" class="btn-inscribirse w-full py-4 bg-slate-800 hover:bg-fuchsia-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-fuchsia-600/25">
-                            Inscribirse
-                        </button>
+                        <div class="flex gap-3">
+                            <button data-id="${t.id}" class="btn-inscribirse flex-1 py-4 bg-slate-800 hover:bg-fuchsia-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-fuchsia-600/25">
+                                Inscribirse
+                            </button>
+                            ${infoFecha.epochMs ? `<button data-titulo="${sanitizarHTML(t.titulo)}" data-juego="${sanitizarHTML(t.juego)}" data-epoch="${infoFecha.epochMs}" class="btn-calendario px-5 bg-slate-800 hover:bg-indigo-600 text-white rounded-xl transition-all text-xl" aria-label="Añadir al calendario" title="Añadir al calendario">📅</button>` : ''}
+                        </div>
                     </div>`;
 
                 // Cuenta real de inscritos leyendo la subcolección (nunca un número que el cliente pueda falsear)
@@ -300,17 +325,96 @@
                 return div;
             }
 
-            // --- Escuchar torneos en tiempo real ---
-            const q = query(collection(db, 'torneos'), orderBy('creadoEn', 'desc'));
-            onSnapshot(q, (snapshot) => {
-                if (snapshot.empty) {
+            // --- Filtro por juego + orden ---
+            // El campo "juego" de un torneo es texto libre (lo escribe el admin), así que
+            // los botones de filtro se generan a partir de los juegos que realmente existen.
+            let torneosCache = [];
+            let filtroJuego = 'Todos'; // clave normalizada del juego, o 'Todos'
+            const barraFiltros = document.getElementById('barra-filtros-torneos');
+            const selectOrden = document.getElementById('orden-torneos');
+
+            const claveJuego = (j) => String(j ?? '').trim().toLowerCase();
+
+            // Orden "más próximos primero": primero los que aún no empiezan (el más cercano arriba),
+            // luego los que no tienen fecha real, y al final los que ya empezaron.
+            function claveOrdenProximos(t) {
+                const { epochMs } = formatearFechaTorneo(t.fecha);
+                if (epochMs === null) return [1, 0];
+                if (epochMs >= Date.now()) return [0, epochMs];
+                return [2, -epochMs];
+            }
+
+            function ordenarTorneos(lista) {
+                const copia = [...lista];
+                if (selectOrden.value === 'proximos') {
+                    copia.sort((a, b) => {
+                        const [ga, va] = claveOrdenProximos(a);
+                        const [gb, vb] = claveOrdenProximos(b);
+                        return ga - gb || va - vb;
+                    });
+                } else {
+                    const ms = (t) => (t.creadoEn && typeof t.creadoEn.toMillis === 'function') ? t.creadoEn.toMillis() : 0;
+                    copia.sort((a, b) => ms(b) - ms(a));
+                }
+                return copia;
+            }
+
+            function pintarFiltros() {
+                // Un botón por juego distinto (sin distinguir mayúsculas), conservando cómo lo escribió el admin
+                const juegos = new Map();
+                torneosCache.forEach((t) => {
+                    const k = claveJuego(t.juego);
+                    if (k && !juegos.has(k)) juegos.set(k, String(t.juego).trim());
+                });
+
+                if (filtroJuego !== 'Todos' && !juegos.has(filtroJuego)) filtroJuego = 'Todos';
+
+                const estiloActivo = 'bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30';
+                const estiloInactivo = 'hover:bg-slate-800 text-slate-400';
+                const boton = (clave, etiqueta) => `
+                    <button data-juego="${sanitizarHTML(clave)}" class="btn-filtro-torneo px-5 py-2 font-bold rounded-full text-sm whitespace-nowrap transition-colors ${filtroJuego === clave ? estiloActivo : estiloInactivo}">${sanitizarHTML(etiqueta)}</button>`;
+
+                // Con un solo juego (o ninguno) un filtro no aporta nada: lo ocultamos
+                if (juegos.size < 2) {
+                    barraFiltros.innerHTML = '';
+                    return;
+                }
+                barraFiltros.innerHTML = boton('Todos', 'Todos los Juegos')
+                    + [...juegos.entries()].map(([k, etiqueta]) => boton(k, etiqueta)).join('');
+            }
+
+            function pintarTorneos() {
+                const filtrados = filtroJuego === 'Todos'
+                    ? torneosCache
+                    : torneosCache.filter((t) => claveJuego(t.juego) === filtroJuego);
+
+                if (torneosCache.length === 0) {
                     contenedor.innerHTML = `<p class="text-slate-500 col-span-full text-center py-8">No hay torneos activos ahora mismo. ¡Vuelve pronto!</p>`;
                     return;
                 }
+                if (filtrados.length === 0) {
+                    contenedor.innerHTML = `<p class="text-slate-500 col-span-full text-center py-8">No hay torneos de ese juego por ahora.</p>`;
+                    return;
+                }
                 contenedor.innerHTML = '';
-                snapshot.docs.forEach((docSnap) => {
-                    contenedor.appendChild(pintarTorneo({ id: docSnap.id, ...docSnap.data() }));
-                });
+                ordenarTorneos(filtrados).forEach((t) => contenedor.appendChild(pintarTorneo(t)));
+            }
+
+            barraFiltros.addEventListener('click', (e) => {
+                const btn = e.target.closest('.btn-filtro-torneo');
+                if (!btn) return;
+                filtroJuego = btn.dataset.juego;
+                pintarFiltros();
+                pintarTorneos();
+            });
+            selectOrden.addEventListener('change', pintarTorneos);
+
+            // --- Escuchar torneos en tiempo real ---
+            const q = query(collection(db, 'torneos'), orderBy('creadoEn', 'desc'));
+            onSnapshot(q, (snapshot) => {
+                torneosCache = snapshot.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
+                pintarFiltros();
+                pintarTorneos();
             }, (error) => {
                 console.error("Error escuchando torneos:", error);
                 contenedor.innerHTML = `<p class="text-red-400 col-span-full text-center py-8">No se pudieron cargar los torneos.</p>`;

@@ -19,6 +19,94 @@ function escaparHTML(t) {
     }[c]));
 }
 
+// Formato de fecha UTC que exigen .ics y Google Calendar: YYYYMMDDTHHMMSSZ
+function fechaParaCalendario(ms) {
+    return new Date(ms).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+}
+
+// Escapa texto para un archivo .ics (RFC 5545): barra, punto y coma, coma y saltos de línea
+function escaparTextoIcs(t) {
+    return String(t ?? '')
+        .replace(/\\/g, '\\\\')
+        .replace(/;/g, '\\;')
+        .replace(/,/g, '\\,')
+        .replace(/\r?\n/g, '\\n');
+}
+
+/**
+ * Ofrece añadir un evento al calendario del dispositivo: un enlace directo a
+ * Google Calendar y la descarga de un archivo .ics (Apple Calendar, Outlook,
+ * y la mayoría de apps de calendario en Android).
+ * @param {{titulo: string, descripcion?: string, inicioMs: number, duracionMin?: number}} evento
+ */
+export function agregarAlCalendario({ titulo, descripcion = '', inicioMs, duracionMin = 120 }) {
+    const finMs = inicioMs + duracionMin * 60000;
+    const inicio = fechaParaCalendario(inicioMs);
+    const fin = fechaParaCalendario(finMs);
+
+    const urlGoogle = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + `&text=${encodeURIComponent(titulo)}`
+        + `&dates=${inicio}/${fin}`
+        + `&details=${encodeURIComponent(descripcion)}`;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 z-[250] flex items-center justify-center p-4';
+    // Solo texto estático aquí: el título/URL se asignan por JS más abajo, nunca por interpolación en el HTML.
+    overlay.innerHTML = `
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-xs bg-[#0a0a0f] border border-slate-700 rounded-2xl shadow-2xl p-5">
+            <h3 class="text-base font-black text-white mb-1">Añadir al calendario</h3>
+            <p class="text-xs text-slate-500 mb-4">Se agenda con una duración estimada de 2 horas.</p>
+            <div class="space-y-2">
+                <a data-accion="google" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-4 py-3 bg-slate-900 hover:bg-slate-800 rounded-xl text-sm font-bold text-white transition-colors">
+                    Google Calendar
+                </a>
+                <button data-accion="ics" class="w-full flex items-center gap-3 px-4 py-3 bg-slate-900 hover:bg-slate-800 rounded-xl text-sm font-bold text-white transition-colors">
+                    Descargar archivo .ics <span class="text-slate-500 font-normal text-xs">(Apple, Outlook, Android)</span>
+                </button>
+            </div>
+            <button data-accion="cerrar" class="w-full mt-3 px-4 py-2 text-slate-400 hover:text-white text-sm font-bold">Cancelar</button>
+        </div>`;
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('[data-accion="google"]').href = urlGoogle;
+
+    const cerrar = () => overlay.remove();
+    overlay.querySelector('[data-accion="google"]').addEventListener('click', cerrar);
+    overlay.querySelector('[data-accion="cerrar"]').addEventListener('click', cerrar);
+    overlay.querySelector('.absolute.inset-0').addEventListener('click', cerrar);
+
+    overlay.querySelector('[data-accion="ics"]').addEventListener('click', () => {
+        const contenido = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//KazokuGaming//Torneos//ES',
+            'CALSCALE:GREGORIAN',
+            'BEGIN:VEVENT',
+            `UID:${inicioMs}-${Math.random().toString(36).slice(2, 10)}@kazokugaming`,
+            `DTSTAMP:${fechaParaCalendario(Date.now())}`,
+            `DTSTART:${inicio}`,
+            `DTEND:${fin}`,
+            `SUMMARY:${escaparTextoIcs(titulo)}`,
+            `DESCRIPTION:${escaparTextoIcs(descripcion)}`,
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([contenido], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const enlace = document.createElement('a');
+        enlace.href = url;
+        enlace.download = 'torneo-kazokugaming.ics';
+        document.body.appendChild(enlace);
+        enlace.click();
+        enlace.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast('Archivo de calendario descargado.', 'exito');
+        cerrar();
+    });
+}
+
 /**
  * Comparte un enlace usando el Share Sheet nativo del dispositivo si está
  * disponible (la mayoría de navegadores móviles); si no, muestra un mini
