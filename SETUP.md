@@ -75,6 +75,8 @@ Estas consultas necesitan un índice compuesto que Firestore no crea solo. La pr
 
 ## 6. "Últimas Novedades" — videojuegos y tecnología, con imagen real
 
+> ⚠️ **Actualizado en octubre 2026:** las noticias ya no pasan por rss2json.com. Ver la **sección 16**.
+
 La sección de noticias en `index.html` (`noticias.js`) carga titulares reales de dos categorías, priorizando siempre que haya una **imagen real** en cada tarjeta:
 
 1. **Tecnología → Xataka** (feed oficial confirmado y verificado: `feeds.weblogssl.com/xataka2`, en español). Cada noticia de Xataka trae su imagen incrustada en el propio resumen del feed, así que esta categoría siempre tiene fotos reales.
@@ -282,3 +284,23 @@ Cada HTML tiene una etiqueta `<meta http-equiv="Content-Security-Policy">` con l
 3. Prueba: registro, crear escuadrón, aceptar una solicitud, unirse a una partida, chatear, publicar en el muro y dar 🔥, inscribirse a un torneo, reportar algo, y entrar a `admin.html`.
 4. Si `admin.html` dice "Acceso restringido": verifica tu correo de admin y vuelve a iniciar sesión.
 5. Si algo falla con un error de permisos, copia el mensaje de la consola del navegador y avísame.
+
+## 16. Noticias sin rss2json (octubre 2026)
+
+**Qué pasó:** rss2json.com puso una verificación anti-bots ("Verificación de seguridad en curso"). Un navegador no puede pasarla desde código, así que todas las peticiones fallaban y la portada mostraba *"No se pudieron cargar las noticias en este momento"*. No era un fallo de la web: le pasaba a cualquier sitio que usara rss2json.
+
+**Cómo funciona ahora:**
+- `.github/workflows/noticias.yml` (GitHub Actions) se ejecuta **cada hora**, lanza `scripts/generar-noticias.mjs`, que descarga los feeds de Xataka, IGN y Google Noticias, y guarda `noticias.json` en el repositorio. Solo crea un commit si hay noticias nuevas.
+- `noticias.js` lee `noticias.json` desde tu propio dominio. Ya no hay ningún servicio de terceros en el navegador (se quitó rss2json de la Content-Security-Policy) y todo lo que viene en el archivo se vuelve a validar antes de mostrarse.
+- Si una fuente falla, las demás se publican igual; si fallan todas, se conserva el último `noticias.json` bueno.
+- Sin dependencias: no hay `npm install`, solo Node (ya viene instalado en GitHub Actions).
+
+**Qué tienes que hacer (una sola vez):**
+1. Sube todos los archivos, **incluida la carpeta oculta `.github/`** (si subes arrastrando archivos en la web de GitHub, a veces las carpetas que empiezan por punto no se ven: comprueba que exista `.github/workflows/noticias.yml` en el repositorio).
+2. En GitHub: pestaña **Actions** → si aparece un aviso, pulsa **"I understand my workflows, go ahead and enable them"**.
+3. **Actions → "Actualizar noticias" → "Run workflow"** para generar las primeras noticias ya (si no, aparecerán en la siguiente hora). Tarda unos 20 segundos; luego GitHub Pages tarda 1–2 minutos en publicar.
+4. Si el paso de "git push" falla con un error de permisos: **Settings → Actions → General → Workflow permissions → "Read and write permissions"** → Save, y vuelve a lanzarlo.
+
+**Cambiar las fuentes:** edita la lista `FEEDS` al principio de `scripts/generar-noticias.mjs`. Las categorías válidas son `Videojuegos` y `Tecnología` (si añades otra, agrégala también en `CATEGORIAS` de `noticias.js`).
+
+**A tener en cuenta:** GitHub pausa las tareas programadas de un repositorio público si pasan 60 días sin actividad. Si las noticias dejan de actualizarse, entra en Actions y vuelve a activar el flujo.

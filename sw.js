@@ -4,8 +4,8 @@
 // Qué SÍ cachea: el "shell" estático de la app (HTML, JS propio, íconos) para
 // que abrir el sitio sea instantáneo y funcione incluso con conexión pobre.
 //
-// Qué NO cachea: nada de Firebase (Auth/Firestore) ni Tailwind/Google Fonts/
-// rss2json — todo eso sigue yendo directo a la red, porque es contenido que
+// Qué NO cachea: nada de Firebase (Auth/Firestore) ni Tailwind/Google Fonts
+// — todo eso sigue yendo directo a la red, porque es contenido que
 // cambia todo el tiempo (torneos, chats, noticias) y cachearlo mal mostraría
 // información vieja como si fuera actual.
 //
@@ -14,8 +14,8 @@
 // que haya guardado. Así nunca se ve una versión vieja teniendo internet.
 
 // Subir este número obliga a todos los dispositivos a descartar la caché vieja
-// (v2: actualización de seguridad de octubre 2026, nuevo SDK de Firebase).
-const VERSION = 'kazoku-v2';
+// (v3: octubre 2026, nuevo SDK de Firebase y noticias desde noticias.json).
+const VERSION = 'kazoku-v3';
 const ARCHIVOS_SHELL = [
     'index.html',
     'grupos.html',
@@ -60,11 +60,7 @@ const DOMINIOS_SIEMPRE_RED = [
     'firestore.googleapis.com',
     'identitytoolkit.googleapis.com',
     'securetoken.googleapis.com',
-    'firebaseapp.com',
-    'api.rss2json.com',
-    'news.google.com',
-    'feeds.ign.com',
-    'kotaku.com'
+    'firebaseapp.com'
 ];
 
 self.addEventListener('fetch', (event) => {
