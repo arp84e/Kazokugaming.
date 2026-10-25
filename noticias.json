@@ -1,36 +1,36 @@
 {
-  "generado": 1792935239780,
+  "generado": 1792949928474,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "El James Webb ha detectado por primera vez nubes de agua variables fuera del Sistema Solar",
-      "resumen": "La detección de nubes más allá de la Tierra genera mucha expectación. Las de Venus o las de Marte, por ejemplo, han sido muy estudiadas en l…",
-      "link": "https://www.xataka.com/espacio/james-webb-ha-detectado-primera-vez-nubes-agua-variables-fuera-sistema-solar",
-      "imagen": "https://i.blogs.es/ddbf98/enana-marron-1-/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792935013000
+      "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
+      "resumen": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1ljSzM0YnI0dFhlTDBNU3dzRmtEZnA0MWpxQkpNdEVkX0xIQU44RWludFNMRzlkOFRkWWowUXduQ1hIOTJ4VlpjMXJ3NzZhaWd6bjZ1WVEyZzFwV2E5bk1FdnU4eW5hNHFENlZ1b0pFc3ZDUW5JbFBMbW1FUkg2cURqa1ppWVlUZ2JNOWxGR1FjVHJnSUtkeFg5MGJaXzJsTjY2WE9oSWxDY0tSRlZuVTktbV83cjVFZE94Tm9CVQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792949251000
     },
     {
-      "titulo": "Una empresa francesa lleva un año intentando lanzar una cámara para competir con Japón. El problema no es solo el precio",
-      "resumen": "El mercado de la fotografía profesional lleva décadas dominado por firmas japonesas como Sony, Canon, Nikon o Fujifilm. En Europa también te…",
-      "link": "https://www.xataka.com/fotografia-y-video/empresa-francesa-lleva-ano-intentando-lanzar-camara-para-competir-japon-problema-no-solo-precio",
-      "imagen": "https://i.blogs.es/b150b9/esquisse-camera-portada-2/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792933208000
+      "titulo": "El mayor misterio de GTA Online se resolvió, pero no te diste cuenta: esta es la verdad tras el mural del monte Chiliad",
+      "resumen": "Era el 17 de septiembre de 2013 y el mundo estaba más que preparado para la llegada de GTA V. La nueva entrega de Rockstar rompió toda clase…",
+      "link": "https://www.vidaextra.com/juegos-online/mayor-misterio-gta-online-se-resolvio-no-te-diste-cuenta-esta-verdad-mural-monte-chiliad-1",
+      "imagen": "https://i.blogs.es/66ef55/grand-theft-auto-v-chiliad-mural/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792944968000
     },
     {
-      "titulo": "31,50 euros en copas y seis meses de cárcel: el Supremo cambia cómo se castiga el fraude con las tarjetas de crédito",
-      "resumen": "El Tribunal Supremo ha dictaminado que el uso de la tarjeta bancaria de otra persona nunca es un delito leve, ni siquiera cuando la cantidad…",
-      "link": "https://www.xataka.com/legislacion-y-derechos/31-50-euros-copas-seis-meses-carcel-supremo-cambia-como-se-castiga-fraude-tarjetas-credito",
-      "imagen": "https://i.blogs.es/6dffe8/nathana-reboucas-3ysdtzqnvtq-unsplash/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792931407000
+      "titulo": "Sources: valyn set to join Fnatic for the 2027 season",
+      "resumen": "Sources: valyn set to join Fnatic for the 2027 season Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaUtvQkc1azJLMURuVWs1alF5b2JVUVVSVkxxdGZyWXhDbUY0QXhxbEY2cmFnN3lZYlRzOWQ4SWJhNFhfTFloNmU3VmExX1RGMDJnbWJZeko4TzZDTXNZeTZMdEcxVGtMRFBWckRjVFRyU1JBWEFJN0UxYWtiUTY1SnlOTU9GMXE5azhCOHFsQ1dJTnlBdGpTbGFSOUE?oc=5",
+      "imagen": null,
+      "fuente": "Sheep Esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792944805000
     },
     {
       "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
@@ -43,34 +43,14 @@
       "fecha": 1792931096000
     },
     {
-      "titulo": "En 1941, el acorazado USS Arizona se hundió en Pearl Harbor. EEUU ya tiene su \"sucesor\": un submarino nuclear con 28 Tomahawk más",
-      "resumen": "Construido en 1916 y ya operativo en la Primera Guerra Mundial, el acorazado de la clase Pennsylvania USS Arizona se hundió de forma catastr…",
-      "link": "https://www.xataka.com/magnet/1941-acorazado-uss-arizona-se-hundio-pearl-harbor-eeuu-tiene-su-sucesor-submarino-nuclear-28-tomahawk",
-      "imagen": "https://i.blogs.es/b3d50f/boat/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792929610000
-    },
-    {
-      "titulo": "Los marroquíes desbancan a los europeos en la compra de vivienda en España. También pagan menos por metro cuadrado",
-      "resumen": "Durante las últimas décadas, el extranjero que compraba casa en España tenía un perfil más o menos definido: británico, con el divino placer…",
-      "link": "https://www.xataka.com/magnet/marroquies-desbancan-a-europeos-compra-vivienda-espana-tambien-pagan-metro-cuadrado",
-      "imagen": "https://i.blogs.es/8d4390/calle/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792927810000
-    },
-    {
-      "titulo": "¿Podemos \"enamorarnos\" de una IA? La respuesta científica es más intrigante de lo que solemos aceptar",
-      "resumen": "Alicia Framis y Ailex Sibouwlingen se casaron el 9 de noviembre de 2024. Ella es una artista multidisciplinar española enraizada en Países B…",
-      "link": "https://www.xataka.com/robotica-e-ia/podemos-enamorarnos-ia-respuesta-cientifica-intrigante-que-solemos-aceptar",
-      "imagen": "https://i.blogs.es/447a41/photo-1591006407747-608d13609cc1/1024_2000.jpeg",
-      "fuente": "Xataka",
-      "categoria": "Tecnología",
-      "color": "bg-sky-600",
-      "fecha": 1792926971000
+      "titulo": "Qué fue de Deep Down, el Dark Souls free-to-play de Capcom para PlayStation que se resiste a ser cancelado",
+      "resumen": "Envuelto entre la niebla, en un limbo desde el que nunca ha vuelto a dar señales de vida. Deep Down forjó su propia leyenda a partir de una…",
+      "link": "https://www.vidaextra.com/industria/que-fue-deep-down-dark-souls-free-to-play-capcom-para-playstation-que-se-resiste-a-ser-cancelado",
+      "imagen": "https://i.blogs.es/99826b/deep_down-2619720/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792919769000
     },
     {
       "titulo": "Amazon prepara un cambio importante para Prime y promete algo que podría transformar el acceso a los videojuegos de estreno",
@@ -83,54 +63,104 @@
       "fecha": 1792918266000
     },
     {
-      "titulo": "Man Arrested for Brandishing Knife at Crew on the Set of Miami Vice ‘85",
-      "resumen": "A knife-wielding man was arrested Friday night for threatening crew members on the Brooklyn set of Miami Vice ‘85. Citing information from t…",
-      "link": "https://www.ign.com/articles/man-arrested-for-brandishing-knife-at-crew-on-the-set-of-miami-vice-85",
-      "imagen": "https://assets-prd.ignimgs.com/2026/10/12/miami-vice-85-michael-b-jordan-1791817174472.png",
-      "fuente": "IGN",
+      "titulo": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas",
+      "resumen": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOYXVVWTlYOER2S09QcGdURktDNEhvZkdSZlJ0bzh2U1I4Tm5IdGNNTWNrcmlJempiNVRiYnlCQjUxQzRhazRuWENWWW45SmNkVFEzelFSbExSN0czYkU3d29WbUZ6NTE5SzZiaVV4anp1MW9Id1NLQVNkMGlPSERfYi1IeC1QS0NTV25vanN1dWFMWGpmM1NORWFIRHNXME9kZF9oOVduM3VWd2tOb2RLQVZPNEF3c1ZJandUTnBlY05Kcmx4dlJN0gHbAUFVX3lxTE1JQnc1OTA1UWN6eWs2SkZsbDhYTGczZVlfOWhUNmNJWV9ZVll3SGxLVnZIZXN0OUZiMmR6VElUSFpwNWNJWVRrMC1rdWJmUDVuc3lNMU9ta1NRa245RWtmWlBaYUE4QVV6S0lQdUd0SEFuaUJkWGY1UjB5RlJxbjFhQ2lkek9SRUtvUDhvak93emxnbGpiSDJlNGpIX2doampqbkptSWRUNFZFZmRRZHdGS3FENHROOF9mQWtoTDZJUGhPSmZLQVBPU2NNRVVtYm9CaGM1OEFQdkkzVQ?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792902212000
+      "fecha": 1792915275000
     },
     {
-      "titulo": "New Avengers: Doomsday Trailer Pokes Fun at Multiple 'Captains America'",
-      "resumen": "Marvel dropped a new trailer for Avengers: Doomsday that leans heavily on the dynamic between Thor and Steve Rogers, especially their shared…",
-      "link": "https://www.ign.com/articles/avengers-doomsday-trailer-multiple-captains-america",
-      "imagen": "https://assets-prd.ignimgs.com/2026/10/25/avengers-doomsday-describes-the-return-of-steve-rogers-as-a-usvw-1792891164279.jpg",
-      "fuente": "IGN",
+      "titulo": "El diseño de misiones de Horizon Zero Dawn no usó inteligencia artificial compleja, sino un muro gigante cubierto de post-its interconectados",
+      "resumen": "Aloy de Horizon Zero Dawn fue una de las grandes promesas de PlayStation para establecer nuevos universos en los que crear historias emocion…",
+      "link": "https://www.vidaextra.com/accion/diseno-misiones-horizon-zero-dawn-no-uso-inteligencia-artificial-compleja-sino-muro-gigante-cubierto-post-its-interconectados",
+      "imagen": "https://i.blogs.es/f8e666/horizon-1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792891256000
+      "fecha": 1792911610000
     },
     {
-      "titulo": "James Gunn Defends the DCU's Approach to Interconnected Stories, Doesn't Want Movies Like Clayface to Exist Just to 'Set Up' Crossovers",
-      "resumen": "DC Studios co-chairman James Gunn has defended the DCU's approach to interconnected stories, saying he doesn't want movies like Clayface to…",
-      "link": "https://www.ign.com/articles/james-gunn-defends-the-dcus-approach-to-interconnected-stories-doesnt-want-movies-like-clayface-to-exist-just-to-set-up-crossovers",
-      "imagen": "https://assets-prd.ignimgs.com/2026/10/24/clayface-dcu-1792877179646.png",
-      "fuente": "IGN",
+      "titulo": "Worlds 2026: Swiss Stage Round 3 Draw",
+      "resumen": "Worlds 2026: Swiss Stage Round 3 Draw Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdGVZX3k0dXBIdEgzM0FCMWFsbmlnRW1lVDhTeVYwVUdMQU54TkFrQjNHQmpqeGJNcy1nclNhb0RSTTNiSWlKQXI0SEtsSW9nTVVUbzlsMUNTemdhY1FldWRCMExDaHNhU0prMGxYZWN0NHNmblhrVWFOQjVpVTdKMHZIU1UtanM?oc=5",
+      "imagen": null,
+      "fuente": "Sheep Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792879782000
+      "fecha": 1792892187000
     },
     {
-      "titulo": "The Best Deals Today: Persona 3 Reload, Pikmin 4, The Adventures of Elliot, and More",
-      "resumen": "",
-      "link": "https://www.ign.com/articles/best-deals-for-october-24-2026",
-      "imagen": "https://assets-prd.ignimgs.com/2026/10/24/daily-deals-10-24-1792872578476.png",
-      "fuente": "IGN",
+      "titulo": "Han inventado mil historias para mantenernos enganchados, pero ninguna supera a un clásico como el Modo Horda de Gears of War",
+      "resumen": "Llego tarde. Soy consciente de que he excedido el tiempo que tarda un videojuego en salir del foco de atención de la mayoría de jugadores y,…",
+      "link": "https://www.vidaextra.com/accion/han-inventado-mil-historias-para-mantenernos-enganchados-ninguna-supera-a-clasico-como-modo-horda-gears-of-war",
+      "imagen": "https://i.blogs.es/47c520/ss_e3833eef1e791059ccc552657987135061dd1e22.1920/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792872592000
+      "fecha": 1792872009000
     },
     {
-      "titulo": "El creador de Super Mario explica cuál es el verdadero problema de la inteligencia artificial en los videojuegos",
-      "resumen": "El creador de Super Mario explica cuál es el verdadero problema de la inteligencia artificial en los videojuegos Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQamg1Zk8wdlNrSk5mOVFYZmZYcVFvb1haQzRxSHlOOXdZcno1T3B2aGgxdVp2QVFwdmlCT04xUjMxajJjVDROZjk4RFVfc2NOV0FrWHV4R3g4cG96aDBWc3dmMnowa0x6cWdqWmctRlBPSHZ4QmFqb2g2Q3VWTkhsTy0zVUJ0ZmZXRlp0anpzZ0Zza1ptQk1yZUJ3WURlc0lwUkt4aWdUdTQ2djZQOGdoazR2bjF6dGJvYXFVRnN4ZWJ1NlF5QzhpVUNJVE9jQmluQ3l6N09OWUtnVFZZQmc?oc=5",
+      "titulo": "Los coches de GTA V no chocan contigo a propósito (y tampoco se solucionaría con intermitentes)",
+      "resumen": "Seguro que has jugado a GTA V y, más de una vez, el tráfico parece tener algo en tu contra. Los vehículos se desvían de forma inesperada, se…",
+      "link": "https://www.vidaextra.com/accion/coches-gta-v-no-chocan-contigo-a-proposito-tampoco-se-solucionaria-intermitentes",
+      "imagen": "https://i.blogs.es/2abb6b/badfon-gta-5-va-yva-yv-ay-va/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792864809000
+    },
+    {
+      "titulo": "Así era Dragon King, el prototipo para Nintendo 64 que se acabó convirtiendo en Super Smash Bros",
+      "resumen": "Una vez finalizado el contenido de Super Smash Bros. Ultimate, Masahiro Sakurai, el director y creador de Kirby y Super Smash Bros., quiso i…",
+      "link": "https://www.vidaextra.com/accion/asi-era-dragon-king-prototipo-para-nintendo-64-que-se-acabo-convirtiendo-super-smash-bros-1",
+      "imagen": "https://i.blogs.es/580874/super-smash-bros/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792854974000
+    },
+    {
+      "titulo": "\"Es brillante\": el fracaso comercial que inspiró Resident Evil y salvó a Capcom",
+      "resumen": "Aunque no fue el origen primigenio del survival horror, está claro que Resident Evil fue uno de los pilares fundamentales del género con su…",
+      "link": "https://www.vidaextra.com/accion/brillante-fracaso-comercial-que-inspiro-resident-evil-salvo-a-capcom",
+      "imagen": "https://i.blogs.es/645048/20263198204883_1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792850417000
+    },
+    {
+      "titulo": "Este jugador ha recreado Anor Londo de Dark Souls en No Man's Sky y puedes visitarla sin miedo a que un arquero te empale",
+      "resumen": "Más de 10 años de creación de contenido en internet han dejado muy claro que No Man's Sky tiene una de las comunidades más entregadas y excé…",
+      "link": "https://www.vidaextra.com/simuladores/este-jugador-ha-recreado-anor-londo-dark-souls-no-man-s-sky-puedes-visitarla-miedo-a-que-arquero-te-empale",
+      "imagen": "https://i.blogs.es/4cd3b8/anor-londo-no-mans/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792843200000
+    },
+    {
+      "titulo": "Nintendo Switch 2 recibirá una edición física de uno de los juegos más ambiciosos del año y tendrá una característica que muchos jugadores esperaban",
+      "resumen": "Nintendo Switch 2 recibirá una edición física de uno de los juegos más ambiciosos del año y tendrá una característica que muchos jugadores e…",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQNHNXeXBwa3pJSi05ZEp6aXlWcmJWNGhoQlZNQTNPQnZ6R0hZWUNkNERRdnVkQ0RYX2xxVmIyOTRaelN2Y3dkbDRUMGRJNDVNX05YbkgtZllqX3lyc0JzbnRHem1XNFVWOEpDSEh4LUYzeE9lUS1xSVNYTE9IWUV6Vkg3NFBFY1dKUnI1SUVTSFh3N3diV05fVnpqSGJzaFNCNDZLN1RHQ2k4TGZEa3hRTnZwTkk0NjdFZk5LeWNxV3ktblUyMnVlcjVyX1FEc1JTdFJVdXV5REY2ZXA4U1lBTTFleWxMLWVGLTFrTkg3U0VqYl9zSzM1Qml5RVE0RmxXeDRiOXhGOGk1RHhia0E?oc=5",
       "imagen": null,
       "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792738800000
+      "fecha": 1792825433000
+    },
+    {
+      "titulo": "Vod",
+      "resumen": "Vod LoL esports",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBqOEEtSXdNWDQycGlSR3gwRzBSOVJ6Zl9iNFM0UDFDeEJ6RHdmdWJzWHktV25hLXUwd19uaGtEejQ2NWplRFNNalQ0R1dZMHdMMktDSUU5NzFSOGc?oc=5",
+      "imagen": null,
+      "fuente": "LoL esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792794891000
     },
     {
       "titulo": "Muere a los 30 años Manuel Otto, creador del videojuego ‘Stick Run’",
