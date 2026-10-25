@@ -2,6 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Seguridad: lista blanca de orígenes permitidos (ver SETUP.md, sección 15) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://cdn.tailwindcss.com https://apis.google.com https://www.google.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebaseapp.com https://api.rss2json.com https://www.google.com https://www.gstatic.com; frame-src https://*.firebaseapp.com https://www.google.com https://recaptcha.google.com https://www.recaptcha.net; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- PWA: instalable como app en móvil -->
@@ -17,7 +20,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
     <style>
         body { font-family: 'Outfit', sans-serif; background-color: #050508; }
@@ -33,6 +36,7 @@
         <div id="zona-sin-permiso" class="hidden text-center py-24">
             <h1 class="text-3xl font-black text-white mb-4">Acceso restringido</h1>
             <p class="text-slate-400">Esta sección es solo para administradores de KazokuGaming.</p>
+            <p class="text-slate-500 text-sm mt-2">Si eres administrador, confirma que tu correo está verificado (revisa tu bandeja de entrada) y vuelve a iniciar sesión.</p>
         </div>
 
         <!-- Se muestra mientras se confirma el estado de sesión -->
@@ -108,7 +112,7 @@
     <script type="module">
         import {
             collection, addDoc, deleteDoc, doc, updateDoc, query, where, orderBy, limit, onSnapshot, Timestamp
-        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, serverTimestamp } from './firebase-init.js';
         import { iconoEscudo, iconoUsuario, iconoMuro } from './iconos.js';
         import { showToast, showConfirm, skeletonRows } from './ui-utils.js';
@@ -135,7 +139,8 @@
 
             onAuthStateChanged(auth, (user) => {
                 zonaCargando.classList.add('hidden');
-                if (!user || !CORREOS_ADMIN.includes(user.email)) {
+                // Igual que esAdmin() en firestore.rules: correo en la lista Y verificado.
+                if (!user || !user.emailVerified || !CORREOS_ADMIN.includes(user.email)) {
                     zonaSinPermiso.classList.remove('hidden');
                     return;
                 }

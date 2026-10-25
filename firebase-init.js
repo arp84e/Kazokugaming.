@@ -6,20 +6,20 @@
 // IMPORTANTE: esta apiKey está pensada para ser pública (identifica el proyecto,
 // no autoriza nada por sí sola). La seguridad real vive en firestore.rules.
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import {
     getAuth,
     onAuthStateChanged,
     signOut,
     updateProfile,
     sendEmailVerification
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 import {
     initializeFirestore,
     persistentLocalCache,
     persistentSingleTabManager,
     serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCvGL-OS6zimRbZerqBKWgJ7WYERlDUn5w",
@@ -60,7 +60,7 @@ const APP_CHECK_HABILITADO = false;
 const RECAPTCHA_SITE_KEY = 'PON_AQUI_TU_SITE_KEY';
 
 if (APP_CHECK_HABILITADO && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'PON_AQUI_TU_SITE_KEY') {
-    const { initializeAppCheck, ReCaptchaV3Provider } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js");
+    const { initializeAppCheck, ReCaptchaV3Provider } = await import("https://www.gstatic.com/firebasejs/13.1.0/firebase-app-check.js");
     initializeAppCheck(app, {
         provider: new ReCaptchaV3Provider(RECAPTCHA_SITE_KEY),
         isTokenAutoRefreshEnabled: true

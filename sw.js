@@ -13,7 +13,9 @@
 // siempre traer la versión más nueva de internet; si no hay conexión, usa lo
 // que haya guardado. Así nunca se ve una versión vieja teniendo internet.
 
-const VERSION = 'kazoku-v1';
+// Subir este número obliga a todos los dispositivos a descartar la caché vieja
+// (v2: actualización de seguridad de octubre 2026, nuevo SDK de Firebase).
+const VERSION = 'kazoku-v2';
 const ARCHIVOS_SHELL = [
     'index.html',
     'grupos.html',
@@ -77,10 +79,19 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         fetch(event.request)
             .then((respuesta) => {
-                const copia = respuesta.clone();
-                caches.open(VERSION).then((cache) => cache.put(event.request, copia));
+                // Solo guardamos respuestas correctas de nuestro propio sitio:
+                // nunca un error 404/500 ni una redirección.
+                if (respuesta.ok && respuesta.type === 'basic') {
+                    const copia = respuesta.clone();
+                    caches.open(VERSION).then((cache) => cache.put(event.request, copia));
+                }
                 return respuesta;
             })
-            .catch(() => caches.match(event.request).then((r) => r || caches.match('index.html')))
+            .catch(() => caches.match(event.request).then((r) => {
+                if (r) return r;
+                // Sin conexión: la portada solo como respaldo de una PÁGINA,
+                // nunca en lugar de un script o un ícono.
+                return event.request.mode === 'navigate' ? caches.match('index.html') : Response.error();
+            }))
     );
 });

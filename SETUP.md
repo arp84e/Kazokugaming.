@@ -248,3 +248,37 @@ reportes/{id}                         { tipo: 'escuadron'|'partida'|'usuario'|'p
 ```
 
 Todo lo anterior está protegido por `firestore.rules` — no hay ninguna colección abierta a escritura libre.
+
+## 15. Revisión "Bugmageddon" (octubre 2026)
+
+"Bugmageddon" es el nombre que recibe la ola actual de vulnerabilidades descubiertas con IA (por ejemplo PHP2Shell, CVE-2026-109618/109619). **KazokuGaming no usa PHP**, así que PHP2Shell no le afecta. Pero la revisión completa encontró y corrigió esto:
+
+### 🔴 SDK de Firebase vulnerable — actualizado
+Todo el sitio cargaba Firebase **10.8.0**, afectado por **CVE-2024-11023** (robo de sesión manipulando la cookie `FIREBASE_DEFAULTS`). Ahora todo usa **13.1.0** (incluye además la corrección de ReDoS de la 12.17 y un arreglo de sesión de Auth). La API que usamos (Auth, Firestore, App Check) no cambió.
+**Regla:** todos los `import` de `gstatic.com/firebasejs/` deben tener **la misma versión**. Mezclar versiones rompe el sitio.
+
+### 🔴 XSS a través del feed de noticias — corregido
+`limpiarYRecortar()` en `noticias.js` metía el HTML del feed (de un tercero, rss2json) en un `<div>` con `innerHTML`. Aunque ese div no se muestre, el navegador **sí ejecuta** un `<img onerror=...>`: si rss2json o un feed fuera comprometido, podía ejecutar código en tu web y robar sesiones. Ahora usa `DOMParser`, que no ejecuta nada (probado en Chromium: el método antiguo ejecutaba el código y el nuevo no).
+
+### 🔴 `firestore.rules` del repositorio estaba desactualizado — reconstruido
+El archivo en GitHub era una versión **anterior a la auditoría de la sección 9**: no tenía las protecciones de dueño/autor inmutable, permitía añadir miembros falsos o expulsar interesados, no tenía reglas del muro ni la capa de respaldo del filtro, y no permitía reportar publicaciones. El nuevo archivo reúne todo eso y añade:
+- **Lista cerrada de campos** en cada documento: nadie puede colar campos extra (p. ej. `esAdmin`) en su perfil.
+- `creadoEn` lo pone siempre el servidor y es inmutable (nadie se fabrica la insignia "Veterano").
+- `esAdmin()` exige **correo verificado** (también en `admin.html`).
+- Regla aparte para la consulta "Mis torneos" (collectionGroup de `inscripciones`).
+- Solo se puede inscribir uno a un torneo que existe.
+
+### 🟠 Content-Security-Policy en todas las páginas — nuevo
+Cada HTML tiene una etiqueta `<meta http-equiv="Content-Security-Policy">` con la lista de orígenes permitidos (Firebase, Tailwind, Google Fonts, rss2json). Aunque algún día se colara un XSS, el navegador **bloquea** cargar scripts de otros dominios y enviar datos a servidores ajenos (probado). Si agregas un servicio externo nuevo y no carga, hay que añadir su dominio a esa etiqueta en todas las páginas.
+
+### 🟡 Menores
+- Tailwind fijado a una versión concreta (`cdn.tailwindcss.com/3.4.17`) en lugar de "la última", para que un cambio en el CDN no altere tu web sin avisar.
+- `sw.js` (v2): ya no guarda en caché respuestas de error, y sin conexión solo devuelve la portada en lugar de una página, nunca en lugar de un script. Al subir de versión, todos los dispositivos descartan la caché antigua.
+- `_config.yml` (nuevo): evita que GitHub Pages publique `SETUP.md` y `firestore.rules` como parte de la web.
+
+### Qué tienes que hacer
+1. Sube todos los archivos (incluido el nuevo `_config.yml`).
+2. **Publica `firestore.rules`** en la consola de Firebase (sección 3b). La consola valida la sintaxis al publicar.
+3. Prueba: registro, crear escuadrón, aceptar una solicitud, unirse a una partida, chatear, publicar en el muro y dar 🔥, inscribirse a un torneo, reportar algo, y entrar a `admin.html`.
+4. Si `admin.html` dice "Acceso restringido": verifica tu correo de admin y vuelve a iniciar sesión.
+5. Si algo falla con un error de permisos, copia el mensaje de la consola del navegador y avísame.

@@ -7,7 +7,7 @@
 import { auth, db, onAuthStateChanged, signOut, sendEmailVerification, serverTimestamp } from './firebase-init.js';
 import {
     doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit, getDocs
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 import { iconoInicio, iconoEscudo, iconoTrofeo, iconoUsuario, iconoCampana, iconoBuscar, iconoCerrar, iconoMuro } from './iconos.js';
 
 function getPrefix() {

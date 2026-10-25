@@ -1,0 +1,8 @@
+# Configuración de GitHub Pages (Jekyll).
+# Estos archivos son solo para ti / para Firebase: NO deben publicarse como
+# parte de la web (SETUP.md revelaría la configuración y firestore.rules la
+# lista de administradores).
+exclude:
+  - SETUP.md
+  - firestore.rules
+  - README.md

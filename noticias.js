@@ -42,14 +42,24 @@ const FEEDS_NOTICIAS = [
 ];
 
 const RSS2JSON_ENDPOINT = 'https://api.rss2json.com/v1/api.json?rss_url=';
-const CLAVE_CACHE = 'kazoku_noticias_cache_v5';
+const CLAVE_CACHE = 'kazoku_noticias_cache_v6';
 const DURACION_CACHE_MS = 20 * 60 * 1000; // 20 minutos
 const TIMEOUT_POR_FEED_MS = 8000; // si una fuente tarda más de 8s, la damos por perdida y seguimos con las demás
 
+// Convierte el HTML del resumen (que viene de un TERCERO: rss2json / el feed)
+// en texto plano. Se usa DOMParser y NO un <div> con innerHTML: aunque el div
+// no esté en la página, el navegador sí carga sus <img> y ejecuta sus
+// atributos onerror/onload — un feed manipulado podría ejecutar código.
+// DOMParser crea un documento "inerte": no carga nada ni ejecuta nada.
 function limpiarYRecortar(html, maxLen) {
-    const div = document.createElement('div');
-    div.innerHTML = html || '';
-    let texto = (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
+    let texto = '';
+    try {
+        const documento = new DOMParser().parseFromString(String(html || ''), 'text/html');
+        texto = documento.body ? documento.body.textContent || '' : '';
+    } catch {
+        texto = '';
+    }
+    texto = texto.replace(/\s+/g, ' ').trim();
     if (texto.length > maxLen) texto = texto.slice(0, maxLen).trim() + '…';
     return texto;
 }
