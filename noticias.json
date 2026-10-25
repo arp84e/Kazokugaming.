@@ -1,5 +1,5 @@
 {
-  "generado": 1792961436315,
+  "generado": 1792970185801,
   "fuentesConError": [],
   "noticias": [
     {
@@ -11,16 +11,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792953122000
-    },
-    {
-      "titulo": "Street Fighter 2 ahora se puede jugar gratis en YouTube y no necesitás descargar nada",
-      "resumen": "Street Fighter 2 ahora se puede jugar gratis en YouTube y no necesitás descargar nada Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdDlVU2dUT2FoWW1ER05KNkRZOE9ocU0xTUZxSFhlOGZsdERudG05alJVSlk1enJDeldFSTRCcFBFcWpPNl9UMzBFTnBzUXZTWlVmYVhXZDlCSU8zT05vNWZYUXBBMlQ1OG5CUEpLbWRBTkJfWERHZ1U1Z2Z5TV9ramJRMVlzMlhCTU5BbUd2akN6WTdwNVY4SkhjYXFfeXFWN2gwVDNlT3F5Q3lJYzBtcVF5VUFYc29zYkE?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792949947000
     },
     {
       "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
@@ -43,14 +33,14 @@
       "fecha": 1792944968000
     },
     {
-      "titulo": "Sources: valyn set to join Fnatic for the 2027 season",
-      "resumen": "Sources: valyn set to join Fnatic for the 2027 season Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaUtvQkc1azJLMURuVWs1alF5b2JVUVVSVkxxdGZyWXhDbUY0QXhxbEY2cmFnN3lZYlRzOWQ4SWJhNFhfTFloNmU3VmExX1RGMDJnbWJZeko4TzZDTXNZeTZMdEcxVGtMRFBWckRjVFRyU1JBWEFJN0UxYWtiUTY1SnlOTU9GMXE5azhCOHFsQ1dJTnlBdGpTbGFSOUE?oc=5",
+      "titulo": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en línea",
+      "resumen": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en…",
+      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQSDVIN205MERHb3dfa3BRNjNtemlQR3QyOHM1YWVoUUs1amRjazRnZndaTy1qUEJjdXNKa2N3OC1GVEI1Rkg0VU5vX0VOb3pZX0NzNWN3RmVxcUx3emF3ZEtJS1MzX29ZYTBTUndoclpWQnBsM2xKTGVGSG4tX2lUTGxuRVU4c2NubW5fa2l6UXdESEhVUnFjYms1dTNWVUZUVXlSTFpYX0ltRWdiNVJCUjIwZExnMXdhQUxTdlpxeXMtaEtOeENvRlQ3Y1d3YkcwbnJvM0lJNm1nU2cyYXpnWm5sRHV0VW1oclFHdV8wSW1tRGVkZmZJZTdlUkZWWHA0Y2FONHFSUQ?oc=5",
       "imagen": null,
-      "fuente": "Sheep Esports",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792944805000
+      "fecha": 1792942573000
     },
     {
       "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792690794000
+    },
+    {
+      "titulo": "Carter «Compass» Corpus obtuvo una beca universitaria para eSports.",
+      "resumen": "Carter «Compass» Corpus obtuvo una beca universitaria para eSports. World Baseball Softball Confederation (WBSC)",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONGUtVUZGVkgxbTdHcS1maDJETlpDNVp1aEVGenRueUFZTDJQbUJsdWctUUg3Z1RpcnBLWHp4clJRQmZxZm95OU9rcUlLakVqYU90b2tndHFBQngxeTdaaGM5NFNGX0JsbzFhb3VIS1dxdjJjVHlJMDA3Y1I4OS1QRGV2c0R4c0VaUnV1STVn?oc=5",
+      "imagen": null,
+      "fuente": "World Baseball Softball Confederation (WBSC)",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792429928000
     }
   ]
 }
