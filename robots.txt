@@ -1,0 +1,7 @@
+# KazokuGaming — indicaciones para buscadores
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /perfil.html
+
+Sitemap: https://www.kazokugaming.com/sitemap.xml

@@ -17,6 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Kazoku">
     <title>KAZOKUGAMING | Perfil de Jugador</title>
+    <meta name="robots" content="noindex">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -63,6 +64,14 @@
                     <button id="btn-reportar-usuario" class="text-xs font-bold text-slate-500 hover:text-red-400 transition-colors border border-slate-800 hover:border-red-500/40 px-3 py-1.5 rounded-full whitespace-nowrap">🚩 Reportar</button>
                 </div>
                 <p id="texto-bio" class="text-slate-400 mt-4"></p>
+                <div id="bloque-favoritos" class="hidden mt-5">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Juega a</p>
+                    <div id="lista-favoritos" class="flex flex-wrap gap-2"></div>
+                </div>
+                <div id="bloque-plataformas" class="hidden mt-5">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Agrégalo en</p>
+                    <div id="lista-plataformas" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+                </div>
             </div>
 
             <h2 class="text-xl font-black text-white mb-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-[0.9em] h-[0.9em] align-[-0.1em]"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6l-8-3Z"/></svg> Escuadrones</h2>
@@ -88,6 +97,7 @@
         } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged } from './firebase-init.js';
         import { showToast, showReportPrompt, skeletonCards, skeletonRows, calcularInsignias, renderInsignias } from './ui-utils.js';
+        import { AVATARES, PLATAFORMAS, juegoPorValor } from './comunidad.js';
 
         // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
         const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -138,7 +148,47 @@
 
                 const gamertag = datosUsuario.gamertag || 'Jugador';
                 document.getElementById('texto-gamertag').textContent = gamertag;
-                document.getElementById('avatar-perfil').textContent = inicialesDe(gamertag);
+                const avatarEl = document.getElementById('avatar-perfil');
+                if (AVATARES.includes(datosUsuario.avatar)) {
+                    avatarEl.textContent = datosUsuario.avatar;
+                    avatarEl.classList.add('text-5xl');
+                } else {
+                    avatarEl.textContent = inicialesDe(gamertag);
+                }
+
+                // Juegos favoritos (enlazan a la página de cada juego)
+                const favoritos = (Array.isArray(datosUsuario.juegosFavoritos) ? datosUsuario.juegosFavoritos : [])
+                    .map(juegoPorValor).filter(Boolean);
+                if (favoritos.length) {
+                    document.getElementById('lista-favoritos').innerHTML = favoritos.map((j) =>
+                        `<a href="juego-${sanitizarHTML(j.slug)}.html" class="px-3 py-1.5 rounded-full text-sm font-bold text-white bg-gradient-to-r ${j.degradado} hover:opacity-90">${sanitizarHTML(j.nombre)}</a>`).join('');
+                    document.getElementById('bloque-favoritos').classList.remove('hidden');
+                }
+
+                // IDs de juego, con botón para copiar
+                const plataformas = (datosUsuario.plataformas && typeof datosUsuario.plataformas === 'object') ? datosUsuario.plataformas : {};
+                const conId = PLATAFORMAS.filter((p) => typeof plataformas[p.clave] === 'string' && plataformas[p.clave].trim());
+                if (conId.length) {
+                    const lista = document.getElementById('lista-plataformas');
+                    lista.innerHTML = conId.map((p) => `
+                        <div class="flex items-center gap-3 bg-slate-900/70 border border-slate-800 rounded-xl px-3 py-2">
+                            <span class="text-xs font-bold text-slate-500 w-20 shrink-0">${sanitizarHTML(p.etiqueta)}</span>
+                            <span class="font-mono text-sm text-white truncate flex-1">${sanitizarHTML(plataformas[p.clave])}</span>
+                            <button type="button" data-copiar="${sanitizarHTML(plataformas[p.clave])}" class="text-xs font-bold text-indigo-400 hover:text-white">Copiar</button>
+                        </div>`).join('');
+                    lista.addEventListener('click', async (e) => {
+                        const b = e.target.closest('[data-copiar]');
+                        if (!b) return;
+                        try {
+                            await navigator.clipboard.writeText(b.dataset.copiar);
+                            b.textContent = '¡Copiado!';
+                            setTimeout(() => { b.textContent = 'Copiar'; }, 1500);
+                        } catch {
+                            b.textContent = 'Cópialo a mano';
+                        }
+                    });
+                    document.getElementById('bloque-plataformas').classList.remove('hidden');
+                }
                 document.getElementById('texto-bio').textContent = datosUsuario.bio || 'Este jugador todavía no ha escrito una bio.';
                 document.getElementById('texto-miembro-desde').textContent = datosUsuario.creadoEn
                     ? `Miembro desde ${formatearFecha(datosUsuario.creadoEn)}`

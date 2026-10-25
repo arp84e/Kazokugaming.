@@ -304,3 +304,35 @@ Cada HTML tiene una etiqueta `<meta http-equiv="Content-Security-Policy">` con l
 **Cambiar las fuentes:** edita la lista `FEEDS` al principio de `scripts/generar-noticias.mjs`. Las categorías válidas son `Videojuegos` y `Tecnología` (si añades otra, agrégala también en `CATEGORIAS` de `noticias.js`).
 
 **A tener en cuenta:** GitHub pausa las tareas programadas de un repositorio público si pasan 60 días sin actividad. Si las noticias dejan de actualizarse, entra en Actions y vuelve a activar el flujo.
+
+## 17. Portada nueva, páginas por juego, SEO y perfiles (octubre 2026)
+
+### Qué cambió
+- **Credibilidad:** el aviso "Comunidad activa 24/7" pasa a "La comunidad gamer en español". Los contadores de la portada **solo aparecen cuando superan un mínimo** (por defecto 50 jugadores, 10 escuadrones y 3 torneos; se cambia en `UMBRALES_ESTADISTICAS` de `comunidad.js`). Si no hay partidas, en lugar de un texto vacío se ve una invitación con botones. El login ya no dice "Miles de jugadores".
+- **Noticias:** solo videojuegos y en español (Vida Extra + Google Noticias "videojuegos" y "esports"); se quitaron Xataka (tecnología general) e IGN (en inglés). Las noticias de cine y series de Vida Extra se descartan.
+- **Portada:** "Cómo funciona" en 3 pasos, tarjetas "Elige tu juego", "Lo que viene" (próximo torneo con cuenta regresiva y agenda semanal), "En el Muro" (últimas publicaciones y la más 🔥 de la semana, con al menos 3 reacciones), streamers, Discord y un pie de página con enlaces a cada juego.
+- **12 páginas por juego** (`juego-valorant.html`, `juego-fortnite.html`...): texto propio pensado para Google ("Encuentra equipo para Valorant"), con las partidas y los escuadrones de ese juego en vivo.
+- **SEO:** `robots.txt`, `sitemap.xml`, títulos y descripciones nuevos, enlaces canónicos, imagen propia para compartir (`icons/og-kazoku.png`, 1200×630), datos estructurados (organización, web, migas de pan y torneos como eventos), y `noindex` en las páginas privadas.
+- **Login:** "Continuar con Google" y "¿Olvidaste tu contraseña?".
+- **Perfiles:** avatar a elegir, hasta 5 juegos favoritos e IDs de juego (Riot, Epic, PSN, Xbox, Steam, Nintendo, Activision) con botón "Copiar" en el perfil público. Pasan por el filtro de contenido y por las reglas.
+
+### `comunidad.js`: lo que puedes personalizar sin tocar código
+- `DISCORD_INVITE`: tu invitación permanente de Discord. Mientras esté vacío, no se ve ningún botón de Discord.
+- `AGENDA_SEMANAL`: quedadas fijas cada semana (hay dos ejemplos comentados). **Pon solo eventos que vayas a organizar de verdad.**
+- `STREAMERS`: canales de Twitch de miembros.
+- `UMBRALES_ESTADISTICAS`: a partir de cuántos se muestra cada contador.
+- `JUEGOS`: lista de juegos. Si añades uno, añádelo también en las reglas (`favoritosValidos`) y crea su página copiando una `juego-*.html`.
+
+### Qué tienes que hacer
+1. **Sube los archivos.** Son nuevos: `comunidad.js`, `portada.js`, `pagina-juego.js`, las 12 `juego-*.html`, `robots.txt`, `sitemap.xml` e `icons/og-kazoku.png`. También se actualizaron `scripts/generar-noticias.mjs` y varias páginas. **No subas un `noticias.json`**: el del repositorio lo mantiene GitHub Actions (por eso no viene en el ZIP).
+2. **Publica `firestore.rules`** en la consola de Firebase (necesario para guardar avatar, favoritos e IDs).
+3. **Activa el inicio con Google:** Firebase Console → Authentication → Método de inicio de sesión → **Google** → Habilitar → Guardar. Después, en Authentication → **Configuración → Dominios autorizados**, comprueba que estén `kazokugaming.com` y `www.kazokugaming.com` (si no, añádelos).
+4. **Lanza "Actualizar noticias"** en la pestaña Actions para que se vean ya las noticias nuevas.
+5. **Google Search Console** (lo que más ayuda a aparecer en Google): entra en search.google.com/search-console → Añadir propiedad → Dominio `kazokugaming.com` → verifica con el registro DNS que te indica → en "Sitemaps", envía `https://www.kazokugaming.com/sitemap.xml`.
+6. Rellena `comunidad.js` con tu Discord y, cuando los tengas, la agenda y los streamers.
+
+### Lo que NO se hizo, y por qué
+- **Entrar con Discord:** Firebase Authentication no lo incluye. Necesitaría un servidor propio (Cloud Functions, plan de pago Blaze) que hiciera de intermediario. Mientras tanto, Google cubre el "entrar en un clic".
+- **Notificaciones push:** enviar una notificación requiere un servidor que la dispare (Cloud Functions, plan Blaze). La PWA ya está preparada para cuando se dé ese paso.
+- **Foto de perfil subida por el usuario:** Firebase Storage también exige el plan Blaze. Por eso los avatares son emojis a elegir.
+- **Compilar Tailwind (quitar el CDN):** requiere un paso de compilación (por ejemplo, otra tarea de GitHub Actions) y no se podía probar desde aquí. Si se hace mal, la web se queda sin estilos, así que es mejor hacerlo en una tanda aparte, con calma.

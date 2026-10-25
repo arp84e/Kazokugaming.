@@ -23,10 +23,14 @@ function googleNewsRss(consulta) {
     return `https://news.google.com/rss/search?q=${encodeURIComponent(consulta)}&hl=es-419&gl=US&ceid=US:es-419`;
 }
 
+// Solo videojuegos y en español (octubre 2026: se quitaron Xataka, que es
+// tecnología general, e IGN, que está en inglés).
+//   excluirRutas: secciones del medio que no son de videojuegos (se saltan)
 export const FEEDS = [
-    { url: 'http://feeds.weblogssl.com/xataka2', categoria: 'Tecnología', fuente: 'Xataka', color: 'bg-sky-600', max: 6 },
-    { url: 'https://feeds.ign.com/ign/all', categoria: 'Videojuegos', fuente: 'IGN', color: 'bg-emerald-600', max: 4 },
-    { url: googleNewsRss('videojuegos'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 4, esGoogleNews: true }
+    { url: 'http://feeds.weblogssl.com/vidaextra', categoria: 'Videojuegos', fuente: 'Vida Extra', color: 'bg-emerald-600', max: 8,
+      excluirRutas: ['/cine/', '/series/', '/television/', '/tv/'] },
+    { url: googleNewsRss('videojuegos'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 6, esGoogleNews: true },
+    { url: googleNewsRss('esports'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 3, esGoogleNews: true }
 ];
 
 const MAX_RESUMEN = 140;
@@ -137,6 +141,7 @@ export function parsearFeed(xml, feed) {
 
         const link = urlHttps(htmlATexto(contenidoHtml(item, 'link')));
         if (!titulo || !link) continue;
+        if ((feed.excluirRutas || []).some((ruta) => new URL(link).pathname.includes(ruta))) continue;
 
         const descripcionHtml = contenidoHtml(item, 'description');
         const contenidoEncoded = contenidoHtml(item, 'content:encoded');

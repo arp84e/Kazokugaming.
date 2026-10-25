@@ -17,6 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Kazoku">
     <title>KAZOKUGAMING | Mi Perfil</title>
+    <meta name="robots" content="noindex">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -48,6 +49,11 @@
         <!-- Contenido real del perfil -->
         <div id="zona-perfil" class="hidden">
 
+            <div id="aviso-bienvenida" class="hidden mb-6 p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-200">
+                <p class="font-black text-white">¡Bienvenido a KazokuGaming! 🎉</p>
+                <p class="text-sm mt-1">Elige tu avatar, revisa tu gamertag y añade tus IDs de juego para que la comunidad pueda agregarte. Después, ¡a buscar equipo!</p>
+            </div>
+
             <!-- TARJETA DE PERFIL -->
             <div class="glass-panel rounded-2xl p-6 sm:p-8 mb-10">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
@@ -64,6 +70,22 @@
                     <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Bio</label>
                     <textarea id="input-bio" rows="3" maxlength="200" placeholder="Cuéntale a la comunidad a qué juegas y qué buscas..." class="w-full bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 resize-none"></textarea>
                     <p class="text-xs text-slate-500 mt-1"><span id="contador-bio">0</span>/200</p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Avatar</label>
+                    <div id="selector-avatar" class="flex flex-wrap gap-2" role="radiogroup" aria-label="Elige tu avatar"></div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Juegos favoritos <span class="normal-case font-semibold text-slate-500">(hasta 5)</span></label>
+                    <div id="selector-favoritos" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Tus IDs de juego</label>
+                    <p class="text-xs text-slate-500 mb-3">Son públicos: aparecen en tu perfil para que otros jugadores te agreguen. Rellena solo los que quieras.</p>
+                    <div id="campos-plataformas" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
                 </div>
 
                 <div id="mensaje-perfil" class="hidden mb-4 p-3 rounded-lg text-sm font-bold text-center border"></div>
@@ -104,6 +126,7 @@
         import { auth, db, onAuthStateChanged, updateProfile, signOut } from './firebase-init.js';
         import { skeletonCards, skeletonRows, calcularInsignias, renderInsignias } from './ui-utils.js';
         import { revisarTexto } from './moderacion.js';
+        import { AVATARES, PLATAFORMAS, JUEGOS, MAX_JUEGOS_FAVORITOS } from './comunidad.js';
 
         // Escapa & < > " ' (seguro en texto y en atributos HTML; ver noticias.js/grupos.html para más detalle)
         const sanitizarHTML = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -161,7 +184,62 @@
                 inputGamertag.value = gamertagActual;
                 inputBio.value = datosUsuario.bio || '';
                 contadorBio.textContent = inputBio.value.length;
-                document.getElementById('avatar-perfil').innerText = inicialesDe(gamertagActual);
+                if (new URLSearchParams(location.search).get('bienvenida')) {
+                    document.getElementById('aviso-bienvenida').classList.remove('hidden');
+                }
+
+                // --- Avatar, juegos favoritos e IDs de juego ---
+                let avatarElegido = AVATARES.includes(datosUsuario.avatar) ? datosUsuario.avatar : '';
+                const favoritos = new Set((Array.isArray(datosUsuario.juegosFavoritos) ? datosUsuario.juegosFavoritos : []).filter((v) => JUEGOS.some((j) => j.valor === v)));
+                const plataformasGuardadas = (datosUsuario.plataformas && typeof datosUsuario.plataformas === 'object') ? datosUsuario.plataformas : {};
+
+                const pintarAvatarGrande = () => {
+                    const el = document.getElementById('avatar-perfil');
+                    el.textContent = avatarElegido || inicialesDe(inputGamertag.value.trim() || gamertagActual);
+                    el.classList.toggle('text-5xl', !!avatarElegido);
+                };
+                const selectorAvatar = document.getElementById('selector-avatar');
+                const pintarSelectorAvatar = () => {
+                    selectorAvatar.innerHTML = ['', ...AVATARES].map((a) => `
+                        <button type="button" role="radio" aria-checked="${a === avatarElegido}" data-avatar="${sanitizarHTML(a)}"
+                            class="w-11 h-11 rounded-xl text-2xl flex items-center justify-center border transition-colors ${a === avatarElegido ? 'border-indigo-400 bg-indigo-500/20' : 'border-slate-700 bg-slate-900 hover:border-slate-500'}"
+                            title="${a ? 'Usar este avatar' : 'Usar mis iniciales'}">${a ? sanitizarHTML(a) : '<span class="text-xs font-black text-slate-300">Aa</span>'}</button>`).join('');
+                };
+                selectorAvatar.addEventListener('click', (e) => {
+                    const b = e.target.closest('[data-avatar]');
+                    if (!b) return;
+                    avatarElegido = b.dataset.avatar;
+                    pintarSelectorAvatar();
+                    pintarAvatarGrande();
+                });
+                pintarSelectorAvatar();
+
+                const selectorFavoritos = document.getElementById('selector-favoritos');
+                const pintarFavoritos = () => {
+                    selectorFavoritos.innerHTML = JUEGOS.map((j) => {
+                        const activo = favoritos.has(j.valor);
+                        return `<button type="button" aria-pressed="${activo}" data-favorito="${sanitizarHTML(j.valor)}" class="px-3 py-1.5 rounded-full text-sm font-bold border transition-colors ${activo ? 'bg-indigo-600 border-indigo-500 text-white' : 'border-slate-700 text-slate-400 hover:text-white hover:border-slate-500'}">${sanitizarHTML(j.nombre)}</button>`;
+                    }).join('');
+                };
+                selectorFavoritos.addEventListener('click', (e) => {
+                    const b = e.target.closest('[data-favorito]');
+                    if (!b) return;
+                    const v = b.dataset.favorito;
+                    if (favoritos.has(v)) favoritos.delete(v);
+                    else if (favoritos.size >= MAX_JUEGOS_FAVORITOS) { mostrarMensaje(`Puedes elegir hasta ${MAX_JUEGOS_FAVORITOS} juegos favoritos.`, 'error'); return; }
+                    else favoritos.add(v);
+                    pintarFavoritos();
+                });
+                pintarFavoritos();
+
+                document.getElementById('campos-plataformas').innerHTML = PLATAFORMAS.map((p) => `
+                    <label class="block">
+                        <span class="block text-xs font-bold text-slate-500 mb-1">${sanitizarHTML(p.etiqueta)}</span>
+                        <input type="text" maxlength="40" data-plataforma="${sanitizarHTML(p.clave)}" value="${sanitizarHTML(typeof plataformasGuardadas[p.clave] === 'string' ? plataformasGuardadas[p.clave] : '')}" placeholder="${sanitizarHTML(p.ejemplo)}" autocomplete="off"
+                            class="w-full bg-slate-900 border border-slate-700 text-white px-3 py-2 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                    </label>`).join('');
+
+                pintarAvatarGrande();
                 document.getElementById('texto-miembro-desde').innerText = datosUsuario.creadoEn
                     ? `Miembro desde ${formatearFecha(datosUsuario.creadoEn)}`
                     : '';
@@ -188,13 +266,34 @@
                         return;
                     }
 
+                    // IDs de juego: públicos, así que también pasan por el filtro (nada de enlaces ni insultos)
+                    const plataformas = {};
+                    for (const input of document.querySelectorAll('[data-plataforma]')) {
+                        const valor = input.value.trim().slice(0, 40);
+                        if (!valor) continue;
+                        // El filtro tomaría estos formatos oficiales por un número de teléfono
+                        const FORMATO_OFICIAL = { nintendo: /^SW-\d{4}-\d{4}-\d{4}$/i, steam: /^\d{17}$/ };
+                        if (FORMATO_OFICIAL[input.dataset.plataforma]?.test(valor)) { plataformas[input.dataset.plataforma] = valor; continue; }
+                        const revision = revisarTexto(valor, { contexto: 'nombre' });
+                        if (!revision.ok) {
+                            const etiqueta = PLATAFORMAS.find((p) => p.clave === input.dataset.plataforma)?.etiqueta || 'ID de juego';
+                            mostrarMensaje(`${etiqueta}: ${revision.mensaje}`, "error");
+                            input.focus();
+                            return;
+                        }
+                        plataformas[input.dataset.plataforma] = valor;
+                    }
+
                     try {
                         await updateDoc(doc(db, 'usuarios', user.uid), {
                             gamertag: nuevoGamertag,
-                            bio: nuevaBio
+                            bio: nuevaBio,
+                            avatar: avatarElegido,
+                            juegosFavoritos: [...favoritos],
+                            plataformas
                         });
                         await updateProfile(user, { displayName: nuevoGamertag });
-                        document.getElementById('avatar-perfil').innerText = inicialesDe(nuevoGamertag);
+                        pintarAvatarGrande();
                         mostrarMensaje("Perfil actualizado.", "exito");
                     } catch (error) {
                         console.error("No se pudo guardar el perfil:", error);

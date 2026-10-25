@@ -16,9 +16,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Kazoku">
-    <title>KAZOKUGAMING | Torneos y Competiciones</title>
-    
-    <meta name="description" content="Compite en los mejores torneos de la comunidad. Demuestra tu habilidad y gana reconocimiento.">
+    <title>Torneos online de videojuegos en español | KazokuGaming</title>
+    <meta name="description" content="Inscríbete gratis en los torneos de la comunidad KazokuGaming: cupos en vivo, cuenta regresiva y recordatorios para no perderte ninguno.">
+    <link rel="canonical" href="https://www.kazokugaming.com/torneos.html">
+    <!-- Vista previa al compartir en WhatsApp, Discord, X, Facebook... -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KazokuGaming">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:url" content="https://www.kazokugaming.com/torneos.html">
+    <meta property="og:title" content="Torneos online de videojuegos en español | KazokuGaming">
+    <meta property="og:description" content="Inscríbete gratis en los torneos de la comunidad KazokuGaming: cupos en vivo, cuenta regresiva y recordatorios para no perderte ninguno.">
+    <meta property="og:image" content="https://www.kazokugaming.com/icons/og-kazoku.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="KazokuGaming: Nunca vuelvas a jugar solo">
+    <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     
@@ -250,6 +262,38 @@
                 return { texto: String(fecha), epochMs: null }; // torneo antiguo con fecha en texto libre
             }
 
+            // Datos estructurados (schema.org/Event) de los torneos con fecha futura:
+            // Google puede mostrarlos como eventos en sus resultados de búsqueda.
+            // Se insertan con textContent (nunca como HTML), así que un título con
+            // caracteres raros no puede romper la página.
+            function publicarDatosEstructurados(torneos) {
+                const ahora = Date.now();
+                const eventos = torneos
+                    .filter((t) => typeof t.fecha?.toDate === 'function' && t.fecha.toDate().getTime() > ahora)
+                    .slice(0, 20)
+                    .map((t) => ({
+                        '@type': 'Event',
+                        name: String(t.titulo || 'Torneo KazokuGaming').slice(0, 120),
+                        description: `Torneo de ${String(t.juego || 'videojuegos').slice(0, 60)} de la comunidad KazokuGaming${t.formato ? ` (${String(t.formato).slice(0, 60)})` : ''}.`,
+                        startDate: t.fecha.toDate().toISOString(),
+                        eventStatus: 'https://schema.org/EventScheduled',
+                        eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
+                        location: { '@type': 'VirtualLocation', url: `${location.origin}/torneos.html` },
+                        image: [`${location.origin}/icons/og-kazoku.png`],
+                        organizer: { '@type': 'Organization', name: 'KazokuGaming', url: `${location.origin}/` },
+                        isAccessibleForFree: true
+                    }));
+                let nodo = document.getElementById('datos-estructurados-torneos');
+                if (!eventos.length) { nodo?.remove(); return; }
+                if (!nodo) {
+                    nodo = document.createElement('script');
+                    nodo.type = 'application/ld+json';
+                    nodo.id = 'datos-estructurados-torneos';
+                    document.head.appendChild(nodo);
+                }
+                nodo.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': eventos });
+            }
+
             function formatearCuentaRegresiva(epochMs) {
                 const diff = epochMs - Date.now();
                 if (diff <= 0) return '¡Ya empezó! 🔥';
@@ -418,6 +462,7 @@
                 torneosCache = snapshot.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }));
                 pintarFiltros();
                 pintarTorneos();
+                publicarDatosEstructurados(torneosCache);
             }, (error) => {
                 console.error("Error escuchando torneos:", error);
                 contenedor.innerHTML = `<p class="text-red-400 col-span-full text-center py-8">No se pudieron cargar los torneos.</p>`;

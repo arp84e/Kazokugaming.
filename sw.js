@@ -14,8 +14,8 @@
 // que haya guardado. Así nunca se ve una versión vieja teniendo internet.
 
 // Subir este número obliga a todos los dispositivos a descartar la caché vieja
-// (v3: octubre 2026, nuevo SDK de Firebase y noticias desde noticias.json).
-const VERSION = 'kazoku-v3';
+// (v4: octubre 2026, portada nueva, páginas por juego y perfiles ampliados).
+const VERSION = 'kazoku-v4';
 const ARCHIVOS_SHELL = [
     'index.html',
     'grupos.html',
@@ -31,6 +31,9 @@ const ARCHIVOS_SHELL = [
     'noticias.js',
     'moderacion.js',
     'iconos.js',
+    'comunidad.js',
+    'portada.js',
+    'pagina-juego.js',
     'manifest.json',
     'icons/icon-192.png',
     'icons/icon-512.png'
