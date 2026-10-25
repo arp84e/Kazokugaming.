@@ -10,7 +10,7 @@
 // "Editar enlace de invitación" → Caducidad: Nunca). Ejemplo:
 //   export const DISCORD_INVITE = 'https://discord.gg/abc123';
 // Mientras esté vacío, los botones de Discord no aparecen.
-export const DISCORD_INVITE = '';
+export const DISCORD_INVITE = 'https://discord.gg/jGfsuMJ2nT';
 
 // Servidor de Discord (lo usan scripts/discord-configurar.mjs y discord-avisos.mjs).
 // Juegos que tienen canal propio en Discord. Empieza con pocos: un canal
