@@ -12,6 +12,15 @@
 // Mientras esté vacío, los botones de Discord no aparecen.
 export const DISCORD_INVITE = '';
 
+// Servidor de Discord (lo usan scripts/discord-configurar.mjs y discord-avisos.mjs).
+// Juegos que tienen canal propio en Discord. Empieza con pocos: un canal
+// vacío da sensación de abandono. Añade más cuando haya gente (y vuelve a
+// lanzar "configurar": solo crea lo que falte, nunca borra nada).
+export const DISCORD_JUEGOS_CON_CANAL = ['Valorant', 'Fortnite', 'EA FC', 'League of Legends'];
+// Al publicar una partida nueva de la web en #buscar-equipo, ¿mencionar el
+// rol de ese juego? (solo avisa a quien eligió ese juego al entrar)
+export const DISCORD_MENCIONAR_ROL_DEL_JUEGO = true;
+
 // ---------- 2. Agenda semanal (eventos fijos de la comunidad) ----------
 // Quedadas que se repiten cada semana, para que siempre haya algo a lo que
 // unirse aunque todavía haya pocas partidas. SOLO pon eventos que vayas a

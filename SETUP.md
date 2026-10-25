@@ -349,3 +349,28 @@ Por eso:
 - `_config.yml` ya no hace falta: puedes borrarlo del repositorio.
 
 **Si añades un servicio externo nuevo** (por ejemplo, un vídeo incrustado): hay que añadir su dominio en la CSP **en dos sitios**: en la etiqueta `<meta>` de cada página y en `vercel.json`.
+
+## 19. Servidor de Discord automático
+
+Un bot oficial ("KazokuGaming") monta el servidor y lo conecta con la web. Funciona con GitHub Actions (`.github/workflows/discord.yml`), sin servidores ni pagos.
+
+- **Configurar** (lo lanzas tú cuando quieras): crea los roles (Fundador, Moderador, Campeón, Streamer y uno por juego), las categorías y canales con sus permisos, activa el modo Comunidad, el filtro AutoMod (insultos graves, spam y menciones masivas, con aviso en #registro), la incorporación ("¿A qué juegas?" al entrar), publica los textos de #bienvenida, #normas y #roles, y crea una invitación permanente. **Solo crea lo que falta: nunca borra ni renombra nada**, así que puedes repetirlo sin miedo (por ejemplo, después de añadir juegos a `DISCORD_JUEGOS_CON_CANAL` en `comunidad.js`).
+- **Avisos** (solo, cada 15 minutos): torneos nuevos → #anuncios; partidas nuevas → #buscar-equipo, mencionando solo el rol de ese juego; recordatorio de cada quedada de la agenda ~1 hora antes → #agenda-semanal. Nunca repite un aviso y **nunca menciona a @everyone**: el texto que escriben los usuarios en la web se publica "desactivado" (sin menciones ni enlaces enmascarados).
+
+### Puesta en marcha (una sola vez)
+1. **Crea el servidor** en Discord: botón "+" → Crear el mío → Para un club o comunidad → nombre `KazokuGaming | Comunidad Gamer`.
+2. **Crea el bot:** entra en https://discord.com/developers/applications → **New Application** → nombre `KazokuGaming` → acepta.
+   - Pestaña **Bot** → **Reset Token** → **Copy**. Esa es la clave del bot: **no la pegues en ningún chat ni archivo**, solo en GitHub (paso 4). Si alguna vez se filtra, vuelve a pulsar Reset Token.
+   - En esa misma pestaña, desactiva **Public Bot** (así nadie más puede añadir tu bot a otros servidores).
+3. **Invita el bot a tu servidor:** pestaña **OAuth2** → **URL Generator** → marca `bot` → en permisos marca **Administrator** → copia la URL de abajo, ábrela, elige tu servidor y autoriza.
+4. **Guarda dos secretos en GitHub:** repositorio → **Settings → Secrets and variables → Actions → New repository secret**:
+   - `DISCORD_BOT_TOKEN` = la clave del paso 2.
+   - `DISCORD_SERVIDOR_ID` = el ID del servidor. Para verlo: en Discord, Ajustes de usuario → Avanzado → activa **Modo desarrollador**; luego clic derecho en el icono del servidor → **Copiar ID del servidor**.
+5. **Sube los archivos:** `scripts/discord-api.mjs`, `scripts/discord-configurar.mjs`, `scripts/discord-avisos.mjs`, `comunidad.js` y `.github/workflows/discord.yml` (este último, como siempre con `.github`, créalo con **Add file → Create new file** si al arrastrar no se sube).
+6. **Lánzalo:** Actions → **Discord** → **Run workflow** → elige `configurar` → Run. En un minuto el servidor estará montado; el resumen de la ejecución muestra lo que se creó, lo que haya que hacer a mano y **la invitación permanente** (pásala a Claude o pégala en `DISCORD_INVITE` de `comunidad.js`).
+7. **Ponte el rol 👑 Fundador:** en Discord, clic derecho en tu nombre → Roles → 👑 Fundador.
+
+### Después
+- Para **nombrar moderadores**, dales el rol 🛡️ Moderador. Pueden expulsar, silenciar y borrar mensajes, y ven la categoría STAFF.
+- El bot **no modera en tiempo real** (no está encendido todo el tiempo): eso lo hacen AutoMod, que viene en Discord, y los moderadores.
+- Si quieres más adelante quitarle al bot el permiso de Administrador, en Ajustes del servidor → Roles → KazokuGaming puedes dejarle solo: Ver canales, Enviar mensajes, Insertar enlaces, Leer el historial y Mencionar roles. Ojo: entonces "configurar" ya no podrá crear canales ni roles.
