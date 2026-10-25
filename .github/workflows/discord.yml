@@ -1,0 +1,40 @@
+name: Discord
+
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      accion:
+        description: 'Qué hacer'
+        type: choice
+        options:
+          - avisos
+          - configurar
+        default: avisos
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discord-kazoku
+  cancel-in-progress: false
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v5
+
+      - name: Ejecutar
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_SERVIDOR_ID: ${{ secrets.DISCORD_SERVIDOR_ID }}
+          ACCION: ${{ inputs.accion || 'avisos' }}
+        run: |
+          case "$ACCION" in
+            configurar) node scripts/discord-configurar.mjs ;;
+            *)          node scripts/discord-avisos.mjs ;;
+          esac
