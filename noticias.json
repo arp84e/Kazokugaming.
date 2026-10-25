@@ -1,7 +1,27 @@
 {
-  "generado": 1792949928474,
+  "generado": 1792961436315,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "PlayStation Store arranca hasta tres promociones de rebajas: aquí tienes una selección de los mejores juegazos en oferta para PS5 y PS4",
+      "resumen": "Estamos acostumbrados a que cada pocas semanas nos encontremos con una nueva promoción de descuentos en PlayStation Store. No obstante, Sony…",
+      "link": "https://www.vidaextra.com/ps5/playstation-store-arranca-tres-promociones-rebajas-aqui-tienes-seleccion-mejores-juegazos-oferta-para-ps5-ps4",
+      "imagen": "https://i.blogs.es/509c38/diablo-prime-evil/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792953122000
+    },
+    {
+      "titulo": "Street Fighter 2 ahora se puede jugar gratis en YouTube y no necesitás descargar nada",
+      "resumen": "Street Fighter 2 ahora se puede jugar gratis en YouTube y no necesitás descargar nada Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdDlVU2dUT2FoWW1ER05KNkRZOE9ocU0xTUZxSFhlOGZsdERudG05alJVSlk1enJDeldFSTRCcFBFcWpPNl9UMzBFTnBzUXZTWlVmYVhXZDlCSU8zT05vNWZYUXBBMlQ1OG5CUEpLbWRBTkJfWERHZ1U1Z2Z5TV9ramJRMVlzMlhCTU5BbUd2akN6WTdwNVY4SkhjYXFfeXFWN2gwVDNlT3F5Q3lJYzBtcVF5VUFYc29zYkE?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792949947000
+    },
     {
       "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
       "resumen": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás Kotaku en Español",
@@ -133,31 +153,11 @@
       "fecha": 1792850417000
     },
     {
-      "titulo": "Este jugador ha recreado Anor Londo de Dark Souls en No Man's Sky y puedes visitarla sin miedo a que un arquero te empale",
-      "resumen": "Más de 10 años de creación de contenido en internet han dejado muy claro que No Man's Sky tiene una de las comunidades más entregadas y excé…",
-      "link": "https://www.vidaextra.com/simuladores/este-jugador-ha-recreado-anor-londo-dark-souls-no-man-s-sky-puedes-visitarla-miedo-a-que-arquero-te-empale",
-      "imagen": "https://i.blogs.es/4cd3b8/anor-londo-no-mans/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792843200000
-    },
-    {
-      "titulo": "Nintendo Switch 2 recibirá una edición física de uno de los juegos más ambiciosos del año y tendrá una característica que muchos jugadores esperaban",
-      "resumen": "Nintendo Switch 2 recibirá una edición física de uno de los juegos más ambiciosos del año y tendrá una característica que muchos jugadores e…",
-      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQNHNXeXBwa3pJSi05ZEp6aXlWcmJWNGhoQlZNQTNPQnZ6R0hZWUNkNERRdnVkQ0RYX2xxVmIyOTRaelN2Y3dkbDRUMGRJNDVNX05YbkgtZllqX3lyc0JzbnRHem1XNFVWOEpDSEh4LUYzeE9lUS1xSVNYTE9IWUV6Vkg3NFBFY1dKUnI1SUVTSFh3N3diV05fVnpqSGJzaFNCNDZLN1RHQ2k4TGZEa3hRTnZwTkk0NjdFZk5LeWNxV3ktblUyMnVlcjVyX1FEc1JTdFJVdXV5REY2ZXA4U1lBTTFleWxMLWVGLTFrTkg3U0VqYl9zSzM1Qml5RVE0RmxXeDRiOXhGOGk1RHhia0E?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792825433000
-    },
-    {
       "titulo": "Vod",
-      "resumen": "Vod LoL esports",
+      "resumen": "Vod LoL Esports",
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBqOEEtSXdNWDQycGlSR3gwRzBSOVJ6Zl9iNFM0UDFDeEJ6RHdmdWJzWHktV25hLXUwd19uaGtEejQ2NWplRFNNalQ0R1dZMHdMMktDSUU5NzFSOGc?oc=5",
       "imagen": null,
-      "fuente": "LoL esports",
+      "fuente": "LoL Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792794891000
