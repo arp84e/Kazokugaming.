@@ -1,7 +1,117 @@
 {
-  "generado": 1792995680882,
+  "generado": 1793024135624,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "El origen de Night City de Cyberpunk 2077 tiene una historia increíble, poco conocida y con cierto parecido a Bioshock",
+      "resumen": "La mayoría de jugadores de Cyberpunk 2077 pasan decenas de horas dando vueltas por Night City, explorando sus rincones más sórdidos y vivien…",
+      "link": "https://www.vidaextra.com/rpg/origen-night-city-cyberpunk-2077-tiene-historia-increible-poco-conocida-cierto-parecido-a-bioshock",
+      "imagen": "https://i.blogs.es/ad4766/cyberpunk-origen/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793021607000
+    },
+    {
+      "titulo": "A sus 73 años, Shigeru Miyamoto no teme el uso de la inteligencia artificial generativa: \"Siempre habrá un papel que podamos desempeñar\"",
+      "resumen": "Mientras que algunas compañías se han pronunciado abiertamente al mostrar su completo rechazo a todo lo que tenga que ver con la inteligenci…",
+      "link": "https://www.vidaextra.com/industria/a-sus-73-anos-shigeru-miyamoto-no-teme-uso-inteligencia-artificial-generativa-siempre-habra-papel-que-podamos-desempenar",
+      "imagen": "https://i.blogs.es/c8de9b/shigeru-miyamoto/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793019688000
+    },
+    {
+      "titulo": "Corinthians: ola de demandas laborales por su extinta división de eSports",
+      "resumen": "Corinthians: ola de demandas laborales por su extinta división de eSports OneFootball",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNM09wNVkxYVV2QnZqbXpKZWZ5QUNMRVJ6RjhuVWN1Vk15dFFGUDRyYjQwWHM1cUh1TmVVaDBHbE55eHdxN3ZwcE05a2xZLWlFNkxMeVZNTUhKR0NyS1l2MUlNczkxbGJPNjFHNEJwMlpxc0FqSU1haHFiUUtxSWdiR05vaWN6ZFoyVDNzNUFDNklkQ1VRZ1B5LVQ5cDJHVGluLS1zMzlPd3VqdkZNRTNtbGxJeEhMY1U5?oc=5",
+      "imagen": null,
+      "fuente": "OneFootball",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793019044000
+    },
+    {
+      "titulo": "XBOX le da un mes más de vida a Arkane mientras su COO se marcha a los tres meses de llegar",
+      "resumen": "La actualidad en la casa Microsoft nunca para, especialmente desde la llegada de Asha Sharma al rol de CEO de la división de videojuegos. En…",
+      "link": "https://www.vidaextra.com/industria/xbox-le-da-mes-vida-a-arkane-su-coo-se-marcha-a-tres-meses-llegar",
+      "imagen": "https://i.blogs.es/e0acb6/chiang/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793014047000
+    },
+    {
+      "titulo": "Esta semana tendremos nueva actualización de No Man's Sky y hay varias teorías (una aterradora) sobre el nuevo contenido",
+      "resumen": "Sean Murray ha compartido un emoji en Twitter/X y eso solo significa una cosa: esta semana hay nueva actualización de No Man's Sky. Para ser…",
+      "link": "https://www.vidaextra.com/simuladores/esta-semana-tendremos-nueva-actualizacion-no-man-s-sky-tenemos-varias-teorias-aterradora-nuevo-contenido",
+      "imagen": "https://i.blogs.es/dcba0a/no-mans-sky/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793012580000
+    },
+    {
+      "titulo": "Es oficial: Fortnite confirma su colaboración con ‘One Piece’ y Luffy y los piratas del Sombrero de Paja llega",
+      "resumen": "Es oficial: Fortnite confirma su colaboración con ‘One Piece’ y Luffy y los piratas del Sombrero de Paja llega Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkt2czR3UTZqb1d1d0hyUm5VVFdpSlFXdTZvRXdBZHlheW9uelhoMFlzWFZ0MnVTVDRVWUJKcXE5dmlQOURzcG1mRXgzWUdwOUthLTFueFBQRloyTlFCaWJSZ00xbzRVWFh0RXhrdmdDMUFBUDN3RlMtLXl2Zk4xeGtfLU9wTTZkbzBZTk01LWhFSThuODBHMTh1RkJQMWRFR2VWRndPUFNwaTFic05SaXMyWEVaWDl3MjFCdFJLRmVITWE4WUotQXBjU0RaSmstM1FxcXNmeHZpU0VzQUFQUW9HejlmU2Q2OWhaVERHeUd1MkdXbVI5MmtMM1HSAZACQVVfeXFMTnlVLWNwTkRoeTVoa0NPbFdvTWZBbVQtbDRvM2RTd1dzZjJSZ3RCS2tWN3JaY2RYZndCNFJtYnlPTUg2T0MzX0FVcUNLYU9rLWdRaVMwVnl3cFJfRm5wSDFGY0pZenBfTUVMQTJDT3BzMGRnRjd3RkdRWFYzSUJVd3cycE1OY0gtSG9GOHVLNnZVNEhhRnAycTE0eF81NHh4TENMd25ULVBwSWU4eERtV0dNekE1Z2ZFS1p3UDRNSHIwbjduVVZQXzNEVWtNQW4yQ2Z2d1dUcmNQcHhVekxmTjdobzFiUUpxNUtPWWx5REw1aGJycmFJWlVWYkZxMHpwZ3dDYUdUME5PUzZhLVc1VDc?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793012433000
+    },
+    {
+      "titulo": "Cyberpunk 2077 alcanza en Steam un éxito que no se veía desde hace tres años. El director de misiones de CD Projekt RED lo celebra emocionado",
+      "resumen": "Los últimos días han sido todo un torbellino para el universo de Cyberpunk. Ya no solo por el estreno de la segunda temporada de Edgerunners…",
+      "link": "https://www.vidaextra.com/rpg/cyberpunk-2077-alcanza-steam-exito-que-no-se-veia-hace-tres-anos-director-misiones-cd-projekt-red-celebra-emocionado",
+      "imagen": "https://i.blogs.es/07967c/cyberpunk-2077/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793010688000
+    },
+    {
+      "titulo": "Nunca los videojuegos indies fueron tan exitosos y sorprendentes como en 2026, según un informe",
+      "resumen": "El estado actual de la industria del videojuego está lejos de ser bueno: el formato físico tiene los días contados, los precios de los juego…",
+      "link": "https://www.vidaextra.com/industria/nunca-videojuegos-indies-fueron-exitosos-sorprendentes-como-2026-informe",
+      "imagen": "https://i.blogs.es/7265f1/escape-from-dukov/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793009008000
+    },
+    {
+      "titulo": "Modern Warfare 4 es el mejor Black Ops en años",
+      "resumen": "La experiencia de jugar la campaña de Black Ops 7 fue una de las más complejas de describir en mis tres lustros de experiencia como periodis…",
+      "link": "https://www.vidaextra.com/accion/modern-warfare-4-mejor-black-ops-anos",
+      "imagen": "https://i.blogs.es/4feffd/modern/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793005407000
+    },
+    {
+      "titulo": "Las reseñas de Phantom Blade Zero lo ponen por las nubes: \"Posiblemente el mejor RPG de acción al que he jugado jamás\"",
+      "resumen": "Aunque todas las miradas están centradas en el 19 de noviembre, lo cierto es que en el mes de octubre todavía quedan algunos cartuchos por d…",
+      "link": "https://www.vidaextra.com/rpg/resenas-phantom-blade-zero-ponen-nubes-posiblemente-mejor-rpg-accion-al-que-he-jugado-jamas",
+      "imagen": "https://i.blogs.es/e0bf93/thumb-1920-1403822/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793003694000
+    },
+    {
+      "titulo": "El estudio responsable de Silent Hill 2 toma una postura inesperada sobre el futuro de los videojuegos y explica por qué no quiere cambiarla",
+      "resumen": "El estudio responsable de Silent Hill 2 toma una postura inesperada sobre el futuro de los videojuegos y explica por qué no quiere cambiarla…",
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNY2RpbFhBWERrSmFKUV9JMWp5SE55TWV3aUVzQ19RYnBmYTE5YUw2cUlRU2F4aWFUc1pJNDhKbVhiNHUwaW1oaWV5WVdaN2JlR3ByX2xKYmt4M29nQlljd1B0ZDJKU3p5bnZWaW5YdlNMNFptMjFYXzg2c2lHWFN2Y3Z2bTlVNElpNGtHZUZVLUdyUW9TQjExYTQ5NTFaQnBVVFBuZllxZFpaN24zVm12c0EtQjZLR3ZXNjJkVUlhVDRWV0pGLVFpQUxPTEh3dWJ1TnBoenljWUhuSzRNd1hGTWI1Wk5pNTZsUUdFMldwWW9YVmczNkxqNVZ6cm1kS19ObTdZ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793001206000
+    },
     {
       "titulo": "Northwood University win the CRL Fall Championship 2026",
       "resumen": "Northwood University win the CRL Fall Championship 2026 Sheep Esports",
@@ -11,6 +121,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792976295000
+    },
+    {
+      "titulo": "Análisis de Phantom Blade Zero: El kung-fu punk de S-GAME es candidato al juego del año y lo supe desde el primer capítulo",
+      "resumen": "Análisis de Phantom Blade Zero: El kung-fu punk de S-GAME es candidato al juego del año y lo supe desde el primer capítulo Areajugones",
+      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNTkFtNmk0U3R5UW5vamFMRlVQVXlXMHgxUlpIdjJrQ0VYMF9xQkhPWGRNMDE4NmNOZ3BCODE0NzZBaWVLaXpwOTkzblp4TG1vUlUzX1VyZkFHZ3RrWGNaY0N1ZzZHaUwybzl6MW9PTjlETG5Ib3ZxVk1TYVhRS3YzZFdmYTVJR1Z6VklsQ2prcFNuMU9NbWVrNlFnVVFvbE51WWFZajFYTVlyMW00bUE3cU9hbzNnRkFEZDhjdVpDSVJ5Y1VDejJKNnAwMDMwUDNUbExvWE1rZDBscHgyVmhqOUFjZzM2eUxYWHFSWWRSblZSTjNNVEHSAfsBQVVfeXFMTldFNVdlUkVCVXkwX0R3M2k3TVBXLTRKWU9FY09Zb3A1Q3V6UDFFWWI4eXRqQk11WjNHZUlWdTJha1Z2Q0NmT0d4eGx0bldFZmhNS2F6ay1jQjY5TlVVdHV5eVB5bkQ0eWFvWkxGM2xQdmMzcDRMWWJVSlBnNTF1cW1PYS1uOWxXaW9yS2w2b185XzVNYlVCTWVuY0VGckFIWEw2MklkcDluVmEwLU5DbXN4eldJRkJMcWxHc2ZNc3dMR2J6bk1uYjdsTHQyNmYzMmJrNlU3ZmVGc19XdUdlLXh4TE40dzRuTE1LR256V0c4YWQyMG5xSFFhUFU?oc=5",
+      "imagen": null,
+      "fuente": "Areajugones",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792972800000
     },
     {
       "titulo": "Confiscan metanfetamina oculta en accesorios para videojuegos en el AICM; droga sería enviada a Reino Unido",
@@ -23,76 +143,6 @@
       "fecha": 1792969264000
     },
     {
-      "titulo": "PlayStation Store arranca hasta tres promociones de rebajas: aquí tienes una selección de los mejores juegazos en oferta para PS5 y PS4",
-      "resumen": "Estamos acostumbrados a que cada pocas semanas nos encontremos con una nueva promoción de descuentos en PlayStation Store. No obstante, Sony…",
-      "link": "https://www.vidaextra.com/ps5/playstation-store-arranca-tres-promociones-rebajas-aqui-tienes-seleccion-mejores-juegazos-oferta-para-ps5-ps4",
-      "imagen": "https://i.blogs.es/509c38/diablo-prime-evil/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792953122000
-    },
-    {
-      "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
-      "resumen": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1ljSzM0YnI0dFhlTDBNU3dzRmtEZnA0MWpxQkpNdEVkX0xIQU44RWludFNMRzlkOFRkWWowUXduQ1hIOTJ4VlpjMXJ3NzZhaWd6bjZ1WVEyZzFwV2E5bk1FdnU4eW5hNHFENlZ1b0pFc3ZDUW5JbFBMbW1FUkg2cURqa1ppWVlUZ2JNOWxGR1FjVHJnSUtkeFg5MGJaXzJsTjY2WE9oSWxDY0tSRlZuVTktbV83cjVFZE94Tm9CVQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792950431000
-    },
-    {
-      "titulo": "El mayor misterio de GTA Online se resolvió, pero no te diste cuenta: esta es la verdad tras el mural del monte Chiliad",
-      "resumen": "Era el 17 de septiembre de 2013 y el mundo estaba más que preparado para la llegada de GTA V. La nueva entrega de Rockstar rompió toda clase…",
-      "link": "https://www.vidaextra.com/juegos-online/mayor-misterio-gta-online-se-resolvio-no-te-diste-cuenta-esta-verdad-mural-monte-chiliad-1",
-      "imagen": "https://i.blogs.es/66ef55/grand-theft-auto-v-chiliad-mural/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792944968000
-    },
-    {
-      "titulo": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en línea",
-      "resumen": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en…",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQSDVIN205MERHb3dfa3BRNjNtemlQR3QyOHM1YWVoUUs1amRjazRnZndaTy1qUEJjdXNKa2N3OC1GVEI1Rkg0VU5vX0VOb3pZX0NzNWN3RmVxcUx3emF3ZEtJS1MzX29ZYTBTUndoclpWQnBsM2xKTGVGSG4tX2lUTGxuRVU4c2NubW5fa2l6UXdESEhVUnFjYms1dTNWVUZUVXlSTFpYX0ltRWdiNVJCUjIwZExnMXdhQUxTdlpxeXMtaEtOeENvRlQ3Y1d3YkcwbnJvM0lJNm1nU2cyYXpnWm5sRHV0VW1oclFHdV8wSW1tRGVkZmZJZTdlUkZWWHA0Y2FONHFSUQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792942573000
-    },
-    {
-      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
-      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur France 24",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZGhiQnRGanJwZTc2c2p1XzN1SEJOX0NhOVRvZThmOFdnOEJBVVZMZWVXcEdFaEs2NTVNbTB5LUEzemh5Vjl2eVJZSVF1NjFRQVk3QjktRUVOT1FnY2UyRjVuUDdsWmZkTzZtZDh0U0VnN2d0dDJXUjUxLVZERHdfNksxUTJrcXV5amdNZl9OeGplVnc3S3Njc2g3OGN4WkNDeHN1Uy1FaE5ISklEOHhRdmtOTkdXM2JhY3V4Mg?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792931096000
-    },
-    {
-      "titulo": "Qué fue de Deep Down, el Dark Souls free-to-play de Capcom para PlayStation que se resiste a ser cancelado",
-      "resumen": "Envuelto entre la niebla, en un limbo desde el que nunca ha vuelto a dar señales de vida. Deep Down forjó su propia leyenda a partir de una…",
-      "link": "https://www.vidaextra.com/industria/que-fue-deep-down-dark-souls-free-to-play-capcom-para-playstation-que-se-resiste-a-ser-cancelado",
-      "imagen": "https://i.blogs.es/99826b/deep_down-2619720/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792919769000
-    },
-    {
-      "titulo": "Amazon prepara un cambio importante para Prime y promete algo que podría transformar el acceso a los videojuegos de estreno",
-      "resumen": "Amazon prepara un cambio importante para Prime y promete algo que podría transformar el acceso a los videojuegos de estreno Kotaku en Españo…",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPelgzM2VUU1p5aFdnN1Nocmd2NktLUUcwU3kxV2wzNHlGUExWLUU5VURuYXFKR2ZOVEtTYS1TMUR5elhWSm5wQjgybUlmRWxHelJ1Q3hIc0x4YlFRemRpWWlQYWdGOEhQZ0tyTzhvMjdaTVJTMi1OM2NsZFdkeXh3TFBqQWVXRWxCYVFRNFY2RlhkRzhpTENkU0Vidlo4SHZXVzlZMzRtTmdSa1JuZlJ3UzFuZGVYR0ZvSDlyWm5TTGI4MUVOMThaYWwxRnY2T0NDVllvNEhEbjhrR3JXMm94VDJEaDFFMDF5M1pxWQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792918266000
-    },
-    {
       "titulo": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas",
       "resumen": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas Diario AS",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOYXVVWTlYOER2S09QcGdURktDNEhvZkdSZlJ0bzh2U1I4Tm5IdGNNTWNrcmlJempiNVRiYnlCQjUxQzRhazRuWENWWW45SmNkVFEzelFSbExSN0czYkU3d29WbUZ6NTE5SzZiaVV4anp1MW9Id1NLQVNkMGlPSERfYi1IeC1QS0NTV25vanN1dWFMWGpmM1NORWFIRHNXME9kZF9oOVduM3VWd2tOb2RLQVZPNEF3c1ZJandUTnBlY05Kcmx4dlJN0gHbAUFVX3lxTE1JQnc1OTA1UWN6eWs2SkZsbDhYTGczZVlfOWhUNmNJWV9ZVll3SGxLVnZIZXN0OUZiMmR6VElUSFpwNWNJWVRrMC1rdWJmUDVuc3lNMU9ta1NRa245RWtmWlBaYUE4QVV6S0lQdUd0SEFuaUJkWGY1UjB5RlJxbjFhQ2lkek9SRUtvUDhvak93emxnbGpiSDJlNGpIX2doampqbkptSWRUNFZFZmRRZHdGS3FENHROOF9mQWtoTDZJUGhPSmZLQVBPU2NNRVVtYm9CaGM1OEFQdkkzVQ?oc=5",
@@ -103,64 +153,14 @@
       "fecha": 1792915275000
     },
     {
-      "titulo": "El diseño de misiones de Horizon Zero Dawn no usó inteligencia artificial compleja, sino un muro gigante cubierto de post-its interconectados",
-      "resumen": "Aloy de Horizon Zero Dawn fue una de las grandes promesas de PlayStation para establecer nuevos universos en los que crear historias emocion…",
-      "link": "https://www.vidaextra.com/accion/diseno-misiones-horizon-zero-dawn-no-uso-inteligencia-artificial-compleja-sino-muro-gigante-cubierto-post-its-interconectados",
-      "imagen": "https://i.blogs.es/f8e666/horizon-1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792911610000
-    },
-    {
-      "titulo": "Worlds 2026: Swiss Stage Round 3 Draw",
-      "resumen": "Worlds 2026: Swiss Stage Round 3 Draw Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdGVZX3k0dXBIdEgzM0FCMWFsbmlnRW1lVDhTeVYwVUdMQU54TkFrQjNHQmpqeGJNcy1nclNhb0RSTTNiSWlKQXI0SEtsSW9nTVVUbzlsMUNTemdhY1FldWRCMExDaHNhU0prMGxYZWN0NHNmblhrVWFOQjVpVTdKMHZIU1UtanM?oc=5",
+      "titulo": "SonicFox cancela su participación en una convención de videojuegos al descubrir que sus organizadores usaron un póster generado por IA",
+      "resumen": "SonicFox cancela su participación en una convención de videojuegos al descubrir que sus organizadores usaron un póster generado por IA Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWEIwLXZadVpIOVViNjBKZmFwckdfTmFzV0ZiZ2tka1Y1bEUtY0JTSVFkTXU2cXhIcG9jeEJHRjBnd0QzcjRpWUNDR2ZUajNhRy1tWkgwU0c2SEs2eE45UUNlMnk3ZnJJMnNHLXdXOWRwOUpUbkl0clliV3BvYWVlU0pNUUVEOUdSR3dEcWlBTVRHLWZWdUtkV1p1U1BQQW1UZHh4OXU5ZjE5Y3JwX2dpYg?oc=5",
       "imagen": null,
-      "fuente": "Sheep Esports",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792892187000
-    },
-    {
-      "titulo": "Han inventado mil historias para mantenernos enganchados, pero ninguna supera a un clásico como el Modo Horda de Gears of War",
-      "resumen": "Llego tarde. Soy consciente de que he excedido el tiempo que tarda un videojuego en salir del foco de atención de la mayoría de jugadores y,…",
-      "link": "https://www.vidaextra.com/accion/han-inventado-mil-historias-para-mantenernos-enganchados-ninguna-supera-a-clasico-como-modo-horda-gears-of-war",
-      "imagen": "https://i.blogs.es/47c520/ss_e3833eef1e791059ccc552657987135061dd1e22.1920/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792872009000
-    },
-    {
-      "titulo": "Los coches de GTA V no chocan contigo a propósito (y tampoco se solucionaría con intermitentes)",
-      "resumen": "Seguro que has jugado a GTA V y, más de una vez, el tráfico parece tener algo en tu contra. Los vehículos se desvían de forma inesperada, se…",
-      "link": "https://www.vidaextra.com/accion/coches-gta-v-no-chocan-contigo-a-proposito-tampoco-se-solucionaria-intermitentes",
-      "imagen": "https://i.blogs.es/2abb6b/badfon-gta-5-va-yva-yv-ay-va/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792864809000
-    },
-    {
-      "titulo": "Así era Dragon King, el prototipo para Nintendo 64 que se acabó convirtiendo en Super Smash Bros",
-      "resumen": "Una vez finalizado el contenido de Super Smash Bros. Ultimate, Masahiro Sakurai, el director y creador de Kirby y Super Smash Bros., quiso i…",
-      "link": "https://www.vidaextra.com/accion/asi-era-dragon-king-prototipo-para-nintendo-64-que-se-acabo-convirtiendo-super-smash-bros-1",
-      "imagen": "https://i.blogs.es/580874/super-smash-bros/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792854974000
-    },
-    {
-      "titulo": "\"Es brillante\": el fracaso comercial que inspiró Resident Evil y salvó a Capcom",
-      "resumen": "Aunque no fue el origen primigenio del survival horror, está claro que Resident Evil fue uno de los pilares fundamentales del género con su…",
-      "link": "https://www.vidaextra.com/accion/brillante-fracaso-comercial-que-inspiro-resident-evil-salvo-a-capcom",
-      "imagen": "https://i.blogs.es/645048/20263198204883_1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792850417000
+      "fecha": 1792886400000
     },
     {
       "titulo": "Vod",
