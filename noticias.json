@@ -1,7 +1,19 @@
 {
-  "generado": 1792970185801,
-  "fuentesConError": [],
+  "generado": 1792977380635,
+  "fuentesConError": [
+    "Google Noticias"
+  ],
   "noticias": [
+    {
+      "titulo": "Northwood University win the CRL Fall Championship 2026",
+      "resumen": "Northwood University win the CRL Fall Championship 2026 Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbjhFb1lDc19aaEVlMDF4MmtBUVA1WWZIdEQ3ajhUYTAwbVcwYU5vSUVqS0lWRUFDdC10LVVoS0ZDZWNhWExscWl6QnhtMWlOUTVOakxLS1FxRm50UHFMOGtsUjl5OGZ0YzlzTlZzWEdMSHBCZTN6NzdmNlA3bDBpZWk3elN4TDctZnJEUFBXNkFZWWRSVHp4QmxKNmFOWGI5?oc=5",
+      "imagen": null,
+      "fuente": "Sheep Esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792976295000
+    },
     {
       "titulo": "PlayStation Store arranca hasta tres promociones de rebajas: aquí tienes una selección de los mejores juegazos en oferta para PS5 y PS4",
       "resumen": "Estamos acostumbrados a que cada pocas semanas nos encontremos con una nueva promoción de descuentos en PlayStation Store. No obstante, Sony…",
@@ -11,16 +23,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792953122000
-    },
-    {
-      "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
-      "resumen": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1ljSzM0YnI0dFhlTDBNU3dzRmtEZnA0MWpxQkpNdEVkX0xIQU44RWludFNMRzlkOFRkWWowUXduQ1hIOTJ4VlpjMXJ3NzZhaWd6bjZ1WVEyZzFwV2E5bk1FdnU4eW5hNHFENlZ1b0pFc3ZDUW5JbFBMbW1FUkg2cURqa1ppWVlUZ2JNOWxGR1FjVHJnSUtkeFg5MGJaXzJsTjY2WE9oSWxDY0tSRlZuVTktbV83cjVFZE94Tm9CVQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792949251000
     },
     {
       "titulo": "El mayor misterio de GTA Online se resolvió, pero no te diste cuenta: esta es la verdad tras el mural del monte Chiliad",
@@ -33,26 +35,6 @@
       "fecha": 1792944968000
     },
     {
-      "titulo": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en línea",
-      "resumen": "Recompensas inéditas, estética cibernética y nuevo sistema de carrera: el videojuego Rematch estrena su esperada Temporada 6 con mejoras en…",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQSDVIN205MERHb3dfa3BRNjNtemlQR3QyOHM1YWVoUUs1amRjazRnZndaTy1qUEJjdXNKa2N3OC1GVEI1Rkg0VU5vX0VOb3pZX0NzNWN3RmVxcUx3emF3ZEtJS1MzX29ZYTBTUndoclpWQnBsM2xKTGVGSG4tX2lUTGxuRVU4c2NubW5fa2l6UXdESEhVUnFjYms1dTNWVUZUVXlSTFpYX0ltRWdiNVJCUjIwZExnMXdhQUxTdlpxeXMtaEtOeENvRlQ3Y1d3YkcwbnJvM0lJNm1nU2cyYXpnWm5sRHV0VW1oclFHdV8wSW1tRGVkZmZJZTdlUkZWWHA0Y2FONHFSUQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792942573000
-    },
-    {
-      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
-      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur France 24",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZGhiQnRGanJwZTc2c2p1XzN1SEJOX0NhOVRvZThmOFdnOEJBVVZMZWVXcEdFaEs2NTVNbTB5LUEzemh5Vjl2eVJZSVF1NjFRQVk3QjktRUVOT1FnY2UyRjVuUDdsWmZkTzZtZDh0U0VnN2d0dDJXUjUxLVZERHdfNksxUTJrcXV5amdNZl9OeGplVnc3S3Njc2g3OGN4WkNDeHN1Uy1FaE5ISklEOHhRdmtOTkdXM2JhY3V4Mg?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792931096000
-    },
-    {
       "titulo": "Qué fue de Deep Down, el Dark Souls free-to-play de Capcom para PlayStation que se resiste a ser cancelado",
       "resumen": "Envuelto entre la niebla, en un limbo desde el que nunca ha vuelto a dar señales de vida. Deep Down forjó su propia leyenda a partir de una…",
       "link": "https://www.vidaextra.com/industria/que-fue-deep-down-dark-souls-free-to-play-capcom-para-playstation-que-se-resiste-a-ser-cancelado",
@@ -61,26 +43,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792919769000
-    },
-    {
-      "titulo": "Amazon prepara un cambio importante para Prime y promete algo que podría transformar el acceso a los videojuegos de estreno",
-      "resumen": "Amazon prepara un cambio importante para Prime y promete algo que podría transformar el acceso a los videojuegos de estreno Kotaku en Españo…",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPelgzM2VUU1p5aFdnN1Nocmd2NktLUUcwU3kxV2wzNHlGUExWLUU5VURuYXFKR2ZOVEtTYS1TMUR5elhWSm5wQjgybUlmRWxHelJ1Q3hIc0x4YlFRemRpWWlQYWdGOEhQZ0tyTzhvMjdaTVJTMi1OM2NsZFdkeXh3TFBqQWVXRWxCYVFRNFY2RlhkRzhpTENkU0Vidlo4SHZXVzlZMzRtTmdSa1JuZlJ3UzFuZGVYR0ZvSDlyWm5TTGI4MUVOMThaYWwxRnY2T0NDVllvNEhEbjhrR3JXMm94VDJEaDFFMDF5M1pxWQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792918266000
-    },
-    {
-      "titulo": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas",
-      "resumen": "Hace 23 años, Uwe Boll estrenó una de las peores películas de videojuegos jamás hechas Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOYXVVWTlYOER2S09QcGdURktDNEhvZkdSZlJ0bzh2U1I4Tm5IdGNNTWNrcmlJempiNVRiYnlCQjUxQzRhazRuWENWWW45SmNkVFEzelFSbExSN0czYkU3d29WbUZ6NTE5SzZiaVV4anp1MW9Id1NLQVNkMGlPSERfYi1IeC1QS0NTV25vanN1dWFMWGpmM1NORWFIRHNXME9kZF9oOVduM3VWd2tOb2RLQVZPNEF3c1ZJandUTnBlY05Kcmx4dlJN0gHbAUFVX3lxTE1JQnc1OTA1UWN6eWs2SkZsbDhYTGczZVlfOWhUNmNJWV9ZVll3SGxLVnZIZXN0OUZiMmR6VElUSFpwNWNJWVRrMC1rdWJmUDVuc3lNMU9ta1NRa245RWtmWlBaYUE4QVV6S0lQdUd0SEFuaUJkWGY1UjB5RlJxbjFhQ2lkek9SRUtvUDhvak93emxnbGpiSDJlNGpIX2doampqbkptSWRUNFZFZmRRZHdGS3FENHROOF9mQWtoTDZJUGhPSmZLQVBPU2NNRVVtYm9CaGM1OEFQdkkzVQ?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792915275000
     },
     {
       "titulo": "El diseño de misiones de Horizon Zero Dawn no usó inteligencia artificial compleja, sino un muro gigante cubierto de post-its interconectados",
@@ -151,26 +113,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1792794891000
-    },
-    {
-      "titulo": "Muere a los 30 años Manuel Otto, creador del videojuego ‘Stick Run’",
-      "resumen": "Muere a los 30 años Manuel Otto, creador del videojuego ‘Stick Run’ Primera Hora",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQmo4Y0tzczRhUVI1cDdOVnVXOGNlTTdrNHRhUlVZSF9CV2RhbTEwWVVuaEowTWFTczRiX0NTSjFiWG5hRFRsNTR6cWJyd21NUk4yYVBtdHlsU1cyOG8tc3hCQnRSRGVFZG5KeWlVVWNsNlg3aGlpQTcyMWFiUFF2cWdZOVFhSnpncjExMUtsOXBSdU1sdzZLTVJtUWZuN1liMlhVZmJBRF9ELUlqQkJpcjNsT2s?oc=5",
-      "imagen": null,
-      "fuente": "Primera Hora",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792690794000
-    },
-    {
-      "titulo": "Carter «Compass» Corpus obtuvo una beca universitaria para eSports.",
-      "resumen": "Carter «Compass» Corpus obtuvo una beca universitaria para eSports. World Baseball Softball Confederation (WBSC)",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONGUtVUZGVkgxbTdHcS1maDJETlpDNVp1aEVGenRueUFZTDJQbUJsdWctUUg3Z1RpcnBLWHp4clJRQmZxZm95OU9rcUlLakVqYU90b2tndHFBQngxeTdaaGM5NFNGX0JsbzFhb3VIS1dxdjJjVHlJMDA3Y1I4OS1QRGV2c0R4c0VaUnV1STVn?oc=5",
-      "imagen": null,
-      "fuente": "World Baseball Softball Confederation (WBSC)",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792429928000
     }
   ]
 }
