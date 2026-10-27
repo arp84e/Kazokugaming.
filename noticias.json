@@ -1,7 +1,77 @@
 {
-  "generado": 1793077419663,
+  "generado": 1793097228071,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Inteligencia artificial en lugar de videojuegos: fábricas desmantelan en masa las tarjetas GeForce RTX 5090",
+      "resumen": "Conseguir hoy en día una GeForce RTX 5090 pasa por ser una quimera o por un guantazo sideral para nuestra cartera, pero es que el futuro no…",
+      "link": "https://www.vidaextra.com/pc/inteligencia-artificial-lugar-videojuegos-fabricas-desmantelan-masa-tarjetas-geforce-rtx-5090",
+      "imagen": "https://i.blogs.es/fd8039/captura-de-pantalla-2026-10-27-104313-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793097087000
+    },
+    {
+      "titulo": "#SaveMassEffect no va a parar: acaba de colar un cartel en las pantallas de Times Square de Nueva York y tiene planes para los The Game Awards",
+      "resumen": "El cierre de BioWare por parte de Electronic Arts ha provocado una ola de indignación que ha trascendido Change.org e internet hasta llegar…",
+      "link": "https://www.vidaextra.com/rpg/savemasseffect-no-va-a-parar-acaba-colar-cartel-pantallas-times-square-nueva-york-tiene-planes-para-the-game-awards",
+      "imagen": "https://i.blogs.es/48b6d2/mass-effect-main/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793095320000
+    },
+    {
+      "titulo": "La mejor tarjeta gráfica relación calidad-precio está en el Black Friday de Coolmod: la Radeon RX 9070 GRE es una ganga",
+      "resumen": "El mercado de las tarjetas gráficas ha alcanzado un punto que hace prácticamente imposible encontrar un modelo que no requiera una sobreinve…",
+      "link": "https://www.vidaextra.com/seleccion/mejor-tarjeta-grafica-relacion-calidad-precio-esta-black-friday-coolmod-radeon-rx-9070-gre-ganga",
+      "imagen": "https://i.blogs.es/da7093/powercolor-reaper-amd-radeon-rx-9070-gre-en-fondo-rojo/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793094509000
+    },
+    {
+      "titulo": "Nintendo publica una guía gratuita para padres después de saber que el 68% no se siente informado",
+      "resumen": "Nintendo publica una guía gratuita para padres después de saber que el 68% no se siente informado Nintendúo",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRUtzb08ydk5vU0d3X3ZWVmNjMGduMG9kYTlMd254a2QyUFFJUkJwRDV0UjNXM3Zka2d6ZzV3UE1FUjlJM3RzTE9abFJoSXpBZ1VIMnFGRmExTU81dHExVGVaRHVleTFDUFVzOGluSmpGSWVqcnhJUHV5XzNrQl9sNV93?oc=5",
+      "imagen": null,
+      "fuente": "Nintendúo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793094451000
+    },
+    {
+      "titulo": "El reto de Rubius para hacer historia en GTA 6: “Quiero ser el primero del mundo en conseguirlo”",
+      "resumen": "El reto de Rubius para hacer historia en GTA 6: “Quiero ser el primero del mundo en conseguirlo” Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQzZTTHZFNGpJcmNBMmxFU05BUzZKNER1WkhfYjFVY0xJSVQ3R1JnQ0hxMVMxMURqVU0yaWtuclcyRVRTMENNUUlKb3dWMWpaQkZlZkxMN3k3bWVrazNhaXV1N25BMlM3UW9VS0RxVmdYbndSNGg5ZVhYbnU5YzZqN25jMC1xYnM3T0pJaHNOMi0tazV2SVNLREF0NVFTX2ZRTWJjdE16Rkw0Q0FYZnNBQXZsU3hyajNfYlVVYzJxTkE3ZkMyZWIzajBMWk5ST1ZOMWZrczRrc9IB6wFBVV95cUxOMzgzN3lyVXFfczBtdFlDRU5yOXd0OGk2Y012bnhESWxfSFJUaHdMXzdkal9maG5EMFMzRmFYUVdZa1lLTnVtdENOTGs4eFpfV1NPVTBXbjNYWEgzaGlpTy1DR015UGdYT29WTEFxT04tdW82TVN5ejQ4OHNHZ2tsNTRiaGJna05uVFRJQVA2NklUaGtTdnhKZHRBVmZ2MXdPVVZrdUFjekwwY0pCSnE0WGZmTDE3UlQ3ajMxS21VNk1TZW9FSU9GbWhjR3BJZENVVnBkMl9iMjc5VEU1QTl5VlVVbUh6LVhfVWRz?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793093871000
+    },
+    {
+      "titulo": "Tienes unos pocos meses para jugar el League of Legends de Pokémon antes de que cierre definitivamente",
+      "resumen": "Fue en plena pandemia, hace seis años, cuando se anunció oficialmente el desarrollo de Pokémon Unite, el MOBA de la saga dispuesto a cosecha…",
+      "link": "https://www.vidaextra.com/juegos-online/tienes-unos-pocos-meses-para-jugar-league-of-legends-pokemon-cierre-definitivamente",
+      "imagen": "https://i.blogs.es/fc27e8/pokemon-unite/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793091137000
+    },
+    {
+      "titulo": "La posible clave del éxito de los últimos Silent Hill es una técnica de seguridad de la CIA",
+      "resumen": "Es indudable que Konami está en racha después del paso que ha dado en los últimos años hacia ser una editora y no tanto una desarrolladora.…",
+      "link": "https://www.vidaextra.com/accion/posible-clave-exito-ultimos-silent-hill-tecnica-seguridad-servicios-inteligencia-como-cia",
+      "imagen": "https://i.blogs.es/dc8469/amelia/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793089080000
+    },
     {
       "titulo": "Terminar Silver Pines me ha dejado con muchas dudas y una grandísima certeza",
       "resumen": "ATENCIÓN SPOILERS: este post contiene detalles acerca de la trama de Silver Pines. Han sido más horas de las esperadas por mi insistencia en…",
@@ -43,6 +113,16 @@
       "fecha": 1793034407000
     },
     {
+      "titulo": "Michael de GTA V viajará a Rusia: Ned Luke participará en la «Noche de los videojuegos»",
+      "resumen": "Michael de GTA V viajará a Rusia: Ned Luke participará en la «Noche de los videojuegos» iXBT.games",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMy1SRHNnRl9YZ1pyY0FoSEhQaUhNOVJUYi0tRkdWTVhCTUVvOHBQdDVRd2RLUzZNMjBwZVZ6RlhLNnVHUkhKRUZlQnRiSWpHY1N6RlV1QTlMcWc1aVQ5RzkwUmFnY04wMzNUbGtCaTRhdm9LS2EyQUlsb2xwZVQ5Z1hvNmFtcWtaQ2FkckRUeEp0cDdKVWhuMmtpN083dXlqSWxKZHZDVXdkYmpTOWo2dlR30gG3AUFVX3lxTFBIOWhrRlVoaU9SQkdhVVVnNU0tbVNIZ0gyMThXMTFhU3hKQ3dxcUVldkVRQUhIM0xISlBwQ3FNTlhfS3h1ZURaWm0xa1YyeERfNkNEWG9NOGxSX1dycjloMnZ2ekdvbERuNFlHMXQxT250bjY5ZzJFSjkyeEEzaWZlZDNoZVkzLWZyeTBpazcyeGtlZURpNjdpbmdzR2RfTFhlSTkxVWRZcmxsNklxMmVsaUtJUXNqTQ?oc=5",
+      "imagen": null,
+      "fuente": "iXBT.games",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793033400000
+    },
+    {
       "titulo": "Fallece Lauri \"Cyanide\" Happonen, campeón mundial de League of Legends: la leyenda de los eSports tenía 31 años",
       "resumen": "Fallece Lauri \"Cyanide\" Happonen, campeón mundial de League of Legends: la leyenda de los eSports tenía 31 años 3DJuegos México",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQcXNfdXAwXzNkNjcxeENLVWgzOU1UVjBJWlBHY0JrbXRJejJNaVVDdUtTT21zaXFxMi1IbFp4UVAtd1k4YUtrVlhGclpsSTFOeldLVnY2dGEtTUd6dkRFVVNucXZZWTh6a21nalJ3U0JLNklRTXFXblBUM3pINHV1ZXphQkY5SkxQSmlsaTUtRmVhYzcxRTY5TklLcnZhLXRta0J3X2VDczlzd0NzcG5HRHJ5aTR4LWJ4QmVycWcxLW1ZSE1MMDBGd1Fn0gHPAUFVX3lxTE5IOW9UYTJwQ2Fka3lnbU42Q3lwUVB5T0NaTGI2SGQ2NlZaRnRueDRyVi1zck41ajZwczkxbHhiUUdmMUpSWHpzeUNtdXZZQlZSNUxfVXp1VmgxcDVWbEhYc1hoMVFURmdYdkxjNV9EMGtMc0FzR2RBN090MTRBRU5wdmQtYzVrOXNVNXJDVE9keEw0VHE0ZFhRYTBMcU5XVXllTjdCYnZsUVV4aHg2bkpkdlF6U2pkeXlFQ3RkLTdoSXh5bWNQeXZ1Mk8xUTZOUQ?oc=5",
@@ -51,26 +131,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793031246000
-    },
-    {
-      "titulo": "Attack on Titan regresa en diciembre con un nuevo videojuego que contará toda la historia del anime",
-      "resumen": "Attack on Titan regresa en diciembre con un nuevo videojuego que contará toda la historia del anime Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQVU5OMG1hTFZuZlRMbEVkMUo3N3BaZVpQdVhBWGxKemlyR1pXV1Y2TU9iczhZUEZaZFpKeXZZaTBfbC00RWpqRjdKZHQyVldET1JieHBnc0QyLThoNVR1NWNEcnpvakRuamJpRmdocXE3cFE3Z3lndXZaRUJ4d1pBckgydHJFTXZKbU9wRUJXVUEtbVdpRnpfS1dtMWdEZThwcDZvX2VfcWdCVTd5WTYzempONDlPM1Vma1hLVE5tX084SXlCNnZia05lOW8?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793030946000
-    },
-    {
-      "titulo": "¿Sabes cómo se creó la ciudad de Night City de Cyberpunk 2077? La nueva misión de la actualización 2.5 ofrece más información",
-      "resumen": "La mayoría de jugadores de Cyberpunk 2077 pasan decenas de horas dando vueltas por Night City, explorando sus rincones más sórdidos y vivien…",
-      "link": "https://www.vidaextra.com/rpg/origen-night-city-cyberpunk-2077-tiene-historia-increible-poco-conocida-cierto-parecido-a-bioshock",
-      "imagen": "https://i.blogs.es/ad4766/cyberpunk-origen/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793021520000
     },
     {
       "titulo": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembre",
@@ -83,74 +143,14 @@
       "fecha": 1793021502000
     },
     {
-      "titulo": "A sus 73 años, Shigeru Miyamoto no teme el uso de la inteligencia artificial generativa: \"Siempre habrá un papel que podamos desempeñar\"",
-      "resumen": "Mientras que algunas compañías se han pronunciado abiertamente al mostrar su completo rechazo a todo lo que tenga que ver con la inteligenci…",
-      "link": "https://www.vidaextra.com/industria/a-sus-73-anos-shigeru-miyamoto-no-teme-uso-inteligencia-artificial-generativa-siempre-habra-papel-que-podamos-desempenar",
-      "imagen": "https://i.blogs.es/c8de9b/shigeru-miyamoto/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793019688000
-    },
-    {
-      "titulo": "XBOX le da un mes más de vida a Arkane mientras su COO se marcha a los tres meses de llegar",
-      "resumen": "La actualidad en la casa Microsoft nunca para, especialmente desde la llegada de Asha Sharma al rol de CEO de la división de videojuegos. En…",
-      "link": "https://www.vidaextra.com/industria/xbox-le-da-mes-vida-a-arkane-su-coo-se-marcha-a-tres-meses-llegar",
-      "imagen": "https://i.blogs.es/e0acb6/chiang/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793014047000
-    },
-    {
-      "titulo": "Quedan dos días para la nueva actualización de No Man's Sky y ya tenemos pistas sobre qué nuevo contenido gratuito que traerá",
-      "resumen": "Sean Murray ha compartido un emoji en Twitter/X y eso solo significa una cosa: esta semana hay nueva actualización de No Man's Sky. Para ser…",
-      "link": "https://www.vidaextra.com/simuladores/esta-semana-tendremos-nueva-actualizacion-no-man-s-sky-tenemos-varias-teorias-aterradora-nuevo-contenido",
-      "imagen": "https://i.blogs.es/203bd2/no-mans-sky/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793012580000
-    },
-    {
-      "titulo": "Cyberpunk 2077 alcanza en Steam un éxito que no se veía desde hace tres años. El director de misiones de CD Projekt RED lo celebra emocionado",
-      "resumen": "Los últimos días han sido todo un torbellino para el universo de Cyberpunk. Ya no solo por el estreno de la segunda temporada de Edgerunners…",
-      "link": "https://www.vidaextra.com/rpg/cyberpunk-2077-alcanza-steam-exito-que-no-se-veia-hace-tres-anos-director-misiones-cd-projekt-red-celebra-emocionado",
-      "imagen": "https://i.blogs.es/07967c/cyberpunk-2077/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793010688000
-    },
-    {
-      "titulo": "El estudio responsable de Silent Hill 2 toma una postura inesperada sobre el futuro de los videojuegos y explica por qué no quiere cambiarla",
-      "resumen": "El estudio responsable de Silent Hill 2 toma una postura inesperada sobre el futuro de los videojuegos y explica por qué no quiere cambiarla…",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNY2RpbFhBWERrSmFKUV9JMWp5SE55TWV3aUVzQ19RYnBmYTE5YUw2cUlRU2F4aWFUc1pJNDhKbVhiNHUwaW1oaWV5WVdaN2JlR3ByX2xKYmt4M29nQlljd1B0ZDJKU3p5bnZWaW5YdlNMNFptMjFYXzg2c2lHWFN2Y3Z2bTlVNElpNGtHZUZVLUdyUW9TQjExYTQ5NTFaQnBVVFBuZllxZFpaN24zVm12c0EtQjZLR3ZXNjJkVUlhVDRWV0pGLVFpQUxPTEh3dWJ1TnBoenljWUhuSzRNd1hGTWI1Wk5pNTZsUUdFMldwWW9YVmczNkxqNVZ6cm1kS19ObTdZ?oc=5",
+      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
+      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur Yahoo Finanzas",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUzZlRHNKblRlQjlhMm1SbktFaGVOOEowSHU5b2JKRjZZNWNHNWpRMTZsZ1pHZHFWdVZBeldkTG1xN0l3YVRxTGI1eU9JNi03c0VfYklfWkcyWEcwcDRLWm93bVE1MEttZUprbG5WT0otWGR6dG82U2lJNVlCYVdfanRMZzFsYnpucVJFVGtBVmJXTDhGYVdVNDFR?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "Yahoo Finanzas",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793001206000
-    },
-    {
-      "titulo": "Reportan la muerte de El Komanche, famoso streamer de videojuegos en Monterrey",
-      "resumen": "Reportan la muerte de El Komanche, famoso streamer de videojuegos en Monterrey El Imparcial",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOdEJwblhFVlRBQURPT0YteG83QnFVcTM5ZDlvVDB2NEtYWlNib1pRallxb1lRS05VWE5TZlBXd0k0d3FuOWpuUTZsRTFpR19UeG1IV0U0YzVHOVprc1ZYVmRNNlNRV0pJTXhiSGhCcW1nb29rcEx4d2RYNFpCQzRtTS1leW11TnlWRUJIbElMY1diWjBZWFRWaTlDdVliNjg1RFZQM3gtR1pXZTBHNGViZm5KdFZKTW9ocnJPZ1JvWTlITVZRRTA3VVNGUXk3RDlDUXpkR25HZGcxVVZKcFlkT1pEM1BOYkR0eGlZ0gHkAUFVX3lxTE9oNlNTSTNSVlE1Q3hnOHBObWFOd3RDaUd0Z0F4N2taV3YxTS0xejFwVjdYYV9iSmQ3SXlUX2poRVN1b0VMbFRjRjhDNTRveFZyQWtVTHBHRVhncEJxYTNPNDNzWkdGSzd6NWU1VFUzU0M0UmlPSHY0dDBSeG50LW9XT3ZBcXVvMHR4bzlJTlc0QjE5UGY4TWQ5SGtWakdZSGhDM0JDbmt4djA2bzVuWVZaNHJIRzNxMDVlN0Y4czAwTzh3VmR5d2JMT1RwenFpTVktWkhGY3FvM2lMM2tfVVQtYUZleA?oc=5",
-      "imagen": null,
-      "fuente": "El Imparcial",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792995882000
-    },
-    {
-      "titulo": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás",
-      "resumen": "Steam estrena un calendario personalizado que recomienda nuevos juegos según lo que jugás Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1ljSzM0YnI0dFhlTDBNU3dzRmtEZnA0MWpxQkpNdEVkX0xIQU44RWludFNMRzlkOFRkWWowUXduQ1hIOTJ4VlpjMXJ3NzZhaWd6bjZ1WVEyZzFwV2E5bk1FdnU4eW5hNHFENlZ1b0pFc3ZDUW5JbFBMbW1FUkg2cURqa1ppWVlUZ2JNOWxGR1FjVHJnSUtkeFg5MGJaXzJsTjY2WE9oSWxDY0tSRlZuVTktbV83cjVFZE94Tm9CVQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792950431000
+      "fecha": 1792930963000
     },
     {
       "titulo": "Worlds 2026: Swiss Stage Round 3 Draw",
@@ -163,14 +163,14 @@
       "fecha": 1792892187000
     },
     {
-      "titulo": "La IA pone fecha al declive de las consolas de videojuegos",
-      "resumen": "La IA pone fecha al declive de las consolas de videojuegos Xataka",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQlBXcFBlakRiLUQxczA0OUU5U3E3VEhkWkpkTFF5UTlwdXk4NUljazR6QVNYdDNyZUdCTVlQLVM5VmNSNnpGQ3pDRmUwNHFlMVljQkpIY3pvTkRyTklPek9mNXNtYkdjajdHZFVqblNtMTZUcWxCdTlSZWhMUXJLTkpFbFZmVFnSAYwBQVVfeXFMT3BDMDU0ZDNlbUhTSUpoU3V4R3l6aXlCU1ZrSlRyRlBnbmE0ZEdLeENUNnFTWnBfZTNaZEpqSGpaU2NPTDBvVXZUTE85THJYSVhUNGNPYkNuTzU4RlFZb1NPOTg1N1MxRy1BNVNsX3BKcktaei05bXJKcExmWHhnT09IOV8ycUtycHNDazI?oc=5",
+      "titulo": "¿Los videojuegos causan TDAH?",
+      "resumen": "¿Los videojuegos causan TDAH? Child Mind Institute",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE55aHhHU2xla0YycWtkcVZxWHl3TlpDVElMZGl4REZJOWhVWWNGVW91V0tpSHl2VjRFdU9Bel96X2ZmWkd0cDFNZ1I4NGppektUaWMtVlVCZjVXWFBzVFhOMTktRmxwV1Vldk9PV2I1MVVndw?oc=5",
       "imagen": null,
-      "fuente": "Xataka",
+      "fuente": "Child Mind Institute",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792476357000
+      "fecha": 1791390990000
     }
   ]
 }
