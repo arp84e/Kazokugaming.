@@ -1,16 +1,116 @@
 {
-  "generado": 1793176252220,
+  "generado": 1793203307261,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Radiance es el set más mágico de Riftbound y a la vez el más sobrio. Y eso es una buena noticia",
-      "resumen": "Es complicado poner el punto de inflexión en un juego de cartas en plena expansión, pero parece obvio que cuando miremos atrás dentro de uno…",
-      "link": "https://www.vidaextra.com/juegos-de-mesa/radiance-set-magico-riftbound-a-vez-sobrio-eso-buena-noticia",
-      "imagen": "https://i.blogs.es/bea9ad/seraphine-riftbound/1024_2000.jpeg",
+      "titulo": "PlayStation Plus: confirmados los juegos gratis de noviembre de 2026 para PS5 y PS4",
+      "resumen": "A tan solo unos días de que llegue el momento de despedirnos de octubre y dar la bienvenida al nuevo mes, Sony ha anunciado cuáles serán los…",
+      "link": "https://www.vidaextra.com/ps5/playstation-plus-confirmados-juegos-gratis-noviembre-2026-para-ps5-ps4",
+      "imagen": "https://i.blogs.es/498d89/dead-island-2/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793173525000
+      "fecha": 1793203145000
+    },
+    {
+      "titulo": "Es uno de los videojuegos más especiales de la historia, ha cumplido 21 años y tiene un fantástico remake en P",
+      "resumen": "Es uno de los videojuegos más especiales de la historia, ha cumplido 21 años y tiene un fantástico remake en P Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOaWFqdFdac2FWdEtnOHVTMHZxbGlEdkFGLXMteUVkLTFiTFl4TGZZdVl0Q0xIMXczcWFzZTNCSnFmWG4xdHIyNWg1b2swTElrQkE3T3haaWJGR0tJY0RNMjEzYXhoN0JuaWQzem1oUFl3emhEZjhfRzU0cmc0N0Q3ODNNNXZLUElBb3hWOUJsVUtRTHdjQVVlcFpEbENyZXpxSUdlZVVaazdIM3lnVXFFMFBXTEd4Y2JHNVlVT245U1BVUG4yTng3MkJESU1wZmpjdXlFTkNWSnUtUGdSSDN3c1pfZGZhNnR6cWhLaUdMQ1VKQ2VWNXBF0gGLAkFVX3lxTFBIRVhCYXgzclB4QlBsajk3ZWdUZTFpaTgyYjZEREdoRDJBaFhia1RvQkl2aC1UVXAwZTlXYlhMR1dCMmNiR21fbk15Qko3R21QN2FRcDBWN3Zla01fWkJQQ0djV1VXM1NYSG44c0lvWDhwS1FjeWlTQk8zRENBODV6Sm1Cc184LUhGMW5tVzVIeDByUFk1YmZGV3c1MDU4MmkyRDlCbExhRDFRVTRqVXpGWmFQQXl5UUR3MVNyQVYtWkZsODl5WjBTdTNyaUU5UDFORlpJMGxrdm5iUEVydURBU1VIal9oTkZRbmg4bmFuVnpYYlJvWVZ0UjFvVXJ2c0FXak1wLUx3RE1Gaw?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793202601000
+    },
+    {
+      "titulo": "Sie7e nos cuenta sobre su música y los videojuegos que disfruta",
+      "resumen": "Sie7e nos cuenta sobre su música y los videojuegos que disfruta wapa.tv",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOTHpGMXRFblFIb3c3aks3VlBjREV0OWhINDBwRjd4djRYeEdzSkdQdGlBOUFrYkdiYXMycmpDMk5zZnp2dHlhMUtlRjVCQ014YmJoQmFZenAyMVZxQ0k4dzI0d005T2ROUXNGaXY0YlRjbXUzcGlKOFR4MmItaW5MN0lOeWhxSnBTUjZMQW1nLWZGQ1JWYi00SVozWWVXVGVGRlhwWFZCMWh0RnBYb19XZE9YOXZDUEZLSE1WQ1VPbVNkZ29yYUU5YWlqbnRQV19iSk52MjgxcE9ESWk3VldZTg?oc=5",
+      "imagen": null,
+      "fuente": "wapa.tv",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793201386000
+    },
+    {
+      "titulo": "GTA VI puede tener otro lanzamiento justo al lado y es el sindicato de sus desarrolladores",
+      "resumen": "Hasta ahora teníamos dos fechas relacionadas con el lanzamiento de Grand Theft Auto VI: el 19 por su estreno en sí, y el día anterior por lo…",
+      "link": "https://www.vidaextra.com/industria/gta-vi-puede-tener-otro-lanzamiento-justo-al-lado-sindicato-sus-desarrolladores",
+      "imagen": "https://i.blogs.es/17cf4c/gta/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793200531000
+    },
+    {
+      "titulo": "Claude Opus 5.5: el vibe coding ya crea juegos divertidos",
+      "resumen": "Claude Opus 5.5: el vibe coding ya crea juegos divertidos El Ecosistema Startup",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRlZCWFBhUHVfZUpzeXAxYjk3MDVLWHk2Ync3MTU0UnpuOVp2UGVUMF93RDh2NUxUNXMzWHlpMy1IRTJ2eVczQkJCemYtTG1qVXc3cjhWcWlwRENGYTR0YWloTzJ3eTl5Y0UyYktxM2tnNnR4ZmFuTVJfeUlUZ3NuUjF1S1JlRHJSa2Y5YXBsVUw?oc=5",
+      "imagen": null,
+      "fuente": "El Ecosistema Startup",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793196761000
+    },
+    {
+      "titulo": "Jamás jugaremos a Mass Effect Universe, pero sabemos cómo hubiese sonado la banda sonora gracias al compositor Austin Wintory",
+      "resumen": "El cierre de BioWare y la cancelación de Mass Effect 5, conocido como Mass Effect Universe gracias a un tráiler filtrado por parte de un exe…",
+      "link": "https://www.vidaextra.com/rpg/jamas-jugaremos-a-mass-effect-universe-sabemos-como-hubiese-sonado-banda-sonora-gracias-al-compositor-austin-wintory",
+      "imagen": "https://i.blogs.es/c0c42a/mass-effect-5/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793196207000
+    },
+    {
+      "titulo": "Los jugadores han fracasado durante 30 años, pero la IA acaba de lograr descifrar la placa borrosa en el castillo de Mario 64",
+      "resumen": "Si recorriste los pasillos del castillo de Peach en 1996 en Super Mario 64, seguro que lo recuerdas. Debajo de la estatua de la estrella, en…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/jugadores-han-fracasado-durante-30-anos-ia-acaba-lograr-descifrar-placa-borrosa-castillo-mario-64",
+      "imagen": "https://i.blogs.es/e37279/captura-de-pantalla-2026-10-28-123452-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793192490000
+    },
+    {
+      "titulo": "La nueva actualización Forsaken de No Man's Sky es una maravilla: rol de mensajero espacial, mejoras al Salto de Curvatura y mucho más",
+      "resumen": "Hace poco más de mes y medio estábamos celebrando el lanzamiento de Cosmos en No Man's Sky, una actualización histórica que trajo la constru…",
+      "link": "https://www.vidaextra.com/simuladores/nueva-actualizacion-forsaken-no-man-s-sky-maravilla-nuevo-rol-mensajero-mejoras-al-salto-curvatura",
+      "imagen": "https://i.blogs.es/76f744/no-mans-sky/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793189400000
+    },
+    {
+      "titulo": "Peter Molyneux, creativo: \"Crear juegos sin IA es casi imposible\"",
+      "resumen": "La inteligencia artificial generativa aún no está lista para crear versiones finales de los videojuegos, pero, según un veterano de la indus…",
+      "link": "https://www.vidaextra.com/industria/peter-molyneux-creativo-crear-juegos-ia-casi-imposible",
+      "imagen": "https://i.blogs.es/5cda08/captura-de-pantalla-2026-10-28-115037-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793188888000
+    },
+    {
+      "titulo": "Los memes que marcaron los 2000 están de vuelta: Firefox reúne a las leyendas de YouTube para un nuevo anuncio",
+      "resumen": "Aunque, en términos generales, no parece que haya pasado demasiado tiempo, los primeros años de vida de internet quedan ya a casi tres décad…",
+      "link": "https://www.vidaextra.com/industria/memes-que-marcaron-2000-estan-vuelta-firefox-reune-a-leyendas-youtube-para-nuevo-anuncio",
+      "imagen": "https://i.blogs.es/8d5376/firefox/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793186753000
+    },
+    {
+      "titulo": "Los creadores de Kingdom Come sufren un ciberataque y encienden las alarmas ante una posible filtración de sus futuros proyectos",
+      "resumen": "Warhorse Studios, el equipo responsable de la saga Kingdom Come: Deliverance, ha anunciado que en las últimas horas ha sufrido un ciberataqu…",
+      "link": "https://www.vidaextra.com/industria/creadores-kingdom-come-sufren-ciberataque-encienden-alarmas-posible-filtracion-sus-futuros-proyectos",
+      "imagen": "https://i.blogs.es/eb21c5/kcd/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793185288000
     },
     {
       "titulo": "Guillermo del Toro, cineasta mexicano: \"Quien dice que los videojuegos no son arte es porque nunca ha jugado en su vida\"",
@@ -23,104 +123,14 @@
       "fecha": 1793147487000
     },
     {
-      "titulo": "[México] El videojuego se transformó en Radiohead KID A MNESIA Motion Picture House",
-      "resumen": "[México] El videojuego se transformó en Radiohead KID A MNESIA Motion Picture House Crunchyroll",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOclRqTWs0TzZWQ0RiNzhkRV9oak9qUGFVVFZnNmNIcHV5Qk5lSHpLQnQ2YlRLM3J3SDVVeU1oc2dkc0M4MHBNVzFLRGxwVEJ5MHpTZmdCTTFweE1KNFE0Z2FmMnJ6aVdKYTFSVjQ0dkJpWU1VQ2hHQmQ4NDdxM2tyb0RIQXRTalloS2J2aDY1T0NnQ1JrcUFRRzBmaTUwSDFkRVVXckdjdExNOE1pN1JKVFhsbEQxWEJUY0hTZXM4MENhMzJVR01jbGVn?oc=5",
+      "titulo": "Karmine Corp bid farewell to Atow, Vatira, and juicy",
+      "resumen": "Karmine Corp bid farewell to Atow, Vatira, and juicy Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUlVlbzBsTHJlblFuR2l5VmNkWVNKbVFISWgwTFlOdW5sVldseUpEZkhscjUtM0VUVVhBbDVLZHNQckxDZm9IS2lEaDNRQnhuaXA4a0UzalR6MzJsd1RWdnJIZHdiOWFtZ25UTXQxS2w5N01MZzhqdzNnNVJqN1Nfd3gtSVVWQVd6dTR0aHp2eHRXMkNYZmhkRGpB?oc=5",
       "imagen": null,
-      "fuente": "Crunchyroll",
+      "fuente": "Sheep Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793130900000
-    },
-    {
-      "titulo": "Llevar Palworld a Nintendo Switch 2 suena a chiste, pero sus creadores sueñan con que Nintendo les abra las puertas",
-      "resumen": "Uno de los mayores culebrones que hemos vivido en el sector de los videojuegos durante los últimos años ha sido el enfrentamiento entre Pock…",
-      "link": "https://www.vidaextra.com/rpg/llevar-palworld-a-nintendo-switch-2-suena-a-chiste-sus-creadores-suenan-que-nintendo-les-abra-puertas",
-      "imagen": "https://i.blogs.es/175123/palworld/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793129487000
-    },
-    {
-      "titulo": "Hace dos semanas llegó a Steam con gran éxito de crítica. Hoy, los creadores de Warhammer 40.000: Boltgun 2 han sido víctimas de la crisis",
-      "resumen": "Con algunos videojuegos se produce la situación de que por muchas opiniones positivas que reciban, aunque sean muy aclamados, no es sinónimo…",
-      "link": "https://www.vidaextra.com/fps/hace-dos-semanas-llego-a-steam-gran-exito-critica-hoy-creadores-warhammer-40-000-boltgun-2-han-sido-victimas-crisis",
-      "imagen": "https://i.blogs.es/e05629/warhammer-40k-boltgun-2/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793125622000
-    },
-    {
-      "titulo": "Ya sabemos la barbaridad que pesará GTA 6 en PS5 y seguro que vas a necesitar hacer hueco en el disco duro",
-      "resumen": "Será el próximo 19 de noviembre cuando podamos encender nuestras Xbox Series X/S y PS5 para disfrutar del esperadísimo GTA 6. Ya sabemos muc…",
-      "link": "https://www.vidaextra.com/accion/sabemos-barbaridad-que-pesara-gta-6-ps5-seguro-que-vas-a-necesitar-hacer-hueco-disco-duro",
-      "imagen": "https://i.blogs.es/dbfeac/jason_lucia_lock_and_load_landscape.0l9s5w7ih9p-3/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793122257000
-    },
-    {
-      "titulo": "Precarga de GTA 6, cuándo empieza, a qué hora y cuántos GB ocupa",
-      "resumen": "Precarga de GTA 6, cuándo empieza, a qué hora y cuántos GB ocupa Pasquale Pillitteri",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOSnVsRG1ZZm5yc29CTW5VM09aV18xa0Jzcmw2T2VnRTQ0Qmx2ano2Q1hOTUh5S1kyaXBVMnFuX21Hb0h1X1l4b2g5QUN2Qjl2ZWt3aFNIQUVVMkN1QTFWVTBVcGRoTkswWGFyY1h1SFgwdjcyY2VYNndzeF9JeGMyTXBjSFBkRHRw?oc=5",
-      "imagen": null,
-      "fuente": "Pasquale Pillitteri",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793122164000
-    },
-    {
-      "titulo": "Virtue and a Sledgehammer es una experiencia terrorífica y catártica protagonizada por el miedo más real",
-      "resumen": "Hasta hace nada las películas que más terror y sentimiento de incomodidad me proporcionaban eran las de miedo, algo que puede parecer de per…",
-      "link": "https://www.vidaextra.com/otros-generos/virtue-and-a-sledgehammer-experiencia-terrorifica-catartica-protagonizada-miedo-real",
-      "imagen": "https://i.blogs.es/ddb51d/20261024151939_1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793120400000
-    },
-    {
-      "titulo": "La inteligencia artificial empezó a reproducir Fortnite, Halo y otros videojuegos sin permiso. ¡Oh, qué paradoja! Microsoft y Epic Games ya no parecen tan entusiasmadas con la IA cuando sus juegos est…",
-      "resumen": "La inteligencia artificial empezó a reproducir Fortnite, Halo y otros videojuegos sin permiso. ¡Oh, qué paradoja! Microsoft y Epic Games ya…",
-      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPV0lkZEowZU13VWpqUzJDd3JaX0NVdlY4RmFoS0xhUmZ2YklJSm1rWjFtenBNdWNYdnBDWTNxcnFNMUxpUmtwSzF4d3ZOWHRmZTNNcWNuOWlKVGJWWC1rVWF2LUtrYUJXbDZuLVF6eUFqWGZ6dnByUFIxM3VDRUpBNVVtd3VLM0VvMmxJbURNa2RMYV9aTXY5OV9iMV8wVlJJMnB1V0lLRllvaVFYR0s2ZjBicm13VlZCSGNJa0JQMVp1N2l5R19PMUZGTnNrLUluNG5nbmNUMGZlYkJ3SHREd0RxQWI4MjRMTFZMWTByblZVX3BNTHhVbU53anNWZi12czJXbVNjUWg3dC1fQ1RrMzZKU0RUTXFTYmFRam5kaHJxdHRwVzQ4S1o3ckVZajBHdmxHcHVGanRmempCYk5uSEg4QnB6dVk?oc=5",
-      "imagen": null,
-      "fuente": "Gizmodo en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793119544000
-    },
-    {
-      "titulo": "La trilogía de homenajes a Akira del Absolute Universe de DC ya está completa y no solo es brutal, su creador es un artista español",
-      "resumen": "El Absolute Universe de DC es un éxito rotundo. La versión absolute de Batman lleva dos años entre los cómics más vendidos de la editora y,…",
-      "link": "https://www.vidaextra.com/comics/trilogia-homenajes-a-akira-absolute-universe-dc-esta-completa-no-solo-brutal-su-creador-artista-espanol",
-      "imagen": "https://i.blogs.es/d2ed13/universe-absolute/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793117007000
-    },
-    {
-      "titulo": "Los datos demuestran que Capcom tenía razón: la dificultad de Onimusha: Way of the Sword está bien pese a las polémicas",
-      "resumen": "La polémica de la dificultad suele ser feudo de FromSoftware y el resto de estudios que crean Soulslikes, pero ni mucho menos es exclusivo.…",
-      "link": "https://www.vidaextra.com/accion/datos-demuestran-que-capcom-tenia-razon-dificultad-onimusha-way-of-the-sword-esta-bien-pese-a-polemicas",
-      "imagen": "https://i.blogs.es/54505b/onimusha/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793111729000
-    },
-    {
-      "titulo": "Sigue en directo el nuevo Indie World con juegos para Nintendo Switch y Nintendo Switch 2",
-      "resumen": "Los indies siempre han contado con un gran protagonismo dentro del catálogo de Nintendo Switch y Nintendo Switch 2, como bien lo querrá demo…",
-      "link": "https://www.vidaextra.com/eventos/manana-descubriremos-que-indies-pondran-rumbo-a-nintendo-switch-nintendo-switch-2-nuevo-indie-world",
-      "imagen": "https://i.blogs.es/cf86c8/indie-world/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793110440000
+      "fecha": 1793123437000
     },
     {
       "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
@@ -143,24 +153,14 @@
       "fecha": 1793021502000
     },
     {
-      "titulo": "Masahiro Sakurai, creador de Super Smash Bros, advierte que los videojuegos con IA serán “copias injugables”",
-      "resumen": "Masahiro Sakurai, creador de Super Smash Bros, advierte que los videojuegos con IA serán “copias injugables” Infobae",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZ0NPZHRBUlV1VWU3bGQtUVp1SWFYMlR4V2ctdUZpbkUwZ3lkdXVyMXlIcUFfdVpWUFFOWlVLeWpQN3dyYzNCYWRtQVRMZGF1LU44RVdKUldlWlRjQVV4UUs0alJXMjJweTBqcGJud1dSX1pCcl84N18xYXVhR2lSVDFabG5tNlotWmEtaDdpT253WHIxbVZRRlRqZzdPY1FTMXFtU0FrcjNOSU9XSk9WOVlaNDNHbmxFNWRRbGdSeDlBem5mWDcyRjNvTFBWNFBnY0RZX0R0TnhxUFFCTzcw0gH6AUFVX3lxTE10dXdYVHJOdWRpV3M0UFd0Y0g0bzJaeHFlOEhZSDE2QmQyTVJFQzRUSm05YVlHMFhLOEVQeF9PcW1zVXJMdDhwRmE1SWpHUUp1OGkycFUzTUdwTTdMcXpsYjVYS04wMV82dHhZdVFhclhmalNBVWlhRmw1cUxwVXpjSWE5SDIyOVdvcDZ2a0swV2dEOHprTjVuaGJBNXdXNG41UGJZTjBVaFJDelpVdWpGNkphZVljZVNjWXNZR3lzTjQyYm85M2JkNG9kSUhYb2VQeVY5VFgwX1RtUmlpQk9ROWlRMUMtV0xyekU0QjIyWndXOTRFT2prZFE?oc=5",
+      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
+      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur Yahoo Finanzas",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUzZlRHNKblRlQjlhMm1SbktFaGVOOEowSHU5b2JKRjZZNWNHNWpRMTZsZ1pHZHFWdVZBeldkTG1xN0l3YVRxTGI1eU9JNi03c0VfYklfWkcyWEcwcDRLWm93bVE1MEttZUprbG5WT0otWGR6dG82U2lJNVlCYVdfanRMZzFsYnpucVJFVGtBVmJXTDhGYVdVNDFR?oc=5",
       "imagen": null,
-      "fuente": "Infobae",
+      "fuente": "Yahoo Finanzas",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792954020000
-    },
-    {
-      "titulo": "Worlds 2026: Swiss Stage Round 3 Draw",
-      "resumen": "Worlds 2026: Swiss Stage Round 3 Draw Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdGVZX3k0dXBIdEgzM0FCMWFsbmlnRW1lVDhTeVYwVUdMQU54TkFrQjNHQmpqeGJNcy1nclNhb0RSTTNiSWlKQXI0SEtsSW9nTVVUbzlsMUNTemdhY1FldWRCMExDaHNhU0prMGxYZWN0NHNmblhrVWFOQjVpVTdKMHZIU1UtanM?oc=5",
-      "imagen": null,
-      "fuente": "Sheep Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792892187000
+      "fecha": 1792930963000
     },
     {
       "titulo": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump",
