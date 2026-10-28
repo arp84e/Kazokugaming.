@@ -1,7 +1,17 @@
 {
-  "generado": 1793150474924,
+  "generado": 1793176252220,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Radiance es el set más mágico de Riftbound y a la vez el más sobrio. Y eso es una buena noticia",
+      "resumen": "Es complicado poner el punto de inflexión en un juego de cartas en plena expansión, pero parece obvio que cuando miremos atrás dentro de uno…",
+      "link": "https://www.vidaextra.com/juegos-de-mesa/radiance-set-magico-riftbound-a-vez-sobrio-eso-buena-noticia",
+      "imagen": "https://i.blogs.es/bea9ad/seraphine-riftbound/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793173525000
+    },
     {
       "titulo": "Guillermo del Toro, cineasta mexicano: \"Quien dice que los videojuegos no son arte es porque nunca ha jugado en su vida\"",
       "resumen": "Guillermo del Toro, cineasta mexicano: \"Quien dice que los videojuegos no son arte es porque nunca ha jugado en su vida\" 3DJuegos México",
@@ -13,14 +23,14 @@
       "fecha": 1793147487000
     },
     {
-      "titulo": "Niño clausura la entrega de Premios La Razón de Videojuegos by Difoosion 2026",
-      "resumen": "Niño clausura la entrega de Premios La Razón de Videojuegos by Difoosion 2026 Ayuntamiento de Madrid",
-      "link": "https://news.google.com/rss/articles/CBMilwNBVV95cUxOLWQ4dUg1WDk4c1l0a2VYR0FDLTZDVWpRTWNUVGtBdHNHcXRycFR5dGdWa2FsQ2JRNWVmWnotNXM4Mndsa1FyeUFrMnpYUnF1UXFhZ01YT3d3c05sSDNLV2s4blNDdF8zQU9UdUJfcjlkdHBqTVBHVVc1bUlVTFhZanIxMkJSSlE4ZzByTHBwWmJoV2VFWTBUQ2s5OW5qeHJBcU13R2ZyR0kyZ1l4bE9sc1pIeEU0UEM0dTJSSlRud3hsdVZIeWl4Yksxa2lDX1lhNDhqeUx4blJ0OGRtWGw4Sy04Z1Z6clNDdUtfTl9zTXd5Tk9yaXhZRzBhZlprYm82bG9EWjdzR0l3ZHhkUDBuckp5MVQyYUhXV05yTzdYQnlQOC1WWGwxeElnNU56UnZ6TnduUDI4MEV4TndVdXg1NU5xaFREU1B5VUIxLWVsRnRsZ2NYRzhZbHNUdkJZNG13TEhZTnVHbl93elJxZU8tY09ENFNTWEhTY3ZEcEl3V2RldGhMd1lmTTVlcEVZNkgxUnVhLUl0cw?oc=5",
+      "titulo": "[México] El videojuego se transformó en Radiohead KID A MNESIA Motion Picture House",
+      "resumen": "[México] El videojuego se transformó en Radiohead KID A MNESIA Motion Picture House Crunchyroll",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOclRqTWs0TzZWQ0RiNzhkRV9oak9qUGFVVFZnNmNIcHV5Qk5lSHpLQnQ2YlRLM3J3SDVVeU1oc2dkc0M4MHBNVzFLRGxwVEJ5MHpTZmdCTTFweE1KNFE0Z2FmMnJ6aVdKYTFSVjQ0dkJpWU1VQ2hHQmQ4NDdxM2tyb0RIQXRTalloS2J2aDY1T0NnQ1JrcUFRRzBmaTUwSDFkRVVXckdjdExNOE1pN1JKVFhsbEQxWEJUY0hTZXM4MENhMzJVR01jbGVn?oc=5",
       "imagen": null,
-      "fuente": "Ayuntamiento de Madrid",
+      "fuente": "Crunchyroll",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793144786000
+      "fecha": 1793130900000
     },
     {
       "titulo": "Llevar Palworld a Nintendo Switch 2 suena a chiste, pero sus creadores sueñan con que Nintendo les abra las puertas",
@@ -103,24 +113,14 @@
       "fecha": 1793111729000
     },
     {
-      "titulo": "Mañana descubriremos qué indies pondrán rumbo a Nintendo Switch y Nintendo Switch 2 con el nuevo Indie World",
+      "titulo": "Sigue en directo el nuevo Indie World con juegos para Nintendo Switch y Nintendo Switch 2",
       "resumen": "Los indies siempre han contado con un gran protagonismo dentro del catálogo de Nintendo Switch y Nintendo Switch 2, como bien lo querrá demo…",
       "link": "https://www.vidaextra.com/eventos/manana-descubriremos-que-indies-pondran-rumbo-a-nintendo-switch-nintendo-switch-2-nuevo-indie-world",
       "imagen": "https://i.blogs.es/cf86c8/indie-world/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793110479000
-    },
-    {
-      "titulo": "\"Era gratis para cualquiera\": subió un selfie a Internet y años después descubrió que era un zombi legendario",
-      "resumen": "Una de las historias más rocambolescas del día nos llega de la mano del artista Christopher Fryant, el cual ha creado proyectos 2D y 3D para…",
-      "link": "https://www.vidaextra.com/accion/era-gratis-para-subio-selfie-a-internet-anos-despues-descubrio-que-era-zombi-legendario",
-      "imagen": "https://i.blogs.es/c8d455/wp14254190/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793109688000
+      "fecha": 1793110440000
     },
     {
       "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
@@ -143,14 +143,14 @@
       "fecha": 1793021502000
     },
     {
-      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
-      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur Yahoo Finanzas",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUzZlRHNKblRlQjlhMm1SbktFaGVOOEowSHU5b2JKRjZZNWNHNWpRMTZsZ1pHZHFWdVZBeldkTG1xN0l3YVRxTGI1eU9JNi03c0VfYklfWkcyWEcwcDRLWm93bVE1MEttZUprbG5WT0otWGR6dG82U2lJNVlCYVdfanRMZzFsYnpucVJFVGtBVmJXTDhGYVdVNDFR?oc=5",
+      "titulo": "Masahiro Sakurai, creador de Super Smash Bros, advierte que los videojuegos con IA serán “copias injugables”",
+      "resumen": "Masahiro Sakurai, creador de Super Smash Bros, advierte que los videojuegos con IA serán “copias injugables” Infobae",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZ0NPZHRBUlV1VWU3bGQtUVp1SWFYMlR4V2ctdUZpbkUwZ3lkdXVyMXlIcUFfdVpWUFFOWlVLeWpQN3dyYzNCYWRtQVRMZGF1LU44RVdKUldlWlRjQVV4UUs0alJXMjJweTBqcGJud1dSX1pCcl84N18xYXVhR2lSVDFabG5tNlotWmEtaDdpT253WHIxbVZRRlRqZzdPY1FTMXFtU0FrcjNOSU9XSk9WOVlaNDNHbmxFNWRRbGdSeDlBem5mWDcyRjNvTFBWNFBnY0RZX0R0TnhxUFFCTzcw0gH6AUFVX3lxTE10dXdYVHJOdWRpV3M0UFd0Y0g0bzJaeHFlOEhZSDE2QmQyTVJFQzRUSm05YVlHMFhLOEVQeF9PcW1zVXJMdDhwRmE1SWpHUUp1OGkycFUzTUdwTTdMcXpsYjVYS04wMV82dHhZdVFhclhmalNBVWlhRmw1cUxwVXpjSWE5SDIyOVdvcDZ2a0swV2dEOHprTjVuaGJBNXdXNG41UGJZTjBVaFJDelpVdWpGNkphZVljZVNjWXNZR3lzTjQyYm85M2JkNG9kSUhYb2VQeVY5VFgwX1RtUmlpQk9ROWlRMUMtV0xyekU0QjIyWndXOTRFT2prZFE?oc=5",
       "imagen": null,
-      "fuente": "Yahoo Finanzas",
+      "fuente": "Infobae",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792930963000
+      "fecha": 1792954020000
     },
     {
       "titulo": "Worlds 2026: Swiss Stage Round 3 Draw",
