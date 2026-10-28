@@ -1,7 +1,47 @@
 {
-  "generado": 1793203307261,
+  "generado": 1793221424350,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Jackie Chan es el mayor motivo por el que los combates de Phantom Blade Zero parecen extraídos de una película de artes marciales",
+      "resumen": "Desde que se presentó en 2023, Phantom Blade Zero nos ha ido dejando con la boca abierta cada vez que ha ido apareciendo un nuevo vídeo. Ya…",
+      "link": "https://www.vidaextra.com/rpg/jackie-chan-mayor-motivo-que-combates-phantom-blade-zero-parecen-extraidos-pelicula-artes-marciales",
+      "imagen": "https://i.blogs.es/6a8955/phantom-blade-zero/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793216225000
+    },
+    {
+      "titulo": "Hay armas impresas en 3D en Call of Duty: Modern Warfare 4, pero tienes que encontrarlas o quitárselas a otros jugadores",
+      "resumen": "Hace unos días que se lanzó Modern Warfare 4, la última entrega de Call of Duty fruto de la colaboración entre Infinity Ward y Treyarch, y n…",
+      "link": "https://www.vidaextra.com/fps/hay-armas-impresas-3d-call-of-duty-modern-warfare-4-tienes-que-encontrarlas-quitarselas-a-otros-jugadores",
+      "imagen": "https://i.blogs.es/d14003/mw4/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793210607000
+    },
+    {
+      "titulo": "Resumen del Indie World con Winds of Viridia, Threads of Time, Tenjutsu y todos los tráilers y anuncios",
+      "resumen": "Los indies han salido a relucir en la nueva edición de Indie World que ha emitido Nintendo esta tarde y que nos ha permitido echar un vistaz…",
+      "link": "https://www.vidaextra.com/eventos/resumen-indie-world-winds-of-viridia-threads-of-time-tenjutsu-todos-trailers-anuncios",
+      "imagen": "https://i.blogs.es/a9ed1d/threads-of-time/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793207301000
+    },
+    {
+      "titulo": "GTA 6: fecha de lanzamiento, precio, plataformas, protagonistas y todo lo que sabemos del nuevo juego de Rocks",
+      "resumen": "GTA 6: fecha de lanzamiento, precio, plataformas, protagonistas y todo lo que sabemos del nuevo juego de Rocks Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPclhBb2hSZU5kSVpLMkdnZk4zS2ZmdU5IT05VTDVvX2w4TUxPaVJDWTlzbVRISnJlRVhxVFFtLUR4MVNjZDIwOXloQU9DT2g5U0lDOFhfblpMb2FaSXh2bV9aOHB5UmpOM2VwdDdKYWtNamJZTUxHc0N2MjY0akw0SENhNEIzeGUxLXVxTXVzZTRZdGdFTGRlVkp3ZXl6Ym1NUlB0NGVEazBJNXBhby1USnBMUEw5ZEVuVm16MjVSY29aOUYzTEcxWWVDc0FzQnBrWE9lQjBtX1FEamNvRnF0eXRyeTRhWDlaRW1QZtIBgAJBVV95cUxOMWRkVTJ4YjhxMWdOQ01vbEtkMVJQeTRlalNCU1ZGbEdCODBfOTJGSWIwaW9TYXA3WTJuZ2tCRGx6U3NVTGRaZWRnYkZXT2ZqaFR1S3pzVUtZcngyQ19xREp4UnRpQWI1cHhydlJ0SkVkYnpnVjlveWZMTzBHaDVqYjFEQk1oRFhBbmNWVWhNSHhWWVB4aU95eVhGRmk1T2U5cXRFYlhJWDVWckhNZmp5SW50T2hPdktOUkRxVmlrNEE5MlNGMWJ6MnFBNTJSUjJ5YkNrLVZHRk01ajZGVjRfOVlzVFNsNl8tUXlhT1ZhSjRkeXV0Nm43QkxGdElCeVJM?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793205909000
+    },
     {
       "titulo": "PlayStation Plus: confirmados los juegos gratis de noviembre de 2026 para PS5 y PS4",
       "resumen": "A tan solo unos días de que llegue el momento de despedirnos de octubre y dar la bienvenida al nuevo mes, Sony ha anunciado cuáles serán los…",
@@ -11,16 +51,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793203145000
-    },
-    {
-      "titulo": "Es uno de los videojuegos más especiales de la historia, ha cumplido 21 años y tiene un fantástico remake en P",
-      "resumen": "Es uno de los videojuegos más especiales de la historia, ha cumplido 21 años y tiene un fantástico remake en P Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOaWFqdFdac2FWdEtnOHVTMHZxbGlEdkFGLXMteUVkLTFiTFl4TGZZdVl0Q0xIMXczcWFzZTNCSnFmWG4xdHIyNWg1b2swTElrQkE3T3haaWJGR0tJY0RNMjEzYXhoN0JuaWQzem1oUFl3emhEZjhfRzU0cmc0N0Q3ODNNNXZLUElBb3hWOUJsVUtRTHdjQVVlcFpEbENyZXpxSUdlZVVaazdIM3lnVXFFMFBXTEd4Y2JHNVlVT245U1BVUG4yTng3MkJESU1wZmpjdXlFTkNWSnUtUGdSSDN3c1pfZGZhNnR6cWhLaUdMQ1VKQ2VWNXBF0gGLAkFVX3lxTFBIRVhCYXgzclB4QlBsajk3ZWdUZTFpaTgyYjZEREdoRDJBaFhia1RvQkl2aC1UVXAwZTlXYlhMR1dCMmNiR21fbk15Qko3R21QN2FRcDBWN3Zla01fWkJQQ0djV1VXM1NYSG44c0lvWDhwS1FjeWlTQk8zRENBODV6Sm1Cc184LUhGMW5tVzVIeDByUFk1YmZGV3c1MDU4MmkyRDlCbExhRDFRVTRqVXpGWmFQQXl5UUR3MVNyQVYtWkZsODl5WjBTdTNyaUU5UDFORlpJMGxrdm5iUEVydURBU1VIal9oTkZRbmg4bmFuVnpYYlJvWVZ0UjFvVXJ2c0FXak1wLUx3RE1Gaw?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793202601000
     },
     {
       "titulo": "Sie7e nos cuenta sobre su música y los videojuegos que disfruta",
@@ -43,16 +73,6 @@
       "fecha": 1793200531000
     },
     {
-      "titulo": "Claude Opus 5.5: el vibe coding ya crea juegos divertidos",
-      "resumen": "Claude Opus 5.5: el vibe coding ya crea juegos divertidos El Ecosistema Startup",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRlZCWFBhUHVfZUpzeXAxYjk3MDVLWHk2Ync3MTU0UnpuOVp2UGVUMF93RDh2NUxUNXMzWHlpMy1IRTJ2eVczQkJCemYtTG1qVXc3cjhWcWlwRENGYTR0YWloTzJ3eTl5Y0UyYktxM2tnNnR4ZmFuTVJfeUlUZ3NuUjF1S1JlRHJSa2Y5YXBsVUw?oc=5",
-      "imagen": null,
-      "fuente": "El Ecosistema Startup",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793196761000
-    },
-    {
       "titulo": "Jamás jugaremos a Mass Effect Universe, pero sabemos cómo hubiese sonado la banda sonora gracias al compositor Austin Wintory",
       "resumen": "El cierre de BioWare y la cancelación de Mass Effect 5, conocido como Mass Effect Universe gracias a un tráiler filtrado por parte de un exe…",
       "link": "https://www.vidaextra.com/rpg/jamas-jugaremos-a-mass-effect-universe-sabemos-como-hubiese-sonado-banda-sonora-gracias-al-compositor-austin-wintory",
@@ -61,6 +81,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793196207000
+    },
+    {
+      "titulo": "Bleach estrena un nuevo videojuego gratuito y tiene una sorpresa para quienes esperaban más de su historia",
+      "resumen": "Bleach estrena un nuevo videojuego gratuito y tiene una sorpresa para quienes esperaban más de su historia Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZ2FPVjZhSGgycy1STmoxSGdjQ0NKYkRTZlNIZlNPUzVhOXI2T3I2dkUwNWI1MUJKWHRiLW5IVWpLWkFyNTlDVkF6X0ZUWGNhTU9TcDVfRGpDWEpVUWFIcGNWLWRldENZVWhHTGFSbk9GZTZCb1V4aURUTmdYZTRVTERuZzNhQmFJMldxR09nSjVobE1Ebk9FbTBIamN1X1B3eU9Bc05LdnhaT0hNcXY0NkxPM3JnODl4cXYyZnN1TW5LSHZiWmxWSVY2UEVyelhjRXNRbkFR?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793194567000
     },
     {
       "titulo": "Los jugadores han fracasado durante 30 años, pero la IA acaba de lograr descifrar la placa borrosa en el castillo de Mario 64",
@@ -73,6 +103,16 @@
       "fecha": 1793192490000
     },
     {
+      "titulo": "¿Cuándo empieza la nueva temporada de Fortnite? Fecha, horarios, colaboración con ‘One Piece’ y mucho más",
+      "resumen": "¿Cuándo empieza la nueva temporada de Fortnite? Fecha, horarios, colaboración con ‘One Piece’ y mucho más Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaV9kcE1pQS1ZMGQ1dk45Y3VZTHQ0VUowalBpUDk0Wkl4Q2p2ODBDUlpxSFhwQndEekk5Vl9OLVp1d3dVM2xndUh2eEprZjZBMWlhSjJwc3Z4cjM0UTBVOHdULTdYdWpiMklOVU5ndG03dC16Z250Qk9qU19iLTgwWnpMajFOM2JFS2xkSjJVZG9JUTB0TEc2WW5hd2pCcllJSXp1YUZLUWZnelZocGlFa3NMNmN4Q0gzcU9SS2UtV2ZiVzctTDNaYzFlQ1pYSjVBRHk5Z1dIVkk2LUwtbzNr0gHzAUFVX3lxTE9LcFdNUzVGSjQwR3JlTUhDaUJuN1BlZEo1eEllejJlVHdEZmNIQVI0V08zQjhUNUJOd1Y0OGdsczNWVWVqbkMtQkpXbkstSnZiUHhLVWkxRHF5RmhjS0VudmswdEQ2ME8zcVlCQWNqTDQ1bl9CMWxlM0QwVWRoaWR2SVd5NE14b3IyR1dBRHJBOU1SNWo5cm1BNldIVVI2cnAtWUgzMTBsclE0QWNwN2xsWm9CWnk5cXdDY1M4ZmU0b1I3VjFQWHRBMGllZVpBelVYUUdSdzZmXy02SXlTcU5NRDRxRmUzd284bURySW1yaUxVNA?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793189783000
+    },
+    {
       "titulo": "La nueva actualización Forsaken de No Man's Sky es una maravilla: rol de mensajero espacial, mejoras al Salto de Curvatura y mucho más",
       "resumen": "Hace poco más de mes y medio estábamos celebrando el lanzamiento de Cosmos en No Man's Sky, una actualización histórica que trajo la constru…",
       "link": "https://www.vidaextra.com/simuladores/nueva-actualizacion-forsaken-no-man-s-sky-maravilla-nuevo-rol-mensajero-mejoras-al-salto-curvatura",
@@ -83,54 +123,14 @@
       "fecha": 1793189400000
     },
     {
-      "titulo": "Peter Molyneux, creativo: \"Crear juegos sin IA es casi imposible\"",
-      "resumen": "La inteligencia artificial generativa aún no está lista para crear versiones finales de los videojuegos, pero, según un veterano de la indus…",
-      "link": "https://www.vidaextra.com/industria/peter-molyneux-creativo-crear-juegos-ia-casi-imposible",
-      "imagen": "https://i.blogs.es/5cda08/captura-de-pantalla-2026-10-28-115037-1-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793188888000
-    },
-    {
-      "titulo": "Los memes que marcaron los 2000 están de vuelta: Firefox reúne a las leyendas de YouTube para un nuevo anuncio",
-      "resumen": "Aunque, en términos generales, no parece que haya pasado demasiado tiempo, los primeros años de vida de internet quedan ya a casi tres décad…",
-      "link": "https://www.vidaextra.com/industria/memes-que-marcaron-2000-estan-vuelta-firefox-reune-a-leyendas-youtube-para-nuevo-anuncio",
-      "imagen": "https://i.blogs.es/8d5376/firefox/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793186753000
-    },
-    {
-      "titulo": "Los creadores de Kingdom Come sufren un ciberataque y encienden las alarmas ante una posible filtración de sus futuros proyectos",
-      "resumen": "Warhorse Studios, el equipo responsable de la saga Kingdom Come: Deliverance, ha anunciado que en las últimas horas ha sufrido un ciberataqu…",
-      "link": "https://www.vidaextra.com/industria/creadores-kingdom-come-sufren-ciberataque-encienden-alarmas-posible-filtracion-sus-futuros-proyectos",
-      "imagen": "https://i.blogs.es/eb21c5/kcd/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793185288000
-    },
-    {
-      "titulo": "Guillermo del Toro, cineasta mexicano: \"Quien dice que los videojuegos no son arte es porque nunca ha jugado en su vida\"",
-      "resumen": "Guillermo del Toro, cineasta mexicano: \"Quien dice que los videojuegos no son arte es porque nunca ha jugado en su vida\" 3DJuegos México",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONUExeEJwSGVQMTlJV1Bmam9nNE50MTVoaXd1R0lwNUwwZl9kUFR1cjRvRG9oV1lPT25pTzlCdzV2Vk5XNEJtSVlQRUFseWVPWENTRndwUUdIN1lqUkFxQ1QtdnpVeGVqVUhLMW1fY2lNRjBYVEp6WU5aMERjR3ZZSHZiWHhDSk1aMlE4cDl0MGpXYzlKQ1ltblRaWm13aDZkYmZRWGxVdU5Bb2tkLUJwOVBjSXpfTUtNUngyeDVwV3NFUU93SWlxS1hRdWEtSVZJeXfSAdcBQVVfeXFMUDUxTEtKYm5GNS05Ykl1RzFZR2FWWU1QcWd1UGJ2R1lBYy1SSWk2Y3dlWGg3ZXN1MnRuT2lELXMza0xOVjhnejdOb2FaNVZFZ0xpdGIxVW1FZ0FjYm5MZjVYeXhma2R3QW5odzhRdzNJVHNWMFdhRDRhYm0xcEh2Vkl4aTY0QUY1cmVjekxNd2s5c1ZMV0YxYnpoMGVVaUpFUmJSblpNVk5FalFQb3VNWXg3OEtncUx6TFZEWE5MNEJsOUhMLWpyOENqVXBwQzNiOXZmQkJJUGs?oc=5",
+      "titulo": "El CEO de Epic Games lanza un nuevo ataque contra Valve, y asegura que Steam ha frenado la industria de los videojuegos durante años",
+      "resumen": "El CEO de Epic Games lanza un nuevo ataque contra Valve, y asegura que Steam ha frenado la industria de los videojuegos durante años Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOQzBQMmNOU3dqc3hPUlRoREhDRWw4ZnE2LS1BV1lFUjNGeklIZmJYa2g1UmwzZnR3eEZhdzRCWmhPcFFNYlc0YUxrV3AxcFhNY2hZa0Z2eFQ4ZmZMTWl2RVdhZ3E3VU96bE85RDhnS2pIX3RpcFlzWU9rbl9HS1BLTg?oc=5",
       "imagen": null,
-      "fuente": "3DJuegos México",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793147487000
-    },
-    {
-      "titulo": "Karmine Corp bid farewell to Atow, Vatira, and juicy",
-      "resumen": "Karmine Corp bid farewell to Atow, Vatira, and juicy Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUlVlbzBsTHJlblFuR2l5VmNkWVNKbVFISWgwTFlOdW5sVldseUpEZkhscjUtM0VUVVhBbDVLZHNQckxDZm9IS2lEaDNRQnhuaXA4a0UzalR6MzJsd1RWdnJIZHdiOWFtZ25UTXQxS2w5N01MZzhqdzNnNVJqN1Nfd3gtSVVWQVd6dTR0aHp2eHRXMkNYZmhkRGpB?oc=5",
-      "imagen": null,
-      "fuente": "Sheep Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793123437000
+      "fecha": 1793119019000
     },
     {
       "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
@@ -153,24 +153,24 @@
       "fecha": 1793021502000
     },
     {
-      "titulo": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur",
-      "resumen": "\"Call of Duty\" invasión norcoreana encabeza las ventas en el Sur Yahoo Finanzas",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUzZlRHNKblRlQjlhMm1SbktFaGVOOEowSHU5b2JKRjZZNWNHNWpRMTZsZ1pHZHFWdVZBeldkTG1xN0l3YVRxTGI1eU9JNi03c0VfYklfWkcyWEcwcDRLWm93bVE1MEttZUprbG5WT0otWGR6dG82U2lJNVlCYVdfanRMZzFsYnpucVJFVGtBVmJXTDhGYVdVNDFR?oc=5",
+      "titulo": "Worlds 2026: Swiss Stage Round 2 Draw",
+      "resumen": "Worlds 2026: Swiss Stage Round 2 Draw Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMkpDdGN2YzYxNGZhREFNQlNveURrT2dKUDN1b0c3eFRxUktTYXpfWW5XbTJtenZpSU1tZkYxUExhMV9LeC1NVkFLOHl0QzRLeVlTTWUwT05QakhFWDJGQ3hRUVdYRWJNOFMwQUUzQVdpMU52RTczaVhncDdya0l5RzVPMjVTYVU?oc=5",
       "imagen": null,
-      "fuente": "Yahoo Finanzas",
+      "fuente": "Sheep Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792930963000
+      "fecha": 1792804488000
     },
     {
-      "titulo": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump",
-      "resumen": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump Telemundo Houston",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZUlxSElYYlQzTjV1Z0txS19sVC1aN21JUDJZSEh0UkVLa2d3ejVkYnhLaC1SMjFOZEhJZV8tUGo3TjN6ZkEyN0xDd3BEYkRhR3Y1aVdxTHBSZm9EZnMwaG8wWGpZOVJ6cTZYX0ZOOHJnSFJINlIxMV9sZGw5czFWX1RhdGp6X3ZyVW9XUFZnNzdabFVY0gGcAUFVX3lxTFA4am1CN2R3SmppdGFkcWNlbE1HcmFMR3QzaTRNbTdZUXhwOEVMNlJNQXRuMnotSklmUENqZkp0bXkwZXlMay1YazdjUlRvc3E2VnM1bVB2Vzl6NEtkeVVhSHZQRVczWTQ4ODFnN1FZZjg2Unl6Uk9VR0hJZUdvamtrcmtqb3FMOU1LWW5xSDBYOThsQ2RnNERjZVFFYQ?oc=5",
+      "titulo": "La IA pone fecha al declive de las consolas de videojuegos",
+      "resumen": "La IA pone fecha al declive de las consolas de videojuegos Xataka",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQlBXcFBlakRiLUQxczA0OUU5U3E3VEhkWkpkTFF5UTlwdXk4NUljazR6QVNYdDNyZUdCTVlQLVM5VmNSNnpGQ3pDRmUwNHFlMVljQkpIY3pvTkRyTklPek9mNXNtYkdjajdHZFVqblNtMTZUcWxCdTlSZWhMUXJLTkpFbFZmVFnSAYwBQVVfeXFMT3BDMDU0ZDNlbUhTSUpoU3V4R3l6aXlCU1ZrSlRyRlBnbmE0ZEdLeENUNnFTWnBfZTNaZEpqSGpaU2NPTDBvVXZUTE85THJYSVhUNGNPYkNuTzU4RlFZb1NPOTg1N1MxRy1BNVNsX3BKcktaei05bXJKcExmWHhnT09IOV8ycUtycHNDazI?oc=5",
       "imagen": null,
-      "fuente": "Telemundo Houston",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1788505200000
+      "fecha": 1792393200000
     }
   ]
 }
