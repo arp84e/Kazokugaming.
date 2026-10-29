@@ -1,7 +1,97 @@
 {
-  "generado": 1793283525730,
+  "generado": 1793305058887,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Batman Arkham Knight fue una maravilla, pero Rocksteady decepcionó al no incluir una Batcueva: ahora puedes tenerla con este mod",
+      "resumen": "La trilogía Batman Arkham de Rocksteady goza de un asiento privilegiado entre los máximos exponentes del género de superhéroes en los videoj…",
+      "link": "https://www.vidaextra.com/accion/batman-arkham-knight-fue-maravilla-rocksteady-decepciono-al-no-incluir-batcueva-ahora-puedes-tenerla-este-mod",
+      "imagen": "https://i.blogs.es/0f7b24/batman-batcueva/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793304329000
+    },
+    {
+      "titulo": "Si quieres ver el nuevo gameplay de GTA 6 tendrás que ponerte el último capítulo de South Park",
+      "resumen": "A los aficionados de GTA 6 no les deben de quedar uñas para morder de las ganas que tienen de tener el juego en sus manos o incluso de poder…",
+      "link": "https://www.vidaextra.com/accion/quieres-ver-nuevo-gameplay-gta-6-tendras-que-ponerte-ultimo-capitulo-south-park",
+      "imagen": "https://i.blogs.es/fbe374/grand-theft-auto-vi/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793302287000
+    },
+    {
+      "titulo": "Cuesta concebir un Fallout sin el V.A.T.S., pero no te imaginas lo cerca que estuvo de acabar en un cajón oscuro de Bethesda",
+      "resumen": "Llevo 18 años jugando a Fallout. Comencé mi aventura en Fallout 3, poco después salté a New Vegas, más tarde fui preso de Fallout 4 con un s…",
+      "link": "https://www.vidaextra.com/rpg/cuesta-concebir-fallout-v-a-t-s-no-te-imaginas-cerca-que-estuvo-acabar-cajon-oscuro-bethesda",
+      "imagen": "https://i.blogs.es/06d536/fallout/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793300613000
+    },
+    {
+      "titulo": "Los riesgos ocultos de los eSports infantiles, según un informe internacional",
+      "resumen": "Los riesgos ocultos de los eSports infantiles, según un informe internacional Infobae",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbXFwSTVybGJLYXM5MXZOWHQzX19kd1VLeFFncm9MOVlRLVBqSTUzLXp3VjhLSXptamNZQmUzNXpDSkM3b3hXRnY2cGZwbFNCYlhmSEd2OXJDLXV3eVVkdGFUTHgwRzRFLUUwMlhlblQ4b2NOZC1xOUpFSEFKNjNYRzByMEd5RmtTRV93WGp4ZjhvOUN6cFgxbjZNaktTcUduOXYwVWc1LW1yY1RXUW52Wkd5a1gtWDBjb3NNencxRTNkLVBt0gHfAUFVX3lxTE91TW03aUhfUHNTa2hhQVZtRXJjTHlUQnNoSmFzdEcyVVFsUVZtUzVaUnI5dm5JMDhKWWN2X0FoTFctX1pPUHoySjkzVzZyOTlOYlV0cGFiMkl2U1p1bW5ySjU1OFRFaThka1pndnZKMnQxSDRUVWxDSUR3cUZmNjJUNjRhS2VEVzhpX0NDWUFZNnUyaHZfaDVZWTlzdzNqbDl0V2o3X0NoaF8yZk5MNmdlQ25oaS1FXzZWYXlHZXFieXJYZ3NRd0NfWERpU1Y4VU1wdm0xZF91MzlCZFp4eTg?oc=5",
+      "imagen": null,
+      "fuente": "Infobae",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793299535000
+    },
+    {
+      "titulo": "Estos son los videojuegos gratis de la semana del 19 de octubre en Epic Games: solo hay que reclamarlos",
+      "resumen": "Estos son los videojuegos gratis de la semana del 19 de octubre en Epic Games: solo hay que reclamarlos La Nación",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVXdPaWRPRm94X3huSHo0RGU1eW15Z3c4RzlxRTlNcHNDVjJ0cFJZWU9qUUNsdFZEeG5sMW9zR2tlUnUyUjlBd3ZmUGp0MWh4cmd4N3NmWGRGc21VTUZ3OFFQX0FhS1p3d2dvWkxjUmhuVEV1TFZ6bjJKdGFSZkNHQ0FBcGlOSjJrSG5WVzhFOXFCY2lzSTRyTlpNb3otVTB0UUVfNjItOFV2TWwtNjJIM1Y2RWtHMWY1alI5WFExelhyRVVtenR1bndYUDZQanhqSFlPbFdFMkh2Zw?oc=5",
+      "imagen": null,
+      "fuente": "La Nación",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793298600000
+    },
+    {
+      "titulo": "Casi nueve años después, vamos a tener noticias de The Elder Scrolls VI gracias a Skyrim",
+      "resumen": "Fue el 11 de junio de 2028 cuando pudimos ver por primera vez The Elder Scrolls VI en nuestras pantallas, pero el teaser que publicó Bethesd…",
+      "link": "https://www.vidaextra.com/rpg/casi-nueve-anos-despues-vamos-a-tener-noticias-the-elder-scrolls-vi-gracias-a-skyrim",
+      "imagen": "https://i.blogs.es/2e78cd/captura-de-pantalla-2026-10-29-173931/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793292626000
+    },
+    {
+      "titulo": "Zelda Ocarina of Time en Switch 2: fecha de lanzamiento, precio, ediciones y todas las novedades",
+      "resumen": "Zelda Ocarina of Time en Switch 2: fecha de lanzamiento, precio, ediciones y todas las novedades Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPal80bGdzTHlxRU9tMzJ5bTVscGQ5QlZ0RlE4emhoODlXdmt4VHdFcVRvVkhpS0RHb0dyU3ZVX25MSEhIYU9kRmdud1dVYzlhWTdsSFJGSkY2NXI1elNwTVZKbjhwamNHand5VlZIX0xLUzFCc0xVelhtVkZQdEhWSjVLS2xyV1NselFObU8zcEcwWnQ3al9fN2pCdndJbHh0N0pUTGk3bFlBOVlEaUtyWDFGb3h0RTEzZFBaSkJCVWtoTjYwaGU4cDhPOVNzYThVSllfbVpOVdIB6wFBVV95cUxQbkRwM0E1ZGtBcm9JdFA1QkZWUnUwNTZOanhJaHp5d0lnT1dHckhHeFdiYW1ZVXkxdEZUeEhtcGFfNUpWakNoQUZkTWhWNnhBdXkxd0NpdkhaQkNKdlBYSFF0V0NPM1pSSTNXeFBUVHBzcFhHNGRhQzllamNNWktsSEh1aUtiNDUtYzZRa1hUd1RMRXo2cXZpWEx4MGpNdEtNOEhSbUlnUHJzOG0xdU5ialg1QllzcFdaczRyM3ZrUngwN0NzNm5HNEVEbUJMUjVZRVdzTUdlMTVUaURWU25MSk13SG9qWTVDcXhz?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793289453000
+    },
+    {
+      "titulo": "The Duskbloods cumple con los peores temores y finalmente se retrasa hasta 2027",
+      "resumen": "FromSoftware había asegurado por activa y por pasiva que The Duskbloods saldría a la venta en Nintendo Switch 2 antes de que acabara el año.…",
+      "link": "https://www.vidaextra.com/rpg/the-duskbloods-cumple-peores-temores-finalmente-se-retrasa-2027",
+      "imagen": "https://i.blogs.es/ff10a9/the-duskbloods/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793283643000
+    },
+    {
+      "titulo": "Phantom Blade Zero se une a GeForce NOW, y tu antiguo PJ puede unirse al grupo",
+      "resumen": "Phantom Blade Zero se une a GeForce NOW, y tu antiguo PJ puede unirse al grupo Digital Trends Español",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOem5FV3RfZ0dUNEloR2xwUkhhVWJxYzVaLUQzdldwRVBaRmlNYWpOUXBLLUJncTBUcUtqYzhlOWI0ZUJVdFMzbmlReVlpMDVaSTdQWUNPV0k5QjN1Sm51SjY0bms5X2o3dnZjNUNnajJRSDYzWVoxUzJENVJPS3EwdlNLbFl6VDdMYU5HbkdidUF3NkltM1lmNjRjWmM3cGQ5X19WeTJMV3Fid3ltUldUd2ZuS0dLbG9vdmc?oc=5",
+      "imagen": null,
+      "fuente": "Digital Trends Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793281890000
+    },
     {
       "titulo": "Ken Kutaragi, padre de PlayStation, sobre crear videojuegos hoy en día: \"Es casi imposible. No tiene sentido\"",
       "resumen": "Ken Kutaragi lideró el desarrollo de la PlayStation original y más tarde se convirtió en el CEO de Sony Computer Entertainment, antes de dej…",
@@ -11,6 +101,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793280689000
+    },
+    {
+      "titulo": "Es oficial: Rockstar confirma la fecha de lanzamiento de la banda sonora original de GTA 6 en vinilo, CD y streaming",
+      "resumen": "Es oficial: Rockstar confirma la fecha de lanzamiento de la banda sonora original de GTA 6 en vinilo, CD y streaming Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQaHY1dEhSc2xlZkNYdGMxNERuZkNUVUg4V09oZlBLcmdmQS1Jc1diYW02STRPQ0JHTTRxXzB6SDlaWnc0MEd2R0ZZcE9HX0pYQzFhRzVuZDhNdWFUOGMyXy1EMDJXbmtQZDRBRkRuM1VSUnE3VjdBRURCSXE5UVZzZHE1Q1FyQXV1R0RPd0ZZUnRZU2diVGw2MENFbDFoVHY4VGhXd0o5b29wV0FtdFRTcm9xY2JnWkFVWE1yekxzM1dXV2JRVnNYemVsYXA2U082ZTlURVNfalc2MWRmUVAyLXgzek5BR0hnXzRFZUlmMlM?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793280279000
     },
     {
       "titulo": "El CEO de Epic Games sigue con su batalla contra Steam y califica como \"acto político\" su acercamiento a la IA",
@@ -23,14 +123,14 @@
       "fecha": 1793278888000
     },
     {
-      "titulo": "Ken Kutaragi, padre de PlayStation, sobre crear videojuegos hoy en día: \"Es casi imposible. No tiene sentido\"",
-      "resumen": "Ken Kutaragi, padre de PlayStation, sobre crear videojuegos hoy en día: \"Es casi imposible. No tiene sentido\" VidaExtra",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWk1DUFAtR2gtOFE4eTZsQjJjd3lnWEFpeGZGRWFuMkJ3aXNrdkcxQXZxc1FicmpkRGhHMTNqa1RzWEVhZU43dlJEOEJ2Rm9zcFdhTTNlLW1tYURoZ2duVFA1MDI2Sk00eHMwNEtENElFV1FOVlhSX3ZNSnprakZDWTJ2dmZVZ1FGeUdxclVabElRTnRYbVEyRHRtc2l4TXlQZjlNWThZOXdBRndQNXIza0VUX2tpQnk4TGZxS2dZOXZ5dw?oc=5",
+      "titulo": "Polémica por ‘Call of Duty’: exigen retirar imágenes de la tragedia que dejó 159 muertos en Corea del Sur",
+      "resumen": "Polémica por ‘Call of Duty’: exigen retirar imágenes de la tragedia que dejó 159 muertos en Corea del Sur Primera Hora",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUHBELW1rUDRFbUNkS3hYRnVWb09GVUpCOHNQb0hrU2hhdXNaLXIzQTVEQi1Ec1lEeEhNazRYMTFqdk1HYmZTOThiUlI4T09VTTR4dkJXam8xOW5qcUtuRExCaGUwM1djQmVMd0IzRmMzZjlsbWFFYVBLMVVMcjJmTWpYZ0F5c05BTjFrbWl1RHI0ZEtQMWJuZkEzOXJrOGhzd2p6R3RxSjZud3YxVTduUTBMWUtCRGVZTzlhTkR0dUhnVDZLMURDRVY5ZWhTQ2lpUFY0RlFEamhSQldMS2paVEZGZzRJcUNid3FkMkdhdnFVbnVtTnIwdA?oc=5",
       "imagen": null,
-      "fuente": "VidaExtra",
+      "fuente": "Primera Hora",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793278874000
+      "fecha": 1793276656000
     },
     {
       "titulo": "\"Hemos construido una pirámide en el Everest\": el mapa de GTA 6 es absurdamente grande en los tres sentidos más importantes",
@@ -43,36 +143,6 @@
       "fecha": 1793275289000
     },
     {
-      "titulo": "XBOX tiene un problema con las reviews en Series X y hasta lo admite su jefe de tecnología",
-      "resumen": "Estamos ante la primera vez (si acaso la segunda) que Call of Duty puede celebrar el éxito de una entrega en esta década. Modern Warfare 4 d…",
-      "link": "https://www.vidaextra.com/industria/xbox-tiene-problema-reviews-series-x-admite-su-jefe-tecnologia",
-      "imagen": "https://i.blogs.es/6c7d1d/modern-warfare-4/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793273520000
-    },
-    {
-      "titulo": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades",
-      "resumen": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades MuyComputer",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZkpBdnRZZTFDbDM5UXFqZlRIZGJDVHkxNjZsWlBnNkJGQ2NOQ0d3Wi0xOGRiWEQzUF9vSnV6ZS1Vdm1NcTlIZnljZVdrVm5vQ0Fqc0ZPSzdnV2xJaTdHbjNITmtkV2otRXpsY1BHYTBxN0RrQkNDOV93amxVZGdXMk02U1U3TFp1MUk4VXFDRjdURjR3MlNLaEQzVHdfVkQ5ZXNYYUZPSjJacU1RYTlHMlpKUGlBQTdPLV91MEZOTjVRbjJkRldGeHA3bGU4U2tqYV9ZYldmaw?oc=5",
-      "imagen": null,
-      "fuente": "MuyComputer",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793272554000
-    },
-    {
-      "titulo": "XBOX firma otro trimestre en rojo mientras Asha Sharma cree ver brotes verdes",
-      "resumen": "Hace unas horas se publicó el informe trimestral de Microsoft y, por tanto, conocimos también las cifras económicas de XBOX correspondientes…",
-      "link": "https://www.vidaextra.com/industria/xbox-firma-otro-trimestre-rojo-asha-sharma-cree-ver-brotes-verdes",
-      "imagen": "https://i.blogs.es/8efa76/sharma/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793270006000
-    },
-    {
       "titulo": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore",
       "resumen": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore Foro3D",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVlNLQWt5cWNBM1ZoZm9UZ0xENk9TM2NXVWUzSzhtUlJKQVRYV2Mxd1Q1TXNHelk0ZlF1dkhRdzRuYjA2Mk9CSWxkREIwSG0wempHYjRjRUdrR1pDYW5IM3JQbEdhNlpxc3huUDEtX1lRdjJUNTNoek9RbnU0TmF1ZHZNdTJlMm9obFdkVy1yLXQ4amg2VTFrVG5BOE1ROERybkRlcjl3?oc=5",
@@ -83,74 +153,14 @@
       "fecha": 1793268000000
     },
     {
-      "titulo": "La prueba del PVE en Arc Raiders lo ha cambiado todo en Embark Studios: de ser escépticos a replantearse el futuro del videojuego",
-      "resumen": "Admito que gocé mucho de la prueba PVE de Arc Raiders. No solo me hizo regresar al juego durante unos días (desde enero), también me ofreció…",
-      "link": "https://www.vidaextra.com/accion/prueba-pve-arc-raiders-ha-cambiado-todo-embark-studios-ser-escepticos-a-replantearse-futuro-videojuego",
-      "imagen": "https://i.blogs.es/fca894/arc-raiders/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793266532000
-    },
-    {
-      "titulo": "GTA 6 cuenta con 600.000 animaciones para los NPC, pero solo una comparación con su predecesor demuestra lo alucinante que es realmente",
-      "resumen": "Estamos a tan solo un mes de que GTA 6 salga a la venta de una vez por todas. Tras varios retrasos y comunicados poniendo la expectación por…",
-      "link": "https://www.vidaextra.com/accion/gta-6-cuenta-600-000-animaciones-para-npc-solo-comparacion-su-predecesor-demuestra-alucinante-que-realmente",
-      "imagen": "https://i.blogs.es/b619d4/gta-6-npc/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793264841000
-    },
-    {
-      "titulo": "Valve no bloqueará los juegos con IA en Steam y responde sobre el slop y los clones",
-      "resumen": "Valve no bloqueará los juegos con IA en Steam y responde sobre el slop y los clones Pasquale Pillitteri",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxON254aEZCQ1FBei1UeWwya0tJV0l5MG5oOFBrS3FiOFhtZUNWMVdYM0RodC1tbUhIOGlEUGNING43RUdFS1hFUVdMWW9HaXZWOGJYb2Rxc0hrS1FsMnFxNVlJSkxVM3JsSmRaWWRPLXIwckNzLVlaNlZVRFREdHVPcElLQUpnTzA4R29xNnV6WFFrUDdN?oc=5",
+      "titulo": "Sobornos ocultos, carteles implacables y capibaras en la aduana: el videojuego Airport Contraband estrena su simulación en Steam",
+      "resumen": "Sobornos ocultos, carteles implacables y capibaras en la aduana: el videojuego Airport Contraband estrena su simulación en Steam Kotaku en E…",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQaFpWNTZYRTBfNUhiMDZaMWV2UzNKd2dyRUl2UF9GcWdyVTZNV1dPTTNkSURpQVZnRnRRT0xBaFZCVGd0eEozMEVVdjQ1OS15d1VuOHdNSjByeHU1Y0dkb2ZpZjNOQ0Nld0FoUVI4cTJKaTlLaDZabm9YbHhlOFlZOXRTS3lESjhTeU5sdnV4cXpnUXo1QVpqY3dQTF9LZ3lwMGFjQTBSek9RUUhSSnA5Q2dSMEU1VEsyN01NTEcwTjN3Q1l1Zkpsd2xZRFNYTi0wQXRkM3NaaEdvNXZMLXl2RzF4ZWdCa1dKRzZTMnFlam4?oc=5",
       "imagen": null,
-      "fuente": "Pasquale Pillitteri",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793261448000
-    },
-    {
-      "titulo": "Obtén un Spewpa especial que puede evolucionar a Vivillon con un motivo al azar en Leyendas Pokémon: Z‑A",
-      "resumen": "Obtén un Spewpa especial que puede evolucionar a Vivillon con un motivo al azar en Leyendas Pokémon: Z‑A Pokemon.com",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPbkVKYURNaHphUEVkUW55N01DdnlNUUd5QmljajNsaGVTLW4yVjBmd2Vyb3BTdTVzODFiUVRtVEREdmNJaktQXzZSZ21YWUcxU3lobU9zX2RsaUF4MlNTS1RpZkJ3SkdvTkFrYjZTbERoSmdwM25QdTlnM0lfX2pwYkxSd0l1LTBXblhPeGZZajFqQnNub1Q4dHBxbkFCTUlQdlZGdUhqVHFCWjhTYmw3eTUtRWlkbmx0Q0FyNXE1TUhVRW9XSEJTaUw2VVVxYllrWTM3Rml3?oc=5",
-      "imagen": null,
-      "fuente": "Pokemon.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793255263000
-    },
-    {
-      "titulo": "Según la psicología, los millennials que aún juegan videojuegos desarrollan habilidades especiales, y estas pueden resultarles útiles en la vejez",
-      "resumen": "Según la psicología, los millennials que aún juegan videojuegos desarrollan habilidades especiales, y estas pueden resultarles útiles en la…",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQUmlQcmhfTDk4bDUyTWYwV2kzaDVBMkQwTWN2Um5VQmVma1NZRmcwbEtrTlJtZW1YLUNUcXV1d3pqQ2FMRE9EdHNXWUo1dFlVdDNCall3bFhhekViY204bTVrWVlQcTEzOEc5eUo1TnBiRTI3ZllfekdVUkpfOW1qQ0VKTzUzYW1DY2pzZ2xQcTBpaXdVTXAtNHhvZmxzMGtKMU90eU9GdFJIOGJDdEk5d29DUlhvRDM2T3pRWmpZRUF0Y0htYTZyUkhXc3NhblNUOERTUHB6Q2lVUjZGVjhLa1FzUnRmS2U3UkdnVNIB8gFBVV95cUxQeWRYNHJWVUtyT01KakN6QkxIWGpobVpSd2g3WWY0Y0hjWF9iSUg0U3Z2QkN0bHQ3UDhoRFpMMVVKVnVNanJoZEQ1bTFzRjZlQTBJOUZoT010WnV5ZjNpWjJBZEdtdnFQdkNjRTNEeExsbTcyVFIzWHpnMkhHbG9jeERwdGFVZ2JBbUsxVEI5emliUExGLUI0QVNDMnlRd0l1bW9YcHZDTDFFdkstMjNFRlY1cldJY1otTkdaaXN5bTllZXVWRXAwVlhSU3o3VG9HVm5KZHlQNUJnY29yRUpHVVhZTWIzaXRoU1RXQTJFTmR3UQ?oc=5",
-      "imagen": null,
-      "fuente": "3DJuegos México",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793228489000
-    },
-    {
-      "titulo": "La Shonen Jump es tan exigente con sus mangakas que hizo dudar al creador de Bleach sobre su salud: \"¿Estás seguro de que es gripe?\"",
-      "resumen": "Trabajar en la Shonen Jump puede sonar a un sueño para muchos jóvenes mangakas e historietistas, pero lo cierto es que la editorial se ha ga…",
-      "link": "https://www.vidaextra.com/cultura/shonen-jump-exigente-sus-mangakas-que-hizo-dudar-al-creador-bleach-su-salud-estas-seguro-que-gripe",
-      "imagen": "https://i.blogs.es/b32e80/bleach/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793224884000
-    },
-    {
-      "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
-      "resumen": "Primero niños, luego competidores: los eSports fallan al bienestar infantil Euronews.com",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWVJ6YkJfTy1tVzlCQlgyQmFCY1hZLTBFUzI4a1VTXzVMdzJyeEtWUHNYU3R0c2dPRFdmaE43WGtlVFhXVW5RTDNaY1VnU2l0Ynd0bDdxcDNydGNqTFg5NDExY29STUFMcTNGUmIwcDRfVWhGSzR4S1RvMGVNS3JCcUczMjFqRkhLdVFYT1VUWjdGZXdfUUF6NzZtMXlDVDA4N1Jqc2FzYkFHQ0hn?oc=5",
-      "imagen": null,
-      "fuente": "Euronews.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793105538000
+      "fecha": 1793264735000
     },
     {
       "titulo": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembre",
@@ -161,16 +171,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793021502000
-    },
-    {
-      "titulo": "¿Los videojuegos causan TDAH?",
-      "resumen": "¿Los videojuegos causan TDAH? Child Mind Institute",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE55aHhHU2xla0YycWtkcVZxWHl3TlpDVElMZGl4REZJOWhVWWNGVW91V0tpSHl2VjRFdU9Bel96X2ZmWkd0cDFNZ1I4NGppektUaWMtVlVCZjVXWFBzVFhOMTktRmxwV1Vldk9PV2I1MVVndw?oc=5",
-      "imagen": null,
-      "fuente": "Child Mind Institute",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1791390990000
     }
   ]
 }
