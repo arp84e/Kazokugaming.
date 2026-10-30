@@ -1,7 +1,37 @@
 {
-  "generado": 1793305058887,
+  "generado": 1793321933980,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "UKIE pide modernizar el crédito fiscal para videojuegos antes del presupuesto",
+      "resumen": "UKIE pide modernizar el crédito fiscal para videojuegos antes del presupuesto Foro3D",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQanAtdzFkd0dhY1J3Q0c1VlFvanRZY3JKSW9TRVVyWmpjYTNKeEZCUnRNUnI5cTdPQlY0VjlwUXJDNEVKRUNqUUxYWUI1SWJESDZXVzFkSGJSWFA3U2dyUFNwblBUWDlzazJaTFV1dlBYSXh5Vks4emRMcncwSzFQQVRHT2lrTUZTR3QtSDFHZ2NQRlVSeFlMbDJZTEpSaF9hX0tub2YwRzkzV0U?oc=5",
+      "imagen": null,
+      "fuente": "Foro3D",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793321353000
+    },
+    {
+      "titulo": "Patrick Stewart conquistó el cine, pero la leyenda de los X-Men también dejó huella en los videojuegos: de Castlevania a The Elder Scrolls",
+      "resumen": "Patrick Stewart conquistó el cine, pero la leyenda de los X-Men también dejó huella en los videojuegos: de Castlevania a The Elder Scrolls 3…",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWUoxVWZvS1BEY1pwS0R4UGVSeFg5ZmlYQ1g5RG5UWlQ4T0k4OU1SUGJfUFphb1drU3lqZGZTOTcwa1BZOTN5ZjV6azcyQ0wwaW0zelBITHJaSzNldzdmMlQzUFpaOEtVTW9DLTJvMFY1c19qT18xVl9DY0dtUWktcjVneks4R0JIOEpNY0lqQ1ljSm5xTTY0N1o5X2tIVVI3X0JSZEx4bXhWcmVxS3l4Z3R6RVBEY1FnTVVoTVF3MnNlcXY4SFNvQ3RHTUF6VXY1YVV3bVlMRjZ0QzTSAeABQVVfeXFMT3UtdkYzSmNFWFpEYmZsdUdaeEZUdXUwcTJ4SGxVcmJuSVJmVFotMi1nSnAxWlp2UFhYTU1aUkNnUElscXFvcjF2RXlIU3ROb3ZfWGNZcHlUaWpTMmVESXEtZmFTX25OVmhsdVJFb25qdVdWQ1hpSHMxajczc2VIZlRiX2xER3hPMVVIaW5UT0NYdWVmd0ZicndNdXpGbUxjOTFOUkdORkV3eW9Lam5aYU9GZjdLLTBjX0ZZbC1EUHF6cUpieGd2ZUFCVldiU2tSX3J1aF9VQUdYSHhwTDNvbF8?oc=5",
+      "imagen": null,
+      "fuente": "3DJuegos México",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793309942000
+    },
+    {
+      "titulo": "GTA III: cuando Liberty City cambió los videojuegos",
+      "resumen": "GTA III: cuando Liberty City cambió los videojuegos Mediotiempo",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNX0k3bzlXeTJRak1MWXhuWWtrUmZTOE5IQnpLcEtncEcySU0zQlFBQ0ZmeTVxYm1aS2F5VkJjQml4d2k3bzYwSEZUY3dKeFI1dFFpa1lwZV9nM0lXUnc0TDA4OTRjRVVOTnFaT3JCb2czLWdGb3d6djBVSi1MQmdmY1ozWFEtckdGdWt4OUt2bHB3Y041MlEwVU1wR1hYdknSAZ8BQVVfeXFMT1dPclNWU0NxVU42ZjFvRjlfWFlLV1o1d1dZNHZ5V2VoRUt3aE41TGFRS0VGU2xNUzJpZ2xJM2V1SUdFakVUclJPSmtLNTllLWs1cHN0aHQtdDQ3YmpWRW9FbnVmVmFFT2hFQ1RSTXptdWVhaHhwZmd4NjBldXNIcjZQdkNPbmpVNmhhek1uZTY5YmVMV2VhT3NESnhiTUFz?oc=5",
+      "imagen": null,
+      "fuente": "Mediotiempo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793305130000
+    },
     {
       "titulo": "Batman Arkham Knight fue una maravilla, pero Rocksteady decepcionó al no incluir una Batcueva: ahora puedes tenerla con este mod",
       "resumen": "La trilogía Batman Arkham de Rocksteady goza de un asiento privilegiado entre los máximos exponentes del género de superhéroes en los videoj…",
@@ -33,26 +63,6 @@
       "fecha": 1793300613000
     },
     {
-      "titulo": "Los riesgos ocultos de los eSports infantiles, según un informe internacional",
-      "resumen": "Los riesgos ocultos de los eSports infantiles, según un informe internacional Infobae",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbXFwSTVybGJLYXM5MXZOWHQzX19kd1VLeFFncm9MOVlRLVBqSTUzLXp3VjhLSXptamNZQmUzNXpDSkM3b3hXRnY2cGZwbFNCYlhmSEd2OXJDLXV3eVVkdGFUTHgwRzRFLUUwMlhlblQ4b2NOZC1xOUpFSEFKNjNYRzByMEd5RmtTRV93WGp4ZjhvOUN6cFgxbjZNaktTcUduOXYwVWc1LW1yY1RXUW52Wkd5a1gtWDBjb3NNencxRTNkLVBt0gHfAUFVX3lxTE91TW03aUhfUHNTa2hhQVZtRXJjTHlUQnNoSmFzdEcyVVFsUVZtUzVaUnI5dm5JMDhKWWN2X0FoTFctX1pPUHoySjkzVzZyOTlOYlV0cGFiMkl2U1p1bW5ySjU1OFRFaThka1pndnZKMnQxSDRUVWxDSUR3cUZmNjJUNjRhS2VEVzhpX0NDWUFZNnUyaHZfaDVZWTlzdzNqbDl0V2o3X0NoaF8yZk5MNmdlQ25oaS1FXzZWYXlHZXFieXJYZ3NRd0NfWERpU1Y4VU1wdm0xZF91MzlCZFp4eTg?oc=5",
-      "imagen": null,
-      "fuente": "Infobae",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793299535000
-    },
-    {
-      "titulo": "Estos son los videojuegos gratis de la semana del 19 de octubre en Epic Games: solo hay que reclamarlos",
-      "resumen": "Estos son los videojuegos gratis de la semana del 19 de octubre en Epic Games: solo hay que reclamarlos La Nación",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVXdPaWRPRm94X3huSHo0RGU1eW15Z3c4RzlxRTlNcHNDVjJ0cFJZWU9qUUNsdFZEeG5sMW9zR2tlUnUyUjlBd3ZmUGp0MWh4cmd4N3NmWGRGc21VTUZ3OFFQX0FhS1p3d2dvWkxjUmhuVEV1TFZ6bjJKdGFSZkNHQ0FBcGlOSjJrSG5WVzhFOXFCY2lzSTRyTlpNb3otVTB0UUVfNjItOFV2TWwtNjJIM1Y2RWtHMWY1alI5WFExelhyRVVtenR1bndYUDZQanhqSFlPbFdFMkh2Zw?oc=5",
-      "imagen": null,
-      "fuente": "La Nación",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793298600000
-    },
-    {
       "titulo": "Casi nueve años después, vamos a tener noticias de The Elder Scrolls VI gracias a Skyrim",
       "resumen": "Fue el 11 de junio de 2028 cuando pudimos ver por primera vez The Elder Scrolls VI en nuestras pantallas, pero el teaser que publicó Bethesd…",
       "link": "https://www.vidaextra.com/rpg/casi-nueve-anos-despues-vamos-a-tener-noticias-the-elder-scrolls-vi-gracias-a-skyrim",
@@ -61,16 +71,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793292626000
-    },
-    {
-      "titulo": "Zelda Ocarina of Time en Switch 2: fecha de lanzamiento, precio, ediciones y todas las novedades",
-      "resumen": "Zelda Ocarina of Time en Switch 2: fecha de lanzamiento, precio, ediciones y todas las novedades Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPal80bGdzTHlxRU9tMzJ5bTVscGQ5QlZ0RlE4emhoODlXdmt4VHdFcVRvVkhpS0RHb0dyU3ZVX25MSEhIYU9kRmdud1dVYzlhWTdsSFJGSkY2NXI1elNwTVZKbjhwamNHand5VlZIX0xLUzFCc0xVelhtVkZQdEhWSjVLS2xyV1NselFObU8zcEcwWnQ3al9fN2pCdndJbHh0N0pUTGk3bFlBOVlEaUtyWDFGb3h0RTEzZFBaSkJCVWtoTjYwaGU4cDhPOVNzYThVSllfbVpOVdIB6wFBVV95cUxQbkRwM0E1ZGtBcm9JdFA1QkZWUnUwNTZOanhJaHp5d0lnT1dHckhHeFdiYW1ZVXkxdEZUeEhtcGFfNUpWakNoQUZkTWhWNnhBdXkxd0NpdkhaQkNKdlBYSFF0V0NPM1pSSTNXeFBUVHBzcFhHNGRhQzllamNNWktsSEh1aUtiNDUtYzZRa1hUd1RMRXo2cXZpWEx4MGpNdEtNOEhSbUlnUHJzOG0xdU5ialg1QllzcFdaczRyM3ZrUngwN0NzNm5HNEVEbUJMUjVZRVdzTUdlMTVUaURWU25MSk13SG9qWTVDcXhz?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793289453000
     },
     {
       "titulo": "The Duskbloods cumple con los peores temores y finalmente se retrasa hasta 2027",
@@ -83,16 +83,6 @@
       "fecha": 1793283643000
     },
     {
-      "titulo": "Phantom Blade Zero se une a GeForce NOW, y tu antiguo PJ puede unirse al grupo",
-      "resumen": "Phantom Blade Zero se une a GeForce NOW, y tu antiguo PJ puede unirse al grupo Digital Trends Español",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOem5FV3RfZ0dUNEloR2xwUkhhVWJxYzVaLUQzdldwRVBaRmlNYWpOUXBLLUJncTBUcUtqYzhlOWI0ZUJVdFMzbmlReVlpMDVaSTdQWUNPV0k5QjN1Sm51SjY0bms5X2o3dnZjNUNnajJRSDYzWVoxUzJENVJPS3EwdlNLbFl6VDdMYU5HbkdidUF3NkltM1lmNjRjWmM3cGQ5X19WeTJMV3Fid3ltUldUd2ZuS0dLbG9vdmc?oc=5",
-      "imagen": null,
-      "fuente": "Digital Trends Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793281890000
-    },
-    {
       "titulo": "Ken Kutaragi, padre de PlayStation, sobre crear videojuegos hoy en día: \"Es casi imposible. No tiene sentido\"",
       "resumen": "Ken Kutaragi lideró el desarrollo de la PlayStation original y más tarde se convirtió en el CEO de Sony Computer Entertainment, antes de dej…",
       "link": "https://www.vidaextra.com/industria/ken-kutaragi-padre-playstation-crear-videojuegos-hoy-dia-casi-imposible-no-tiene-sentido",
@@ -101,16 +91,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793280689000
-    },
-    {
-      "titulo": "Es oficial: Rockstar confirma la fecha de lanzamiento de la banda sonora original de GTA 6 en vinilo, CD y streaming",
-      "resumen": "Es oficial: Rockstar confirma la fecha de lanzamiento de la banda sonora original de GTA 6 en vinilo, CD y streaming Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQaHY1dEhSc2xlZkNYdGMxNERuZkNUVUg4V09oZlBLcmdmQS1Jc1diYW02STRPQ0JHTTRxXzB6SDlaWnc0MEd2R0ZZcE9HX0pYQzFhRzVuZDhNdWFUOGMyXy1EMDJXbmtQZDRBRkRuM1VSUnE3VjdBRURCSXE5UVZzZHE1Q1FyQXV1R0RPd0ZZUnRZU2diVGw2MENFbDFoVHY4VGhXd0o5b29wV0FtdFRTcm9xY2JnWkFVWE1yekxzM1dXV2JRVnNYemVsYXA2U082ZTlURVNfalc2MWRmUVAyLXgzek5BR0hnXzRFZUlmMlM?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793280279000
     },
     {
       "titulo": "El CEO de Epic Games sigue con su batalla contra Steam y califica como \"acto político\" su acercamiento a la IA",
@@ -123,14 +103,14 @@
       "fecha": 1793278888000
     },
     {
-      "titulo": "Polémica por ‘Call of Duty’: exigen retirar imágenes de la tragedia que dejó 159 muertos en Corea del Sur",
-      "resumen": "Polémica por ‘Call of Duty’: exigen retirar imágenes de la tragedia que dejó 159 muertos en Corea del Sur Primera Hora",
-      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUHBELW1rUDRFbUNkS3hYRnVWb09GVUpCOHNQb0hrU2hhdXNaLXIzQTVEQi1Ec1lEeEhNazRYMTFqdk1HYmZTOThiUlI4T09VTTR4dkJXam8xOW5qcUtuRExCaGUwM1djQmVMd0IzRmMzZjlsbWFFYVBLMVVMcjJmTWpYZ0F5c05BTjFrbWl1RHI0ZEtQMWJuZkEzOXJrOGhzd2p6R3RxSjZud3YxVTduUTBMWUtCRGVZTzlhTkR0dUhnVDZLMURDRVY5ZWhTQ2lpUFY0RlFEamhSQldMS2paVEZGZzRJcUNid3FkMkdhdnFVbnVtTnIwdA?oc=5",
+      "titulo": "Cierre de servidores de juegos, qué pierdes de verdad y cómo protegerte",
+      "resumen": "Cierre de servidores de juegos, qué pierdes de verdad y cómo protegerte Pasquale Pillitteri",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdnh0NWwwangtc1g2NGJhWGN3emFuckNKUklmTlZDdFVQNUtPSlE5ejlPaTkyWDdyM1V3N05HRmhERmVfbGxGQUU2MGpjc1B5Rzl6ZFREZXVrcUFycE1aRndPTThsbm5UNDh2Zl9VcjdpTGZZSWxqRjY5ZUttUFNUVTNrQTZjMTdXTmlnN0h1VzhDdEZ6TkktZExyV0w?oc=5",
       "imagen": null,
-      "fuente": "Primera Hora",
+      "fuente": "Pasquale Pillitteri",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793276656000
+      "fecha": 1793276871000
     },
     {
       "titulo": "\"Hemos construido una pirámide en el Everest\": el mapa de GTA 6 es absurdamente grande en los tres sentidos más importantes",
@@ -143,6 +123,16 @@
       "fecha": 1793275289000
     },
     {
+      "titulo": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades",
+      "resumen": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades MuyComputer",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZkpBdnRZZTFDbDM5UXFqZlRIZGJDVHkxNjZsWlBnNkJGQ2NOQ0d3Wi0xOGRiWEQzUF9vSnV6ZS1Vdm1NcTlIZnljZVdrVm5vQ0Fqc0ZPSzdnV2xJaTdHbjNITmtkV2otRXpsY1BHYTBxN0RrQkNDOV93amxVZGdXMk02U1U3TFp1MUk4VXFDRjdURjR3MlNLaEQzVHdfVkQ5ZXNYYUZPSjJacU1RYTlHMlpKUGlBQTdPLV91MEZOTjVRbjJkRldGeHA3bGU4U2tqYV9ZYldmaw?oc=5",
+      "imagen": null,
+      "fuente": "MuyComputer",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793272554000
+    },
+    {
       "titulo": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore",
       "resumen": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore Foro3D",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVlNLQWt5cWNBM1ZoZm9UZ0xENk9TM2NXVWUzSzhtUlJKQVRYV2Mxd1Q1TXNHelk0ZlF1dkhRdzRuYjA2Mk9CSWxkREIwSG0wempHYjRjRUdrR1pDYW5IM3JQbEdhNlpxc3huUDEtX1lRdjJUNTNoek9RbnU0TmF1ZHZNdTJlMm9obFdkVy1yLXQ4amg2VTFrVG5BOE1ROERybkRlcjl3?oc=5",
@@ -153,14 +143,14 @@
       "fecha": 1793268000000
     },
     {
-      "titulo": "Sobornos ocultos, carteles implacables y capibaras en la aduana: el videojuego Airport Contraband estrena su simulación en Steam",
-      "resumen": "Sobornos ocultos, carteles implacables y capibaras en la aduana: el videojuego Airport Contraband estrena su simulación en Steam Kotaku en E…",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQaFpWNTZYRTBfNUhiMDZaMWV2UzNKd2dyRUl2UF9GcWdyVTZNV1dPTTNkSURpQVZnRnRRT0xBaFZCVGd0eEozMEVVdjQ1OS15d1VuOHdNSjByeHU1Y0dkb2ZpZjNOQ0Nld0FoUVI4cTJKaTlLaDZabm9YbHhlOFlZOXRTS3lESjhTeU5sdnV4cXpnUXo1QVpqY3dQTF9LZ3lwMGFjQTBSek9RUUhSSnA5Q2dSMEU1VEsyN01NTEcwTjN3Q1l1Zkpsd2xZRFNYTi0wQXRkM3NaaEdvNXZMLXl2RzF4ZWdCa1dKRzZTMnFlam4?oc=5",
+      "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
+      "resumen": "Primero niños, luego competidores: los eSports fallan al bienestar infantil Euronews.com",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWVJ6YkJfTy1tVzlCQlgyQmFCY1hZLTBFUzI4a1VTXzVMdzJyeEtWUHNYU3R0c2dPRFdmaE43WGtlVFhXVW5RTDNaY1VnU2l0Ynd0bDdxcDNydGNqTFg5NDExY29STUFMcTNGUmIwcDRfVWhGSzR4S1RvMGVNS3JCcUczMjFqRkhLdVFYT1VUWjdGZXdfUUF6NzZtMXlDVDA4N1Jqc2FzYkFHQ0hn?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "Euronews.com",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793264735000
+      "fecha": 1793105538000
     },
     {
       "titulo": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembre",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793021502000
+    },
+    {
+      "titulo": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump",
+      "resumen": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump Telemundo Houston",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZUlxSElYYlQzTjV1Z0txS19sVC1aN21JUDJZSEh0UkVLa2d3ejVkYnhLaC1SMjFOZEhJZV8tUGo3TjN6ZkEyN0xDd3BEYkRhR3Y1aVdxTHBSZm9EZnMwaG8wWGpZOVJ6cTZYX0ZOOHJnSFJINlIxMV9sZGw5czFWX1RhdGp6X3ZyVW9XUFZnNzdabFVY0gGcAUFVX3lxTFA4am1CN2R3SmppdGFkcWNlbE1HcmFMR3QzaTRNbTdZUXhwOEVMNlJNQXRuMnotSklmUENqZkp0bXkwZXlMay1YazdjUlRvc3E2VnM1bVB2Vzl6NEtkeVVhSHZQRVczWTQ4ODFnN1FZZjg2Unl6Uk9VR0hJZUdvamtrcmtqb3FMOU1LWW5xSDBYOThsQ2RnNERjZVFFYQ?oc=5",
+      "imagen": null,
+      "fuente": "Telemundo Houston",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1788505200000
     }
   ]
 }
