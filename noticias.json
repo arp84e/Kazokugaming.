@@ -1,16 +1,36 @@
 {
-  "generado": 1793321933980,
+  "generado": 1793343942407,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "UKIE pide modernizar el crédito fiscal para videojuegos antes del presupuesto",
-      "resumen": "UKIE pide modernizar el crédito fiscal para videojuegos antes del presupuesto Foro3D",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQanAtdzFkd0dhY1J3Q0c1VlFvanRZY3JKSW9TRVVyWmpjYTNKeEZCUnRNUnI5cTdPQlY0VjlwUXJDNEVKRUNqUUxYWUI1SWJESDZXVzFkSGJSWFA3U2dyUFNwblBUWDlzazJaTFV1dlBYSXh5Vks4emRMcncwSzFQQVRHT2lrTUZTR3QtSDFHZ2NQRlVSeFlMbDJZTEpSaF9hX0tub2YwRzkzV0U?oc=5",
+      "titulo": "Game Center de Albany triplica matrícula en diseño de videojuegos",
+      "resumen": "Game Center de Albany triplica matrícula en diseño de videojuegos Foro3D",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUXlkZDBRTTFYVEdPSTN5a01tbEg0eE80b0hkVlNHSzFoVExlWDBFalplUF9CNTZJZVJENFU0aVpCdElhbmhOSGcwaUd3Y1lzYkFtQXRqeDRSd1RFWlQwRDBiM2lFbi1uaDBUWTY5dVpnU3M2bWUtVnVFbnRjUEN2V3dmVzhPZHFxLXRoU0pSNWxYcUg3b0tOMnZNR1p1MlpuLWlyNg?oc=5",
       "imagen": null,
       "fuente": "Foro3D",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793321353000
+      "fecha": 1793339344000
+    },
+    {
+      "titulo": "Los videojuegos, mucho más que una forma de jugar",
+      "resumen": "Los videojuegos, mucho más que una forma de jugar HobbyConsolas",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTUR3dndtYmI5U2dKbDgzNWRhdXQ0UnJzcTdwV1JRdFltbFNHZi1lVDVGOXp2ME41UFVVWlFqYjJrNlpXTzhNa1Y4QVo2azdLUUdCbUVMNU1iNDFzb2U1RE1fSFJ3QmNHc3J4aG85YTZqMDNHZ1VNNTZVdTByVTVpbmVRMmY2R0Y4U01XY016WFJUTmc?oc=5",
+      "imagen": null,
+      "fuente": "HobbyConsolas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793332800000
+    },
+    {
+      "titulo": "Corea creará un museo nacional dedicado a los videojuegos",
+      "resumen": "Corea creará un museo nacional dedicado a los videojuegos Korea.net",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1DNVQ4Z05rUG4wbVQ3TG1yb3pmNHZQTjVSWTVaOHVBVmN1RXNzeDdlRlJPNHdvTFhVWElhMW5qRHlzbWJRYzFRbEtZTmYtUEgtWFB3X1d3a1I4YnozTXIzN255VFphdzZhd283YWVFdmZTTDQ?oc=5",
+      "imagen": null,
+      "fuente": "Korea.net",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793323207000
     },
     {
       "titulo": "Patrick Stewart conquistó el cine, pero la leyenda de los X-Men también dejó huella en los videojuegos: de Castlevania a The Elder Scrolls",
@@ -21,16 +41,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793309942000
-    },
-    {
-      "titulo": "GTA III: cuando Liberty City cambió los videojuegos",
-      "resumen": "GTA III: cuando Liberty City cambió los videojuegos Mediotiempo",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNX0k3bzlXeTJRak1MWXhuWWtrUmZTOE5IQnpLcEtncEcySU0zQlFBQ0ZmeTVxYm1aS2F5VkJjQml4d2k3bzYwSEZUY3dKeFI1dFFpa1lwZV9nM0lXUnc0TDA4OTRjRVVOTnFaT3JCb2czLWdGb3d6djBVSi1MQmdmY1ozWFEtckdGdWt4OUt2bHB3Y041MlEwVU1wR1hYdknSAZ8BQVVfeXFMT1dPclNWU0NxVU42ZjFvRjlfWFlLV1o1d1dZNHZ5V2VoRUt3aE41TGFRS0VGU2xNUzJpZ2xJM2V1SUdFakVUclJPSmtLNTllLWs1cHN0aHQtdDQ3YmpWRW9FbnVmVmFFT2hFQ1RSTXptdWVhaHhwZmd4NjBldXNIcjZQdkNPbmpVNmhhek1uZTY5YmVMV2VhT3NESnhiTUFz?oc=5",
-      "imagen": null,
-      "fuente": "Mediotiempo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793305130000
     },
     {
       "titulo": "Batman Arkham Knight fue una maravilla, pero Rocksteady decepcionó al no incluir una Batcueva: ahora puedes tenerla con este mod",
@@ -61,6 +71,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793300613000
+    },
+    {
+      "titulo": "Twisted Minds return to full Saudi roster for the first time in two years with Ghaazi addition.",
+      "resumen": "Twisted Minds return to full Saudi roster for the first time in two years with Ghaazi addition. Sheep Esports",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRjBxX1dCY2lBZ0gycTJvSWxTaW1fZnR1c2UzdGxNcEJiVUtDWlNsNzZ1ZWFUbnI4TnlXVUtJcHlBMEpfd3IxM3E4YTlsZXdtOHlhVVRoV2dDc0FkRU10UGZVdzlmYVFYVkUyQzJ2c0xETzNOSEdiMU8tVkJORFpjVWczeDlIN2VPN25WSFJVMjRLQ2ZwQ0sxSUpER1J1QU1PQ3VmRkpob1drYTJXWnJwUDZwaG1GLVNX?oc=5",
+      "imagen": null,
+      "fuente": "Sheep Esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793300456000
     },
     {
       "titulo": "Casi nueve años después, vamos a tener noticias de The Elder Scrolls VI gracias a Skyrim",
@@ -123,26 +143,6 @@
       "fecha": 1793275289000
     },
     {
-      "titulo": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades",
-      "resumen": "El mundo de las consolas y de los videojuegos ha cambiado para siempre: se acabaron las exclusividades MuyComputer",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZkpBdnRZZTFDbDM5UXFqZlRIZGJDVHkxNjZsWlBnNkJGQ2NOQ0d3Wi0xOGRiWEQzUF9vSnV6ZS1Vdm1NcTlIZnljZVdrVm5vQ0Fqc0ZPSzdnV2xJaTdHbjNITmtkV2otRXpsY1BHYTBxN0RrQkNDOV93amxVZGdXMk02U1U3TFp1MUk4VXFDRjdURjR3MlNLaEQzVHdfVkQ5ZXNYYUZPSjJacU1RYTlHMlpKUGlBQTdPLV91MEZOTjVRbjJkRldGeHA3bGU4U2tqYV9ZYldmaw?oc=5",
-      "imagen": null,
-      "fuente": "MuyComputer",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793272554000
-    },
-    {
-      "titulo": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore",
-      "resumen": "Wolves Esports conquista el PUBG MOBILE Global Open 2026 en Lahore Foro3D",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVlNLQWt5cWNBM1ZoZm9UZ0xENk9TM2NXVWUzSzhtUlJKQVRYV2Mxd1Q1TXNHelk0ZlF1dkhRdzRuYjA2Mk9CSWxkREIwSG0wempHYjRjRUdrR1pDYW5IM3JQbEdhNlpxc3huUDEtX1lRdjJUNTNoek9RbnU0TmF1ZHZNdTJlMm9obFdkVy1yLXQ4amg2VTFrVG5BOE1ROERybkRlcjl3?oc=5",
-      "imagen": null,
-      "fuente": "Foro3D",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793268000000
-    },
-    {
       "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
       "resumen": "Primero niños, luego competidores: los eSports fallan al bienestar infantil Euronews.com",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWVJ6YkJfTy1tVzlCQlgyQmFCY1hZLTBFUzI4a1VTXzVMdzJyeEtWUHNYU3R0c2dPRFdmaE43WGtlVFhXVW5RTDNaY1VnU2l0Ynd0bDdxcDNydGNqTFg5NDExY29STUFMcTNGUmIwcDRfVWhGSzR4S1RvMGVNS3JCcUczMjFqRkhLdVFYT1VUWjdGZXdfUUF6NzZtMXlDVDA4N1Jqc2FzYkFHQ0hn?oc=5",
@@ -163,14 +163,14 @@
       "fecha": 1793021502000
     },
     {
-      "titulo": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump",
-      "resumen": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump Telemundo Houston",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZUlxSElYYlQzTjV1Z0txS19sVC1aN21JUDJZSEh0UkVLa2d3ejVkYnhLaC1SMjFOZEhJZV8tUGo3TjN6ZkEyN0xDd3BEYkRhR3Y1aVdxTHBSZm9EZnMwaG8wWGpZOVJ6cTZYX0ZOOHJnSFJINlIxMV9sZGw5czFWX1RhdGp6X3ZyVW9XUFZnNzdabFVY0gGcAUFVX3lxTFA4am1CN2R3SmppdGFkcWNlbE1HcmFMR3QzaTRNbTdZUXhwOEVMNlJNQXRuMnotSklmUENqZkp0bXkwZXlMay1YazdjUlRvc3E2VnM1bVB2Vzl6NEtkeVVhSHZQRVczWTQ4ODFnN1FZZjg2Unl6Uk9VR0hJZUdvamtrcmtqb3FMOU1LWW5xSDBYOThsQ2RnNERjZVFFYQ?oc=5",
+      "titulo": "¿Los videojuegos causan TDAH?",
+      "resumen": "¿Los videojuegos causan TDAH? Child Mind Institute",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE55aHhHU2xla0YycWtkcVZxWHl3TlpDVElMZGl4REZJOWhVWWNGVW91V0tpSHl2VjRFdU9Bel96X2ZmWkd0cDFNZ1I4NGppektUaWMtVlVCZjVXWFBzVFhOMTktRmxwV1Vldk9PV2I1MVVndw?oc=5",
       "imagen": null,
-      "fuente": "Telemundo Houston",
+      "fuente": "Child Mind Institute",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1788505200000
+      "fecha": 1791390990000
     }
   ]
 }
