@@ -1,36 +1,66 @@
 {
-  "generado": 1793343942407,
+  "generado": 1793369267085,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Game Center de Albany triplica matrícula en diseño de videojuegos",
-      "resumen": "Game Center de Albany triplica matrícula en diseño de videojuegos Foro3D",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUXlkZDBRTTFYVEdPSTN5a01tbEg0eE80b0hkVlNHSzFoVExlWDBFalplUF9CNTZJZVJENFU0aVpCdElhbmhOSGcwaUd3Y1lzYkFtQXRqeDRSd1RFWlQwRDBiM2lFbi1uaDBUWTY5dVpnU3M2bWUtVnVFbnRjUEN2V3dmVzhPZHFxLXRoU0pSNWxYcUg3b0tOMnZNR1p1MlpuLWlyNg?oc=5",
-      "imagen": null,
-      "fuente": "Foro3D",
+      "titulo": "Bungie empieza a hablar de un Destiny 2 Classic para arreglar el destrozo de los últimos años y no hay punto medio: victoria o exilio",
+      "resumen": "Destiny 2 murió y revivió en pocos meses, y volvió con un plan muy claro: la restauración, el regreso de todo el contenido eliminado durante…",
+      "link": "https://www.vidaextra.com/fps/bungie-empieza-a-hablar-destiny-2-classic-para-arreglar-destrozo-ultimos-anos-no-hay-punto-medio-victoria-exilio",
+      "imagen": "https://i.blogs.es/327410/destiny/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793339344000
+      "fecha": 1793365290000
     },
     {
-      "titulo": "Los videojuegos, mucho más que una forma de jugar",
-      "resumen": "Los videojuegos, mucho más que una forma de jugar HobbyConsolas",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTUR3dndtYmI5U2dKbDgzNWRhdXQ0UnJzcTdwV1JRdFltbFNHZi1lVDVGOXp2ME41UFVVWlFqYjJrNlpXTzhNa1Y4QVo2azdLUUdCbUVMNU1iNDFzb2U1RE1fSFJ3QmNHc3J4aG85YTZqMDNHZ1VNNTZVdTByVTVpbmVRMmY2R0Y4U01XY016WFJUTmc?oc=5",
+      "titulo": "¿Los videojuegos ayudan al desarrollo de las infancias?",
+      "resumen": "¿Los videojuegos ayudan al desarrollo de las infancias? Sopitas.com",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdllnT1p0aTN2clFEU3ZsbkczZU1jcVJtc3hVSGlTclV1RWF6UkpyRVgzVWVDS2oxUUtFemRiOUhzNTRsc0Q5U0R4QmZnZ3h5R3hleG1mRlpfd3k3RllRdlgzaTMxR3RfSGlBSW9xdGNoMG5ZVHBwbG9aRVdKbWpfU3hzYlZGMzdJaldkX0dXWnVDR2J3R3pCbQ?oc=5",
       "imagen": null,
-      "fuente": "HobbyConsolas",
+      "fuente": "Sopitas.com",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793332800000
+      "fecha": 1793365200000
     },
     {
-      "titulo": "Corea creará un museo nacional dedicado a los videojuegos",
-      "resumen": "Corea creará un museo nacional dedicado a los videojuegos Korea.net",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1DNVQ4Z05rUG4wbVQ3TG1yb3pmNHZQTjVSWTVaOHVBVmN1RXNzeDdlRlJPNHdvTFhVWElhMW5qRHlzbWJRYzFRbEtZTmYtUEgtWFB3X1d3a1I4YnozTXIzN255VFphdzZhd283YWVFdmZTTDQ?oc=5",
+      "titulo": "Canarias se cuela en el festival de videojuegos más potente de Europa: lo que se juega en Bélgica",
+      "resumen": "Canarias se cuela en el festival de videojuegos más potente de Europa: lo que se juega en Bélgica Canarias en Pleno",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9obmhpamtWVUJBc0hIN3RDeVRYVVl0V0xVZXdXdGFhM3ltQnRGWUNVZGRuVnhPc1VzZktTOTNHVEhDempsRkh1eFdFbll4UjBhdmc5Wnc5U0pLLTVYTnJxWGJUTTdnRnZPSWljYTZxc3BNZjJPM1Rn?oc=5",
       "imagen": null,
-      "fuente": "Korea.net",
+      "fuente": "Canarias en Pleno",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793323207000
+      "fecha": 1793364466000
+    },
+    {
+      "titulo": "La creadora de Celeste se une al boicot a Microsoft en apoyo a Palestina y retira sus juegos de la tienda digital de Xbox",
+      "resumen": "Fue hace apenas unas semanas cuando supimos que Big Walk, uno de los grandes bombazos de todo el 2026, no estaría disponible en Xbox. La des…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/creadora-celeste-se-une-al-boicot-a-microsoft-apoyo-a-palestina-retira-sus-juegos-tienda-digital-xbox",
+      "imagen": "https://i.blogs.es/e867c0/wp4162203/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793358090000
+    },
+    {
+      "titulo": "Tras meses en silencio, Ubisoft habla de Assassin's Creed Hexe, el multijugador Invictus y se despide de Black Flag Remake",
+      "resumen": "Assassin's Creed ha vuelto a la vida tras el éxito de Black Flag Remake. Ubisoft ha mantenido un silencio sepulcral desde el lanzamiento de…",
+      "link": "https://www.vidaextra.com/accion/meses-silencio-ubisoft-habla-assassin-s-creed-hexe-multijugador-invictus-se-despide-black-flag-remake",
+      "imagen": "https://i.blogs.es/d2c478/unity/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793355212000
+    },
+    {
+      "titulo": "De cada 100 videojuegos que vende Capcom, apenas ocho llegan en formato físico. Sus nuevas cifras muestran cuánto ha cambiado el negocio de Resident Evil y Monster Hunter",
+      "resumen": "De cada 100 videojuegos que vende Capcom, apenas ocho llegan en formato físico. Sus nuevas cifras muestran cuánto ha cambiado el negocio de…",
+      "link": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxONndNdjZ5eTBTR01GSnotQlRKTVQ2LUVTZnVVc3hVVGNxYkh5UXMyU25MTGRVNXZhanBwVXlSLW5TSzBqbXFzQXU3SVFsck1hQlpGNGEyajRPMk9IaUNGQjFJVmptQzAta2dHX3pKQ2JMeVpJdER6TWswNHZOQ1lqRENlX1hCaTNtM2dqUVRqdlc3NGxpNjhXSmlleU5ES0NmN2RCSVBCa01NSU1TN3BKd1E1bVp1ckdrRHRyMU9aQTc3Y0xEY19LMW9IREowVVYyclVRWjRLRzczcXZhWHJwWk5YWjJTbmZXUldCZmttRHYxRkdtV2dNUVY3dk00U0FsRTlxOVhoSmNWNW1OU0R2eDVZSl9mUms1RWd5bExRUUpTQWhJbngycmRR?oc=5",
+      "imagen": null,
+      "fuente": "Gizmodo en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793351728000
     },
     {
       "titulo": "Patrick Stewart conquistó el cine, pero la leyenda de los X-Men también dejó huella en los videojuegos: de Castlevania a The Elder Scrolls",
@@ -83,6 +113,16 @@
       "fecha": 1793300456000
     },
     {
+      "titulo": "Toy Story vuelve a los videojuegos con dos lanzamientos que sorprenden hasta a los fanáticos de Pixar",
+      "resumen": "Toy Story vuelve a los videojuegos con dos lanzamientos que sorprenden hasta a los fanáticos de Pixar Forbes Argentina",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLUNkVlFTZ3dGUzhsdklzRkZ5UXVZb2V5dmRnSzBpS2VlcU5HQVlFREFuTE5rRnhCUG1WdWt1UzFublU3OXpZSGxUWW0wbTVSeFpwdlB1MTM0Wk1lYXNmVkJQRW9DdzRqZzVIWS1wc1hNd0RKM1FXdndhUHlNWlR3VlZXakhnWFhLWUNZUEtXUHN0Q2JwcjVpSmVuSmgyNGtDcEZtbVBOcEZiVkxXOXVFWEoza191ZUdqeC1sQVphMNIBxAFBVV95cUxQUXlDMjBObWJRV19haHVGcWQ0QTZzOWh6NzhvVnBKM3JsYzRWTFRZakwzMzhPdFRaRk84ejA5a0hPU1VDTkZzMndEVEdBb2doM3JiY1RRV2Ryalg2eEU4VHpfUEUyMEQyR2lEektnN2tiSG05RXN3YjJlTjZuQkxnYXlrbTFBMEQ4Y1pEeW4yTFVubjBpRFhqNHNMQWV5bElLY0JKaV9PLVhhZEZRV3RzdDZZWlNfQkc5VXRUaFAwb0k4Vjl2?oc=5",
+      "imagen": null,
+      "fuente": "Forbes Argentina",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793297460000
+    },
+    {
       "titulo": "Casi nueve años después, vamos a tener noticias de The Elder Scrolls VI gracias a Skyrim",
       "resumen": "Fue el 11 de junio de 2028 cuando pudimos ver por primera vez The Elder Scrolls VI en nuestras pantallas, pero el teaser que publicó Bethesd…",
       "link": "https://www.vidaextra.com/rpg/casi-nueve-anos-despues-vamos-a-tener-noticias-the-elder-scrolls-vi-gracias-a-skyrim",
@@ -101,46 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793283643000
-    },
-    {
-      "titulo": "Ken Kutaragi, padre de PlayStation, sobre crear videojuegos hoy en día: \"Es casi imposible. No tiene sentido\"",
-      "resumen": "Ken Kutaragi lideró el desarrollo de la PlayStation original y más tarde se convirtió en el CEO de Sony Computer Entertainment, antes de dej…",
-      "link": "https://www.vidaextra.com/industria/ken-kutaragi-padre-playstation-crear-videojuegos-hoy-dia-casi-imposible-no-tiene-sentido",
-      "imagen": "https://i.blogs.es/785afa/050516_playstation_hmed/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793280689000
-    },
-    {
-      "titulo": "El CEO de Epic Games sigue con su batalla contra Steam y califica como \"acto político\" su acercamiento a la IA",
-      "resumen": "La batalla sobre los que se posicionan a favor y en contra del uso de la inteligencia artificial en los videojuegos nos acaba de dejar con u…",
-      "link": "https://www.vidaextra.com/industria/ceo-epic-games-sigue-su-batalla-steam-califica-como-acto-politico-su-acercamiento-a-ia",
-      "imagen": "https://i.blogs.es/12cef8/epic-games/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793278888000
-    },
-    {
-      "titulo": "Cierre de servidores de juegos, qué pierdes de verdad y cómo protegerte",
-      "resumen": "Cierre de servidores de juegos, qué pierdes de verdad y cómo protegerte Pasquale Pillitteri",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdnh0NWwwangtc1g2NGJhWGN3emFuckNKUklmTlZDdFVQNUtPSlE5ejlPaTkyWDdyM1V3N05HRmhERmVfbGxGQUU2MGpjc1B5Rzl6ZFREZXVrcUFycE1aRndPTThsbm5UNDh2Zl9VcjdpTGZZSWxqRjY5ZUttUFNUVTNrQTZjMTdXTmlnN0h1VzhDdEZ6TkktZExyV0w?oc=5",
-      "imagen": null,
-      "fuente": "Pasquale Pillitteri",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793276871000
-    },
-    {
-      "titulo": "\"Hemos construido una pirámide en el Everest\": el mapa de GTA 6 es absurdamente grande en los tres sentidos más importantes",
-      "resumen": "Una de las grandes discusiones que no para de generar GTA 6 es acerca del tamaño del mapa de Leonida, el cual suponemos que será descomunal.…",
-      "link": "https://www.vidaextra.com/accion/hemos-construido-piramide-everest-mapa-gta-6-absurdamente-grande-tres-sentidos-importantes",
-      "imagen": "https://i.blogs.es/b08fa6/wkaxyjbn52jnjahiktdnre/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793275289000
     },
     {
       "titulo": "Primero niños, luego competidores: los eSports fallan al bienestar infantil",
