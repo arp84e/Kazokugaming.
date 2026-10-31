@@ -1,7 +1,17 @@
 {
-  "generado": 1793468586574,
+  "generado": 1793482402331,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Devs están hartos de que clonen sus videojuegos con Claude y otras IA, así que las grandes compañías regularían el uso de su tecnología con nuevas restricciones",
+      "resumen": "Devs están hartos de que clonen sus videojuegos con Claude y otras IA, así que las grandes compañías regularían el uso de su tecnología con…",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLW53VFhweTlpS1RRbzZXSzNGUm5ONGVHTEtzaHBiVlk1WFo4OXlZeEJfYjF1Ymt4VG4wVEpYNWVERUxGdERTXzJQRjBpbHNEZEU2T3hfTV9HdHR5LW1EZGlwYVhMTms2VlVWQmFQM2VvNUM2QUgtMEVaVWp2ZGtUY1Q2Z0ZTZnNMVUJ0UHpn?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793469116000
+    },
     {
       "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
       "resumen": "En mayor o menor medida seguro que en algún momento habéis oído hablar de la idea del pitch de un videojuego, un documento que recoge y resu…",
@@ -33,6 +43,16 @@
       "fecha": 1793459327000
     },
     {
+      "titulo": "Estudiantes de la Unah crean videojuego basado en leyendas hondureñas",
+      "resumen": "Estudiantes de la Unah crean videojuego basado en leyendas hondureñas www.laprensa.hn",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPQVZtY1dkRVZuQ3ZFNUUyVWhKVVV4c3ZPLWxTNEg2YS1YbTl0UjZEcTFDeFdLZ1pIR0FJbGNSVktyTmxSemxKOU9KOVRSbURhMGpiU2toNmhBM1V3clZzdVVzdS1hdk4xYThSOGR5WmNrbERJTFRlVjBMd3NjX2hCa0hVVFNuR0FXUUxxc0JKQ3ppZVhUWnZuVFlNYVRwbHR0b2xrdENnaw?oc=5",
+      "imagen": null,
+      "fuente": "www.laprensa.hn",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793452800000
+    },
+    {
       "titulo": "Sources: ZETA DIVISION signs KEN for 2027 VCT season",
       "resumen": "Sources: ZETA DIVISION signs KEN for 2027 VCT season Sheep Esports",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPb3dWYVVzU182eFdvZkdPM0pmSWhsNF9TQ1JpSDhyNV9IanNNenE4RUR4ZXkydWgySmtYWlVsUXZYSUxGOFB1Rlp5dG1nUmdrY0syWHNoRXVGSUlST0wwc1lpUzRvU2NTaUVjeUNSakw4cmdNc0gtSXdkSjVyYmhWWkpiR0hyNGo0OEVWTG9RQzlGSks2U3BoRlFBQQ?oc=5",
@@ -61,16 +81,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793438127000
-    },
-    {
-      "titulo": "Sony llevará al cine uno de los juegos de terror más inquietantes de los últimos años y ya eligió a su directora",
-      "resumen": "Sony llevará al cine uno de los juegos de terror más inquietantes de los últimos años y ya eligió a su directora Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaHZqVVdRZDZuY0R0Wkx5WnlIdlM1YUtVS0Q5M2JQUXVoNS1KTWJkRjBEOTFkQkVBNHVVVWFiVmVaQmp3NTZZN1g0S3psRzZzY1J4NkNZSGdTREpYblluZk5SaEl1eTlmY2dkUkF2clhPMGs4Ym9hVG9hQXNCTWpBd29WYlIzNkc1Q2hvWG5ieVdRcFJxcm0wRlpzTk9heElEaUtzZHhCTmhQYm9CUFJEOVpraFNhcndsZzJFQ1kwUFpwY2h4XzY4eHFxQlpMdlhXVGZvWGd0QXZJWFJtNkE?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793433310000
     },
     {
       "titulo": "Si vas a este punto de The Witcher 3, te reencontrarás con la primera persona amable que conoces y conseguirás un \"regalo\"",
@@ -113,16 +123,6 @@
       "fecha": 1793380959000
     },
     {
-      "titulo": "Ubisoft comparte importantes actualizaciones de Assassin’s Creed",
-      "resumen": "Ubisoft comparte importantes actualizaciones de Assassin’s Creed Digital Trends Español",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQakRCZGY2N3ZVWXV1YmVkQUJURDMxT2xpY29FY1ZCdnlGWU5hbGNhdk4tek9ydW1xOTRZXzd6cF94MVFIOExtU1BEVjhvWFR5X2ZWdy1ydkdNdkRwcXc1Sk5HM1dqNm1haXV0cld2TjJvRlFHQjE2Tm4yUFNLajlsRnlMQ1FfaTZoNlZRTEpiRXpOaXIzd1V6d09XY3NVa2Z4VVVwRjRCVQ?oc=5",
-      "imagen": null,
-      "fuente": "Digital Trends Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793379026000
-    },
-    {
       "titulo": "Electronic Arts tuvo que elegir entre Star Wars y Mass Effect, y ya sabemos quién perdió",
       "resumen": "Llevo años esperando el anuncio de Star Wars: Battlefront III, como muchos otros jugadores, pero jamás me habría atrevido tan siquiera a sus…",
       "link": "https://www.vidaextra.com/accion/electronic-arts-tuvo-que-elegir-star-wars-mass-effect-sabemos-quien-perdio",
@@ -144,13 +144,13 @@
     },
     {
       "titulo": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA",
-      "resumen": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA Rutland Herald",
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNOUo4QU42M3BIQURBWmlYbUcxSjFoRXBIUFd2MXlIYVozS1d5bmFtbXNuSHQ3UXhfbGlDOVVBWl9LMEtQYWN0YU1pSGsxY0hXTWhTd0RTbnBBNGRfZGxZQlpZbEdSWjVyNVFpODZ5ZVg5TXJUcm9sSEg2X2trMkw1emtwQlBxdElLcEFpeUNDTGVsMkFLTkxlb3J4QWY3d3FVR1YwS3NtMlRMMHRRdnI0ZV9RbnhORXQtTHB5VGlJR1NLb2I0ZE94ZkVkczgybUxtT3ZqNTFrTTNtbG1kU2ZMa0JpbzVTbFdXaFJTWWpqZEFiY3hrQnRHNTZWTW5jbXYwT3Fjc21GV21URGFBd0lfN3BDUUxHb1lBNkE?oc=5",
+      "resumen": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA Business Wire",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8xZWhjVWVjUUxReDVrQVowWjFHN3BUT0MxU2gzM1cwZVVQY3dSTjFRLVI5SjJVS3cyZUpxUmhadTZnTnp2Sm5xZGdhMzZKWGpmY2VRQ2FqcmdmVnVDTmtNel9pYzRVWjQ?oc=5",
       "imagen": null,
-      "fuente": "Rutland Herald",
+      "fuente": "Business Wire",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793375178000
+      "fecha": 1793375160000
     },
     {
       "titulo": "Anthropic restringe Claude Code para recrear videojuegos y genera preocupación por los recomps y ports nativos de PC",
