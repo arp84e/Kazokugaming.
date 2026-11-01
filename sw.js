@@ -4,7 +4,7 @@
 // Qué SÍ cachea: el "shell" estático de la app (HTML, JS propio, íconos) para
 // que abrir el sitio sea instantáneo y funcione incluso con conexión pobre.
 //
-// Qué NO cachea: nada de Firebase (Auth/Firestore) ni Tailwind/Google Fonts
+// Qué NO cachea: nada de Firebase (Auth/Firestore) ni Google Fonts
 // — todo eso sigue yendo directo a la red, porque es contenido que
 // cambia todo el tiempo (torneos, chats, noticias) y cachearlo mal mostraría
 // información vieja como si fuera actual.
@@ -14,8 +14,8 @@
 // que haya guardado. Así nunca se ve una versión vieja teniendo internet.
 
 // Subir este número obliga a todos los dispositivos a descartar la caché vieja
-// (v5: noviembre 2026, datos privados fuera del perfil público).
-const VERSION = 'kazoku-v5';
+// (v6: noviembre 2026, estilos compilados sin el CDN de Tailwind).
+const VERSION = 'kazoku-v6';
 const ARCHIVOS_SHELL = [
     'index.html',
     'grupos.html',
@@ -31,6 +31,7 @@ const ARCHIVOS_SHELL = [
     'noticias.js',
     'moderacion.js',
     'iconos.js',
+    'estilos.css',
     'comunidad.js',
     'portada.js',
     'pagina-juego.js',

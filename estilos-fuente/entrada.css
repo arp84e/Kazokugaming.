@@ -1,0 +1,4 @@
+/* Fuente de estilos.css: no se publica, se compila con Tailwind (ver SETUP.md, sección 21) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

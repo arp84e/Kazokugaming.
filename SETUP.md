@@ -393,3 +393,19 @@ Un bot oficial ("KazokuGaming") monta el servidor y lo conecta con la web. Funci
 ### Otros arreglos de esta auditoría
 - `login.html` en móvil: un brillo decorativo se salía de la pantalla (scroll horizontal) y el botón "Volver a la Base" tapaba el logo.
 - Noticias: se descartan los titulares en inglés y los temas que no encajan en la portada de una comunidad gamer (suicidio, adicciones, violencia, salud mental, política, sucesos...). La búsqueda de esports se limita a España y Latinoamérica.
+
+## 21. Estilos compilados (adiós al CDN de Tailwind)
+
+Antes, cada página cargaba **Tailwind desde su CDN** (`cdn.tailwindcss.com`), que genera los estilos en el navegador de cada visitante. La propia consola avisaba de que no es para producción: es más lento y obliga a confiar en un script de terceros.
+
+Ahora los estilos están **compilados en un solo archivo, `estilos.css`** (~59 KB), que se sirve desde tu dominio. Ventajas:
+- La web carga más rápido y ya no aparece el aviso en la consola.
+- **Más seguridad:** la Content-Security-Policy ya no permite scripts de `cdn.tailwindcss.com` ni `'unsafe-eval'` (ejecutar código generado al vuelo).
+
+**Archivos:** `estilos.css` (el que usa la web), `tailwind.config.js` y `estilos-fuente/entrada.css` (para volver a compilar; no se publican en la web).
+
+**Si en el futuro añades clases de Tailwind nuevas** que no existían en ninguna página (por ejemplo, un color que no se usaba), no tendrán estilo hasta volver a compilar `estilos.css`. Pídeselo a Claude, o compílalo con la herramienta oficial de Tailwind v3.4.17:
+`tailwindcss -c tailwind.config.js -i estilos-fuente/entrada.css -o estilos.css --minify`
+
+### Noticias: ejecución inmediata
+GitHub **se salta ejecuciones programadas** cuando tiene mucha carga (en lugar de cada hora, a veces pasan varias horas). Ahora `noticias.yml` también se ejecuta **al momento cada vez que se actualiza `scripts/generar-noticias.mjs`**, y sigue pudiendo lanzarse a mano con "Run workflow".
