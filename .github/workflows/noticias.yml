@@ -1,14 +1,22 @@
-# Actualiza noticias.json cada hora con las últimas noticias de Xataka, IGN y
-# Google Noticias (ver scripts/generar-noticias.mjs). Sustituye a rss2json.com.
+# Actualiza noticias.json con las últimas noticias de videojuegos en español
+# (Vida Extra y Google Noticias; ver scripts/generar-noticias.mjs).
+# Se ejecuta:
+#   - cada hora (GitHub a veces se salta ejecuciones programadas),
+#   - al momento cada vez que se actualiza scripts/generar-noticias.mjs,
+#   - a mano: pestaña "Actions" → "Actualizar noticias" → botón "Run workflow".
 name: Actualizar noticias
 
 on:
   schedule:
-    - cron: '17 * * * *'   # cada hora, en el minuto 17
+    - cron: '17 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generar-noticias.mjs'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write          # necesario para guardar noticias.json en el repositorio
 
 concurrency:
   group: actualizar-noticias
