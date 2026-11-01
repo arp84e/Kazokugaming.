@@ -1,7 +1,17 @@
 {
-  "generado": 1793561949590,
+  "generado": 1793565417810,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Antes de que Nintendo Wii revolucionara los videojuegos, PS2 ya tenía un dispositivo que te hacía jugar con todo el cuerpo: el EyeToy miró directo al futuro pero fracasó",
+      "resumen": "Antes de que Nintendo Wii revolucionara los videojuegos, PS2 ya tenía un dispositivo que te hacía jugar con todo el cuerpo: el EyeToy miró d…",
+      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOLTFpSlNoQVBBekc4M3J2NEFaVmtZeHQ2bTg4b1B0REs4QVJiMzRWVjI0Y1RjaW5QbC1vLTVqZUhkRk1DMFJNMnAwWlhCM0l5U3hNZmI2M05kXy14N2FhcUt2bTBmZ280XzhQb3k0WkM4TU9UVWZRNi1zclNYTXo0SHRnMWo1eUVhcm52LXgzWjFKY19CQ003aVNEWmlkTGFJTXlabUFLSHd0RWVmOVBHcm9mWm5RUHRqU3FJZnFuVDlHMHk5blRza0NIbW5QN1c0OW9QUEZ4blJvWnE0aFRHT3Q3VDI0M19RWTQ1czV0R3NMcXNQRGfSAfsBQVVfeXFMTkpwRTFEY2hiekFPTFFpR3BTOVhFT2sxNzBtMERUd3FrOHRzV1R3eGVUS0h5SlJmY0pGTXRSWThmTU5BOHhQSzl1WFZJVXpnYzRtTFpkNlZJOWpOMzAzVG9EXzlNOVQ2dFAtY0NMdHM4TldVWEdVaFZCdHB5SkRXSHlpY09Cd2xNSDJtN3dDOE5qS1hXc01zdG03Ri1qSjMtSnNHb0ZtR3VsTXd0YlRXUEx3a2lteFQtUnJfaTZ4MUlsLTNDekZOQ1QxbzlobUdRN0dqV2JWYUZjdHBDU2hGUEdPX0VQczdPLVZKd1ZOVVdiQzlYNkg1WmxBOUE?oc=5",
+      "imagen": null,
+      "fuente": "3DJuegos México",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793563285000
+    },
     {
       "titulo": "En Japón conectaban su PlayStation a un teléfono para navegar por internet cuando tú aún estabas enviando SMS",
       "resumen": "Hace unos días estaba absorto en ese scroll infinito en el que entras a veces y me crucé con este tuit. En él se mostraba el i-mode adapter,…",
@@ -83,21 +93,21 @@
       "fecha": 1793489008000
     },
     {
-      "titulo": "Devil May Cry nació de un error que cambió los videojuegos para siempre: el proyecto descartado de Resident Evil 4 que inventó todo un género",
-      "resumen": "Devil May Cry nació de un error que cambió los videojuegos para siempre: el proyecto descartado de Resident Evil 4 que inventó todo un géner…",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMFJLSkxOR2dxa1BLYkdUR0I4SlZYM29vckNxRGROS2xqQThsSnJRU2gxS05vSWNWQUZFQnUxdkJwQ2F2aUdPTHBYdnpfcUdjMWphYnp5U1lsZU4xbzlFWS1faFZjcjg2cDFSZmp3Uk9IaFdHS3R2dG85MERXT0FoVHhTQUUxN2hVZVBCWDc5ZFRsWjVfRzBRS2E3dkVHR1I3eXkzaW15MzUxbjZnSnpwNUo0U19lcEpNQ1N1MkVWR3ZoTFV6NmcwSV9fNDRIZms3NHg4YUdxdmcxSkVzUmNoVFhCUDVwQno3SWNNYdIB8gFBVV95cUxON1lmbWZLVEh2SVZMZmY5RFp3SkpFbnhHZ2JMN3pkNk8xY3RHYWY5RHRLbzlHZ1hRc2JfdWdSbXpSS0NuSnZDXzZyT29zemlhQ2ZxNEk4WEcxR3hfY3BIYWRGdzRMck5ZMmp0RzJNZWhjYnZuWXdMUG9zV0k1VmdoSlpLbVotRnA4dkgzS1VfdXRsZVNQdkVQV0ppRFRxMHFzSm84dkZQakt4X0YxMS1uWUpzTFFYV1ZuNUlRTkpFMlhOaGhLeG9xVUE3ZjJ5NVUyM1p1NjRwYzVFYmxhUnBmaFNhUmxBOWdCVWZJZTdhM3BVdw?oc=5",
-      "imagen": null,
-      "fuente": "3DJuegos México",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793487689000
-    },
-    {
       "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
       "resumen": "En mayor o menor medida seguro que en algún momento habéis oído hablar de la idea del pitch de un videojuego, un documento que recoge y resu…",
       "link": "https://www.vidaextra.com/industria/como-bioshock-diablo-otros-videojuegos-vendieron-su-idea-para-conseguir-dinero-suficiente-para-crearlo-1",
       "imagen": "https://i.blogs.es/b33af2/bioshock3/1024_2000.jpeg",
       "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793463330000
+    },
+    {
+      "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
+      "resumen": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo VidaExtra",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTEptSWZQU3c5R2xyN2xlb2FZVWQ3V3VYTWJ2VWFkQlFFdlFaTUh3RWpqSmppR1hMclItaXZ0NnY5QU9YeVJsX0ZfU3RocGZVOF83OTVBOENubnpMSmR4SnlRYjF2X3BtYm81MjdfZHNFQVoxQm9iN1Y2ekJ6M01rZmtOckt0T0dGLVh1YnZDdVdPZ1NSeUdNR0pHcXpSaVdaUUJiX1VxV1UxT2dlTm5QU0FaNDNBSDRVcjVWa2piSW41SDdQbHhkcGhhYktfOG91emxwU2pnQQ?oc=5",
+      "imagen": null,
+      "fuente": "VidaExtra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793463330000
@@ -131,16 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793430088000
-    },
-    {
-      "titulo": "La psicología explica por qué volvemos a los videojuegos, películas y canciones de nuestra infancia. No es solo por nostalgia",
-      "resumen": "La psicología explica por qué volvemos a los videojuegos, películas y canciones de nuestra infancia. No es solo por nostalgia Gizmodo en Esp…",
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPYXluQWJ0amtPeE9LbkZoUGlRWFZ2UkZoSVFCR1BIYnlpWFVrejB0eXBUblhkUnRnYlFrYW43WDJnUGhNQy13bDhuYzVpUjNIX0Qxb204ZnltZzloVmpvTlZVLTJvcnN2YnQzdzMyUVExeW5oNU14czMzSWZfR1d3WUhDM0tDRmZmMFgyQ2NXT3hZT09WbUp2b3o3VnRid0o3N3gwZXZuVWZNX0laTlFGdEIzd0MzcVFPMmhwa01fOFpvY25mYi1FNUppSGpaU2V2OVJ4UmhnZ3VjOGNhNUQybURTUldRdDNjYmY1S0NR?oc=5",
-      "imagen": null,
-      "fuente": "Gizmodo en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793370215000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
