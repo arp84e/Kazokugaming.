@@ -1,7 +1,17 @@
 {
-  "generado": 1793565417810,
+  "generado": 1793576141090,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Los videojuegos, mucho más que una forma de jugar",
+      "resumen": "Los videojuegos, mucho más que una forma de jugar HobbyConsolas",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTUR3dndtYmI5U2dKbDgzNWRhdXQ0UnJzcTdwV1JRdFltbFNHZi1lVDVGOXp2ME41UFVVWlFqYjJrNlpXTzhNa1Y4QVo2azdLUUdCbUVMNU1iNDFzb2U1RE1fSFJ3QmNHc3J4aG85YTZqMDNHZ1VNNTZVdTByVTVpbmVRMmY2R0Y4U01XY016WFJUTmc?oc=5",
+      "imagen": null,
+      "fuente": "HobbyConsolas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793573630000
+    },
     {
       "titulo": "Antes de que Nintendo Wii revolucionara los videojuegos, PS2 ya tenía un dispositivo que te hacía jugar con todo el cuerpo: el EyeToy miró directo al futuro pero fracasó",
       "resumen": "Antes de que Nintendo Wii revolucionara los videojuegos, PS2 ya tenía un dispositivo que te hacía jugar con todo el cuerpo: el EyeToy miró d…",
@@ -83,16 +93,6 @@
       "fecha": 1793520142000
     },
     {
-      "titulo": "Un videojuego gratuito enfrenta a caseros e inquilinos en la Puerta del Sol",
-      "resumen": "Un videojuego gratuito enfrenta a caseros e inquilinos en la Puerta del Sol Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcVU5TWJHODI2dGlWTUV6YWJTMmxVSEdGX3Rod0c2V0lsNW5KQ2tyVTRxQTg3bGIzZ2otX1Rub08wRXNhQ1dNVllZY1VhMk5jMm1jWkJJbXlfYlhiSkoybk5HcVg1VWp0cFlPbjhVTmxEdi0wOU9iUUM4WDFUYlEtVTc5a3FGVk44NjI3S3RuQ1RQb3ZNaUo2ZVVYWQ?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793489008000
-    },
-    {
       "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
       "resumen": "En mayor o menor medida seguro que en algún momento habéis oído hablar de la idea del pitch de un videojuego, un documento que recoge y resu…",
       "link": "https://www.vidaextra.com/industria/como-bioshock-diablo-otros-videojuegos-vendieron-su-idea-para-conseguir-dinero-suficiente-para-crearlo-1",
@@ -143,24 +143,24 @@
       "fecha": 1793430088000
     },
     {
-      "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
-      "resumen": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026 DAZN",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVm1YMC03TWZIalJHSGRLenhadk5VM1U1UWo5NTFKbVh2NmRfYnNycDJZdlNpTUd2QXphSXpxaEowb0tNZG5QLTIzSVVob2ZTMHNSZG4zRTZZX19CZFhrTlZ1c3dZaC0yeW1Od0hlNEl2MnJ3Z2JiX0pwVDZ5T2kxWTJENGtURFpEY2w1OXJONFB0a3kxS1M1bHZfZXZqV0dDeDRZYlFjSG9WcThhNUNkUFFNM3NmYWlsTWc?oc=5",
+      "titulo": "El Clasificatorio Nacional de esports en Málaga corona a Pablo Torres",
+      "resumen": "El Clasificatorio Nacional de esports en Málaga corona a Pablo Torres Europa Press",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNclJaTE1yUE92TnZCTjhUM1FCXzYweDdpeVk0bHhXQUVzd1FjdzR6Nlg0eGRjVTFjUmlVa0l4WE9yeFJfaWRaTHZObnduQlBHYlhtQW9Uemt5WkRsSDdULUNtQ0gwbXBZckM0ajVtZnNiaDM2QjdzNFJGTjZsUWdkZjJYODdYWjM2LUFLUmIxcHBXUkplZVgwVVo3cEZEV1VZWE16ankwQTFPS0t1ZE5KRWtZU1RESHl1NVRvdnp6dEYtWlhPVHhZSExYcEk1LS03a1dRNlpjZWJUbEZCbTczVkV6eHlSOEM0UmJpOQ?oc=5",
       "imagen": null,
-      "fuente": "DAZN",
+      "fuente": "Europa Press",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793189198000
+      "fecha": 1793350387000
     },
     {
-      "titulo": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión",
-      "resumen": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión Nintendo",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNc1F3QnAzdUNhSW9zMmRxN1dQTUp6VWVGOVY0dFB6S2I0a0dlSUEwWVFfN0hIaEpVRkUwb3ZWUFM1OTZTUEtGSnRaamlNM0thWDFPR19zTzlXLU15NEJTaExMSzFnQTBQbVZYVzU2V3NuNXRnY29xNXJrbW9xVV9tM0JFNWsyMnczc2lyUnJVeWNHUDQ0RDhHWEp2cGdiU0NSMVA2dTczcV9HWkxR?oc=5",
+      "titulo": "La nueva edición de Gamergy, el mayor evento de eSports de España, empieza mañana",
+      "resumen": "La nueva edición de Gamergy, el mayor evento de eSports de España, empieza mañana Cine y Tele",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWnpRZVduVW1LcUM2clFsOFc2ZnRaM2U2a192SkFCdkFjbl84MFY0QThEbVBxY2I2X3RLNHIzRDBtRnFmX240SlFZUXRlanpxSUhnNVRmNnZYMGtTREM0YndNN1p3aWVtb0Fwekppbmc4T1pKd3VRaXdzVXhIWVRERVZjWmJTdjdST3RVTEtaeVVYRHFpVjEyc1lRZlpLQ2UxNWdRM3R6OTNjZw?oc=5",
       "imagen": null,
-      "fuente": "Nintendo",
+      "fuente": "Cine y Tele",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1792652400000
+      "fecha": 1793306519000
     },
     {
       "titulo": "LoL Esports |",
