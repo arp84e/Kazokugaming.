@@ -121,7 +121,7 @@
 
     <script type="module">
         import {
-            collection, doc, getDoc, updateDoc, query, where, collectionGroup, onSnapshot
+            collection, doc, getDoc, updateDoc, query, where, collectionGroup, onSnapshot, deleteField
         } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
         import { auth, db, onAuthStateChanged, updateProfile, signOut } from './firebase-init.js';
         import { skeletonCards, skeletonRows, calcularInsignias, renderInsignias } from './ui-utils.js';
@@ -290,7 +290,11 @@
                             bio: nuevaBio,
                             avatar: avatarElegido,
                             juegosFavoritos: [...favoritos],
-                            plataformas
+                            plataformas,
+                            // Datos privados que los perfiles antiguos tenían a la vista de todos (ver header.js)
+                            email: deleteField(),
+                            ultimasLecturas: deleteField(),
+                            ultimasLecturasPartidas: deleteField()
                         });
                         await updateProfile(user, { displayName: nuevoGamertag });
                         pintarAvatarGrande();

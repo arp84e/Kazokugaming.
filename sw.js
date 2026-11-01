@@ -14,8 +14,8 @@
 // que haya guardado. Así nunca se ve una versión vieja teniendo internet.
 
 // Subir este número obliga a todos los dispositivos a descartar la caché vieja
-// (v4: octubre 2026, portada nueva, páginas por juego y perfiles ampliados).
-const VERSION = 'kazoku-v4';
+// (v5: noviembre 2026, datos privados fuera del perfil público).
+const VERSION = 'kazoku-v5';
 const ARCHIVOS_SHELL = [
     'index.html',
     'grupos.html',

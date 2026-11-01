@@ -30,8 +30,26 @@ export const FEEDS = [
     { url: 'http://feeds.weblogssl.com/vidaextra', categoria: 'Videojuegos', fuente: 'Vida Extra', color: 'bg-emerald-600', max: 8,
       excluirRutas: ['/cine/', '/series/', '/television/', '/tv/'] },
     { url: googleNewsRss('videojuegos'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 6, esGoogleNews: true },
-    { url: googleNewsRss('esports'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 3, esGoogleNews: true }
+    { url: googleNewsRss('esports España OR Latinoamérica'), categoria: 'Videojuegos', fuente: 'Google Noticias', color: 'bg-emerald-600', max: 3, esGoogleNews: true }
 ];
+
+// Temas que NO se muestran en la portada de una comunidad gamer, aunque la
+// noticia hable de videojuegos (suicidio, adicciones, violencia, salud
+// mental, política...). Mejor un titular menos que uno fuera de lugar.
+const TEMAS_EXCLUIDOS = /suicid|autolesi|adicci|adict|ludopat|apuesta|casino|muert|asesin|matanza|tiroteo|violaci|abuso|acoso|depresi|ansiedad|tdah|autismo|trastorno|droga|alcohol|polític|elecci|guerra|terroris|crimen|detenid|arrestad|polic[ií]a|tribunal|juicio|demanda|sexual|porno/i;
+
+// Señales de que un titular está en inglés (Google Noticias a veces mezcla
+// medios en inglés aunque se pida en español).
+const PALABRAS_INGLES = /\b(the|and|with|from|for|of|to|is|are|its|it's|vs|after|before|new|how|why|what|end|ends|comes|draw|playoffs|season|team|win|wins)\b/gi;
+export function pareceIngles(texto) {
+    const coincidencias = (String(texto).match(PALABRAS_INGLES) || []).length;
+    const tieneEspanol = /[áéíóúñ¿¡]|\b(el|la|los|las|de|del|que|en|por|para|con|una|un|y)\b/i.test(texto);
+    return coincidencias >= 2 && !tieneEspanol;
+}
+export function temaExcluido(texto) {
+    return TEMAS_EXCLUIDOS.test(String(texto).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[íi]/g, 'i'))
+        || TEMAS_EXCLUIDOS.test(String(texto));
+}
 
 const MAX_RESUMEN = 140;
 const MAX_TITULO = 200;
@@ -142,6 +160,7 @@ export function parsearFeed(xml, feed) {
         const link = urlHttps(htmlATexto(contenidoHtml(item, 'link')));
         if (!titulo || !link) continue;
         if ((feed.excluirRutas || []).some((ruta) => new URL(link).pathname.includes(ruta))) continue;
+        if (pareceIngles(titulo) || temaExcluido(titulo)) continue;
 
         const descripcionHtml = contenidoHtml(item, 'description');
         const contenidoEncoded = contenidoHtml(item, 'content:encoded');

@@ -58,10 +58,10 @@
         </div>
     </div>
 
-    <div class="w-full lg:w-1/2 flex items-center justify-center relative bg-[#050508]">
+    <div class="w-full lg:w-1/2 flex items-center justify-center relative bg-[#050508] overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="w-full max-w-md p-8 relative z-10">
+        <div class="w-full max-w-md p-8 pt-24 lg:pt-8 relative z-10">
             <div class="flex justify-center mb-10">
                 <div class="flex items-center gap-2 text-3xl font-black tracking-tighter">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">K</div>
@@ -213,7 +213,7 @@
                     return;
                 }
                 const gamertag = gamertagDesdeGoogle(user);
-                await setDoc(ref, { gamertag, email: user.email, creadoEn: serverTimestamp() });
+                await setDoc(ref, { gamertag, creadoEn: serverTimestamp() });
                 await updateProfile(user, { displayName: gamertag });
                 mostrarMensaje(`¡Bienvenido a la familia, ${gamertag}! Vamos a tu perfil para que lo personalices.`, "exito");
                 setTimeout(() => window.location.href = "perfil.html?bienvenida=1", 1500);
@@ -276,9 +276,9 @@
 
                     // 3. Crear el documento de perfil en Firestore (colección "usuarios")
                     //    Esto es lo que firestore.rules valida y protege.
+                    //    (El correo NO se guarda aquí: este perfil es público y Firebase Auth ya lo tiene.)
                     await setDoc(doc(db, 'usuarios', credencial.user.uid), {
                         gamertag: gamertag,
-                        email: email,
                         creadoEn: serverTimestamp()
                     });
 

@@ -6,7 +6,8 @@
 
 import { auth, db, onAuthStateChanged, signOut, sendEmailVerification, serverTimestamp } from './firebase-init.js';
 import {
-    doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit, getDocs
+    doc, onSnapshot, updateDoc, collection, query, where, orderBy, limit, getDocs,
+    getDoc, setDoc, deleteField
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 import { iconoInicio, iconoEscudo, iconoTrofeo, iconoUsuario, iconoCampana, iconoBuscar, iconoCerrar, iconoMuro } from './iconos.js';
 
@@ -118,13 +119,38 @@ function pintarSesionActiva(gamertag, prefix) {
 // ============================================================
 // NOTIFICACIONES: mensajes nuevos en los escuadrones del usuario
 // ============================================================
-// Cómo funciona: cada usuario guarda en su propio documento
-// (usuarios/{uid}.ultimasLecturas.{escuadronId}) la fecha de la última vez
-// que abrió el chat de ese escuadrón. Aquí comparamos esa fecha contra el
+// Cómo funciona: cada usuario guarda en un documento PRIVADO
+// (usuarios/{uid}/privado/lecturas → escuadrones.{id} y partidas.{id}) la
+// fecha de la última vez que abrió cada chat. Antes estaba en su perfil
+// público, donde cualquiera podía ver qué chats leía: ver migrarDatosPrivados().
+// Aquí comparamos esa fecha contra el
 // mensaje más reciente de cada escuadrón del que el usuario es miembro.
 // Evita inicializar las notificaciones más de una vez por carga de página
 // (onAuthStateChanged puede disparar más de una vez en la misma sesión).
 let notificacionesIniciadas = false;
+
+// Migración (noviembre 2026): los perfiles antiguos guardaban el correo y las
+// lecturas de chats en el documento PÚBLICO usuarios/{uid}, que cualquiera
+// puede leer. Al iniciar sesión, se pasan las lecturas al documento privado
+// y se borran del público, junto con el correo (Firebase Auth ya lo guarda).
+async function migrarDatosPrivados(uid) {
+    try {
+        const ref = doc(db, 'usuarios', uid);
+        const snap = await getDoc(ref);
+        if (!snap.exists()) return;
+        const d = snap.data();
+        if (!('email' in d) && !('ultimasLecturas' in d) && !('ultimasLecturasPartidas' in d)) return;
+        if (d.ultimasLecturas || d.ultimasLecturasPartidas) {
+            await setDoc(doc(db, 'usuarios', uid, 'privado', 'lecturas'), {
+                ...(d.ultimasLecturas ? { escuadrones: d.ultimasLecturas } : {}),
+                ...(d.ultimasLecturasPartidas ? { partidas: d.ultimasLecturasPartidas } : {})
+            }, { merge: true });
+        }
+        await updateDoc(ref, { email: deleteField(), ultimasLecturas: deleteField(), ultimasLecturasPartidas: deleteField() });
+    } catch (error) {
+        console.error('No se pudo migrar el perfil:', error);
+    }
+}
 
 function iniciarNotificaciones(uid, prefix) {
     if (notificacionesIniciadas) return;
@@ -206,13 +232,13 @@ function iniciarNotificaciones(uid, prefix) {
         }
     });
 
-    // 1. Escuchar el perfil del usuario para saber qué ha leído
-    onSnapshot(doc(db, 'usuarios', uid), (snap) => {
+    // 1. Escuchar el documento privado del usuario para saber qué ha leído
+    onSnapshot(doc(db, 'usuarios', uid, 'privado', 'lecturas'), (snap) => {
         const datos = snap.exists() ? snap.data() : {};
-        ultimasLecturas = datos.ultimasLecturas || {};
-        ultimasLecturasPartidas = datos.ultimasLecturasPartidas || {};
+        ultimasLecturas = datos.escuadrones || {};
+        ultimasLecturasPartidas = datos.partidas || {};
         pintarCampanita();
-    });
+    }, (error) => console.error('No se pudieron leer las lecturas:', error));
 
     // 2. Escuchar de qué escuadrones es miembro, y para cada uno, su último mensaje
     const qMisEscuadrones = query(collection(db, 'escuadrones'), where('miembros', 'array-contains', uid));
@@ -480,6 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const gamertag = user.displayName || user.email.split('@')[0];
             pintarSesionActiva(gamertag, prefix);
             iniciarNotificaciones(user.uid, prefix);
+            migrarDatosPrivados(user.uid);
             if (!user.emailVerified) mostrarBannerVerificacion(user);
         }
         // Si no hay usuario, se deja el estado por defecto ("Mi Perfil" / login) ya renderizado.

@@ -374,3 +374,22 @@ Un bot oficial ("KazokuGaming") monta el servidor y lo conecta con la web. Funci
 - Para **nombrar moderadores**, dales el rol 🛡️ Moderador. Pueden expulsar, silenciar y borrar mensajes, y ven la categoría STAFF.
 - El bot **no modera en tiempo real** (no está encendido todo el tiempo): eso lo hacen AutoMod, que viene en Discord, y los moderadores.
 - Si quieres más adelante quitarle al bot el permiso de Administrador, en Ajustes del servidor → Roles → KazokuGaming puedes dejarle solo: Ver canales, Enviar mensajes, Insertar enlaces, Leer el historial y Mencionar roles. Ojo: entonces "configurar" ya no podrá crear canales ni roles.
+
+## 20. Auditoría de noviembre 2026: privacidad de los perfiles
+
+**🔴 Encontrado:** el documento público de cada jugador (`usuarios/{uid}`), que cualquiera puede leer sin iniciar sesión, guardaba su **correo electrónico** y la lista de **chats que había leído** (`ultimasLecturas`). Cualquiera podía descargar los correos de todos los usuarios con una sola petición. Con usuarios en España esto es un problema de protección de datos (RGPD).
+
+**Corregido:**
+- Los registros nuevos (correo y Google) **ya no guardan el correo** en Firestore: Firebase Authentication ya lo tiene y nada en la web lo leía.
+- Las lecturas de chats se guardan ahora en `usuarios/{uid}/privado/lecturas`, que **solo puede leer su dueño**.
+- **Migración automática:** cuando un usuario antiguo entra en la web, `header.js` pasa sus lecturas al documento privado y borra el correo y las lecturas de su perfil público.
+- `firestore.rules`: el perfil público ya no acepta esos campos (solo permite borrarlos) y hay una regla nueva para el documento privado.
+
+**Qué tienes que hacer:**
+1. Sube `header.js`, `grupos.html`, `index.html`, `login.html`, `perfil.html`, `sw.js` y `scripts/generar-noticias.mjs`. **Primero el código y después las reglas.**
+2. **Publica `firestore.rules`** en la consola de Firebase.
+3. **Borra los correos que ya están publicados:** la migración solo actúa cuando cada usuario vuelve a entrar. Para no esperar, en la consola de Firebase → Firestore → colección `usuarios` → en cada documento, pasa el ratón por el campo `email` → icono de papelera → borrar. Haz lo mismo con `ultimasLecturas` si aparece.
+
+### Otros arreglos de esta auditoría
+- `login.html` en móvil: un brillo decorativo se salía de la pantalla (scroll horizontal) y el botón "Volver a la Base" tapaba el logo.
+- Noticias: se descartan los titulares en inglés y los temas que no encajan en la portada de una comunidad gamer (suicidio, adicciones, violencia, salud mental, política, sucesos...). La búsqueda de esports se limita a España y Latinoamérica.

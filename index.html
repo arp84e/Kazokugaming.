@@ -657,9 +657,10 @@
                         mensajesChatPartida.scrollTop = mensajesChatPartida.scrollHeight;
                     }
                     // Marca como leído cada vez que se pintan mensajes (al abrir Y si llega uno nuevo mientras está abierto)
-                    updateDoc(doc(db, 'usuarios', usuarioActual.uid), {
-                        [`ultimasLecturasPartidas.${partidaId}`]: serverTimestamp()
-                    }).catch((err) => console.error("No se pudo marcar como leído:", err));
+                    // (documento privado: nadie más puede ver qué chats lees)
+                    setDoc(doc(db, 'usuarios', usuarioActual.uid, 'privado', 'lecturas'), {
+                        partidas: { [partidaId]: serverTimestamp() }
+                    }, { merge: true }).catch((err) => console.error("No se pudo marcar como leído:", err));
                 }, (error) => {
                     console.error("Error en el chat de la partida:", error);
                     mensajesChatPartida.innerHTML = `<p class="text-red-400 text-center text-sm">No se pudo cargar el chat.</p>`;
