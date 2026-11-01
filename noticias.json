@@ -1,7 +1,37 @@
 {
-  "generado": 1793545636477,
+  "generado": 1793561949590,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "En Japón conectaban su PlayStation a un teléfono para navegar por internet cuando tú aún estabas enviando SMS",
+      "resumen": "Hace unos días estaba absorto en ese scroll infinito en el que entras a veces y me crucé con este tuit. En él se mostraba el i-mode adapter,…",
+      "link": "https://www.vidaextra.com/juegos-retro/japon-conectaban-su-playstation-a-telefono-para-navegar-internet-cuando-tu-estabas-enviando-sms-1",
+      "imagen": "https://i.blogs.es/1f49ae/japon/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793549727000
+    },
+    {
+      "titulo": "Eiichiro Oda le otorga a Sanji el prestigio que se merece en el capítulo 1197 del manga de One Piece",
+      "resumen": "Aviso: Spoilers del capítulo 1197 del manga de One Piece Tras un pequeño renacer en el que vimos sus verdaderos miedos, Sanji está más que p…",
+      "link": "https://www.vidaextra.com/cultura/eiichiro-oda-le-otorga-a-sanji-prestigio-que-se-merece-capitulo-1197-manga-one-piece",
+      "imagen": "https://i.blogs.es/024ecc/one-piece/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793548888000
+    },
+    {
+      "titulo": "Industria de los videojuegos aportará 3.300 millones de dólares a la economía de Indonesia en 2030, según las previsiones",
+      "resumen": "Industria de los videojuegos aportará 3.300 millones de dólares a la economía de Indonesia en 2030, según las previsiones teleSUR",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9vNHRrSnpzOEVNSlBUVUFoQ0YwYW83Nk84TWdsX0FjcFhfcndGY0c4MXpiR1pXWnYyWk9FMlZtMDdkYXFfWnB5c3pjVVVrSkE2YzExbERUZTVOaVdtclFwODcxaEtvYWpQbHVYRHc4S0ppMlFsMGZnbC1ySV8?oc=5",
+      "imagen": null,
+      "fuente": "teleSUR",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793545487000
+    },
     {
       "titulo": "Sam Altman, CEO de ChatGPT: \"Es bastante terrible que la gente tenga memoria RAM en su propio PC utilizándose solo el 5 % del tiempo\"",
       "resumen": "Si hay algo que ansíen las principales empresas propietarias de inteligencias artificiales, son las memorias RAM. El coste del componente se…",
@@ -11,16 +41,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793536930000
-    },
-    {
-      "titulo": "Gumayusi's Worlds three-peat streak comes to an end with Swiss Stage exit",
-      "resumen": "Gumayusi's Worlds three-peat streak comes to an end with Swiss Stage exit Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObG5jX1JmRk9MMzZBeEZGWjBDQ055R0o4emVHNjdnYU1jNF9VZldjWFAxSGprbXlmQmp4STg2V1R2R0RZd3F5a1NyY1AyZlJtczRqOXY0c0dCRnRCZGVKT2VCOWF4ckRpQzhaZms5SFVPTzRQcm4tZTJPTk9PZS1RSXAyTm9XZTlfMHI2eHlNRTJGa0QtYVNRdzJWRElCTUo5YXlj?oc=5",
-      "imagen": null,
-      "fuente": "Sheep Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793531692000
     },
     {
       "titulo": "'Grand Theft Auto VI', 'Zelda: Ocarina of Time' y otros videojuegos que no debes perderte este noviembre",
@@ -53,14 +73,14 @@
       "fecha": 1793520142000
     },
     {
-      "titulo": "Worlds 2026: Playoffs draw",
-      "resumen": "Worlds 2026: Playoffs draw Sheep Esports",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9NT05VUkRKcThONzBRdFgzcEhhYTRGRC11V2Q5cHlqY0s5cm5jTTBCRGpxNWxhUWs0Rm1icnNGZWRnLXBMbkFQelBvcURicjJPTXY3QlJSSF83NHc2SkhMTFBvSkpTZDk0bXVYZnUtQkdab0RvWngtOQ?oc=5",
+      "titulo": "Un videojuego gratuito enfrenta a caseros e inquilinos en la Puerta del Sol",
+      "resumen": "Un videojuego gratuito enfrenta a caseros e inquilinos en la Puerta del Sol Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcVU5TWJHODI2dGlWTUV6YWJTMmxVSEdGX3Rod0c2V0lsNW5KQ2tyVTRxQTg3bGIzZ2otX1Rub08wRXNhQ1dNVllZY1VhMk5jMm1jWkJJbXlfYlhiSkoybk5HcVg1VWp0cFlPbjhVTmxEdi0wOU9iUUM4WDFUYlEtVTc5a3FGVk44NjI3S3RuQ1RQb3ZNaUo2ZVVYWQ?oc=5",
       "imagen": null,
-      "fuente": "Sheep Esports",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793492248000
+      "fecha": 1793489008000
     },
     {
       "titulo": "Devil May Cry nació de un error que cambió los videojuegos para siempre: el proyecto descartado de Resident Evil 4 que inventó todo un género",
@@ -113,36 +133,6 @@
       "fecha": 1793430088000
     },
     {
-      "titulo": "“Estaba a punto de suicidarme”: el infierno de una vida atrapada por la adicción a los videojuegos",
-      "resumen": "“Estaba a punto de suicidarme”: el infierno de una vida atrapada por la adicción a los videojuegos Univision",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWFlvZjZITzJKNEljSUlCbGlHdzc0em52TkQzODJfb09xeE9nWnZDZV9WejZBYXNrUWdBZXNDcGt5WEhvS3BwZHlZWnZCdko2TnQwZ2Zoa2VPeDVJcURMY0JUZUxEeFhNdmJOaXVxRXI1OVZjNGN6VXVXaFZmR1R0djdsNjloc0ZTUzRKUUNBTi00SFR2bUF4emY1UDA3eHhlSy1sQmhJSWRYNndkekVMTHk2c0dnbzRXZkE5YUZsaXdMbEpMdzNrWnNUX00zZWJRR3c?oc=5",
-      "imagen": null,
-      "fuente": "Univision",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793406423000
-    },
-    {
-      "titulo": "\"No puedo dejar de pensar en ello\": el productor del remake The Legend of Zelda: Ocarina of Time se siente demasiado nervioso por su lanzamiento",
-      "resumen": "No todos los años se vive un mes de noviembre tan emocionante como el que nos espera. El lanzamiento de GTA 6 es para muchos el más esperado…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/no-puedo-dejar-pensar-ello-productor-remake-the-legend-of-zelda-ocarina-of-time-se-siente-demasiado-nervioso-su-lanzamiento",
-      "imagen": "https://i.blogs.es/a244a6/thelegendofzeldaocarinaoftime/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793384334000
-    },
-    {
-      "titulo": "A los creadores de Crimson Desert se les ha ido oficialmente de las manos con el monumental mapa de su DLC",
-      "resumen": "Lo que ha logrado Pearl Abyss a lo largo de estos meses con Crimson Desert es digno de quitarse el sombrero. El juego parece otro por la aut…",
-      "link": "https://www.vidaextra.com/accion/a-creadores-crimson-desert-se-les-ha-ido-oficialmente-manos-monumental-mapa-su-dlc",
-      "imagen": "https://i.blogs.es/eff9fe/crimson-desert/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793380959000
-    },
-    {
       "titulo": "La psicología explica por qué volvemos a los videojuegos, películas y canciones de nuestra infancia. No es solo por nostalgia",
       "resumen": "La psicología explica por qué volvemos a los videojuegos, películas y canciones de nuestra infancia. No es solo por nostalgia Gizmodo en Esp…",
       "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPYXluQWJ0amtPeE9LbkZoUGlRWFZ2UkZoSVFCR1BIYnlpWFVrejB0eXBUblhkUnRnYlFrYW43WDJnUGhNQy13bDhuYzVpUjNIX0Qxb204ZnltZzloVmpvTlZVLTJvcnN2YnQzdzMyUVExeW5oNU14czMzSWZfR1d3WUhDM0tDRmZmMFgyQ2NXT3hZT09WbUp2b3o3VnRid0o3N3gwZXZuVWZNX0laTlFGdEIzd0MzcVFPMmhwa01fOFpvY25mYi1FNUppSGpaU2V2OVJ4UmhnZ3VjOGNhNUQybURTUldRdDNjYmY1S0NR?oc=5",
@@ -153,24 +143,34 @@
       "fecha": 1793370215000
     },
     {
-      "titulo": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembre",
-      "resumen": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembr…",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5UHVMS3ZlV3pFU1pZbllPUXVqaUo5dlJHazI1MHprTk1JV1B3Z3FreXdnNWhlQzl6dG9zZmRZRU1SUkVKWXRTeDM4a0ZBbHZUQ29QTnM1RmRZclliTE9kUm1yZ3VnZ19SNzR4bTAwWUhzUnZyZnYwenNIUER5UHM?oc=5",
+      "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
+      "resumen": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026 DAZN",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVm1YMC03TWZIalJHSGRLenhadk5VM1U1UWo5NTFKbVh2NmRfYnNycDJZdlNpTUd2QXphSXpxaEowb0tNZG5QLTIzSVVob2ZTMHNSZG4zRTZZX19CZFhrTlZ1c3dZaC0yeW1Od0hlNEl2MnJ3Z2JiX0pwVDZ5T2kxWTJENGtURFpEY2w1OXJONFB0a3kxS1M1bHZfZXZqV0dDeDRZYlFjSG9WcThhNUNkUFFNM3NmYWlsTWc?oc=5",
       "imagen": null,
-      "fuente": "Secret NYC",
+      "fuente": "DAZN",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793021502000
+      "fecha": 1793189198000
     },
     {
-      "titulo": "¿Los videojuegos causan TDAH?",
-      "resumen": "¿Los videojuegos causan TDAH? Child Mind Institute",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE55aHhHU2xla0YycWtkcVZxWHl3TlpDVElMZGl4REZJOWhVWWNGVW91V0tpSHl2VjRFdU9Bel96X2ZmWkd0cDFNZ1I4NGppektUaWMtVlVCZjVXWFBzVFhOMTktRmxwV1Vldk9PV2I1MVVndw?oc=5",
+      "titulo": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión",
+      "resumen": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión Nintendo",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNc1F3QnAzdUNhSW9zMmRxN1dQTUp6VWVGOVY0dFB6S2I0a0dlSUEwWVFfN0hIaEpVRkUwb3ZWUFM1OTZTUEtGSnRaamlNM0thWDFPR19zTzlXLU15NEJTaExMSzFnQTBQbVZYVzU2V3NuNXRnY29xNXJrbW9xVV9tM0JFNWsyMnczc2lyUnJVeWNHUDQ0RDhHWEp2cGdiU0NSMVA2dTczcV9HWkxR?oc=5",
       "imagen": null,
-      "fuente": "Child Mind Institute",
+      "fuente": "Nintendo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1791390990000
+      "fecha": 1792652400000
+    },
+    {
+      "titulo": "LoL Esports |",
+      "resumen": "LoL Esports | LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
+      "imagen": null,
+      "fuente": "LoL Esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1791183600000
     }
   ]
 }
