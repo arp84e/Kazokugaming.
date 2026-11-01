@@ -1,5 +1,5 @@
 {
-  "generado": 1793495341287,
+  "generado": 1793518308940,
   "fuentesConError": [],
   "noticias": [
     {
@@ -31,16 +31,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793487689000
-    },
-    {
-      "titulo": "Anthropic bloquea en Claude la clonación de videojuegos",
-      "resumen": "Anthropic bloquea en Claude la clonación de videojuegos El Ecosistema Startup",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNFdXTURqZHJlZ25CX1dYa1dzdG9qeG1HYnVSSENEQ3BVUE9XZTVwcUJrcDhhSG9vTFBuRzFNSmFDdEdsWFdOMmRIOHBlLWgzcFlqZk1DOVBfM0dPd1BwSE1iWWx4UktrNmt0SjNIQlEtSVJiZ2xDZHRGZHNiaFZQOVctNTZtZUVJNWNWZ3Bocw?oc=5",
-      "imagen": null,
-      "fuente": "El Ecosistema Startup",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793483304000
     },
     {
       "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
@@ -113,6 +103,16 @@
       "fecha": 1793430088000
     },
     {
+      "titulo": "“Estaba a punto de suicidarme”: el infierno de una vida atrapada por la adicción a los videojuegos",
+      "resumen": "“Estaba a punto de suicidarme”: el infierno de una vida atrapada por la adicción a los videojuegos Univision",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWFlvZjZITzJKNEljSUlCbGlHdzc0em52TkQzODJfb09xeE9nWnZDZV9WejZBYXNrUWdBZXNDcGt5WEhvS3BwZHlZWnZCdko2TnQwZ2Zoa2VPeDVJcURMY0JUZUxEeFhNdmJOaXVxRXI1OVZjNGN6VXVXaFZmR1R0djdsNjloc0ZTUzRKUUNBTi00SFR2bUF4emY1UDA3eHhlSy1sQmhJSWRYNndkekVMTHk2c0dnbzRXZkE5YUZsaXdMbEpMdzNrWnNUX00zZWJRR3c?oc=5",
+      "imagen": null,
+      "fuente": "Univision",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793406423000
+    },
+    {
       "titulo": "\"No puedo dejar de pensar en ello\": el productor del remake The Legend of Zelda: Ocarina of Time se siente demasiado nervioso por su lanzamiento",
       "resumen": "No todos los años se vive un mes de noviembre tan emocionante como el que nos espera. El lanzamiento de GTA 6 es para muchos el más esperado…",
       "link": "https://www.vidaextra.com/aventura-plataformas/no-puedo-dejar-pensar-ello-productor-remake-the-legend-of-zelda-ocarina-of-time-se-siente-demasiado-nervioso-su-lanzamiento",
@@ -153,16 +153,6 @@
       "fecha": 1793377888000
     },
     {
-      "titulo": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA",
-      "resumen": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA The Joplin Globe",
-      "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQd0JBSUcwWXN6S3FDcFh6elFOTE44Z3ZvVUQ3WF9QX3RMZGR3cFFBLWlMUlhxUk1iM0hIQzdDNno1MzZBdnhEWm5YQV9PVV9rMlZHRktxZlJCTmxwM3g2ekFBOHlHeDc0a3ozTzJkTVJadVlUNmdUMHZQMElKSEZwV2FhWU5YNE10dGJ0ckpXTXFsQjk0MjlqUl9aZTBCcXVnRllINkhSNUdjMGV6UkFSR0ZpRGNDT2pQYVVfLWFUbElVRGt5S2w1TElrdmVpMXMxbkpUZzJWQ2xPNVFEeUdjaE1YLVREbTVaMzZwYlNjUnJMM19qR1YxemdlU2dIeUFlT05UVXMyZGlHQ0ZNZFljTmg3dllDbUY2bnZQcWlqc1BEbl9EMlE?oc=5",
-      "imagen": null,
-      "fuente": "The Joplin Globe",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793375178000
-    },
-    {
       "titulo": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembre",
       "resumen": "Nueva York está haciendo historia en los esports con el Mundial de LoL 2026: el mayor campeonato de videojuegos llega aquí el 14 de noviembr…",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5UHVMS3ZlV3pFU1pZbllPUXVqaUo5dlJHazI1MHprTk1JV1B3Z3FreXdnNWhlQzl6dG9zZmRZRU1SUkVKWXRTeDM4a0ZBbHZUQ29QTnM1RmRZclliTE9kUm1yZ3VnZ19SNzR4bTAwWUhzUnZyZnYwenNIUER5UHM?oc=5",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793021502000
+    },
+    {
+      "titulo": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump",
+      "resumen": "Sitio web de la Casa Blanca estrena 5 videojuegos de baja resolución que promueven agenda de Trump Telemundo Houston",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZUlxSElYYlQzTjV1Z0txS19sVC1aN21JUDJZSEh0UkVLa2d3ejVkYnhLaC1SMjFOZEhJZV8tUGo3TjN6ZkEyN0xDd3BEYkRhR3Y1aVdxTHBSZm9EZnMwaG8wWGpZOVJ6cTZYX0ZOOHJnSFJINlIxMV9sZGw5czFWX1RhdGp6X3ZyVW9XUFZnNzdabFVY0gGcAUFVX3lxTFA4am1CN2R3SmppdGFkcWNlbE1HcmFMR3QzaTRNbTdZUXhwOEVMNlJNQXRuMnotSklmUENqZkp0bXkwZXlMay1YazdjUlRvc3E2VnM1bVB2Vzl6NEtkeVVhSHZQRVczWTQ4ODFnN1FZZjg2Unl6Uk9VR0hJZUdvamtrcmtqb3FMOU1LWW5xSDBYOThsQ2RnNERjZVFFYQ?oc=5",
+      "imagen": null,
+      "fuente": "Telemundo Houston",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1788505200000
     }
   ]
 }
