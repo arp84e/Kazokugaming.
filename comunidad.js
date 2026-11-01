@@ -12,6 +12,9 @@
 // Mientras esté vacío, los botones de Discord no aparecen.
 export const DISCORD_INVITE = 'https://discord.gg/jGfsuMJ2nT';
 
+// Cuenta de TikTok (enlazada en el pie de todas las páginas y en los datos para Google).
+export const TIKTOK = 'https://www.tiktok.com/@kazokugaming.com';
+
 // Servidor de Discord (lo usan scripts/discord-configurar.mjs y discord-avisos.mjs).
 // Juegos que tienen canal propio en Discord. Empieza con pocos: un canal
 // vacío da sensación de abandono. Añade más cuando haya gente (y vuelve a
