@@ -1,7 +1,17 @@
 {
-  "generado": 1793576141090,
+  "generado": 1793599221812,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "'The Legend of Zelda: Ocarina of Time': un remake en el que Nintendo se lo juega todo",
+      "resumen": "'The Legend of Zelda: Ocarina of Time': un remake en el que Nintendo se lo juega todo La Vanguardia",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSGsxeC1YTEpxb0JCQ0N5WjJWZDBjSmVVM3dIV1RrdUNBMzJuYjZvUGNFZHpJcnBjRlVLamVjNDhHUFV5NGNmeG9VQnVLZ2hsSm1teUFUVS16blVieVktVTMyVWxzOTJ0bk9mNUdjNE12Z0RQUzNDUTQxY1ZKb3hpSkFQdUd5aXRsNTFlcXg0Rk05cExLbGJLcG8tTlNXNGpsYmdvaG5CdklHYjNER2hQbk4wcm1vZkJEUmdKVUd1OVpQcG_SAcgBQVVfeXFMTzRPSF9QR3dLdG0zOXQ3emZTbU1zM2xxSEpHMnZ1NVBTQlNEMklfbVc1Vkl6U1hFdHBFOFd2SFg4dzVfT09vcnE2X3VfcXo1NENQRlA2TElTUFBmSjFaQzR3STFETnpPUjFGRTBqNUdNcUwzdHppa05BcmtGY1JTcGJJYmpKcDRjbmhqYmtjZXhTQXAtTVFjc19wLVdMdC03TGVFcmJXWTlkdEdxWW1KMl9pT0Y2X1NjQnJsT0VDT0ZLMFhmUlBuVmQ?oc=5",
+      "imagen": null,
+      "fuente": "La Vanguardia",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793595600000
+    },
     {
       "titulo": "Los videojuegos, mucho más que una forma de jugar",
       "resumen": "Los videojuegos, mucho más que una forma de jugar HobbyConsolas",
@@ -63,14 +73,14 @@
       "fecha": 1793536930000
     },
     {
-      "titulo": "'Grand Theft Auto VI', 'Zelda: Ocarina of Time' y otros videojuegos que no debes perderte este noviembre",
-      "resumen": "'Grand Theft Auto VI', 'Zelda: Ocarina of Time' y otros videojuegos que no debes perderte este noviembre La Vanguardia",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOclhwN2Y0RU9OMzJHMUdRZERBM0E2M3NXUVdWNUVDUVJ1UVkxLVA3ckVURENjRUViVElUZ2Fuano5SW1PdkZJc3VsSFQ0MzBYMWRFMmh4OUFHZTBYT2lWR1U0bjBQcHNWMVNuN29RZ2IxX2J3VlpZdDdSOE5ZS1V6MFo1UTdpdVRWLXhydmdkM2haRTV4c2FMVkN3TnYyY0lUNXRNYXc0U1o4cnpDUzhMeGxqaFhRZE9SbEdjdTZEX1M4Z0F5eU42dlJnbXN2YWF4NnhQdXBXOHR5Q2xVa0xj0gHkAUFVX3lxTE5xZ2hxRFBKenE5TlF0X1hYZ21XS1RBTTVFdDNrcUE4emdQVzhEOGJQcUVlZ0hSc0ZjaThDVjZ3MUlpaUpzRzFwMnNsZmtaY3p6WEVaeTB4ZjAwdFpYTW5NemkxOHhKdDFTZU5Hc3JVcnJxNTlHaWdycXBSbjFXSFM4NmhjY2NxTTRZMk1KVkRDaGdXMlg5Q2RxQWdGeVpZTVlLRHN2am02bV9ZTkZsOXY0SFZjNkdFbjV2VnBJeHRmUGxLek5EQWpMaVJNUWVodEx5YTczdmFrYzBkQmo2bHVKTFAwbw?oc=5",
+      "titulo": "Claude comienza a bloquear la posibilidad de clonar videojuegos o realizar ingeniería inversa",
+      "resumen": "Claude comienza a bloquear la posibilidad de clonar videojuegos o realizar ingeniería inversa El Chapuzas Informático",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUjRLMC1zcXdZQXVsdWZFUlJoVGZGVlBubllNX3M2d3F1MFRwNFE5UFBrWWUzNDhYV05FMjExaDE0a3Bna3ZDV1dhcjhuMXp5eGcyZ1dnRzRJSC1pRm5ZRlhZMlhyXzUzcHp6cXI2Y3FGMjhKUVN4ZEViQXpqUmx3ZEFCRmhOUk1BQkduLTktUERKUkx1LWw2eHpiYw?oc=5",
       "imagen": null,
-      "fuente": "La Vanguardia",
+      "fuente": "El Chapuzas Informático",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793531663000
+      "fecha": 1793532502000
     },
     {
       "titulo": "La razón por la que los niños tienen portátiles en el colegio está en un videojuego de 1971 que vendió más que Mario Kart 8",
@@ -98,16 +108,6 @@
       "link": "https://www.vidaextra.com/industria/como-bioshock-diablo-otros-videojuegos-vendieron-su-idea-para-conseguir-dinero-suficiente-para-crearlo-1",
       "imagen": "https://i.blogs.es/b33af2/bioshock3/1024_2000.jpeg",
       "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793463330000
-    },
-    {
-      "titulo": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo",
-      "resumen": "Cómo Bioshock, Diablo y otros videojuegos vendieron su idea para conseguir el dinero suficiente para crearlo VidaExtra",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTEptSWZQU3c5R2xyN2xlb2FZVWQ3V3VYTWJ2VWFkQlFFdlFaTUh3RWpqSmppR1hMclItaXZ0NnY5QU9YeVJsX0ZfU3RocGZVOF83OTVBOENubnpMSmR4SnlRYjF2X3BtYm81MjdfZHNFQVoxQm9iN1Y2ekJ6M01rZmtOckt0T0dGLVh1YnZDdVdPZ1NSeUdNR0pHcXpSaVdaUUJiX1VxV1UxT2dlTm5QU0FaNDNBSDRVcjVWa2piSW41SDdQbHhkcGhhYktfOG91emxwU2pnQQ?oc=5",
-      "imagen": null,
-      "fuente": "VidaExtra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793463330000
