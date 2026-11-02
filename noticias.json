@@ -1,7 +1,57 @@
 {
-  "generado": 1793634628132,
+  "generado": 1793662179148,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Siete años después, al fin sabemos (un poco) del próximo videojuego de los creadores de Days Gone",
+      "resumen": "Si bien presentaba errores de bulto, lo cierto es que Days Gone podía haber sido el inicio de una franquicia prometedora para PlayStation St…",
+      "link": "https://www.vidaextra.com/ps5/siete-anos-despues-al-fin-sabemos-poco-proximo-videojuego-creadores-days-gone",
+      "imagen": "https://i.blogs.es/cc5bd1/thumb-1920-1040129/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793652192000
+    },
+    {
+      "titulo": "Anthropic da un respito a los estudios y actualiza Claude para que deje de crear clones de videojuegos",
+      "resumen": "Aunque la proliferación de videojuegos que utilizan IA durante su desarrollo se ha convertido en un problema que hasta Steam tiene que ataja…",
+      "link": "https://www.vidaextra.com/industria/anthropic-da-respito-a-estudios-actualiza-claude-deje-crear-clones-videojuegos",
+      "imagen": "https://i.blogs.es/063072/9tdkhxrtu6dwf37aairvs9/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793645795000
+    },
+    {
+      "titulo": "Greg Zeschuk, cofundador de BioWare: “Ninguna de estas personas ha creado jamás un videojuego. Simplemente no",
+      "resumen": "Greg Zeschuk, cofundador de BioWare: “Ninguna de estas personas ha creado jamás un videojuego. Simplemente no Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQbTlJN3F2VVBiLThKZUZVU0xnOGNQeWhVSlZIY3JNWDhxMmNERmJHTlBmZTZ4VlltVmx0aTl4NFR4M2tTX3NEV05HLXRKYVcyUjVGUVRtbllidm02TXRHb1dlcDUtYm1kaHc1VjI0UkRtbHdoTlZvaUp4RE91M2FCLVpxc1hDbEMySkJYOERDQ3NEdzQwRlozcTNjQjI3ekdOLVo5Wl9vbl9UMVBudWI1djFEWmlTRHpVSV9IWlVrN3Z5MnZJU1NUZFNVTEg1T0FRdklEMW1wT21SYXF0WTd1a1EwQ3J0WVk3LVJ6bnpiZXBKT3lDZFRhemE5Z2s4dnBsY2fSAZYCQVVfeXFMT1hjT3dCN2M0dmZEcVg4dVZuWlRRM2JlQmxEZHlldU1oTmFEa04xdGtlVTBBcWVmMDhNUUtwUHpjM2xvLXNrUF83aV8wZE5DamtaTlFGU1RHSFNNNlFTSHhHSGFTU093VnVZUE5CRTRTV0lJUEhVVjlrS0c3Sm5QdThkRzRyMEEzRUxwWExmVFVFV2NWM3VZem94SlpXOVBTLXlfaV90eXRWTEpnWkFPemlhZVdDVTJBV296X2JWT2FQZFc5Q2Rmd3N2YWJlVTEtcWNTVVdPdmxRazZ4djlPV2hZb3BJSGN4R05FbVZnQWlLQVBfVjBORW9yeHZkWGtSSmxldU42VV9DVTc3a1FyT2hKZFZXNmc?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793642449000
+    },
+    {
+      "titulo": "Cuándo podrás jugar a World of Warcraft: Forever y todo lo qué podrás hacer desde el primer día",
+      "resumen": "Por fin estamos en noviembre, el mes que tanto estaban esperando con ganas los jugadores de World of Warcraft, porque esta misma semana por…",
+      "link": "https://www.vidaextra.com/juegos-online/cuando-podras-jugar-a-world-of-warcraft-forever-todo-que-podras-hacer-primer-dia",
+      "imagen": "https://i.blogs.es/d259f1/wow-forever-01/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793637383000
+    },
+    {
+      "titulo": "Anthropic cambia las reglas de Claude para impedir que la IA copie videojuegos existentes",
+      "resumen": "Anthropic cambia las reglas de Claude para impedir que la IA copie videojuegos existentes Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWTZsWnJtVDJTSGN6Ylp4eHVLSEdZYkJaZW9iem1CZHlhZ1p2UjVQZjVMMDdvdVhxbE9fNXZIeVl2azdvMnVyMFg1WGh0aS1nNGtmaVJlMDlDb0JERmdWQlh4NzNYQ19VTTBaNHVfN3JhX0hlQmczZWRFdF9MLXpXeTM2UVpReVdyLVdmblFTSHd1bkEtdFAyeEplOFVEUS1PRnJmYmZNTFJpODA2S1JtdUljNDNBXzYzcFQ0S25TNA?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793634565000
+    },
     {
       "titulo": "Crimson Desert no es el único juego que ha añadido las batallas navales de Assassin's Creed Black Flag. Hay otro que nadie vio venir",
       "resumen": "Ubisoft no inventó los videojuegos de barcos y batallas navales con Assassin's Creed Black Flag de 2013. Otros existieron antes y han tenido…",
@@ -11,16 +61,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793631688000
-    },
-    {
-      "titulo": "Un vídeo de hace casi 10 años demuestra que la cabeza de Cory Barlog (God of War) va a otra velocidad",
-      "resumen": "Un vídeo de hace casi 10 años demuestra que la cabeza de Cory Barlog (God of War) va a otra velocidad Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPU3lvU3pRX0k0Y3BrQlpuOUNWY00yQmtrY1JkZDRxR3hDNU5RdFU0U3drTTl4XzBDWFVSeFVNaHRQSlp0QXBKOUIyMldwRjhQT21lSVVZX1I5TTdtMEp0M2Y5eHBzRDYtdGw1TnEtT3EyRzk0WHdhYlMxRVZJTVR5bWJHU3Nad0Y4aFpXZ3pnNzg5dnVEQVV2V1lLNnB3di1zWnF6UDJ5cGF3TnZ2X2MwdGxfTEJTdnZCU0p5ZUozOVdHOVhpVERLSHRPNTFic0s4bERhYmlnd1Zrb3hIcWtr0gHzAUFVX3lxTE9lbzVZSFB3NVpUSlNGdHA4elpzeEhfUk1XSXpHT3BqbnlmajZ3UHJMVDJWOXpoN2Z3dWhmbDRjZWs2Z1I4ckxkRTZ2YjRhM3gxRllhVjhsMGw4c1otQUxSUzA0M2NvcEVDS2RmOTFSLXozMmI2RWRtbGN4Tm5DTGtPbGdfSmMxXzBrTThrc2Q4WkdLZjVKVFdZQUtubXp5ZktPRENRdk1ORFR5QUpBWHN5SVdwQmlUX1lNRDVIZ3dfQUowRGNUSjZpMmRuNGptNnVZNExoU0lqZkQ2U2VPZE9DN1FFNHQtSHdnOVlIMVdfdV9rdw?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793627100000
     },
     {
       "titulo": "Casi 20 años después, sale a la luz la precuela cancelada de Portal... y la puedes jugar (casi) al completo gratis",
@@ -63,16 +103,6 @@
       "fecha": 1793617062000
     },
     {
-      "titulo": "Una de las imágenes más legendarias de Mario y Donkey Kong es vendida por 330.000 dólares",
-      "resumen": "Mucho antes de que Mario se convirtiese en todo un icono y uno de los personajes más reconocibles de la historia de los videojuegos, Nintend…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/imagenes-legendarias-mario-donkey-kong-vendida-330-000-dolares",
-      "imagen": "https://i.blogs.es/ff5aa6/mario-donkey-kong/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793614117000
-    },
-    {
       "titulo": "Los videojuegos independientes están logrando algo inesperado y un nuevo estudio revela un cambio que sacude a la industria",
       "resumen": "Los videojuegos independientes están logrando algo inesperado y un nuevo estudio revela un cambio que sacude a la industria Kotaku en Españo…",
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxORWlWX1NkYkZ5UEhwanhrbEx6LXRlR3hTRWZueUF3dlFHdGVhc3RUZ0RxTXo4eDF0Tjl6Wjl0XzNnX2lJd0hVNVVUUERaMnBCVmwyVDFsSlBnMjdGWHNuaS1aQ1ZCbGNUbEtvMzRyS0VYS1F4aG94WDFOLWhDMEZlWVhUbGtpNDFvaTVteHN6RmViQzBDRkY3WnZKMHctT1dCZ1dMLXBRVXlPbzg1Y2syMWtTS1hHb1Uxc0NrVnZhelpsbzRrS0RtdTlMeUlYbnZ2M2Jtenc2Zmx5WFRQcmtFdUFKakxDWGtDd1hqNA?oc=5",
@@ -81,16 +111,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793613381000
-    },
-    {
-      "titulo": "Capri de Edgerunners 2 ha llegado a Cyberpunk 2077 como una compañera muy cañera y divertida gracias a la comunidad modder",
-      "resumen": "No ha pasado ni un mes desde que la Edgerunners 2 se estrenó en Netflix, pero la comunidad modder de Cyberpunk 2077 no necesita más. No por…",
-      "link": "https://www.vidaextra.com/rpg/capri-edgerunners-2-ha-llegado-a-cyberpunk-2077-como-companera-muy-canera-divertida-gracias-a-comunidad-modder",
-      "imagen": "https://i.blogs.es/2e39c5/cyberpunk-capri/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793611623000
     },
     {
       "titulo": "Tony Hawk pateó fuera del parque mientras intentaba recrear Pro Skater 3",
@@ -113,26 +133,6 @@
       "fecha": 1793558439000
     },
     {
-      "titulo": "Cyberpunk 2 esconde un detalle inesperado en su desarrollo y CD Projekt RED revela de dónde viene gran parte de su equipo",
-      "resumen": "Cyberpunk 2 esconde un detalle inesperado en su desarrollo y CD Projekt RED revela de dónde viene gran parte de su equipo Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNM2tVaV9YOWRRUGV6d2VyZ2xoMDY1aFA0X0h0OGctQWlwSzk3UUtneWtGNkRldklLU1oyblBSaHdfV2lqNUQ1VTU1WkxfYktPOUdZOW1PdG1JZVE3cHZKYlRsV0lOV3VPZFIzek50MHJrUmpJQ3RWaXVRemMyVGw0MXk3cF83c01fd3l3OXE3YnFZOEF0VUFVNGRSYVctN3lONFc0VXo5SEFDR1J6X1BCcDFnQjlzcGxwV29HNG9NelduekZmbGU1NVJSaGxKQ3lCUFVQaUV1Q1ZkMFcxNm1DYTBxaW11b0pjZXc?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793553500000
-    },
-    {
-      "titulo": "En Japón conectaban su PlayStation a un teléfono para navegar por internet cuando tú aún estabas enviando SMS",
-      "resumen": "Hace unos días estaba absorto en ese scroll infinito en el que entras a veces y me crucé con este tuit. En él se mostraba el i-mode adapter,…",
-      "link": "https://www.vidaextra.com/juegos-retro/japon-conectaban-su-playstation-a-telefono-para-navegar-internet-cuando-tu-estabas-enviando-sms-1",
-      "imagen": "https://i.blogs.es/1f49ae/japon/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793549727000
-    },
-    {
       "titulo": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA",
       "resumen": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA Yahoo Finanzas",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPejQ1UVF6T18wc2VxaGI2X1oyaldZMWVsdnhYblpIaU1hbVk4OHNsX2I1SVU1OVJaMXJ1LU9wRFR0UkpZdFdIUEJZaG1wQWxIN1RBR2N0RE1nZW5iRWEwVE5seGVBaF8tamVOXzdaWEFDZE5UNFhoODlmVUYtMUdOSWpaTHFzNjhDS0RJbmlkQUh5RDQxdm9VX3VwUnRWdw?oc=5",
@@ -143,24 +143,14 @@
       "fecha": 1793375160000
     },
     {
-      "titulo": "La nueva edición de Gamergy, el mayor evento de eSports de España, empieza mañana",
-      "resumen": "La nueva edición de Gamergy, el mayor evento de eSports de España, empieza mañana Cine y Tele",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWnpRZVduVW1LcUM2clFsOFc2ZnRaM2U2a192SkFCdkFjbl84MFY0QThEbVBxY2I2X3RLNHIzRDBtRnFmX240SlFZUXRlanpxSUhnNVRmNnZYMGtTREM0YndNN1p3aWVtb0Fwekppbmc4T1pKd3VRaXdzVXhIWVRERVZjWmJTdjdST3RVTEtaeVVYRHFpVjEyc1lRZlpLQ2UxNWdRM3R6OTNjZw?oc=5",
+      "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
+      "resumen": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026 DAZN",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVm1YMC03TWZIalJHSGRLenhadk5VM1U1UWo5NTFKbVh2NmRfYnNycDJZdlNpTUd2QXphSXpxaEowb0tNZG5QLTIzSVVob2ZTMHNSZG4zRTZZX19CZFhrTlZ1c3dZaC0yeW1Od0hlNEl2MnJ3Z2JiX0pwVDZ5T2kxWTJENGtURFpEY2w1OXJONFB0a3kxS1M1bHZfZXZqV0dDeDRZYlFjSG9WcThhNUNkUFFNM3NmYWlsTWc?oc=5",
       "imagen": null,
-      "fuente": "Cine y Tele",
+      "fuente": "DAZN",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793306519000
-    },
-    {
-      "titulo": "El Clasificatorio Nacional de esports en Málaga corona a Pablo Torres",
-      "resumen": "El Clasificatorio Nacional de esports en Málaga corona a Pablo Torres Diario Siglo XXI",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQLV94SnkwTjNscFZrd2p6ZThFc0dpVTNCX3cxb2tvR2t4UVg0NG01OHBtWFM4MG5hYW1QTnp1YVhnZmpoTGZzc3Z0dWVMSXdxNVdzd3BlZmN5d3ZibnJMQUlXdmxjTXpVSDdERWptSUNjMElvdy1kcHZBZTUtSjR6Ulhqb3hIZS1EeDJ5ZlNvbHliNzZTSG44OE5MdHhpeldvekYta3hreEROWHdRSnZRV0FIT3ZEV2lTOFE?oc=5",
-      "imagen": null,
-      "fuente": "Diario Siglo XXI",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793291400000
+      "fecha": 1793189198000
     },
     {
       "titulo": "LoL Esports |",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1791183600000
+    },
+    {
+      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
+      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
+      "imagen": null,
+      "fuente": "UCAM Deportes",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1783494000000
     }
   ]
 }
