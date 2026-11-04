@@ -1,7 +1,17 @@
 {
-  "generado": 1793755206767,
+  "generado": 1793783459709,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Gráfica del día: ¿Cuáles son los videojuegos más populares entre los adolescentes mexicanos?",
+      "resumen": "Gráfica del día: ¿Cuáles son los videojuegos más populares entre los adolescentes mexicanos? Revista Merca2.0",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTGZlazlmaHZzcF9INVY5S3RLblM1UWhZdHNKNnEyYy1sTU5pS3pjQmZrWnN4ZGRJbFd3aWhGQVkzelB2Ylo5SnBOMlI5OGlGTzVLcnh5TDBjck5WRXRSbWJ1SXNXRU5WX2pEcjBWbE05UENORkxYRmRxWFlfMThtZjQ3enJaalVvODdiZHBWR0xOVEJBOW5jZ2lTU1ZianRBUjh6NkpPN2NtRkt0akJULXZVNVQ?oc=5",
+      "imagen": null,
+      "fuente": "Revista Merca2.0",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793779771000
+    },
     {
       "titulo": "Hace 25 años, este juego de Dreamcast nos hizo darnos cuenta de las limitaciones de las clasificaciones de videojuegos",
       "resumen": "Hace 25 años, este juego de Dreamcast nos hizo darnos cuenta de las limitaciones de las clasificaciones de videojuegos 3DJuegos México",
@@ -41,16 +51,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793736925000
-    },
-    {
-      "titulo": "De los primeros videojuegos a 'Gelatina is Hungry': 40 años de historia del videojuego en Galicia",
-      "resumen": "De los primeros videojuegos a 'Gelatina is Hungry': 40 años de historia del videojuego en Galicia El Correo Gallego",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVUpOSHBndy1fT1l6c2xudHA0RW1kZmhfeEZhSmFaN01aOGYwNGJZa0UwQ3d4cGVmVjhsQmEyVnZvNjAzcGNQOHhiYmliT0FBbmdzWlVUeTMzTjRfNV9nOTN0WTR0Sjkza1RFSV9Vbm8zSG5Ja0R6SV9pVmM2OXlUUUN5T2VzOHJvS3JDM01yZWR4bW9aNmhQRW9BMVdjQ2g5anVCMnNnck7SAa4BQVVfeXFMTlU4c0hCTHBjWTNuLWphNjFEYm1MLVJjbkZkSjVDelcyU0UwZHEwdXByMTQwbV92QXh5N3pubkxKdVUwdUpPQ2d0Q3lNbWlqZzhDeWtVMTVoTC00cHc4eG00ZFIxNm5GbC12eFNadU5QY19QWGFvNFYxdUxISWJDb29BQ2U5Uk5wQzRLWTFhQTItM0ZCZm1KXzVqQmMwY1VDMnVVUzRtMWNMSHlYUFlR?oc=5",
-      "imagen": null,
-      "fuente": "El Correo Gallego",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793736227000
     },
     {
       "titulo": "GOG está persiguiendo un Santo Grial de hace 34 años, pero es el peor ejemplo de la conservación de videojuegos",
@@ -123,16 +123,6 @@
       "fecha": 1793714071000
     },
     {
-      "titulo": "Santa Fe Game Factory lanza su edición 2026 para exportar la industria local de videojuegos",
-      "resumen": "Santa Fe Game Factory lanza su edición 2026 para exportar la industria local de videojuegos RTS Medios",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTmRweGREaDZVcXhLbzRkTkpObVR2YnNjTFFZVlNMZDV3aGxfQV9nUnFMOUVweDVvUmtxVmNINFNuX2RhWnFEeVNLaVNGSHBlQnQ5NXAzNzF6TWtlZ1FjUkdBQjBWT3llbXVLZjE2aWdEZy1zUG14UGl4ZnhJMHNQX1k3dDg4YUE1OExaOE5aUm9IWWxmOGZVRTd5V2dvWkQ1SkJTWVJxYXh0anpvQWV0cU40TEdGUUdS?oc=5",
-      "imagen": null,
-      "fuente": "RTS Medios",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793708948000
-    },
-    {
       "titulo": "Estados Unidos impulsa una ley para garantizar la propiedad real de los videojuegos",
       "resumen": "Estados Unidos impulsa una ley para garantizar la propiedad real de los videojuegos Nintenderos",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVnRRUXFFUDZVbzl4VU9PaGpvOWZsSkU3M2RXTUFvUkgwaWlaRm1oQzY4a2lfWUZuMUZicnVNSk0zTWlBY3Q2V1dIYTNVa1lsWEltU1BLenI2VjdyN29NTFN6eUxEdXpRUlUyZVdWTXlhNTJrWTV2alFubHlMbDN3dHc1RDFVYjVvVWtOMElLUFR1MHVsZ3VMaEdiUUhtQUlJMHlNQWJmS1NIUWtsdkFWT2wxZkh2TDUxS0sxQw?oc=5",
@@ -141,6 +131,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793708100000
+    },
+    {
+      "titulo": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA",
+      "resumen": "Xsolla adquiere GamePix para crear una plataforma completa de videojuegos para web y creados con IA Yahoo Finanzas",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPejQ1UVF6T18wc2VxaGI2X1oyaldZMWVsdnhYblpIaU1hbVk4OHNsX2I1SVU1OVJaMXJ1LU9wRFR0UkpZdFdIUEJZaG1wQWxIN1RBR2N0RE1nZW5iRWEwVE5seGVBaF8tamVOXzdaWEFDZE5UNFhoODlmVUYtMUdOSWpaTHFzNjhDS0RJbmlkQUh5RDQxdm9VX3VwUnRWdw?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo Finanzas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793375160000
     },
     {
       "titulo": "La nueva edición de Gamergy, el mayor evento de eSports de España, empieza mañana",
