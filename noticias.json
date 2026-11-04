@@ -1,7 +1,37 @@
 {
-  "generado": 1793739514609,
+  "generado": 1793755206767,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Hace 25 años, este juego de Dreamcast nos hizo darnos cuenta de las limitaciones de las clasificaciones de videojuegos",
+      "resumen": "Hace 25 años, este juego de Dreamcast nos hizo darnos cuenta de las limitaciones de las clasificaciones de videojuegos 3DJuegos México",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPaUt5dzN1eThVVktkdlNLOURvSlg0TzJwQTAzLUxDT0JfanBKRXlIWXU2VnFselA5NFdaR2cwX0lzWHA5R2tUUnppYThoUFNBb3dHNkRVNzBmZ0NoY1BGVV9CRTNzZFRhZzg1QWRPeV9Da3VHYWNEdmNKQ3RVbnpKNzNURG1LbV8tMG4xUUxNMzFJbXBDbk9kN3NhaHlwY2g1VXozLVhrOG1FVkZ0V1U3M18zbGVJTXBFNlRLNnpKYkZsN0pzVXFaLUktbWFPU2h50gHWAUFVX3lxTE4tWl96VjRXc2c4V2x6NHRGNHdWd1kteTNHSUp5X1FOUWxTT3lxam5QXzBIaFFDZ0g2REhPeWNBSFBCVk41YVZSVl9mamZ1WHdKMnh3Vi1XaXMzQ2ZjZm1JSnBGa19HaGIxakU5Q0wwR0FKbVZzcFd6V0Q2T2l5ZDhOdWtmRm1vNFFkR2p0ZFhjRTcxWnlvYV9XX3pVbGYzRjk3UlIwVXRFNUNJcm1yWllVZXU2YlI1U0l5Skp1bUtNSHppMmt6a3NPdDBFVVh3bmprdmdDV0E?oc=5",
+      "imagen": null,
+      "fuente": "3DJuegos México",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793750487000
+    },
+    {
+      "titulo": "Por qué algunos videojuegos son tan difíciles de abandonar, según expertos",
+      "resumen": "Por qué algunos videojuegos son tan difíciles de abandonar, según expertos Infobae",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZmY3MkE4aDIwNDVPLXdFU2Joekx2Y3FrVVhFTWp2R00xZ3NnYVV3T0RmTVIxUXlXU0hBZ3ZFWlFNeWVuQUVRVDExd3loR1hJWWVZSk5fVVkxTlY2bUpjcUxlMWJsUHV3MHpoN2o1Uk9xcHpJQy1qZDh0YUdaSS1QV2FYN1ZWZFhPNUNFOWxvVm43ZlVIM2lXRUNkTkpJUTJoSjRqcUg0T1VJa1NCcFJCNUxOT0JJUdIB0AFBVV95cUxNNjg3VmtMV2kycUc2clBOLXZ2d3VZaXBzTEtQYXA5LUNUM1FlbG9WaXpnNXdvMXZiV2otQjB0S3VaNGFiN2VSTVZSbTd3NkhDRjQ2Qmhza3J1MFdVSXdhdUR2MU9hUzMzVVV6d0lqdGkxX0FjMGN0T0x1ZFpybzA5VExoU21wQTZzdFNLaU4tTnBrSXo2V3NIN3M5MmtxQmNZaV95OXMwWE9BcXVWWnJDNS1pOHZESmNRLW9ZeGFmdWNqb2s4TXpYOUpqdU84MWo4?oc=5",
+      "imagen": null,
+      "fuente": "Infobae",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793741040000
+    },
+    {
+      "titulo": "DC ha hecho realidad la peor pesadilla de Superman: ahora su mayor aliado lo quema vivo, literalmente",
+      "resumen": "DC Comics tiene un sentido especial para la crueldad y más si viene cargada de cierta ironía. No hay dedos suficientes para contar los cómic…",
+      "link": "https://www.vidaextra.com/comics/dc-ha-hecho-realidad-peor-pesadilla-superman-ahora-su-mayor-aliado-quema-vivo-literalmente",
+      "imagen": "https://i.blogs.es/2c4147/superman-sun/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793739809000
+    },
     {
       "titulo": "Pokémon GO: códigos, eventos, bonificaciones, recompensas y todos los Pokémon de noviembre de 2026",
       "resumen": "El otoño y la Temporada Caminos Crepusculares siguen adelante un mes más en Pokémon GO, aunque esta vez es más especial de lo normal porque…",
@@ -11,6 +41,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793736925000
+    },
+    {
+      "titulo": "De los primeros videojuegos a 'Gelatina is Hungry': 40 años de historia del videojuego en Galicia",
+      "resumen": "De los primeros videojuegos a 'Gelatina is Hungry': 40 años de historia del videojuego en Galicia El Correo Gallego",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVUpOSHBndy1fT1l6c2xudHA0RW1kZmhfeEZhSmFaN01aOGYwNGJZa0UwQ3d4cGVmVjhsQmEyVnZvNjAzcGNQOHhiYmliT0FBbmdzWlVUeTMzTjRfNV9nOTN0WTR0Sjkza1RFSV9Vbm8zSG5Ja0R6SV9pVmM2OXlUUUN5T2VzOHJvS3JDM01yZWR4bW9aNmhQRW9BMVdjQ2g5anVCMnNnck7SAa4BQVVfeXFMTlU4c0hCTHBjWTNuLWphNjFEYm1MLVJjbkZkSjVDelcyU0UwZHEwdXByMTQwbV92QXh5N3pubkxKdVUwdUpPQ2d0Q3lNbWlqZzhDeWtVMTVoTC00cHc4eG00ZFIxNm5GbC12eFNadU5QY19QWGFvNFYxdUxISWJDb29BQ2U5Uk5wQzRLWTFhQTItM0ZCZm1KXzVqQmMwY1VDMnVVUzRtMWNMSHlYUFlR?oc=5",
+      "imagen": null,
+      "fuente": "El Correo Gallego",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793736227000
     },
     {
       "titulo": "GOG está persiguiendo un Santo Grial de hace 34 años, pero es el peor ejemplo de la conservación de videojuegos",
@@ -23,16 +63,6 @@
       "fecha": 1793736087000
     },
     {
-      "titulo": "Pokémon GO, el Artilugio de Exploración llega también con la app abierta",
-      "resumen": "Pokémon GO, el Artilugio de Exploración llega también con la app abierta Pasquale Pillitteri",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcll2UmV0dGtaYzJ3M2FjYUZoeUZPWldTMnN6dW91VmRCeVBNUzB4N1N3MXp2UHBNXzU2NVROQ2h0VTcyVk5ERzBFY2o1cVhSOVdsdG1PcVprTzduZVJoSWtqdzFvUzdOT2IwS3FRemNwS2VtTzRqYlNpMzlKdjVCcVczUHp3bzJlQTRIbFphQkdOUQ?oc=5",
-      "imagen": null,
-      "fuente": "Pasquale Pillitteri",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793732444000
-    },
-    {
       "titulo": "Xbox Game Pass: confirmados los 15 juegos de la primera mitad de noviembre y los otros 13 que se marcharán",
       "resumen": "Ya está aquí uno de esos momentos del mes en el que Microsoft ha dado a conocer cuáles serán los siguientes videojuegos que se unirán a Xbox…",
       "link": "https://www.vidaextra.com/xbox-series/xbox-game-pass-confirmados-15-juegos-primera-mitad-noviembre-otros-13-que-se-marcharan",
@@ -41,16 +71,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793731205000
-    },
-    {
-      "titulo": "La plataforma de videojuegos indie itch.io elimina 2TB de contenidos \"basura\" generado con IA",
-      "resumen": "La plataforma de videojuegos indie itch.io elimina 2TB de contenidos \"basura\" generado con IA Infobae",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZS1vRGYwQllfYVNrWWxkazRJSkNBQ0RHX0g4Mm5nTG9WeVpsNzBFb3NKWEF1dW5EcG8xTzRTT1pfZlhKanNLVWZVSDZSOVhKUUk4Q1hxYlREOU5Hd0tVWTEyQ01yejFLaTJJbEt1WEo4TXNpUHY2OVlyWlk4bVZySGZOdDJaS2lodUJuY2RUZk5ucXRCVkFrcGNwN3dRNDVFV0JvSnNmN0FIaVFtWDNRRDFlb2NQa1Y5aFV0bW1xNUhoeHhzWGl1OVY0NjdzeEFnSE9jWXplNDdPNzjSAfYBQVVfeXFMT0pyZ1lqanlWS0RHbm1LQnpDQUdxeGI2Q09fZnJ2czh1c1l1cGNId3haSS1POUJqUm9IYTZRcFV2cEhlVjR4SC0wSFRKQU1ENE5odF9HQ0RHckFtcFg5NUV0cEZCV0VGLXhfUnk4TVQ5ZzFyd0UydGMzUm4wdHFNbGZuRF9Zc2ticjdHUlpRcldsczdnWnpWdnVHYnlZN0hzdkVPNndUWG1uR2k0b2ZVUHF0NFNxNWVNVUFobHRVclpsYW5JeXdHVWZSeGRaYTV3eHF4eFZRblpUejNoWGJEUl9SVHlYTm81VXJjYkVXdHMxeW5sS1BR?oc=5",
-      "imagen": null,
-      "fuente": "Infobae",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793725260000
     },
     {
       "titulo": "Después de ocho años de espera y rumores, The Elder Scrolls VI: Sentinel será el nombre de la próxima entrega de la saga",
@@ -71,16 +91,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793718797000
-    },
-    {
-      "titulo": "Apacer lanza una gama de SSD para videojuegos con hasta 8 TB de capacidad",
-      "resumen": "Apacer lanza una gama de SSD para videojuegos con hasta 8 TB de capacidad TradingView",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBSZHJtbm02NjZrekxIdmJ1OHlfdmRlYnJWZkdqRDFjYUh6Uzk0XzIyRVFBa00yY19JUUdzVllXRTBaQWpvUTUwOW1zYTItTHk4SWxqX3N4VGhUa1BPVzdCdFhGMmhjblg4MGYzTg?oc=5",
-      "imagen": null,
-      "fuente": "TradingView",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793718000000
     },
     {
       "titulo": "El creador de South of Midnight reconoce que Xbox les debía haber cortado el grifo del dinero: \"Siempre hay una noche en la que Roma arde\"",
@@ -111,16 +121,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793714071000
-    },
-    {
-      "titulo": "Los días en GTA 6 serán más largos y ya tenemos una cifra estimada: tres veces más que GTA V y Red Dead Redemption 2",
-      "resumen": "El ciclo de día/noche suele ser un aspecto anecdótico en la mayoría de videojuegos, especialmente si la noche cuenta con una buena iluminaci…",
-      "link": "https://www.vidaextra.com/accion/dias-gta-6-seran-largos-tenemos-cifra-estimada-tres-veces-que-gta-v-red-dead-redemption-2",
-      "imagen": "https://i.blogs.es/1a78c9/gta-6/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793710890000
     },
     {
       "titulo": "Santa Fe Game Factory lanza su edición 2026 para exportar la industria local de videojuegos",
