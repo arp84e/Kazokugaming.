@@ -1,7 +1,57 @@
 {
-  "generado": 1793812461397,
+  "generado": 1793831939677,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40%",
+      "resumen": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40% Forbes Colombia",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSmFFSXNfTVktQnhlN0IydmtETGxmNGJzekVDQktRS0EtTVZTUW1kTW0tTHRKeFRKY0phU1l0c01UQzFvS09WVHNRcmJ5T1llTVYtNWN1Z054bXNVSVRLdFN4OHZBQ21SZHFBY0t6RUU1OW1jS3dGd3dGUXdBYmd0WXlkNkR0SHBQMjhqNFU5QVc4UGZrQ2FqVXQ0dWF0Ry1DUVR3R1JrNURaV3RBb3FoVUNfSWhRWHhi?oc=5",
+      "imagen": null,
+      "fuente": "Forbes Colombia",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793826853000
+    },
+    {
+      "titulo": "Elon Musk, empresario: “Da la sensación de que Elden Ring lo haya diseñado un extraterrestre”",
+      "resumen": "Elon Musk, empresario: “Da la sensación de que Elden Ring lo haya diseñado un extraterrestre” Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQQjJONnF4SDZQQm1LczZfRDA2S0xseHZlRm1WS2RRQmpEcVBacWp1Rkw3TjNJdVl6WWx2ZDF3a21uQVpCc3JDVC1VdXV5d0dKcUNzTUZMcWc1b2s5ZENpSVIzM1YzRzFTdlRaXzFvZ1pSTG02azdiRzk4Mm1nWWpaOUNwdXpZYk11dkxLUVo0bzFQMDA1N2hzcG1YcWRoVHkyTVUya3JaeXdldkFxRTJBR256bndqVnNOS2htVXFESVdQTWtkTjk3MkxzZ2dCYUhqZ1HSAeYBQVVfeXFMT09mdWFnV3VWTFpiemYwVWlNWVlSdTlGQW80VEJmZDJHbDZXajE5bF9ldnJfYW9VajhDV3l5WW5IeGxoeWplNVkwUzU0ZEVVSllWT2lINlRjTXlERkQ3WGZsMkNWSndkc01Mb1FDUEpjT3k3Wk9SbmFiWHBtYkp1eWt6UW9PN3I2YzZRdG9rc1dyOGdHUm1ZUm5XQ3ZsOXM5SmVQbFNMSW9YQ0xGVUR0S3hqOW1WbXpmYk1idV81bDVWV1l4a1lWME0yLU54WUk2cGIzMnIwbTFnaUZrZDd2UWdlQ0ZReUE?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793824200000
+    },
+    {
+      "titulo": "Un afortunado encuentra un VHS de un película de Pokémon en una tienda, y al abrirla, descubre que todavía conserva la rara carta promocional",
+      "resumen": "Las aventuras de Ash y Pikachu en la serie anime Pokémon nos han estado acompañando prácticamente desde los inicios de la saga. No solo apar…",
+      "link": "https://www.vidaextra.com/juegos-de-mesa/afortunado-encuentra-vhs-pelicula-pokemon-tienda-al-abrirla-descubre-que-todavia-conserva-rara-carta-promocional",
+      "imagen": "https://i.blogs.es/d698de/pokemon-pelicula/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793822486000
+    },
+    {
+      "titulo": "Lo de GTA 6 es tan salvaje que está a punto de romper el récord de reservas de Cyberpunk 2077 (y sin salir en PC)",
+      "resumen": "Sabemos que el furor por GTA 6 es demencial y con cada día que nos acercamos al esperado 19 de noviembre, la fiebre no para de subir. Las re…",
+      "link": "https://www.vidaextra.com/accion/gta-6-salvaje-que-esta-a-punto-romper-record-reservas-cyberpunk-2077-salir-pc",
+      "imagen": "https://i.blogs.es/a5d017/lucia_caminos_09.0pd.ppokmi8-n/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793820684000
+    },
+    {
+      "titulo": "God of War Laufey se hará algo más de rogar y retrasa su lanzamiento en PS5 unos cuantos meses",
+      "resumen": "Parecía que el calendario de lanzamientos del primer trimestre de 2027 ya se había cerrado y todas las cartas estaban sobre la mesa. Sin emb…",
+      "link": "https://www.vidaextra.com/accion/god-of-war-laufey-se-hara-algo-rogar-retrasa-su-lanzamiento-ps5-unos-cuantos-meses",
+      "imagen": "https://i.blogs.es/cefb81/god-of-war-laufey/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793812819000
+    },
     {
       "titulo": "Ubisoft no para de despedir gente y cerrar estudios, pero estaría interesada en comprar a los creadores de Dishonored",
       "resumen": "Uno de los acontecimientos más terribles que ha vivido la industria de los videojuegos en los últimos meses ha sido la oleada de despidos qu…",
@@ -23,16 +73,6 @@
       "fecha": 1793808608000
     },
     {
-      "titulo": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40%",
-      "resumen": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40% Forbes Colombia",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSmFFSXNfTVktQnhlN0IydmtETGxmNGJzekVDQktRS0EtTVZTUW1kTW0tTHRKeFRKY0phU1l0c01UQzFvS09WVHNRcmJ5T1llTVYtNWN1Z054bXNVSVRLdFN4OHZBQ21SZHFBY0t6RUU1OW1jS3dGd3dGUXdBYmd0WXlkNkR0SHBQMjhqNFU5QVc4UGZrQ2FqVXQ0dWF0Ry1DUVR3R1JrNURaV3RBb3FoVUNfSWhRWHhi?oc=5",
-      "imagen": null,
-      "fuente": "Forbes Colombia",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793808532000
-    },
-    {
       "titulo": "Especialistas advierten: los videojuegos y las recompensas aleatorias \"difuminan la frontera entre jugar y apostar\"",
       "resumen": "Especialistas advierten: los videojuegos y las recompensas aleatorias \"difuminan la frontera entre jugar y apostar\" Infosalus",
       "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONlpRaGx3VUNzVnhma1J0LVVZcnNnVzA1M2xvcE5vMjhjT1RSa0NPMVVHa1JSNGhkT2ZxM01PTHpBb0taOWk1cGwtdWFLa3FPZTZJNnVhZ2NUbExNaUQtTi1FSGJHOUFoQmRvVjNmcUlBLTNHdVpxcVlzaXhsTW1HYkJrNXZrZ01LbmVJaVhnQWFhb3JnUVp0RFNQVk4yemVXWmxwUFdCMkZxT0Njbm9zRzczNzBoUUZnQlRtTGVIaWc5SFRPR05ZMm1uTjk1bG40UEQzWGI1T19JUHB5TGhCWEdVa0hFREpoT0JLNkdBenhURlI1OTNsVQ?oc=5",
@@ -43,24 +83,14 @@
       "fecha": 1793808069000
     },
     {
-      "titulo": "Los cartuchos de Switch 1 y Switch 2 tienen un problema: el fabricante de ROM clave para Nintendo se baja del carro",
+      "titulo": "Los cartuchos de Switch tienen un problema: el fabricante de ROM clave para Nintendo se baja del carro",
       "resumen": "Mientras que Sony ya ha decidido que la producción de discos para sus consolas PlayStation será historia para 2028, hay empresas como Ninten…",
       "link": "https://www.vidaextra.com/nintendo-switch-2/cartuchos-switch-1-switch-2-tienen-problema-fabricante-rom-clave-para-nintendo-se-baja-carro",
       "imagen": "https://i.blogs.es/2a2bc0/captura-de-pantalla-2026-11-04-133237-1-/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793806287000
-    },
-    {
-      "titulo": "Échale un ojo al pase de combate de la temporada M‑8 de Pokémon Champions",
-      "resumen": "Échale un ojo al pase de combate de la temporada M‑8 de Pokémon Champions Pokemon.com",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWXpuWFYwVWNUcEpzOWJpanhZZW1tNlBNUTVrTnh2am8tLWo1Qjd2ZXFZWjV2VnJMZWZIU0ZvWnYyWHBSWmp5aXBMSGh0LU1zcDVZUGIwVkdqMXhCTVJla29DclFPV3BENjlwYV9GbmUwWjg3anhhS0RNXzNrTU5OanJnNDBiLVdHSUJiZWZPZVVvWWdkVVc4NF9NLWdIdWxSWVBvOUNWU0QySFd2RlE?oc=5",
-      "imagen": null,
-      "fuente": "Pokemon.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793802374000
+      "fecha": 1793806200000
     },
     {
       "titulo": "Uno de cada cinco juegos lanzados en Steam usarán IA quieran o no",
@@ -103,26 +133,6 @@
       "fecha": 1793796146000
     },
     {
-      "titulo": "Mejor que no te emociones con The Elder Scrolls 6: Sentinel porque \"pasará algún tiempo\" antes de que vuelvas a saber algo",
-      "resumen": "Ayer, Bethesda nos dio una alegría inmensa: un teaser que reveló el nombre oficial de The Elder Scrolls 6. A partir de ahora debes llamarlo…",
-      "link": "https://www.vidaextra.com/rpg/mejor-que-no-te-emociones-the-elder-scrolls-6-sentinel-porque-pasara-algun-tiempo-vuelvas-a-saber-algo",
-      "imagen": "https://i.blogs.es/1cf885/sentinel-1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793795629000
-    },
-    {
-      "titulo": "Ambiente de despedida en GTA 5: incluso los presentadores de las antiguas emisoras de radio dicen \"Adiós\" antes de que todos se lancen a GTA 6",
-      "resumen": "Quizá antes del lanzamiento de GTA 6 muchos vayan a meter el disco de GTA 5 para dar unas últimas vueltas por Los Santos. Al fin y al cabo,…",
-      "link": "https://www.vidaextra.com/accion/ambiente-despedida-gta-5-incluso-presentadores-antiguas-emisoras-radio-dicen-adios-todos-se-lancen-a-gta-6",
-      "imagen": "https://i.blogs.es/462b78/upscalemedia-transformed-21-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793791911000
-    },
-    {
       "titulo": "The Legend of Zelda: Ocarina of Time Remake - Análisis",
       "resumen": "The Legend of Zelda: Ocarina of Time Remake - Análisis IGN España",
       "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdXZqTS1ScWdjdjZ3bjZlRTBkcVZEazM3WDBCN1VfWmZUUHZ6M0JaOXJweEs1STF0ZWdRNHBjVkVwQUFTU1c5VjQ1MlJ5UUEtRGk4SlFnYTVXanNvRHBnV1dNVEV1THZpYzJQTXJZeUZ6U3UtZ3N3RWFYMHYxYmxaMDhDM2E3OTdyVGd3X0VKcVI0bnhrVnZ2bTB4MjNMeHlDYkxFX0p3V1p0QnlrSVpxZ2dyejQzMWJZNWw2aHF3R2gzdEJfWGFBWWRMR2JXLXZ3V25iSVpkWXF2Wm5jTm5KYS1XXzlManhXcFhCOGJuSjZQZmhIN2wwUVhTUVZlZw?oc=5",
@@ -131,16 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793790231000
-    },
-    {
-      "titulo": "El remake de Zelda: Ocarina of Time es una obra maestra absoluta. El mejor juego de la historia lo sigue siendo 30 años después",
-      "resumen": "La experiencia que me han hecho vivir todos y cada uno de los videojuegos de The Legend of Zelda se siente única e irrepetible. He podido em…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/remake-zelda-ocarina-of-time-obra-maestra-absoluta-mejor-juego-historia-sigue-siendo-30-anos-despues",
-      "imagen": "https://i.blogs.es/5c1dd3/zelda-ocarina-of-time-remake-analisis-01/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793790000000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
