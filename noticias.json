@@ -1,36 +1,126 @@
 {
-  "generado": 1793849349335,
+  "generado": 1793881185938,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Nintendo renueva su videojuego \"The Legend of Zelda: Ocarina of Time\" para Switch 2",
-      "resumen": "Nintendo renueva su videojuego \"The Legend of Zelda: Ocarina of Time\" para Switch 2 El Economista",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOM2R1NTBKcTNlMDRKbnc4YlNKemtHdjdzZ0pydmNER3o0Rk9qYTlwWENCWDJJcmtQUFU0SFJTU09aazRJOHB6bENkam1tcXRBUDRzN3Z4X04zelBIVDVyb0pKd0dpa3NJMlE2R1V1MnN5TlZsSENtdHMzamF2WUtFNXVBRnRsWkx3MW8tcVdwU0tKTWZNWXdyU3BKVG92eG1oc0tfZkhTT2dXaXZEQUVOZmd1aTNoNlBiRzN4MXJMWGZBN056UDZJdkNfRFhYSWPSAdQBQVVfeXFMTzFNYmU3VUJDTHBEdHM3c2hENEtMazJMM3NkS0ZRTk9yTl92cHZhakJCYWJYUWR6S1ViVmVtTHlLMzZ0ZjVmdlozM2J2aEMyclpLTzNTVHZ2MmZUanVNVkVnck4wR0lvam5na3ZZbXJWNnJ1UFcwbFJjRzRXeXpqLWZMai1vX3Bqb3dXNFNVU0Z1OTFodjZORUlMTUZnOUd3R3RHbmxCZ2l4X0NJTm8zX3Z2dVNJTk40dnRCMU4ySnZvVEdTckZUX1J5X2pJWWJOdFlzUFQ?oc=5",
-      "imagen": null,
-      "fuente": "El Economista",
+      "titulo": "Sam Altman responde a los comentarios sobre la memoria RAM: \"Que la gente ponga tanta como quiera en sus ordenadores\"",
+      "resumen": "No ha sido una semana especialmente sencilla para Sam Altman en las redes y a nivel de popularidad. El CEO de OpenAI se granjeó las críticas…",
+      "link": "https://www.vidaextra.com/pc/sam-altman-responde-a-comentarios-memoria-ram-que-gente-ponga-tanta-como-quiera-sus-ordenadores",
+      "imagen": "https://i.blogs.es/4f2b28/1000000185/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793848734000
+      "fecha": 1793880035000
     },
     {
-      "titulo": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40%",
-      "resumen": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40% Forbes Colombia",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSmFFSXNfTVktQnhlN0IydmtETGxmNGJzekVDQktRS0EtTVZTUW1kTW0tTHRKeFRKY0phU1l0c01UQzFvS09WVHNRcmJ5T1llTVYtNWN1Z054bXNVSVRLdFN4OHZBQ21SZHFBY0t6RUU1OW1jS3dGd3dGUXdBYmd0WXlkNkR0SHBQMjhqNFU5QVc4UGZrQ2FqVXQ0dWF0Ry1DUVR3R1JrNURaV3RBb3FoVUNfSWhRWHhi?oc=5",
-      "imagen": null,
-      "fuente": "Forbes Colombia",
+      "titulo": "En un día, Cyberpunk 2077 recibirá algo por lo que GTA V y San Andreas son famosos: un enorme proyecto de fans verá la luz",
+      "resumen": "El simple hecho de completar la campaña de Cyberpunk 2077 es algo que te puede llevar su buena cantidad de decenas de horas mientras recorre…",
+      "link": "https://www.vidaextra.com/rpg/dia-cyberpunk-2077-recibira-algo-que-gta-v-san-andreas-famosos-enorme-proyecto-fans-vera-luz",
+      "imagen": "https://i.blogs.es/d87ed2/cyberpunk-2077/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793826853000
+      "fecha": 1793878234000
     },
     {
-      "titulo": "Elon Musk, empresario: “Da la sensación de que Elden Ring lo haya diseñado un extraterrestre”",
-      "resumen": "Elon Musk, empresario: “Da la sensación de que Elden Ring lo haya diseñado un extraterrestre” Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQQjJONnF4SDZQQm1LczZfRDA2S0xseHZlRm1WS2RRQmpEcVBacWp1Rkw3TjNJdVl6WWx2ZDF3a21uQVpCc3JDVC1VdXV5d0dKcUNzTUZMcWc1b2s5ZENpSVIzM1YzRzFTdlRaXzFvZ1pSTG02azdiRzk4Mm1nWWpaOUNwdXpZYk11dkxLUVo0bzFQMDA1N2hzcG1YcWRoVHkyTVUya3JaeXdldkFxRTJBR256bndqVnNOS2htVXFESVdQTWtkTjk3MkxzZ2dCYUhqZ1HSAeYBQVVfeXFMT09mdWFnV3VWTFpiemYwVWlNWVlSdTlGQW80VEJmZDJHbDZXajE5bF9ldnJfYW9VajhDV3l5WW5IeGxoeWplNVkwUzU0ZEVVSllWT2lINlRjTXlERkQ3WGZsMkNWSndkc01Mb1FDUEpjT3k3Wk9SbmFiWHBtYkp1eWt6UW9PN3I2YzZRdG9rc1dyOGdHUm1ZUm5XQ3ZsOXM5SmVQbFNMSW9YQ0xGVUR0S3hqOW1WbXpmYk1idV81bDVWV1l4a1lWME0yLU54WUk2cGIzMnIwbTFnaUZrZDd2UWdlQ0ZReUE?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
+      "titulo": "Vas a flipar con los nuevos 14 minutos de gameplay de Fragmentary Order, el Escape From Tarkov espacial de Nikita Buyanov",
+      "resumen": "Ha pasado un tiempo desde la última vez que hablamos sobre Fragmentary Order. Entonces era un misterio vinculado a Nikita Buyanov, creador d…",
+      "link": "https://www.vidaextra.com/fps/vas-a-flipar-nuevos-14-minutos-gameplay-fragmentary-order-escape-from-tarkov-espacial-nikita-buyanov",
+      "imagen": "https://i.blogs.es/a84db2/fragmentary-order/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793824200000
+      "fecha": 1793876673000
+    },
+    {
+      "titulo": "La taquillera Spider-Man y los videojuegos mejoran las previsiones de crecimiento de Sony",
+      "resumen": "La taquillera Spider-Man y los videojuegos mejoran las previsiones de crecimiento de Sony HolaNews",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNazIzOGcxUEF4NlFqV1h4bUotbWhERkRQS3VnTzVlWE8waElEZkhaeWtnV3RUM1pRb01FTXVnR1lNLWpEVk84U09KMmd4NmVZMFZDSjVpSG1UTmI0VFl0MEZERkF6MjZydzI5bU9MbDM0ZnhTdG1LSUM4VDhRcXpWTzlUbFNpUDU0VXMyUG0yVE9SSTFFenJiRE80TFJEdnRPM2VMVkhqaV9kb1QzZURLSQ?oc=5",
+      "imagen": null,
+      "fuente": "HolaNews",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793876153000
+    },
+    {
+      "titulo": "No vas a saber de Jason y Lucía a menos que compres GTA VI. Rockstar borrará los spoilers de la historia incluso después del lanzamiento",
+      "resumen": "Rockstar se ha propuesto controlar lo incontrolable: eliminar cualquier spoiler sobre la historia de GTA 6 que se comparta en internet antes…",
+      "link": "https://www.vidaextra.com/accion/no-vas-a-saber-jason-lucia-a-que-compres-gta-vi-rockstar-borrara-spoilers-historia-incluso-despues-lanzamiento",
+      "imagen": "https://i.blogs.es/d64580/gta-6/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793873074000
+    },
+    {
+      "titulo": "Un rayo de esperanza llega al PC Gaming gracias a la nueva actualización de DirectX",
+      "resumen": "Parece que a corto plazo no habrá solución para la escasez de piezas de hardware para PCs y consolas. Ya no es sólo la RAM, también el almac…",
+      "link": "https://www.vidaextra.com/pc/rayo-esperanza-llega-al-pc-gaming-gracias-a-nueva-actualizacion-directx",
+      "imagen": "https://i.blogs.es/678570/geometry/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793872113000
+    },
+    {
+      "titulo": "Sony eleva sus previsiones de beneficios tras el éxito de Spider-Man y sus videojuegos",
+      "resumen": "Sony eleva sus previsiones de beneficios tras el éxito de Spider-Man y sus videojuegos Bloomberg Línea",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTmJ6aUpEdmVkQjN5YVFDeFFSaFBKRUs3VmNCVmxtYWZDVUFiX1Mxc1VheEFUaTdubVg4TzZrTGdGblJzcVU1YVVfZktpb2tWMUR0YndkSTJOQmo3NGk0UkpMUDJ1b0MxZE1vWmJHMVhjNVNTTGlJeGxIOTRDc0x2enc3Nml4dHFGVXcxTENNOWNxUjRHdlpkY1RLN2tJTnZHTW42RUlDa05YdjhDNG5aOXY0NDAzdWtvWWdWR0o3MnpLekJ6TUHSAdoBQVVfeXFMTS1TOVZCODJaZjlnS3RRdy0zbXRjclN5R2RPOEZHRE5uUDhlUVJ0aEtXdVFuSmVTanZPTk5iNFJmbFhjMzIwT2VKWF92dDVpTnpsdTgzcnRKd1NCS2NRSzY3Sm9FMmxMMVBUQVJsVWlTOEk1bWZUMTctdzBYSzlycHBtT1U0bi1zZW1Tc004TDN2WGpuUVdVRmVrbEc0Qm9IeThrVFhEY2tMbHlTeGNnWW05UEEyR2tmRWJzcEhLaHdWNTQyMm5SZ1VMNzFib1M2WFRRNWtCSWFfcFE?oc=5",
+      "imagen": null,
+      "fuente": "Bloomberg Línea",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793870410000
+    },
+    {
+      "titulo": "Sony confirma el batacazo en ventas que se ha pegado Marvel: Lobezno",
+      "resumen": "Se podría afirmar sin problemas que el videojuego más importante que ha publicado Sony este año ha sido el de Marvel: Lobezno, la última obr…",
+      "link": "https://www.vidaextra.com/accion/sony-confirma-batacazo-ventas-que-se-ha-pegado-marvel-lobezno",
+      "imagen": "https://i.blogs.es/5375f0/marvel-lobezno/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793868782000
+    },
+    {
+      "titulo": "El 26 % de quinceañeros en la OCDE juega más de tres horas a videojuegos, en Chile el 36 %",
+      "resumen": "El 26 % de quinceañeros en la OCDE juega más de tres horas a videojuegos, en Chile el 36 % Infobae",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTERZTFF6aTVVTFNSZ3RhUlR2ZFJ4V2JIRDNLY0xJQ1NtdmFKTmhOdk1mX3MwNDVxdjhJS2dBamdDQnZ4bGZYd0lCUkNwc0IwV1ZOb25NZkZlOERnM0c5ZzJNLW1fTjRTUjNpcThXZnhVemI0WjdLTTRVN0VUNDd2bF9qZ1plOERqV0dNUzZaMk8tUlktMVk5c3BzTURINW4tQzB0VmNwTDQ0ak1NTVdlVWVFbjF5NjZxSnNQeHZXYkEzb3B0NlRualBkdkVjb1BFc09WddIB7wFBVV95cUxOWjBYeGl5d0JFRWNTUFVBVUIyQ1Q2S0I4YklhZWgtQ1hyLXdrMWZTN2RHMXZGRVJwanRzcW4wOEJidlBycVpUblpVYnpiM0JJeFpMTmpJVFNId09Pck15QlNUU2sxNWVEV2E0OHBRa0JNaUFJVFRXcWctRzJ0d1d4VWJJaGY4ZVV3NTF5WXpEc1R5RUpfZW02ODcxN0dnaXFrZ0pFRXlCZUtiWnVqc1pEb3JCVXZfNEZTWWEyNVBYTERPZjNyaVI4QXhsdl9UTWM0Qm54SnZ3cDY3aU1LNktuell0R1Q4eUlzVW0xdzg1aw?oc=5",
+      "imagen": null,
+      "fuente": "Infobae",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793866560000
+    },
+    {
+      "titulo": "Uno de los RPGs de acción más esperados existirá gracias a una fracción del presupuesto de los grandes Triple A",
+      "resumen": "Imitadores de la fórmula Souls hay muchísimos, pero pocos que alcancen el nivel de Lords of the Fallen. La propuesta de CI Games lanzada en…",
+      "link": "https://www.vidaextra.com/rpg/uno-rpgs-accion-esperados-existira-gracias-a-fraccion-presupuesto-grandes-triple-a",
+      "imagen": "https://i.blogs.es/566b23/fallen/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793865563000
+    },
+    {
+      "titulo": "Sony entró en la «Galería de la vergüenza» por abandonar los discos de videojuegos",
+      "resumen": "Sony entró en la «Galería de la vergüenza» por abandonar los discos de videojuegos iXBT.games",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbjMyck9KTTBXbi1tQnBkblQxZzB1OGQ4NW1mUlhaX0d1LVhjR0VmYmkyNjM0UUtiUm5vTWJLRHVWWF92RGtXQWZ5aThkNmRwWU5rLUlwdGExMUM0Y1FUc19KMi03Tk1qY1YtZEw0bHJmV3VRMFhTTjhXdkp1NlBZYTV4SkdOTWFic3Bvc2NKSHNMQy13ZTBhdUhRalpXUWF4bm5kNDZGONIBrAFBVV95cUxQLVZNTFF4NVBPQ2dPZkFRbFRpYk5USFpaaHlnU0hFdV9nRV8yY0ZfeUtjdXBLTVo4OEJxM1NrN21vWWlSc0lFczctWnl4bHZHWFowOWVqS1lEeWg1ekN3VjczYmFJd2trZUVtTDdQbFRtWnlEeHYtMkxCTVJFdEpycnM3eHRjSzlTRjNOdHRnajRwRmxoZFJXU0R6aDZuNTFBbGNNQ2ZBR0xNUWpW?oc=5",
+      "imagen": null,
+      "fuente": "iXBT.games",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793859780000
+    },
+    {
+      "titulo": "Eiji Aonuma, o cómo actualizar el mejor videojuego de la historia: “Recrear ‘Zelda’ con la tecnología actual era un reto muy emocionante”",
+      "resumen": "Eiji Aonuma, o cómo actualizar el mejor videojuego de la historia: “Recrear ‘Zelda’ con la tecnología actual era un reto muy emocionante” EL…",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWlE3dzlpeFZqSXRfamlGSXdCTDl4Z1ktVXdKQ0dJb0M5UmtadV94WENqNVVyN3FnNWxnbnZRZkhRSWF2dElWRlN0RW1YRzdNWnQ0VVNWVVJfdHZZVTI2ei1kMk54VS1XSHFLal9uX0VSaHNhdXlodVNOZlpZRHZWMTBxLUd3Z1d0MklKTlRPVzNpd0dvSnMwLTlrbHFQOTQ3V3N3SVU2cndyWndmU1c2aldkTUM3R3RkMGtrdXdKdkJEU2FnN256Y0NSODV6ZGw4M2RoaUJJdTVxQdIB7gFBVV95cUxORVdjZXNmZ0pvemxpY3M0TVFtckw0OW5nRURmSE8wNFhPNUU0cXRnQ0NPcl9QY2VpYnhCakRBbHhGQlB3TzFtcktkcTdHOHFxc1VnM2VKN2ZkUEN5RGJBaGZkRjRLd3B4amdtMnFHcnhKdEduU01BY3YyNlpDNGE1cWdTV0JkWktxMnpNWDJGdE1LU0tLbGx1bFB3bGQtV2FPVVdmaFM2cnZIM1huWkhIYXpmTlc0X1pJQ3ZiRmlZbVNaWjZJeUJ5eV9iVXpNSC1XN1ZrODFzUHVrejdXbmF5dFVoaGZpR3FmVVpXcXBR?oc=5",
+      "imagen": null,
+      "fuente": "EL PAÍS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793854800000
     },
     {
       "titulo": "Un afortunado encuentra un VHS de un película de Pokémon en una tienda, y al abrirla, descubre que todavía conserva la rara carta promocional",
@@ -43,86 +133,6 @@
       "fecha": 1793822486000
     },
     {
-      "titulo": "Lo de GTA 6 es tan salvaje que está a punto de romper el récord de reservas de Cyberpunk 2077 (y sin salir en PC)",
-      "resumen": "Sabemos que el furor por GTA 6 es demencial y con cada día que nos acercamos al esperado 19 de noviembre, la fiebre no para de subir. Las re…",
-      "link": "https://www.vidaextra.com/accion/gta-6-salvaje-que-esta-a-punto-romper-record-reservas-cyberpunk-2077-salir-pc",
-      "imagen": "https://i.blogs.es/a5d017/lucia_caminos_09.0pd.ppokmi8-n/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793820684000
-    },
-    {
-      "titulo": "God of War Laufey se hará algo más de rogar y retrasa su lanzamiento en PS5 unos cuantos meses",
-      "resumen": "Parecía que el calendario de lanzamientos del primer trimestre de 2027 ya se había cerrado y todas las cartas estaban sobre la mesa. Sin emb…",
-      "link": "https://www.vidaextra.com/accion/god-of-war-laufey-se-hara-algo-rogar-retrasa-su-lanzamiento-ps5-unos-cuantos-meses",
-      "imagen": "https://i.blogs.es/cefb81/god-of-war-laufey/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793812819000
-    },
-    {
-      "titulo": "Ubisoft no para de despedir gente y cerrar estudios, pero estaría interesada en comprar a los creadores de Dishonored",
-      "resumen": "Uno de los acontecimientos más terribles que ha vivido la industria de los videojuegos en los últimos meses ha sido la oleada de despidos qu…",
-      "link": "https://www.vidaextra.com/industria/ubisoft-no-para-despedir-gente-cerrar-estudios-estaria-interesada-comprar-a-creadores-dishonored",
-      "imagen": "https://i.blogs.es/2f1b1e/dishonored/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793811802000
-    },
-    {
-      "titulo": "Hace tres años que Starfield reveló el nombre de The Elder Scrolls 6, pero sonaba demasiado conspiranoico para creerlo",
-      "resumen": "La parte más divertida de las teorías conspiranoicas y las personas que día a día representan el meme de Pepe Silvia en It's Always Sunny in…",
-      "link": "https://www.vidaextra.com/rpg/hace-tres-anos-que-starfield-revelo-nombre-the-elder-scrolls-6-sonaba-demasiado-conspiranoico-para-creerlo",
-      "imagen": "https://i.blogs.es/00e0c3/starfield-1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793808608000
-    },
-    {
-      "titulo": "Los cartuchos de Switch tienen un problema: el fabricante de ROM clave para Nintendo se baja del carro",
-      "resumen": "Mientras que Sony ya ha decidido que la producción de discos para sus consolas PlayStation será historia para 2028, hay empresas como Ninten…",
-      "link": "https://www.vidaextra.com/nintendo-switch-2/cartuchos-switch-1-switch-2-tienen-problema-fabricante-rom-clave-para-nintendo-se-baja-carro",
-      "imagen": "https://i.blogs.es/2a2bc0/captura-de-pantalla-2026-11-04-133237-1-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793806200000
-    },
-    {
-      "titulo": "Uno de cada cinco juegos lanzados en Steam usarán IA quieran o no",
-      "resumen": "Parece obvio que este último Steam Next Fest ha sido un antes y un después. Tras un par de años siendo el punto de encuentro de jugadores y…",
-      "link": "https://www.vidaextra.com/industria/uno-cada-cinco-juegos-lanzados-steam-usaran-ia-quieran-no",
-      "imagen": "https://i.blogs.es/477938/unreal/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793801007000
-    },
-    {
-      "titulo": "Nexus Mods obligará a etiquetar los mods de videojuegos creados con inteligencia artificial",
-      "resumen": "Nexus Mods obligará a etiquetar los mods de videojuegos creados con inteligencia artificial Infobae",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQOTRtV2hVdnZqYlpzSFd0ZFQ1NnVTdERKcndldnA0b01aN0RseHJaU01FX2NrSU5IWkJBeXJJOFVDMWdtX0pYOTZEY0R2aDk3STF2TFRYTVlHVVFNX2ZJZkpVTTd1UmIxQTc1b2swa2kzUGJXaHVWVFNQb2hzWGk3S2QwTDVRZWdiZDRCeXVWeWlORjNUMVAtN2hEeG0zd01ENUNGbjdBSlZRX2VSOWFobGQwSmlDUHVXdElsUFBqZVRNa0F5TzhhUlRwUGR6d9IB6AFBVV95cUxQblRTWktneUNFTDN4a1ZSNmR0UjMwQk1RN0RkRVVLWmo0cTgtMmg2amRWUENBZzZ0SnZZTHZjeEhCUGJVazFueWxxelo4dEZNT2d0M0ltMWtEeWFTVzRaZERxR1k2d2VXakhyN19manE1Wk1MVTdVSGJXazlYbWw2T2VPd2FrbGRRWHBwNWpUNVhTdHFubElHajJfQTlBVEpnOWozbWhoelFaVXBIWFhXbUp3Z0VJczJUSWFMeXQ0RnZZbjZhWnZfTVlEbjZVVjhadFhtXzdGc1ZpcHBLLXJPSzlXUXRPVWQ0?oc=5",
-      "imagen": null,
-      "fuente": "Infobae",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793798700000
-    },
-    {
-      "titulo": "Stardew Valley 1.7 promete ser la mayor actualización en la historia del juego: \"Clint y Sandy son solo la punta del iceberg\"",
-      "resumen": "Si bien Haunted Chocolatier es el gran proyecto al que siguen mirando con fervor los seguidores de Eric Barone, lo cierto es que no hay que…",
-      "link": "https://www.vidaextra.com/simuladores/stardew-valley-1-7-promete-ser-mayor-actualizacion-historia-juego-clint-sandy-solo-punta-iceberg",
-      "imagen": "https://i.blogs.es/fc6447/upscalemedia-transformed-23-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793797289000
-    },
-    {
       "titulo": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas",
       "resumen": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas IndexBox",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNU1UtQ1NMWS14bDRHYjlCbDRJZUhZMFFPVU1iRU5WMkNjal90R2lvcUZvUmxvaXpiSXhoM0dtWXNySTh5cXlxeXZqWUh4MmhhSTlYd2ZzZXZIR3d0V2p1NC1XcHJ0T25RUExTXzdRQlI3X24wZFZnTzNNMHk1eFRwN084bFJuRDZ3N0pZQlBBNlhDWWxoakVUN2UxMnB4WEU?oc=5",
@@ -131,16 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793796146000
-    },
-    {
-      "titulo": "The Legend of Zelda: Ocarina of Time Remake - Análisis",
-      "resumen": "The Legend of Zelda: Ocarina of Time Remake - Análisis IGN España",
-      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdXZqTS1ScWdjdjZ3bjZlRTBkcVZEazM3WDBCN1VfWmZUUHZ6M0JaOXJweEs1STF0ZWdRNHBjVkVwQUFTU1c5VjQ1MlJ5UUEtRGk4SlFnYTVXanNvRHBnV1dNVEV1THZpYzJQTXJZeUZ6U3UtZ3N3RWFYMHYxYmxaMDhDM2E3OTdyVGd3X0VKcVI0bnhrVnZ2bTB4MjNMeHlDYkxFX0p3V1p0QnlrSVpxZ2dyejQzMWJZNWw2aHF3R2gzdEJfWGFBWWRMR2JXLXZ3V25iSVpkWXF2Wm5jTm5KYS1XXzlManhXcFhCOGJuSjZQZmhIN2wwUVhTUVZlZw?oc=5",
-      "imagen": null,
-      "fuente": "IGN España",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793790231000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
