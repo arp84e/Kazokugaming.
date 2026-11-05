@@ -1,7 +1,17 @@
 {
-  "generado": 1793831939677,
+  "generado": 1793849349335,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Nintendo renueva su videojuego \"The Legend of Zelda: Ocarina of Time\" para Switch 2",
+      "resumen": "Nintendo renueva su videojuego \"The Legend of Zelda: Ocarina of Time\" para Switch 2 El Economista",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOM2R1NTBKcTNlMDRKbnc4YlNKemtHdjdzZ0pydmNER3o0Rk9qYTlwWENCWDJJcmtQUFU0SFJTU09aazRJOHB6bENkam1tcXRBUDRzN3Z4X04zelBIVDVyb0pKd0dpa3NJMlE2R1V1MnN5TlZsSENtdHMzamF2WUtFNXVBRnRsWkx3MW8tcVdwU0tKTWZNWXdyU3BKVG92eG1oc0tfZkhTT2dXaXZEQUVOZmd1aTNoNlBiRzN4MXJMWGZBN056UDZJdkNfRFhYSWPSAdQBQVVfeXFMTzFNYmU3VUJDTHBEdHM3c2hENEtMazJMM3NkS0ZRTk9yTl92cHZhakJCYWJYUWR6S1ViVmVtTHlLMzZ0ZjVmdlozM2J2aEMyclpLTzNTVHZ2MmZUanVNVkVnck4wR0lvam5na3ZZbXJWNnJ1UFcwbFJjRzRXeXpqLWZMai1vX3Bqb3dXNFNVU0Z1OTFodjZORUlMTUZnOUd3R3RHbmxCZ2l4X0NJTm8zX3Z2dVNJTk40dnRCMU4ySnZvVEdTckZUX1J5X2pJWWJOdFlzUFQ?oc=5",
+      "imagen": null,
+      "fuente": "El Economista",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793848734000
+    },
     {
       "titulo": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40%",
       "resumen": "AMD rompe su récord de ventas, pero su negocio de videojuegos se desploma un 40% Forbes Colombia",
@@ -71,16 +81,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793808608000
-    },
-    {
-      "titulo": "Especialistas advierten: los videojuegos y las recompensas aleatorias \"difuminan la frontera entre jugar y apostar\"",
-      "resumen": "Especialistas advierten: los videojuegos y las recompensas aleatorias \"difuminan la frontera entre jugar y apostar\" Infosalus",
-      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONlpRaGx3VUNzVnhma1J0LVVZcnNnVzA1M2xvcE5vMjhjT1RSa0NPMVVHa1JSNGhkT2ZxM01PTHpBb0taOWk1cGwtdWFLa3FPZTZJNnVhZ2NUbExNaUQtTi1FSGJHOUFoQmRvVjNmcUlBLTNHdVpxcVlzaXhsTW1HYkJrNXZrZ01LbmVJaVhnQWFhb3JnUVp0RFNQVk4yemVXWmxwUFdCMkZxT0Njbm9zRzczNzBoUUZnQlRtTGVIaWc5SFRPR05ZMm1uTjk1bG40UEQzWGI1T19JUHB5TGhCWEdVa0hFREpoT0JLNkdBenhURlI1OTNsVQ?oc=5",
-      "imagen": null,
-      "fuente": "Infosalus",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793808069000
     },
     {
       "titulo": "Los cartuchos de Switch tienen un problema: el fabricante de ROM clave para Nintendo se baja del carro",
