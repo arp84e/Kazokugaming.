@@ -1,7 +1,77 @@
 {
-  "generado": 1793986153987,
+  "generado": 1794006462883,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Pokémon, Yu-Gi-Oh! y videojuegos: Card Show Expo a Bogotá",
+      "resumen": "Pokémon, Yu-Gi-Oh! y videojuegos: Card Show Expo a Bogotá Revista DC",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSmVhRUVBa1B3cWk1a0U3RW4tVk5jOGJCenFoRXhfWjNKR0FjMHZxTFZYUHhVdjRtaXBCcmZGOUlVaEVRckhVMkREYkIyMnZrN1dJMEdtcWY0bGdNcHRQeGlGRkxmaXdLWEFsTGV4ZWdnZmVxNFpwS3RLTVdIeEtneHRyZDVzX3ZHLV9PLVNYaXBIZw?oc=5",
+      "imagen": null,
+      "fuente": "Revista DC",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793997346000
+    },
+    {
+      "titulo": "Henry Cavill está creando su primer videojuego junto a Google sobre su meme más infame: \"Conozco la injusticia del bigote\"",
+      "resumen": "Tenemos toda clase de memes alrededor de la figura de Henry Cavill, pero lo cierto es que la mayoría no tienen una connotación negativa haci…",
+      "link": "https://www.vidaextra.com/industria/henry-cavill-esta-creando-su-primer-videojuego-a-google-su-meme-infame-conozco-injusticia-bigote",
+      "imagen": "https://i.blogs.es/0d4d96/screenshot_2026-11-06_17-06-30_614/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793995266000
+    },
+    {
+      "titulo": "PlayStation Store se adelanta al Black Friday con miles de rebajas: aquí tienes nueve juegazos en oferta para PS5 y PS4",
+      "resumen": "Uno de los periodos de rebajas más destacados de este mes es el Black Friday, con el que es habitual encontrarse con productos de todo tipo…",
+      "link": "https://www.vidaextra.com/ps5/playstation-store-se-adelanta-al-black-friday-miles-rebajas-aqui-tienes-nueve-juegazos-oferta-para-ps5-ps4",
+      "imagen": "https://i.blogs.es/79d41b/silent-hill-f/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793993466000
+    },
+    {
+      "titulo": "Al jefe de Take-Two no le preocupa el pirateo de GTA 6",
+      "resumen": "A pesar de que GTA 6 ya ha vendido en reservas una cantidad ingente de copias, lo cierto es que hay un cupo de jugadores que no estarán disp…",
+      "link": "https://www.vidaextra.com/accion/al-jefe-take-two-no-le-preocupa-pirateo-gta-6",
+      "imagen": "https://i.blogs.es/e6c599/jason_and_lucia_17.117_b11r13mg5/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793991666000
+    },
+    {
+      "titulo": "World of Warcraft: Forever esconde un homenaje a Zelda: Ocarina of Time con unas ranas cantarinas que puedes llevarte como mascota",
+      "resumen": "Esta semana hemos presenciado dos regresos muy esperados para los aficionados a los videojuegos. Por un lado, World of Warcraft: Forever ha…",
+      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-esconde-homenaje-a-zelda-ocarina-of-time-unas-ranas-cantarinas-que-puedes-llevarte-como-mascota",
+      "imagen": "https://i.blogs.es/a05e72/wow-forever-cielonatos/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793989867000
+    },
+    {
+      "titulo": "Marvel revela al superhéroe que Spider-Man detesta con todo su ser y eso que aguanta las barbaridades de Deadpool y Punisher",
+      "resumen": "Hay que ser muy miserable para que Spider-Man, que es el cacho de pan más bueno que ha parido Marvel, diga abiertamente que no te soporta y…",
+      "link": "https://www.vidaextra.com/comics/marvel-revela-al-superheroe-que-spider-man-detesta-todo-su-ser-eso-que-aguanta-barbaridades-deadpool-punisher",
+      "imagen": "https://i.blogs.es/f4b995/spider-man/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793988306000
+    },
+    {
+      "titulo": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año",
+      "resumen": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año Forbes Argentina",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaXo1RE1HNExIbFlxZG9CZ2hYQkh0SzJ5bmt6bDlJM1dKRm90bFFEYVZUY2hQa2VDOU9leWd2QmFfUFJhTGxDSzF5UU1HTjladkwteElxV1N6bTFzeV81WnNzYXdJZ2F4MzRtN2pJR0lhMTEydUh6TUJlSVZSS2liUWFydjJWMFJfQnQzWFo4N2JiZTRJeWgwZG10WVp3ZWdKZlNxN0ZwMFphRVZOQ0VyYVppVWJNN0RnZ2JLckp0a03SAcYBQVVfeXFMUHJHTFVfeVFJSEZEUXZfQ2xmMU5Wb3pPV2l2RVQ1SVNhVjhJb25XcWFPY0dzOEtzT2U0bzlkX2tJZHRWQi00OGVBSG9BbWhGNDRUY0oyWEhoNUFRY2tIaDVEcTVudmhhWnhHNTFqUkJDRDNLVEs2bXNsQjJjUlZiY0hETE9zZWJad0RWNC1OYlNsVEludWVoS2tDZkVWSTRKM0YyLWdMbHFCb0ZyR0dYVXhsSDcwRjZlYVJVZ0I0Ym1yNm81dFJn?oc=5",
+      "imagen": null,
+      "fuente": "Forbes Argentina",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793985839000
+    },
     {
       "titulo": "El compositor de Phantom Blade Zero reconoce que la banda sonora es \"ofensiva\" en China",
       "resumen": "Uno de los últimos videojuegos que ha llegado a las tiendas ha sido Phantom Blade Zero, el soulslike desarrollado por el equipo chino S-Game…",
@@ -33,76 +103,6 @@
       "fecha": 1793979067000
     },
     {
-      "titulo": "A falta de probar Zelda y GTA VI, no he jugado nada mejor que Queen's Domain en todo 2026",
-      "resumen": "Pocos juegos casan más con la definición de joya oculta que Queen's Domain. El juego creado por dos personas, las que integran Freshly Baked…",
-      "link": "https://www.vidaextra.com/rpg/a-falta-probar-zelda-gta-vi-no-he-jugado-nada-mejor-que-queen-s-domain-todo-2026",
-      "imagen": "https://i.blogs.es/a98618/20261106125615-01m6rb7hj96xkcn600cexk6550/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793975588000
-    },
-    {
-      "titulo": "Hay un nuevo RPG que puedes jugar gratis en Steam y lo ha desarrollado... Una hamburguesería",
-      "resumen": "Las cadenas especializadas en comida rápida no se limitan exclusivamente a ofrecer alimentos a sus clientes. En alguna ocasión hemos visto q…",
-      "link": "https://www.vidaextra.com/rpg/hay-nuevo-rpg-que-puedes-jugar-gratis-steam-ha-desarrollado-hamburgueseria",
-      "imagen": "https://i.blogs.es/e719da/wendyquest/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793971869000
-    },
-    {
-      "titulo": "A GTA 6 le ha durado poco el récord porque un reciente fallo hace que Nier: Automata pese mucho más de 212 GB",
-      "resumen": "Cuando todos pensábamos que nadie podría superar el descomunal tamaño que tendrá GTA 6 en PS5 y Xbox Series X/S, Nier: Automata se ha propue…",
-      "link": "https://www.vidaextra.com/rpg/a-gta-6-le-ha-durado-poco-record-porque-reciente-fallo-hace-que-nier-automata-pese-mucho-212-gb",
-      "imagen": "https://i.blogs.es/c6183a/thumb-1920-950819/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793968266000
-    },
-    {
-      "titulo": "Mientras Arc Raiders se piensa el PVE, en Escape From Tarkov ha superado al PVP y se ha convertido en el modo dominante",
-      "resumen": "Entre agosto y septiembre de 2026, Nikita Buyanov, máximo responsable de Battlestate Games, compartió las cifras oficiales de cómo estaba re…",
-      "link": "https://www.vidaextra.com/fps/arc-raiders-se-piensa-pve-escape-from-tarkov-ha-superado-al-pvp-se-ha-convertido-modo-dominante",
-      "imagen": "https://i.blogs.es/9059fe/tarkov-2/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793964720000
-    },
-    {
-      "titulo": "Con una inversión de 16.000 millones de euros, y una superficie igual a la de 1.300 campos de fútbol, Elon Musk anuncia Terafab: la fábrica de chips de IA más grande del mundo",
-      "resumen": "La ambición de Elon Musk por sacar adelante nuevos proyectos no parece que vaya encontrarse con una barrera que no le permita seguir adelant…",
-      "link": "https://www.vidaextra.com/industria/inversion-16-000-millones-euros-superficie-igual-a-1-300-campos-futbol-elon-musk-anuncia-terafab-fabrica-chips-ia-grande-mundo",
-      "imagen": "https://i.blogs.es/8691ed/elon-musk-terafab/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793961665000
-    },
-    {
-      "titulo": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia",
-      "resumen": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia wapa.tv",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPekpZWjRNb0YyZnZuZS02dGpXS1RhQjB2T0RkMTJpZDJNTnBzTHgyZVlOM0g3NkVRUzZFS2JaVXJsRW5kaTk0aWZKOTVLc05WMFJ1a1NteVp0cHRhdE55RE1VVTVybElPZ3Y2SUxkS09QX2liVkNiVUwzR3d5M0pBUkZNOVA1R1N5QVZ3bDBwTTB0cEdlUkRlOTJrXzljVTFhVl9PUVVzV05ReDgycXBfaDk3RGJxcjNCNzRSRnlZX3RjYUxJMmctbHhZcm5fSG52TzJCdkVHRjdLS0duREQxWGdnQlJIV3gwYmhGNw?oc=5",
-      "imagen": null,
-      "fuente": "wapa.tv",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793959200000
-    },
-    {
-      "titulo": "Sony revela las ventas oficiales de Marvel's Wolverine y una comparación con Spider-Man sorprende a los jugadores",
-      "resumen": "Sony revela las ventas oficiales de Marvel's Wolverine y una comparación con Spider-Man sorprende a los jugadores Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZ2ROR253Q3hfUEJJMWd0T2RJX01CTnduRXBMWmhGejJkY3NTb1BrSVZMYVN5bWtRUEVDV19JeTZBSEE3QlhDZzI1aUpBUm1Ca2NNQnp6SGs1UVNGZ2NMMkM0c0staHJmbVpGRnFjQjNhblliWUhKRC1vNjNvR1dqaFFpZDB5b2J6dEhycjBpbl92V29nR2pTVmkxb0lIdEhmNGpTRUhqdlZpc2RZaWJUWHVXVzJmd0FleHVBNkd3RHJrVHo1X0paRGw4Yjh3VXY3UW5RV0NvYmd4a3QxT2c?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793953266000
-    },
-    {
       "titulo": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos",
       "resumen": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos Telemundo",
       "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxORmQwVURaWjZOR3h4a2VqUHlRZEJQVUQzU2pnUkVpMVJraXp2eDFTMURnLWhLT2FtM3h1X2x3TzhWZFBZWUxrR1VhelFZNHFBX3RWUF85eWtrRXRncURBTXRud1JfNGxfOVd0ZjU3NjhFR2U5WTctY3JvTGFJam9IZnotVV9HZlFfVjRvSnNHbjNjQ09EV1Uzc0dFdHgybEFxOWlKOUVoZ24yNHJfNlZjdTBJbFN5dnNOLVUyR3lVcmVfbkIycjZjU1JNS2V1dHl4dXp0WGt4MTlrbFVaR3ZubmVTMUpFelVPSHBVZE5MdG5BTHd3?oc=5",
@@ -113,34 +113,34 @@
       "fecha": 1793948040000
     },
     {
-      "titulo": "Xbox Game Pass perderá 13 juegos el 15 de noviembre de 2026: estos son los títulos que debes jugar antes de que desaparezcan",
-      "resumen": "Xbox Game Pass perderá 13 juegos el 15 de noviembre de 2026: estos son los títulos que debes jugar antes de que desaparezcan Kotaku en Españ…",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQRWVXQU81S2NHME82LW1TSlFBSlZ4MmZhaXo1MnBLRi1hOG9JbWFybnh5SkFJVlloUjNuWkFOOTZKNWZwUDVuYi1JNVNoendzeDNQeEVxR1hDb1lybFNrc2VDSFJ5OGZwSXktQ0p6Y3RGYjljQ3R2WklBb1ZLRlJRb3ZMSS1Ha296QTlOWTJJU3pOVFAwRXZJc0pxdFNxaDhLMjZYV1VnaHIxdV9TdzNiWUNBMHdWNXd0eDIySGZOU29XS1NlZU8zYlMxUDd3MXFodm9YWkl1UDYxb2ZadFZ3bl9rdkdwOEhfN0V3bw?oc=5",
+      "titulo": "Nexus Mods pone nuevas reglas al uso de inteligencia artificial en videojuegos",
+      "resumen": "Nexus Mods pone nuevas reglas al uso de inteligencia artificial en videojuegos TN8",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVHNsVXR6NTU4NkxidDMzdGFrX21JUzFzNFRxZFlrdFl1bkpFdFk4UThodFFTdlkzQTRZVXgybzVyck12bGFUTGVEbVlVZFB6azRtVkJUZENlLUhxazBySUdjTWtBcnd4OE82T25qUmNMM2RoR2RZTVRud3lrdlpyLVBCOU5SVWtOX2ZFZ1JycWR4b3QzZS1TQ3piQkhJZ3djMk1Zd0J3X1VpSXFiTURDc2s2bw?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "TN8",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793895585000
+      "fecha": 1793814768000
     },
     {
-      "titulo": "Keanu Reeves regresa a los videojuegos con una aventura inesperada que recupera una de sus películas más queridas",
-      "resumen": "Keanu Reeves regresa a los videojuegos con una aventura inesperada que recupera una de sus películas más queridas Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOR2wtOXpVeHJtOV90UklEOXVsU2dUOTNEcXg0alVENUJvUmF3LWJRcHZxNmRsTEpJUnFYRUk0Rlp6VlZPcXA3Z1NlaWd1VW03VVRNZ1R5MTJiaHkyQ2JaMFFIczlwTS1tQnA0UEpIckpobEdEbi0zT0trSVh0VktfRm1UQlFZWktZNklwOUtwb1lGTU9hUUV5V3FIbi1tVTBieUtSWWJ4MHMzb1QxdFNZRW04QkZWV2NOLVFqMWZJRjlnckM3cFJmUWhHazUxdG9KMktqOXZ5SjFQczF2MUdz?oc=5",
+      "titulo": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas",
+      "resumen": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas IndexBox",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNU1UtQ1NMWS14bDRHYjlCbDRJZUhZMFFPVU1iRU5WMkNjal90R2lvcUZvUmxvaXpiSXhoM0dtWXNySTh5cXlxeXZqWUh4MmhhSTlYd2ZzZXZIR3d0V2p1NC1XcHJ0T25RUExTXzdRQlI3X24wZFZnTzNNMHk1eFRwN084bFJuRDZ3N0pZQlBBNlhDWWxoakVUN2UxMnB4WEU?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "IndexBox",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793871111000
+      "fecha": 1793796146000
     },
     {
-      "titulo": "Una popular tienda de videojuegos toma una decisión contra la inteligencia artificial y elimina una enorme cantidad de contenido",
-      "resumen": "Una popular tienda de videojuegos toma una decisión contra la inteligencia artificial y elimina una enorme cantidad de contenido Kotaku en E…",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQTkJ4MjMwbm5ndjhjVzlEWVBVOGJLU09namZaQzRXWnZjaS13SXJZNkFRenY2VFc1LUo1a0ExMWRFT3V0bzQzdDB2d3RJbEFoZzIxZHVwWldaQTlkaThfcnV6aUYxelA3UDhPSTl1a3h3UlR4ZXpjUVc5NzBjOGZVcVFvRlVqdEZRaURRalBXOW5zUXFhYzBlcW9XYXB2eGR3ejRTSW5CRGdIalRDNFR4Y243VG5ROWxuQjc0WFJSdVlyRVlwR1lLVUFuQXA5dW5mTzBqQ1g4Q01yeFlTMHNGMFBmMGdTcy1BU291UXJXN2Rtam8?oc=5",
+      "titulo": "AMD: centros de datos impulsarían ingresos pese a caída prevista en videojuegos",
+      "resumen": "AMD: centros de datos impulsarían ingresos pese a caída prevista en videojuegos https://fomoera.com/",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9pSnVqNmR5UUZQNU9IY0l3cWM5N3IxZjIwYUhwbDV2Z3U4N0JLNU82ZDhwbjg4S2VQaFQ0U3hWQ3JETHl4RzBubjhUUkMwX1dXYkpKZzZDZHluMWhrb2tiR050TVBYc1NKN3BtWFJOUkhWUTJnWExxemFhYw?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "https://fomoera.com/",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793867170000
+      "fecha": 1793795580000
     },
     {
       "titulo": "LoL Esports |",
