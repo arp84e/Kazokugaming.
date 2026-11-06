@@ -1,76 +1,116 @@
 {
-  "generado": 1793957021223,
+  "generado": 1793986153987,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Los planes de Sony para PlayStation 6 van mejor que nunca, mientras que PS5 alcanza la friolera de 97,9 millones de ventas",
-      "resumen": "A PlayStation le va muy bien, pese a todas las críticas que inundan las redes sociales por sus múltiples decisiones anticonsumidor, y su sit…",
-      "link": "https://www.vidaextra.com/industria/planes-sony-para-playstation-6-van-mejor-que-nunca-ps5-alcanza-friolera-97-9-millones-ventas",
-      "imagen": "https://i.blogs.es/b6a9f5/gta-vi/1024_2000.jpeg",
+      "titulo": "El compositor de Phantom Blade Zero reconoce que la banda sonora es \"ofensiva\" en China",
+      "resumen": "Uno de los últimos videojuegos que ha llegado a las tiendas ha sido Phantom Blade Zero, el soulslike desarrollado por el equipo chino S-Game…",
+      "link": "https://www.vidaextra.com/rpg/compositor-phantom-blade-zero-reconoce-que-banda-sonora-ofensiva-china",
+      "imagen": "https://i.blogs.es/a362f8/phantom-blade-zero/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793955059000
+      "fecha": 1793984467000
     },
     {
-      "titulo": "El fenómeno \"GTA VI\", el videojuego más caro de la historia, llega tras una década de espera",
-      "resumen": "El fenómeno \"GTA VI\", el videojuego más caro de la historia, llega tras una década de espera Clarín",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNX3QwMExpOWxmTDJVeXFYMVNjMDlnUDJ4b3VJSnJGYWh5d2pJXzhCaXhjcFR5Qmp5T3VQQUdUZHEwR3VnTDMxdHVHdVVhcDFrd1BHaTZkR0pfdmt5TC1Iak9YVUY1SXdQX05iVllrLXFUWDJvdDJFclpldUM5dk51T2VSb25FdDc5X2dkNHpWRmpLbTBWTEhfdHpkQ2ZIUUFDM3JOemluSjhmeVYwb0QwTlVsNHhJYjNjVVdhTjlxRVNKTThIcTJaWnJmSVNoUEJCTVV4dEE1aUs2MUto?oc=5",
+      "titulo": "Aonuma, directivo de Nintendo: \"No despedimos a gente porque hay beneficios manteniéndolos a largo plazo\"",
+      "resumen": "Aunque ahora mismo son todo alegrías en Nintendo gracias al lanzamiento del remake de The Legend of Zelda: Ocarina of Time, lo cierto es que…",
+      "link": "https://www.vidaextra.com/nintendo-switch-2/aonuma-directivo-nintendo-no-despedimos-a-gente-porque-hay-beneficios-manteniendolos-a-largo-plazo",
+      "imagen": "https://i.blogs.es/9e4395/fa60b117-b477-4d9d-9df2-5716f7ad02a4/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793982667000
+    },
+    {
+      "titulo": "Lisa Su, CEO de AMD: \"Somos una empresa centrada primero en los centros de datos\"",
+      "resumen": "Los planes de cara al futuro por parte de AMD pasa por crear una estructura fuerte alrededor del negocio que supone la IA y Lisa Su se ha en…",
+      "link": "https://www.vidaextra.com/pc/lisa-su-ceo-amd-somos-empresa-centrada-primero-centros-datos",
+      "imagen": "https://i.blogs.es/cc657a/1505974-dr-lisa-su-ryzen/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793979067000
+    },
+    {
+      "titulo": "A falta de probar Zelda y GTA VI, no he jugado nada mejor que Queen's Domain en todo 2026",
+      "resumen": "Pocos juegos casan más con la definición de joya oculta que Queen's Domain. El juego creado por dos personas, las que integran Freshly Baked…",
+      "link": "https://www.vidaextra.com/rpg/a-falta-probar-zelda-gta-vi-no-he-jugado-nada-mejor-que-queen-s-domain-todo-2026",
+      "imagen": "https://i.blogs.es/a98618/20261106125615-01m6rb7hj96xkcn600cexk6550/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793975588000
+    },
+    {
+      "titulo": "Hay un nuevo RPG que puedes jugar gratis en Steam y lo ha desarrollado... Una hamburguesería",
+      "resumen": "Las cadenas especializadas en comida rápida no se limitan exclusivamente a ofrecer alimentos a sus clientes. En alguna ocasión hemos visto q…",
+      "link": "https://www.vidaextra.com/rpg/hay-nuevo-rpg-que-puedes-jugar-gratis-steam-ha-desarrollado-hamburgueseria",
+      "imagen": "https://i.blogs.es/e719da/wendyquest/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793971869000
+    },
+    {
+      "titulo": "A GTA 6 le ha durado poco el récord porque un reciente fallo hace que Nier: Automata pese mucho más de 212 GB",
+      "resumen": "Cuando todos pensábamos que nadie podría superar el descomunal tamaño que tendrá GTA 6 en PS5 y Xbox Series X/S, Nier: Automata se ha propue…",
+      "link": "https://www.vidaextra.com/rpg/a-gta-6-le-ha-durado-poco-record-porque-reciente-fallo-hace-que-nier-automata-pese-mucho-212-gb",
+      "imagen": "https://i.blogs.es/c6183a/thumb-1920-950819/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793968266000
+    },
+    {
+      "titulo": "Mientras Arc Raiders se piensa el PVE, en Escape From Tarkov ha superado al PVP y se ha convertido en el modo dominante",
+      "resumen": "Entre agosto y septiembre de 2026, Nikita Buyanov, máximo responsable de Battlestate Games, compartió las cifras oficiales de cómo estaba re…",
+      "link": "https://www.vidaextra.com/fps/arc-raiders-se-piensa-pve-escape-from-tarkov-ha-superado-al-pvp-se-ha-convertido-modo-dominante",
+      "imagen": "https://i.blogs.es/9059fe/tarkov-2/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793964720000
+    },
+    {
+      "titulo": "Con una inversión de 16.000 millones de euros, y una superficie igual a la de 1.300 campos de fútbol, Elon Musk anuncia Terafab: la fábrica de chips de IA más grande del mundo",
+      "resumen": "La ambición de Elon Musk por sacar adelante nuevos proyectos no parece que vaya encontrarse con una barrera que no le permita seguir adelant…",
+      "link": "https://www.vidaextra.com/industria/inversion-16-000-millones-euros-superficie-igual-a-1-300-campos-futbol-elon-musk-anuncia-terafab-fabrica-chips-ia-grande-mundo",
+      "imagen": "https://i.blogs.es/8691ed/elon-musk-terafab/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793961665000
+    },
+    {
+      "titulo": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia",
+      "resumen": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia wapa.tv",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPekpZWjRNb0YyZnZuZS02dGpXS1RhQjB2T0RkMTJpZDJNTnBzTHgyZVlOM0g3NkVRUzZFS2JaVXJsRW5kaTk0aWZKOTVLc05WMFJ1a1NteVp0cHRhdE55RE1VVTVybElPZ3Y2SUxkS09QX2liVkNiVUwzR3d5M0pBUkZNOVA1R1N5QVZ3bDBwTTB0cEdlUkRlOTJrXzljVTFhVl9PUVVzV05ReDgycXBfaDk3RGJxcjNCNzRSRnlZX3RjYUxJMmctbHhZcm5fSG52TzJCdkVHRjdLS0duREQxWGdnQlJIV3gwYmhGNw?oc=5",
       "imagen": null,
-      "fuente": "Clarín",
+      "fuente": "wapa.tv",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793950212000
+      "fecha": 1793959200000
     },
     {
-      "titulo": "Hideo Kojima: la IA está haciendo que el desarrollo de videojuegos sea 'aburrido' y teme que pueda adueñarse del trabajo creativo en un plazo de 5–10 años",
-      "resumen": "Hideo Kojima: la IA está haciendo que el desarrollo de videojuegos sea 'aburrido' y teme que pueda adueñarse del trabajo creativo en un plaz…",
-      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxOVXBhRTdZb0hxZV83YXVxYThVQ1FOcmM1MWp5bXVtN3VuYWozRmV1eXA3blNqQ1NwZm83ZVNMY2JmMVpOZmVWMHJFbndnUnNKWkFOWVpSSTRCN09ERzQ5el9HeE00WW0wTkFBT2w2eFBDYzhyNWpLN0Ryb0hxelYzaDFIaG9OVWhTQ0l1MHk4X2JCN01pSW1nbEZjLW5MVlJURk5NU3paTV91c3FXdUlmaVhWNXI2bWlMSWdLZmxhVDc4WldacVlvTmhSZnRsbno5STRkN3RKY2JyczdmakRYZWRCV2lkY19MTWNTRmlUeUFvZXR4U3VvLXpmbFNKMF8zcEVVX0M4em9QSG9MVk0wLW5BRXByQUNMMldLYVN4dG04dw?oc=5",
+      "titulo": "Sony revela las ventas oficiales de Marvel's Wolverine y una comparación con Spider-Man sorprende a los jugadores",
+      "resumen": "Sony revela las ventas oficiales de Marvel's Wolverine y una comparación con Spider-Man sorprende a los jugadores Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZ2ROR253Q3hfUEJJMWd0T2RJX01CTnduRXBMWmhGejJkY3NTb1BrSVZMYVN5bWtRUEVDV19JeTZBSEE3QlhDZzI1aUpBUm1Ca2NNQnp6SGs1UVNGZ2NMMkM0c0staHJmbVpGRnFjQjNhblliWUhKRC1vNjNvR1dqaFFpZDB5b2J6dEhycjBpbl92V29nR2pTVmkxb0lIdEhmNGpTRUhqdlZpc2RZaWJUWHVXVzJmd0FleHVBNkd3RHJrVHo1X0paRGw4Yjh3VXY3UW5RV0NvYmd4a3QxT2c?oc=5",
       "imagen": null,
-      "fuente": "Notebookcheck.org",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793943840000
+      "fecha": 1793953266000
     },
     {
-      "titulo": "Confirmados los siete videojuegos para descargar gratis con Amazon Prime Gaming en noviembre de 2026",
-      "resumen": "Estamos ya en noviembre y eso supone que llega el momento de uno de los anuncios más esperados por todos aquellos que están suscritos a Amaz…",
-      "link": "https://www.vidaextra.com/pc/confirmados-siete-videojuegos-para-descargar-gratis-amazon-prime-gaming-noviembre-2026",
-      "imagen": "https://i.blogs.es/3c1663/jurassic-world-evolution-2/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos",
+      "resumen": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos Telemundo",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxORmQwVURaWjZOR3h4a2VqUHlRZEJQVUQzU2pnUkVpMVJraXp2eDFTMURnLWhLT2FtM3h1X2x3TzhWZFBZWUxrR1VhelFZNHFBX3RWUF85eWtrRXRncURBTXRud1JfNGxfOVd0ZjU3NjhFR2U5WTctY3JvTGFJam9IZnotVV9HZlFfVjRvSnNHbjNjQ09EV1Uzc0dFdHgybEFxOWlKOUVoZ24yNHJfNlZjdTBJbFN5dnNOLVUyR3lVcmVfbkIycjZjU1JNS2V1dHl4dXp0WGt4MTlrbFVaR3ZubmVTMUpFelVPSHBVZE5MdG5BTHd3?oc=5",
+      "imagen": null,
+      "fuente": "Telemundo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793904219000
-    },
-    {
-      "titulo": "Contra todo pronóstico, el lanzamiento de World of Warcraft: Forever se corona como el más fluido de la historia del MMORPG",
-      "resumen": "Mientras los jugadores de Nintendo Switch 2 estaban esperando con ganas la llegada de The Legend of Zelda: Ocarina of Time y otros no ven el…",
-      "link": "https://www.vidaextra.com/juegos-online/todo-pronostico-lanzamiento-world-of-warcraft-forever-se-corona-como-fluido-historia-mmorpg",
-      "imagen": "https://i.blogs.es/dce657/world-of-warcraft-forever-lanzamiento/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793901670000
-    },
-    {
-      "titulo": "Mientras PS6 va viento en popa a toda vela, Sony se ha asegurado una morterada de RAM para el futuro",
-      "resumen": "La publicación de los últimos resultados financieros trimestrales de Sony no solo nos deja un reguero de cifras para analizar, como las vent…",
-      "link": "https://www.vidaextra.com/ps5/ps6-va-viento-popa-a-toda-vela-sony-se-ha-asegurado-morterada-ram-para-futuro",
-      "imagen": "https://i.blogs.es/0a820b/playstation-5-dualsense-wireless-controller-3840x2160-21919/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793899866000
-    },
-    {
-      "titulo": "Mientras Nintendo sufre pérdidas tras la caída en ventas de Switch 2, no tiene intención de volver a subir su precio",
-      "resumen": "Uno de los casos más sorprendentes y polémicos que nos ha dejado la actual generación de consolas es que las diferentes máquinas para disfru…",
-      "link": "https://www.vidaextra.com/nintendo-switch-2/nintendo-sufre-perdidas-caida-ventas-switch-2-no-tiene-intencion-volver-a-subir-su-precio",
-      "imagen": "https://i.blogs.es/b22bee/switch-2-zelda/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793896267000
+      "fecha": 1793948040000
     },
     {
       "titulo": "Xbox Game Pass perderá 13 juegos el 15 de noviembre de 2026: estos son los títulos que debes jugar antes de que desaparezcan",
@@ -81,36 +121,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793895585000
-    },
-    {
-      "titulo": "Seis años después de su lanzamiento, Ubisoft lanza la actualización más solicitada de Assassin's Creed: Valhalla",
-      "resumen": "Lanzado por Ubisoft en 2020, Assassin’s Creed Valhalla nos trasladó al siglo IX para vivir en plena era de las invasiones vikingas en Gran B…",
-      "link": "https://www.vidaextra.com/rpg/seis-anos-despues-su-lanzamiento-ubisoft-lanza-actualizacion-solicitada-assassin-s-creed-valhalla",
-      "imagen": "https://i.blogs.es/535224/helix_arise_sshot01_mainvisual_ng_final-bee66ce75d62c7da6633-1600x900/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793892667000
-    },
-    {
-      "titulo": "Han creado uno de los mejores mods para Cyberpunk 2077: únete a Trauma Team y haz misiones para la corporación médica",
-      "resumen": "Trauma Team es una de las \"facciones\" o corporaciones que más ha fascinado a los jugadores desde el lanzamiento de Cyberpunk 2077. Tiene muc…",
-      "link": "https://www.vidaextra.com/rpg/han-creado-uno-mejores-mods-para-cyberpunk-2077-unete-a-trauma-team-haz-misiones-para-corporacion-medica",
-      "imagen": "https://i.blogs.es/5fe8ab/trauma-team/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793891106000
-    },
-    {
-      "titulo": "Sam Altman responde a los comentarios sobre la memoria RAM: \"Que la gente ponga tanta como quiera en sus ordenadores\"",
-      "resumen": "No ha sido una semana especialmente sencilla para Sam Altman en las redes y a nivel de popularidad. El CEO de OpenAI se granjeó las críticas…",
-      "link": "https://www.vidaextra.com/pc/sam-altman-responde-a-comentarios-memoria-ram-que-gente-ponga-tanta-como-quiera-sus-ordenadores",
-      "imagen": "https://i.blogs.es/4f2b28/1000000185/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793880035000
     },
     {
       "titulo": "Keanu Reeves regresa a los videojuegos con una aventura inesperada que recupera una de sus películas más queridas",
@@ -133,14 +143,14 @@
       "fecha": 1793867170000
     },
     {
-      "titulo": "witch 2 estrena una mejora que facilita encontrar videojuegos y podría llegar a más países",
-      "resumen": "witch 2 estrena una mejora que facilita encontrar videojuegos y podría llegar a más países Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVDc5NWFzRE1FR2JmNldBV0tFczhfdlAwMFRaZWZ1Uko0NnVrU3NpUlRVTGx5UFZHdENZTHlYcFBta0c4cWJZel9ydG5fMUt6bjdBc3VEc1ptV2tpYzJGdWw1Y0UzUkNMR0lYeVpScU9Hb1d0alNYU0xZSTFJZ19FMEROdndHbXdyWHB2Mlp6TFRpcHVFc0FxcnBwUERmRm85Sk82R2hnd01zRVlZZjVYRGNnbEhXUGg5N2JpMTE3cGU?oc=5",
+      "titulo": "LoL Esports |",
+      "resumen": "LoL Esports | LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "LoL Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793866785000
+      "fecha": 1791183600000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
@@ -150,17 +160,7 @@
       "fuente": "DAZN",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793189198000
-    },
-    {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
-      "imagen": null,
-      "fuente": "LoL Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1791183600000
+      "fecha": 1786690800000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
