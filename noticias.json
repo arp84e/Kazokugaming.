@@ -1,16 +1,46 @@
 {
-  "generado": 1794006462883,
+  "generado": 1794046006111,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Pokémon, Yu-Gi-Oh! y videojuegos: Card Show Expo a Bogotá",
-      "resumen": "Pokémon, Yu-Gi-Oh! y videojuegos: Card Show Expo a Bogotá Revista DC",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSmVhRUVBa1B3cWk1a0U3RW4tVk5jOGJCenFoRXhfWjNKR0FjMHZxTFZYUHhVdjRtaXBCcmZGOUlVaEVRckhVMkREYkIyMnZrN1dJMEdtcWY0bGdNcHRQeGlGRkxmaXdLWEFsTGV4ZWdnZmVxNFpwS3RLTVdIeEtneHRyZDVzX3ZHLV9PLVNYaXBIZw?oc=5",
-      "imagen": null,
-      "fuente": "Revista DC",
+      "titulo": "Cómo una queja por Uncharted 4 consiguió que Naughty Dog convirtiese The Last of Us 2 en el juego más accesible de la historia",
+      "resumen": "Hay una enorme cantidad de artículos sobre accesibilidad en videojuegos, pero no se habla tanto de las razones de ese cambio del sector para…",
+      "link": "https://www.vidaextra.com/industria/como-queja-uncharted-4-consiguio-que-naughty-dog-convirtiese-the-last-of-us-2-juego-accesible-historia-1",
+      "imagen": "https://i.blogs.es/db8568/lastof/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793997346000
+      "fecha": 1794044706000
+    },
+    {
+      "titulo": "Shawn Layden, ex presidente de PlayStation Studios, sobre Bloodborne: “Que todos estén de acuerdo es el mayor",
+      "resumen": "Shawn Layden, ex presidente de PlayStation Studios, sobre Bloodborne: “Que todos estén de acuerdo es el mayor Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdXZtTzRkVmt1NVNKbkV5T1oxOG05cEFLMC1mU0JaNURuT3FFZ0NJd0NvMXpYZ1lOTklLMmV6b1NxVUZvc2dIaUx2SHNlQ0hxcjRTdTJRcDdVWEtCWl9sd0ZFQTh4OFUtajU3dmhvdHFERXdFUTlWWXZ0Q3dwdWVpMzY5MWJHQVRKTVJvX1ZkU0E1dlNSUVNlaGhJZUpUVm8tbEZTZXR3NFltd2ZiVlc5czFOd0kwX1lxWUZRdkYyXzFaRDhXTUlfd0hualc4aTZpUTFoaG8zLTJvU05HeEdScTJma2M0dDJfd0tGeWgzT3pjQdIBhgJBVV95cUxNNXdlM2pqNW45MGNZbHcyeDJ2SlpUYWtublpEOGFhMFJ4bXpyaV8wTDFXMC14WnVEbnlCdHFDd1o0OEMxRkVFeDRNaFFZTXFJSTBjUU1QalRka3RYWnk5RVFheW1yandYQ1ozT0g1WDhudmZKdjhYQUo5Vmx4M2ZyV0FWNUN2OEVCNThpaXhyUTBVcTEzSm5GeVNvMGozejZmQ0Z4bFhQVk9IWlk4Qy0yMHFkQ0ZDY3V5TFBwdUtTN1RWUkRXcDdSMWFVZVFvaC04VVZIZUlIOS1WNUZUdkllMlJ2YmR5SDZtZ3ltOFNhT01UX2dBUm54d2d4dXNOdnhKOTY5eTR3?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794043818000
+    },
+    {
+      "titulo": "Amazon sorprende con siete videojuegos para noviembre que podrás conservar para siempre y anuncia grandes novedades para Luna",
+      "resumen": "Amazon sorprende con siete videojuegos para noviembre que podrás conservar para siempre y anuncia grandes novedades para Luna Kotaku en Espa…",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNV2FLRzhtbVpYbFZHWTd0amZSU25DY3ZKdVFPaTNxS1FWNEdxR29NWmJxT24xaVlHUlgxT2RzemJzZ0NhX3dKazI5SEg2M3MwajJUZnpNaW5fYlRxZlBobV95VXByeHBnM1o0NmFRRlZFOUhCNy0tbDY0MDIwamZhQ0NmYVVWVjNLdE1UaC04RkpfVHRZelgtLTdqYU11ZTcxNmZPakRxX1lYYVhVRFlGSWtrTmk3MFVvVmJDSHY4MmFYSG9HLW45RXhZN0pIVmlpYUxSRmhwMWpuQkpjSjk2Q0NaT0ZXclhtY21nY01TUQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794042608000
+    },
+    {
+      "titulo": "Electronic Arts recupera 25 videojuegos olvidados y descubre un tesoro que llevaba décadas escondido",
+      "resumen": "Electronic Arts recupera 25 videojuegos olvidados y descubre un tesoro que llevaba décadas escondido Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZEVjbzNaVE53T2NzeVlUa2dMZlk2UzZqTWlaa1hPREdZNlZNbHBNMXMtYzJuWFBka09ic21rVk9wU25EblB5dC1aeEVEOFdoS0R1aTN3VnQxVXYzSmNnaTlYMGFXZlFsdlhOVjI4ZTkwbGdzaXRMSE1UcFAwTWkzV3lpSThUYUI0OUV2STBYVzVQbUtfYUJnb20zaVhPc0RUU19kZU5hdzltYmVOdkRlaFBiVXM3ODJnSFN5V2ZodHdrS182b0NqckUyTzUtUQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794041087000
     },
     {
       "titulo": "Henry Cavill está creando su primer videojuego junto a Google sobre su meme más infame: \"Conozco la injusticia del bigote\"",
@@ -63,16 +93,6 @@
       "fecha": 1793988306000
     },
     {
-      "titulo": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año",
-      "resumen": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año Forbes Argentina",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaXo1RE1HNExIbFlxZG9CZ2hYQkh0SzJ5bmt6bDlJM1dKRm90bFFEYVZUY2hQa2VDOU9leWd2QmFfUFJhTGxDSzF5UU1HTjladkwteElxV1N6bTFzeV81WnNzYXdJZ2F4MzRtN2pJR0lhMTEydUh6TUJlSVZSS2liUWFydjJWMFJfQnQzWFo4N2JiZTRJeWgwZG10WVp3ZWdKZlNxN0ZwMFphRVZOQ0VyYVppVWJNN0RnZ2JLckp0a03SAcYBQVVfeXFMUHJHTFVfeVFJSEZEUXZfQ2xmMU5Wb3pPV2l2RVQ1SVNhVjhJb25XcWFPY0dzOEtzT2U0bzlkX2tJZHRWQi00OGVBSG9BbWhGNDRUY0oyWEhoNUFRY2tIaDVEcTVudmhhWnhHNTFqUkJDRDNLVEs2bXNsQjJjUlZiY0hETE9zZWJad0RWNC1OYlNsVEludWVoS2tDZkVWSTRKM0YyLWdMbHFCb0ZyR0dYVXhsSDcwRjZlYVJVZ0I0Ym1yNm81dFJn?oc=5",
-      "imagen": null,
-      "fuente": "Forbes Argentina",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793985839000
-    },
-    {
       "titulo": "El compositor de Phantom Blade Zero reconoce que la banda sonora es \"ofensiva\" en China",
       "resumen": "Uno de los últimos videojuegos que ha llegado a las tiendas ha sido Phantom Blade Zero, el soulslike desarrollado por el equipo chino S-Game…",
       "link": "https://www.vidaextra.com/rpg/compositor-phantom-blade-zero-reconoce-que-banda-sonora-ofensiva-china",
@@ -93,14 +113,24 @@
       "fecha": 1793982667000
     },
     {
-      "titulo": "Lisa Su, CEO de AMD: \"Somos una empresa centrada primero en los centros de datos\"",
-      "resumen": "Los planes de cara al futuro por parte de AMD pasa por crear una estructura fuerte alrededor del negocio que supone la IA y Lisa Su se ha en…",
-      "link": "https://www.vidaextra.com/pc/lisa-su-ceo-amd-somos-empresa-centrada-primero-centros-datos",
-      "imagen": "https://i.blogs.es/cc657a/1505974-dr-lisa-su-ryzen/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "PlayStation Store lanza sus ofertas de Black Friday 2026 con descuentos de hasta el 85% en juegos de PS5 y PS4",
+      "resumen": "PlayStation Store lanza sus ofertas de Black Friday 2026 con descuentos de hasta el 85% en juegos de PS5 y PS4 Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNR0FVeUttWFpVb0RwQS12WHZZc2RabElrLXdMN25mY1VldHpIUk5kdUZmT3dCa3MtLTJTekVNZDc4MmJvVTNHTDY5YWFxQzg1VmxHUEtaN1NQREowZThiXzBiaDcyVFROS2F5WnB1Q2pxdWdCanBJSEtRdzZUUF9SVElQWWd2SDBNaEVuUkFUeU0tOG9NYU1SQnVJUjRJRVNIc0NoTXRjQTR6MllfMTFVVU5NaDE4dl9WUGJsX1BpQnZOWXQ4Y1BBLTF5Qkp6cl9CYXg5aFd2WmNKQQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793979067000
+      "fecha": 1793978932000
+    },
+    {
+      "titulo": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia",
+      "resumen": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia wapa.tv",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPekpZWjRNb0YyZnZuZS02dGpXS1RhQjB2T0RkMTJpZDJNTnBzTHgyZVlOM0g3NkVRUzZFS2JaVXJsRW5kaTk0aWZKOTVLc05WMFJ1a1NteVp0cHRhdE55RE1VVTVybElPZ3Y2SUxkS09QX2liVkNiVUwzR3d5M0pBUkZNOVA1R1N5QVZ3bDBwTTB0cEdlUkRlOTJrXzljVTFhVl9PUVVzV05ReDgycXBfaDk3RGJxcjNCNzRSRnlZX3RjYUxJMmctbHhZcm5fSG52TzJCdkVHRjdLS0duREQxWGdnQlJIV3gwYmhGNw?oc=5",
+      "imagen": null,
+      "fuente": "wapa.tv",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793962783000
     },
     {
       "titulo": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos",
@@ -111,36 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793948040000
-    },
-    {
-      "titulo": "Nexus Mods pone nuevas reglas al uso de inteligencia artificial en videojuegos",
-      "resumen": "Nexus Mods pone nuevas reglas al uso de inteligencia artificial en videojuegos TN8",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVHNsVXR6NTU4NkxidDMzdGFrX21JUzFzNFRxZFlrdFl1bkpFdFk4UThodFFTdlkzQTRZVXgybzVyck12bGFUTGVEbVlVZFB6azRtVkJUZENlLUhxazBySUdjTWtBcnd4OE82T25qUmNMM2RoR2RZTVRud3lrdlpyLVBCOU5SVWtOX2ZFZ1JycWR4b3QzZS1TQ3piQkhJZ3djMk1Zd0J3X1VpSXFiTURDc2s2bw?oc=5",
-      "imagen": null,
-      "fuente": "TN8",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793814768000
-    },
-    {
-      "titulo": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas",
-      "resumen": "Ley KIDS de la UE: nuevas normas para videojuegos, chatbots y controles de edad - Noticias y Estadísticas IndexBox",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNU1UtQ1NMWS14bDRHYjlCbDRJZUhZMFFPVU1iRU5WMkNjal90R2lvcUZvUmxvaXpiSXhoM0dtWXNySTh5cXlxeXZqWUh4MmhhSTlYd2ZzZXZIR3d0V2p1NC1XcHJ0T25RUExTXzdRQlI3X24wZFZnTzNNMHk1eFRwN084bFJuRDZ3N0pZQlBBNlhDWWxoakVUN2UxMnB4WEU?oc=5",
-      "imagen": null,
-      "fuente": "IndexBox",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793796146000
-    },
-    {
-      "titulo": "AMD: centros de datos impulsarían ingresos pese a caída prevista en videojuegos",
-      "resumen": "AMD: centros de datos impulsarían ingresos pese a caída prevista en videojuegos https://fomoera.com/",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9pSnVqNmR5UUZQNU9IY0l3cWM5N3IxZjIwYUhwbDV2Z3U4N0JLNU82ZDhwbjg4S2VQaFQ0U3hWQ3JETHl4RzBubjhUUkMwX1dXYkpKZzZDZHluMWhrb2tiR050TVBYc1NKN3BtWFJOUkhWUTJnWExxemFhYw?oc=5",
-      "imagen": null,
-      "fuente": "https://fomoera.com/",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793795580000
     },
     {
       "titulo": "LoL Esports |",
