@@ -1,7 +1,27 @@
 {
-  "generado": 1794046006111,
+  "generado": 1794068775639,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Space Cadet, el mítico pinball 3D de Windows 95 que jugamos sin saber que era la demo de algo aún más grande. Así puedes jugarlo hoy",
+      "resumen": "Hubo una época en la que nuestro contacto con el mundo del videojuego se limitaba a tres bonitas casualidades: lo que nos traían los Reyes M…",
+      "link": "https://www.vidaextra.com/juegos-retro/space-cadet-mitico-pinball-3d-windows-95-que-jugamos-saber-que-era-demo-algo-grande-asi-puedes-jugarlo-hoy-1",
+      "imagen": "https://i.blogs.es/f4e981/pinball1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794066306000
+    },
+    {
+      "titulo": "World of Warcraft ha batido dos récords históricos con Forever, que ya es el mejor lanzamiento de cualquier versión del juego",
+      "resumen": "World of Warcraft forma parte de la columna vertebral de la historia de los videojuegos. La versión original se lanzó en 2004 y desde entonc…",
+      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-ha-batido-dos-records-historicos-forever-que-mejor-lanzamiento-cualquier-version-juego",
+      "imagen": "https://i.blogs.es/3c6dd9/wow/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794050020000
+    },
     {
       "titulo": "Cómo una queja por Uncharted 4 consiguió que Naughty Dog convirtiese The Last of Us 2 en el juego más accesible de la historia",
       "resumen": "Hay una enorme cantidad de artículos sobre accesibilidad en videojuegos, pero no se habla tanto de las razones de ese cambio del sector para…",
@@ -93,26 +113,6 @@
       "fecha": 1793988306000
     },
     {
-      "titulo": "El compositor de Phantom Blade Zero reconoce que la banda sonora es \"ofensiva\" en China",
-      "resumen": "Uno de los últimos videojuegos que ha llegado a las tiendas ha sido Phantom Blade Zero, el soulslike desarrollado por el equipo chino S-Game…",
-      "link": "https://www.vidaextra.com/rpg/compositor-phantom-blade-zero-reconoce-que-banda-sonora-ofensiva-china",
-      "imagen": "https://i.blogs.es/a362f8/phantom-blade-zero/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793984467000
-    },
-    {
-      "titulo": "Aonuma, directivo de Nintendo: \"No despedimos a gente porque hay beneficios manteniéndolos a largo plazo\"",
-      "resumen": "Aunque ahora mismo son todo alegrías en Nintendo gracias al lanzamiento del remake de The Legend of Zelda: Ocarina of Time, lo cierto es que…",
-      "link": "https://www.vidaextra.com/nintendo-switch-2/aonuma-directivo-nintendo-no-despedimos-a-gente-porque-hay-beneficios-manteniendolos-a-largo-plazo",
-      "imagen": "https://i.blogs.es/9e4395/fa60b117-b477-4d9d-9df2-5716f7ad02a4/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793982667000
-    },
-    {
       "titulo": "PlayStation Store lanza sus ofertas de Black Friday 2026 con descuentos de hasta el 85% en juegos de PS5 y PS4",
       "resumen": "PlayStation Store lanza sus ofertas de Black Friday 2026 con descuentos de hasta el 85% en juegos de PS5 y PS4 Kotaku en Español",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNR0FVeUttWFpVb0RwQS12WHZZc2RabElrLXdMN25mY1VldHpIUk5kdUZmT3dCa3MtLTJTekVNZDc4MmJvVTNHTDY5YWFxQzg1VmxHUEtaN1NQREowZThiXzBiaDcyVFROS2F5WnB1Q2pxdWdCanBJSEtRdzZUUF9SVElQWWd2SDBNaEVuUkFUeU0tOG9NYU1SQnVJUjRJRVNIc0NoTXRjQTR6MllfMTFVVU5NaDE4dl9WUGJsX1BpQnZOWXQ4Y1BBLTF5Qkp6cl9CYXg5aFd2WmNKQQ?oc=5",
@@ -123,16 +123,6 @@
       "fecha": 1793978932000
     },
     {
-      "titulo": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia",
-      "resumen": "A la vuelta de la esquina \"GTA VI\", el videojuego más esperado de la historia wapa.tv",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPekpZWjRNb0YyZnZuZS02dGpXS1RhQjB2T0RkMTJpZDJNTnBzTHgyZVlOM0g3NkVRUzZFS2JaVXJsRW5kaTk0aWZKOTVLc05WMFJ1a1NteVp0cHRhdE55RE1VVTVybElPZ3Y2SUxkS09QX2liVkNiVUwzR3d5M0pBUkZNOVA1R1N5QVZ3bDBwTTB0cEdlUkRlOTJrXzljVTFhVl9PUVVzV05ReDgycXBfaDk3RGJxcjNCNzRSRnlZX3RjYUxJMmctbHhZcm5fSG52TzJCdkVHRjdLS0duREQxWGdnQlJIV3gwYmhGNw?oc=5",
-      "imagen": null,
-      "fuente": "wapa.tv",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793962783000
-    },
-    {
       "titulo": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos",
       "resumen": "'Gamers': Estas son las novedades y productos ideales para amantes de los videojuegos Telemundo",
       "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxORmQwVURaWjZOR3h4a2VqUHlRZEJQVUQzU2pnUkVpMVJraXp2eDFTMURnLWhLT2FtM3h1X2x3TzhWZFBZWUxrR1VhelFZNHFBX3RWUF85eWtrRXRncURBTXRud1JfNGxfOVd0ZjU3NjhFR2U5WTctY3JvTGFJam9IZnotVV9HZlFfVjRvSnNHbjNjQ09EV1Uzc0dFdHgybEFxOWlKOUVoZ24yNHJfNlZjdTBJbFN5dnNOLVUyR3lVcmVfbkIycjZjU1JNS2V1dHl4dXp0WGt4MTlrbFVaR3ZubmVTMUpFelVPSHBVZE5MdG5BTHd3?oc=5",
@@ -141,6 +131,26 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793948040000
+    },
+    {
+      "titulo": "Nintendo actualiza los juegos más vendidos de Switch y Switch 2: Mario Kart sigue dominando ambas consolas",
+      "resumen": "Nintendo actualiza los juegos más vendidos de Switch y Switch 2: Mario Kart sigue dominando ambas consolas Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQY2ZSbktTenhTdVVLYmZBdU52UGt1NkJlZ05JVVRqQ3dVTkxBVFRNVTNJeU1xYmNua1lveUtReG5mVzdrNG1vZUdUWWZSV3NRRkxqb1BEQnNVZXMwWk8tYmhyeTg2RjNWYk5zSXJ4dVJ5NGhhQ2N3RTdBWUl5UjctX1ZBWjNIN2ZOam0td2xEcnA5eVFtUWpYWVFFQ212djZGYzRVX2pEYW9Da0ZIWlNqbmVEci1sM1R3eURqQ1oxZlpDcm9GRUM5MGVjc1Q1bUI5ekVzUw?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793865600000
+    },
+    {
+      "titulo": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión",
+      "resumen": "Levántate y juega en Nintendo Switch 2: más deportes, más diversión Nintendo",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNc1F3QnAzdUNhSW9zMmRxN1dQTUp6VWVGOVY0dFB6S2I0a0dlSUEwWVFfN0hIaEpVRkUwb3ZWUFM1OTZTUEtGSnRaamlNM0thWDFPR19zTzlXLU15NEJTaExMSzFnQTBQbVZYVzU2V3NuNXRnY29xNXJrbW9xVV9tM0JFNWsyMnczc2lyUnJVeWNHUDQ0RDhHWEp2cGdiU0NSMVA2dTczcV9HWkxR?oc=5",
+      "imagen": null,
+      "fuente": "Nintendo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1792652400000
     },
     {
       "titulo": "LoL Esports |",
@@ -161,16 +171,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1786690800000
-    },
-    {
-      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
-      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
-      "imagen": null,
-      "fuente": "UCAM Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1783494000000
     }
   ]
 }
