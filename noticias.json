@@ -1,16 +1,36 @@
 {
-  "generado": 1794150691085,
+  "generado": 1794166868085,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "NVIDIA sorprende con 24 novedades para noviembre y prepara importantes mejoras para algunos de los juegos más populares",
-      "resumen": "NVIDIA sorprende con 24 novedades para noviembre y prepara importantes mejoras para algunos de los juegos más populares Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSWdjRnY5ai1XVzM2OHgySmNCbW1vY3MxT0dweklRTkJTVDlOMVN2Y09fVFh0MlNLNldzY0J2aURNVUg5ZEVmTXpRMHVydjlJMmY0TUFHajhrelNFRE9LLUFldHNRdEl1Sm9wM2g1NjI1S3dVQzctZU9GWm9BMENsQ2NzN0tjcEhvbS1RMnZWTkJ5T0kxbFVkUmhRWXZGWmJzcExUVXNxMG9UTzJTT2VtRmZlTXpSVGlmanFNb1NoNEN4aEl1ZUFUUExzcm9tbW9Tb0lzUVByQjRrdFJoQ1FhTmtRZ21TTkU?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
+      "titulo": "Warren Spector, sobre Zelda: \"No creo que se pueda mirar a BOTW o TOTK y no ver un poco de Deus Ex en ellos\"",
+      "resumen": "Dado que una leyenda de los videojuegos se ha retirado, lo mejor que puede hacer desde la jubilación es ofrecernos algunas de las enseñanzas…",
+      "link": "https://www.vidaextra.com/rpg/warren-spector-zelda-no-creo-que-se-pueda-mirar-a-botw-totk-no-ver-poco-deus-ex-ellos",
+      "imagen": "https://i.blogs.es/234f9f/thumb-1920-1393329/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794142140000
+      "fecha": 1794160866000
+    },
+    {
+      "titulo": "Eiichiro Oda deja a los fans completamente desconcertados tras los inesperados eventos del capítulo 1198 del manga de One Piece",
+      "resumen": "Aviso: Spoilers del capítulo 1198 de One Piece Después de ver cómo Roronoa Zoro y Vinsmoke Sanji han renovado sus poderes con el Haki del Co…",
+      "link": "https://www.vidaextra.com/cultura/eiichiro-oda-deja-a-fans-completamente-desconcertados-inesperados-eventos-capitulo-1198-manga-one-piece",
+      "imagen": "https://i.blogs.es/382ca6/one-piece/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794153666000
+    },
+    {
+      "titulo": "Zelda: Ocarina of Time estuvo a punto de tener un sistema de teletransportación similar a los de Portal",
+      "resumen": "Los artes conceptuales dejan entrever una aventura para el recuerdo y siempre nos quedará el sabor amargo de no haberlo podido probar. Las i…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/zelda-ocarina-of-time-estuvo-a-punto-tener-sistema-teletransportacion-similar-a-portal",
+      "imagen": "https://i.blogs.es/e5eec1/zeldaportal/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794152826000
     },
     {
       "titulo": "29 años después, descubren un nuevo personaje reclutable en un JRPG de la primera PlayStation",
@@ -23,24 +43,14 @@
       "fecha": 1794139267000
     },
     {
-      "titulo": "Lara Croft se resiste a envejecer: 30 años de Tomb Raider y de una heroína que sobrevivió a sus propios estereotipos",
-      "resumen": "Lara Croft se resiste a envejecer: 30 años de Tomb Raider y de una heroína que sobrevivió a sus propios estereotipos El Mundo",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQklrU2pBaFJYUXhMQUp5amVCclpqZElialFMdlZYSnl1OFhuc2cyYkJpODNidGxySl84WmJTejdxN292dEkzSExSOGdnNUVRVFBZVWhDd3R6aTMtQkpiX0RFNThNWmFkOXJQZ1ZmMEh3N0FnaUt2bjZNM1JEbjJjSG5kM3hidWpqN3FEbUhsUdIBjwFBVV95cUxOSVhHRDhqODZ4cUx1OHFFOGZieVJYUVozaEVmMEZLVlhaZENIZWxkcTFWYk9zal9MdGVYYjBBaWkyRlhNMllhY09WTGZRckowVVdlZlNLTEZkeS1CRzNqX05vS2tQeW1XbVFJN19jMjlKb00xSXlBZEhSa05QczlDdGhtOXBJRXZPb2FhSy1OVQ?oc=5",
+      "titulo": "Hanói reúne a 263 empresas de videojuegos para impulsar la exportación cultural",
+      "resumen": "Hanói reúne a 263 empresas de videojuegos para impulsar la exportación cultural Foro3D",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObHlPS240dlpxZU41MXU3MHRSQmcyTGFkOGJoYThNZTJ2T0YySUJlZHd3VklndnVDLWpHeFRza2kwSWpLMi1jbmpUUlNyTjY5aHNCUjZmcFA1bTdYWW1HMkcwelkxWjc0YUk0REJRZGFvQXVVTkFzUmtiQkJUTEtUQmQ1NEExYWd3cVZUeDRfYjNzS1Z1bnp2M0lxVmxDLUgxZHllQ0J4bE5hZ1JfdHc?oc=5",
       "imagen": null,
-      "fuente": "El Mundo",
+      "fuente": "Foro3D",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794132490000
-    },
-    {
-      "titulo": "Solo Leveling prepara un nuevo videojuego que revelará una parte de la historia de Sung Jinwoo que pocos conocen",
-      "resumen": "Solo Leveling prepara un nuevo videojuego que revelará una parte de la historia de Sung Jinwoo que pocos conocen Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQNGRVNkNRdHpiekxzVVh1Qm5CeldZZGk2SmUwZTdkWE92NExRUENrbm1LQVZXWTc3d2VuTDZveXd2blNkZHdwVll2dVZyTGptY3Z1NXlTVXM3XzBmVmhPcnEtZW9JTGwwUXF5Qm9SOVdoM3p2N0VhRF9raGxXSi1Ed1pwd1NVWU9fb09EbGE1bUdmOU5lWXQzNnhpSHFzaFBUMF9TU3ozRVFrdDY3TGVfdld1a0RlRGwxY1VKVS1Wd0ZXRUgwOWRFeERtZlpFTFpVT3hHRGtvdzctMFdQbEE?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794132013000
+      "fecha": 1794132000000
     },
     {
       "titulo": "Las cajas de tus juegos de PS2 esconden un código que tiene su miga",
@@ -63,14 +73,14 @@
       "fecha": 1794128466000
     },
     {
-      "titulo": "Uno de los videojuegos más importantes de la historia podría no regresar jamás y el motivo sorprende incluso a sus responsables",
-      "resumen": "Uno de los videojuegos más importantes de la historia podría no regresar jamás y el motivo sorprende incluso a sus responsables Kotaku en Es…",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQRFBpenBVMENJSTFjZU12Y0ZNNFBNVWNJMTRRUGYyTzFURHl5cUFWQUZQTmF1VDQyZmFMVXVobUxFUWNBWVdEMWdkZ2M4TFdYYVpnNlBsVEdYVG96bW5NOEVrZ29GWVloOTVrNDNQai12ckUzSlkwRE1teVVwNzZQUmpCUE9FaENtVXc1Qmp6RlFoVG02MlNOYnZqZjM4M3FJM1JBbkt1SXozMEotVGFfUVFNQlNUTEJHMFJ0YmdTVzFoUnd6dVlkQ3puZkhRS1dWQlFMTUxiYWY3dU5jY01Tem5ucTFPUWtHbklkTzNmM3RWdw?oc=5",
+      "titulo": "Análisis de Order of the Sinking Star: Jonathan Blow lo vuelve a hacer con uno de los mejores videojuegos del",
+      "resumen": "Análisis de Order of the Sinking Star: Jonathan Blow lo vuelve a hacer con uno de los mejores videojuegos del Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQZjVOSzZzOEJsa2ZpRkhvUzdvREJmeVBhcFRqX3JvbE1NYkw0RVNadmp6MndoUDVhQW5fYjN1RDdoUlhYMFpDRm91alVQQ2ZHbWZGbDhCVjZBWHhzemlKNWhLdW5oOWdVXzBSRTktVjItbjB2aGFzbmp1THQ3X0tKWjJuQk56dUlxU2xJNWdrOFgwWnlsTTlBTUk4Yk1mWFF1QnZWTHY2dDRzS1RDWS1EUmdWSHNwd1NJV2xNMG1LbXNJQVVUdnZrRkpLS21LR3ZvMG54S2pZd2IxTW1jNWxzM1NpWHU2ZU41bE52bFJ3eWXSAYQCQVVfeXFMTXJIcVZZekRSSkFEZGZtdXVQU1NONE5SdFpQOTF4WUMwM0kzaGtINTNwZ1hyb190cE5lbVk2djNzVnFvU21JOGhnWkcyWHJncHpoMm5DZTdxSElXVGFPSk1VakUyNEJNVEppVF9NT0JGRlo1WkVLbm10MF9YbG1ja1JWcDJSSUU1NGRQNWllZkZRNDF0VGxOVjR4cndRaDFjelBmbTBWR05RbkFVWmFBSURIWGY3by1ESkVER0ZnVk1WeTZWaG9jNTByLUM3bWdtSk5Xc1pleFlkQ3VIQmoxWWZEVGs2dnR0b1h4Tnd3RUhGeDZQY0dzb09fTmdub3RMMXdPVmw?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "Diario AS",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794127469000
+      "fecha": 1794123000000
     },
     {
       "titulo": "GTA VI: por qué el lanzamiento del siglo cambiará el sector de los videojuegos (y será más difícil prestarlos o revenderlos)",
@@ -103,44 +113,34 @@
       "fecha": 1794050020000
     },
     {
-      "titulo": "Cómo una queja por Uncharted 4 consiguió que Naughty Dog convirtiese The Last of Us 2 en el juego más accesible de la historia",
-      "resumen": "Hay una enorme cantidad de artículos sobre accesibilidad en videojuegos, pero no se habla tanto de las razones de ese cambio del sector para…",
-      "link": "https://www.vidaextra.com/industria/como-queja-uncharted-4-consiguio-que-naughty-dog-convirtiese-the-last-of-us-2-juego-accesible-historia-1",
-      "imagen": "https://i.blogs.es/db8568/lastof/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794044706000
-    },
-    {
-      "titulo": "Electronic Arts recupera 25 videojuegos olvidados y descubre un tesoro que llevaba décadas escondido",
-      "resumen": "Electronic Arts recupera 25 videojuegos olvidados y descubre un tesoro que llevaba décadas escondido Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZEVjbzNaVE53T2NzeVlUa2dMZlk2UzZqTWlaa1hPREdZNlZNbHBNMXMtYzJuWFBka09ic21rVk9wU25EblB5dC1aeEVEOFdoS0R1aTN3VnQxVXYzSmNnaTlYMGFXZlFsdlhOVjI4ZTkwbGdzaXRMSE1UcFAwTWkzV3lpSThUYUI0OUV2STBYVzVQbUtfYUJnb20zaVhPc0RUU19kZU5hdzltYmVOdkRlaFBiVXM3ODJnSFN5V2ZodHdrS182b0NqckUyTzUtUQ?oc=5",
+      "titulo": "CASOS REALES Y PERTURBADORES RELACIONADOS A VIDEOJUEGOS | Halloween con Skeldes",
+      "resumen": "CASOS REALES Y PERTURBADORES RELACIONADOS A VIDEOJUEGOS | Halloween con Skeldes YouTube",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xX0xIS01JamNpWWdIMWJhTXNnTW4xZmlpVElPQ3JwM3NNQThUM3RnVDN4UU9LNDRZUG1XTWtHa2FmQzBDbUphY1dnWFptSzVWR1ROaGtuX0RVRjM2?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "YouTube",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794041087000
+      "fecha": 1794018113000
     },
     {
-      "titulo": "Henry Cavill está creando su primer videojuego junto a Google sobre su meme más infame: \"Conozco la injusticia del bigote\"",
-      "resumen": "Tenemos toda clase de memes alrededor de la figura de Henry Cavill, pero lo cierto es que la mayoría no tienen una connotación negativa haci…",
-      "link": "https://www.vidaextra.com/industria/henry-cavill-esta-creando-su-primer-videojuego-a-google-su-meme-infame-conozco-injusticia-bigote",
-      "imagen": "https://i.blogs.es/0d4d96/screenshot_2026-11-06_17-06-30_614/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año",
+      "resumen": "Recaudación récord: las cifras detrás del GTA 6, uno de los videojuegos más esperados del año Forbes Argentina",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaXo1RE1HNExIbFlxZG9CZ2hYQkh0SzJ5bmt6bDlJM1dKRm90bFFEYVZUY2hQa2VDOU9leWd2QmFfUFJhTGxDSzF5UU1HTjladkwteElxV1N6bTFzeV81WnNzYXdJZ2F4MzRtN2pJR0lhMTEydUh6TUJlSVZSS2liUWFydjJWMFJfQnQzWFo4N2JiZTRJeWgwZG10WVp3ZWdKZlNxN0ZwMFphRVZOQ0VyYVppVWJNN0RnZ2JLckp0a03SAcYBQVVfeXFMUHJHTFVfeVFJSEZEUXZfQ2xmMU5Wb3pPV2l2RVQ1SVNhVjhJb25XcWFPY0dzOEtzT2U0bzlkX2tJZHRWQi00OGVBSG9BbWhGNDRUY0oyWEhoNUFRY2tIaDVEcTVudmhhWnhHNTFqUkJDRDNLVEs2bXNsQjJjUlZiY0hETE9zZWJad0RWNC1OYlNsVEludWVoS2tDZkVWSTRKM0YyLWdMbHFCb0ZyR0dYVXhsSDcwRjZlYVJVZ0I0Ym1yNm81dFJn?oc=5",
+      "imagen": null,
+      "fuente": "Forbes Argentina",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793995266000
+      "fecha": 1793985839000
     },
     {
-      "titulo": "PlayStation Store se adelanta al Black Friday con miles de rebajas: aquí tienes nueve juegazos en oferta para PS5 y PS4",
-      "resumen": "Uno de los periodos de rebajas más destacados de este mes es el Black Friday, con el que es habitual encontrarse con productos de todo tipo…",
-      "link": "https://www.vidaextra.com/ps5/playstation-store-se-adelanta-al-black-friday-miles-rebajas-aqui-tienes-nueve-juegazos-oferta-para-ps5-ps4",
-      "imagen": "https://i.blogs.es/79d41b/silent-hill-f/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "The Legend of Zelda: Ocarina of Time Remake - Análisis",
+      "resumen": "The Legend of Zelda: Ocarina of Time Remake - Análisis IGN España",
+      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdXZqTS1ScWdjdjZ3bjZlRTBkcVZEazM3WDBCN1VfWmZUUHZ6M0JaOXJweEs1STF0ZWdRNHBjVkVwQUFTU1c5VjQ1MlJ5UUEtRGk4SlFnYTVXanNvRHBnV1dNVEV1THZpYzJQTXJZeUZ6U3UtZ3N3RWFYMHYxYmxaMDhDM2E3OTdyVGd3X0VKcVI0bnhrVnZ2bTB4MjNMeHlDYkxFX0p3V1p0QnlrSVpxZ2dyejQzMWJZNWw2aHF3R2gzdEJfWGFBWWRMR2JXLXZ3V25iSVpkWXF2Wm5jTm5KYS1XXzlManhXcFhCOGJuSjZQZmhIN2wwUVhTUVZlZw?oc=5",
+      "imagen": null,
+      "fuente": "IGN España",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793993466000
+      "fecha": 1793790231000
     },
     {
       "titulo": "LoL Esports |",
