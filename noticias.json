@@ -1,16 +1,106 @@
 {
-  "generado": 1794205562981,
+  "generado": 1794245306680,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Huyendo de los dinosaurios mutantes en ‘Terrible Lizards’: los videojuegos eran esto",
-      "resumen": "Huyendo de los dinosaurios mutantes en ‘Terrible Lizards’: los videojuegos eran esto EL PAÍS",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOUR0QzNIRzIwZlZqdmV5X2lHQVptVnp5cFJ3WGltc2x2WjdXUVhhcXNpYklzYWVfZkZ3a3hETklJUlF5Q1ZoazRQYXJTNnFFLXVOWm5YTm9Ham9fTzhmVjliUXhzMXZsRmRFNlNHQlFTZFcyNnVWYnlVenpIM2hlenFSd2ZJVGszUnVQSVE2TmUzRkFsdUJ4OFJ3bGNoOHJDVkh0eGFGemdmc2ladWlHUktnZEM5dTlnazN1RS1VcDRRQdIB1gFBVV95cUxNMEN6dXczVU80NUtVUjdBc3ByaDFKN1Z6LWsyaHFYX3ZDYi1JRnRCQUk0TlpxTlI4U2VOZTBlYXV4c0NzMGNHMzJBWllUbDcyeWRWWDhlbnpEMEZ3eXBmMHZwSlJJakRSUEVuRldzNmpRbVlzNGRWQ01CUm9pTVdUTXR4VkNObDJvdExZQmFFNGVFc3N3bmREM1N5NUtETkhnZkU3VDVYOU9aV0FkOHVTbnJfV05IblJXVGkxZU0wQ050SGxkM1dhS05HOHg4b2xuSmY4RXdR?oc=5",
+      "titulo": "Nintendo recupera uno de sus juegos más legendarios y consigue un récord que pocos esperaban casi 30 años después",
+      "resumen": "Nintendo recupera uno de sus juegos más legendarios y consigue un récord que pocos esperaban casi 30 años después Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQUElJZ185X1ZKeVVEUW1Dd0tndDJDNlVkSWNJMTlHVllvLXBIVlJhdGxQOEpqQVBERUsxcU14SnZKc2I1dVE0ajM4b3VuV2FSQ3FMa05BLUk5R1NkQi1LZUJSem5mOVJNUTR0azI3UWdaejdjakpwS0xwTG1WR2ZVbHdja0NKZ1llaE9rTzVLNndLUzh0S1hDWGlUVGxzM29VSDk3TFFhTVlUTWtrMVB1UnYzOUxIVm40Mlp1OEFpb1Q0VWJuOXMyMFFLSzFjZ0RneUVaWVdGMUlwTERPLTQw?oc=5",
       "imagen": null,
-      "fuente": "EL PAÍS",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794198600000
+      "fecha": 1794242296000
+    },
+    {
+      "titulo": "Estoy más convencido que nunca de que jamás debimos abandonar Nueva York",
+      "resumen": "El escritor británico Ian Fleming, creador de James Bond, dijo en la novela Goldfinger de 1959: \"Una vez es casualidad. Dos veces es coincid…",
+      "link": "https://www.vidaextra.com/accion/estoy-convencido-que-nunca-que-jamas-debimos-abandonar-nueva-york",
+      "imagen": "https://i.blogs.es/f6b6ca/division-2-main/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794242107000
+    },
+    {
+      "titulo": "Nintendo quiere fichar a un bibliotecario archivista y tiene todo el sentido del mundo",
+      "resumen": "Cuando hablamos de que Nintendo es una compañía clave para entender los videojuegos, no sólo lo hacemos por el número de Nintendo Switch 2 q…",
+      "link": "https://www.vidaextra.com/nintendo-switch-2/nintendo-quiere-fichar-a-bibliotecario-archivista-tiene-todo-sentido-mundo",
+      "imagen": "https://i.blogs.es/b25c21/nintendo-of-america/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794231187000
+    },
+    {
+      "titulo": "Una adolescente consigue usar Among Us para alertar a un jugador de que fue secuestrada durante 500 días",
+      "resumen": "Más allá de que los videojuegos nos ofrezcan toneladas de diversión, lo cierto es que también pueden servir como herramientas de muchísima a…",
+      "link": "https://www.vidaextra.com/juegos-online/adolescente-consigue-usar-among-us-para-alertar-a-jugador-que-fue-secuestrada-durante-500-dias",
+      "imagen": "https://i.blogs.es/c694c8/thumb-1920-1104367/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794225980000
+    },
+    {
+      "titulo": "World of Warcraft: Forever introduce un cambio en las últimas horas que enfrenta a la comunidad: ¿es innecesario o bueno?",
+      "resumen": "Crear una versión como Forever de World of Warcraft es una tarea compleja y muy laboriosa, pero aparentemente palidece frente al mantenimien…",
+      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-introduce-cambio-ultimas-horas-que-enfrenta-a-comunidad-innecesario-bueno",
+      "imagen": "https://i.blogs.es/1bb970/wow-forever/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794222186000
+    },
+    {
+      "titulo": "Al mayor youtuber de divulgación de videojuegos le han copiado su obra con IA",
+      "resumen": "Desde el último Steam Next Fest se ha hablado mucho sobre la clonación de videojuegos. Las ideas parecen carecer de menos valor que nunca, y…",
+      "link": "https://www.vidaextra.com/industria/al-mayor-youtuber-divulgacion-videojuegos-le-han-copiado-su-obra-ia",
+      "imagen": "https://i.blogs.es/e21ade/mark/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794220267000
+    },
+    {
+      "titulo": "Demandó a EA por ser baneado de forma permanente en Battlefield 6 y ahora vuelve con una buena noticia: ha ganado",
+      "resumen": "Se podría decir que esta historia ha llegado en el mejor momento para muchos jugadores. La simpatía por Electronic Arts (EA) ha descendido m…",
+      "link": "https://www.vidaextra.com/fps/demando-a-ea-ser-baneado-forma-permanente-battlefield-6-ahora-vuelve-buena-noticia-ha-ganado",
+      "imagen": "https://i.blogs.es/cbec2c/bf/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794216786000
+    },
+    {
+      "titulo": "Jensen Huang, CEO de Nvidia, en el punto de mira tras reconocer su romance secreto con una espía china",
+      "resumen": "Terremoto descomunal el que se ha creado en el seno de Nvidia. Tal y como recogen desde Axios, Jensen Huang, el reconocido CEO de la compañí…",
+      "link": "https://www.vidaextra.com/industria/jensen-huang-ceo-nvidia-punto-mira-reconocer-su-romance-secreto-espia-china",
+      "imagen": "https://i.blogs.es/e98f2f/captura-de-pantalla-2026-11-09-090749/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794214852000
+    },
+    {
+      "titulo": "Cinco claves sobre el videojuego \"Grand Theft Auto\"",
+      "resumen": "Cinco claves sobre el videojuego \"Grand Theft Auto\" Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeXRNZ094am1HcTVYT1hOWXpzOXA3dDhtci16NkMwOWM1UXJFOWsxYUg1OUJEZEQzcnBGZkdNZWVXbndoWTQ0V1Jka05pZjlxN0txWGdTc3JFOE1qMWl4MU9uWFZVa2U0VTlHb3AxTTFsc1I4cWJKMk13ZTF5Y2U5SlVPRkJZS0hxNHc?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794213077000
+    },
+    {
+      "titulo": "Un antiguo atracador de bancos cree saber cómo acabará GTA VI: \"Es seguro que el final va a ser el cementerio o la cárcel\"",
+      "resumen": "Una de mis piezas de contenido favorito de internet es cuando pusieron a miembros reales de la Yakuza japonesa delante del videojuego Yakuza…",
+      "link": "https://www.vidaextra.com/accion/antiguo-atracador-bancos-juzga-realismo-gta-vi-seguro-que-final-va-a-ser-cementerio-carcel",
+      "imagen": "https://i.blogs.es/b7da72/gta-toukens/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794211380000
     },
     {
       "titulo": "Amazon abandona sus MMORPG: Lost Ark y Throne and Liberty cambiarán de distribuidor",
@@ -21,86 +111,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794167031000
-    },
-    {
-      "titulo": "Warren Spector, sobre Zelda: \"No creo que se pueda mirar a BOTW o TOTK y no ver un poco de Deus Ex en ellos\"",
-      "resumen": "Dado que una leyenda de los videojuegos se ha retirado, lo mejor que puede hacer desde la jubilación es ofrecernos algunas de las enseñanzas…",
-      "link": "https://www.vidaextra.com/rpg/warren-spector-zelda-no-creo-que-se-pueda-mirar-a-botw-totk-no-ver-poco-deus-ex-ellos",
-      "imagen": "https://i.blogs.es/234f9f/thumb-1920-1393329/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794160866000
-    },
-    {
-      "titulo": "Eiichiro Oda deja a los fans completamente desconcertados tras los inesperados eventos del capítulo 1198 del manga de One Piece",
-      "resumen": "Aviso: Spoilers del capítulo 1198 de One Piece Después de ver cómo Roronoa Zoro y Vinsmoke Sanji han renovado sus poderes con el Haki del Co…",
-      "link": "https://www.vidaextra.com/cultura/eiichiro-oda-deja-a-fans-completamente-desconcertados-inesperados-eventos-capitulo-1198-manga-one-piece",
-      "imagen": "https://i.blogs.es/382ca6/one-piece/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794153666000
-    },
-    {
-      "titulo": "Zelda: Ocarina of Time estuvo a punto de tener un sistema de teletransportación similar a los de Portal",
-      "resumen": "Los artes conceptuales dejan entrever una aventura para el recuerdo y siempre nos quedará el sabor amargo de no haberlo podido probar. Las i…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/zelda-ocarina-of-time-estuvo-a-punto-tener-sistema-teletransportacion-similar-a-portal",
-      "imagen": "https://i.blogs.es/e5eec1/zeldaportal/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794152826000
-    },
-    {
-      "titulo": "NVIDIA sorprende con 24 novedades para noviembre y prepara importantes mejoras para algunos de los juegos más populares",
-      "resumen": "NVIDIA sorprende con 24 novedades para noviembre y prepara importantes mejoras para algunos de los juegos más populares Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSWdjRnY5ai1XVzM2OHgySmNCbW1vY3MxT0dweklRTkJTVDlOMVN2Y09fVFh0MlNLNldzY0J2aURNVUg5ZEVmTXpRMHVydjlJMmY0TUFHajhrelNFRE9LLUFldHNRdEl1Sm9wM2g1NjI1S3dVQzctZU9GWm9BMENsQ2NzN0tjcEhvbS1RMnZWTkJ5T0kxbFVkUmhRWXZGWmJzcExUVXNxMG9UTzJTT2VtRmZlTXpSVGlmanFNb1NoNEN4aEl1ZUFUUExzcm9tbW9Tb0lzUVByQjRrdFJoQ1FhTmtRZ21TTkU?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794142140000
-    },
-    {
-      "titulo": "29 años después, descubren un nuevo personaje reclutable en un JRPG de la primera PlayStation",
-      "resumen": "Han pasado casi 30 años desde el lanzamiento de Tales of Destiny en Japón y la joya JRPG de Wolf Team sigue siendo una de las obras más desc…",
-      "link": "https://www.vidaextra.com/rpg/29-anos-despues-descubren-nuevo-personaje-reclutable-jrpg-primera-playstation",
-      "imagen": "https://i.blogs.es/b95b8a/captura-de-pantalla-2026-11-04-174458-1-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794139267000
-    },
-    {
-      "titulo": "Solo Leveling prepara un nuevo videojuego que revelará una parte de la historia de Sung Jinwoo que pocos conocen",
-      "resumen": "Solo Leveling prepara un nuevo videojuego que revelará una parte de la historia de Sung Jinwoo que pocos conocen Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQNGRVNkNRdHpiekxzVVh1Qm5CeldZZGk2SmUwZTdkWE92NExRUENrbm1LQVZXWTc3d2VuTDZveXd2blNkZHdwVll2dVZyTGptY3Z1NXlTVXM3XzBmVmhPcnEtZW9JTGwwUXF5Qm9SOVdoM3p2N0VhRF9raGxXSi1Ed1pwd1NVWU9fb09EbGE1bUdmOU5lWXQzNnhpSHFzaFBUMF9TU3ozRVFrdDY3TGVfdld1a0RlRGwxY1VKVS1Wd0ZXRUgwOWRFeERtZlpFTFpVT3hHRGtvdzctMFdQbEE?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794132013000
-    },
-    {
-      "titulo": "Las cajas de tus juegos de PS2 esconden un código que tiene su miga",
-      "resumen": "En plena era en la que el debate entre el formato físico y digital se libra con fiereza, hay que reconocerle un tanto favorable a las cajas…",
-      "link": "https://www.vidaextra.com/juegos-retro/cajas-tus-juegos-ps2-esconden-codigo-que-tiene-su-miga",
-      "imagen": "https://i.blogs.es/b8a0a5/cajas/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794131105000
-    },
-    {
-      "titulo": "La tira LED de Aldi es la mejor forma de decorar tu setup gaming: lo mejor es que apenas cuesta 8,99 euros",
-      "resumen": "Darle un toque de iluminación al setup gaming se ha convertido prácticamente en una ley no escrita. Casi todos los periféricos del mercado s…",
-      "link": "https://www.vidaextra.com/seleccion/tira-led-aldi-mejor-forma-decorar-tu-setup-gaming-mejor-que-apenas-cuesta-8-99-euros",
-      "imagen": "https://i.blogs.es/2d8b66/tira-led-aldi/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794128466000
     },
     {
       "titulo": "Uno de los videojuegos más importantes de la historia podría no regresar jamás y el motivo sorprende incluso a sus responsables",
@@ -123,34 +133,14 @@
       "fecha": 1794112200000
     },
     {
-      "titulo": "Space Cadet, el mítico pinball 3D de Windows 95 que jugamos sin saber que era la demo de algo aún más grande. Así puedes jugarlo hoy",
-      "resumen": "Hubo una época en la que nuestro contacto con el mundo del videojuego se limitaba a tres bonitas casualidades: lo que nos traían los Reyes M…",
-      "link": "https://www.vidaextra.com/juegos-retro/space-cadet-mitico-pinball-3d-windows-95-que-jugamos-saber-que-era-demo-algo-grande-asi-puedes-jugarlo-hoy-1",
-      "imagen": "https://i.blogs.es/f4e981/pinball1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794066306000
-    },
-    {
-      "titulo": "World of Warcraft ha batido dos récords históricos con Forever, que ya es el mejor lanzamiento de cualquier versión del juego",
-      "resumen": "World of Warcraft forma parte de la columna vertebral de la historia de los videojuegos. La versión original se lanzó en 2004 y desde entonc…",
-      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-ha-batido-dos-records-historicos-forever-que-mejor-lanzamiento-cualquier-version-juego",
-      "imagen": "https://i.blogs.es/3c6dd9/wow/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794050020000
-    },
-    {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
+      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
+      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
       "imagen": null,
-      "fuente": "LoL Esports",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1791183600000
+      "fecha": 1793883635000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
@@ -160,7 +150,17 @@
       "fuente": "DAZN",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1786690800000
+      "fecha": 1793189198000
+    },
+    {
+      "titulo": "LoL Esports |",
+      "resumen": "LoL Esports | LoL esports",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
+      "imagen": null,
+      "fuente": "LoL esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1791183600000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
