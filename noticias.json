@@ -1,7 +1,87 @@
 {
-  "generado": 1794332985105,
+  "generado": 1794352848371,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "USC lanzará primera Ingeniería en Desarrollo de Videojuegos",
+      "resumen": "USC lanzará primera Ingeniería en Desarrollo de Videojuegos Proclama del Pacifico",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbDFoYm84RFNqZlNPeEluV0ZVdlQ2VHdmUzA5bUEtak1mdDhJSVl3N29EcElZS3lkN0ZjcDdrcWxLMThQaXRUd1psQ1pRRk9BM1dDZU5DRkNNSEU1cUgxdEF1dTRRVldCV1E0S2RhNWk0a2N2MDR5YW1JN1BZOGQ5dUJSbl9RT25QYUdVbE5lYzdBOE5kc21R?oc=5",
+      "imagen": null,
+      "fuente": "Proclama del Pacifico",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794346292000
+    },
+    {
+      "titulo": "Iba a ser un universo a lo UCM, fue el peor videojuego que jugué en 2024 y su estudio acaba de cerrar sus puertas",
+      "resumen": "Fue en octubre de 2024 cuando llegó al mercado Unknown 9: Awakening, un proyecto de acción y aventura en tercera persona desarrollado por el…",
+      "link": "https://www.vidaextra.com/accion/iba-a-ser-universo-a-ucm-fue-peor-videojuego-que-jugue-2024-su-estudio-acaba-cerrar-sus-puertas",
+      "imagen": "https://i.blogs.es/42a470/hero_news_welcometotheworldofu9/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794344508000
+    },
+    {
+      "titulo": "\"No se puede ser más papista que el Papa\": el uso de IA \"muy por debajo del 0,1 %\" en la creación de Big Walk enciende el debate",
+      "resumen": "Se acerca el fin del año, lo que se traduce en que los principales premios están cocinando poco a poco la elección de sus ganadores. Ese es…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/no-se-puede-ser-papista-que-papa-uso-ia-muy-debajo-0-1-creacion-big-walk-enciende-debate",
+      "imagen": "https://i.blogs.es/3b7d87/ss_303352b4f2d93de55e332b2d5df0f30d1d256129.1920x1080/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794342708000
+    },
+    {
+      "titulo": "La comunidad de World of Warcraft: Forever no pierde el tiempo y solo ha necesitado tres días para alcanzar el nivel máximo",
+      "resumen": "Cuando Blizzard presentó World of Warcraft: Forever quiso dejar claro que uno de los aspectos más importantes de esta nueva aventura sería v…",
+      "link": "https://www.vidaextra.com/juegos-online/comunidad-world-of-warcraft-forever-no-pierde-tiempo-solo-ha-necesitado-tres-dias-para-alcanzar-nivel-maximo",
+      "imagen": "https://i.blogs.es/d12883/wow-forever-undead/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794340908000
+    },
+    {
+      "titulo": "Zelda Ocarina of Time traumatizó a toda una generación de jugadores: ¿y si nos equivocábamos todos con respecto al Templo del Agua?",
+      "resumen": "Considerado como el peor calvario del juego, el Templo del Agua de Ocarina of Time vuelve a dar que hablar con la llegada de su remake a Nin…",
+      "link": "https://www.vidaextra.com/rpg/zelda-ocarina-of-time-traumatizo-a-toda-generacion-jugadores-nos-equivocabamos-todos-respecto-al-templo-agua",
+      "imagen": "https://i.blogs.es/329285/upscalemedia-transformed-24-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794337309000
+    },
+    {
+      "titulo": "Nintendo está a punto de ofrecer una característica básica de Steam en la eShop",
+      "resumen": "Las actualizaciones son muy habituales en Nintendo Switch 2, pero la que acaba de realizar la Gran N no es una demasiado común. El parche ll…",
+      "link": "https://www.vidaextra.com/nintendo-switch-2/nintendo-esta-a-punto-ofrecer-caracteristica-basica-steam-eshop",
+      "imagen": "https://i.blogs.es/4a9f62/1200_800-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794335509000
+    },
+    {
+      "titulo": "'GTA 6' se lanza oficialmente el 19 de noviembre y ya está disponible para su descarga anticipada: todo lo que debes saber sobre el esperado videojuego de Rockstar",
+      "resumen": "'GTA 6' se lanza oficialmente el 19 de noviembre y ya está disponible para su descarga anticipada: todo lo que debes saber sobre el esperado…",
+      "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxQN24zQnV1ZVNTRTBTUlR2NWhUU2ZsSnFEZl95RzNuTk9RQlZUZHlvYTQzVnBpb3A2eERwanZvYS1hSFlXd0ZGRElyUkl2QV9uUHJrQ2V5S1Z5UlVBeFV6QU92ay00UFg4Z0NfODdwUjBxRnA2c0dQMEhUeHJ5cVNtdFZOVzVRVmx0LUo4Rm5YV3hscV9ibXBYWWpJLUFyeXRXWndnWGFva0VheHBtVnNpRmlwOHFDWGhzcHMzLUdSVlBxOWg4TjNEOHhJeEhVUkxUT3dNYkRUNi1tcXNEMlFfM2p3WGJLZnVieXlPNFc0RTctNVFUYWY5ajJPSl8wb0o3cUxLakh5Mkx3QTRTek9sSUdMYkpDeEhXUjBfWWtuSEJzbTRXTXZXWGpwQTdhTF9ta1E?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794333951000
+    },
+    {
+      "titulo": "Bruce Nesmith, diseñador jefe de Skyrim: \"Tú no estás jugando mi juego, yo estoy haciendo tu juego\"",
+      "resumen": "Cuando una figura del calibre de Bruce Nesmith abre la boca, es el momento de escuchar atentamente. El que fuera diseñador jefe de Skyrim ha…",
+      "link": "https://www.vidaextra.com/rpg/bruce-nesmith-disenador-jefe-skyrim-tu-no-estas-jugando-mi-juego-yo-estoy-haciendo-tu-juego",
+      "imagen": "https://i.blogs.es/f3da92/the-elder-scrolls-v-skyrim-ps4-wallpapers-28/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794333709000
+    },
     {
       "titulo": "El plan de la NASA para explorar la Luna parece sacado del universo de Fallout: un rover alimentado por energía nuclear",
       "resumen": "El programa Artemis de la NASA se diseñó con un objetivo muy claro: establecer una base en la Luna. En 2026 hemos visto la fase 2 o misión A…",
@@ -23,94 +103,24 @@
       "fecha": 1794329681000
     },
     {
-      "titulo": "Noviembre de nostalgia gamer: regresan Zelda y World of Warcraft y llega GTA VI",
-      "resumen": "Noviembre de nostalgia gamer: regresan Zelda y World of Warcraft y llega GTA VI El Nuevo Día",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQQ1NHMEUyb2pZaUdsRk0xWnA3bHdkN3psZlhzWTU0eFdkQXlZcGV0Vm9kN2ZuWFBKNXlkaXBXSi0tb1UtYUlrampLRnpvakhDamhMQ0dSZno2ZWVnczFYS3BNSkpjdk50aHRQUExnWndKbTJJTkRpWjhjekVfdDktcHhybXplR3doTkp6eWM4dFVBVFZLak05NGlLc1FGbEdncExERUd0VDByanJ3SVhiMjF4aUdhVTFlWkp6LXZPd0Vxc0lBczFOcThjUkE0VG5G?oc=5",
+      "titulo": "Por la ruta definitiva de los videojuegos retro de Seattle: desde una sala de juegos de ramen con mucho ambiente en Capitol Hill hasta un bar vintage de pinball escondido en un callejón de Fremont",
+      "resumen": "Por la ruta definitiva de los videojuegos retro de Seattle: desde una sala de juegos de ramen con mucho ambiente en Capitol Hill hasta un ba…",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQVS1wSFg1UjJhMGZYRENXZGtRN3JXSG5HM2JDcWZKTnRUNUtDNE9xNkt6WFhLWUI3TkZWMXRpclpQcDJjd2M3YmltWlJuNVZIOHA1dERlWEx0Y01SbmxGS0VqVEZwaFdqYlphaUlyN0ZHbEkwM0hkbGcyRWdGS2hVSkt6MklDdFd5?oc=5",
       "imagen": null,
-      "fuente": "El Nuevo Día",
+      "fuente": "Secret Seattle",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794327840000
+      "fecha": 1794321557000
     },
     {
-      "titulo": "El nuevo Ratchet and Clank no dura ni un año y eso que oficialmente no ha salido",
-      "resumen": "Dentro de unos meses va a haber un Ratchet & Clank que ninguno de nosotros podremos jugar, pues PlayStation ha anunciado la cancelación de R…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/nuevo-ratchet-and-clank-no-dura-ano-eso-que-oficialmente-no-ha-salido",
-      "imagen": "https://i.blogs.es/8f9e53/ratchet-clank-ranger-rumble-key-art-of-rivet-watching-qwark-and-ratchet-walking-arm-in-arm-down-a-street-during-a-parade/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794326663000
-    },
-    {
-      "titulo": "Baldur’s Gate 3 confirma el regreso de Minsc y Boo en un nuevo videojuego para 2027",
-      "resumen": "Baldur’s Gate 3 confirma el regreso de Minsc y Boo en un nuevo videojuego para 2027 Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc21ncjdVMjFfSXFzOFJaNzJPSHJOaE85S1RhTE1qMW1yLVJnNlZWWVB5bE9BVm5KWnByNktUNzlsQjEzb2QxWkJyck9reW9seDIyZFBhQWttajZKU2hEajN3WDYwOUNUYzZfRjBIN2l5NDJFUEZEelJhUHJJMW5LWTdKNUdwMlVmdUJFYVN1bFM3NzdMUHZib3NJR05VMUlxYkMtemVJaUx5MTlxa0dRczI4X3BGUQ?oc=5",
+      "titulo": "La nueva etapa de Paramount y Warner Bros. comienza con despidos en su división de videojuegos",
+      "resumen": "La nueva etapa de Paramount y Warner Bros. comienza con despidos en su división de videojuegos IGN España",
+      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOUG45Q1JHSVRSai1CeGJsejl5MEIyeXdobG02SnRkREdyNlFZVlh0Xzg2UVFyUWpWMHdUaGtCVkJrYTlBcUtFaDE0cTFKbjQtdXhmdkJxcjFDamRmSmR2QWtJZE1LSDBGQm9oQnZqeU5XVmx2LXM2NzMxMm9ac2NsVlM0RlRxX3VRT2Uxbm1vMm12SDZrbDJjRHVUS2I1SWoxdzlLVDVJakFZQmFvcWxrbUtscjdQRmttZlk4alg1SFhuRmRBYThEbEJtd3NUYnRaMXE3OTN1cmZyU2ZjMXhIWkJrQ0dTNEdlSUY0bER3dHBJWU1WcGhnYm8zZEs2YWFma0RYVnhPdk1mcm94?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "IGN España",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794325461000
-    },
-    {
-      "titulo": "GTA 6 ya está disponible para su predescarga: confirmado su rendimiento y mejoras en PS5 Pro y la versión para Xbox One",
-      "resumen": "Tan solo queda una semana para asistir a un acontecimiento histórico en la industria de los videojuegos y uno de los que marcará época. En t…",
-      "link": "https://www.vidaextra.com/accion/gta-6-esta-disponible-para-su-predescarga-confirmado-su-rendimiento-mejoras-ps5-pro-version-para-xbox-one",
-      "imagen": "https://i.blogs.es/ec5df9/gta-6-jason-moto/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794320363000
-    },
-    {
-      "titulo": "Regresar al maravilloso mundo de Pikmin 4 en Nintendo Switch 2 ha sido un completo acierto gracias a la Academia Dandori",
-      "resumen": "Desde el primer momento en el que se presentó Nintendo Switch 2 se garantizó que la consola nos ofrecería nuevas maneras de seguir disfrutan…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/regresar-al-maravilloso-mundo-pikmin-4-nintendo-switch-2-ha-sido-completo-acierto-gracias-a-academia-dandori",
-      "imagen": "https://i.blogs.es/86fadc/pikmin-4-switch-2-edition-01/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794319221000
-    },
-    {
-      "titulo": "Hasta el momento, solo un videojuego ha logrado ser elegido GOTY tanto por la crítica como por los jugadores",
-      "resumen": "Ocurre una y otra vez que las opiniones de los fans y las de la crítica están a años luz de distancia. El mejor ejemplo de ello son las vota…",
-      "link": "https://www.vidaextra.com/rpg/momento-solo-videojuego-ha-logrado-ser-elegido-goty-critica-como-jugadores",
-      "imagen": "https://i.blogs.es/635687/bg3-city-hd-scaled/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794313908000
-    },
-    {
-      "titulo": "Sanderson reconoce las influencias de Carl el Mazmorrero: \"Estoy intentando aprender de Matt Dinniman\"",
-      "resumen": "Brandon Sanderson no ha parado de escribir, como no podía ser de otra forma. Pero sí que es cierto que entre el parón en sus series principa…",
-      "link": "https://www.vidaextra.com/literatura/sanderson-reconoce-influencias-carl-mazmorrero-estoy-intentando-aprender-matt-dinniman",
-      "imagen": "https://i.blogs.es/ee3a10/sanderson/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794312588000
-    },
-    {
-      "titulo": "Blizzard explica por qué no puedes crear personajes en tu facción favorita de World of Warcraft: Forever y tiene mucho sentido",
-      "resumen": "El lanzamiento de World of Warcraft: Forever ha sido un éxito histórico en el sentido literal de la expresión: ha superado a todas las versi…",
-      "link": "https://www.vidaextra.com/juegos-online/blizzard-explica-que-no-puedes-crear-personajes-tu-faccion-favorita-world-of-warcraft-forever-tiene-mucho-sentido",
-      "imagen": "https://i.blogs.es/ef5f68/wow/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794310428000
-    },
-    {
-      "titulo": "Epic Games prepara un cambio histórico que podría transformar Steam Deck y sorprender a millones de jugadores",
-      "resumen": "Epic Games prepara un cambio histórico que podría transformar Steam Deck y sorprender a millones de jugadores Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOU090VmlhejRJaDR6d3BVUUNQcGJ4Tk9NUE9ZZmtXV0Q2a01yaUJGZkFJS0drLXQ0NTNKbUFKdnVMNTh2VDhDeVhQZFNMV2FmamlsQ281NzJHWjRaV0g4ZXZ0YmhpS3F3Z0tHdW00WGstME1TZTFoVEVUbnFlbDdZd0YyVV9ET1gxMlVJVWFYbU1Ib2hLcTF2NThmUXlpMDRDZU9TY0ZBQW96SGRSZW81aDJuTG0wc1JJbHBpcW4yRWxnSVpZREZDME5OTzl1Ny0wemRYYThReXFvQQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794299689000
+      "fecha": 1794301487000
     },
     {
       "titulo": "‘The Legend of Zelda: Ocarina of Time’ está de regreso",
@@ -123,24 +133,14 @@
       "fecha": 1794299405000
     },
     {
-      "titulo": "Cinco claves sobre el videojuego \"Grand Theft Auto\"",
-      "resumen": "Cinco claves sobre el videojuego \"Grand Theft Auto\" France 24",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNSjRRWldzYlBXSVNCbEd3OVdRSDRuZXlpb1htV19xRGt6OW5FY2FLcG5xcWlhNHFiWmJtVXFoUGNJb3paVjY2YWd4al93UGp1TVRuNTNRSFplWTJ4QTh2LU1rTnZfZWk3ZkFJR2hBMkxvd08yVU9FdEJrMHJfTnJDT0UzekVXWnhrZk9ldkNzOVNlRm1WUjVFV2FIX0JuUmREb19MNw?oc=5",
+      "titulo": "Skydance despide a desarrolladores y reducirá algunos proyectos de videojuegos",
+      "resumen": "Skydance despide a desarrolladores y reducirá algunos proyectos de videojuegos https://fomoera.com/",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5KUTRXemNleE1GSkpHeDNkUExBOG9MY25SWUptaUtJSDd0UzJIWGRyUXBXcFVTYUdXMFUxbU9xODFOMXNhc2U4NW1aUmxtbFg5NmtJaElnZ2luV2ZzSlp2TUtjOEsxc2pfU3hGVw?oc=5",
       "imagen": null,
-      "fuente": "France 24",
+      "fuente": "https://fomoera.com/",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794243839000
-    },
-    {
-      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
-      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793883635000
+      "fecha": 1794291120000
     },
     {
       "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
@@ -163,14 +163,14 @@
       "fecha": 1791183600000
     },
     {
-      "titulo": "Red Bull Wings Cup España 2026",
-      "resumen": "Red Bull Wings Cup España 2026 Red Bull",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xcjZqTWJyd0UtQUdRQjBMSk1CX1ExT011WnBMV0hycktXNjNkaUs3dmpIQ3dRRFkyMlF2czV3ZTBobEs3Z1kwaGtXLWxtdHpudnhVdUxCLTlncjN2YndfZHlzcy03X0ZuMWFUTGxOMEQwWHBINXc?oc=5",
+      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
+      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
       "imagen": null,
-      "fuente": "Red Bull",
+      "fuente": "UCAM Deportes",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1786449997000
+      "fecha": 1783494000000
     }
   ]
 }
