@@ -1,7 +1,57 @@
 {
-  "generado": 1794409861345,
+  "generado": 1794434228121,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "\"Fue un caso especial\": CD Projekt y el actor de Geralt acuerdan usar IA en el DLC de The Witcher 3 por un problema de salud",
+      "resumen": "Mientras las disputas por el uso de IA en los videojuegos no dejan de surgir, CD Projekt Red parece tener muy clara su postura. Hace aproxim…",
+      "link": "https://www.vidaextra.com/rpg/fue-caso-especial-cd-projekt-actor-geralt-acuerdan-usar-ia-dlc-the-witcher-3-problema-salud",
+      "imagen": "https://i.blogs.es/3fbaf1/ins05wj3pmef1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794429550000
+    },
+    {
+      "titulo": "Logitech se rinde ante lo inevitable dando un día libre a sus 7.000 empleados para jugar a GTA 6 (y lo convertirá en tradición anual)",
+      "resumen": "Si el mismísimo ejército de los Estados Unidos dará el día libre a sus soldados, cómo Logitech no se va a poner a la altura. El fabricante d…",
+      "link": "https://www.vidaextra.com/accion/logitech-se-rinde-inevitable-dando-dia-libre-a-sus-7-000-empleados-para-jugar-a-gta-6-convertira-tradicion-anual",
+      "imagen": "https://i.blogs.es/bc73a2/pre-load.0-7aq-08y784d/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794425959000
+    },
+    {
+      "titulo": "Las pistas descubiertas en PlayStation alimentan las esperanzas sobre la llegada de GTA Online a GTA 6",
+      "resumen": "Uno de los mayores motivos por los que el éxito de GTA V se ha prolongado a lo largo de tantísimos años ha sido por el multijugador de GTA O…",
+      "link": "https://www.vidaextra.com/accion/pistas-descubiertas-playstation-alimentan-esperanzas-llegada-gta-online-a-gta-6",
+      "imagen": "https://i.blogs.es/d623b2/gta-6-lucia-jason/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794417357000
+    },
+    {
+      "titulo": "Un concurso de desarrollo de videojuegos para estudiantes termina cancelado por la avalancha de proyectos generados con IA",
+      "resumen": "Un concurso de desarrollo de videojuegos para estudiantes termina cancelado por la avalancha de proyectos generados con IA Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOSUthWUNCdFpXdWhGcDBtazk1UExlNTBWcmdKUlRNSjh3V0FaZk9ITndYSWc5ZkxhY0s3QnBBQWVNSDR2Y2x1TW9Vdy16cU9XckxuYlFyOU04eDdwMWJ1U3lNcGlaNUhtTkk4VnFSWElUT3hoQ3RYZzNONDljMUhpclJhQnhVbk15Rzd3SDZwRHBDUXdtQjdteVlxd0ZlakJHYmowaklzYUEydUUwcnk4YUJnbVB5c1hEdGdqWUxZRk91dVdlVmpOeUxRb25EejNOcXpRUTVGeVJ2Wk1ud3J2S3FKTXc0ZGp3Vl9Z?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794411586000
+    },
+    {
+      "titulo": "Sony anuncia un nuevo modelo de PlayStation Portal: aquí están sus especificaciones",
+      "resumen": "El mes pasado se produjo una filtración que apuntaba a que Sony estaba trabajando en un par de máquinas nuevas que en realidad se iban a tra…",
+      "link": "https://www.vidaextra.com/ps5/sony-anuncia-nuevo-modelo-playstation-portal-aqui-estan-sus-especificaciones",
+      "imagen": "https://i.blogs.es/771a22/playstation-portal-midnight-black/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794410929000
+    },
     {
       "titulo": "Marvel’s Lobezno, el nuevo Final Fantasy y muchos periféricos a precio mínimo: MediaMarkt celebra el Single’s Day por todo lo alto",
       "resumen": "El 11-11 es de sobra conocido por ser el Día del Soltero. Durante mucho tiempo, este día tan solo fue celebrado por marketplace como AliExpr…",
@@ -13,6 +63,16 @@
       "fecha": 1794408740000
     },
     {
+      "titulo": "Conquista de reinos, seis facciones y cambio de clases: el videojuego Ragnarok: Yggdrasil confirma su fecha de estreno",
+      "resumen": "Conquista de reinos, seis facciones y cambio de clases: el videojuego Ragnarok: Yggdrasil confirma su fecha de estreno Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPOWdseEFmemxtQ3hzYzdWRWxKdi1LNm9PbnR2WU9KWWFtblRnTW1xSkozcjZwUmhBa0dnemdNaWd1RThmSHAybFlrX1AxRG5BZTlWSnk2aUppZ0NKaGNiRkNYUTNSYlBqMEhHelZnZi1yMk96d0pFWHVwOHVXdlljZF95ZkkyTVhWWEtMRFFiMFpuczhjbU5vb1Q0SnJMV09UQ2U2SGtmWl9PM1RIT1NuUXNBdzRtTkk2cU5mNjB4THg3bVoyZEw5QU0tY29wYVFLa1NlU3owWUZxMnlLSEZYcnVn?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794406615000
+    },
+    {
       "titulo": "Double Fine está tan perdida que lanza una actualización para un juego con 0 usuarios en Steam",
       "resumen": "No han sido buenos tiempos para Double Fine en los últimos meses. El estudio dirigido por Tim Schafer fue uno de los afectados por la reestr…",
       "link": "https://www.vidaextra.com/juegos-online/double-fine-esta-perdida-que-lanza-actualizacion-para-juego-0-usuarios-steam",
@@ -21,6 +81,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794402320000
+    },
+    {
+      "titulo": "GTA 6 está a punto de llegar: cómo prepararte para el lanzamiento",
+      "resumen": "GTA 6 está a punto de llegar: cómo prepararte para el lanzamiento Red Bull",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hWUtHSjloRnFCcm9vZVhhcDVZV0cxVzk3ZVRaSGZOTGtIREoxVVhPNUtHVEJXVDJ2Q1N0bWJuTVF1OHpFeUYxWG4zMFpZT3U1Z01WS1Franplek1JNmhFdWJzb21lNWM?oc=5",
+      "imagen": null,
+      "fuente": "Red Bull",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794401945000
     },
     {
       "titulo": "Una jugadora novata juega al remake de Zelda: Ocarina of Time por primera vez y sufre el error capital que todos cometimos hace 28 años",
@@ -63,76 +133,6 @@
       "fecha": 1794394530000
     },
     {
-      "titulo": "Europa está a punto de endurecer su postura contra las loot boxes en los videojuegos, según un documento filtrado",
-      "resumen": "El lanzamiento de Star Wars: Battlefront II detonó el polvorín de las loot boxes o cajas de botín. Gobiernos de todo el mundo se han esforza…",
-      "link": "https://www.vidaextra.com/industria/europa-esta-a-punto-endurecer-su-postura-loot-boxes-videojuegos-documento-filtrado",
-      "imagen": "https://i.blogs.es/836dc0/loot-boxes/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794393348000
-    },
-    {
-      "titulo": "Nuevo tráiler de GTA 6: Rockstar nos avisa de la precarga con metraje nunca antes visto",
-      "resumen": "Nuevo tráiler de GTA 6: Rockstar nos avisa de la precarga con metraje nunca antes visto Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOS2tsdWNTQ2cyc1NwelMwZFNyb2lYOE9KVk5hd1pCLUpVLWMta25qSENIVzZCQzUyOUZDQVpLUmJxNTl3enhyeURvTTBmamVXWVNpeWNZY094bjZQVjU1bXN4elhWank1eWw3QUFZeHRNX19ZQ0RHajJNa3Y3aThNcGdNSkZudHFRakV6ZEJnVGx4MjhpR3hIcXNhTEF0a1FJalVnSlRMdTlOMW1TMzBRUUc1VnRmV3J6QkQ5bmU3SFNhU1ZySV9OeEhqeTYzQdIB4gFBVV95cUxNMzlIMWFqc1lrQmw0bENZVnBlYjFDb1FlZDJwRnk5SHJ0OWttQ3J3cjZzX1c1T0ltNFFpbF8zWUItbnR0R3h0STI5aDNlTnVQa2h3R0lCc2dkOXBzS2JnZFhIQXFNb19UcDRwNE81UGU0VTZPNW1MZlVPVEFoU1BPUGxnUVR3aENpbGhFUDJ4ZUZlaTViRVhFRkk2bVRSVllTbDItMXV5TE9mUmNLc0FKdmJ3WW1sNXNreS0xamxKenBCZy05QWpGMTFFZ3VEeU1CWnRuMGJRUFh5cElLcU9QRHZR?oc=5",
-      "imagen": null,
-      "fuente": "Diario AS",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794391200000
-    },
-    {
-      "titulo": "La caja de GTA VI es la edición menos física que hemos visto: ni siquiera tiene un papel o cartón para el código del juego",
-      "resumen": "El lanzamiento de Grand Theft Auto VI ha provocado tanta emoción como polémica. Fue la punta de lanza en el plan de Sony de eliminar el form…",
-      "link": "https://www.vidaextra.com/accion/caja-gta-vi-edicion-fisica-que-hemos-visto-siquiera-tiene-papel-carton-para-codigo-juego",
-      "imagen": "https://i.blogs.es/c59806/gta-6/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794389509000
-    },
-    {
-      "titulo": "Justo una semana antes de GTA 6, un juego basado en los golpes de la quinta entrega hace números de récord en Steam",
-      "resumen": "Solo queda una semana para que por fin salga a la venta GTA 6, aunque aquellos con una copia ya pueden acceder a su precarga en consolas. Co…",
-      "link": "https://www.vidaextra.com/accion/justo-semana-antes-gta-6-juego-basado-golpes-quinta-entrega-hace-numeros-record-steam",
-      "imagen": "https://i.blogs.es/b6ff01/rob-run/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794386220000
-    },
-    {
-      "titulo": "Iba a ser un universo a lo UCM, fue el peor videojuego que jugué en 2024 y su estudio acaba de cerrar sus puertas",
-      "resumen": "Fue en octubre de 2024 cuando llegó al mercado Unknown 9: Awakening, un proyecto de acción y aventura en tercera persona desarrollado por el…",
-      "link": "https://www.vidaextra.com/accion/iba-a-ser-universo-a-ucm-fue-peor-videojuego-que-jugue-2024-su-estudio-acaba-cerrar-sus-puertas",
-      "imagen": "https://i.blogs.es/42a470/hero_news_welcometotheworldofu9/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794344508000
-    },
-    {
-      "titulo": "'GTA 6' se lanza oficialmente el 19 de noviembre y ya está disponible para su descarga anticipada: todo lo que debes saber sobre el esperado videojuego de Rockstar",
-      "resumen": "'GTA 6' se lanza oficialmente el 19 de noviembre y ya está disponible para su descarga anticipada: todo lo que debes saber sobre el esperado…",
-      "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxQN24zQnV1ZVNTRTBTUlR2NWhUU2ZsSnFEZl95RzNuTk9RQlZUZHlvYTQzVnBpb3A2eERwanZvYS1hSFlXd0ZGRElyUkl2QV9uUHJrQ2V5S1Z5UlVBeFV6QU92ay00UFg4Z0NfODdwUjBxRnA2c0dQMEhUeHJ5cVNtdFZOVzVRVmx0LUo4Rm5YV3hscV9ibXBYWWpJLUFyeXRXWndnWGFva0VheHBtVnNpRmlwOHFDWGhzcHMzLUdSVlBxOWg4TjNEOHhJeEhVUkxUT3dNYkRUNi1tcXNEMlFfM2p3WGJLZnVieXlPNFc0RTctNVFUYWY5ajJPSl8wb0o3cUxLakh5Mkx3QTRTek9sSUdMYkpDeEhXUjBfWWtuSEJzbTRXTXZXWGpwQTdhTF9ta1E?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794333951000
-    },
-    {
-      "titulo": "Epic Games prepara un cambio histórico que podría transformar Steam Deck y sorprender a millones de jugadores",
-      "resumen": "Epic Games prepara un cambio histórico que podría transformar Steam Deck y sorprender a millones de jugadores Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOU090VmlhejRJaDR6d3BVUUNQcGJ4Tk9NUE9ZZmtXV0Q2a01yaUJGZkFJS0drLXQ0NTNKbUFKdnVMNTh2VDhDeVhQZFNMV2FmamlsQ281NzJHWjRaV0g4ZXZ0YmhpS3F3Z0tHdW00WGstME1TZTFoVEVUbnFlbDdZd0YyVV9ET1gxMlVJVWFYbU1Ib2hLcTF2NThmUXlpMDRDZU9TY0ZBQW96SGRSZW81aDJuTG0wc1JJbHBpcW4yRWxnSVpZREZDME5OTzl1Ny0wemRYYThReXFvQQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794299689000
-    },
-    {
       "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
       "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
@@ -141,6 +141,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1793883635000
+    },
+    {
+      "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
+      "resumen": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026 DAZN",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVm1YMC03TWZIalJHSGRLenhadk5VM1U1UWo5NTFKbVh2NmRfYnNycDJZdlNpTUd2QXphSXpxaEowb0tNZG5QLTIzSVVob2ZTMHNSZG4zRTZZX19CZFhrTlZ1c3dZaC0yeW1Od0hlNEl2MnJ3Z2JiX0pwVDZ5T2kxWTJENGtURFpEY2w1OXJONFB0a3kxS1M1bHZfZXZqV0dDeDRZYlFjSG9WcThhNUNkUFFNM3NmYWlsTWc?oc=5",
+      "imagen": null,
+      "fuente": "DAZN",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793189198000
     },
     {
       "titulo": "LoL Esports |",
@@ -161,16 +171,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1783494000000
-    },
-    {
-      "titulo": "LALIGA FC Pro 2026: qué es, cuándo juegan y cómo y dónde ver online gratis en España",
-      "resumen": "LALIGA FC Pro 2026: qué es, cuándo juegan y cómo y dónde ver online gratis en España DAZN",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTFBUWGJXTU1mU3RJM2w4VnlSYkZGaXRZRjdDMFBuRlBEVkYzMzV4OWFnQXNNVTJPMlFOdHRlSlJ3MHZEYW5IRUJBWnhmNzdobXZqY053b2ZJcFFyX0MwSGV0ZFktczJxZXh4M09GNUYtNFhjd1o4b05yZy04WTdEZjRoOUR6eHM1NFpSaUlIaUxNYWt4bDVVOERvaFhIYXAtbWV6c2dwRWdJbUdFRnJzUW9VY3hUMi0tZUh2M0tPUk9lU2dNTS1rZUhnWm1xTUE?oc=5",
-      "imagen": null,
-      "fuente": "DAZN",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1771056000000
     }
   ]
 }
