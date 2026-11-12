@@ -1,7 +1,27 @@
 {
-  "generado": 1794434228121,
+  "generado": 1794452323102,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Nvidia se prepara para destituir a Jensen Huang como CEO tras destaparse otra aventura romántica con una ejecutiva",
+      "resumen": "Parece que el futuro de Jensen Huang como CEO de Nvidia está muy cerca de llegar a su fin. El escándalo extramatrimonial que ha salpicado al…",
+      "link": "https://www.vidaextra.com/industria/nvidia-se-prepara-para-destituir-a-jensen-huang-como-ceo-destaparse-otra-aventura-romantica-ejecutiva",
+      "imagen": "https://i.blogs.es/d7d269/12-jensen-1280x985/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794440414000
+    },
+    {
+      "titulo": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI",
+      "resumen": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaGdSYmlPMUtabElnSzI2VnJKQTQ4aFFMTzhlb3pBZ3E2NTFsRnAwbWRUN2pvRzhrU2pwQk9PZmkzUDc1eFlVYzhWaHN5cGRsOFV0NkZZX3ltYU9uT1RhMUZXS01UcmNiV09pN0hkUVQ3NHdFMk5GR2dBcjNSN21mWHJxWGRpVVMya3Bjb2tiai1nVEtnOGZHWWVJUUo1R1otMGp4UElFOA?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794433832000
+    },
     {
       "titulo": "\"Fue un caso especial\": CD Projekt y el actor de Geralt acuerdan usar IA en el DLC de The Witcher 3 por un problema de salud",
       "resumen": "Mientras las disputas por el uso de IA en los videojuegos no dejan de surgir, CD Projekt Red parece tener muy clara su postura. Hace aproxim…",
@@ -113,16 +133,6 @@
       "fecha": 1794398343000
     },
     {
-      "titulo": "World of Warcraft: Forever cambia la forma de ganar oro y trastoca los planes económicos de algunos jugadores",
-      "resumen": "Blizzard continúa ajustando World of Warcraft: Forever a medida que escuchan a la comunidad y recopilan datos sobre nuestras aventuras. En d…",
-      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-cambia-forma-ganar-oro-trastoca-planes-economicos-algunos-jugadores",
-      "imagen": "https://i.blogs.es/cb5d61/gold/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794397428000
-    },
-    {
       "titulo": "Un conocido estudio de videojuegos anuncia su segunda reducción de plantilla en menos de un año",
       "resumen": "Un conocido estudio de videojuegos anuncia su segunda reducción de plantilla en menos de un año Kotaku en Español",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM3FvWTBpaHdwaFpRREltWi14ZmpBN3YyS0FucXZMb1dGZVpYUmYxUURUTFBSQWlDZHBaRElUZnI5VWJTcEw3VWpnVHZsQ2pfaGdmbF8xd1V5MDJPdThrVlJzZ2NnVHA4LWJ4dmZJSkd6QnZNd19kY0lQSXpNTUFSLU9VNmxHUzNxTUQ1TDkyYXZqZTZiU0ZRRmNaZTRVY3FnTUlqcTBtZkFDaUxiRUhEMTZnaWtxaWl0QTBYUWFqcnZXa1drUG5R?oc=5",
@@ -131,26 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794394530000
-    },
-    {
-      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
-      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793883635000
-    },
-    {
-      "titulo": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026",
-      "resumen": "Dónde ver LALIGA EA SPORTS en directo: TV en España de la liga española en 2026 DAZN",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVm1YMC03TWZIalJHSGRLenhadk5VM1U1UWo5NTFKbVh2NmRfYnNycDJZdlNpTUd2QXphSXpxaEowb0tNZG5QLTIzSVVob2ZTMHNSZG4zRTZZX19CZFhrTlZ1c3dZaC0yeW1Od0hlNEl2MnJ3Z2JiX0pwVDZ5T2kxWTJENGtURFpEY2w1OXJONFB0a3kxS1M1bHZfZXZqV0dDeDRZYlFjSG9WcThhNUNkUFFNM3NmYWlsTWc?oc=5",
-      "imagen": null,
-      "fuente": "DAZN",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793189198000
     },
     {
       "titulo": "LoL Esports |",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1783494000000
+    },
+    {
+      "titulo": "LALIGA FC Pro 2026: qué es, cuándo juegan y cómo y dónde ver online gratis en España",
+      "resumen": "LALIGA FC Pro 2026: qué es, cuándo juegan y cómo y dónde ver online gratis en España DAZN",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTFBUWGJXTU1mU3RJM2w4VnlSYkZGaXRZRjdDMFBuRlBEVkYzMzV4OWFnQXNNVTJPMlFOdHRlSlJ3MHZEYW5IRUJBWnhmNzdobXZqY053b2ZJcFFyX0MwSGV0ZFktczJxZXh4M09GNUYtNFhjd1o4b05yZy04WTdEZjRoOUR6eHM1NFpSaUlIaUxNYWt4bDVVOERvaFhIYXAtbWV6c2dwRWdJbUdFRnJzUW9VY3hUMi0tZUh2M0tPUk9lU2dNTS1rZUhnWm1xTUE?oc=5",
+      "imagen": null,
+      "fuente": "DAZN",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1771056000000
     }
   ]
 }
