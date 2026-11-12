@@ -1,7 +1,27 @@
 {
-  "generado": 1794452323102,
+  "generado": 1794481636266,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Las primeras cifras de World of Warcraft: Forever muestran una lucha reñida, pero con fracciones, razas y clases ganadoras",
+      "resumen": "La llegada de World of Warcraft: Forever ha traído muchas alegrías, pero también debate en la comunidad. Las dificultades a la hora de crear…",
+      "link": "https://www.vidaextra.com/juegos-online/primeras-cifras-world-of-warcraft-forever-muestran-lucha-renida-fracciones-razas-clases-ganadoras",
+      "imagen": "https://i.blogs.es/3d682a/wow-forever/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794481402000
+    },
+    {
+      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
+      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV2UxRC1GQ0JNRVpjQjd5ZE1aRVZ5N2pWbjlWOU81Wi1iSUIwOEQtVUpUQjlHajV1T1FEYmIxUHdDWWw1Ui0wbkZHV0R2R2JzQkNGUjFPWnhNOGFqZ1R3dEFiZ3VsVUxzTUFLTGhDNDV3bE1qMExFV21lRWpZOVotOEhNY1NaYzB6QWxXYldBVW56TWo2cUhHeXlDNk9lUzNwdkhISw?oc=5",
+      "imagen": null,
+      "fuente": "France 24",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794474205000
+    },
     {
       "titulo": "Nvidia se prepara para destituir a Jensen Huang como CEO tras destaparse otra aventura romántica con una ejecutiva",
       "resumen": "Parece que el futuro de Jensen Huang como CEO de Nvidia está muy cerca de llegar a su fin. El escándalo extramatrimonial que ha salpicado al…",
@@ -11,16 +31,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794440414000
-    },
-    {
-      "titulo": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI",
-      "resumen": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaGdSYmlPMUtabElnSzI2VnJKQTQ4aFFMTzhlb3pBZ3E2NTFsRnAwbWRUN2pvRzhrU2pwQk9PZmkzUDc1eFlVYzhWaHN5cGRsOFV0NkZZX3ltYU9uT1RhMUZXS01UcmNiV09pN0hkUVQ3NHdFMk5GR2dBcjNSN21mWHJxWGRpVVMya3Bjb2tiai1nVEtnOGZHWWVJUUo1R1otMGp4UElFOA?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794433832000
     },
     {
       "titulo": "\"Fue un caso especial\": CD Projekt y el actor de Geralt acuerdan usar IA en el DLC de The Witcher 3 por un problema de salud",
@@ -83,16 +93,6 @@
       "fecha": 1794408740000
     },
     {
-      "titulo": "Conquista de reinos, seis facciones y cambio de clases: el videojuego Ragnarok: Yggdrasil confirma su fecha de estreno",
-      "resumen": "Conquista de reinos, seis facciones y cambio de clases: el videojuego Ragnarok: Yggdrasil confirma su fecha de estreno Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPOWdseEFmemxtQ3hzYzdWRWxKdi1LNm9PbnR2WU9KWWFtblRnTW1xSkozcjZwUmhBa0dnemdNaWd1RThmSHAybFlrX1AxRG5BZTlWSnk2aUppZ0NKaGNiRkNYUTNSYlBqMEhHelZnZi1yMk96d0pFWHVwOHVXdlljZF95ZkkyTVhWWEtMRFFiMFpuczhjbU5vb1Q0SnJMV09UQ2U2SGtmWl9PM1RIT1NuUXNBdzRtTkk2cU5mNjB4THg3bVoyZEw5QU0tY29wYVFLa1NlU3owWUZxMnlLSEZYcnVn?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794406615000
-    },
-    {
       "titulo": "Double Fine está tan perdida que lanza una actualización para un juego con 0 usuarios en Steam",
       "resumen": "No han sido buenos tiempos para Double Fine en los últimos meses. El estudio dirigido por Tim Schafer fue uno de los afectados por la reestr…",
       "link": "https://www.vidaextra.com/juegos-online/double-fine-esta-perdida-que-lanza-actualizacion-para-juego-0-usuarios-steam",
@@ -113,16 +113,6 @@
       "fecha": 1794401945000
     },
     {
-      "titulo": "Una jugadora novata juega al remake de Zelda: Ocarina of Time por primera vez y sufre el error capital que todos cometimos hace 28 años",
-      "resumen": "El remake de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 no se ha limitado a ofrecer un excepcional lavado de cara, sino que…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/jugadora-novata-juega-al-remake-zelda-ocarina-of-time-primera-vez-sufre-error-capital-que-todos-cometimos-hace-28-anos",
-      "imagen": "https://i.blogs.es/96dcdf/zelda-ocarina-of-time-dodongo/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794398509000
-    },
-    {
       "titulo": "Rockstar tiene otro gigante además de GTA 6 y acaba de alcanzar una cifra que pocos videojuegos consiguen",
       "resumen": "Rockstar tiene otro gigante además de GTA 6 y acaba de alcanzar una cifra que pocos videojuegos consiguen Kotaku en Español",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSkNFUTdsZmIzWkhuTG0yUVdnR01XUS1URU9nQTU1Y1ZLaDBLWkNqRjFYamlfX0Y3b1VJSXhfaDJwZFBPeWYtaVc4QWE4T3FaWlZKeGIzRk9NN3dVTW9ZTlF2T0lIVDBUZW5vZ3N6U19EZDdqWGNfRkU3LXhuRDdmMGljaGhIUVFHQ0dYOURNaGlIcWVqVHRGeGoydDBkcU8xcHplYTJOVk5rRG93MnJyX3Z6NVl3VW1iRGFDU1I4eE8tNFRXdWo1NVVSWDk5R3NFdWhuag?oc=5",
@@ -141,6 +131,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794394530000
+    },
+    {
+      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
+      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
+      "imagen": null,
+      "fuente": "Xataka",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793883635000
     },
     {
       "titulo": "LoL Esports |",
