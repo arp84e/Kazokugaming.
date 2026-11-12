@@ -1,7 +1,79 @@
 {
-  "generado": 1794481636266,
-  "fuentesConError": [],
+  "generado": 1794509716128,
+  "fuentesConError": [
+    "Google Noticias"
+  ],
   "noticias": [
+    {
+      "titulo": "No fue hasta los 33 años que un fan de Zelda: Ocarina of Time comprendió esta ingeniosa paradoja de los viajes en el tiempo en el remake",
+      "resumen": "Aunque The Legend of Zelda: Ocarina of Time sea uno de los videojuegos más populares de todos los tiempos, considerado para muchos como el m…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/no-fue-33-anos-que-fan-zelda-ocarina-of-time-comprendio-esta-ingeniosa-paradoja-viajes-tiempo-remake",
+      "imagen": "https://i.blogs.es/b9b271/zelda-oot-remake/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794506539000
+    },
+    {
+      "titulo": "Acaba de publicarse un vídeo ultrarrealista de GTA 6, dejando a los fans sin palabras: todos pensaban que era real, pero pertenece al juego",
+      "resumen": "A estas alturas, parece que cada nuevo vídeo de GTA 6 está destinado a dejar a los fans con la boca abierta. El último que se ha hecho viral…",
+      "link": "https://www.vidaextra.com/accion/acaba-publicarse-video-ultrarrealista-gta-6-dejando-a-fans-palabras-todos-pensaban-que-era-real-pertenece-al-juego",
+      "imagen": "https://i.blogs.es/bc7483/gta6-jason/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794504683000
+    },
+    {
+      "titulo": "Rescatan el Elder Scrolls perdido en la mítica consola N-Gage con mucho esfuerzo y ayuda de la IA",
+      "resumen": "Hacer arqueología con The Elder Scrolls siempre es una aventura, especialmente cuando alguien decide rescatar rarezas tan olvidadas del híbr…",
+      "link": "https://www.vidaextra.com/rpg/rescatan-elder-scrolls-perdido-mitica-consola-n-gage-mucho-esfuerzo-ayuda-ia",
+      "imagen": "https://i.blogs.es/26ce15/elder-scrolls/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794502886000
+    },
+    {
+      "titulo": "Baldur's Gate 3 da motivos de sobra para volver a jugar en PS5 y Xbox Series con el estreno de 14 nuevos mods oficiales",
+      "resumen": "Por mucho que hayan pasado tres años desde el lanzamiento de Baldur's Gate 3, Larian Studios no se olvida de su galardonado RPG y quiere ofr…",
+      "link": "https://www.vidaextra.com/rpg/baldur-s-gate-3-da-motivos-sobra-para-volver-a-jugar-ps5-xbox-series-estreno-14-nuevos-mods-oficiales",
+      "imagen": "https://i.blogs.es/fdb48e/bg3/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794501084000
+    },
+    {
+      "titulo": "Es oficial: Jensen Huang dimite como CEO de Nvidia tras los escándalos extramaritales y de espionaje",
+      "resumen": "Era cuestión de horas que sucediese y los últimos eventos han precipitado lo que era un secreto a voces. Jensen Huang ha dimitido de sus car…",
+      "link": "https://www.vidaextra.com/industria/oficial-jensen-huang-dimite-como-ceo-nvidia-escandalos-extramaritales-espionaje",
+      "imagen": "https://i.blogs.es/00a995/upscalemedia-transformed-25-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794497352000
+    },
+    {
+      "titulo": "Hasta los zombies se han subido al carro de GTA VI con World War Z: una nueva campaña en Florida, armas y más contenido",
+      "resumen": "Grand Theft Auto 6 no es un mero videojuego. Su influencia se extiende muchísimo más allá de las consolas. Ni te imaginas hasta dónde ha lle…",
+      "link": "https://www.vidaextra.com/accion/zombies-se-han-subido-al-carro-gta-vi-world-war-z-nueva-campana-florida-armas-contenido",
+      "imagen": "https://i.blogs.es/25d72d/wwz-2/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794495805000
+    },
+    {
+      "titulo": "\"Teníamos muchísimas ganas de pasarnos a la ciencia ficción\": lo nuevo de Naughty Dog bebe de Jak & Daxter, Akira y Evangelion",
+      "resumen": "Uno de los videojuegos más esperados que tenemos en el horizonte es Intergalactic: The Heretic Prophet, pero lo cierto es que Naughty Dog co…",
+      "link": "https://www.vidaextra.com/accion/intergalactic-nuevo-naughty-dog-bebe-jak-daxter-akira-evangelion-teniamos-muchisimas-ganas-pasarnos-a-ciencia-ficcion",
+      "imagen": "https://i.blogs.es/ae1211/intergalactic-the-heretic-prophet-debuts-porsche-spaceship-in-blade-runner-like-universe-244180_1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794490200000
+    },
     {
       "titulo": "Las primeras cifras de World of Warcraft: Forever muestran una lucha reñida, pero con fracciones, razas y clases ganadoras",
       "resumen": "La llegada de World of Warcraft: Forever ha traído muchas alegrías, pero también debate en la comunidad. Las dificultades a la hora de crear…",
@@ -11,136 +83,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794481402000
-    },
-    {
-      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
-      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV2UxRC1GQ0JNRVpjQjd5ZE1aRVZ5N2pWbjlWOU81Wi1iSUIwOEQtVUpUQjlHajV1T1FEYmIxUHdDWWw1Ui0wbkZHV0R2R2JzQkNGUjFPWnhNOGFqZ1R3dEFiZ3VsVUxzTUFLTGhDNDV3bE1qMExFV21lRWpZOVotOEhNY1NaYzB6QWxXYldBVW56TWo2cUhHeXlDNk9lUzNwdkhISw?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794474205000
-    },
-    {
-      "titulo": "Nvidia se prepara para destituir a Jensen Huang como CEO tras destaparse otra aventura romántica con una ejecutiva",
-      "resumen": "Parece que el futuro de Jensen Huang como CEO de Nvidia está muy cerca de llegar a su fin. El escándalo extramatrimonial que ha salpicado al…",
-      "link": "https://www.vidaextra.com/industria/nvidia-se-prepara-para-destituir-a-jensen-huang-como-ceo-destaparse-otra-aventura-romantica-ejecutiva",
-      "imagen": "https://i.blogs.es/d7d269/12-jensen-1280x985/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794440414000
-    },
-    {
-      "titulo": "\"Fue un caso especial\": CD Projekt y el actor de Geralt acuerdan usar IA en el DLC de The Witcher 3 por un problema de salud",
-      "resumen": "Mientras las disputas por el uso de IA en los videojuegos no dejan de surgir, CD Projekt Red parece tener muy clara su postura. Hace aproxim…",
-      "link": "https://www.vidaextra.com/rpg/fue-caso-especial-cd-projekt-actor-geralt-acuerdan-usar-ia-dlc-the-witcher-3-problema-salud",
-      "imagen": "https://i.blogs.es/3fbaf1/ins05wj3pmef1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794429550000
-    },
-    {
-      "titulo": "Logitech se rinde ante lo inevitable dando un día libre a sus 7.000 empleados para jugar a GTA 6 (y lo convertirá en tradición anual)",
-      "resumen": "Si el mismísimo ejército de los Estados Unidos dará el día libre a sus soldados, cómo Logitech no se va a poner a la altura. El fabricante d…",
-      "link": "https://www.vidaextra.com/accion/logitech-se-rinde-inevitable-dando-dia-libre-a-sus-7-000-empleados-para-jugar-a-gta-6-convertira-tradicion-anual",
-      "imagen": "https://i.blogs.es/bc73a2/pre-load.0-7aq-08y784d/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794425959000
-    },
-    {
-      "titulo": "Las pistas descubiertas en PlayStation alimentan las esperanzas sobre la llegada de GTA Online a GTA 6",
-      "resumen": "Uno de los mayores motivos por los que el éxito de GTA V se ha prolongado a lo largo de tantísimos años ha sido por el multijugador de GTA O…",
-      "link": "https://www.vidaextra.com/accion/pistas-descubiertas-playstation-alimentan-esperanzas-llegada-gta-online-a-gta-6",
-      "imagen": "https://i.blogs.es/d623b2/gta-6-lucia-jason/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794417357000
-    },
-    {
-      "titulo": "Un concurso de desarrollo de videojuegos para estudiantes termina cancelado por la avalancha de proyectos generados con IA",
-      "resumen": "Un concurso de desarrollo de videojuegos para estudiantes termina cancelado por la avalancha de proyectos generados con IA Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOSUthWUNCdFpXdWhGcDBtazk1UExlNTBWcmdKUlRNSjh3V0FaZk9ITndYSWc5ZkxhY0s3QnBBQWVNSDR2Y2x1TW9Vdy16cU9XckxuYlFyOU04eDdwMWJ1U3lNcGlaNUhtTkk4VnFSWElUT3hoQ3RYZzNONDljMUhpclJhQnhVbk15Rzd3SDZwRHBDUXdtQjdteVlxd0ZlakJHYmowaklzYUEydUUwcnk4YUJnbVB5c1hEdGdqWUxZRk91dVdlVmpOeUxRb25EejNOcXpRUTVGeVJ2Wk1ud3J2S3FKTXc0ZGp3Vl9Z?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794411586000
-    },
-    {
-      "titulo": "Sony anuncia un nuevo modelo de PlayStation Portal: aquí están sus especificaciones",
-      "resumen": "El mes pasado se produjo una filtración que apuntaba a que Sony estaba trabajando en un par de máquinas nuevas que en realidad se iban a tra…",
-      "link": "https://www.vidaextra.com/ps5/sony-anuncia-nuevo-modelo-playstation-portal-aqui-estan-sus-especificaciones",
-      "imagen": "https://i.blogs.es/771a22/playstation-portal-midnight-black/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794410929000
-    },
-    {
-      "titulo": "Marvel’s Lobezno, el nuevo Final Fantasy y muchos periféricos a precio mínimo: MediaMarkt celebra el Single’s Day por todo lo alto",
-      "resumen": "El 11-11 es de sobra conocido por ser el Día del Soltero. Durante mucho tiempo, este día tan solo fue celebrado por marketplace como AliExpr…",
-      "link": "https://www.vidaextra.com/seleccion/marvel-s-lobezno-nuevo-final-fantasy-muchos-perifericos-a-precio-minimo-mediamarkt-celebra-single-s-day-todo-alto",
-      "imagen": "https://i.blogs.es/87f8d2/lobezno-y-final-fantasy-resonance/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794408740000
-    },
-    {
-      "titulo": "Double Fine está tan perdida que lanza una actualización para un juego con 0 usuarios en Steam",
-      "resumen": "No han sido buenos tiempos para Double Fine en los últimos meses. El estudio dirigido por Tim Schafer fue uno de los afectados por la reestr…",
-      "link": "https://www.vidaextra.com/juegos-online/double-fine-esta-perdida-que-lanza-actualizacion-para-juego-0-usuarios-steam",
-      "imagen": "https://i.blogs.es/5dc2dc/kiln-screenshot-008-announce-spirits_in_lobby/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794402320000
-    },
-    {
-      "titulo": "GTA 6 está a punto de llegar: cómo prepararte para el lanzamiento",
-      "resumen": "GTA 6 está a punto de llegar: cómo prepararte para el lanzamiento Red Bull",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hWUtHSjloRnFCcm9vZVhhcDVZV0cxVzk3ZVRaSGZOTGtIREoxVVhPNUtHVEJXVDJ2Q1N0bWJuTVF1OHpFeUYxWG4zMFpZT3U1Z01WS1Franplek1JNmhFdWJzb21lNWM?oc=5",
-      "imagen": null,
-      "fuente": "Red Bull",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794401945000
-    },
-    {
-      "titulo": "Rockstar tiene otro gigante además de GTA 6 y acaba de alcanzar una cifra que pocos videojuegos consiguen",
-      "resumen": "Rockstar tiene otro gigante además de GTA 6 y acaba de alcanzar una cifra que pocos videojuegos consiguen Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSkNFUTdsZmIzWkhuTG0yUVdnR01XUS1URU9nQTU1Y1ZLaDBLWkNqRjFYamlfX0Y3b1VJSXhfaDJwZFBPeWYtaVc4QWE4T3FaWlZKeGIzRk9NN3dVTW9ZTlF2T0lIVDBUZW5vZ3N6U19EZDdqWGNfRkU3LXhuRDdmMGljaGhIUVFHQ0dYOURNaGlIcWVqVHRGeGoydDBkcU8xcHplYTJOVk5rRG93MnJyX3Z6NVl3VW1iRGFDU1I4eE8tNFRXdWo1NVVSWDk5R3NFdWhuag?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794398343000
-    },
-    {
-      "titulo": "Un conocido estudio de videojuegos anuncia su segunda reducción de plantilla en menos de un año",
-      "resumen": "Un conocido estudio de videojuegos anuncia su segunda reducción de plantilla en menos de un año Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM3FvWTBpaHdwaFpRREltWi14ZmpBN3YyS0FucXZMb1dGZVpYUmYxUURUTFBSQWlDZHBaRElUZnI5VWJTcEw3VWpnVHZsQ2pfaGdmbF8xd1V5MDJPdThrVlJzZ2NnVHA4LWJ4dmZJSkd6QnZNd19kY0lQSXpNTUFSLU9VNmxHUzNxTUQ1TDkyYXZqZTZiU0ZRRmNaZTRVY3FnTUlqcTBtZkFDaUxiRUhEMTZnaWtxaWl0QTBYUWFqcnZXa1drUG5R?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794394530000
-    },
-    {
-      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
-      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793883635000
     },
     {
       "titulo": "LoL Esports |",
