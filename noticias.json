@@ -1,7 +1,47 @@
 {
-  "generado": 1794586943630,
+  "generado": 1794609440723,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Un fan de Zelda: Ocarina of Time encuentra un mapa casero dibujado por su padre hace 28 años, y le ayuda a completar ahora el remake",
+      "resumen": "Por mucho que en el remake de The Legend of Zelda: Ocarina of Time se hayan incorporado novedades que van más allá de su renovado apartado v…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/fan-zelda-ocarina-of-time-encuentra-mapa-casero-dibujado-su-padre-hace-28-anos-le-ayuda-a-completar-ahora-remake",
+      "imagen": "https://i.blogs.es/97ac6a/zelda-oot-remake-arbol-deku/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794600081000
+    },
+    {
+      "titulo": "Ten cuidado y comprueba si ya tienes una copia de Hell Let Loose antes de jugarlo en PlayStation Plus Extra o podrías perderlo",
+      "resumen": "Esta misma semana se ha revelado cuáles serán los próximos juegos que se unirán al catálogo de PlayStation Plus Extra y Premium. Entre ellos…",
+      "link": "https://www.vidaextra.com/fps/ten-cuidado-comprueba-tienes-copia-hell-let-loose-antes-jugarlo-playstation-plus-extra-podrias-perderlo",
+      "imagen": "https://i.blogs.es/7a3128/hell-let-loose/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794598283000
+    },
+    {
+      "titulo": "El techo de GTA 6 no tiene límites: va a generar en 7 días más dinero que Vengadores: Endgame en toda su historia",
+      "resumen": "Bien es cierto que tendremos que esperar hasta que se produzca alguna llamada con los inversores de Take-Two para conocer las cifras oficial…",
+      "link": "https://www.vidaextra.com/accion/techo-gta-6-no-tiene-limites-va-a-generar-7-dias-dinero-que-vengadores-endgame-toda-su-historia",
+      "imagen": "https://i.blogs.es/61c043/vice_city_18.001ebutl6h-9w/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794591086000
+    },
+    {
+      "titulo": "Marvel ha matado a Wolverine con el mejor depredador de la ciencia ficción: lo ha reducido a un montón de vísceras y adamantium",
+      "resumen": "Wolverine no es inmortal, pero varias décadas de esfuerzos por parte de Marvel han dejado muy claro que es uno de los seres más peligrosos y…",
+      "link": "https://www.vidaextra.com/comics/marvel-ha-matado-a-wolverine-mejor-depredador-ciencia-ficcion-ha-reducido-a-monton-visceras-adamantium",
+      "imagen": "https://i.blogs.es/90df22/lobezno1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794589287000
+    },
     {
       "titulo": "Creadores latinoamericanos impulsan el futuro del gaming",
       "resumen": "Creadores latinoamericanos impulsan el futuro del gaming Microsoft Source",
@@ -10,17 +50,17 @@
       "fuente": "Microsoft Source",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794586050000
+      "fecha": 1794586072000
     },
     {
-      "titulo": "Si hay un videojuego que pueda romper internet, ese es GTA VI: su precarga está dejando picos de récord en tráfico",
-      "resumen": "Si hay un videojuego que pueda romper internet, ese es GTA VI: su precarga está dejando picos de récord en tráfico Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbXlKanRTTUtyMTJvb1lWbWdsOG5zd1F2dUptTWViREx5VERtaEJ0WDduMHNfZDBKVEs0TmY0WGdIM0RGTjJVYTFTMlNOYkVDR29QMEl5ckplUmd3YUpWMWtKYkMtQkJ1eTJYdkFfaUV2c25qdUl3dElWNndKSWJZZWhFWkxFTkdLOUVjVlVhQXR1Rks3VVZZWkZwdVYtQkNEX3phU3dCNzcyUW45bDVYZmdZWG10OTBnN2trb0hfX3lyUHRRdjJkcEJESnLSAdIBQVVfeXFMT2hDR1V1MG9mQ0Z1b3U2VEI1TlpxeFJUWi1DSHFLVWM1aUVUcXk5QXhmNUVBN2FrblVvUjRhYzRhNm1WNFB2ZG5HOXA0VWFrb24zZXZmNGtCWV8zcHoxWEJYV0s4U1hwamcwT21URVpDZVc5SUlIZnJsNkNYYmk0eThVQlRPVmowVkxpajZPdDRkWkRHSHVpazNaVVBYa1dfRHU5OTgxWWg5US1qbDBlVXFrSEFGUXhIdWowVkpTVXpxTmZXdzBxZ09YMGtZVFRuVHpB?oc=5",
+      "titulo": "La teoría sobre la pluma que Link lleva en el gorro en el remake de Zelda: Ocarina of Time, ¿casualidad o guiñ",
+      "resumen": "La teoría sobre la pluma que Link lleva en el gorro en el remake de Zelda: Ocarina of Time, ¿casualidad o guiñ Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOX0lxZXRUUFFjSnJ1SE9SWjJyMXlsaVF3YVBSbzNVaE13NnExRGFHS2xYa2hfXzBGUTI0M2dNTmNNMFFkQXl0R2VyX0lvMl9scUhmb29xM2JGWHNVMlU3aUVIcm5kbkx0c3llZ3U0MlZHQ0h5YlhiQWRGOVJjd2Nfb3o5b0dnRDg3bi13WEtVejdDdkNhdTFDbEVNZkNlZ0IxMFJJVkI3UE5veVpzTHhudkRVUFVlNW50bmRSd2s0VWI0X285YTZRVHc3Zk1Ma2FoSHNzZXpLck9DR3d6STM4WDNNR2ZYQlFVTWZaeWl2UVFpM2h5Ykt5MdIBjAJBVV95cUxPaGFGdlc2T2I0ME9yZGpmQ1pRU1JDUnRITW5lNmdaTE1RWVAwLTd4T0w3ZW1FMFhYemdPWFQwUTRRa3RYRzFYNURmcFBTOXRYMkZ3RVVEZjFFcy1zZlRuZHlZdEJFVFdfMEdGWGVvbnNSUFFIQTU2eGlHTTZJZWp6Ri1VVlYwME13cU5ydWdZTHBJV1NtYTdUX1NXRzA5OUtJNXJxdFNkRFd1YXFjZlFyWkd2UlVlNk93Mm1iX2JBbGphUjdBZ0FFVWVIeU9KRmFXWEI0ZVF3TjJvZlJoOGhuQ1V1NURRRXcweGtqZDN2bVBjc3o1SWJfWDhPdDZ2UDFEaEY4U2J1RjhXcXg0?oc=5",
       "imagen": null,
-      "fuente": "Xataka",
+      "fuente": "Diario AS",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794583884000
+      "fecha": 1794584700000
     },
     {
       "titulo": "Escape From Tarkov dará el salto histórico que muchos jugadores han esperado durante años: llegará a consolas y se anunciará pronto",
@@ -83,26 +123,6 @@
       "fecha": 1794562006000
     },
     {
-      "titulo": "Wolfenstein 3 es una realidad tras casi 10 años de espera y muchos rumores. Analizamos la primera imagen oficial",
-      "resumen": "Han pasado siete años desde el último Wolfenstein, nueve para los negacionistas de Youngblood, y hacía tiempo que se respiraba algo en el am…",
-      "link": "https://www.vidaextra.com/fps/wolfenstein-3-realidad-casi-10-anos-espera-muchos-rumores-analizamos-primera-imagen-oficial",
-      "imagen": "https://i.blogs.es/3ba792/wolfenstein-1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794559620000
-    },
-    {
-      "titulo": "Dark Souls 2 tenía un truco muy divertido con las bombas incendiarias, pero casi nadie lo utilizaba por miedo a morir",
-      "resumen": "Los videojuegos de FromSoftware no son para todos los paladares, pero hay uno muy concreto que es un bocado muy selectivo incluso para quien…",
-      "link": "https://www.vidaextra.com/rpg/dark-souls-2-tenia-truco-muy-divertido-bombas-incendiarias-casi-nadie-utilizaba-morir",
-      "imagen": "https://i.blogs.es/69d42b/dark-souls-2/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794556887000
-    },
-    {
       "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
       "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
@@ -121,26 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794525107000
-    },
-    {
-      "titulo": "Xbox Playback: ya disponible el repaso estadístico a toda tu historia en Xbox",
-      "resumen": "Nos acercamos a esa época del año en el que las grandes compañías como PlayStation y Nintendo activan su evento con el que ver un repaso a t…",
-      "link": "https://www.vidaextra.com/xbox-series/xbox-playback-disponible-repaso-estadistico-a-toda-tu-historia-xbox",
-      "imagen": "https://i.blogs.es/22e55a/xbox-wire-playback-logo-1-431a9b50384ec62fcd33-1600x900/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794510732000
-    },
-    {
-      "titulo": "No fue hasta los 33 años que un fan de Zelda: Ocarina of Time comprendió esta ingeniosa paradoja de los viajes en el tiempo en el remake",
-      "resumen": "Aunque The Legend of Zelda: Ocarina of Time sea uno de los videojuegos más populares de todos los tiempos, considerado para muchos como el m…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/no-fue-33-anos-que-fan-zelda-ocarina-of-time-comprendio-esta-ingeniosa-paradoja-viajes-tiempo-remake",
-      "imagen": "https://i.blogs.es/b9b271/zelda-oot-remake/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794506539000
     },
     {
       "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
