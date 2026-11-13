@@ -1,7 +1,27 @@
 {
-  "generado": 1794529369981,
+  "generado": 1794556597534,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
+      "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
+      "imagen": null,
+      "fuente": "ESPN Deportes",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794537900000
+    },
+    {
+      "titulo": "A punto de volver al terreno beisbolero en los videojuegos",
+      "resumen": "A punto de volver al terreno beisbolero en los videojuegos Granma",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYTBBSXBWNXFUYWN1Zmt0SkNsczZBelRSQ2JKbFRhelJfblFYTXJlRjhNa09HdC1oUi1aQnRNVFlXTzJVSy16S1gzeVJRV3dPc3FFR1VWMnNSczU5bVBqU1JUMXlRbUdqUVp2Ym5GYVVmSWFHSGotRzhqdnFVcnpReGhoQWQ4QXdrcGMzQ0d3SzMxQkphV1JsS21VYWZZUTM3dDA2Mi1BM0N3QUpWVnJ5UUZFcWNfaTlMd09oaQ?oc=5",
+      "imagen": null,
+      "fuente": "Granma",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794525107000
+    },
     {
       "titulo": "Nintendo anuncia sus ofertas de Black Friday 2026: descuentos en Switch 2, Mario Kart y sus juegos más populares",
       "resumen": "Nintendo anuncia sus ofertas de Black Friday 2026: descuentos en Switch 2, Mario Kart y sus juegos más populares Kotaku en Español",
@@ -11,16 +31,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794511109000
-    },
-    {
-      "titulo": "Epic Games Store regala un juego inspirado en Kirby por tiempo limitado: cómo conseguirlo gratis",
-      "resumen": "Epic Games Store regala un juego inspirado en Kirby por tiempo limitado: cómo conseguirlo gratis Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdWt0czZPNmpFdHBoYk81M1lJTEdtZ2xTVUdqQ29UaHVidGp0bW9BZ3VhaUJQWC1UZjdNZ0ZnRmxnMXZ4dUlkNFFhcW1iOWs5T2F3akpYN1B2ajhfQncxS2RjT0ViaFBnSEZJdzM4S1Y1SVJwOEpJVktvMG5pc3Mxb0pILTYwNGtEVjZkYm5Hb3R1djJfeXRkYVllSUNHZ0tRenFGVGljdy15eFp4ZDV3Zmh6U1l0cll2X1QxSUl2RkRfYnlxZjhB?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794510809000
     },
     {
       "titulo": "Xbox Playback: ya disponible el repaso estadístico a toda tu historia en Xbox",
@@ -141,16 +151,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1791183600000
-    },
-    {
-      "titulo": "\"Los videojuegos me pagan el doble de lo que ganaba como maestra\"",
-      "resumen": "\"Los videojuegos me pagan el doble de lo que ganaba como maestra\" BBC",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5HOEpxdnVMMlBBZWVhcjAzdVp6YzZpc3Y2OTRqWDlLVUtfeW1nTl92bzAtNXYzRzZLNXNZQ1Z5VjVkalU2cFlmUFdEaDR4TkVscW1pS3V3Q28zZVFl0gFiQVVfeXFMUFBqU2NrZHJDd0NObkhjeTJnU29QSWdaRExXcFhCRHRpQjNfQ1U4aXJuUGNDRUMxVTdjWVhFYXN2dHRYRmdfZUs3WlJyQzdMQU9OUEoxdlVPRHZGV19pUUdQY1E?oc=5",
-      "imagen": null,
-      "fuente": "BBC",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1790665200000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
