@@ -1,9 +1,37 @@
 {
-  "generado": 1794509716128,
-  "fuentesConError": [
-    "Google Noticias"
-  ],
+  "generado": 1794529369981,
+  "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Nintendo anuncia sus ofertas de Black Friday 2026: descuentos en Switch 2, Mario Kart y sus juegos más populares",
+      "resumen": "Nintendo anuncia sus ofertas de Black Friday 2026: descuentos en Switch 2, Mario Kart y sus juegos más populares Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNcjZ1OER5OGliTzhlcU9BX3JsZFhhdEtYNHdFeXRlZDNLampNTC00dzhFMkRzTkJyVDZib3hRaDh1X3U2OUZJLU9CSFJMTldFNkRnMC12WmV5Ri14Ql9WYmlydTl0OEplcWp1M2s5R2pKMFZxRE9HOERnRjY0STdiRE1FTG9HekhFRHo0VHE0LWMydEJQNUt2TmJRSlQ2MkZBWm9yNU95UTdQWmRSeUM0S1Z4QlExalN2Y3ZHSUJ3UXczbXZ5T2VxcHlUUDFxNjF0LVRFTGVSVUNRUVE?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794511109000
+    },
+    {
+      "titulo": "Epic Games Store regala un juego inspirado en Kirby por tiempo limitado: cómo conseguirlo gratis",
+      "resumen": "Epic Games Store regala un juego inspirado en Kirby por tiempo limitado: cómo conseguirlo gratis Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdWt0czZPNmpFdHBoYk81M1lJTEdtZ2xTVUdqQ29UaHVidGp0bW9BZ3VhaUJQWC1UZjdNZ0ZnRmxnMXZ4dUlkNFFhcW1iOWs5T2F3akpYN1B2ajhfQncxS2RjT0ViaFBnSEZJdzM4S1Y1SVJwOEpJVktvMG5pc3Mxb0pILTYwNGtEVjZkYm5Hb3R1djJfeXRkYVllSUNHZ0tRenFGVGljdy15eFp4ZDV3Zmh6U1l0cll2X1QxSUl2RkRfYnlxZjhB?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794510809000
+    },
+    {
+      "titulo": "Xbox Playback: ya disponible el repaso estadístico a toda tu historia en Xbox",
+      "resumen": "Nos acercamos a esa época del año en el que las grandes compañías como PlayStation y Nintendo activan su evento con el que ver un repaso a t…",
+      "link": "https://www.vidaextra.com/xbox-series/xbox-playback-disponible-repaso-estadistico-a-toda-tu-historia-xbox",
+      "imagen": "https://i.blogs.es/22e55a/xbox-wire-playback-logo-1-431a9b50384ec62fcd33-1600x900/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794510732000
+    },
     {
       "titulo": "No fue hasta los 33 años que un fan de Zelda: Ocarina of Time comprendió esta ingeniosa paradoja de los viajes en el tiempo en el remake",
       "resumen": "Aunque The Legend of Zelda: Ocarina of Time sea uno de los videojuegos más populares de todos los tiempos, considerado para muchos como el m…",
@@ -75,14 +103,34 @@
       "fecha": 1794490200000
     },
     {
-      "titulo": "Las primeras cifras de World of Warcraft: Forever muestran una lucha reñida, pero con fracciones, razas y clases ganadoras",
-      "resumen": "La llegada de World of Warcraft: Forever ha traído muchas alegrías, pero también debate en la comunidad. Las dificultades a la hora de crear…",
-      "link": "https://www.vidaextra.com/juegos-online/primeras-cifras-world-of-warcraft-forever-muestran-lucha-renida-fracciones-razas-clases-ganadoras",
-      "imagen": "https://i.blogs.es/3d682a/wow-forever/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "GTA 6: todos los animales, aves y peces que se han descubierto hasta ahora",
+      "resumen": "GTA 6: todos los animales, aves y peces que se han descubierto hasta ahora Red Bull",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE81dVQzZ3ZueTRxcE1Qdzhkd1djTjZLamd3OEdTeE5RdG9uSTlnNFc0Sjh6NHduZmtYUnJwQk1rU2dSbzhQNGpSeEFodUpadjQ5RlJUazVSZzBWYTM2M2tz?oc=5",
+      "imagen": null,
+      "fuente": "Red Bull",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794481402000
+      "fecha": 1794484811000
+    },
+    {
+      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
+      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras Yahoo Finanzas",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcFJQalMyRFFRVlZYN0hBTldJNUNKVTJ1dkFSa2p6QWtra3VvUXZPV00yMDRGNktER3VvSkpKMjdBcEZLQmJ2ZVlNTjNxWFRmUXhETDYtRGlJdVVUU2tQMHg5cFVqeHFsTXdZb3RWdW9xdG5EREcwMnM0X1ptY3RvTUw4UFJFSy1ZNWFuNjVkdTJPV1E?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo Finanzas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794474017000
+    },
+    {
+      "titulo": "Los creadores de Rust tienen una sorpresa para Steam: su ambicioso sucesor de Garry's Mod será gratis para siempre",
+      "resumen": "Los creadores de Rust tienen una sorpresa para Steam: su ambicioso sucesor de Garry's Mod será gratis para siempre Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPWExnNl9DNHJsS1ZYSXY0Q3hPeGRkbHlrVGJ1TWxsVDR0blVtWTA5aG9QdFZlaUowZC1ZYWxxV1E0SDJGRENXdElwU0ltbDU2UU1rWFRzak9pYkZJTVBKUWxCX2VTVk1pQVFRNHJUb29zOXliWjMyUDM2aXVDOUN5ZDFLVjBnS1Y3aEhxZm5QQUlWSWpjZGNDa1I5RGs1bUJYNlJtdDRYX2tFWkhIRG9Qc2xKSkFhTWNWMEo4ZW5sVkFkcWVYSlRvNEVqbmlGYlFaYXhXN09uQ2RpV0Mya3c?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794472447000
     },
     {
       "titulo": "LoL Esports |",
@@ -93,6 +141,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1791183600000
+    },
+    {
+      "titulo": "\"Los videojuegos me pagan el doble de lo que ganaba como maestra\"",
+      "resumen": "\"Los videojuegos me pagan el doble de lo que ganaba como maestra\" BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5HOEpxdnVMMlBBZWVhcjAzdVp6YzZpc3Y2OTRqWDlLVUtfeW1nTl92bzAtNXYzRzZLNXNZQ1Z5VjVkalU2cFlmUFdEaDR4TkVscW1pS3V3Q28zZVFl0gFiQVVfeXFMUFBqU2NrZHJDd0NObkhjeTJnU29QSWdaRExXcFhCRHRpQjNfQ1U4aXJuUGNDRUMxVTdjWVhFYXN2dHRYRmdfZUs3WlJyQzdMQU9OUEoxdlVPRHZGV19pUUdQY1E?oc=5",
+      "imagen": null,
+      "fuente": "BBC",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1790665200000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
