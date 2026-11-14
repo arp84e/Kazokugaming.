@@ -1,7 +1,27 @@
 {
-  "generado": 1794652312453,
+  "generado": 1794676041451,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
+      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPU0h0VllEOVBvMFFLS1lMZUhhcTRmUC1lQXhzY2lYSXVfX0dHNUgxVWdBbUx6dHhJQmQwZ1Y5bEdXU3B4UE90UVU0ZU96ZnZJc1F5N04ySFFkczV0YjFKVUZsUTY5cVI4anZqWElsRGJFbVZWYXJhNVREQ05tai04VHNtaVVUT1JJU1ZnT1VPaDdJdDk3R0MtcGwwbHBOWmZlajUxMQ?oc=5",
+      "imagen": null,
+      "fuente": "France 24",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794671966000
+    },
+    {
+      "titulo": "Phalanx es un juego de naves, pero en su portada sale un entrañable abuelo con un banjo. ¿Por qué?",
+      "resumen": "Hubo una época en el que el presupuesto de marketing de videojuegos no se iba en publicidad en prensa o grandes eventos. El foco, casi siemp…",
+      "link": "https://www.vidaextra.com/accion/phalanx-juego-naves-su-portada-sale-entranable-abuelo-banjo-que",
+      "imagen": "https://i.blogs.es/07854f/banjo/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794669321000
+    },
     {
       "titulo": "La historia real de Epona, la diosa a la que rendimos culto en España antes de convertirse en el caballo de The Legend of Zelda",
       "resumen": "Puede que Epona se haya convertido en uno de los nombres más reconocibles de la industria del videojuego gracias al caballo -yegua, en reali…",
@@ -11,16 +31,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794647723000
-    },
-    {
-      "titulo": "Valladolid se sube a la ola del videojuego: tecnología puntera en busca de talento",
-      "resumen": "Valladolid se sube a la ola del videojuego: tecnología puntera en busca de talento El Confidencial",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQZDhhXzF0R0Y5RGw0RVZFVmxmeFNKNUtJUU9pZWZDT3VkOG9qQk5BLXMydDFNd3dvMjMzLV9ZcG9xNkhmbGdRdHJMZUhXLTNMZjJwWXFKaE8tQkRYNFJXV2xFVHB5cUt4V3ZyTXVPeWw1WEdXaGdXNGo4RVM2QUtQSlpXV29GVVk0b3YzMGl4Qnp2bVZHal9HZGl4Y0h0VEx1T3c5SEUzLVZWTm4xQlRVd1YwZmN5VTY5N3dSeFNLeXA3Qkl3WWZFODRGSkZoVGNWb0J0RUl1TjVwTEMtUjF6VklzZDhGOUJpLTFj?oc=5",
-      "imagen": null,
-      "fuente": "El Confidencial",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794628800000
     },
     {
       "titulo": "Los esports de LoL en 2027 y más allá",
@@ -93,16 +103,6 @@
       "fecha": 1794586072000
     },
     {
-      "titulo": "Final Worlds LoL 2026: cuándo se juega, fecha y horario del BLG vs. Gen. G",
-      "resumen": "Final Worlds LoL 2026: cuándo se juega, fecha y horario del BLG vs. Gen. G SPORT",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORUI4amRVRldFRHd5dFIzYk1UWE80c0sxT1k4eV8wMV9XZjhBMlN6LVpJTlhyUkVLT3VEM2t0Yk8xOXBqWWFGY3FacmphZ3EyWmZkWTcxNG04Z1cyXzRXRE01alVvY0h3c3hkMk8yQmFDTXRYLUpYOFRQWFlDcTFmY2x0d3JqNGJYNnfSAYoBQVVfeXFMUG1MVG1Ra0dQajRTUTAtWnJla1dZdEEyVHlMMDg4SnZ0THozVERHcVcxQ2JyRHJhWlB0N3ZUTk1ldnp6eDRvTlBJNzVyYUhKUjMwVXVjaHIxcXQzUm9RZ0pzcVl5N0daM0NNZ3dEWkR0ZVVJUW5Ib0ZYdTFhNGUwR2JmTkFYRDdrSlVB?oc=5",
-      "imagen": null,
-      "fuente": "SPORT",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794584693000
-    },
-    {
       "titulo": "Escape From Tarkov dará el salto histórico que muchos jugadores han esperado durante años: llegará a consolas y se anunciará pronto",
       "resumen": "Los rumores sobre la llegada de Escape From Tarkov a consolas se han acumulado durante años y ha sido un secreto a voces durante los últimos…",
       "link": "https://www.vidaextra.com/fps/escape-from-tarkov-dara-salto-historico-que-muchos-jugadores-han-esperado-durante-anos-llegara-a-consolas-se-anunciara-pronto",
@@ -121,16 +121,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794576326000
-    },
-    {
-      "titulo": "Los compradores de GTA 6 en PS5 Pro están cancelando sus reservas por culpa de un detalle técnico que se niegan a pasar por alto",
-      "resumen": "Algo de lo que ha presumido Rockstar Games esta misma semana es que GTA 6 se ha convertido en el videojuego más reservado de toda la histori…",
-      "link": "https://www.vidaextra.com/accion/compradores-gta-6-ps5-pro-estan-cancelando-sus-reservas-culpa-detalle-tecnico-que-se-niegan-a-pasar-alto",
-      "imagen": "https://i.blogs.es/700bbe/gta-6-tatuajes/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794567688000
     },
     {
       "titulo": "Un conocido estudio de videojuegos rompe con THQ Nordic después de nueve años y prepara una nueva etapa que pocos esperaban",
@@ -153,16 +143,6 @@
       "fecha": 1794557724000
     },
     {
-      "titulo": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997",
-      "resumen": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997 Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNb01ZRXBsd1BvMWVhc1ZUcGtUUTM2UVBXVExtVUlDNk9NQ0RJclhYWTh2ZW9CaXptaldmbDJnSV9ib2FDRFRuMVZGUThFb2h0LUJubHNyVGdQRnRjWENvZUhtYXlQSlFtS0dyQk9peWxqNXh2VFJ0VDY3YUlaNnNpcGZBT1ZnT0pYUFM4?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794536640000
-    },
-    {
       "titulo": "LALIGA EA SPORTS 2026/27",
       "resumen": "LALIGA EA SPORTS 2026/27 LALIGA",
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xdjRKOEV6bjdCYUhJT3lhSDVjZFFMQkV5Mm9aakJUR3BmZ1FpNUY1RDhGdWxVUDVEYzItOWhmWDNNS0FwblBYcVFmdjVBWWc?oc=5",
@@ -171,6 +151,26 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794478447000
+    },
+    {
+      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
+      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
+      "imagen": null,
+      "fuente": "Xataka",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1793865600000
+    },
+    {
+      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
+      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
+      "imagen": null,
+      "fuente": "UCAM Deportes",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1783494000000
     }
   ]
 }
