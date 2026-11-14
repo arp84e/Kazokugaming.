@@ -1,7 +1,27 @@
 {
-  "generado": 1794626095158,
+  "generado": 1794652312453,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "La historia real de Epona, la diosa a la que rendimos culto en España antes de convertirse en el caballo de The Legend of Zelda",
+      "resumen": "Puede que Epona se haya convertido en uno de los nombres más reconocibles de la industria del videojuego gracias al caballo -yegua, en reali…",
+      "link": "https://www.vidaextra.com/nintendo-switch-2/historia-real-epona-diosa-a-que-rendimos-culto-espana-antes-convertirse-caballo-the-legend-of-zelda-1",
+      "imagen": "https://i.blogs.es/586302/epona/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794647723000
+    },
+    {
+      "titulo": "Valladolid se sube a la ola del videojuego: tecnología puntera en busca de talento",
+      "resumen": "Valladolid se sube a la ola del videojuego: tecnología puntera en busca de talento El Confidencial",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQZDhhXzF0R0Y5RGw0RVZFVmxmeFNKNUtJUU9pZWZDT3VkOG9qQk5BLXMydDFNd3dvMjMzLV9ZcG9xNkhmbGdRdHJMZUhXLTNMZjJwWXFKaE8tQkRYNFJXV2xFVHB5cUt4V3ZyTXVPeWw1WEdXaGdXNGo4RVM2QUtQSlpXV29GVVk0b3YzMGl4Qnp2bVZHal9HZGl4Y0h0VEx1T3c5SEUzLVZWTm4xQlRVd1YwZmN5VTY5N3dSeFNLeXA3Qkl3WWZFODRGSkZoVGNWb0J0RUl1TjVwTEMtUjF6VklzZDhGOUJpLTFj?oc=5",
+      "imagen": null,
+      "fuente": "El Confidencial",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794628800000
+    },
     {
       "titulo": "Los esports de LoL en 2027 y más allá",
       "resumen": "Los esports de LoL en 2027 y más allá LoL Esports",
@@ -113,26 +133,6 @@
       "fecha": 1794567688000
     },
     {
-      "titulo": "LALIGA EA SPORTS 2026/27",
-      "resumen": "LALIGA EA SPORTS 2026/27 LALIGA",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xdjRKOEV6bjdCYUhJT3lhSDVjZFFMQkV5Mm9aakJUR3BmZ1FpNUY1RDhGdWxVUDVEYzItOWhmWDNNS0FwblBYcVFmdjVBWWc?oc=5",
-      "imagen": null,
-      "fuente": "LALIGA",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794563751000
-    },
-    {
-      "titulo": "Los creadores de The Blood of Dawnwalker aceptaron la gran derrota con dignidad: \"Un privilegio más allá de las palabras\"",
-      "resumen": "Una de las galas de premios más prestigiosas que se celebra anualmente por estas fechas es la de los Golden Joystick Awards. Una ceremonia e…",
-      "link": "https://www.vidaextra.com/rpg/creadores-the-blood-of-dawnwalker-aceptaron-gran-derrota-dignidad-privilegio-alla-palabras",
-      "imagen": "https://i.blogs.es/47eb9f/the-blood-of-dawnwalker/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794563580000
-    },
-    {
       "titulo": "Un conocido estudio de videojuegos rompe con THQ Nordic después de nueve años y prepara una nueva etapa que pocos esperaban",
       "resumen": "Un conocido estudio de videojuegos rompe con THQ Nordic después de nueve años y prepara una nueva etapa que pocos esperaban Kotaku en Españo…",
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNLTJtazBYY3NLQ1c2SzZYU1BjQzE3bnp0bFlwZ2owNWVJY3R5UkRBWTFyS0tjeFJJUjFpd2dyeWR0ME82STVjWDY1dHR1eHpjdkQtSDFqV0tlc01oLVBEVE01WWNQVGNKYmlyd3FuX3BCcXlEcU12T003dFk2UDRISVJ6SDkyVzY3Si1qZk5hdEl6T2hYbHlhNDFLdkNINDZObklBSDFtWm44VlFXSEt0T2lGR3RfMnVPNDB6UjV1X05jUURYdUhReEc3azA1Mkg4N2ZWUldURjNacjBYSkJpbmVmUzZjbm5QeVdBSA?oc=5",
@@ -153,16 +153,6 @@
       "fecha": 1794557724000
     },
     {
-      "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
-      "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
-      "imagen": null,
-      "fuente": "ESPN Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794537900000
-    },
-    {
       "titulo": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997",
       "resumen": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997 Yahoo",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNb01ZRXBsd1BvMWVhc1ZUcGtUUTM2UVBXVExtVUlDNk9NQ0RJclhYWTh2ZW9CaXptaldmbDJnSV9ib2FDRFRuMVZGUThFb2h0LUJubHNyVGdQRnRjWENvZUhtYXlQSlFtS0dyQk9peWxqNXh2VFJ0VDY3YUlaNnNpcGZBT1ZnT0pYUFM4?oc=5",
@@ -171,6 +161,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794536640000
+    },
+    {
+      "titulo": "LALIGA EA SPORTS 2026/27",
+      "resumen": "LALIGA EA SPORTS 2026/27 LALIGA",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xdjRKOEV6bjdCYUhJT3lhSDVjZFFMQkV5Mm9aakJUR3BmZ1FpNUY1RDhGdWxVUDVEYzItOWhmWDNNS0FwblBYcVFmdjVBWWc?oc=5",
+      "imagen": null,
+      "fuente": "LALIGA",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794478447000
     }
   ]
 }
