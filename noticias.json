@@ -1,7 +1,17 @@
 {
-  "generado": 1794609440723,
+  "generado": 1794626095158,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Los esports de LoL en 2027 y más allá",
+      "resumen": "Los esports de LoL en 2027 y más allá LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hdWR2b2VtMnJTVHllNjh1alFUZmh4MkpJc19XbXRxUTZKbEZWcVpKLWlzazAybmNZUE5JTmgzTHQ1X3FyOE9UTVV2Wk1xWWhpRmV4UWVWLUdyZGZfNXBNbGVldk85ekZtS1VacElB?oc=5",
+      "imagen": null,
+      "fuente": "LoL Esports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794613370000
+    },
     {
       "titulo": "Un fan de Zelda: Ocarina of Time encuentra un mapa casero dibujado por su padre hace 28 años, y le ayuda a completar ahora el remake",
       "resumen": "Por mucho que en el remake de The Legend of Zelda: Ocarina of Time se hayan incorporado novedades que van más allá de su renovado apartado v…",
@@ -11,6 +21,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794600081000
+    },
+    {
+      "titulo": "2kCuba26: el videojuego de béisbol cubano llega a su tercera versión",
+      "resumen": "2kCuba26: el videojuego de béisbol cubano llega a su tercera versión Cubadebate",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPTkFSUTlKbnBJSVFTV1VyRV9IWXdqOVE0VEx5VEtIbXpsR09QbHctVGVYRV9jTHdRd3dXVVpRQlVERmpNQ1NkeDVYOGtwUElGNl9UbkZ3Q2wwdlNIalY5X1dJOHlSaDAzM1EzekJoazl6V2hQdkZmTWx5UXdFM1AzWjVwbVoydmRPankyWEEyOG1FOWlHRDVLWm01UU5kcEtkMGdiUTVVN3o1MFpxVk8tS190TdIBuAFBVV95cUxQR2pyV21PTU5jZGtjVzd4Wm9yNkZscEp3ekhfczF2cnh5U1p5YWVPYmVyNUp0SkpKWTZwVC1zVWVVSHlGWFZPN1JOTVpLUUV3YnNTbUw0WmM1VVd3Y3EwWlBrNk14T0t5c2doMzdyVWhEOThwRDVEdVplSm5tOHFCc0IxVHBvMXpEM2pSakdIbExCY0xFMmp4SG1xUkw2WkVTVE42bUtYYUdXdjF6ai1YZS0xX2tBV2x3?oc=5",
+      "imagen": null,
+      "fuente": "Cubadebate",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794599643000
     },
     {
       "titulo": "Ten cuidado y comprueba si ya tienes una copia de Hell Let Loose antes de jugarlo en PlayStation Plus Extra o podrías perderlo",
@@ -53,14 +73,14 @@
       "fecha": 1794586072000
     },
     {
-      "titulo": "La teoría sobre la pluma que Link lleva en el gorro en el remake de Zelda: Ocarina of Time, ¿casualidad o guiñ",
-      "resumen": "La teoría sobre la pluma que Link lleva en el gorro en el remake de Zelda: Ocarina of Time, ¿casualidad o guiñ Diario AS",
-      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOX0lxZXRUUFFjSnJ1SE9SWjJyMXlsaVF3YVBSbzNVaE13NnExRGFHS2xYa2hfXzBGUTI0M2dNTmNNMFFkQXl0R2VyX0lvMl9scUhmb29xM2JGWHNVMlU3aUVIcm5kbkx0c3llZ3U0MlZHQ0h5YlhiQWRGOVJjd2Nfb3o5b0dnRDg3bi13WEtVejdDdkNhdTFDbEVNZkNlZ0IxMFJJVkI3UE5veVpzTHhudkRVUFVlNW50bmRSd2s0VWI0X285YTZRVHc3Zk1Ma2FoSHNzZXpLck9DR3d6STM4WDNNR2ZYQlFVTWZaeWl2UVFpM2h5Ykt5MdIBjAJBVV95cUxPaGFGdlc2T2I0ME9yZGpmQ1pRU1JDUnRITW5lNmdaTE1RWVAwLTd4T0w3ZW1FMFhYemdPWFQwUTRRa3RYRzFYNURmcFBTOXRYMkZ3RVVEZjFFcy1zZlRuZHlZdEJFVFdfMEdGWGVvbnNSUFFIQTU2eGlHTTZJZWp6Ri1VVlYwME13cU5ydWdZTHBJV1NtYTdUX1NXRzA5OUtJNXJxdFNkRFd1YXFjZlFyWkd2UlVlNk93Mm1iX2JBbGphUjdBZ0FFVWVIeU9KRmFXWEI0ZVF3TjJvZlJoOGhuQ1V1NURRRXcweGtqZDN2bVBjc3o1SWJfWDhPdDZ2UDFEaEY4U2J1RjhXcXg0?oc=5",
+      "titulo": "Final Worlds LoL 2026: cuándo se juega, fecha y horario del BLG vs. Gen. G",
+      "resumen": "Final Worlds LoL 2026: cuándo se juega, fecha y horario del BLG vs. Gen. G SPORT",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORUI4amRVRldFRHd5dFIzYk1UWE80c0sxT1k4eV8wMV9XZjhBMlN6LVpJTlhyUkVLT3VEM2t0Yk8xOXBqWWFGY3FacmphZ3EyWmZkWTcxNG04Z1cyXzRXRE01alVvY0h3c3hkMk8yQmFDTXRYLUpYOFRQWFlDcTFmY2x0d3JqNGJYNnfSAYoBQVVfeXFMUG1MVG1Ra0dQajRTUTAtWnJla1dZdEEyVHlMMDg4SnZ0THozVERHcVcxQ2JyRHJhWlB0N3ZUTk1ldnp6eDRvTlBJNzVyYUhKUjMwVXVjaHIxcXQzUm9RZ0pzcVl5N0daM0NNZ3dEWkR0ZVVJUW5Ib0ZYdTFhNGUwR2JmTkFYRDdrSlVB?oc=5",
       "imagen": null,
-      "fuente": "Diario AS",
+      "fuente": "SPORT",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794584700000
+      "fecha": 1794584693000
     },
     {
       "titulo": "Escape From Tarkov dará el salto histórico que muchos jugadores han esperado durante años: llegará a consolas y se anunciará pronto",
@@ -123,6 +143,16 @@
       "fecha": 1794562006000
     },
     {
+      "titulo": "Microsoft sorprende con una tecnología que promete transformar el rendimiento de los videojuegos sin cambiar de hardware",
+      "resumen": "Microsoft sorprende con una tecnología que promete transformar el rendimiento de los videojuegos sin cambiar de hardware Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNdlhsZXlnUnNvaUg4Ujh5RmtpQ2t0a2Q4aVozVnFwckhoNllFcndqYzgwMkJQRUlBVjJCWWw4UnRHOXh3dGhWUkg1U2xQYlk3SmJ3WjNQNVRhZ1p6LXBGVmlJUF9MNnJJdERzWHBQcXJHT2VHcXNFcklQajNOMk9CQXdtcnJvZkQ0bXFYVkxFOHdqRU9JSFhOMzFmbVpzS3pZYW90Njk3V2JJVDRBckZqWDR1QllZUGpVeVpQRFJEVUN2dFdaNUwyaWhSVU5BWVFxYTlrM3A4bDZFT3VSeWVwc2Q0MVFCcEsz?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794557724000
+    },
+    {
       "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
       "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
@@ -133,44 +163,14 @@
       "fecha": 1794537900000
     },
     {
-      "titulo": "A punto de volver al terreno beisbolero en los videojuegos",
-      "resumen": "A punto de volver al terreno beisbolero en los videojuegos Granma",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYTBBSXBWNXFUYWN1Zmt0SkNsczZBelRSQ2JKbFRhelJfblFYTXJlRjhNa09HdC1oUi1aQnRNVFlXTzJVSy16S1gzeVJRV3dPc3FFR1VWMnNSczU5bVBqU1JUMXlRbUdqUVp2Ym5GYVVmSWFHSGotRzhqdnFVcnpReGhoQWQ4QXdrcGMzQ0d3SzMxQkphV1JsS21VYWZZUTM3dDA2Mi1BM0N3QUpWVnJ5UUZFcWNfaTlMd09oaQ?oc=5",
+      "titulo": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997",
+      "resumen": "GTA: 10 increibles cifras del videojuego de gánsteres que ha arrasado desde 1997 Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNb01ZRXBsd1BvMWVhc1ZUcGtUUTM2UVBXVExtVUlDNk9NQ0RJclhYWTh2ZW9CaXptaldmbDJnSV9ib2FDRFRuMVZGUThFb2h0LUJubHNyVGdQRnRjWENvZUhtYXlQSlFtS0dyQk9peWxqNXh2VFJ0VDY3YUlaNnNpcGZBT1ZnT0pYUFM4?oc=5",
       "imagen": null,
-      "fuente": "Granma",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794525107000
-    },
-    {
-      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
-      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV2UxRC1GQ0JNRVpjQjd5ZE1aRVZ5N2pWbjlWOU81Wi1iSUIwOEQtVUpUQjlHajV1T1FEYmIxUHdDWWw1Ui0wbkZHV0R2R2JzQkNGUjFPWnhNOGFqZ1R3dEFiZ3VsVUxzTUFLTGhDNDV3bE1qMExFV21lRWpZOVotOEhNY1NaYzB6QWxXYldBVW56TWo2cUhHeXlDNk9lUzNwdkhISw?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794474205000
-    },
-    {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
-      "imagen": null,
-      "fuente": "LoL Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1791183600000
-    },
-    {
-      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
-      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
-      "imagen": null,
-      "fuente": "UCAM Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1783494000000
+      "fecha": 1794536640000
     }
   ]
 }
