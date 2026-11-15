@@ -1,7 +1,27 @@
 {
-  "generado": 1794707691588,
+  "generado": 1794734679655,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Crear la secuela perfecta no es fácil, pero Sid Meier tiene un truco infalible: la regla del 33",
+      "resumen": "Crear una secuela no es fácil a nivel de originalidad, pero menos aún a la hora de mantener una estabilidad entre lo que ya tenías y lo que…",
+      "link": "https://www.vidaextra.com/pc/crear-secuela-perfecta-no-facil-sid-meier-tiene-truco-infalible-regla-33-1",
+      "imagen": "https://i.blogs.es/677368/1366_2000/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794734125000
+    },
+    {
+      "titulo": "«GTA es la serie de videojuegos más importante del mundo». El líder de Take-Two desató el debate entre los jugadores",
+      "resumen": "«GTA es la serie de videojuegos más importante del mundo». El líder de Take-Two desató el debate entre los jugadores iXBT.games",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObEY2OTNZNWE0MUZDamN1TGVtMGdERERGRlh3MVh3QmlreE5ZcHM1NzhaM01FX2hCUXlwaXB5Q21BcHlUMkRGci1KWEpiRG1hcFZSRXVKRDlNTGpMWHU1aUV5YXZIU0VCWm5SQkFaZGkzbEpxT2w2OG9lTjQ5Zmpnazd0UzR1Q1E1X1p2elBYMzY1eXJiQWc0OFNsaV9xbWpzSFEzTDJhbzlZZFRucEtBTGFvMHJ6X3FpSjZVVUsyNFVXcWpCZU5wS0Rock3SAdIBQVVfeXFMTkdOMW8xdjN5SmNuTjFsVm9ZMWRkajVqVjhCazA3SmZFRUVHQ1R0bHZtMmNyeTVXRnhGRnFvMlNHLXpkTnVibXJWNjJZZ0dIUlpvdkZnQzJrRXM5SGtDR29jTWl2TGpHa3ZVakd2WWhDYlpkLWJOeVNZTWFzM0JFYkM3OFVSbkZRTHFDQy1sTm03WVdSUXBGd0VsQWxPSmd0czRaYnNlaENKNWpnSjZ1Zk1OYjRqNWJfVWVFMTJwR3haeGtPTHctMkY5R1ViTEt2XzdR?oc=5",
+      "imagen": null,
+      "fuente": "iXBT.games",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794723360000
+    },
     {
       "titulo": "La final con más narrativas de los Worlds terminó siendo decidida por una partida de ajedrez",
       "resumen": "En una final donde se daban cita los considerados como mejores midlaners sin un título mundial, donde los que tienen puestas las gafas de ve…",
@@ -13,24 +33,14 @@
       "fecha": 1794706765000
     },
     {
-      "titulo": "¿GTA VI puede frenar al mundo? El fenómeno detrás del lanzamiento",
-      "resumen": "¿GTA VI puede frenar al mundo? El fenómeno detrás del lanzamiento Clarin.com",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSDBRSDhabzZlanNPa0M4dGJfMHhCMGRJbDNBX01odEotOUJvS3pZbExnZkJGbnBMR0ZoMTlzQ2Z3dHVfY2JjWHZEUXI5cVMwOEVyNWJ2X0hSRS1OeTVxNUFCeHJiS3d2eFAwTUdJNzZaUnI3Vl9BNVdpOUl5QWVUcUJzeXJ3ZkQ1elBJVU9TN3dCLVEyeE1zTGIzNHcyczZCU2FZ0gGoAUFVX3lxTE5vZkxXY1JoWGh2RHlkS28walBTdjBkbHRQNi12WGY1RjZnY0xxRE52bU9HWjRoVTRjNzNWVFNndnNKVEZ6U1BHVGNYalZvejF4aGwxdFpEYk1TVWFCUk5QRDFpRm1zbkFHZy1TekxfR2phaGZvYk4xVmR3Q2E5c0RVVDZBNjcxamV0UlZ1eHVteHJRZkhIYkpsaEcxZzV0a1RNbVBoY1M5eA?oc=5",
-      "imagen": null,
-      "fuente": "Clarin.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794693662000
-    },
-    {
       "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
-      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPU0h0VllEOVBvMFFLS1lMZUhhcTRmUC1lQXhzY2lYSXVfX0dHNUgxVWdBbUx6dHhJQmQwZ1Y5bEdXU3B4UE90UVU0ZU96ZnZJc1F5N04ySFFkczV0YjFKVUZsUTY5cVI4anZqWElsRGJFbVZWYXJhNVREQ05tai04VHNtaVVUT1JJU1ZnT1VPaDdJdDk3R0MtcGwwbHBOWmZlajUxMQ?oc=5",
+      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras RFI",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPT0FIMlFCaGl5dXZYeVRlUlY2cFRDZnFuVW45bnIyQm0wT0t5Y0ZmYnEzZG1mRzh6QzFReUVxTDhNa0Q4dENKREZIM3NrWFhoaW9BN3BfT2dMNk1saG5qQVdfekQ5LXRQSGl1dzZuNXZmT0pMQW8xRS1TWENQblZyZ2NyUjB6SEIwLS0wTndYUEwzSUtmM3BEcEx2MW9qSkU?oc=5",
       "imagen": null,
-      "fuente": "France 24",
+      "fuente": "RFI",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794671966000
+      "fecha": 1794671988000
     },
     {
       "titulo": "Phalanx es un juego de naves, pero en su portada sale un entrañable abuelo con un banjo. ¿Por qué?",
@@ -63,6 +73,16 @@
       "fecha": 1794613370000
     },
     {
+      "titulo": "Noche gratuita de videojuegos retro en Alamo Drafthouse DTLA",
+      "resumen": "Noche gratuita de videojuegos retro en Alamo Drafthouse DTLA Secret Los Angeles",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeEJ5amVWMXJEQ0pQT1UyeFc0RVlJUjZ0Y0pTSWdzRzRvWnBIUmNBVUdJWDJaUzEtVkotS0Jwek40eHRqY2dZUmVnc2M5Sm9vYmxFVmotQnVBVjc0NHdsZDA3WjVTSlRES3pQcUlIZF9qSVNMMlZUUmRqMjNSMFVZeExWc2dJWk5PYVRuM3JtOGlBeEU5UWVIRg?oc=5",
+      "imagen": null,
+      "fuente": "Secret Los Angeles",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794603217000
+    },
+    {
       "titulo": "Un fan de Zelda: Ocarina of Time encuentra un mapa casero dibujado por su padre hace 28 años, y le ayuda a completar ahora el remake",
       "resumen": "Por mucho que en el remake de The Legend of Zelda: Ocarina of Time se hayan incorporado novedades que van más allá de su renovado apartado v…",
       "link": "https://www.vidaextra.com/aventura-plataformas/fan-zelda-ocarina-of-time-encuentra-mapa-casero-dibujado-su-padre-hace-28-anos-le-ayuda-a-completar-ahora-remake",
@@ -71,16 +91,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794600081000
-    },
-    {
-      "titulo": "2kCuba26: el videojuego de béisbol cubano llega a su tercera versión",
-      "resumen": "2kCuba26: el videojuego de béisbol cubano llega a su tercera versión Cubadebate",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPTkFSUTlKbnBJSVFTV1VyRV9IWXdqOVE0VEx5VEtIbXpsR09QbHctVGVYRV9jTHdRd3dXVVpRQlVERmpNQ1NkeDVYOGtwUElGNl9UbkZ3Q2wwdlNIalY5X1dJOHlSaDAzM1EzekJoazl6V2hQdkZmTWx5UXdFM1AzWjVwbVoydmRPankyWEEyOG1FOWlHRDVLWm01UU5kcEtkMGdiUTVVN3o1MFpxVk8tS190TdIBuAFBVV95cUxQR2pyV21PTU5jZGtjVzd4Wm9yNkZscEp3ekhfczF2cnh5U1p5YWVPYmVyNUp0SkpKWTZwVC1zVWVVSHlGWFZPN1JOTVpLUUV3YnNTbUw0WmM1VVd3Y3EwWlBrNk14T0t5c2doMzdyVWhEOThwRDVEdVplSm5tOHFCc0IxVHBvMXpEM2pSakdIbExCY0xFMmp4SG1xUkw2WkVTVE42bUtYYUdXdjF6ai1YZS0xX2tBV2x3?oc=5",
-      "imagen": null,
-      "fuente": "Cubadebate",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794599643000
     },
     {
       "titulo": "Ten cuidado y comprueba si ya tienes una copia de Hell Let Loose antes de jugarlo en PlayStation Plus Extra o podrías perderlo",
@@ -113,24 +123,14 @@
       "fecha": 1794589287000
     },
     {
-      "titulo": "Steam ofrece 4 juegos gratis por tiempo limitado: tienes hasta el 16 de noviembre para probarlos",
-      "resumen": "Steam ofrece 4 juegos gratis por tiempo limitado: tienes hasta el 16 de noviembre para probarlos Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQWnd4N295YXYyeHZGSVlLMlI4QW5JRFJ2b0pPUmpreTNHLWpvZFVISXJQa1J2WUZkWW93XzFBYWVwOFRodVJVaTZLd0xEdWlQdEpNQ3RneDYwN0NMOFBONGFHTzB1ZHJvM0huWUFxeFlVVV84NHdNMjUtV1dGZEk4ZUNrcDQzWGI4eTFQX3BrRFVCRTJWcFNDMFRsWUVSQVVocWthbkdCMlFSR29xX1dhRXBlekZweDRUSHRIQ1ZNZElXY21CekVJ?oc=5",
+      "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
+      "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "ESPN Deportes",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794584701000
-    },
-    {
-      "titulo": "Escape From Tarkov dará el salto histórico que muchos jugadores han esperado durante años: llegará a consolas y se anunciará pronto",
-      "resumen": "Los rumores sobre la llegada de Escape From Tarkov a consolas se han acumulado durante años y ha sido un secreto a voces durante los últimos…",
-      "link": "https://www.vidaextra.com/fps/escape-from-tarkov-dara-salto-historico-que-muchos-jugadores-han-esperado-durante-anos-llegara-a-consolas-se-anunciara-pronto",
-      "imagen": "https://i.blogs.es/117b88/tarkov/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794582442000
+      "fecha": 1794537900000
     },
     {
       "titulo": "LALIGA EA SPORTS 2026/27",
@@ -143,24 +143,24 @@
       "fecha": 1794478447000
     },
     {
-      "titulo": "Disney+ prepara una gran sorpresa para los jugadores y confirma un evento que podría revelar importantes videojuegos",
-      "resumen": "Disney+ prepara una gran sorpresa para los jugadores y confirma un evento que podría revelar importantes videojuegos Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQOEFPZFZybmdUM3FXWFJ5cDVxQVEzUjBfTW1EWFhIV0VBbkV3YlpSZ3NPU3R2YnhnMW5BVjFHbEc0R18tTmRhdUkxWU1fa2hmaGtCZUtxZGo5eDhpSnpOYUVhQkNONHoxblNvbTFyWGwzLVNnOUZrdUVCMnMyZ21xdklaM3RjdUgySXRVM2l1VDhxclcyanBwSGEyZzBSa1lMTjdBeldMYnRyMHJwajQ3RnNqUTJzRjl0TXh5S0VEUmZDbm03akZyQkdETVptdjhnQ1pzR3RfaEFUUWVQNGJJMnhR?oc=5",
+      "titulo": "Logitech dará a 7,000 empleados un día libre para jugar videojuegos",
+      "resumen": "Logitech dará a 7,000 empleados un día libre para jugar videojuegos https://fomoera.com/",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8waUZBVDhSeW02bzZNNVFEQ3lvYnpSd0dlbnhrOTNRWjJPeUhIcG1vQk9Lc0hYbTZjU3B5WHhWTDhGbUpsQjVIZE14d2o0MF9IR3VwY3p3Z09Qc0h0cnhRbGpvb3lCWWlYdXM0RGJn?oc=5",
       "imagen": null,
-      "fuente": "Kotaku en Español",
+      "fuente": "https://fomoera.com/",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794470400000
+      "fecha": 1794453180000
     },
     {
-      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
-      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
+      "titulo": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI",
+      "resumen": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaGdSYmlPMUtabElnSzI2VnJKQTQ4aFFMTzhlb3pBZ3E2NTFsRnAwbWRUN2pvRzhrU2pwQk9PZmkzUDc1eFlVYzhWaHN5cGRsOFV0NkZZX3ltYU9uT1RhMUZXS01UcmNiV09pN0hkUVQ3NHdFMk5GR2dBcjNSN21mWHJxWGRpVVMya3Bjb2tiai1nVEtnOGZHWWVJUUo1R1otMGp4UElFOA?oc=5",
       "imagen": null,
-      "fuente": "Xataka",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1793865600000
+      "fecha": 1794433832000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
