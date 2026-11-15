@@ -1,7 +1,57 @@
 {
-  "generado": 1794734679655,
+  "generado": 1794762584291,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Cuando Dragon Ball publicó un juego de tiros a lo Time Crisis en el que lanzabas bolas de energía y Kamehames con las manos",
+      "resumen": "Mucho antes de que Kinect nos permitiese lanzar un Kamehame con las manos y de que la revolución gestual de Wii se convirtiese en el caramel…",
+      "link": "https://www.vidaextra.com/juegos-retro/cuando-dragon-ball-publico-juego-tiros-a-time-crisis-que-lanzabas-bolas-energia-kamehames-manos",
+      "imagen": "https://i.blogs.es/12035d/kai/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794755720000
+    },
+    {
+      "titulo": "Steam tarda más de dos semanas en aprobar juegos y los desarrolladores apuntan a la inteligencia artificial",
+      "resumen": "Steam tarda más de dos semanas en aprobar juegos y los desarrolladores apuntan a la inteligencia artificial Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMnQ4RUZjSHlxaWVDeGpOQzF6TE5raElQb21rajI2Q3c1dUp6TVF0eFY1TlF0ejY4QzJwUVVsd09RYlMyeFAwWU5xa2hOaGlkMl96aGhkUC1Nd19jUlRrN21KYkJET0NwcmFRZVZIMzg0NDJaVHFrSnZrekFPbDdEV29OYS1Cc1VNWWVWY2hPVGNma0FpZ01FR2d5SXdPX0ZqVHFLQkY5VlNHNHl5WnQ0MmtySFNHYXNUdGtJdF9IWE1RbTdVcU43ek8tQ3hIVGRtZW9wdnZNUQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794754241000
+    },
+    {
+      "titulo": "La comunidad critica la subida de dificultad de Football Manager 27, pero la realidad es otra. Se ha \"Europauniversalizado\"",
+      "resumen": "Football Manager 27 debería de ser el clásico asentamiento de una franquicia después de un salto técnico necesario, pero divisivo. La entreg…",
+      "link": "https://www.vidaextra.com/deportes/comunidad-critica-subida-dificultad-football-manager-27-realidad-otra-se-ha-europauniversalizado",
+      "imagen": "https://i.blogs.es/81dd2b/fm27/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794752242000
+    },
+    {
+      "titulo": "Un esperado juego de Nintendo Switch 2 estrena edición especial, pero tiene una diferencia que no gustará a los coleccionistas",
+      "resumen": "Un esperado juego de Nintendo Switch 2 estrena edición especial, pero tiene una diferencia que no gustará a los coleccionistas Kotaku en Esp…",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQQXRhUUJtUEgxcUpnT3BSbTdRQnUxN2xIb2UtX1RtXzRoZEVDNU5jbjd0b2NJTk42VTdmQkpIRnZQaWExNVI0SGdLVWJjbTRZX0FXRUFnczQ0amhOWmFJS1psTHFUWmdWYm5HQmVaSUtwY2toS3M2ZHU1c1E3YjNFZ1hYbzlVUWxONEVJU3ZTYnI4Z1hFbzBzNW45RTZaQVNVWjZJa0pqeEZUTWpqMWZnMFZmeFd3MGIwSWVyNHAtbmdWNFRkbk12U1FZYUpUV04wS2x3WDJ4R2RwRms4a0ctcTlxamJkZXhMWkRMMW9vYw?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794739048000
+    },
+    {
+      "titulo": "25 años de Xbox: la consola con alma de PC que transformó la industria de los videojuegos",
+      "resumen": "25 años de Xbox: la consola con alma de PC que transformó la industria de los videojuegos La Nación",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNRHhGOWNlNXZXRGpCb18xR1J2SzlPNFVKdXRGOFVJZzBTNTFJQzZKclZXUHFxeHVDUW9xSlZkVklSNEVwTktXQkV4MXU2a0ZJQndEZS1WRmo1ZWlDemhtaURvZnRIMjRESTZiSUkwd2szMDBKMHZNbzhqRG9jOHZGNTNTMUxtTlpIR2tWcWhrbUJmdXZJcUJiUmhGTzRxNXlhVTFFYW1BRDNaSW1MTF9ZamF0TjJBRDRJLXlrd3F6UnBLb0ZBamFPTUR1OWxEMFA3Q2lScGNRYw?oc=5",
+      "imagen": null,
+      "fuente": "La Nación",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794736800000
+    },
     {
       "titulo": "Crear la secuela perfecta no es fácil, pero Sid Meier tiene un truco infalible: la regla del 33",
       "resumen": "Crear una secuela no es fácil a nivel de originalidad, pero menos aún a la hora de mantener una estabilidad entre lo que ya tenías y lo que…",
@@ -13,14 +63,14 @@
       "fecha": 1794734125000
     },
     {
-      "titulo": "«GTA es la serie de videojuegos más importante del mundo». El líder de Take-Two desató el debate entre los jugadores",
-      "resumen": "«GTA es la serie de videojuegos más importante del mundo». El líder de Take-Two desató el debate entre los jugadores iXBT.games",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObEY2OTNZNWE0MUZDamN1TGVtMGdERERGRlh3MVh3QmlreE5ZcHM1NzhaM01FX2hCUXlwaXB5Q21BcHlUMkRGci1KWEpiRG1hcFZSRXVKRDlNTGpMWHU1aUV5YXZIU0VCWm5SQkFaZGkzbEpxT2w2OG9lTjQ5Zmpnazd0UzR1Q1E1X1p2elBYMzY1eXJiQWc0OFNsaV9xbWpzSFEzTDJhbzlZZFRucEtBTGFvMHJ6X3FpSjZVVUsyNFVXcWpCZU5wS0Rock3SAdIBQVVfeXFMTkdOMW8xdjN5SmNuTjFsVm9ZMWRkajVqVjhCazA3SmZFRUVHQ1R0bHZtMmNyeTVXRnhGRnFvMlNHLXpkTnVibXJWNjJZZ0dIUlpvdkZnQzJrRXM5SGtDR29jTWl2TGpHa3ZVakd2WWhDYlpkLWJOeVNZTWFzM0JFYkM3OFVSbkZRTHFDQy1sTm03WVdSUXBGd0VsQWxPSmd0czRaYnNlaENKNWpnSjZ1Zk1OYjRqNWJfVWVFMTJwR3haeGtPTHctMkY5R1ViTEt2XzdR?oc=5",
+      "titulo": "Francesca Jassir Noguera se abre paso en los videojuegos",
+      "resumen": "Francesca Jassir Noguera se abre paso en los videojuegos ELHERALDO.CO",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeTFRbUhSRkllVWtMaGdYQS1zUXZUWUNIWTZvOHRhUmZOeC1DalJ3Wmo0a2dZOXFORVBvaEo3b0I1N3dxUV81TlgxTXFMZkJIWXM3NEJxUDdJd181MVJWRUd6Znp5eXBCWURKTWNoZVVJOFJXYW5pV0hOMjRQNnhudGtEZG5wRlRGSmMxTFB4bFZYNXJjcWlpU2I2TXZmcXVHYnJVbA?oc=5",
       "imagen": null,
-      "fuente": "iXBT.games",
+      "fuente": "ELHERALDO.CO",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794723360000
+      "fecha": 1794712033000
     },
     {
       "titulo": "La final con más narrativas de los Worlds terminó siendo decidida por una partida de ajedrez",
@@ -34,13 +84,13 @@
     },
     {
       "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
-      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras RFI",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPT0FIMlFCaGl5dXZYeVRlUlY2cFRDZnFuVW45bnIyQm0wT0t5Y0ZmYnEzZG1mRzh6QzFReUVxTDhNa0Q4dENKREZIM3NrWFhoaW9BN3BfT2dMNk1saG5qQVdfekQ5LXRQSGl1dzZuNXZmT0pMQW8xRS1TWENQblZyZ2NyUjB6SEIwLS0wTndYUEwzSUtmM3BEcEx2MW9qSkU?oc=5",
+      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPU0h0VllEOVBvMFFLS1lMZUhhcTRmUC1lQXhzY2lYSXVfX0dHNUgxVWdBbUx6dHhJQmQwZ1Y5bEdXU3B4UE90UVU0ZU96ZnZJc1F5N04ySFFkczV0YjFKVUZsUTY5cVI4anZqWElsRGJFbVZWYXJhNVREQ05tai04VHNtaVVUT1JJU1ZnT1VPaDdJdDk3R0MtcGwwbHBOWmZlajUxMQ?oc=5",
       "imagen": null,
-      "fuente": "RFI",
+      "fuente": "France 24",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794671988000
+      "fecha": 1794671966000
     },
     {
       "titulo": "Phalanx es un juego de naves, pero en su portada sale un entrañable abuelo con un banjo. ¿Por qué?",
@@ -73,16 +123,6 @@
       "fecha": 1794613370000
     },
     {
-      "titulo": "Noche gratuita de videojuegos retro en Alamo Drafthouse DTLA",
-      "resumen": "Noche gratuita de videojuegos retro en Alamo Drafthouse DTLA Secret Los Angeles",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeEJ5amVWMXJEQ0pQT1UyeFc0RVlJUjZ0Y0pTSWdzRzRvWnBIUmNBVUdJWDJaUzEtVkotS0Jwek40eHRqY2dZUmVnc2M5Sm9vYmxFVmotQnVBVjc0NHdsZDA3WjVTSlRES3pQcUlIZF9qSVNMMlZUUmRqMjNSMFVZeExWc2dJWk5PYVRuM3JtOGlBeEU5UWVIRg?oc=5",
-      "imagen": null,
-      "fuente": "Secret Los Angeles",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794603217000
-    },
-    {
       "titulo": "Un fan de Zelda: Ocarina of Time encuentra un mapa casero dibujado por su padre hace 28 años, y le ayuda a completar ahora el remake",
       "resumen": "Por mucho que en el remake de The Legend of Zelda: Ocarina of Time se hayan incorporado novedades que van más allá de su renovado apartado v…",
       "link": "https://www.vidaextra.com/aventura-plataformas/fan-zelda-ocarina-of-time-encuentra-mapa-casero-dibujado-su-padre-hace-28-anos-le-ayuda-a-completar-ahora-remake",
@@ -103,36 +143,6 @@
       "fecha": 1794598283000
     },
     {
-      "titulo": "El techo de GTA 6 no tiene límites: va a generar en 7 días más dinero que Vengadores: Endgame en toda su historia",
-      "resumen": "Bien es cierto que tendremos que esperar hasta que se produzca alguna llamada con los inversores de Take-Two para conocer las cifras oficial…",
-      "link": "https://www.vidaextra.com/accion/techo-gta-6-no-tiene-limites-va-a-generar-7-dias-dinero-que-vengadores-endgame-toda-su-historia",
-      "imagen": "https://i.blogs.es/61c043/vice_city_18.001ebutl6h-9w/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794591086000
-    },
-    {
-      "titulo": "Marvel ha matado a Wolverine con el mejor depredador de la ciencia ficción: lo ha reducido a un montón de vísceras y adamantium",
-      "resumen": "Wolverine no es inmortal, pero varias décadas de esfuerzos por parte de Marvel han dejado muy claro que es uno de los seres más peligrosos y…",
-      "link": "https://www.vidaextra.com/comics/marvel-ha-matado-a-wolverine-mejor-depredador-ciencia-ficcion-ha-reducido-a-monton-visceras-adamantium",
-      "imagen": "https://i.blogs.es/90df22/lobezno1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794589287000
-    },
-    {
-      "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
-      "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
-      "imagen": null,
-      "fuente": "ESPN Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794537900000
-    },
-    {
       "titulo": "LALIGA EA SPORTS 2026/27",
       "resumen": "LALIGA EA SPORTS 2026/27 LALIGA",
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xdjRKOEV6bjdCYUhJT3lhSDVjZFFMQkV5Mm9aakJUR3BmZ1FpNUY1RDhGdWxVUDVEYzItOWhmWDNNS0FwblBYcVFmdjVBWWc?oc=5",
@@ -143,24 +153,14 @@
       "fecha": 1794478447000
     },
     {
-      "titulo": "Logitech dará a 7,000 empleados un día libre para jugar videojuegos",
-      "resumen": "Logitech dará a 7,000 empleados un día libre para jugar videojuegos https://fomoera.com/",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8waUZBVDhSeW02bzZNNVFEQ3lvYnpSd0dlbnhrOTNRWjJPeUhIcG1vQk9Lc0hYbTZjU3B5WHhWTDhGbUpsQjVIZE14d2o0MF9IR3VwY3p3Z09Qc0h0cnhRbGpvb3lCWWlYdXM0RGJn?oc=5",
+      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
+      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
       "imagen": null,
-      "fuente": "https://fomoera.com/",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794453180000
-    },
-    {
-      "titulo": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI",
-      "resumen": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaGdSYmlPMUtabElnSzI2VnJKQTQ4aFFMTzhlb3pBZ3E2NTFsRnAwbWRUN2pvRzhrU2pwQk9PZmkzUDc1eFlVYzhWaHN5cGRsOFV0NkZZX3ltYU9uT1RhMUZXS01UcmNiV09pN0hkUVQ3NHdFMk5GR2dBcjNSN21mWHJxWGRpVVMya3Bjb2tiai1nVEtnOGZHWWVJUUo1R1otMGp4UElFOA?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794433832000
+      "fecha": 1793865600000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
