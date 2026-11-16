@@ -1,7 +1,27 @@
 {
-  "generado": 1794794784856,
+  "generado": 1794822119535,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Dark Souls escondió un secreto que explica por qué cientos de jugadores han podido matar a patadas a Lautrec durante años",
+      "resumen": "El Caballero Lautrec de Carim debe ser uno de los NPC amigables más asesinados en la historia de Dark Souls. No tengo cifras oficiales, aunq…",
+      "link": "https://www.vidaextra.com/rpg/dark-souls-escondio-secreto-que-explica-que-cientos-jugadores-han-podido-matar-a-patadas-a-lautrec-durante-anos",
+      "imagen": "https://i.blogs.es/2026d1/dark-souls-1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794816080000
+    },
+    {
+      "titulo": "GTA VI podría impulsar a la industria a aumentar la publicidad en los videojuegos: un experto analiza las perspectivas",
+      "resumen": "GTA VI podría impulsar a la industria a aumentar la publicidad en los videojuegos: un experto analiza las perspectivas iXBT.games",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPaGMxUGZ2R09BYy1LTXVsWWZXX0xabXZ3WDFidEZGcEwwSm9GUTh6T2s1NjBBTE9pVzJJZjkxaGhscHFuTVIwc0lWMGVWdnU0VUZaUWFmaU1Rc2ptdXFTZDJVMGtQZzgzZ0NWTUt6MDBfQ0lHWGpVYy1pTUhSSzhvV3Q3VlZCaGg2X1N5MlpYRUdaNHFiaVpPd0V1MnFRRmpzRTRubkFNWWt1NElpUHltZDBCcGViek03NkN5SVJ1bzhSeV9nNWxCdjdwTlIwUFplN0s1R2V4MTdwQlBHdVHSAeMBQVVfeXFMT0g1bU9kc0hUZzlIYWxzZjFnaTd3MmRTdjdsaERKYlo1a0NPdzRadkxTTlU0aHBiSGxCTko2VDd5RV9jWGhUUnR0Z3l1QlA2LVNWQWctVnQyUS1QRXphMDdsOFprR1ZWa04tSUY0cjdudHFyck9FSGV1REthSE5rTU81eFJwUFdPR1N4NVRNa0NISl9oYXVvZW1FRUs3ZVRqdEJ6VVh4UmF3VDNMMi1IZDFRRHVac2QyT2JBdmtheHpBWGV1bEZRd3BiZVkxZzdWMlg2NHVOMWVCd3llVk1vS2pCODg?oc=5",
+      "imagen": null,
+      "fuente": "iXBT.games",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794796800000
+    },
     {
       "titulo": "Llevo 22 años jugando videojuegos con doblaje latino, y creo que esta es la mejor localización para México: pertenece a un shooter tan controvertido como amado",
       "resumen": "Llevo 22 años jugando videojuegos con doblaje latino, y creo que esta es la mejor localización para México: pertenece a un shooter tan contr…",
@@ -21,16 +41,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794755720000
-    },
-    {
-      "titulo": "25 años de Xbox: cómo una consola ayudó a transformar la industria de los videojuegos",
-      "resumen": "25 años de Xbox: cómo una consola ayudó a transformar la industria de los videojuegos Sopitas.com",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBqUllqSWQzcElEQWMxTl9admVHcU1BQS03LV9ra0QzSGtSYkVWT0oyRTkyN3VxYXMtU0NIMVphSGtnekQ4NlNPdll1ajgtSjhEb0NlX00wVWRXeW5VelIzWkJ4VTMxTVgzdkNUdnFPdmp4dw?oc=5",
-      "imagen": null,
-      "fuente": "Sopitas.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794754800000
     },
     {
       "titulo": "Steam tarda más de dos semanas en aprobar juegos y los desarrolladores apuntan a la inteligencia artificial",
@@ -111,16 +121,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794600081000
-    },
-    {
-      "titulo": "Ten cuidado y comprueba si ya tienes una copia de Hell Let Loose antes de jugarlo en PlayStation Plus Extra o podrías perderlo",
-      "resumen": "Esta misma semana se ha revelado cuáles serán los próximos juegos que se unirán al catálogo de PlayStation Plus Extra y Premium. Entre ellos…",
-      "link": "https://www.vidaextra.com/fps/ten-cuidado-comprueba-tienes-copia-hell-let-loose-antes-jugarlo-playstation-plus-extra-podrias-perderlo",
-      "imagen": "https://i.blogs.es/7a3128/hell-let-loose/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794598283000
     },
     {
       "titulo": "Creadores latinoamericanos impulsan el futuro del gaming",
