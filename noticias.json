@@ -1,7 +1,137 @@
 {
-  "generado": 1794822119535,
+  "generado": 1794860913267,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "El enemigo más letal de Zelda: Ocarina of Time continúa siéndolo después de 28 años, y no es el único dato destacable",
+      "resumen": "Ya han pasado casi dos semanas desde el lanzamiento del remake The Legend of Zelda: Ocarina of Time en Nintendo Switch 2, lo que significa q…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/enemigo-letal-zelda-ocarina-of-time-continua-siendolo-despues-28-anos-no-unico-dato-destacable",
+      "imagen": "https://i.blogs.es/4b4464/thelegendofzeldaocarinaoftime_11/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794857549000
+    },
+    {
+      "titulo": "Shigeru Miyamoto, sobre el creador de la Game Boy: \"Tenía un don para tomar una idea nacida de la lógica y exagerarla con naturalidad\"",
+      "resumen": "Shigeru Miyamoto es una de las figuras capitales en la historia de los videojuegos, ya que su trabajo en la Gran N ha logrado inspirar a mil…",
+      "link": "https://www.vidaextra.com/industria/shigeru-miyamoto-creador-game-boy-tenia-don-para-tomar-idea-nacida-logica-exagerarla-naturalidad",
+      "imagen": "https://i.blogs.es/b94433/nintendo_game_boy-_game_boy_pocket-_game_boy_light_and_game_boy_color_tietokonemuseo/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794852081000
+    },
+    {
+      "titulo": "RADAR LT: Estudio revela que practicar arte, música y videojuegos se asocia a un cerebro más joven",
+      "resumen": "RADAR LT: Estudio revela que practicar arte, música y videojuegos se asocia a un cerebro más joven La Tercera",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMXBWeEF1ajVnaFg1WnJmZWs3YmxNWDJQMUo4dnBZY2dtNVBtVmk2UmpHQklCbGxOdlV2YkVsVGV4RTVHS0ppOGZxWndYWTZ4cE91WnBva1RpYTNvcnhTR3hubkZUNG9YNDlEMEp0akRWV3lRUm1VUUtUUGhQcVQwZS14SUJsSHJ1WkFmenN1S3BiV0R4YTg2YV9GdHI3SU9IcU9wY0luck9OMnNFeGlON3NuRFhvTGFnb0FUX2I3Vld6WlFGZ3dnMi1id01TY1ZLMG5EOdIB9gFBVV95cUxNbW1wMU12TzhBUVRqcHBURE9naVM5d0JULVNQZE0xd3F0emZGZHVLQWV2UHZ0QWRPRFJSeHpzb2wyeVBodVAtRWRPMGVkYldlSzQ0ZmwxWjB4MjVaSmFGMjJNY05JNjh4S1pobEt4ZlhWZVpWZjVDNERGOHFPS2pZSk1RbndwWXJrUm5hcFdGTmN4X0ZheEFWbm9OUVR6dkxVTG9UVUdTZll3aE5yRU9SdVBhdUlEcldBVGxoYnRfZldsM2hTcXQxUWhMalJEbXVDT2JzOWNuOXF0T1ZyZ2FxOXp0ZDVKRE50ckZXTTZ1R0JmSk9GaWc?oc=5",
+      "imagen": null,
+      "fuente": "La Tercera",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794847552000
+    },
+    {
+      "titulo": "Grammy 2027: Marvel’s Wolverine y 007 First Light sorprenden entre los nominados a mejor banda sonora de videojuegos",
+      "resumen": "Grammy 2027: Marvel’s Wolverine y 007 First Light sorprenden entre los nominados a mejor banda sonora de videojuegos Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNSDNoZnRnd19BZXVBTFRBazJ2V216QWZkMHZaSlc2VDUtR3ZOZThvM0ZEdjRDLTNEeTBSS3pMOWhsdHVBQWpBek80ZVpjVHhBX3V5eU9uYzJpVjktYWxTQWp4Nzd4d2RsYU1OUDdBLV8wSVBYTkRTUFg4MUl3bnd0OVR0cjhSY1pJTVZLTmpwYnRJNDNveDB0dmJDYVdPWVo0WW5IUzBRM2JWSFlKMktrV2V0QWN6b1JvVWY2UDd1OXcyTGU0eGt0cTRwTjhycDhQWVJ0RWRSeE44Z3U0T0I0SQ?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794846868000
+    },
+    {
+      "titulo": "Amazon adelanta el Black Friday 2026 con descuentos de hasta el 40% en videojuegos para PS5, Xbox y Nintendo Switch",
+      "resumen": "Amazon adelanta el Black Friday 2026 con descuentos de hasta el 40% en videojuegos para PS5, Xbox y Nintendo Switch Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNam5TVlotazFwZlViU2cyQUs3cVk2SGRnc3ZfOE5tVl9mRVQtVFpRdDlCZVBxcUVMZTVsbTNjTTRmRUREN2trMWRIdXFEWFYzeVdTYTVEQWZCVEdvMDJ0LVNiZDZnMzVxSjlILUdFNGtFeTAyUGI2M2JZQ1ZmcEFucWJxMDVHSE1VQmxDSnVZRzhPY213eXFqUDd2LUt2OVcxSFZfQTAzdGEyajJtVWltQ3N6ZUhfMXlrNTNFMld3RmNRQ1pscl9vc195aWlZa1NvSi1HZ2x3OGRYRDBaN0pF?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794846686000
+    },
+    {
+      "titulo": "España pone fin a su récord histórico y abre el debate: \"Un rival\"",
+      "resumen": "España pone fin a su récord histórico y abre el debate: \"Un rival\" COPE",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNc3dpOW9MaDE0M051RVJ6TDVmOXp4bmp3VElYcURab3JzRDRDbmpqWTVpUll5U3F4WjU3bDBHX1RWbUdkM0lLV1pUUy1sQXdtand3VTVKbFlhaFVmRFJKSkJSSkNycDJxSWFUaUVIQmJpWlgtQl83T1dPcllsY2FoRkxlanVwWVdCbUktZmFHeDQ4LTVmU2VKTzBnUHc3LV9VQy11Q285cHdZM1c3SkhrS1ZpTExOakFkZGNKNVR2OUVWbGV3MDZja1I3OUpYQVoxZGl4Q3NYajc0bzhkSE1oWUFPMkstbzhibnpqMWhGSWvSAfYBQVVfeXFMTkxyVWJMVUQxV2V1NnVEYm9fNmRzU0h5NGhDRERqVlJhbFNWdHJDU0pYdHJfb0liaGJmY19iMWt4Zm4yd2swRkdNZ1duSE1xcjJMMU9iODFNd0lqamZNMGVxcHNvVUxCVWJ4eTBoTGZlSGlBZWRBVmQya0JMNHBaYXA5UWs3ODM3X094VmhWazZoM0U0RTdpY2p3NlRueHplaHdBX1JkZVp2OWVwNi1zdHdpbkNLdUhvaUdiZ1ZDTUFnYmJHY1g2dE1VejlpQ09HdExBUDlVVjZVc1dmRk9JMUdPRll3bVdKNFRUTnNnYVVxdzdlYmhn?oc=5",
+      "imagen": null,
+      "fuente": "COPE",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794844365000
+    },
+    {
+      "titulo": "Ya puedes hacerte con El legado de PlayStation, el nuevo libro de 3DJuegos que repasa los 150 mejores juegos de la mítica consola de Sony",
+      "resumen": "La primera PlayStation es una de las consolas más importantes que han llegado a existir y con la que muchos aficionados a los videojuegos co…",
+      "link": "https://www.vidaextra.com/literatura/puedes-hacerte-legado-playstation-nuevo-libro-3djuegos-que-repasa-150-mejores-juegos-mitica-consola-sony",
+      "imagen": "https://i.blogs.es/1fb2c3/libro-playstation/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794843205000
+    },
+    {
+      "titulo": "Un legendario vaquero de los videojuegos regresa después de décadas y recuperará aventuras que muchos creían olvidadas",
+      "resumen": "Un legendario vaquero de los videojuegos regresa después de décadas y recuperará aventuras que muchos creían olvidadas Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxObmtfOEo4SkFnMzhZWWhGdDZUMkZkLTJqeFZoN0ZyNXp2WUJCU2hJQ1VFcnlhV0U2YWdXZEU3a2M0ZktMVndjcDhRbXFuSUY1REl4ajNlNVQtU2lqWWtsb3NGTzgtTzJRcU1La0dYSFZ0VmMtMmk0RjFobm4xRTRnbHNUOVNRc1RXOV9RMk9EODY0T19aU0F2S3NIZmgweDN2aThXMnhYaUdyRmtQbHRuakJvSmxYU0FpNHlaRy1iVV9vTFFXSDBGUHV5WlYyUy1UVzdHZnpiajVVNmNnRnJXTmY1RFh2dw?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794841863000
+    },
+    {
+      "titulo": "Videojuego GTA: de la radio a las plataformas de streaming, su increíble poder musical",
+      "resumen": "Videojuego GTA: de la radio a las plataformas de streaming, su increíble poder musical RFI",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZndTY1NnbDFSQ3B0cVBLd1RIVXlKMU9nVzdlLWNRcGU4ZkN1OVRLeVRrTFhJSUZFTmR1b01MTTB3T01BRVZGeTBpbG9DZ2RWM1RfYS04dV9reDhDUFp2RFFJZzU4RFlRYVRYRFFNdWZIWVdlMjd4bHFsODVXR2VwbmIwdkU3aHc4a2xOOHZxTmxwdHZTcWJ1UmFUUkFPMnpwelk4ZTY3X2pRV3NsZ0RNNzNERS1XTzJJVDNVa3hhV1RuWTc4dTVN?oc=5",
+      "imagen": null,
+      "fuente": "RFI",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794839323000
+    },
+    {
+      "titulo": "Inspiró una parodia inolvidable de Los Simpsons hace 31 años y al fin se puede jugar en consolas modernas",
+      "resumen": "Seguro que muchos de nosotros hemos visto varias veces Marge, no seas orgullosa, el episodio de la séptima temporada de Los Simpson en el qu…",
+      "link": "https://www.vidaextra.com/deportes/inspiro-parodia-inolvidable-simpsons-hace-31-anos-al-fin-se-puede-jugar-consolas-modernas",
+      "imagen": "https://i.blogs.es/ed9cfb/captura-de-pantalla-2026-11-13-192242-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794834376000
+    },
+    {
+      "titulo": "Al fin sabemos por qué GTA 6 ha tardado 13 añazos en salir a la luz: \"Podrían haber hecho un GTA 5.5 y más rápido\"",
+      "resumen": "Llegó el momento que tanto tiempo hemos estado esperando. GTA 6 sale esta misma semana y cerrará 13 años de espera para una entrega que se h…",
+      "link": "https://www.vidaextra.com/accion/al-fin-sabemos-que-gta-6-ha-tardado-13-anazos-salir-a-luz-podrian-haber-hecho-gta-5-5-rapido",
+      "imagen": "https://i.blogs.es/993c53/vice_city_17.0er79m2u3nygs/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794833073000
+    },
+    {
+      "titulo": "World of Warcraft: Forever no se aclara y por enésima vez cambia la experiencia que se consigue en las mazmorras",
+      "resumen": "Ya han pasado unos cuantos días desde que World of Warcraft: Forever comenzó su andadura y decenas de miles de jugadores decidieron emprende…",
+      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-no-se-aclara-enesima-vez-cambia-experiencia-que-se-consigue-mazmorras",
+      "imagen": "https://i.blogs.es/cd934b/wow-forever-mazmorras/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794830543000
+    },
+    {
+      "titulo": "Este código de Pokémon GO te entrega gratis 10 artículos que de lo contrario te costarían bastantes Pokémonedas",
+      "resumen": "Este último fin de semana ha resultado de lo más entretenido para los entrenadores de Pokémon GO con motivo de la celebración del evento Áre…",
+      "link": "https://www.vidaextra.com/rpg/este-codigo-pokemon-go-te-entrega-gratis-10-articulos-que-contrario-te-costarian-bastantes-pokemonedas",
+      "imagen": "https://i.blogs.es/9efc0f/pokemon-go-eternatus/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794826635000
+    },
     {
       "titulo": "Dark Souls escondió un secreto que explica por qué cientos de jugadores han podido matar a patadas a Lautrec durante años",
       "resumen": "El Caballero Lautrec de Carim debe ser uno de los NPC amigables más asesinados en la historia de Dark Souls. No tengo cifras oficiales, aunq…",
@@ -11,96 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794816080000
-    },
-    {
-      "titulo": "GTA VI podría impulsar a la industria a aumentar la publicidad en los videojuegos: un experto analiza las perspectivas",
-      "resumen": "GTA VI podría impulsar a la industria a aumentar la publicidad en los videojuegos: un experto analiza las perspectivas iXBT.games",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPaGMxUGZ2R09BYy1LTXVsWWZXX0xabXZ3WDFidEZGcEwwSm9GUTh6T2s1NjBBTE9pVzJJZjkxaGhscHFuTVIwc0lWMGVWdnU0VUZaUWFmaU1Rc2ptdXFTZDJVMGtQZzgzZ0NWTUt6MDBfQ0lHWGpVYy1pTUhSSzhvV3Q3VlZCaGg2X1N5MlpYRUdaNHFiaVpPd0V1MnFRRmpzRTRubkFNWWt1NElpUHltZDBCcGViek03NkN5SVJ1bzhSeV9nNWxCdjdwTlIwUFplN0s1R2V4MTdwQlBHdVHSAeMBQVVfeXFMT0g1bU9kc0hUZzlIYWxzZjFnaTd3MmRTdjdsaERKYlo1a0NPdzRadkxTTlU0aHBiSGxCTko2VDd5RV9jWGhUUnR0Z3l1QlA2LVNWQWctVnQyUS1QRXphMDdsOFprR1ZWa04tSUY0cjdudHFyck9FSGV1REthSE5rTU81eFJwUFdPR1N4NVRNa0NISl9oYXVvZW1FRUs3ZVRqdEJ6VVh4UmF3VDNMMi1IZDFRRHVac2QyT2JBdmtheHpBWGV1bEZRd3BiZVkxZzdWMlg2NHVOMWVCd3llVk1vS2pCODg?oc=5",
-      "imagen": null,
-      "fuente": "iXBT.games",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794796800000
-    },
-    {
-      "titulo": "Llevo 22 años jugando videojuegos con doblaje latino, y creo que esta es la mejor localización para México: pertenece a un shooter tan controvertido como amado",
-      "resumen": "Llevo 22 años jugando videojuegos con doblaje latino, y creo que esta es la mejor localización para México: pertenece a un shooter tan contr…",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOanBWMUtISEM1RFZrYnVrbEIxUlluWHBNQnl2VXBrOXVJM2RnSkQwNlpKWWY2bWdvQUtvVmZBQ1FTTnZ4enpVdGZjZko4RHZGUHRoeTJjdEZfZU1CVzFGUThjUm1PdFpZMXJfdEIzV1ljTVpJNXRFTG1LLXZSVWhNYkVhdVNNdjhpT0g1S3BreXE4d1Jjc1BNWnFJOElYMkZjWkNfZmNoczd1c1V2eHRsbWhlRWh2dWZmcEFFaGNuYlNEalNHTmM3ZjFrOWNCMmotekRtRFBIemlIbVRXaC1Pc0dhcmY3eWRaUTR6dXcwbDhDQzZmanpwQlVRYTVCa2d6SGtZUVlrQdIBjAJBVV95cUxPYi01LU9TYTZLazJPLVZuQ1NFVmhDcThfWS1DVVdWVEp6S3lBV3EtOExnLTlpZWJPUmllbjVDM082Y3FvMWhBeUZLNVNROUpGOThWclpGNE5ScjE4ay12RlJid2t3NC1lS0tELVN5c003dUNZWUFiXzROTHdBVENBeHBJNGVjTlpialZxRTNwRk4wRW8yXzIxeEdzYzNJZDB5cEV3X2hsSVpwYk1Ua2NJRkJfRzBUbno1UWlwdmluUDdHdDdEYmo1RWZXREZhQTNacFlfTFJqWUVSUVZnVjJyVzRKY09lN2VIcE1XMEdQYm5nNllVUUg4VGdYaF85cmdqWFU5ajNIcGg5NjBW?oc=5",
-      "imagen": null,
-      "fuente": "3DJuegos México",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794780080000
-    },
-    {
-      "titulo": "Cuando Dragon Ball publicó un juego de tiros a lo Time Crisis en el que lanzabas bolas de energía y Kamehames con las manos",
-      "resumen": "Mucho antes de que Kinect nos permitiese lanzar un Kamehame con las manos y de que la revolución gestual de Wii se convirtiese en el caramel…",
-      "link": "https://www.vidaextra.com/juegos-retro/cuando-dragon-ball-publico-juego-tiros-a-time-crisis-que-lanzabas-bolas-energia-kamehames-manos",
-      "imagen": "https://i.blogs.es/12035d/kai/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794755720000
-    },
-    {
-      "titulo": "Steam tarda más de dos semanas en aprobar juegos y los desarrolladores apuntan a la inteligencia artificial",
-      "resumen": "Steam tarda más de dos semanas en aprobar juegos y los desarrolladores apuntan a la inteligencia artificial Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMnQ4RUZjSHlxaWVDeGpOQzF6TE5raElQb21rajI2Q3c1dUp6TVF0eFY1TlF0ejY4QzJwUVVsd09RYlMyeFAwWU5xa2hOaGlkMl96aGhkUC1Nd19jUlRrN21KYkJET0NwcmFRZVZIMzg0NDJaVHFrSnZrekFPbDdEV29OYS1Cc1VNWWVWY2hPVGNma0FpZ01FR2d5SXdPX0ZqVHFLQkY5VlNHNHl5WnQ0MmtySFNHYXNUdGtJdF9IWE1RbTdVcU43ek8tQ3hIVGRtZW9wdnZNUQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794754241000
-    },
-    {
-      "titulo": "La comunidad critica la subida de dificultad de Football Manager 27, pero la realidad es otra. Se ha \"Europauniversalizado\"",
-      "resumen": "Football Manager 27 debería de ser el clásico asentamiento de una franquicia después de un salto técnico necesario, pero divisivo. La entreg…",
-      "link": "https://www.vidaextra.com/deportes/comunidad-critica-subida-dificultad-football-manager-27-realidad-otra-se-ha-europauniversalizado",
-      "imagen": "https://i.blogs.es/81dd2b/fm27/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794752242000
-    },
-    {
-      "titulo": "Crear la secuela perfecta no es fácil, pero Sid Meier tiene un truco infalible: la regla del 33",
-      "resumen": "Crear una secuela no es fácil a nivel de originalidad, pero menos aún a la hora de mantener una estabilidad entre lo que ya tenías y lo que…",
-      "link": "https://www.vidaextra.com/pc/crear-secuela-perfecta-no-facil-sid-meier-tiene-truco-infalible-regla-33-1",
-      "imagen": "https://i.blogs.es/677368/1366_2000/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794734125000
-    },
-    {
-      "titulo": "La final con más narrativas de los Worlds terminó siendo decidida por una partida de ajedrez",
-      "resumen": "En una final donde se daban cita los considerados como mejores midlaners sin un título mundial, donde los que tienen puestas las gafas de ve…",
-      "link": "https://www.vidaextra.com/juegos-online/final-narrativas-worlds-termino-siendo-decidida-partida-ajedrez",
-      "imagen": "https://i.blogs.es/c051eb/55653333833_707bbff229_k/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794706765000
-    },
-    {
-      "titulo": "Phalanx es un juego de naves, pero en su portada sale un entrañable abuelo con un banjo. ¿Por qué?",
-      "resumen": "Hubo una época en el que el presupuesto de marketing de videojuegos no se iba en publicidad en prensa o grandes eventos. El foco, casi siemp…",
-      "link": "https://www.vidaextra.com/accion/phalanx-juego-naves-su-portada-sale-entranable-abuelo-banjo-que",
-      "imagen": "https://i.blogs.es/07854f/banjo/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794669321000
-    },
-    {
-      "titulo": "La historia real de Epona, la diosa a la que rendimos culto en España antes de convertirse en el caballo de The Legend of Zelda",
-      "resumen": "Puede que Epona se haya convertido en uno de los nombres más reconocibles de la industria del videojuego gracias al caballo -yegua, en reali…",
-      "link": "https://www.vidaextra.com/nintendo-switch-2/historia-real-epona-diosa-a-que-rendimos-culto-espana-antes-convertirse-caballo-the-legend-of-zelda-1",
-      "imagen": "https://i.blogs.es/586302/epona/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794647723000
     },
     {
       "titulo": "Los esports de LoL en 2027 y más allá",
@@ -113,54 +153,14 @@
       "fecha": 1794613370000
     },
     {
-      "titulo": "Un fan de Zelda: Ocarina of Time encuentra un mapa casero dibujado por su padre hace 28 años, y le ayuda a completar ahora el remake",
-      "resumen": "Por mucho que en el remake de The Legend of Zelda: Ocarina of Time se hayan incorporado novedades que van más allá de su renovado apartado v…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/fan-zelda-ocarina-of-time-encuentra-mapa-casero-dibujado-su-padre-hace-28-anos-le-ayuda-a-completar-ahora-remake",
-      "imagen": "https://i.blogs.es/97ac6a/zelda-oot-remake-arbol-deku/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794600081000
-    },
-    {
-      "titulo": "Creadores latinoamericanos impulsan el futuro del gaming",
-      "resumen": "Creadores latinoamericanos impulsan el futuro del gaming Microsoft Source",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTFJtVEpsMG1GR1doZkVvRDVaQUMyNjBhYThaT1o2TlFGZ2dETno5d2ZoN1hpSFNoRHZDT1o4OWdwQXI4M2kyU1ZKZFNHMDRVclZaQ2ZiVnk0Nk9RSms5MXozV01tZURNcnJBekdMQzJPU0M1ZEtuQ2JTU3hJMnE5UklpUTZINWFiVlFfbmVSU0hXVVc4NHBFR2szVms2c2xXczN3RmhR?oc=5",
+      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
+      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
       "imagen": null,
-      "fuente": "Microsoft Source",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794586072000
-    },
-    {
-      "titulo": "LALIGA EA SPORTS 2026/27",
-      "resumen": "LALIGA EA SPORTS 2026/27 LALIGA",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xdjRKOEV6bjdCYUhJT3lhSDVjZFFMQkV5Mm9aakJUR3BmZ1FpNUY1RDhGdWxVUDVEYzItOWhmWDNNS0FwblBYcVFmdjVBWWc?oc=5",
-      "imagen": null,
-      "fuente": "LALIGA",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794563751000
-    },
-    {
-      "titulo": "The Game Awards 2026 llegarán por primera vez a Disney+",
-      "resumen": "The Game Awards 2026 llegarán por primera vez a Disney+ ESPN Deportes",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYXFEUllXZjl3S0pWOEtYcy1reXpmN05XdVMyU2xCcWVRQmVFbzlLUHN6dnMyUHV4VXV1M1JjdGdLbEFsZG1ubXo5SFN4Zm5iZXdzbFJsN0dGYk5kbkNXdjdSdW9iRjI3ZEVhR09HUnJTbmdDLUlqclp6Yk1ReWJhYTFVd3lRbG0wX3pYbVhRSHByZDNYemxzdDN6akZkaUhGdWw0UHJIQ2RUQVFLTm80?oc=5",
-      "imagen": null,
-      "fuente": "ESPN Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794537900000
-    },
-    {
-      "titulo": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI",
-      "resumen": "“Jugar videojuegos no es una pérdida de tiempo”: compañía dará el día libre a sus trabajadores para que jueguen GTAVI Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaGdSYmlPMUtabElnSzI2VnJKQTQ4aFFMTzhlb3pBZ3E2NTFsRnAwbWRUN2pvRzhrU2pwQk9PZmkzUDc1eFlVYzhWaHN5cGRsOFV0NkZZX3ltYU9uT1RhMUZXS01UcmNiV09pN0hkUVQ3NHdFMk5GR2dBcjNSN21mWHJxWGRpVVMya3Bjb2tiai1nVEtnOGZHWWVJUUo1R1otMGp4UElFOA?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794433832000
+      "fecha": 1793865600000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
