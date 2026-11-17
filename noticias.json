@@ -1,7 +1,67 @@
 {
-  "generado": 1794887574716,
+  "generado": 1794921894741,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Con este simple truco evitarás que otros te roben los cofres de World of Warcraft: Forever",
+      "resumen": "Una de las situaciones más terribles a las que se puede enfrentar cualquier jugador de World of Warcraft: Forever es la de ver un cofre que…",
+      "link": "https://www.vidaextra.com/juegos-online/este-simple-truco-evitaras-que-otros-te-roben-cofres-world-of-warcraft-forever",
+      "imagen": "https://i.blogs.es/7afad8/wow-paladin-undead/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794920487000
+    },
+    {
+      "titulo": "Gabe Newell sorprende al tratar a la tripulación de su superyate como seres humanos: \"Come con ellos todos los días. Nunca antes lo habíamos visto\"",
+      "resumen": "La vida de Gabe Newell es la que todos deseamos: a bordo de su superyate Leviathan de 500 millones de dólares, yendo a donde le da la gana y…",
+      "link": "https://www.vidaextra.com/industria/gabe-newell-sorprende-al-tratar-a-tripulacion-su-superyate-como-seres-humanos-come-ellos-todos-dias-nunca-antes-habiamos-visto",
+      "imagen": "https://i.blogs.es/4ecd15/1200_900/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794916326000
+    },
+    {
+      "titulo": "Estos ajustes de EA FC 27 pueden ayudarte a jugar mejor",
+      "resumen": "Estos ajustes de EA FC 27 pueden ayudarte a jugar mejor Red Bull",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9LeDdVR0s3NUhPWHFHMnJYWnQ1ZExTeG9yYkk2VG5uZjd4SVFCZnVqNGg0Um1UZUNybTR6bHpqX3VIQjI1N3FYRUo2WWVsZ1o3djZXVXNzQjJ1UjA1LVVmem9vRVU?oc=5",
+      "imagen": null,
+      "fuente": "Red Bull",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794913411000
+    },
+    {
+      "titulo": "El pack de Zelda que no vimos venir se adelanta al Black Friday: chollo en el remake de Ocarina of Time más consola retro",
+      "resumen": "A pesar de que todo el mundo tenía puesto el punto de mira en noviembre por el lanzamiento de GTA 6, dicho mes también será recordado por el…",
+      "link": "https://www.vidaextra.com/seleccion/pack-zelda-que-no-vimos-venir-se-adelanta-al-black-friday-chollo-remake-ocarina-of-time-consola-retro",
+      "imagen": "https://i.blogs.es/756284/pack-de-zelda/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794907206000
+    },
+    {
+      "titulo": "Uno de los videojuegos más difíciles de la historia regresa 16 años después y sus creadores esconden una sorpresa",
+      "resumen": "Uno de los videojuegos más difíciles de la historia regresa 16 años después y sus creadores esconden una sorpresa Kotaku",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQV3JNcVpSVVpRekFEaU5HM1ZEVHNMVmgxZ1p2STRMY1ZOV2tyUmVOR0V1eGo4V1hwak53aWIyTk84LTU2LTdxSlA0cGlkTnlHYjF6TGE3ejE4RWZkMktvNVBnaHlCQk1SS0NYUW1zaFZ1eGRqV2hEQ1pHZDVneXVBX0pORVFuUjh3WmhFcWM3bWtXVXpJT1lBSWFKNUt6X2VZMlBCSUNNR0xVcE9mRVlrbGtPSHpyLTVvMnFPdFdjdWdIWVVrUlhZdG1FeEJNTU5ocTJyQm1BR21XS2tJZGl3?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794903081000
+    },
+    {
+      "titulo": "Mass Effect escondió historias desgarradoras fuera de las misiones principales y Aeian T'Goni protagonizó una de las peores",
+      "resumen": "Ahora que la saga Mass Effect ha sido enterrada en los cajones del olvido de Electronic Arts tras el cierre de BioWare, creo que es el momen…",
+      "link": "https://www.vidaextra.com/rpg/mass-effect-escondio-historias-desgarradoras-fuera-misiones-principales-aeian-t-goni-protagonizo-peores",
+      "imagen": "https://i.blogs.es/e330b4/mass-effect/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794902485000
+    },
     {
       "titulo": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan",
       "resumen": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan Rutl…",
@@ -43,16 +103,6 @@
       "fecha": 1794852081000
     },
     {
-      "titulo": "Amazon adelanta el Black Friday 2026 con descuentos de hasta el 40% en videojuegos para PS5, Xbox y Nintendo Switch",
-      "resumen": "Amazon adelanta el Black Friday 2026 con descuentos de hasta el 40% en videojuegos para PS5, Xbox y Nintendo Switch Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNam5TVlotazFwZlViU2cyQUs3cVk2SGRnc3ZfOE5tVl9mRVQtVFpRdDlCZVBxcUVMZTVsbTNjTTRmRUREN2trMWRIdXFEWFYzeVdTYTVEQWZCVEdvMDJ0LVNiZDZnMzVxSjlILUdFNGtFeTAyUGI2M2JZQ1ZmcEFucWJxMDVHSE1VQmxDSnVZRzhPY213eXFqUDd2LUt2OVcxSFZfQTAzdGEyajJtVWltQ3N6ZUhfMXlrNTNFMld3RmNRQ1pscl9vc195aWlZa1NvSi1HZ2x3OGRYRDBaN0pF?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794846686000
-    },
-    {
       "titulo": "España pone fin a su récord histórico y abre el debate: \"Un rival\"",
       "resumen": "España pone fin a su récord histórico y abre el debate: \"Un rival\" COPE",
       "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNc3dpOW9MaDE0M051RVJ6TDVmOXp4bmp3VElYcURab3JzRDRDbmpqWTVpUll5U3F4WjU3bDBHX1RWbUdkM0lLV1pUUy1sQXdtand3VTVKbFlhaFVmRFJKSkJSSkNycDJxSWFUaUVIQmJpWlgtQl83T1dPcllsY2FoRkxlanVwWVdCbUktZmFHeDQ4LTVmU2VKTzBnUHc3LV9VQy11Q285cHdZM1c3SkhrS1ZpTExOakFkZGNKNVR2OUVWbGV3MDZja1I3OUpYQVoxZGl4Q3NYajc0bzhkSE1oWUFPMkstbzhibnpqMWhGSWvSAfYBQVVfeXFMTkxyVWJMVUQxV2V1NnVEYm9fNmRzU0h5NGhDRERqVlJhbFNWdHJDU0pYdHJfb0liaGJmY19iMWt4Zm4yd2swRkdNZ1duSE1xcjJMMU9iODFNd0lqamZNMGVxcHNvVUxCVWJ4eTBoTGZlSGlBZWRBVmQya0JMNHBaYXA5UWs3ODM3X094VmhWazZoM0U0RTdpY2p3NlRueHplaHdBX1JkZVp2OWVwNi1zdHdpbkNLdUhvaUdiZ1ZDTUFnYmJHY1g2dE1VejlpQ09HdExBUDlVVjZVc1dmRk9JMUdPRll3bVdKNFRUTnNnYVVxdzdlYmhn?oc=5",
@@ -73,16 +123,6 @@
       "fecha": 1794843205000
     },
     {
-      "titulo": "Un legendario vaquero de los videojuegos regresa después de décadas y recuperará aventuras que muchos creían olvidadas",
-      "resumen": "Un legendario vaquero de los videojuegos regresa después de décadas y recuperará aventuras que muchos creían olvidadas Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxObmtfOEo4SkFnMzhZWWhGdDZUMkZkLTJqeFZoN0ZyNXp2WUJCU2hJQ1VFcnlhV0U2YWdXZEU3a2M0ZktMVndjcDhRbXFuSUY1REl4ajNlNVQtU2lqWWtsb3NGTzgtTzJRcU1La0dYSFZ0VmMtMmk0RjFobm4xRTRnbHNUOVNRc1RXOV9RMk9EODY0T19aU0F2S3NIZmgweDN2aThXMnhYaUdyRmtQbHRuakJvSmxYU0FpNHlaRy1iVV9vTFFXSDBGUHV5WlYyUy1UVzdHZnpiajVVNmNnRnJXTmY1RFh2dw?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794841863000
-    },
-    {
       "titulo": "Videojuego GTA: de la radio a las plataformas de streaming, su increíble poder musical",
       "resumen": "Videojuego GTA: de la radio a las plataformas de streaming, su increíble poder musical RFI",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZndTY1NnbDFSQ3B0cVBLd1RIVXlKMU9nVzdlLWNRcGU4ZkN1OVRLeVRrTFhJSUZFTmR1b01MTTB3T01BRVZGeTBpbG9DZ2RWM1RfYS04dV9reDhDUFp2RFFJZzU4RFlRYVRYRFFNdWZIWVdlMjd4bHFsODVXR2VwbmIwdkU3aHc4a2xOOHZxTmxwdHZTcWJ1UmFUUkFPMnpwelk4ZTY3X2pRV3NsZ0RNNzNERS1XTzJJVDNVa3hhV1RuWTc4dTVN?oc=5",
@@ -91,46 +131,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794839323000
-    },
-    {
-      "titulo": "Inspiró una parodia inolvidable de Los Simpsons hace 31 años y al fin se puede jugar en consolas modernas",
-      "resumen": "Seguro que muchos de nosotros hemos visto varias veces Marge, no seas orgullosa, el episodio de la séptima temporada de Los Simpson en el qu…",
-      "link": "https://www.vidaextra.com/deportes/inspiro-parodia-inolvidable-simpsons-hace-31-anos-al-fin-se-puede-jugar-consolas-modernas",
-      "imagen": "https://i.blogs.es/ed9cfb/captura-de-pantalla-2026-11-13-192242-1-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794834376000
-    },
-    {
-      "titulo": "Al fin sabemos por qué GTA 6 ha tardado 13 añazos en salir a la luz: \"Podrían haber hecho un GTA 5.5 y más rápido\"",
-      "resumen": "Llegó el momento que tanto tiempo hemos estado esperando. GTA 6 sale esta misma semana y cerrará 13 años de espera para una entrega que se h…",
-      "link": "https://www.vidaextra.com/accion/al-fin-sabemos-que-gta-6-ha-tardado-13-anazos-salir-a-luz-podrian-haber-hecho-gta-5-5-rapido",
-      "imagen": "https://i.blogs.es/993c53/vice_city_17.0er79m2u3nygs/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794833073000
-    },
-    {
-      "titulo": "World of Warcraft: Forever no se aclara y por enésima vez cambia la experiencia que se consigue en las mazmorras",
-      "resumen": "Ya han pasado unos cuantos días desde que World of Warcraft: Forever comenzó su andadura y decenas de miles de jugadores decidieron emprende…",
-      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-no-se-aclara-enesima-vez-cambia-experiencia-que-se-consigue-mazmorras",
-      "imagen": "https://i.blogs.es/cd934b/wow-forever-mazmorras/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794830543000
-    },
-    {
-      "titulo": "Este código de Pokémon GO te entrega gratis 10 artículos que de lo contrario te costarían bastantes Pokémonedas",
-      "resumen": "Este último fin de semana ha resultado de lo más entretenido para los entrenadores de Pokémon GO con motivo de la celebración del evento Áre…",
-      "link": "https://www.vidaextra.com/rpg/este-codigo-pokemon-go-te-entrega-gratis-10-articulos-que-contrario-te-costarian-bastantes-pokemonedas",
-      "imagen": "https://i.blogs.es/9efc0f/pokemon-go-eternatus/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794826635000
     },
     {
       "titulo": "Nintendo va contra los ports de PC de sus videojuegos: la compañía japonesa logró eliminar 4 grandes proyectos de Mario y Zelda",
