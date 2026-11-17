@@ -1,7 +1,27 @@
 {
-  "generado": 1794860913267,
+  "generado": 1794887574716,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan",
+      "resumen": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan Rutl…",
+      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPbElaVGRTcjJsN3NTTUFwenBSbzFLTkp0dlEweWFHcF9fN1hPVm1HLVJzMjFjcXFUcllxaGQ0VnBUd1RqNk1lZjZRcWxlRzdVdllVdHVnRXlxOW9wdEZqSTlrZDNHN2dRRk55bE1ERGRjOUM0OHdFRDRnVDh3MlZQQXRvdkcxZmZkc2dNNkJuUkZwMXpiZk1Ka1hRVFZaQ3BXVUpBNHJMNnF6X3JWcjFqX1V3WUY5NUpqdnhMRjl6Y2dUTzJ0ajdIdUdHd3dNMDVuXzl1QWdLTzF5U18zb2NKN0k4TzhaV1hxMHZkdHR3R01jQjN3aGFFcFQwSGozX3laNlhWcmNtWkRPTGRWTDdZN0pfUmJuV0FRVDFOX3M3a3o?oc=5",
+      "imagen": null,
+      "fuente": "Rutland Herald",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794877449000
+    },
+    {
+      "titulo": "League of Legends 2 es real, o al menos la actualización que cambiará el juego de Riot para siempre",
+      "resumen": "Era una secreto a voces; de hecho no era algo celosísimamente guardado por Riot Games. Varias declaraciones de los principales desarrollador…",
+      "link": "https://www.vidaextra.com/juegos-online/league-of-legends-2-real-al-actualizacion-que-cambiara-juego-riot-para-siempre",
+      "imagen": "https://i.blogs.es/15755d/lol2/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794863725000
+    },
     {
       "titulo": "El enemigo más letal de Zelda: Ocarina of Time continúa siéndolo después de 28 años, y no es el único dato destacable",
       "resumen": "Ya han pasado casi dos semanas desde el lanzamiento del remake The Legend of Zelda: Ocarina of Time en Nintendo Switch 2, lo que significa q…",
@@ -21,26 +41,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794852081000
-    },
-    {
-      "titulo": "RADAR LT: Estudio revela que practicar arte, música y videojuegos se asocia a un cerebro más joven",
-      "resumen": "RADAR LT: Estudio revela que practicar arte, música y videojuegos se asocia a un cerebro más joven La Tercera",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMXBWeEF1ajVnaFg1WnJmZWs3YmxNWDJQMUo4dnBZY2dtNVBtVmk2UmpHQklCbGxOdlV2YkVsVGV4RTVHS0ppOGZxWndYWTZ4cE91WnBva1RpYTNvcnhTR3hubkZUNG9YNDlEMEp0akRWV3lRUm1VUUtUUGhQcVQwZS14SUJsSHJ1WkFmenN1S3BiV0R4YTg2YV9GdHI3SU9IcU9wY0luck9OMnNFeGlON3NuRFhvTGFnb0FUX2I3Vld6WlFGZ3dnMi1id01TY1ZLMG5EOdIB9gFBVV95cUxNbW1wMU12TzhBUVRqcHBURE9naVM5d0JULVNQZE0xd3F0emZGZHVLQWV2UHZ0QWRPRFJSeHpzb2wyeVBodVAtRWRPMGVkYldlSzQ0ZmwxWjB4MjVaSmFGMjJNY05JNjh4S1pobEt4ZlhWZVpWZjVDNERGOHFPS2pZSk1RbndwWXJrUm5hcFdGTmN4X0ZheEFWbm9OUVR6dkxVTG9UVUdTZll3aE5yRU9SdVBhdUlEcldBVGxoYnRfZldsM2hTcXQxUWhMalJEbXVDT2JzOWNuOXF0T1ZyZ2FxOXp0ZDVKRE50ckZXTTZ1R0JmSk9GaWc?oc=5",
-      "imagen": null,
-      "fuente": "La Tercera",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794847552000
-    },
-    {
-      "titulo": "Grammy 2027: Marvel’s Wolverine y 007 First Light sorprenden entre los nominados a mejor banda sonora de videojuegos",
-      "resumen": "Grammy 2027: Marvel’s Wolverine y 007 First Light sorprenden entre los nominados a mejor banda sonora de videojuegos Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNSDNoZnRnd19BZXVBTFRBazJ2V216QWZkMHZaSlc2VDUtR3ZOZThvM0ZEdjRDLTNEeTBSS3pMOWhsdHVBQWpBek80ZVpjVHhBX3V5eU9uYzJpVjktYWxTQWp4Nzd4d2RsYU1OUDdBLV8wSVBYTkRTUFg4MUl3bnd0OVR0cjhSY1pJTVZLTmpwYnRJNDNveDB0dmJDYVdPWVo0WW5IUzBRM2JWSFlKMktrV2V0QWN6b1JvVWY2UDd1OXcyTGU0eGt0cTRwTjhycDhQWVJ0RWRSeE44Z3U0T0I0SQ?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794846868000
     },
     {
       "titulo": "Amazon adelanta el Black Friday 2026 con descuentos de hasta el 40% en videojuegos para PS5, Xbox y Nintendo Switch",
@@ -133,14 +133,14 @@
       "fecha": 1794826635000
     },
     {
-      "titulo": "Dark Souls escondió un secreto que explica por qué cientos de jugadores han podido matar a patadas a Lautrec durante años",
-      "resumen": "El Caballero Lautrec de Carim debe ser uno de los NPC amigables más asesinados en la historia de Dark Souls. No tengo cifras oficiales, aunq…",
-      "link": "https://www.vidaextra.com/rpg/dark-souls-escondio-secreto-que-explica-que-cientos-jugadores-han-podido-matar-a-patadas-a-lautrec-durante-anos",
-      "imagen": "https://i.blogs.es/2026d1/dark-souls-1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "Nintendo va contra los ports de PC de sus videojuegos: la compañía japonesa logró eliminar 4 grandes proyectos de Mario y Zelda",
+      "resumen": "Nintendo va contra los ports de PC de sus videojuegos: la compañía japonesa logró eliminar 4 grandes proyectos de Mario y Zelda Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNLVYtWXRiS04zUEJxWXJlV2p0akhjR3hSSlNqOE55VE9TRm5fVm9zR0gxbTVJVjhaZHliX2Q3X0VEUE1JTGNER2dQZU5JWlItYWRWVjZEcWdGajd5a1owOEpLcnBNT0QxdHlucW5ZNmNwaUZRdkJJdnVZakdmWWQ5ZzVxanJlWm10eU9IZGRWcXl6ZDhBX3haZHJibXU?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794816080000
+      "fecha": 1794790800000
     },
     {
       "titulo": "Los esports de LoL en 2027 y más allá",
