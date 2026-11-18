@@ -1,7 +1,17 @@
 {
-  "generado": 1794954192610,
+  "generado": 1794975592431,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Especial Salón del Videojuego 2026 (2/2)",
+      "resumen": "Especial Salón del Videojuego 2026 (2/2) iVoox",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVkRrSXZwdEZxX2tieUlwZG4zU2NqV3kyUVktelR4TWVmVGNHZFhtZG5IcWxCQjFBaEp5TDlxYks3cUdPeGEyelZzWU5IRzc2OTNfejNZLXFiZE5GN25CNzMtQzlEMktELXZDbmRmbDlkTlU0Uko3SUNod2ZxbEhLc2FRRmkwa0tZNjlrUDVXS3ZiSGVad2c?oc=5",
+      "imagen": null,
+      "fuente": "iVoox",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794965303000
+    },
     {
       "titulo": "Mi primera visita a Vice City ha sido como para no volver en la vida, pero no todo está perdido si Rockstar tomó nota",
       "resumen": "No me voy a desmarcar de la corriente y fingir un esnobismo que no siento: yo también me subo por las paredes queriendo jugar a GTA 6. La nu…",
@@ -11,6 +21,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794949281000
+    },
+    {
+      "titulo": "Llega unos de los videojuegos más esperados de la última década: por qué Argentina es el cuarto país donde costará más caro",
+      "resumen": "Llega unos de los videojuegos más esperados de la última década: por qué Argentina es el cuarto país donde costará más caro Infobae",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNcDM5dktJek1LWTF3QnY2dnYtSnJTYWRIS3hoaVpsN19CaWtrSUdCSVY2ZjlWTzNwelp1Z1pQN2hwWVlUYmtvN29Pd0tiMVVSZkk0eHFHQ2xHLU52LURHWnhPVzUzTmNoUFcxUWRWUUxWM1NlVlJTVUFnTDZtU1NvUVlWTFVCb0p4dDF6ZWx0YWo2WG5mSV9KR2Y2YWFIcHVFT2xpbWNzVzlib0tRZDR5LVA2TGFiMnU3Rl9UMjdDODRwcURsV0VhcHdVaW5qZzd4MHhZX3hBejNVaXJpZGNVb2ctR3lNLVl1MGJudDJsOWJQQmhRd1dTZTYyZ9IBlgJBVV95cUxQY1NSeW43Ny1zN1MtS0RlUTVTU1UySjhBc2Z6c3hoTVVTcjVwZG5ZdzVmT2pOelR5MUJWczZNNmhuTnRtU1JqVXdDMk5OVGNieXlwZUVEa3MwSDVhTTEwbDlsRFFsQU1IczRuZGVzMk1VaGpzZi1uQzlkNk1OOVIyRWx1cjRBbC10ZlJOaE9LU1ZpTEltdXhYN19CWWVsTHp5d0M4OGtsd1ZrTGZUclc3QVpUb2lmZzJIQjFPLWhIZXM1czhOWFVxOFN1Z0N6X2xKbFlKNXl5NG0xRGFIalZRZHdDNExUYndXR255eFZKMWJDVWEzaG5qOUdFWXhlRlktdmVIZ2loRW0wT0NxeGxobjFjX2tYUQ?oc=5",
+      "imagen": null,
+      "fuente": "Infobae",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1794946860000
     },
     {
       "titulo": "Llega ‘GTA VI’, el videojuego más ambicioso de la historia",
@@ -51,16 +71,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794936600000
-    },
-    {
-      "titulo": "Llega GTA VI, el videojuego que cambiará el negocio de las consolas: cuándo sale en Argentina y cómo descargarlo antes del lanzamiento",
-      "resumen": "Llega GTA VI, el videojuego que cambiará el negocio de las consolas: cuándo sale en Argentina y cómo descargarlo antes del lanzamiento Clari…",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQMEZfaHlxQWpQWmRHbkRhUU9TRlVjem5xVnk5eTNJNUgyV2FlVS1Kcjhqa1B5cXZ6T25YMHVidjV2TDlJOVIwOXJWM0JiSzM2VUc4QzlpWm5zeWl2aUFfeEhZQ3luekVmaGVlVFdiUG1BMTJWWC1FOVpLeWs3U0RxVUJCd3ZEaGJldElUcHJRc0N5T1RuZFdjUE1fdks1YjJ5VUw1cVF4TG1mTlJvY0loWElZaUQtSVBWMHp5M1dCUHcwanY1R3BvbHd1VWZOeDFRdUU2bktrWdIB3AFBVV95cUxOSGtqSG5ndmE1WFNmV2xfVXdrbFNxLWNaTnNjZ2lXeWUxUjFsMVVNYmFqdEZrMzdBU3h4cV9sVy1TcWYwZTJJdTdXbldwdlVSV3NZazk2N1R0Xzl5ODFRd3VTNzVodl92R1ZBRnhWMlhXcWZ0VV9jOHVqS3BKeGl1ai11RDl5UkIxWldrUGROUVBtUWlFbU43LVRybTFRejBUa1pWc0JEci1iMUI5WlJvUDY3MjhlaVZMQ0NqVHl3YzJkdDJReXJ6aGlzNUtHMm0wZ25fZTNZdHJvMWVs?oc=5",
-      "imagen": null,
-      "fuente": "Clarin.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794931982000
     },
     {
       "titulo": "Skyrim ha cumplido 15 años y, para celebrar el aniversario, una de las mejores expansiones no oficiales se hará aún más grande",
@@ -114,10 +124,10 @@
     },
     {
       "titulo": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan",
-      "resumen": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan Rutl…",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPbElaVGRTcjJsN3NTTUFwenBSbzFLTkp0dlEweWFHcF9fN1hPVm1HLVJzMjFjcXFUcllxaGQ0VnBUd1RqNk1lZjZRcWxlRzdVdllVdHVnRXlxOW9wdEZqSTlrZDNHN2dRRk55bE1ERGRjOUM0OHdFRDRnVDh3MlZQQXRvdkcxZmZkc2dNNkJuUkZwMXpiZk1Ka1hRVFZaQ3BXVUpBNHJMNnF6X3JWcjFqX1V3WUY5NUpqdnhMRjl6Y2dUTzJ0ajdIdUdHd3dNMDVuXzl1QWdLTzF5U18zb2NKN0k4TzhaV1hxMHZkdHR3R01jQjN3aGFFcFQwSGozX3laNlhWcmNtWkRPTGRWTDdZN0pfUmJuV0FRVDFOX3M3a3o?oc=5",
+      "resumen": "Xsolla presenta nuevos datos sobre las compras navideñas en videojuegos: los jugadores compran, regalan y eligen marcas mientras juegan Eagl…",
+      "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNRGxacUYyOEdmSHB6TDBOTnpzNm50aDliczZoT0pZdmxab1FXX04wT3o1WEtycW9ydXBESVRhWFVWVTlqbnFpUlkxZVZNN25QZ3VjUTBkN3d1Rk5MTkY0NkYwZ3dCanU1ODhpLVNyeW43bGNiMEl1RDhwSHZycktQbHpwTlhwekpxR2REQkxwY3BhamdXQkNXeWl3WVVuMmhJV0hDcWdEOVFVRjFBTjJ0eG5TWWxNWExXWkxGblAxSENpRzl2UktGQS1HT01hNmRwZUZjdTJMcnRBVHBYMHl6YkRPa0UtS2tRLUdIdjM4T1ZuRVZpZDBCX3pxZWZ6cm93aEM3a2xsVDVKZ01YRF93Q3MyR0o1QQ?oc=5",
       "imagen": null,
-      "fuente": "Rutland Herald",
+      "fuente": "Eagle-Tribune",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794877449000
@@ -151,16 +161,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794613370000
-    },
-    {
-      "titulo": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude",
-      "resumen": "Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude Xataka",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1793865600000
     },
     {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
