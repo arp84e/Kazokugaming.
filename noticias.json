@@ -1,16 +1,106 @@
 {
-  "generado": 1795010247190,
+  "generado": 1795038969038,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "¿Por qué hay tanta locura con “GTA 6”? El poder del esperado videojuego desde la mirada de un gamer",
-      "resumen": "¿Por qué hay tanta locura con “GTA 6”? El poder del esperado videojuego desde la mirada de un gamer CNN en Español",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRjFwalBOV21XSjlyb1lNMkhnOFBLTGdIc2dVX0QzbF9xVEJvc2hiQmcwdGNha0x1aVoyOVBRLXRZaXExakYzRlAzOVZzdUs5WGlsaGJwdEN6S1RfNGxnckZubHBObTNWbi1WWjUyMmNFdDNOelJJUFVmakFlN0hDSWlWdXZvZm5uWmc?oc=5",
-      "imagen": null,
-      "fuente": "CNN en Español",
+      "titulo": "Qué pasa cuando llegas al límite del mapa en GTA 6",
+      "resumen": "El mundo abierto de GTA 6 es gigantesco, colosal, repleto de contenido y con unas fronteras que parecen imposibles de alcanzar. Sin embargo,…",
+      "link": "https://www.vidaextra.com/accion/que-pasa-cuando-llegas-al-limite-mapa-gta-6",
+      "imagen": "https://i.blogs.es/e61924/leonida_keys_01.0zgz7tveur6y8/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795009560000
+      "fecha": 1795034302000
+    },
+    {
+      "titulo": "La eShop se apunta al Black Friday con miles de rebajas: aquí tienes nueve juegos en oferta para Nintendo Switch y Nintendo Switch 2",
+      "resumen": "El Black Friday arrancará oficialmente la semana que viene, pero algunas compañías no han querido esperar hasta entonces. Entre ellas está N…",
+      "link": "https://www.vidaextra.com/nintendo-switch-2/eshop-se-apunta-al-black-friday-miles-rebajas-aqui-tienes-nueve-juegos-oferta-para-nintendo-switch-nintendo-switch-2",
+      "imagen": "https://i.blogs.es/90d1aa/baten-kaitos/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795031843000
+    },
+    {
+      "titulo": "Grand Theft Auto VI alcanza 1.650 millones de dólares en ingresos antes de su lanzamiento",
+      "resumen": "Grand Theft Auto VI alcanza 1.650 millones de dólares en ingresos antes de su lanzamiento Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSGgtcXJEZW5yNFZ2NEc0TEQ4eFV1SWk4eU5lVC11eV9mYkxmRG85SjMtUDJyNmdzY0ZmOTRmXzZkM2w5MkFnemU3VGZ0Wmo3cEN2eUs2eWtCVUpwbGNmNHc3ODE0NWViOF9GRGNzVGZiMlBKT0tfaXVYeDdGLXI2dA?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795026660000
+    },
+    {
+      "titulo": "World of Warcraft: Forever castiga severamente a los jugadores que se han aprovechado de un error para obtener miles de monedas de oro",
+      "resumen": "Se han cumplido dos semanas desde el lanzamiento de World of Warcraft: Forever. Aunque el juego incluye muchas novedades, la experiencia que…",
+      "link": "https://www.vidaextra.com/juegos-online/world-of-warcraft-forever-castiga-severamente-a-jugadores-que-se-han-aprovechado-error-para-obtener-miles-monedas-oro",
+      "imagen": "https://i.blogs.es/76352b/wow-forever-enanos/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795023074000
+    },
+    {
+      "titulo": "Hay tantísima cola para entrar en Steam que Valve no puede atender todas las peticiones de lanzamiento",
+      "resumen": "Es un hecho que cada año llegan más videojuegos a Steam, por lo que las solicitudes que recibe Valve para abrir las puertas a nuevos proyect…",
+      "link": "https://www.vidaextra.com/pc/hay-tantisima-cola-para-entrar-steam-que-valve-no-puede-atender-todas-peticiones-lanzamiento",
+      "imagen": "https://i.blogs.es/149216/australia-did-it-end-of-the-world-railway-defense-business-pc-screenshot-art-1/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795021211000
+    },
+    {
+      "titulo": "Las antecesoras de Lucía Caminos, la primera protagonista latina de ‘Grand Theft Auto’",
+      "resumen": "Las antecesoras de Lucía Caminos, la primera protagonista latina de ‘Grand Theft Auto’ The Conversation",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTjAxamJ6QkVLbnJUeFlTLUc5R0pvMno0aF9FVkVtdTZ1NmpqOHpHTmF0dllKVVJOSU1fQkZTMFhBQVdrNVVIRE5fT1dSUlducTlaMlpJclZRenQ5WUpYTlRYSWpfcXF4d3pka2plenlsVzNjUEt6azk1RW9SZkd0MmUzbHZ4c183ZHVoaXJnYkdScGNINE92bjFBMWxrMWtvYko5UjdFMXlqV3ZhLUw2T29YRzQzLXRlTXc?oc=5",
+      "imagen": null,
+      "fuente": "The Conversation",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795020563000
+    },
+    {
+      "titulo": "GTA 6 solo ha necesitado unos minutos para pulverizar todos los récords de espectadores de Twitch",
+      "resumen": "Hoy está siendo un día histórico en el mundo de los videojuegos debido al inminente lanzamiento de GTA 6. Con los análisis ya disponibles, q…",
+      "link": "https://www.vidaextra.com/streaming/gta-6-solo-ha-necesitado-unos-minutos-para-pulverizar-todos-records-espectadores-twitch",
+      "imagen": "https://i.blogs.es/f5a6d6/gta-6-robo/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795018680000
+    },
+    {
+      "titulo": "La fiebre de GTA 6 amenaza con dejar oficinas vacías en EEUU",
+      "resumen": "La fiebre de GTA 6 amenaza con dejar oficinas vacías en EEUU Telemundo Dallas",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOOVlkWTlrX2owelFqWEx2NTZmRFE0Sm56WjVJU2d0cFBlWWRlT2V1c25KNUp3aTlhanJKeFM1MUlrRmFwYkRnWTZLLURpZ2NRZkJycldfOWxfWkhEblpzNU1LOXJvNmRTbWRfUlp5Qi1IaUNaSjlVOXRST0MtajdFM0t0UXZSTkZSQnfSAZIBQVVfeXFMT3RrZks2eEt0MmpUaUNSUTdzMjk4eTA1TnZSVUg1UnF0ZXRMR0U5bWE5ZUN1eFExQ0VNejVnUm8wOHZfVXNrdThyckJvblFWN0daeS1TOE5kb2lyWmRfZkJPYXVvRjJJUVlDOC1yR2FzR0xKa2dKSjFpTDlqbnBBblc2VHp5MVJlaGJUclBva2ZXblE?oc=5",
+      "imagen": null,
+      "fuente": "Telemundo Dallas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795017633000
+    },
+    {
+      "titulo": "Un miembro de Palworld no entiende el ninguneo a Crimson Desert en The Game Awards: \"Qué tremenda vergüenza\"",
+      "resumen": "Geoff Keighley finalmente ha dado el paso y ha revelado los nominados a The Game Awards 2026, por lo que el debate en las redes se ha encend…",
+      "link": "https://www.vidaextra.com/accion/miembro-palworld-no-entiende-ninguneo-a-crimson-desert-the-game-awards-que-tremenda-verguenza",
+      "imagen": "https://i.blogs.es/0b9f73/1200_800-2-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795014676000
+    },
+    {
+      "titulo": "Te contamos cómo nació uno de los videojuegos más exitosos de la historia. Encuentra el enlace en los comentarios.",
+      "resumen": "Te contamos cómo nació uno de los videojuegos más exitosos de la historia. Encuentra el enlace en los comentarios. Facebook",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPa3laV2dQUEc1QmQ5U2pqWVhLY1dYRGJueUtzU2h2MGNUT0pDd0JvVmlRSGVVeS1mbTRNMXF3Q291LUZWRXBRV3RneFFEdVJoYWJUVFFldkpmU29qRnJBeEFEa0lqVlVHSHo0SmpfS2pwOC03TEcyQXMxTzM2YjI4SEJ1MEd2SDZIRU9ybktJODVXUjZMV3JKYmZzclVmTm5yeGdtem1MMktxTTBFcFFwdFhfSVJUX1dzVGRpdFhhRXYwc21INF8tUHNWNnBzUnhIZDlxYXhaUnBxeEpYeEh5LXYtMHNYRTQyeXZaQlNiYw?oc=5",
+      "imagen": null,
+      "fuente": "Facebook",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795011651000
     },
     {
       "titulo": "Trucos de GTA 6 para PS5 y Xbox Series: todas las claves y secretos",
@@ -23,16 +113,6 @@
       "fecha": 1795008365000
     },
     {
-      "titulo": "Muere a los 56 años una figura histórica de los videojuegos que estuvo detrás de Street Fighter y Tetris",
-      "resumen": "Muere a los 56 años una figura histórica de los videojuegos que estuvo detrás de Street Fighter y Tetris Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNekYwZ3JWQ0J2b0VJWjliRXkxNV9HMDdsb09TZ3l4WkR1Tjcxc2VFYzBBSVZya0g5WFE3M3IwRUdVTm5kQ0V2a05KRGdvMWlmTERwNFIzaEpKT3YwbjZjX0NTY1dfQkp1LXZxSWxXZnJCMnRrUjdjOS12SkpNWVlOSktJdzBnVXJNMDVsTkJZTmVqMUtqS0s5SGpDTUlha0MzUlNLdnBfNUhzVzRueF9iVk00YUN6Uy1lVXdzMFdjTTRpWGRzLVhuSVRUZTlBbFFBVlQw?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795003691000
-    },
-    {
       "titulo": "Digital Foundry alucina con los gráficos de GTA 6: \"La recreación de un entorno urbano más detallada, densa y convincente jamás vista\"",
       "resumen": "A tenor de las imágenes y de los gameplays disponibles de GTA 6, podíamos augurar un apartado técnico descomunal por parte de Rockstar Games…",
       "link": "https://www.vidaextra.com/accion/digital-foundry-alucina-graficos-gta-6-recreacion-entorno-urbano-detallada-densa-convincente-jamas-vista",
@@ -43,84 +123,14 @@
       "fecha": 1795003136000
     },
     {
-      "titulo": "GTA 6 le arrebata a The Legend of Zelda: Ocarina of Time la corona del mejor juego puntuado de la historia",
-      "resumen": "Por fin ha llegado uno de los momentos más esperados relacionados con el lanzamiento del nuevo GTA, como era el de saber qué puntuación le o…",
-      "link": "https://www.vidaextra.com/accion/gta-6-le-arrebata-a-the-legend-of-zelda-ocarina-of-time-corona-mejor-juego-puntuado-historia",
-      "imagen": "https://i.blogs.es/a0c898/gta-6/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795001321000
-    },
-    {
-      "titulo": "Las notas de GTA 6 lo colocan como el mejor juego de la historia: \"Es una obra maestra y ha valido la pena cada uno de esos 13 años\"",
-      "resumen": "El gran momento que estábamos esperando ha llegado. GTA 6 ya se puede jugar en varias partes del mundo y los análisis han comenzado a salir…",
-      "link": "https://www.vidaextra.com/accion/notas-gta-6-colocan-como-mejor-juego-historia-obra-maestra-ha-valido-pena-cada-uno-esos-13-anos",
-      "imagen": "https://i.blogs.es/72d6a9/jason_and_lucia_09.11_dlvb_8svuu/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795000486000
-    },
-    {
-      "titulo": "Crítica de ‘GTA VI’: Bienvenidos al mayor parque de atracciones digital jamás creado",
-      "resumen": "Crítica de ‘GTA VI’: Bienvenidos al mayor parque de atracciones digital jamás creado EL PAÍS Análisis completo de ‘Grand Theft Auto (GTA) VI…",
+      "titulo": "Crítica de ‘GTA VI’: bienvenidos al mayor parque de atracciones digital jamás creado",
+      "resumen": "Crítica de ‘GTA VI’: bienvenidos al mayor parque de atracciones digital jamás creado EL PAÍS Estreno de GTA 6 podría llevar a casi 97,000 tr…",
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMWp6aVpDeXVLVzNfX09Pejh2R1UzZWtGczllVkpkaUdmMjlVaG1LQlJaUzVNcmp5dEU5Yy1TMFkwMzZEMmtBVy1KYTcyREY4U0VJLWZqbHRVZVJmc3RBOHM0QUJQNEtJYXFTakNXdWwzQlRJR0FIZGVyZngybHZENHpFTEtRVUJGdlpLak5pZDRWMTV1WnJoNGp0bFAxdDFRX0xFODRtQnBYWEFEOG1aOVMwcEFOdjJlMlA1aEFkRzFJd9IB1gFBVV95cUxQaGNqajM2MWlMZGljUWNaZGpMZDdvQzdoQUlxOEVGSkhkalpkZldjQnRGdURVeUlJSHR6MHZsdDNFUmZvUUdMdktqMW5IVVdGdjBZcEp1aFVDUGphVk9Ia1BOQ2RTT21lb3FZYkpNVUkzc3otM2pscWU2T0hDYks4LVA4cm5MSFIzdlIzRmhUeHlwdTVSZGpxaExBYVdfbXdoX1RCcHdCRUQtMGw2Z2R2QWtSekRaRWNYcENsRjJkaVJ6MUFiTU95dDZoSzRVLXg3SlpkSTh3?oc=5",
       "imagen": null,
       "fuente": "EL PAÍS",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794999540000
-    },
-    {
-      "titulo": "La saga del videojuego \"Grand Theft Auto\" en cifras",
-      "resumen": "La saga del videojuego \"Grand Theft Auto\" en cifras France 24",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUy02SlZQRmNRRjZzbTZXVTV2cXJxNGtlT3V2VzU4SW0yNE0yQ29SaVdvSWc0cHpGSzZ2d29oOWpoeGhpU2NDQjhjSU1aaTQ0bng0ZXZOcXNLZkFWc2ZhRldjdHpqem9rdVVLQUstM2RZbUpDZ2N0WFBfTk9STFFxMkpSckR1VDdjSTlicmV6Q2dIN295T0ljZTZtWmtnaXhheHctMA?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794997287000
-    },
-    {
-      "titulo": "Deberás actualizar obligatoriamente tu PS5 a la última versión para poder jugar a GTA 6",
-      "resumen": "A lo largo de los últimos días es probable que millones de personas hayan descargado su copia de GTA 6 en sus consolas y estén contando los…",
-      "link": "https://www.vidaextra.com/accion/deberas-actualizar-obligatoriamente-tu-ps5-a-ultima-version-para-poder-jugar-a-gta-6",
-      "imagen": "https://i.blogs.es/f20889/gta-6-serpiente/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794996084000
-    },
-    {
-      "titulo": "Devolver Digital quiere que elimines GTA 6 de tu consola para tratar de conseguir gratis una copia de su nuevo juego",
-      "resumen": "Después de tantos años de espera, parece mentira que estemos a tan solo unas horas del lanzamiento de GTA 6, el que sin duda es uno de los v…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/devolver-digital-quiere-que-elimines-gta-6-tu-consola-para-tratar-conseguir-gratis-copia-su-nuevo-juego",
-      "imagen": "https://i.blogs.es/c9a92e/gta-volvy/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794994275000
-    },
-    {
-      "titulo": "FromSoftware se ganó el odio de muchos jugadores en 2022 por \"hacer trampas\" en Elden Ring: convirtió un jefe en un misil guiado",
-      "resumen": "El enfrentamiento contra el General Radahn, Azote de las Estrellas protagonizó uno de los mayores dramas durante y tras el lanzamiento de El…",
-      "link": "https://www.vidaextra.com/rpg/fromsoftware-se-gano-odio-muchos-jugadores-2022-hacer-trampas-elden-ring-convirtio-a-jefe-misil-guiado",
-      "imagen": "https://i.blogs.es/e6d890/elden-ring/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794988885000
-    },
-    {
-      "titulo": "Ni Lobezno, ni Marathon, ni Saros: PlayStation rompe su idilio de 11 años con el GOTY en The Game Awards",
-      "resumen": "No lo sabíamos en ese momento, pero durante el anuncio de los nominados para The Game Awards 2015, Sony consiguió colar un nominado al siemp…",
-      "link": "https://www.vidaextra.com/ps5/lobezno-marathon-saros-playstation-rompe-su-idilio-11-anos-goty-the-game-awards",
-      "imagen": "https://i.blogs.es/6d56e2/marvels-wolverine-2025-jz/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794985283000
     },
     {
       "titulo": "Xsolla lanzó Quest Builder y Backpack: los desarrolladores de videojuegos ahora pueden premiar a los jugadores con artículos digitales para coleccionar, usar y regalar",
@@ -131,16 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794970802000
-    },
-    {
-      "titulo": "\"Un-dark\": Nueva iniciativa capacita a cristianos para compartir su fe en comunidades de videojuegos en línea",
-      "resumen": "\"Un-dark\": Nueva iniciativa capacita a cristianos para compartir su fe en comunidades de videojuegos en línea es.christiandaily.com",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWEpSTU90T19kRjlRaW93cGhDb1UzbVlOaE53Qi1taXVrTklNaGVublUzcFhKOUE2Qm1qLWk5OEwyWkM1OS1yZmdqMlZwX0dFajZZRDJMNkZUQlZJTTJGRUFKYnhLdWZRNkEwRHoxNEUzN3RLV082ZWhNbjZUZE91LXR0ZWpDTUIxaWtOdGNkMjZ3UnRoZGpGVHEyQ3E?oc=5",
-      "imagen": null,
-      "fuente": "es.christiandaily.com",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794964186000
     },
     {
       "titulo": "España pone fin a su récord histórico y abre el debate: \"Un rival\"",
