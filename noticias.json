@@ -1,7 +1,87 @@
 {
-  "generado": 1795175041560,
+  "generado": 1795205867053,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Ya es oficial: GTA 6 vende 32,5 millones de unidades y es el lanzamiento de entretenimiento más grande de la historia",
+      "resumen": "Sabíamos que había una expectación jamás vista por GTA 6, pero las cifras que acaba de ofrecer Rockstar Games superan cualquier previsión. A…",
+      "link": "https://www.vidaextra.com/accion/oficial-gta-6-vende-32-5-millones-unidades-lanzamiento-entretenimiento-grande-historia",
+      "imagen": "https://i.blogs.es/5676c2/jason_and_lucia_02_landscape.0cosv-uzbpt91/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795204737000
+    },
+    {
+      "titulo": "GTA 6 esconde un excelente homenaje a Red Dead Redemption 2 con el que puedes conseguir el mismísimo sombrero de Arthur Morgan",
+      "resumen": "Aunque el foco de atención de Rockstar Games está situado completamente en GTA 6, no se ha querido olvidar de otra de sus mayores obras maes…",
+      "link": "https://www.vidaextra.com/accion/gta-6-esconde-excelente-homenaje-a-red-dead-redemption-2-que-puedes-conseguir-mismisimo-sombrero-arthur-morgan",
+      "imagen": "https://i.blogs.es/7c50f8/gta-6-sombrero-athur-morgan/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795201226000
+    },
+    {
+      "titulo": "Fue el gran exclusivo de PlayStation en 2025, y acaba de alcanzar su precio mínimo histórico: Ghost of Yotei",
+      "resumen": "A pesar de que la generación de PlayStation 5 no ha tenido tantos juegos exclusivos de Sony como nos gustaría, lo cierto es que los que han…",
+      "link": "https://www.vidaextra.com/seleccion/fue-gran-exclusivo-playstation-2025-acaba-alcanzar-su-precio-minimo-historico-ghost-of-yotei",
+      "imagen": "https://i.blogs.es/19f9b4/ghost-of-yotei/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795190357000
+    },
+    {
+      "titulo": "Arturo Pérez-Reverte (74 años), sobre los videojuegos: \"Es la herramienta narrativa del futuro. Es un error despreciarlo\"",
+      "resumen": "A punto de cumplir los 75 años el próximo 25 de noviembre, Arturo Pérez-Reverte sigue al pie del cañón escribiendo novelas. El periodista ha…",
+      "link": "https://www.vidaextra.com/cultura/arturo-perez-reverte-74-anos-videojuegos-herramienta-narrativa-futuro-error-despreciarlo",
+      "imagen": "https://i.blogs.es/bdf772/captura-de-pantalla-2026-11-20-155137-1-/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795187765000
+    },
+    {
+      "titulo": "GTA VI: cuánto costó desarrollar el videojuego, cuántas horas dura y por qué es uno de los lanzamientos más esperados",
+      "resumen": "GTA VI: cuánto costó desarrollar el videojuego, cuántas horas dura y por qué es uno de los lanzamientos más esperados Infobae",
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOZHlwOXJpVm01RkdNN05SVnRPcGhiMWw2SjNvYm00aDV4UWtQelhDemJYNzE3Y29JWnVha3FYQ1NhZlVuMV90dHk5RkpCLXpxcVZTaE1xVEM2ajR1NUJibndJNko1U2lpODJRQTBZMzFYUUFGNzVkRHNEVEM3MTZBT203LUF6S3lyMU9tUEFJelNPTjlfUUo5aEpJdkZWUjZlc2JrbUdoTGFJeG1oMThScDdFQVI3R2VoMGZ5NW90bWRtZmszRW10c1A2aXZqWWJxYWd6a1pjbmVmcHZjRm5sZE9leTg0NERDcVNaSTRR0gGIAkFVX3lxTFAtRU41cGxEZVdzUXVjbk1VVHI1ZUxhak5kLVBNSElCaUVGcmlKM1FBZFpkYlBNTTlRcFotVFZPanhjRUw1eHpTUy1KWGo0dExpVzRxa2lJNlhJNkozOFo1djhkcGNmYlM2UjljWEluRjJJSS0xbHJtYzVoNjdUY0lfeVYwUlo0bkJ2d1BOV2tsc2tyUVhLZjQyb3NNMDdRcXkxZ1RIXzl0bWhReVNObkI4WFl5QzF0MHQzWHlCNzkzc0dLXzBRczhUX054Y1UxSmNpd1p0Z2YzZHNPenk5LUV5T1JfRmdGdzNPSnVXcGZuc3JReVN5S2lCYUVIVm05ZU9VTkNoZU1Dcw?oc=5",
+      "imagen": null,
+      "fuente": "Infobae",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795181139000
+    },
+    {
+      "titulo": "GTA VI alcanza 1.650 millones de dólares estimados en ingresos antes de su lanzamiento",
+      "resumen": "GTA VI alcanza 1.650 millones de dólares estimados en ingresos antes de su lanzamiento Diario Las Américas",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRHJRZkZYYnFxMmh3enF1UGtYVjMyWTBwLVZoX1VPaXVoeDZXSlZsU2FuMnFtWURlUXR3X3JqcEs4b1E0V3VfWk1mRHEtd2EzZGlZUF9ydVJxb0lUTEYzR2hwWHVnN0ZXVTRFVjFFeE8wY0NZQWFJRjVyYzUyb1BsQ193Q3hTR3U3TVlxdlI4MmY4RGMwQTgwTHJqYTlieGxGMjRqYzBWX3BMeE5Ba2c4aXhDY3AxUWtCZ3piNE1HdlJYUEpRb3fSAcsBQVVfeXFMTzdzcDQ3N05IaTFHNnBZMlpkbXZ4Ui10ZW9xY0JQVHZhSnQxZzJBRHJoWG1hckFQTEFUMmJUUFpOdFpWX2ZYbDU1bEhQYVhfVExQSWR4Tk9wRzVENl84MTByZHNMNDAxcndjQnI4VU1VUHV3eWJELW9RRml2QWxSM1VaMjlwaVNYZHNiZnIwVnAwUm1oQzVtTkV3aFVHZnlfSnVwWGtfSC04XzBXQ3ItMFlybjVJc1NEU05wM256TXNmeTYybTJMRUFOZlU?oc=5",
+      "imagen": null,
+      "fuente": "Diario Las Américas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795181100000
+    },
+    {
+      "titulo": "Cómo activar la primera persona en GTA 6",
+      "resumen": "A pesar de que GTA 5 y Red Dead Redemption 2 sí cuentan con un modo en primera persona, lamentablemente Rockstar Games no ha implementado es…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/como-activar-primera-persona-gta-6",
+      "imagen": "https://i.blogs.es/91f987/jason_duval_17.0tp7hiuz.e385/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795178472000
+    },
+    {
+      "titulo": "Cómo conseguir gratis el mapa de GTA 6 para colgarlo en tu habitación",
+      "resumen": "Un absoluto clásico con cada entrega de GTA es que Rockstar Games nos permita colgar una versión del mapa en nuestra habitación. Sin embargo…",
+      "link": "https://www.vidaextra.com/accion/como-conseguir-gratis-mapa-gta-6-para-colgarlo-tu-habitacion",
+      "imagen": "https://i.blogs.es/c72e2a/leonida_map_poster/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795176180000
+    },
     {
       "titulo": "Cómo guardar tu partida en GTA 6: esto es lo que necesitas saber para evitar perder tu progreso",
       "resumen": "Algo que teme y odia con toda su alma a partes iguales cualquier aficionado a los videojuegos es el hecho de perder su partida. Si esta es t…",
@@ -23,26 +103,6 @@
       "fecha": 1795169784000
     },
     {
-      "titulo": "Cómo cambiar las millas, grados y libras a metros, centígrados y kilogramos en GTA 6",
-      "resumen": "Con GTA 6 ya disponible en las tiendas, es probable que algunos de vosotros os hayáis hecho con una copia de la última obra de Rockstar y os…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/como-cambiar-millas-grados-libras-a-metros-centigrados-kilogramos-gta-6",
-      "imagen": "https://i.blogs.es/ef19e5/gta-6-jason-moto/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795165226000
-    },
-    {
-      "titulo": "Lee Dong-gi, CTO de Shift Up: \"Espero con ganas la nueva generación de Xbox, Helix\"",
-      "resumen": "Después de un par de apariciones en eventos de PlayStation, Stellar Blade llegó a la consola de Sony (y también a más plataformas posteriorm…",
-      "link": "https://www.vidaextra.com/industria/lee-dong-gi-cto-shift-up-espero-ganas-nueva-generacion-xbox-helix",
-      "imagen": "https://i.blogs.es/2729cb/evie/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795160183000
-    },
-    {
       "titulo": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos",
       "resumen": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos Univision",
       "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQejFPMWJFeFBMbnRJTmpMc1FKWXNnaFZabFoxWEE5MHc5LWhmOGM2Z3NyNWVaSVp1djUwZ2V3aDdtRUtXNndYNVdocHRmSHI4SndVZkxPN0xsSlg2NklNUkcwLWt0em5Nemx4elAwUHVncnV3NFFlZF95OGtKRTREYzZRUUNIN1FJTERkSzZXdmVsM2ZXcXgzSnVlTmRjZTZpRlVBUjZjWENhdkloSW5FdHMycHFhX2JFakJhaE16VVd1UVdnOXpYRlZSZEtqam4xWGthSXJQWHUwX0UwZUlnLUV1ZnNYSGtucmZvbjZZRzVwUGJY?oc=5",
@@ -54,83 +114,13 @@
     },
     {
       "titulo": "Xsolla conecta a jugadores, marcas y audiencias de videojuegos mediante la interacción con recompensas",
-      "resumen": "Xsolla conecta a jugadores, marcas y audiencias de videojuegos mediante la interacción con recompensas Rutland Herald",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNVUduNFZ6R21XT3QxMjdTTllHMWpXQ3JRQWllWUlvdlFwMkl5X2w3Vno0NXRSdzV0ZzAtNlY0RkxzaFl2VFZzMUlXcU94RHYtTHhpWm9MTFRHeUZRVTVfNUhkOG56MWxwb2tlS1RVdXcwQ0loQkFCY21jS3JnTW9yRHRXdGdqcldpXzhITEJVMFJ1U0hMcUtEeUxBTllwdDNKUEhiaHBCNElHejVxVHJSMkdKWXNmQVBhNWJkN2t2UkNYbXp5UTQ4ZkxaNFhyajdJallkaEpOdnhWc0RWNXR0LVpuMlFKSFlBOVFEbkN5VE5IYTBpWDE2aFA4T0s0ZHVRemxacUUyUkNyN2tta3ZYaHY3RXgwMG9UakFUa1hiYTA?oc=5",
+      "resumen": "Xsolla conecta a jugadores, marcas y audiencias de videojuegos mediante la interacción con recompensas Business Wire",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1NQ2RhVmtlZVRsbXZMRUE5UWlSOVlZTEZlYVdmV3VaYmExQlN1SGJJNlQwbmdHcmhEYlVSNDJsQVhYcm9Ta0ZKbXhYTUNRU2otanlrTDlQYnJ4eDA3Y3ZRaHp3VnZkNzQ?oc=5",
       "imagen": null,
-      "fuente": "Rutland Herald",
+      "fuente": "Business Wire",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795120200000
-    },
-    {
-      "titulo": "Amazon arranca el Black Friday 2026 y rebaja todos estos juegos físicos de PlayStation, Nintendo Switch y XBOX",
-      "resumen": "Amazon arranca el Black Friday 2026 y rebaja todos estos juegos físicos de PlayStation, Nintendo Switch y XBOX Vandal",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQY2RhU18yMFpCSGFOdndJYzM3QWRJeFJfeEJjTGN4UEx4YXJLdDdaOEdtUnI1ci16UVNXWmRKMzRQeVR3YW13bkpueXBWYVA5aGdDaG1RU3RTNVZ0TXowWmtiSy0xSUNPQWdnd3pmMmYzLVlaWUwycHlRMTd2bUhTN3dpakV3RjhLUzNYM0MzNzVfSUo0TGFZcGI0VDBsakM0ZTVlZUZZZlhSVnFKamRzczlQUU9wMnh4Z1h5Q0ZldGNhYktrcmFvYWRoUFJWelV3d09zSXczZGhLSkhKenpHMjBUeXo4U0hIYlFFTUgwY9IB9AFBVV95cUxPMm1ZeGx3RXl1b0xUdjA2ZXByb1d1cFd6dkJVbUtTSXdMRFpzVjkwQkdtNjhNSmdhYWJXeGF6Rk45OFQtX3ZHQURUYkVqNEJRc0liQVRsWVY4N1lLaVVnNXBGYVZGb1E5M29TU1Rsb042dVFCeldzNS1ieEFQQnJuN1JlRGt6RXZaX3hScnB4cXg1LW9OUFpFZElQQ1o2R0xoODkzWU1XbXlnMTlpdmhDbkhCWW14X3MyeTBEZUhXMTFNaGRxY1lGQTBRNHFSMVU5MWpEWGs5X1k4cFhBQTZCa2t3NC11R0FjalY1a1NfV1g5UHN2?oc=5",
-      "imagen": null,
-      "fuente": "Vandal",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795107540000
-    },
-    {
-      "titulo": "Así vive el mundo la fiebre por el Grand Theft Auto VI",
-      "resumen": "Así vive el mundo la fiebre por el Grand Theft Auto VI Univision",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0JKMWNTNnBmc2pCODkzVWdZRzZ6dkx3MGxZV2x5Rk1PLVdZZnBFVkpYdGdYM3NlZmNhbklLVE8tNXhzUTdaUnRGRnFtcGVOU2gyendIc1V1Y3JlR2pIeHBfSG1Na2JMY2tXQmgtY2F4M0R5Y2xaa3lMLTA1MVdlbnpuTXAwT0ZFMWMzTXFIZ0l2ZUpXUi1VMmF5YlpkZGQ2bVo3RG4zVQ?oc=5",
-      "imagen": null,
-      "fuente": "Univision",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795107240000
-    },
-    {
-      "titulo": "Florida apenas se eleva 30 metros sobre el nivel del mar, pero GTA 6 tiene montañas. Rockstar explica el por qué",
-      "resumen": "Por si los Everglades que rodean Miami e inundan todo Florida no fuesen lo suficientemente descriptivos, lo cierto es que el estado es realm…",
-      "link": "https://www.vidaextra.com/accion/florida-apenas-se-eleva-30-metros-nivel-mar-gta-6-tiene-montanas-rockstar-explica-que",
-      "imagen": "https://i.blogs.es/2e6184/mount_kalaga_national_park_04.0e1sxnp1mln2u/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795104078000
-    },
-    {
-      "titulo": "Un creador de contenido perdió su partida de GTA 6 tras jugar 11 horas por cometer un terrible error con su PS5",
-      "resumen": "Con GTA 6 ya a la venta en las tiendas hay quien no ha querido perder el tiempo y se ha puesto a jugar sin parar desde el primer minuto. Uno…",
-      "link": "https://www.vidaextra.com/accion/creador-contenido-perdio-su-partida-gta-6-jugar-11-horas-cometer-terrible-error-su-ps5",
-      "imagen": "https://i.blogs.es/a65a33/gta-6-policia/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795101389000
-    },
-    {
-      "titulo": "GTA 6 no permite contratar prostitutas y Rockstar explica el motivo que ha dividido a la comunidad",
-      "resumen": "No han pasado ni 24 horas desde que GTA 6 ha salido a la venta y ya ha surgido una de las primeras polémicas. El motivo se debe a que los ju…",
-      "link": "https://www.vidaextra.com/accion/gta-6-no-permite-contratar-prostitutas-rockstar-explica-motivo-que-ha-dividido-a-comunidad",
-      "imagen": "https://i.blogs.es/01c8d3/gta-6-boobie-ike/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795095000000
-    },
-    {
-      "titulo": "Los mejores videojuegos rebajados en el Black Friday de Amazon: tenemos uno de los mejores juegos de 2026 y varios GOTYs",
-      "resumen": "El Black Friday 2026 ya ha empezado en varias tiendas y una de las que más ofertas gaming acumula es Amazon. Estamos en un momento del año i…",
-      "link": "https://www.vidaextra.com/seleccion/videojuegos-a-minimo-historico-casi-black-friday-amazon-hay-nominado-a-goty-2026-varios-titulos-nintendo-switch-2",
-      "imagen": "https://i.blogs.es/d09450/black-friday-vidaextra-videojuegos/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795093200000
-    },
-    {
-      "titulo": "El realismo de ‘GTA VI’ es tan extremo que para muchos jugadores la violencia gratuita se ha convertido en algo insoportable",
-      "resumen": "El realismo de ‘GTA VI’ es tan extremo que para muchos jugadores la violencia gratuita se ha convertido en algo insoportable Xataka",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYWNybFM3QUQtY3puRUYwbUE1TkoyckFuVjgwMXhDa3l3TFFMWHlXdU1ZaVZjak1qOTJsQUU2R2U4eURQN2d1U2YtRHdZbERNMXJOQnJJTUV4dVh3d0dJNGxkZHF1Qi1rRWR2MUxZY1pWT2VCMlpYcWFDbkFtTGxnb0ZRajJrcG52c1NkQUVGRWloX1Y1d284bm1Yc3ZKeUYzY0tkbm5sXzNSb2tkdXl5c1dRMl9nSmNlUjBGZERvdnM4dE5uYzlsNGtDcUdLc19MN0dHcdIB2gFBVV95cUxQTVJWSkhNREg5cFFZZDREOVhCX3ZuQUg2V0syWnpkQW13NWtaQnlFSkxDRjJOVmhVVHBoWVd1QXVnQkxKQnF0aEtDUFZGYUNBVkZELXpZeGgyckpuaTd1SEdrQkRNNlU0VXJEMVh2Qk9kajE2bnB3NF9tRXgtT21XVjVjYThaTU9VaVNNV1dLV0JlWGM2cTFnRndkNTJSZWpOY3lnZERpOElnZjBFUVd0Y2owR2ZZUmZYZmNIU1M2ek5BbWtvNHhxSW55M2JZUjRXeVFHM3VYNF8zZw?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795089652000
+      "fecha": 1795120140000
     },
     {
       "titulo": "Estas son las cifras millonarias de ‘GTA VI’ que sorprenden a la industria de los videojuegos",
@@ -143,14 +133,14 @@
       "fecha": 1795067460000
     },
     {
-      "titulo": "Valencia será la sede del MSI 2027: Riot Games anuncia un año histórico para los esports de League of Legends",
-      "resumen": "Valencia será la sede del MSI 2027: Riot Games anuncia un año histórico para los esports de League of Legends La Razón",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNV21wMmJBNlhQRFA3dzVyQmlybG5hb1lYc1VxbmJlOXlnbVNqemxOOWhOWG9EQ1lFRjZSNEdXSVRCVkV0dmhpZDdtckdfVVJqa1FDbmtOLWw1TGxVakozX3NsWU81WEVrWGtTWTBRbGlCR1FXR2NKRVpaYUFTdENlUTQ0LWhhRW43cGxFRUhoMDFBcGJwc3FGNzAyWTd6dmgtdkVJaFJoMHlVa2w5RndfVWI1bTZUdmFNd0VESlVoYWJIb3FVX2VrQkVpXzNudzY2dUhOUVNBU0ZmRk1pZElDbm5DbmNXLUFRTXpxUFk4MTNnSXPSAYcCQVVfeXFMT1NzVnFvbDF5NEd3eVMxNC1uSFV0T0NjVGwyWlRab0EzTVJaazRtVHNkSDlJN3ZxNTlEMHR2c21Zb0JzQ0dfcWhOSkNZM1hIMEJmRk04cFB5SUdqZlpVRjA0QnFScDRJbVpVZ1RCZzFxbjZ2ZlYtcnhVa1pTdEoweERhOThsdml6amhSbnFVbnZ1QnVnUllKZnQ4UUpWNk9KR2FuWE9ROTNaaWl1UXF6cGxQR1ZnQVppN3I0N0hfRG5kbUo2NVB2eTNldGRKNi03MTZ4VjdOSlBDVzJNQlhRTjdEaWw4YTcyMFZaQTVkTUVCb0dZU3BmQ0xxRDFFbmJKVXlaZ3R2dWM?oc=5",
+      "titulo": "Grand Theft Auto: Lucía Caminos, la primera protagonista femenina de GTA en los 30 años de historia del videojuego",
+      "resumen": "Grand Theft Auto: Lucía Caminos, la primera protagonista femenina de GTA en los 30 años de historia del videojuego BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZemxJeHREQkF1UWpXaWRyMjhqNVkwUTRrZ3psRWQzODNoNWtxZS1ISEQ3LThOZW5NVWdiRXJxTm1ILVp5ZlkzVnRYOVJudTIzVjBydmJ3cnE2NzJO0gFiQVVfeXFMTjc3TWNOZ3NJNVlnaEJ5YW9FYU1OVnNCLU02SExnQTN3VFlONmxRVThTaFF6d0xkMzhia2ZVNUtweVVtbGZxODFjOVBoVWNVNnRqak1UdzJDZHJ6cllkN1ZaQVE?oc=5",
       "imagen": null,
-      "fuente": "La Razón",
+      "fuente": "BBC",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794931216000
+      "fecha": 1795040509000
     },
     {
       "titulo": "Los esports de LoL en 2027 y más allá",
@@ -161,6 +151,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1794613370000
+    },
+    {
+      "titulo": "Los eSports, una industria que mueve 3.000 millones sin categoría profesional",
+      "resumen": "Los eSports, una industria que mueve 3.000 millones sin categoría profesional Palco23",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSnJoNW1NWGRwNjlxMVhwUnh2NzZ2NFVfaXpnVXlSTTROOFctYmdLQktyYTNKaUxzdkc5VFY5VFpVSHhnRWwwQUZrN3pyV3lSOEEycWZUYmNVLThxWFl2MVR5Y0tLQUp2cVhBSlItSUpjeFVsYTVFb0hQSGhQZUJKdHUwangyX2VFay10LUFUV05zVm1vN3VnRXBjVXFnRFZLZUEwN2xfR241SmUwaWFWOWhfNDlNR1lfY3JzYlBfY2dKZ9IBxwFBVV95cUxOVmpiVDhVeFJMeENhRjA2TTFHR1YxOGFITFp6LTFuRHZRQ2tJb3BpejkzMkdOenRZNm1mMlpIOTJCNzd0bFN1bHZCMDhETVlUaG5zS1VmM1hlQXlCSlNfb0dtcDAwcnVWWDNENGdXMmhqNy1kMEx2bUhmWVRoY2dmRUx0THczZlZCemFrbEhQRjd0SzdQSy1US2lZcTR5OHhZUjg2b0kySU5NOVVRYVNoUDVMNmlfeWdpTnJxS2czeGxZVVBtVHBZ?oc=5",
+      "imagen": null,
+      "fuente": "Palco23",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1785394800000
     },
     {
       "titulo": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista",
