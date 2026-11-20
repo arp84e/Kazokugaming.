@@ -1,7 +1,47 @@
 {
-  "generado": 1795144447110,
+  "generado": 1795175041560,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Cómo guardar tu partida en GTA 6: esto es lo que necesitas saber para evitar perder tu progreso",
+      "resumen": "Algo que teme y odia con toda su alma a partes iguales cualquier aficionado a los videojuegos es el hecho de perder su partida. Si esta es t…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/como-guardar-tu-partida-gta-6-esto-que-necesitas-saber-para-evitar-perder-tu-progreso",
+      "imagen": "https://i.blogs.es/01206f/gta-6-brian-heder/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795172425000
+    },
+    {
+      "titulo": "Todo el mundo está loco por tu vecina Mandy en GTA 6, pero esconde un oscuro secreto",
+      "resumen": "Cuando hasta el histórico responsable de Nintendo of América, Reggie Fils-Aime, pregunta por Mandy, sabes que se trata de un personaje que e…",
+      "link": "https://www.vidaextra.com/accion/todo-mundo-esta-loco-tu-vecina-mandy-gta-6-esconde-oscuro-secreto",
+      "imagen": "https://i.blogs.es/f2ddd8/jason/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795169784000
+    },
+    {
+      "titulo": "Cómo cambiar las millas, grados y libras a metros, centígrados y kilogramos en GTA 6",
+      "resumen": "Con GTA 6 ya disponible en las tiendas, es probable que algunos de vosotros os hayáis hecho con una copia de la última obra de Rockstar y os…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/como-cambiar-millas-grados-libras-a-metros-centigrados-kilogramos-gta-6",
+      "imagen": "https://i.blogs.es/ef19e5/gta-6-jason-moto/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795165226000
+    },
+    {
+      "titulo": "Lee Dong-gi, CTO de Shift Up: \"Espero con ganas la nueva generación de Xbox, Helix\"",
+      "resumen": "Después de un par de apariciones en eventos de PlayStation, Stellar Blade llegó a la consola de Sony (y también a más plataformas posteriorm…",
+      "link": "https://www.vidaextra.com/industria/lee-dong-gi-cto-shift-up-espero-ganas-nueva-generacion-xbox-helix",
+      "imagen": "https://i.blogs.es/2729cb/evie/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795160183000
+    },
     {
       "titulo": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos",
       "resumen": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos Univision",
@@ -23,14 +63,14 @@
       "fecha": 1795120200000
     },
     {
-      "titulo": "GTA 6 llega al mercado mundial con referencias a la cultura cubana, pero jugarlo dentro de la isla es un lujo",
-      "resumen": "GTA 6 llega al mercado mundial con referencias a la cultura cubana, pero jugarlo dentro de la isla es un lujo Martí Noticias",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPVzJycnpPaFY1RjNrOThUY2Z4dDlrSGRsanNSd2RrS3RyOWpsNDRwVG9VZjQ2ZkVIU1FUX0tIcWxwTjE5elBRTmtxa045aWFwbjBkUmlPUnNFYzUzYklFeEJVcnJ6YS1wVFpYQ1lzdXI1Z0pQTTVJeW1pVUxPb0kxOERmS0t1MWhyQ0dRNVBnYVl6ZHN6ZXlSM00xcnBpRXR6MGlPRXRfT2dtbG0zTzlMYW5ETDFzdno1NkhacFdJSWRkakZfdHB5dmZ4dWJxaUtWMk5JRGFkX2FnRVNGdDFkR3NEOHROUjTSAeoBQVVfeXFMTVFFdm5YR2wxSzVEc3RGYXlsMm1uLTluRDR2bFp4V000WF94SURBTmhSUER1UWltUTJ2RUV3X0pIazZOSDlUMk4tUHRJM2RfaW12SS1SZjllNW5OckpJUC1PcUl6V1ZqRmNwV2JPa1JxbmlsTk1Rd0ZMNklEdnJlUWk2SEp5U3BNTUl4UmNKLXJNMGNIZElHM1pHY2ZRRXhEQzdyVkp5eGNtMkIwMUVQY05kMEJod2pPTG5VNzdoUDc4X2tsbm5jdktuZk10dkpQaHhIV2pXbTYwd0tvSXMzcVRsRGo3b0hkRXRR?oc=5",
+      "titulo": "Amazon arranca el Black Friday 2026 y rebaja todos estos juegos físicos de PlayStation, Nintendo Switch y XBOX",
+      "resumen": "Amazon arranca el Black Friday 2026 y rebaja todos estos juegos físicos de PlayStation, Nintendo Switch y XBOX Vandal",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQY2RhU18yMFpCSGFOdndJYzM3QWRJeFJfeEJjTGN4UEx4YXJLdDdaOEdtUnI1ci16UVNXWmRKMzRQeVR3YW13bkpueXBWYVA5aGdDaG1RU3RTNVZ0TXowWmtiSy0xSUNPQWdnd3pmMmYzLVlaWUwycHlRMTd2bUhTN3dpakV3RjhLUzNYM0MzNzVfSUo0TGFZcGI0VDBsakM0ZTVlZUZZZlhSVnFKamRzczlQUU9wMnh4Z1h5Q0ZldGNhYktrcmFvYWRoUFJWelV3d09zSXczZGhLSkhKenpHMjBUeXo4U0hIYlFFTUgwY9IB9AFBVV95cUxPMm1ZeGx3RXl1b0xUdjA2ZXByb1d1cFd6dkJVbUtTSXdMRFpzVjkwQkdtNjhNSmdhYWJXeGF6Rk45OFQtX3ZHQURUYkVqNEJRc0liQVRsWVY4N1lLaVVnNXBGYVZGb1E5M29TU1Rsb042dVFCeldzNS1ieEFQQnJuN1JlRGt6RXZaX3hScnB4cXg1LW9OUFpFZElQQ1o2R0xoODkzWU1XbXlnMTlpdmhDbkhCWW14X3MyeTBEZUhXMTFNaGRxY1lGQTBRNHFSMVU5MWpEWGs5X1k4cFhBQTZCa2t3NC11R0FjalY1a1NfV1g5UHN2?oc=5",
       "imagen": null,
-      "fuente": "Martí Noticias",
+      "fuente": "Vandal",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795117841000
+      "fecha": 1795107540000
     },
     {
       "titulo": "Así vive el mundo la fiebre por el Grand Theft Auto VI",
@@ -70,7 +110,7 @@
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795095074000
+      "fecha": 1795095000000
     },
     {
       "titulo": "Los mejores videojuegos rebajados en el Black Friday de Amazon: tenemos uno de los mejores juegos de 2026 y varios GOTYs",
@@ -83,64 +123,24 @@
       "fecha": 1795093200000
     },
     {
-      "titulo": "Mapa interactivo de GTA 6: todas las ubicaciones, coches, coleccionables, carreras y armas para completar el 100%",
-      "resumen": "Hay tanto, pero tantísimo para explorar en GTA 6 que es normal que nos sintamos abrumados explorando un mapa tan descomunal. Rockstar Games…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/mapa-interactivo-gta-6-todas-ubicaciones-coches-coleccionables-carreras-armas-para-completar-100",
-      "imagen": "https://i.blogs.es/d5a9dc/vice_city_02.0c5.7qx17u9kl/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795091473000
-    },
-    {
-      "titulo": "GTA 6 se beneficia de la suscripción a GTA+: qué ventajas te ofrece en el modo para un jugador",
-      "resumen": "La suscripción a GTA+ no se trata de algo nuevo. Desde hace años se encuentra disponible para todos los seguidores de la saga para sacar par…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-se-beneficia-suscripcion-a-gta-que-ventajas-te-ofrece-modo-para-jugador",
-      "imagen": "https://i.blogs.es/bc4a04/gta6-gta-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795089678000
-    },
-    {
-      "titulo": "La baja que acaban de sufrir los creadores de Expedition 33 es de las que mete pánico a Belcebú",
-      "resumen": "Hay muchísimos aspectos destacables en Clair Obscur: Expedition 33, ya sea el estupendo combate o su particular apartado artístico, pero des…",
-      "link": "https://www.vidaextra.com/rpg/baja-que-acaban-sufrir-creadores-expedition-33-que-mete-panico-a-belcebu",
-      "imagen": "https://i.blogs.es/6ab216/1f86d6d6b37345a4133440c124d5df50fe8b6193139172d3/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795087877000
-    },
-    {
-      "titulo": "Este juego de palomas tiene un mundo abierto nueve veces más grande que GTA 5 y lo puedes jugar gratis en PC",
-      "resumen": "A todos nos impresiona el tamaño del mapa de GTA 6 y no es para menos, pero si vamos a la guerra con Rockstar Games en cuanto a dimensiones,…",
-      "link": "https://www.vidaextra.com/juegos-online/este-juego-palomas-tiene-mundo-abierto-nueve-veces-grande-que-gta-5-puedes-jugar-gratis-pc",
-      "imagen": "https://i.blogs.es/358e3d/coo-screenshot-3/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795086074000
-    },
-    {
-      "titulo": "El GTA VI desata la locura: vuelos a Nueva Zelanda para probarlo antes, ausencias laborales y hasta días libres en el ejército",
-      "resumen": "El GTA VI desata la locura: vuelos a Nueva Zelanda para probarlo antes, ausencias laborales y hasta días libres en el ejército EL PAÍS",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQOG9OWnJaa2ZnLTRtS2hDcTFtZFN3TTdPb3h0amlIMjlSTlpDanVxV1VzcGNaQlhUa1NMZTE4YXFsRTJVdXF2b09PVXZIb2RNLU5zcm1vUEhLa3h5cnhQcVIzbXBvRmVQakdXZEdOUG11OVhGTHFyVE1OdlUyTmMyRDlJd2tDUkxFTERBOGFsT0pCYktxLTJRNEYwemhrSDRUdTNLVVFGLXIzYWpQMlZYUVNPUWU4alBTTVVXR3RibWtHSm9NV1VMaVlzQlJtUEM2dVhySHhDdWpKajZwWkE0T2xydGQxZVZwemhFYVdoRjlvcFh3emVvaHV3d1bSAZACQVVfeXFMTzZfZ0poam9yV3VpekRjWlgzWDgzbDNnWHRpSWt6Y1VfdV9lbTZ1anlsNFRLbGlFMXNEYVFKMDFFeFNrYktDTmFIUmJKLUIxNERVTmxyQjk3UFdHZ1JuVWdYSjZkMTRNMHVwd0t1YXBqRDVzTzhsRk1TZ3hIWXU0UWJMaWR4QUx0V3RUVWNiQ3JTSTl6WkJQMkNqeTBJcEhKZUoteUZPZmYyYzBzT3dYdnRNNHVzYTdjWUxacDdxWjY4V1phb0w2bkR4aUlqUm55SDBKa2xfcmhDYU54SUJOdTZ3Qms1U1BqMDdTRnBDbEZyUTR0T1BRRzdzWFF6OEkwdjJaZUVuUDg5VHhiUGJsMVA?oc=5",
+      "titulo": "El realismo de ‘GTA VI’ es tan extremo que para muchos jugadores la violencia gratuita se ha convertido en algo insoportable",
+      "resumen": "El realismo de ‘GTA VI’ es tan extremo que para muchos jugadores la violencia gratuita se ha convertido en algo insoportable Xataka",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYWNybFM3QUQtY3puRUYwbUE1TkoyckFuVjgwMXhDa3l3TFFMWHlXdU1ZaVZjak1qOTJsQUU2R2U4eURQN2d1U2YtRHdZbERNMXJOQnJJTUV4dVh3d0dJNGxkZHF1Qi1rRWR2MUxZY1pWT2VCMlpYcWFDbkFtTGxnb0ZRajJrcG52c1NkQUVGRWloX1Y1d284bm1Yc3ZKeUYzY0tkbm5sXzNSb2tkdXl5c1dRMl9nSmNlUjBGZERvdnM4dE5uYzlsNGtDcUdLc19MN0dHcdIB2gFBVV95cUxQTVJWSkhNREg5cFFZZDREOVhCX3ZuQUg2V0syWnpkQW13NWtaQnlFSkxDRjJOVmhVVHBoWVd1QXVnQkxKQnF0aEtDUFZGYUNBVkZELXpZeGgyckpuaTd1SEdrQkRNNlU0VXJEMVh2Qk9kajE2bnB3NF9tRXgtT21XVjVjYThaTU9VaVNNV1dLV0JlWGM2cTFnRndkNTJSZWpOY3lnZERpOElnZjBFUVd0Y2owR2ZZUmZYZmNIU1M2ek5BbWtvNHhxSW55M2JZUjRXeVFHM3VYNF8zZw?oc=5",
       "imagen": null,
-      "fuente": "EL PAÍS",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795062601000
+      "fecha": 1795089652000
     },
     {
-      "titulo": "Seis influencers se enfrentarán en un desafío que combina videojuegos, trivia y pruebas físicas",
-      "resumen": "Seis influencers se enfrentarán en un desafío que combina videojuegos, trivia y pruebas físicas Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQXl0SUpTeVlhN3dBMHhPQnRGSDczbThSRmlwbjZpZF9YWkdfSzNGcVBPUFItc0lPR2FBZFpIdkJid0UyX01OQXgyZ0xVTkJ5YjQ4LTFSdVdFem1WandXblNINW1iQXc1WTREa2phX0VGMGhGNzhFa1hwWDQ4cFlQa1VXUS02cndGVzIwVTV3ajk3UmczLVZxejI1dzRJajlkQ0lYNQ?oc=5",
+      "titulo": "Estas son las cifras millonarias de ‘GTA VI’ que sorprenden a la industria de los videojuegos",
+      "resumen": "Estas son las cifras millonarias de ‘GTA VI’ que sorprenden a la industria de los videojuegos Telemundo",
+      "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPT2VLREFpM0JzT2pHS2lhVG1tYWR2WTJzLTBXY0hMeDlCTkNLX0Rvbmx5NHBrdXUtMDFMdENhaXJ4OFVJQUVCMTJGNE51UHhXb1RRR3k4RHVlLTQwa0NFOE5rSmJEVmVGNEdSUXlNR2xJMW1wbWcxVXU0NWtKQ2Fqc2pFSklXaC1uUkFOUDdKWUY0NTVFaWxiMmxYVmYweThOUUk2SURZR3l6ZnRkcEtoQkc2M0F3ZWdlZG91UGRCdTNRa2ZtUHNBUEZrdkhGdlhpUktsTFZJdkRsSkJ4TkNXbTQ4dHRuTXRIa3NNcXh3N0h0cUdDTmI3dDJrcDhZTXRCbjJObkh4UFBaeDVFOFVyX19IQVA3OTNnX1NDeFI3Zl9jWFk?oc=5",
       "imagen": null,
-      "fuente": "Yahoo",
+      "fuente": "Telemundo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795034856000
+      "fecha": 1795067460000
     },
     {
       "titulo": "Valencia será la sede del MSI 2027: Riot Games anuncia un año histórico para los esports de League of Legends",
@@ -153,24 +153,24 @@
       "fecha": 1794931216000
     },
     {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
+      "titulo": "Los esports de LoL en 2027 y más allá",
+      "resumen": "Los esports de LoL en 2027 y más allá LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hdWR2b2VtMnJTVHllNjh1alFUZmh4MkpJc19XbXRxUTZKbEZWcVpKLWlzazAybmNZUE5JTmgzTHQ1X3FyOE9UTVV2Wk1xWWhpRmV4UWVWLUdyZGZfNXBNbGVldk85ekZtS1VacElB?oc=5",
       "imagen": null,
       "fuente": "LoL Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1791183600000
+      "fecha": 1794613370000
     },
     {
-      "titulo": "Red Bull Wings Cup España 2026",
-      "resumen": "Red Bull Wings Cup España 2026 Red Bull",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xcjZqTWJyd0UtQUdRQjBMSk1CX1ExT011WnBMV0hycktXNjNkaUs3dmpIQ3dRRFkyMlF2czV3ZTBobEs3Z1kwaGtXLWxtdHpudnhVdUxCLTlncjN2YndfZHlzcy03X0ZuMWFUTGxOMEQwWHBINXc?oc=5",
+      "titulo": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista",
+      "resumen": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista IGN Latinoamérica",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQangxZUJBelRVbnNnQ3VKYUJyaUh3NnhRLWo5eGMwcldDdGthb0J1ZmY3aXJPTHc4NWFTRm1QTGJ3MXp5TGItdFFPUWNYR0ZDSmo5cHNjcDl1X29feFNXaE15dVI5b2VCRmdjOVVvSXZtMlY2Z1MyUEFGeXo4U19pSy00cS1kLUN2aEJ3c3gxU0N2V1VqeVRQSlNGaTIyQmFkWjRBSFNsNmVNV0xCYlE?oc=5",
       "imagen": null,
-      "fuente": "Red Bull",
+      "fuente": "IGN Latinoamérica",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1786449997000
+      "fecha": 1784185200000
     }
   ]
 }
