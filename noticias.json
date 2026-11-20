@@ -1,7 +1,17 @@
 {
-  "generado": 1795123947359,
+  "generado": 1795144447110,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos",
+      "resumen": "30 años de Grand Theft Auto: La crítica a la sociedad estadounidense detrás del fenómeno de los videojuegos Univision",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQejFPMWJFeFBMbnRJTmpMc1FKWXNnaFZabFoxWEE5MHc5LWhmOGM2Z3NyNWVaSVp1djUwZ2V3aDdtRUtXNndYNVdocHRmSHI4SndVZkxPN0xsSlg2NklNUkcwLWt0em5Nemx4elAwUHVncnV3NFFlZF95OGtKRTREYzZRUUNIN1FJTERkSzZXdmVsM2ZXcXgzSnVlTmRjZTZpRlVBUjZjWENhdkloSW5FdHMycHFhX2JFakJhaE16VVd1UVdnOXpYRlZSZEtqam4xWGthSXJQWHUwX0UwZUlnLUV1ZnNYSGtucmZvbjZZRzVwUGJY?oc=5",
+      "imagen": null,
+      "fuente": "Univision",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795133661000
+    },
     {
       "titulo": "Xsolla conecta a jugadores, marcas y audiencias de videojuegos mediante la interacción con recompensas",
       "resumen": "Xsolla conecta a jugadores, marcas y audiencias de videojuegos mediante la interacción con recompensas Rutland Herald",
@@ -11,6 +21,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795120200000
+    },
+    {
+      "titulo": "GTA 6 llega al mercado mundial con referencias a la cultura cubana, pero jugarlo dentro de la isla es un lujo",
+      "resumen": "GTA 6 llega al mercado mundial con referencias a la cultura cubana, pero jugarlo dentro de la isla es un lujo Martí Noticias",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPVzJycnpPaFY1RjNrOThUY2Z4dDlrSGRsanNSd2RrS3RyOWpsNDRwVG9VZjQ2ZkVIU1FUX0tIcWxwTjE5elBRTmtxa045aWFwbjBkUmlPUnNFYzUzYklFeEJVcnJ6YS1wVFpYQ1lzdXI1Z0pQTTVJeW1pVUxPb0kxOERmS0t1MWhyQ0dRNVBnYVl6ZHN6ZXlSM00xcnBpRXR6MGlPRXRfT2dtbG0zTzlMYW5ETDFzdno1NkhacFdJSWRkakZfdHB5dmZ4dWJxaUtWMk5JRGFkX2FnRVNGdDFkR3NEOHROUjTSAeoBQVVfeXFMTVFFdm5YR2wxSzVEc3RGYXlsMm1uLTluRDR2bFp4V000WF94SURBTmhSUER1UWltUTJ2RUV3X0pIazZOSDlUMk4tUHRJM2RfaW12SS1SZjllNW5OckpJUC1PcUl6V1ZqRmNwV2JPa1JxbmlsTk1Rd0ZMNklEdnJlUWk2SEp5U3BNTUl4UmNKLXJNMGNIZElHM1pHY2ZRRXhEQzdyVkp5eGNtMkIwMUVQY05kMEJod2pPTG5VNzdoUDc4X2tsbm5jdktuZk10dkpQaHhIV2pXbTYwd0tvSXMzcVRsRGo3b0hkRXRR?oc=5",
+      "imagen": null,
+      "fuente": "Martí Noticias",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795117841000
     },
     {
       "titulo": "Así vive el mundo la fiebre por el Grand Theft Auto VI",
@@ -113,34 +133,14 @@
       "fecha": 1795062601000
     },
     {
-      "titulo": "Estos videojuegos están en carrera en los The Game Awards 2026",
-      "resumen": "Estos videojuegos están en carrera en los The Game Awards 2026 Primera Hora",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNREUtbHl5bm1mc2JoTHFkcTJIWHpZOXFjMUJ5N1IzQmhCdzliMHNjdnd0R2tfNUJ6SDFVaWc2STBybUtvVkJNbzV5QmNoemFXWUxjS1BsMmFleUwtTFJjVEgyUXJoa2tGM1JYUHdIQ0JHT19zRFJ4WGpTZmpTWU1aYkZ6NjhLdXphQkpRaGVPa3ZLZlB1d1dfSzRKNUNwWmtNUDd5SE5GWXc3V21ZNnpTakM1R2VhbWxnRGxqUjFqZHo0RmtQS0I1c2Vyd00?oc=5",
+      "titulo": "Seis influencers se enfrentarán en un desafío que combina videojuegos, trivia y pruebas físicas",
+      "resumen": "Seis influencers se enfrentarán en un desafío que combina videojuegos, trivia y pruebas físicas Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQXl0SUpTeVlhN3dBMHhPQnRGSDczbThSRmlwbjZpZF9YWkdfSzNGcVBPUFItc0lPR2FBZFpIdkJid0UyX01OQXgyZ0xVTkJ5YjQ4LTFSdVdFem1WandXblNINW1iQXc1WTREa2phX0VGMGhGNzhFa1hwWDQ4cFlQa1VXUS02cndGVzIwVTV3ajk3UmczLVZxejI1dzRJajlkQ0lYNQ?oc=5",
       "imagen": null,
-      "fuente": "Primera Hora",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795056000000
-    },
-    {
-      "titulo": "\"Es mucho más divertido ser el malo\": la idea que inspiró a un pequeño estudio escocés a crear el exitoso videojuego GTA hace casi 30 años",
-      "resumen": "\"Es mucho más divertido ser el malo\": la idea que inspiró a un pequeño estudio escocés a crear el exitoso videojuego GTA hace casi 30 años B…",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA4aHBfUUJtZkl3TERIdHkzLUIxdXJVT2hUeERENnVBM0NYYUxmWFU1dlNOc25KY1lKejU2ZEUxTHVQX3BFeE5iR2JHR0ZjRWs5dDc3VWpFTkR4Y2RW0gFiQVVfeXFMTXpoUWlaX0hIeEpKaUNOeGZJd21HaXJvS1A5Qkk2NF9QUFRmQVcwZ3Jkb0lLVmlBR1I4d0g5M3NWU3NJNkNXZmhLT2VNWXgzVV9ybm5FTzZfM1czUkpYNWdKOUE?oc=5",
-      "imagen": null,
-      "fuente": "BBC",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795012327000
-    },
-    {
-      "titulo": "Análisis de GTA VI. ¿Es el videojuego perfecto?",
-      "resumen": "Análisis de GTA VI. ¿Es el videojuego perfecto? 3DJuegos",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONkRhSldLc3ZfMGViTnVMdEtabUh1bWhsajZaYUFLUmhJcHI4LXlSNzk3SnQ4SnVPVURZQ1FxQndPbWFpZU4zdXkxMFg2S091UHlBd1l0VXNZMHAtXzNiODliZlNQX2JZTTlfUW0zUjBqaWRBVnpZbFlWOFNmcjBxOVlFakIyZlZtcjZVVXBOR3pwUk80Tm85Vk1KRnXSAaIBQVVfeXFMUG4yV3NrWXU3cDlXejhGTmtHZFB1b1FPQUl6WUNkemFhM0k4TU5SWS1tOC1GSjZFN3oxX2pMU1BqcFRhbXZTc1YyM1BBc3JaSWlzcllRTk5rVGZHRGUxMUtBNk5NVjhMRFQzVG54c0otQmJYWk0xUUJPUXI0b0x5R3BBU1A1QjdfNDVkSTJLRGtfZWlWOEZ5ekllUFVicFhESFpn?oc=5",
-      "imagen": null,
-      "fuente": "3DJuegos",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1794999720000
+      "fecha": 1795034856000
     },
     {
       "titulo": "Valencia será la sede del MSI 2027: Riot Games anuncia un año histórico para los esports de League of Legends",
@@ -153,24 +153,24 @@
       "fecha": 1794931216000
     },
     {
-      "titulo": "Los esports de LoL en 2027 y más allá",
-      "resumen": "Los esports de LoL en 2027 y más allá LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hdWR2b2VtMnJTVHllNjh1alFUZmh4MkpJc19XbXRxUTZKbEZWcVpKLWlzazAybmNZUE5JTmgzTHQ1X3FyOE9UTVV2Wk1xWWhpRmV4UWVWLUdyZGZfNXBNbGVldk85ekZtS1VacElB?oc=5",
+      "titulo": "LoL Esports |",
+      "resumen": "LoL Esports | LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
       "imagen": null,
       "fuente": "LoL Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1794613370000
+      "fecha": 1791183600000
     },
     {
-      "titulo": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista",
-      "resumen": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista IGN Latinoamérica",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQangxZUJBelRVbnNnQ3VKYUJyaUh3NnhRLWo5eGMwcldDdGthb0J1ZmY3aXJPTHc4NWFTRm1QTGJ3MXp5TGItdFFPUWNYR0ZDSmo5cHNjcDl1X29feFNXaE15dVI5b2VCRmdjOVVvSXZtMlY2Z1MyUEFGeXo4U19pSy00cS1kLUN2aEJ3c3gxU0N2V1VqeVRQSlNGaTIyQmFkWjRBSFNsNmVNV0xCYlE?oc=5",
+      "titulo": "Red Bull Wings Cup España 2026",
+      "resumen": "Red Bull Wings Cup España 2026 Red Bull",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xcjZqTWJyd0UtQUdRQjBMSk1CX1ExT011WnBMV0hycktXNjNkaUs3dmpIQ3dRRFkyMlF2czV3ZTBobEs3Z1kwaGtXLWxtdHpudnhVdUxCLTlncjN2YndfZHlzcy03X0ZuMWFUTGxOMEQwWHBINXc?oc=5",
       "imagen": null,
-      "fuente": "IGN Latinoamérica",
+      "fuente": "Red Bull",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1784185200000
+      "fecha": 1786449997000
     }
   ]
 }
