@@ -1,16 +1,26 @@
 {
-  "generado": 1795227200572,
+  "generado": 1795254656629,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "GTA 6 revive el debate por la violencia en los videojuegos tras críticas de un congresista estadounidense",
-      "resumen": "GTA 6 revive el debate por la violencia en los videojuegos tras críticas de un congresista estadounidense IGN Latinoamérica",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOdW1TTEVwbzNzVURVT2RiNmU5cjdMUk0tTUNSdURqTjJxOWZfdGxOYUNkZVZBV2w3T1d1Skh2dkVzZ1RQYmpIckw5ZjhNa0NTVGFKN01hb0ZMLTl6LXA0dkdJSUhIZTdfUENSZmRIT3RadC1lQkJMZUhkSGhkWFJsTEhLeUpRTG5qZmNhS25vUWVqRzl6VWo0bHZYRkttN3N4all1Z0h1ZlhTTVJEeWtMX2JERERsV0x6NjJTcV9wUC1Fc09SeXV1ZEk0R1piWEJqWUJzakxMMHE4Y3RuTVZFQjQzMA?oc=5",
-      "imagen": null,
-      "fuente": "IGN Latinoamérica",
+      "titulo": "Qué fue de Bully, el GTA de patio de colegio que dejaba en pañales las peores gamberradas de Bart Simpson",
+      "resumen": "Rockstar nos ha acostumbrado a unas etapas de desarrollo realmente largas, ya sea con Red Dead Redemption 2 o el flamante GTA VI. El número…",
+      "link": "https://www.vidaextra.com/accion/que-fue-bully-gta-patio-colegio-que-dejaba-panales-peores-gamberradas-bart-simpson-1",
+      "imagen": "https://i.blogs.es/4db83f/teahub.io-rockstar-games-wallpaper-2455133/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795213210000
+      "fecha": 1795252583000
+    },
+    {
+      "titulo": "La remasterización de The Witcher 3 conserva un easter egg que ha asustado a los jugadores durante 11 años y continúa haciéndolo",
+      "resumen": "CD Projekt ha devuelto a muchos jugadores a la senda con la remasterización de The Witcher 3: Wild Hunt. Es gratuita, así que no había demas…",
+      "link": "https://www.vidaextra.com/rpg/remasterizacion-the-witcher-3-conserva-easter-egg-que-ha-asustado-a-jugadores-durante-11-anos-continua-haciendolo",
+      "imagen": "https://i.blogs.es/e9b5b9/witcher-3/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795248026000
     },
     {
       "titulo": "GTA VI reaviva el debate sobre la violencia en los videojuegos: ¿Realmente afecta a los usuarios?",
@@ -23,14 +33,14 @@
       "fecha": 1795211520000
     },
     {
-      "titulo": "\"Grand Theft Auto VI\" bate récord con $3.790 millones en ventas el primer día, dice Rockstar Games",
-      "resumen": "\"Grand Theft Auto VI\" bate récord con $3.790 millones en ventas el primer día, dice Rockstar Games Audacy",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRXgxOUloNzNPcTJ5WS1LN2tOaHhUM2t2QjJNQUV0WXB4OXJEXzdaYk5vd1lOc09xa21td2tpS1ZrTHlMSzFKVzg4RkJ5b2JOTzVNSlZIMWZ5OXc1Z05HQTZ6ZmxpTFFKaXo4QXNreGUweDZkS1NKWmYyVFFtZFhaT29HVHlWbDNFNEdVUjh4M2lTd1BOcDQ0QTdhRDZtQmtjUnZxamRsMjlRYnVZ?oc=5",
+      "titulo": "Cultura - GTA VI llega tras 13 años: ¿es un videojuego peligroso?",
+      "resumen": "Cultura - GTA VI llega tras 13 años: ¿es un videojuego peligroso? France 24",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObXVvSFdoRmZ3aDRwV0tKTzJvWTBNWVJXRktpTjdiaTRpYUxKbW9kU0dZU3pYTG4zazktbW5RWHdUaVpJVEpoWU01UzNwTGpzVHIzdElvZnQ2eE85WWthdkVJeW4tNVZoRUh6bGVCWWNhNVFrQlVBb3pyTkMyLV9oQ0hoaDFUaE94RnZaLXFFdzBLNUxlczZ3RGhfWF9MeE9kS3BtMS1MVnlJT1dORjh1TUF3?oc=5",
       "imagen": null,
-      "fuente": "Audacy",
+      "fuente": "France 24",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795210260000
+      "fecha": 1795207022000
     },
     {
       "titulo": "Ya es oficial: GTA 6 vende 32,5 millones de unidades y es el lanzamiento de entretenimiento más grande de la historia",
@@ -43,16 +53,6 @@
       "fecha": 1795204737000
     },
     {
-      "titulo": "Videojuegos e inteligencia artificial: nuevas herramientas para transformar la educación",
-      "resumen": "Videojuegos e inteligencia artificial: nuevas herramientas para transformar la educación Universidad Autónoma de Guadalajara",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU1ZNUVg4UXN4ekRxdkFHMkFnMk8xX2lRZHU2dDNzNy1OTHd6eUlRLVdqNVo4eWZWY0haamtKcWROWC1kYld0U3drSzI2T3JZUm9LMlJpMmVtR2ZOX3A1TzBsV0tJN1dQVVFxNTZrcmlKLVZIR1k3NGhkQVhNOElCbFlZcVVNX3RpdzVabzIxNG1JeDRzS2Q2a21QTEhhTF9YRHdFWGpMWEQzcEZJZ2dsazJ2dXBIQjFJTGUwemVLX255YXNr?oc=5",
-      "imagen": null,
-      "fuente": "Universidad Autónoma de Guadalajara",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795202165000
-    },
-    {
       "titulo": "GTA 6 esconde un excelente homenaje a Red Dead Redemption 2 con el que puedes conseguir el mismísimo sombrero de Arthur Morgan",
       "resumen": "Aunque el foco de atención de Rockstar Games está situado completamente en GTA 6, no se ha querido olvidar de otra de sus mayores obras maes…",
       "link": "https://www.vidaextra.com/accion/gta-6-esconde-excelente-homenaje-a-red-dead-redemption-2-que-puedes-conseguir-mismisimo-sombrero-arthur-morgan",
@@ -63,24 +63,14 @@
       "fecha": 1795201226000
     },
     {
-      "titulo": "El videojuego de Grand Theft Auto VI rompre record de ventas en su lanzamiento",
-      "resumen": "El videojuego de Grand Theft Auto VI rompre record de ventas en su lanzamiento Spectrum Noticias",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeVZTQVlQM1B3cXdocmJHaVFfNVRheVFSTmhyZXJ5MHZoa0xRRjN3VEhrNThYMGg4UUJSd1RzN1JjNVhJN0M0WjNVb3g0ZnRZWGdGRWw3THpuVnFYZ0ZYdEVQck1oVGxmNk1kTTVUTTJTaXg3TVFQZHBuZnN1T2Q4c09ZUzJKSHJlRWNMaW9NeUFOZjJpUzdrTjNnU0RMNllVTjNETm9Ec211U1hWbVJlWnlQNVY3N0E?oc=5",
+      "titulo": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija",
+      "resumen": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija Univision",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNElOTTU4OGl5YmlHMEVzMDZGTXBpd3o3dk95UFA0anpMOV9kTEF3Ui1iTjcyZDdyWEpRRUQyRDlvclVWVi02a0dyd0tJS1hsN0hXZFhOVWdQc0EwdnlNRmE4dGh1SkZLWEhfdGdEOVZnRDJ5dDRHLXlaVzl3dnBVMkdZZFZRb2l3VElfWENNS2o3LWdjSnhXQkJfaVh6OUNJNDF4T3NQRVRsaFNGeVZOQmhiYlVnTFFKbFltNFloVXJNZnlpRUZnUTBn?oc=5",
       "imagen": null,
-      "fuente": "Spectrum Noticias",
+      "fuente": "Univision",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795199820000
-    },
-    {
-      "titulo": "El Crandon Park revive en los videojuegos: Así es su adaptación en GTA VI",
-      "resumen": "El Crandon Park revive en los videojuegos: Así es su adaptación en GTA VI Match Tenis",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBETHJ6M3JYZklNWFBNYlZ2SWhNNHUzbG8zUExRdG5LNC1KSlhJbGNZWkxKbGszTGI0aVRUdTltSHRsOVdudnZvSXVmYUY5MXNFSEtFLUFpR3NJTk94WU92Q2cyb2luckNwVzBNQm1sN1JteW1B?oc=5",
-      "imagen": null,
-      "fuente": "Match Tenis",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795197215000
+      "fecha": 1795190760000
     },
     {
       "titulo": "Fue el gran exclusivo de PlayStation en 2025, y acaba de alcanzar su precio mínimo histórico: Ghost of Yotei",
@@ -103,6 +93,16 @@
       "fecha": 1795187765000
     },
     {
+      "titulo": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria",
+      "resumen": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria Diario Las Américas",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRHJRZkZYYnFxMmh3enF1UGtYVjMyWTBwLVZoX1VPaXVoeDZXSlZsU2FuMnFtWURlUXR3X3JqcEs4b1E0V3VfWk1mRHEtd2EzZGlZUF9ydVJxb0lUTEYzR2hwWHVnN0ZXVTRFVjFFeE8wY0NZQWFJRjVyYzUyb1BsQ193Q3hTR3U3TVlxdlI4MmY4RGMwQTgwTHJqYTlieGxGMjRqYzBWX3BMeE5Ba2c4aXhDY3AxUWtCZ3piNE1HdlJYUEpRb3fSAcsBQVVfeXFMTzdzcDQ3N05IaTFHNnBZMlpkbXZ4Ui10ZW9xY0JQVHZhSnQxZzJBRHJoWG1hckFQTEFUMmJUUFpOdFpWX2ZYbDU1bEhQYVhfVExQSWR4Tk9wRzVENl84MTByZHNMNDAxcndjQnI4VU1VUHV3eWJELW9RRml2QWxSM1VaMjlwaVNYZHNiZnIwVnAwUm1oQzVtTkV3aFVHZnlfSnVwWGtfSC04XzBXQ3ItMFlybjVJc1NEU05wM256TXNmeTYybTJMRUFOZlU?oc=5",
+      "imagen": null,
+      "fuente": "Diario Las Américas",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795181100000
+    },
+    {
       "titulo": "Cómo activar la primera persona en GTA 6",
       "resumen": "A pesar de que GTA 5 y Red Dead Redemption 2 sí cuentan con un modo en primera persona, lamentablemente Rockstar Games no ha implementado es…",
       "link": "https://www.vidaextra.com/guias-y-trucos/como-activar-primera-persona-gta-6",
@@ -123,24 +123,24 @@
       "fecha": 1795176180000
     },
     {
-      "titulo": "Cómo guardar tu partida en GTA 6: esto es lo que necesitas saber para evitar perder tu progreso",
-      "resumen": "Algo que teme y odia con toda su alma a partes iguales cualquier aficionado a los videojuegos es el hecho de perder su partida. Si esta es t…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/como-guardar-tu-partida-gta-6-esto-que-necesitas-saber-para-evitar-perder-tu-progreso",
-      "imagen": "https://i.blogs.es/01206f/gta-6-brian-heder/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "Steam ofrece 2 juegos gratis para PC hasta el 23 de noviembre: cómo descargarlos antes de que termine la promoción",
+      "resumen": "Steam ofrece 2 juegos gratis para PC hasta el 23 de noviembre: cómo descargarlos antes de que termine la promoción Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPVHdTMl9XSFZEYUVObnJxNFFOS2p4a3hEeExaZl85RFJNZjIzYlcyMkROS0t5Q3BDczlBNkNORnhVc1JqU1JwT1hGdDhxZ281cnR2RzJucU1NUmRrRXd0M1I3STNKWnZoN3hCU3NDS3NyWEl3enNuMFBwSkNDMXJTRmJNcXd2aFFUaDNRZmZvdjYyRTJpa0RRNVpUMWtnVVJHak5MRGdOZ3lGMF9FSmpRM2ljb1FzTmNLaTFnMkd5ek44RTh1Nk1yR2E5WmJybUdnMnBMUHhoMTJzdU9GYV9N?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795172425000
+      "fecha": 1795174298000
     },
     {
-      "titulo": "Todo el mundo está loco por tu vecina Mandy en GTA 6, pero esconde un oscuro secreto",
-      "resumen": "Cuando hasta el histórico responsable de Nintendo of América, Reggie Fils-Aime, pregunta por Mandy, sabes que se trata de un personaje que e…",
-      "link": "https://www.vidaextra.com/accion/todo-mundo-esta-loco-tu-vecina-mandy-gta-6-esconde-oscuro-secreto",
-      "imagen": "https://i.blogs.es/f2ddd8/jason/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "Un videojuego independiente está logrando algo extraordinario en 2026 y sus cifras sorprenden incluso a la industria",
+      "resumen": "Un videojuego independiente está logrando algo extraordinario en 2026 y sus cifras sorprenden incluso a la industria Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMHc2VUNfZV9TOEhTWjY2UzN2d01TNXhTSnJ1dDlzMktueUdHYUVMMlZRRUhTRFNudVhwYzFmcU5rbTFxZ2w1Wkt5d29qbnBpZzQzdlpWQ0ZybVFPWVBqb3UzZDhNaER1TmlOR0UtdENPYTNOX3pYVmVYR29PUGVkbDV6NTc4dkVEcG84SjI2dFZmd0g3YmxJbkJkYk9OOXBfTExJNzlZeTYwOFBrM2lSa3VVTHZzRTV0MUVuS0FwN0t2c3NLOC1PUXJxZ1NVUnhkUzRiTFJ6UmFhSllBZ3ZoMXVFdw?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795169784000
+      "fecha": 1795162374000
     },
     {
       "titulo": "LoL Esports |",
