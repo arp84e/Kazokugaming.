@@ -1,7 +1,27 @@
 {
-  "generado": 1795282271780,
+  "generado": 1795302903735,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "¡GTA VI hace historia! Se perfila como el mayor lanzamiento de entretenimiento",
+      "resumen": "¡GTA VI hace historia! Se perfila como el mayor lanzamiento de entretenimiento Sistema Mexiquense",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPYWVxbzFVaHE2eWxUN0lTRnJFUGU1TDZoZExhdFc2X2VvMDQ2YUw4OEVrZnIzUjRzQ0Q3MzlLa3M1S3NuT194OXVYWUotVzNsbDdMM0tQd1pkaG5fVUpSZzdvUld1T3JWcHA0WktlTDNwUjJjNkNQbzJiWElQZmlHUE9LaHJ1RUNMTEhrVmZXV2Q2bk1tcUMzQ2FKTkZPemxXX0o3QkxFUmlaNVhBa21ncnVaajJHbXJfdnlKTEF4bUtPZFNmaFVyM3lkam9MdU9IVDg1Tw?oc=5",
+      "imagen": null,
+      "fuente": "Sistema Mexiquense",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795297208000
+    },
+    {
+      "titulo": "Assassin's Creed: Black Flag Resynced está salvando a Ubisoft, que atraviesa una profunda crisis",
+      "resumen": "Los 32.5 millones de copias vendidas solo en reservas de GTA VI son un hito seguramente inalcanzable para el resto de la industria, pero es…",
+      "link": "https://www.vidaextra.com/industria/assassin-s-creed-black-flag-resynced-esta-salvando-a-ubisoft-que-atraviesa-profunda-crisis",
+      "imagen": "https://i.blogs.es/8d4f6a/ac/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795282940000
+    },
     {
       "titulo": "¿Merece la pena vender la mercancía a Donnie o a Brian en el Capítulo 1 de GTA VI?",
       "resumen": "El primer capítulo de GTA VI sirve para familiarizarse con muchas de las nuevas mecánicas propuestas por Rockstar para su flamante mundo abi…",
@@ -23,14 +43,14 @@
       "fecha": 1795270079000
     },
     {
-      "titulo": "Millones de adolescentes quieren jugar GTA VI y sus padres no encuentran una respuesta clara",
-      "resumen": "Millones de adolescentes quieren jugar GTA VI y sus padres no encuentran una respuesta clara Infobae",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNR2VWU0w3VXZuWGdnSi10VEZFR0xqQzMxZUx4bXlGN1pBWU9oTFo3Y0JYTkVnelFiTXc4XzNzblN3aW81d0Jlb2FWWFRHcGJackJRQVBock94TUItRzlvbklKNjJyMnZrRUVaSHBTalpEYW9OOVBMemxBWWxZSk9wajgzM0R5MXJTOWplQk5uQlVJaW9KUkw0aHVMY3VlTTk2amR4bVFiOENCNHRxTDRZRUZkMDV0Z19ZTl8yRHpsdmRPcjVRSjNneHVVNXpLc0NhUzhaSGFTeGFuc2fSAfYBQVVfeXFMTnJXNHp6VWtwMnI3ZllENjFmREJEZVJsOWQ4Q2tMWXh4S3lUNG9PWUFjUkdZb3lSZEc0OXJ6LWtnWkRldDZVMXZsbkwwMXEtM2lTM1hEa0Z4REFDS1poUmhGZU9kWk0xNkxYS1l5M05id19vQUFQTnJxcXd5N0w4VGJXMlFRWXpQdmN1bUZoZXRoUm9xOEhhb0MyenpwYThUdC11Um9waTdDbkc4bm5HRnBJenM5NkQ4ZDFzenlFRThnZGhZYW0yYlRQelk5bXl4QUUxdHJoX3BBSTFkYkFueG1pTktrLVBLTzc0aW41cWwyMlBDbUJB?oc=5",
+      "titulo": "Podéis quitarme el carnet de gamer: tuve que bajar la dificultad a este juego y tengo mis buenas razones",
+      "resumen": "Podéis quitarme el carnet de gamer: tuve que bajar la dificultad a este juego y tengo mis buenas razones IGN España",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeW1TYlU0V1llVVpBLVM1WXd3SFByVHRmRTdXbm05Rm01RzgyLVItWU1lTm00RGVyTk9wbU1PVUs2ZHNWQkduN2c4WTNWVzV3Ui1Yd2IzbGNycXh6SjNJdnBZTkk2TlFEM0JpMjVBaVR0V2hWUVBpenJQMGlJNmNuWVZZRXhqSVliVGhPMjFraGtiR3dic1Atb0E0WU5Ib2lhUmNOcWt6UUR5VnpTNy1MdnVrVmwxQWdzM0JERmxGTEdYLVlWSzhNdXVQU1M2b1NRRERkdg?oc=5",
       "imagen": null,
-      "fuente": "Infobae",
+      "fuente": "IGN España",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795262880000
+      "fecha": 1795269816000
     },
     {
       "titulo": "Qué fue de Bully, el GTA de patio de colegio que dejaba en pañales las peores gamberradas de Bart Simpson",
@@ -43,6 +63,16 @@
       "fecha": 1795252583000
     },
     {
+      "titulo": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado",
+      "resumen": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado The New York Times",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdGZZR19wVTRhNWNXeDZhZGU0aktfR25QTlFtSTEtMnBJQkhBMVRYNHpmNXdWZkhDOHNzNHFNb1BvRHZNaWdHU05NT1BaUlZZa29DdDZlV1BQU2lmWVczemdwdC11cm8zODJlZjhBY0ZFaEc5UHdnT0JrSm9mR2Q4Y01maXdzaFM1OG42ZTZZSFp1MW8?oc=5",
+      "imagen": null,
+      "fuente": "The New York Times",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795251605000
+    },
+    {
       "titulo": "La remasterización de The Witcher 3 conserva un easter egg que ha asustado a los jugadores durante 11 años y continúa haciéndolo",
       "resumen": "CD Projekt ha devuelto a muchos jugadores a la senda con la remasterización de The Witcher 3: Wild Hunt. Es gratuita, así que no había demas…",
       "link": "https://www.vidaextra.com/rpg/remasterizacion-the-witcher-3-conserva-easter-egg-que-ha-asustado-a-jugadores-durante-11-anos-continua-haciendolo",
@@ -53,24 +83,14 @@
       "fecha": 1795248026000
     },
     {
-      "titulo": "GTA VI reaviva el debate sobre la violencia en los videojuegos: ¿Realmente afecta a los usuarios?",
-      "resumen": "GTA VI reaviva el debate sobre la violencia en los videojuegos: ¿Realmente afecta a los usuarios? Univision",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMXVBUWs0cWpDODFIbVVFb3drVU5DdzhxRHBqR1BicnJfQ2R3UUlhdXBPWV9Qc0J4WDgyVTRtRmNvaGNYaFFXQVZ6T0pMLUNraVpEaGtIMFB0ZFZaTGNaUUlVeEJLTmt3d2dKZG5Za0hiXzktQ0VaaUg2WHRuXzBfNFU4Y2RzM0NEbmRodE9DQk15bXlKbUc2V0pySFBBQkpHcmw3WEZuc1lKSkQ5TTVfbVdfOHk4ZUdMb0FTZUtMR2xmcDFFbnk3NlJMb3V6YmNn?oc=5",
+      "titulo": "¿Un videojuego? ¡Cómpreselo!, por Luis Alberto Arango",
+      "resumen": "¿Un videojuego? ¡Cómpreselo!, por Luis Alberto Arango CAMBIO Colombia",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMDZSTVNzWGhZZ0gtMjE4V0RTVm5XMTVRRmJHaEhKcTVEZUhYUFdPbXdnRUhUb3RCYUppUVh6UUZBNFpmQ2pMYTdpdTE2eExnSXhMUWZCdFp2QUZLT0VaWTV2emU4bldGbE5RVTNwTWpJQ2QtcF9seVpqMXJPTnJnOUEwQVZ2ZXdOQ1FMcg?oc=5",
       "imagen": null,
-      "fuente": "Univision",
+      "fuente": "CAMBIO Colombia",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795211520000
-    },
-    {
-      "titulo": "Cultura - GTA VI llega tras 13 años: ¿es un videojuego peligroso?",
-      "resumen": "Cultura - GTA VI llega tras 13 años: ¿es un videojuego peligroso? France 24",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObXVvSFdoRmZ3aDRwV0tKTzJvWTBNWVJXRktpTjdiaTRpYUxKbW9kU0dZU3pYTG4zazktbW5RWHdUaVpJVEpoWU01UzNwTGpzVHIzdElvZnQ2eE85WWthdkVJeW4tNVZoRUh6bGVCWWNhNVFrQlVBb3pyTkMyLV9oQ0hoaDFUaE94RnZaLXFFdzBLNUxlczZ3RGhfWF9MeE9kS3BtMS1MVnlJT1dORjh1TUF3?oc=5",
-      "imagen": null,
-      "fuente": "France 24",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795207022000
+      "fecha": 1795248000000
     },
     {
       "titulo": "Ya es oficial: GTA 6 vende 32,5 millones de unidades y es el lanzamiento de entretenimiento más grande de la historia",
@@ -113,34 +133,14 @@
       "fecha": 1795190357000
     },
     {
-      "titulo": "Arturo Pérez-Reverte (74 años), sobre los videojuegos: \"Es la herramienta narrativa del futuro. Es un error despreciarlo\"",
-      "resumen": "A punto de cumplir los 75 años el próximo 25 de noviembre, Arturo Pérez-Reverte sigue al pie del cañón escribiendo novelas. El periodista ha…",
-      "link": "https://www.vidaextra.com/cultura/arturo-perez-reverte-74-anos-videojuegos-herramienta-narrativa-futuro-error-despreciarlo",
-      "imagen": "https://i.blogs.es/bdf772/captura-de-pantalla-2026-11-20-155137-1-/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795187765000
-    },
-    {
-      "titulo": "GTA VI: cuánto costó desarrollar el videojuego, cuántas horas dura y por qué es uno de los lanzamientos más esperados",
-      "resumen": "GTA VI: cuánto costó desarrollar el videojuego, cuántas horas dura y por qué es uno de los lanzamientos más esperados Infobae",
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOZHlwOXJpVm01RkdNN05SVnRPcGhiMWw2SjNvYm00aDV4UWtQelhDemJYNzE3Y29JWnVha3FYQ1NhZlVuMV90dHk5RkpCLXpxcVZTaE1xVEM2ajR1NUJibndJNko1U2lpODJRQTBZMzFYUUFGNzVkRHNEVEM3MTZBT203LUF6S3lyMU9tUEFJelNPTjlfUUo5aEpJdkZWUjZlc2JrbUdoTGFJeG1oMThScDdFQVI3R2VoMGZ5NW90bWRtZmszRW10c1A2aXZqWWJxYWd6a1pjbmVmcHZjRm5sZE9leTg0NERDcVNaSTRR0gGIAkFVX3lxTFAtRU41cGxEZVdzUXVjbk1VVHI1ZUxhak5kLVBNSElCaUVGcmlKM1FBZFpkYlBNTTlRcFotVFZPanhjRUw1eHpTUy1KWGo0dExpVzRxa2lJNlhJNkozOFo1djhkcGNmYlM2UjljWEluRjJJSS0xbHJtYzVoNjdUY0lfeVYwUlo0bkJ2d1BOV2tsc2tyUVhLZjQyb3NNMDdRcXkxZ1RIXzl0bWhReVNObkI4WFl5QzF0MHQzWHlCNzkzc0dLXzBRczhUX054Y1UxSmNpd1p0Z2YzZHNPenk5LUV5T1JfRmdGdzNPSnVXcGZuc3JReVN5S2lCYUVIVm05ZU9VTkNoZU1Dcw?oc=5",
+      "titulo": "Estas son las cifras millonarias de ‘GTA VI’ que sorprenden a la industria de los videojuegos",
+      "resumen": "Estas son las cifras millonarias de ‘GTA VI’ que sorprenden a la industria de los videojuegos Telemundo",
+      "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPT2VLREFpM0JzT2pHS2lhVG1tYWR2WTJzLTBXY0hMeDlCTkNLX0Rvbmx5NHBrdXUtMDFMdENhaXJ4OFVJQUVCMTJGNE51UHhXb1RRR3k4RHVlLTQwa0NFOE5rSmJEVmVGNEdSUXlNR2xJMW1wbWcxVXU0NWtKQ2Fqc2pFSklXaC1uUkFOUDdKWUY0NTVFaWxiMmxYVmYweThOUUk2SURZR3l6ZnRkcEtoQkc2M0F3ZWdlZG91UGRCdTNRa2ZtUHNBUEZrdkhGdlhpUktsTFZJdkRsSkJ4TkNXbTQ4dHRuTXRIa3NNcXh3N0h0cUdDTmI3dDJrcDhZTXRCbjJObkh4UFBaeDVFOFVyX19IQVA3OTNnX1NDeFI3Zl9jWFk?oc=5",
       "imagen": null,
-      "fuente": "Infobae",
+      "fuente": "Telemundo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795181139000
-    },
-    {
-      "titulo": "La IA pone fecha al declive de las consolas de videojuegos",
-      "resumen": "La IA pone fecha al declive de las consolas de videojuegos Xataka",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQlBXcFBlakRiLUQxczA0OUU5U3E3VEhkWkpkTFF5UTlwdXk4NUljazR6QVNYdDNyZUdCTVlQLVM5VmNSNnpGQ3pDRmUwNHFlMVljQkpIY3pvTkRyTklPek9mNXNtYkdjajdHZFVqblNtMTZUcWxCdTlSZWhMUXJLTkpFbFZmVFnSAYwBQVVfeXFMT3BDMDU0ZDNlbUhTSUpoU3V4R3l6aXlCU1ZrSlRyRlBnbmE0ZEdLeENUNnFTWnBfZTNaZEpqSGpaU2NPTDBvVXZUTE85THJYSVhUNGNPYkNuTzU4RlFZb1NPOTg1N1MxRy1BNVNsX3BKcktaei05bXJKcExmWHhnT09IOV8ycUtycHNDazI?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1792393200000
+      "fecha": 1795067460000
     },
     {
       "titulo": "LoL Esports |",
@@ -153,6 +153,16 @@
       "fecha": 1791183600000
     },
     {
+      "titulo": "Red Bull Wings Cup España 2026",
+      "resumen": "Red Bull Wings Cup España 2026 Red Bull",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xcjZqTWJyd0UtQUdRQjBMSk1CX1ExT011WnBMV0hycktXNjNkaUs3dmpIQ3dRRFkyMlF2czV3ZTBobEs3Z1kwaGtXLWxtdHpudnhVdUxCLTlncjN2YndfZHlzcy03X0ZuMWFUTGxOMEQwWHBINXc?oc=5",
+      "imagen": null,
+      "fuente": "Red Bull",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1786449997000
+    },
+    {
       "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
       "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
@@ -161,16 +171,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1783494000000
-    },
-    {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWEN4cy1GYkVsT1QxQ3pVYjF4bmMtZ2EwMmFfODVNQ1psNElwazVfS1V6VnVYMTRMeDNGU2J4cUhGUzJCWk83dVl0QXctRHZtaXIyNlhDTW9RYjN0QzhNVTFRQUdEb1d0dWt0THVQM2V0U1pYRkw1Qlh1Y1RuVXJNU2t5U3d3Zw?oc=5",
-      "imagen": null,
-      "fuente": "LoL Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1768464000000
     }
   ]
 }
