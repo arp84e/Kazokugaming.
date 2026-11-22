@@ -1,7 +1,47 @@
 {
-  "generado": 1795346857299,
+  "generado": 1795376351129,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Hace 13 años, dos desarrolladores crearon un juego sobre desarrollar videojuegos y se les ocurrió un truco ingenioso para trolear a los piratas",
+      "resumen": "Los desarrolladores de videojuegos no viven del aire y, como es lógico, necesitan crear obras que interesen a los usuarios para que las comp…",
+      "link": "https://www.vidaextra.com/simuladores/hace-13-anos-dos-desarrolladores-crearon-juego-desarrollar-videojuegos-se-les-ocurrio-truco-ingenioso-para-trolear-a-piratas",
+      "imagen": "https://i.blogs.es/469bd2/game-dev-tycoon/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795374024000
+    },
+    {
+      "titulo": "7 desarrolladores famosos que defienden el uso de la IA en la creación de videojuegos: Hideo Kojima, Tim Sweeney, Masahiro Sakurai, entre otros",
+      "resumen": "7 desarrolladores famosos que defienden el uso de la IA en la creación de videojuegos: Hideo Kojima, Tim Sweeney, Masahiro Sakurai, entre ot…",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPVXFUYi1OWkVCbEJrMjYwMDU0RENiWEc0M18xbjcyM0pfaXBvd1NBRk9XUlNIR0EwSnY0dERtanNUenB5MmF0eTQtMmE4RHhnLVU5TUlHVXRvUDB5Y2V0OVBxeE8tUXFfYWFPZkp1V0RtOWRjOWZTdi1UZG5nQXpmN21RNkd5UHphbnhEVm9QanlNbWQzcVlVZkZ3dGZoVkE3VjdZNjdrY2pPUGZoRS1HUG4wOXhsSGUyQzY3aTFTUmJROGlwa2JGNExwbVF4WXJFV1dPMVdLR1hxVWJja19XMHUxZ3hGNzJr0gHuAUFVX3lxTE1WUUlmeTRSTHRKcE1BTjRra0pHbEI2djg5THdOejRoU0QwZzFXcmEzRnY3R3pjRTBKVmllX2pxb1U3WVdRTHpabGN1OWQzbTkySjV6aUdQM0k4bXJFeC1tbi0wWC0tRnFsbVRNU3hhRXNFZ2V0QXpEY3RhS19EclRmTF9VamQ5ZC00UlBCMUw2QW9PcVdvd2FlaGhGd0NaMUE2UFc4SFdlaXU5eFlwT1B5eFlHeGRsUjJZUkFIMnJLVGp0ejNJWkhKNTFtQ3VzQjFEWlpBcV9BVlBLR2FlODFQVEEteXl1Y3UxTm5qU1E?oc=5",
+      "imagen": null,
+      "fuente": "3DJuegos México",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795374024000
+    },
+    {
+      "titulo": "Desarrollador de Naughty Dog: \"Llevo 19 años creando videojuegos y GTA 6 me parece lo mismo que le parecería un Bugatti Veyron a un niño victoriano\"",
+      "resumen": "¿Realizan magia negra en el seno de Rockstar Games? Podríamos llegar a pensar que sí, ya que los desarrolladores de GTA 6 parece que han con…",
+      "link": "https://www.vidaextra.com/accion/desarrollador-naughty-dog-llevo-19-anos-creando-videojuegos-gta-6-me-parece-le-pareceria-bugatti-veyron-a-nino-victoriano",
+      "imagen": "https://i.blogs.es/b89b7e/vice_city_15.11tb0mz68edqo/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795366826000
+    },
+    {
+      "titulo": "Qué fue de Syphon Filter, la saga de espías y sigilo que consiguió plantarle cara a Metal Gear Solid",
+      "resumen": "Cuando se habla de recuperar juegos clásicos de la primera PlayStation siempre hay un puñado de títulos que permanecen en el imaginario cole…",
+      "link": "https://www.vidaextra.com/juegos-retro/que-fue-syphon-filter-saga-espias-sigilo-que-consiguio-plantarle-cara-a-metal-gear-solid-1",
+      "imagen": "https://i.blogs.es/bbf12c/syphonfilter/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795360583000
+    },
     {
       "titulo": "La primera torre de GTA 6 alucina a un experto en torres de radio reales: \"¡Contratuercas dobles en los pernos de anclaje, tíos!\"",
       "resumen": "Basta con darse una vuelta por GTA 6 para descubrir que el nivel de realismo que ha implementado Rockstar Games en Leonida es impresionante.…",
@@ -21,26 +61,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795338981000
-    },
-    {
-      "titulo": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis?",
-      "resumen": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis? Listín Diario",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMG9iUnRnckdkc2ppNnBGQ253czdiTF92eS1BbEVnRVdQcFVqVG5SRnFwUVNSQmZiMkhpXzhlSUl6a0Y1YUpJUHp0R1c5TW1sT3kzbFE0Y0FOWUdvb1V1dmRWMkF3QzNIQ05GRXh0clE1VlJZc1RWYTJYT3FLc0tjMXc2cVpZczVuMHVtbVhtTWozemxzQVVhTkpPamNrMEZGNHpZX1kxWE5zam9oX29jbjZLRjVvY0c1TXRwSF81VdIBxAFBVV95cUxNb3B1SUtEU3JLR0VLVUxrSUJPbXB2Q21QeWxOTlV2end4WnVKa0JyWnVWSUZRUXA0ei1HM05tUTcyOTBCb0RiT2V2UDFnNS12bXlkc2hnd0tMTWlBSENjV1pGQVdPejBqb3ZYNEo2b3Nod3p4Mk5ydUJOaHV6Y2EweXhsZWRaSF9tcmNMNGhzOUU5bkVhUzVqYThWSnhjRmpHQkJreVBmZXpidkFWbkNYSkp2SWcwUFdhZ1BCMGVYTDhKdW5U?oc=5",
-      "imagen": null,
-      "fuente": "Listín Diario",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795320000000
-    },
-    {
-      "titulo": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie",
-      "resumen": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObk5obWFPMVpiWkdlTTBPY2czN3BDUXNVbXBqNjVnUWpfZGlTR2JGelpEQ3UzX1hPVDV0OUR6WnFrZUdTMW0xbHRUcGNMdnZtcHVTb0RjMjg4bXp3eDBkUllYOTFHVVZ2bV9mczJjSURyVE5wRjcxM2lsMkpscXVtMHU1ay10RWlLX3NqOFl5Q0RxdHpRWUItc3oxcmdPeUVVUGxwaS1PUUNhbEZtUnBJZktDUkJCTXZ2Z3BnaGpha290S001T0E?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795297556000
     },
     {
       "titulo": "En medio de la locura por GTA 6, la industria nacional celebró a los desarrolladores chilenos de videojuegos",
@@ -63,16 +83,6 @@
       "fecha": 1795282940000
     },
     {
-      "titulo": "No tengo una consola y no sé por dónde empezar: cómo puedo jugar a 'GTA VI' gastando el menor dinero posible",
-      "resumen": "No tengo una consola y no sé por dónde empezar: cómo puedo jugar a 'GTA VI' gastando el menor dinero posible Xataka",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaUpoYk9JS1hMc01uakl1eXdsNjFTQllXVTZGOWloV2dZcDVMUHBtZFg1MVUwSzYtVGI5cUI1dm83TVk2c1JJdFlXS3ptS3Zwd01YZmR2Z1BRNFo4cnI4RFdXdGUwbDJhYTEyYkhDeXRzM1M0elp4REZJZTFRem1idWZNaWVfT3dRM3FlSE1xTU9oTDVBeTRYYUVHdG8ybVRMVVNfWkVrOVk5QS1LM2xkMHFOZ1kzWVlyM1hycGlqbWh6ZUVwZmfSAcsBQVVfeXFMTnozTkpvNEpBWnk3a2xhLTdkTlNjaEdKR1ppTU5VbHRkUUVzcE11ME9STmVMTE5feU5zUWZLVG5Mbl9iVjlXd0xxR0VacHZtOGR4OVJHMXg0VUJTa0NwYVNOLWFWckk3VDAyaTU4Nnllc29icXBSemprZFFhNmxqU0Mtd1FXSnBGNnFCd3J1MEFRNnlRRVRSR1k2V0ZiXzR5ZHNYdDM3NFdFcW45S2ZxQmQ5enFXMlU5X0ZnWVV3dWdsUU5iVEhYSlJJMDQ?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795278740000
-    },
-    {
       "titulo": "¿Merece la pena vender la mercancía a Donnie o a Brian en el Capítulo 1 de GTA VI?",
       "resumen": "El primer capítulo de GTA VI sirve para familiarizarse con muchas de las nuevas mecánicas propuestas por Rockstar para su flamante mundo abi…",
       "link": "https://www.vidaextra.com/accion/merece-pena-vender-mercancia-a-donnie-a-brian-capitulo-1-gta-vi",
@@ -93,54 +103,44 @@
       "fecha": 1795270079000
     },
     {
-      "titulo": "Jugar GTA VI puede mejorar las habilidades cognitivas: qué dice la ciencia",
-      "resumen": "Jugar GTA VI puede mejorar las habilidades cognitivas: qué dice la ciencia Infobae",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTkU3bXZpX1poOTAwNWhiSmdsUFlyY0dpS25EUWthRVp6dUU0NWpvZXFTQm5VcUp5V3VfUWRDbjJLcG5qdHRIel8xd0Q2ODJZMGIxRXdkcEs1Zy1OX0phLXVvZVBDYk5wbDlZaXdYTEl6bWlXaGhsd08zZUZnbTYwc29JcHhuTmFHSjBXcktaU2V6RFJsR3BtQndybVNXQzR4X20zMnc5SUt6bHU3TE9HTkN1VnppRXhqc2p2TGlaazhCUdIB3AFBVV95cUxNZVN0UEZJYjdYNEhpZ0pjNWNUeXBnXzBObDUxalRrcXRNcFJMRE9mSERuaWI1VlNUWGFkbjFLZjdfQndyWjEwZGRhbi1ISXY5WkdmcUwyYUhOVDExOF93enNnT3VaZEpOLUZBU0FpNVA4cVJETGhRcEpSZThNcmtkTHpzVUw3OFVQcFNNQmMyQ3dMdmhTbzYtb19PZkN2MFdiczBRcVl2MVpsczV0RjR5aEdiUmVIWWVoZnA3ZzltRThCSFRjRm9MVU4zeDE4RDFjMkhLNm4wZ3M4T3Nx?oc=5",
+      "titulo": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado",
+      "resumen": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado The New York Times",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdGZZR19wVTRhNWNXeDZhZGU0aktfR25QTlFtSTEtMnBJQkhBMVRYNHpmNXdWZkhDOHNzNHFNb1BvRHZNaWdHU05NT1BaUlZZa29DdDZlV1BQU2lmWVczemdwdC11cm8zODJlZjhBY0ZFaEc5UHdnT0JrSm9mR2Q4Y01maXdzaFM1OG42ZTZZSFp1MW8?oc=5",
       "imagen": null,
-      "fuente": "Infobae",
+      "fuente": "The New York Times",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795265520000
+      "fecha": 1795251605000
     },
     {
-      "titulo": "Millones de adolescentes quieren jugar GTA VI y sus padres no encuentran una respuesta clara",
-      "resumen": "Millones de adolescentes quieren jugar GTA VI y sus padres no encuentran una respuesta clara Infobae",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNR2VWU0w3VXZuWGdnSi10VEZFR0xqQzMxZUx4bXlGN1pBWU9oTFo3Y0JYTkVnelFiTXc4XzNzblN3aW81d0Jlb2FWWFRHcGJackJRQVBock94TUItRzlvbklKNjJyMnZrRUVaSHBTalpEYW9OOVBMemxBWWxZSk9wajgzM0R5MXJTOWplQk5uQlVJaW9KUkw0aHVMY3VlTTk2amR4bVFiOENCNHRxTDRZRUZkMDV0Z19ZTl8yRHpsdmRPcjVRSjNneHVVNXpLc0NhUzhaSGFTeGFuc2fSAfYBQVVfeXFMTnJXNHp6VWtwMnI3ZllENjFmREJEZVJsOWQ4Q2tMWXh4S3lUNG9PWUFjUkdZb3lSZEc0OXJ6LWtnWkRldDZVMXZsbkwwMXEtM2lTM1hEa0Z4REFDS1poUmhGZU9kWk0xNkxYS1l5M05id19vQUFQTnJxcXd5N0w4VGJXMlFRWXpQdmN1bUZoZXRoUm9xOEhhb0MyenpwYThUdC11Um9waTdDbkc4bm5HRnBJenM5NkQ4ZDFzenlFRThnZGhZYW0yYlRQelk5bXl4QUUxdHJoX3BBSTFkYkFueG1pTktrLVBLTzc0aW41cWwyMlBDbUJB?oc=5",
+      "titulo": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija",
+      "resumen": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija Univision",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNElOTTU4OGl5YmlHMEVzMDZGTXBpd3o3dk95UFA0anpMOV9kTEF3Ui1iTjcyZDdyWEpRRUQyRDlvclVWVi02a0dyd0tJS1hsN0hXZFhOVWdQc0EwdnlNRmE4dGh1SkZLWEhfdGdEOVZnRDJ5dDRHLXlaVzl3dnBVMkdZZFZRb2l3VElfWENNS2o3LWdjSnhXQkJfaVh6OUNJNDF4T3NQRVRsaFNGeVZOQmhiYlVnTFFKbFltNFloVXJNZnlpRUZnUTBn?oc=5",
       "imagen": null,
-      "fuente": "Infobae",
+      "fuente": "Univision",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795262880000
+      "fecha": 1795190760000
     },
     {
-      "titulo": "Qué fue de Bully, el GTA de patio de colegio que dejaba en pañales las peores gamberradas de Bart Simpson",
-      "resumen": "Rockstar nos ha acostumbrado a unas etapas de desarrollo realmente largas, ya sea con Red Dead Redemption 2 o el flamante GTA VI. El número…",
-      "link": "https://www.vidaextra.com/accion/que-fue-bully-gta-patio-colegio-que-dejaba-panales-peores-gamberradas-bart-simpson-1",
-      "imagen": "https://i.blogs.es/4db83f/teahub.io-rockstar-games-wallpaper-2455133/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria",
+      "resumen": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria Diario Las Américas",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRHJRZkZYYnFxMmh3enF1UGtYVjMyWTBwLVZoX1VPaXVoeDZXSlZsU2FuMnFtWURlUXR3X3JqcEs4b1E0V3VfWk1mRHEtd2EzZGlZUF9ydVJxb0lUTEYzR2hwWHVnN0ZXVTRFVjFFeE8wY0NZQWFJRjVyYzUyb1BsQ193Q3hTR3U3TVlxdlI4MmY4RGMwQTgwTHJqYTlieGxGMjRqYzBWX3BMeE5Ba2c4aXhDY3AxUWtCZ3piNE1HdlJYUEpRb3fSAcsBQVVfeXFMTzdzcDQ3N05IaTFHNnBZMlpkbXZ4Ui10ZW9xY0JQVHZhSnQxZzJBRHJoWG1hckFQTEFUMmJUUFpOdFpWX2ZYbDU1bEhQYVhfVExQSWR4Tk9wRzVENl84MTByZHNMNDAxcndjQnI4VU1VUHV3eWJELW9RRml2QWxSM1VaMjlwaVNYZHNiZnIwVnAwUm1oQzVtTkV3aFVHZnlfSnVwWGtfSC04XzBXQ3ItMFlybjVJc1NEU05wM256TXNmeTYybTJMRUFOZlU?oc=5",
+      "imagen": null,
+      "fuente": "Diario Las Américas",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795252583000
+      "fecha": 1795181100000
     },
     {
-      "titulo": "La remasterización de The Witcher 3 conserva un easter egg que ha asustado a los jugadores durante 11 años y continúa haciéndolo",
-      "resumen": "CD Projekt ha devuelto a muchos jugadores a la senda con la remasterización de The Witcher 3: Wild Hunt. Es gratuita, así que no había demas…",
-      "link": "https://www.vidaextra.com/rpg/remasterizacion-the-witcher-3-conserva-easter-egg-que-ha-asustado-a-jugadores-durante-11-anos-continua-haciendolo",
-      "imagen": "https://i.blogs.es/e9b5b9/witcher-3/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "¿Qué retos hubo para crear GTA 6? Diseñador de videojuegos lo explica",
+      "resumen": "¿Qué retos hubo para crear GTA 6? Diseñador de videojuegos lo explica CNN en Español",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVDh3T080eUplOXBTUXZFeHpnSkdSOGNHNGJVZk1WdVN2WU5oaWw4LUxSWlU0V2paWktQTk41SmJaOHI0REpoUm92a1NhYzNsSnczUjZiVE1kaVBIQ0M2Wm5QQnQ0ZUJOcl9CdEw1aGFoMUREcUhjOUNNSEdvaHVlMV8tZnNtY2s?oc=5",
+      "imagen": null,
+      "fuente": "CNN en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795248026000
-    },
-    {
-      "titulo": "Ya es oficial: GTA 6 vende 32,5 millones de unidades y es el lanzamiento de entretenimiento más grande de la historia",
-      "resumen": "Sabíamos que había una expectación jamás vista por GTA 6, pero las cifras que acaba de ofrecer Rockstar Games superan cualquier previsión. A…",
-      "link": "https://www.vidaextra.com/accion/oficial-gta-6-vende-32-5-millones-unidades-lanzamiento-entretenimiento-grande-historia",
-      "imagen": "https://i.blogs.es/5676c2/jason_and_lucia_02_landscape.0cosv-uzbpt91/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795204737000
+      "fecha": 1795107022000
     },
     {
       "titulo": "LoL Esports |",
