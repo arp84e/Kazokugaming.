@@ -1,16 +1,66 @@
 {
-  "generado": 1795395131021,
+  "generado": 1795424626571,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Lo de los videojuegos",
-      "resumen": "Lo de los videojuegos El Mundo",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNU2ZWS0U1N1JBY1UzcXFpdk94VFNBb1Nrc0F5aGpYZkxFd05DZnJqQ0tnT3VJTjlTSEVzS0xLMUpjc094VFJ5RUFxZTA5elZTVWpNUXpDOGZKaF9xSDFubktydUlrZmZpUi0tTFgyMjAxbjhpT2oxUmFPNVJwZVRQM0h4ONIBgwFBVV95cUxNLTBvVW9EUlpFS0hUdXFhTmlKRERlMllGcUZfcW01SjFwampqMEd6WDRIelJKSktuWjNYbXZSclFmNTlLcEU0Rzc2YTZXS19YdWsyajZzZlo5b1BvUFRDNkF2RGs2Vm03eXRvXzhtREhpSzZLRkZISDVoRERXUEZTZDllOA?oc=5",
-      "imagen": null,
-      "fuente": "El Mundo",
+      "titulo": "¿Debes darle la estatua a Halifax o no en el Capítulo 3 de GTA 6?",
+      "resumen": "En el Capítulo 3 de Grand Theft Auto 6 es cuando el juego ya se abre por completo, trasladándote de forma permanente a Vice City, y también…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/debes-darle-estatua-a-halifax-no-capitulo-3-gta-6",
+      "imagen": "https://i.blogs.es/cc92cb/halifax/1024_2000.jpeg",
+      "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795379425000
+      "fecha": 1795423941000
+    },
+    {
+      "titulo": "Los lanzamientos de videojuegos más destacados de la semana del 23 al 29 de noviembre de 2026 para PS5, Switch",
+      "resumen": "Los lanzamientos de videojuegos más destacados de la semana del 23 al 29 de noviembre de 2026 para PS5, Switch Diario AS",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPbTZlV19oZVZRN2V3N3JXSERZd1M3cTRKZnU3cWhVSlh3d3RhXzAwWDN1Zk9fbi0zTVJ1TDdQU25DRlF1V1hSZ0dOTmlUNTBKaGkwQ2wyWndmWXhDeDlXRURZMEQ1V1R6M1E3YzJIYjg1M1BDUXRRNHc0b0I2NlZpdVlrQmhRYWpPNzgxN3NBbjNXQU9YZnNzaHZkQjVYT1FfdTdRX09oT204c1M2SVJDNW1XYlN5cExrVG0zb2xBMlNLLTJnaDdMY3RGdVBnWVBMRlhrY3BpZlpfcFFpazBCM1RLVGtmSDdiTTgxdE93TzNnX1VMMHFnekowQWg5MTVQb0VLTlFWY3l5dlRlVkHSAaICQVVfeXFMTnd3VjVmaEo0THpDbGh3SzU5N2dQelJHUWdwMWRyN19uN0c2Yzd3UWxhTlB4QjFoaEtsaXQxajU0R1NGX0hPLVhab0RIbmdJY1g1R0tIVF9CMGMxeDlHZjRJQWxYRGVqb1dGWnFoTF91em1Gc1dkTVFROHJjU01jVXQ5R24tUFFQUERVMm9tTmtMWllmSG1paXI3Ym9lLUlmdjVvam16WVBGV1hRVlBzTGZabHo1Zy1PZWxNUUtqa2c0eV94Y25PUkdna1Axb1IwN0Q1Z0pNMnpxLVVBNUJ3YzV6dTJXSWlOV3ZyZ0MzSlZOZ1Z1N2hseWNXWml4ZXM4djdiRW5BZXBFZ3hPUTA4UTVPdWpzOFptZWo2YktiZjllRXc?oc=5",
+      "imagen": null,
+      "fuente": "Diario AS",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795415400000
+    },
+    {
+      "titulo": "Jugar horas a un videojuego siendo otro: efectos en la salud mental",
+      "resumen": "Jugar horas a un videojuego siendo otro: efectos en la salud mental EFE Salud",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ORDBlUDdQcDYyQ21HY1dMalQ1MXM3TnA3QTVjQ1ZSb05MTjlQeGktVHdlRmh6NE5iY1NYclI2NnBoTzJtMUhBTkZILWk0ODZkTFROTGhoQ3hjX0pVTGR5enVUNXRONmg3QktibXF4amJuUHln?oc=5",
+      "imagen": null,
+      "fuente": "EFE Salud",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795414653000
+    },
+    {
+      "titulo": "Steam, a prepararse: en Rusia quieren introducir certificados de distribución para videojuegos, según medios",
+      "resumen": "Steam, a prepararse: en Rusia quieren introducir certificados de distribución para videojuegos, según medios iXBT.games",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNUlRR2VFWThmWS1YZk02SjlHWEhtOHB5WVRTR3FJaGlSQVEwbXFDZG1SSWRpMnlMQktfc1lpVzA5WDR3SHA5dW8xYTJtZmxadzJDUUJaZWVjOUdZN3M3WGtuMUoydmZRMzhZR3BickxpdTRpRl9fZ1RFVFFvSlprZUJ1LXFEMzJ3cms0bVlSZFhoNnB6WG1JdlJpUG9Oc2NfV0pHUmpDMXdSMXp1UWFFOXNITEVnYTBiRGY5U0gwalbSAcYBQVVfeXFMTUh0cHhpRGYzR3ZhNUZHZ09tenFkRmVkekxZd2t5eVhWVUlXUzVqNlAzYzFiREVEaWMxc1hweTNOM1Z4MEg1Y1ZTWklQdkRMYkFRbWtwN3hSamlHYWdEem44aDVzdHRhWVZKX3VkNWxDZUJlSnJsTW1ZUUFrUjU3VjVNeVdIZjhpVFQtR2Z6MUM1RjFrZjB5dm9QbnRHQmlhcjBjbDFXQjNod0xPQV9XU215MGduZmkwZnBnNEpGdTJFdkpDbzR3?oc=5",
+      "imagen": null,
+      "fuente": "iXBT.games",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795396920000
+    },
+    {
+      "titulo": "Descubre a los ganadores del Campeonato Internacional Pokémon de Latinoamérica 2027 (LAIC)",
+      "resumen": "Descubre a los ganadores del Campeonato Internacional Pokémon de Latinoamérica 2027 (LAIC) Pokemon.com",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOT2lSakd2SmNoUzZYZnMySnlRVVQ0YTJ6am1hZTNIc183TWtINlpod2VlTnBRZVNBdi11WXBBRFRwZUpsX1FmdWdUZmppRWlXYUNmQ0IzX0pYUDUyQm1yYWtBQ1JEMEhIVlcxTGdpU1RMUm4xbEg5Y1RmRVNZdjIxVGFXaDA5ZDdyYWtuUlFSZjBvOTV6cmRUUGxLekR6Y1N4YnNuTHYwamJSY2VfTVMxcnM5bVV4NWtXa2g0UU1wVnZmQQ?oc=5",
+      "imagen": null,
+      "fuente": "Pokemon.com",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795382941000
+    },
+    {
+      "titulo": "GTA VI conquista el mundo, pero enfrenta una barrera en China: ¿por qué no puede venderse oficialmente?",
+      "resumen": "GTA VI conquista el mundo, pero enfrenta una barrera en China: ¿por qué no puede venderse oficialmente? Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdVQwZE1LS0hEM1JCZXFZc3VUVjlaVHoySnZSU3lpV3NXRWFmb0hoSG1LbWJpVGFGQzV3UkZsdWZRSjJBR3VFbjFSdjlSSXdXUHBBOWFRUFFmcHBkVndmcEpfWmJGN1BfU0J1UlNYNW9jOWhTZGd6cmVQeE0tVHZLZUFfVExaUQ?oc=5",
+      "imagen": null,
+      "fuente": "Yahoo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795377018000
     },
     {
       "titulo": "Hace 13 años, dos desarrolladores crearon un juego sobre desarrollar videojuegos y se les ocurrió un truco ingenioso para trolear a los piratas",
@@ -33,16 +83,6 @@
       "fecha": 1795366826000
     },
     {
-      "titulo": "Un extraño videojuego español todavía no ha salido y ya está causando sensación en Japón por una idea tan destructiva como original",
-      "resumen": "Un extraño videojuego español todavía no ha salido y ya está causando sensación en Japón por una idea tan destructiva como original Kotaku e…",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOcm9FY3VSY01GV2NUNmdwa1VucnVGMnJPT0xRaDRVVjVKNHFiMGliZU5DSXpSTXQwQkwtYVRHZDNLNjU3LXh2QjF0OWo3QXktWkFrUnNqWG5uRnNGZ2liNk5YME9GUklGb2pOeENCMVpING9ONkl0TVZoNkVIMWk1YlNYS1RVcUoxS0FkUWZKbHdUSy1sa2YwdE0taE5sMlFzZjhIVnRhaDJDM01VZGttUk1CR1Q1STllZDZfQzZEcmh4TjZtMkpXRlBYRC1tRzI0eTNwclFJN0h2YkJUWl9lVzF1cHJ1XzRja2FNdnRqSFZQdHRNM1I4?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795361366000
-    },
-    {
       "titulo": "Qué fue de Syphon Filter, la saga de espías y sigilo que consiguió plantarle cara a Metal Gear Solid",
       "resumen": "Cuando se habla de recuperar juegos clásicos de la primera PlayStation siempre hay un puñado de títulos que permanecen en el imaginario cole…",
       "link": "https://www.vidaextra.com/juegos-retro/que-fue-syphon-filter-saga-espias-sigilo-que-consiguio-plantarle-cara-a-metal-gear-solid-1",
@@ -51,16 +91,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795360583000
-    },
-    {
-      "titulo": "¿Es GTA VI el último juego a gran escala desarrollado sin usar IA?",
-      "resumen": "¿Es GTA VI el último juego a gran escala desarrollado sin usar IA? Xataka",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTjdLSk91anF1cGhwY3NTQTZBckdTNG02V0ZKWUl6M1BrdDQyRTFzWEhsRDRjYy01cnlGVWc4ZnlSa2pxTEtVZFRpaUlDdHF4Wi1MRXpFbVpYQkt1TkRxYzF2bDFxOXhPM3FGelc4bFRsOTViZ19Ud29NOEU0OWlLUFpCeHhoZDDSAYwBQVVfeXFMTjczZGZsLWNMZU9ndVRwZnpqckJ3c0ZtTjJ4UVRGcXBNNHdrM3lhbmluUDNibVg5NUpjamdnWk1jZkQ1TGFlVjcyM192azVMdXM1aDJaa1o0M0RCcXZhbUU1Ri0zVFBydU1HaUNrcW1NVTkxU0VBTVRjaGV2aExXejhiRVRLb3FkUXBLSGo?oc=5",
-      "imagen": null,
-      "fuente": "Xataka",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795350627000
     },
     {
       "titulo": "La primera torre de GTA 6 alucina a un experto en torres de radio reales: \"¡Contratuercas dobles en los pernos de anclaje, tíos!\"",
@@ -83,36 +113,6 @@
       "fecha": 1795338981000
     },
     {
-      "titulo": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis?",
-      "resumen": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis? Listín Diario",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMG9iUnRnckdkc2ppNnBGQ253czdiTF92eS1BbEVnRVdQcFVqVG5SRnFwUVNSQmZiMkhpXzhlSUl6a0Y1YUpJUHp0R1c5TW1sT3kzbFE0Y0FOWUdvb1V1dmRWMkF3QzNIQ05GRXh0clE1VlJZc1RWYTJYT3FLc0tjMXc2cVpZczVuMHVtbVhtTWozemxzQVVhTkpPamNrMEZGNHpZX1kxWE5zam9oX29jbjZLRjVvY0c1TXRwSF81VdIBxAFBVV95cUxNb3B1SUtEU3JLR0VLVUxrSUJPbXB2Q21QeWxOTlV2end4WnVKa0JyWnVWSUZRUXA0ei1HM05tUTcyOTBCb0RiT2V2UDFnNS12bXlkc2hnd0tMTWlBSENjV1pGQVdPejBqb3ZYNEo2b3Nod3p4Mk5ydUJOaHV6Y2EweXhsZWRaSF9tcmNMNGhzOUU5bkVhUzVqYThWSnhjRmpHQkJreVBmZXpidkFWbkNYSkp2SWcwUFdhZ1BCMGVYTDhKdW5U?oc=5",
-      "imagen": null,
-      "fuente": "Listín Diario",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795320000000
-    },
-    {
-      "titulo": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie",
-      "resumen": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie Kotaku en Español",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObk5obWFPMVpiWkdlTTBPY2czN3BDUXNVbXBqNjVnUWpfZGlTR2JGelpEQ3UzX1hPVDV0OUR6WnFrZUdTMW0xbHRUcGNMdnZtcHVTb0RjMjg4bXp3eDBkUllYOTFHVVZ2bV9mczJjSURyVE5wRjcxM2lsMkpscXVtMHU1ay10RWlLX3NqOFl5Q0RxdHpRWUItc3oxcmdPeUVVUGxwaS1PUUNhbEZtUnBJZktDUkJCTXZ2Z3BnaGpha290S001T0E?oc=5",
-      "imagen": null,
-      "fuente": "Kotaku en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795297556000
-    },
-    {
-      "titulo": "En medio de la locura por GTA 6, la industria nacional celebró a los desarrolladores chilenos de videojuegos",
-      "resumen": "En medio de la locura por GTA 6, la industria nacional celebró a los desarrolladores chilenos de videojuegos Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOYUFMbEdYWFFqU0x0OGJIYm54cjI4MGJGNEtmbWhpTjNmYW45SUN2NHJKR29qMkhpM3E2Mjh4cVRJSGpvcW90VEhvVzVkY0NveGxWMG0tUk9OUXFDY3Utc0RiQVVxOWkwbFZmRkY2UmdkUmVydWFZYnoteGlRMHBhbDdB?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795284763000
-    },
-    {
       "titulo": "Assassin's Creed: Black Flag Resynced está salvando a Ubisoft, que atraviesa una profunda crisis",
       "resumen": "Los 32.5 millones de copias vendidas solo en reservas de GTA VI son un hito seguramente inalcanzable para el resto de la industria, pero es…",
       "link": "https://www.vidaextra.com/industria/assassin-s-creed-black-flag-resynced-esta-salvando-a-ubisoft-que-atraviesa-profunda-crisis",
@@ -133,44 +133,44 @@
       "fecha": 1795272142000
     },
     {
-      "titulo": "Ni siquiera el jefe de Cyberpunk 2077 da crédito con GTA 6: \"Me quito el sombrero ante vosotros\"",
-      "resumen": "Puede que nunca volvamos a ver un mundo abierto como el de GTA 6, pero si hay un videojuego que se acerque a lo conseguido por parte de Rock…",
-      "link": "https://www.vidaextra.com/accion/siquiera-jefe-cyberpunk-2077-da-credito-gta-6-me-quito-sombrero-vosotros",
-      "imagen": "https://i.blogs.es/433b51/gta-6-69-brand-new-images_xs4a/1024_2000.jpeg",
-      "fuente": "Vida Extra",
+      "titulo": "GTA VI reaviva el debate sobre la violencia en los videojuegos: ¿Realmente afecta a los usuarios?",
+      "resumen": "GTA VI reaviva el debate sobre la violencia en los videojuegos: ¿Realmente afecta a los usuarios? Univision",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMXVBUWs0cWpDODFIbVVFb3drVU5DdzhxRHBqR1BicnJfQ2R3UUlhdXBPWV9Qc0J4WDgyVTRtRmNvaGNYaFFXQVZ6T0pMLUNraVpEaGtIMFB0ZFZaTGNaUUlVeEJLTmt3d2dKZG5Za0hiXzktQ0VaaUg2WHRuXzBfNFU4Y2RzM0NEbmRodE9DQk15bXlKbUc2V0pySFBBQkpHcmw3WEZuc1lKSkQ5TTVfbVdfOHk4ZUdMb0FTZUtMR2xmcDFFbnk3NlJMb3V6YmNn?oc=5",
+      "imagen": null,
+      "fuente": "Univision",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795270079000
+      "fecha": 1795211520000
     },
     {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
+      "titulo": "Juan Mata, campeón del mundo con España, anunció su retiro",
+      "resumen": "Juan Mata, campeón del mundo con España, anunció su retiro TyC Sports",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeGdhWHNQWGdtN0tOQ1FIUnE1OXhqaUZUT0dfNklCMXplMFk1RW85OEZpc1BDMFNUcVRkbzhoNDVIV2tfZmxrcFJWbTY4LVJFQVQydkVIejNXZ285UFVTSjNrblQtcUkzLUpzaURkeDNmd1k1OXdWMTBSZm9wRi1jcTNnWS1FcGFzcFZNaGUyand3LS01Smt1NkFBNkI3RTFvR1VuNHBLcURGOEpPaVRDX0hVSWxXZm1i?oc=5",
+      "imagen": null,
+      "fuente": "TyC Sports",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795011495000
+    },
+    {
+      "titulo": "Los esports de LoL en 2027 y más allá",
+      "resumen": "Los esports de LoL en 2027 y más allá LoL Esports",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hdWR2b2VtMnJTVHllNjh1alFUZmh4MkpJc19XbXRxUTZKbEZWcVpKLWlzazAybmNZUE5JTmgzTHQ1X3FyOE9UTVV2Wk1xWWhpRmV4UWVWLUdyZGZfNXBNbGVldk85ekZtS1VacElB?oc=5",
       "imagen": null,
       "fuente": "LoL Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1791183600000
+      "fecha": 1794556800000
     },
     {
-      "titulo": "Red Bull Wings Cup España 2026",
-      "resumen": "Red Bull Wings Cup España 2026 Red Bull",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xcjZqTWJyd0UtQUdRQjBMSk1CX1ExT011WnBMV0hycktXNjNkaUs3dmpIQ3dRRFkyMlF2czV3ZTBobEs3Z1kwaGtXLWxtdHpudnhVdUxCLTlncjN2YndfZHlzcy03X0ZuMWFUTGxOMEQwWHBINXc?oc=5",
+      "titulo": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista",
+      "resumen": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista IGN Latinoamérica",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQangxZUJBelRVbnNnQ3VKYUJyaUh3NnhRLWo5eGMwcldDdGthb0J1ZmY3aXJPTHc4NWFTRm1QTGJ3MXp5TGItdFFPUWNYR0ZDSmo5cHNjcDl1X29feFNXaE15dVI5b2VCRmdjOVVvSXZtMlY2Z1MyUEFGeXo4U19pSy00cS1kLUN2aEJ3c3gxU0N2V1VqeVRQSlNGaTIyQmFkWjRBSFNsNmVNV0xCYlE?oc=5",
       "imagen": null,
-      "fuente": "Red Bull",
+      "fuente": "IGN Latinoamérica",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1786449997000
-    },
-    {
-      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
-      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
-      "imagen": null,
-      "fuente": "UCAM Deportes",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1783494000000
+      "fecha": 1784185200000
     }
   ]
 }
