@@ -1,23 +1,23 @@
 {
-  "generado": 1795376351129,
+  "generado": 1795395131021,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Lo de los videojuegos",
+      "resumen": "Lo de los videojuegos El Mundo",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNU2ZWS0U1N1JBY1UzcXFpdk94VFNBb1Nrc0F5aGpYZkxFd05DZnJqQ0tnT3VJTjlTSEVzS0xLMUpjc094VFJ5RUFxZTA5elZTVWpNUXpDOGZKaF9xSDFubktydUlrZmZpUi0tTFgyMjAxbjhpT2oxUmFPNVJwZVRQM0h4ONIBgwFBVV95cUxNLTBvVW9EUlpFS0hUdXFhTmlKRERlMllGcUZfcW01SjFwampqMEd6WDRIelJKSktuWjNYbXZSclFmNTlLcEU0Rzc2YTZXS19YdWsyajZzZlo5b1BvUFRDNkF2RGs2Vm03eXRvXzhtREhpSzZLRkZISDVoRERXUEZTZDllOA?oc=5",
+      "imagen": null,
+      "fuente": "El Mundo",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795379425000
+    },
     {
       "titulo": "Hace 13 años, dos desarrolladores crearon un juego sobre desarrollar videojuegos y se les ocurrió un truco ingenioso para trolear a los piratas",
       "resumen": "Los desarrolladores de videojuegos no viven del aire y, como es lógico, necesitan crear obras que interesen a los usuarios para que las comp…",
       "link": "https://www.vidaextra.com/simuladores/hace-13-anos-dos-desarrolladores-crearon-juego-desarrollar-videojuegos-se-les-ocurrio-truco-ingenioso-para-trolear-a-piratas",
       "imagen": "https://i.blogs.es/469bd2/game-dev-tycoon/1024_2000.jpeg",
       "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795374024000
-    },
-    {
-      "titulo": "7 desarrolladores famosos que defienden el uso de la IA en la creación de videojuegos: Hideo Kojima, Tim Sweeney, Masahiro Sakurai, entre otros",
-      "resumen": "7 desarrolladores famosos que defienden el uso de la IA en la creación de videojuegos: Hideo Kojima, Tim Sweeney, Masahiro Sakurai, entre ot…",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPVXFUYi1OWkVCbEJrMjYwMDU0RENiWEc0M18xbjcyM0pfaXBvd1NBRk9XUlNIR0EwSnY0dERtanNUenB5MmF0eTQtMmE4RHhnLVU5TUlHVXRvUDB5Y2V0OVBxeE8tUXFfYWFPZkp1V0RtOWRjOWZTdi1UZG5nQXpmN21RNkd5UHphbnhEVm9QanlNbWQzcVlVZkZ3dGZoVkE3VjdZNjdrY2pPUGZoRS1HUG4wOXhsSGUyQzY3aTFTUmJROGlwa2JGNExwbVF4WXJFV1dPMVdLR1hxVWJja19XMHUxZ3hGNzJr0gHuAUFVX3lxTE1WUUlmeTRSTHRKcE1BTjRra0pHbEI2djg5THdOejRoU0QwZzFXcmEzRnY3R3pjRTBKVmllX2pxb1U3WVdRTHpabGN1OWQzbTkySjV6aUdQM0k4bXJFeC1tbi0wWC0tRnFsbVRNU3hhRXNFZ2V0QXpEY3RhS19EclRmTF9VamQ5ZC00UlBCMUw2QW9PcVdvd2FlaGhGd0NaMUE2UFc4SFdlaXU5eFlwT1B5eFlHeGRsUjJZUkFIMnJLVGp0ejNJWkhKNTFtQ3VzQjFEWlpBcV9BVlBLR2FlODFQVEEteXl1Y3UxTm5qU1E?oc=5",
-      "imagen": null,
-      "fuente": "3DJuegos México",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795374024000
@@ -33,6 +33,16 @@
       "fecha": 1795366826000
     },
     {
+      "titulo": "Un extraño videojuego español todavía no ha salido y ya está causando sensación en Japón por una idea tan destructiva como original",
+      "resumen": "Un extraño videojuego español todavía no ha salido y ya está causando sensación en Japón por una idea tan destructiva como original Kotaku e…",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOcm9FY3VSY01GV2NUNmdwa1VucnVGMnJPT0xRaDRVVjVKNHFiMGliZU5DSXpSTXQwQkwtYVRHZDNLNjU3LXh2QjF0OWo3QXktWkFrUnNqWG5uRnNGZ2liNk5YME9GUklGb2pOeENCMVpING9ONkl0TVZoNkVIMWk1YlNYS1RVcUoxS0FkUWZKbHdUSy1sa2YwdE0taE5sMlFzZjhIVnRhaDJDM01VZGttUk1CR1Q1STllZDZfQzZEcmh4TjZtMkpXRlBYRC1tRzI0eTNwclFJN0h2YkJUWl9lVzF1cHJ1XzRja2FNdnRqSFZQdHRNM1I4?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795361366000
+    },
+    {
       "titulo": "Qué fue de Syphon Filter, la saga de espías y sigilo que consiguió plantarle cara a Metal Gear Solid",
       "resumen": "Cuando se habla de recuperar juegos clásicos de la primera PlayStation siempre hay un puñado de títulos que permanecen en el imaginario cole…",
       "link": "https://www.vidaextra.com/juegos-retro/que-fue-syphon-filter-saga-espias-sigilo-que-consiguio-plantarle-cara-a-metal-gear-solid-1",
@@ -41,6 +51,16 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795360583000
+    },
+    {
+      "titulo": "¿Es GTA VI el último juego a gran escala desarrollado sin usar IA?",
+      "resumen": "¿Es GTA VI el último juego a gran escala desarrollado sin usar IA? Xataka",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTjdLSk91anF1cGhwY3NTQTZBckdTNG02V0ZKWUl6M1BrdDQyRTFzWEhsRDRjYy01cnlGVWc4ZnlSa2pxTEtVZFRpaUlDdHF4Wi1MRXpFbVpYQkt1TkRxYzF2bDFxOXhPM3FGelc4bFRsOTViZ19Ud29NOEU0OWlLUFpCeHhoZDDSAYwBQVVfeXFMTjczZGZsLWNMZU9ndVRwZnpqckJ3c0ZtTjJ4UVRGcXBNNHdrM3lhbmluUDNibVg5NUpjamdnWk1jZkQ1TGFlVjcyM192azVMdXM1aDJaa1o0M0RCcXZhbUU1Ri0zVFBydU1HaUNrcW1NVTkxU0VBTVRjaGV2aExXejhiRVRLb3FkUXBLSGo?oc=5",
+      "imagen": null,
+      "fuente": "Xataka",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795350627000
     },
     {
       "titulo": "La primera torre de GTA 6 alucina a un experto en torres de radio reales: \"¡Contratuercas dobles en los pernos de anclaje, tíos!\"",
@@ -61,6 +81,26 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795338981000
+    },
+    {
+      "titulo": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis?",
+      "resumen": "Éxito planetario de GTA VI, ¿salvavidas de una industria del videojuego en crisis? Listín Diario",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMG9iUnRnckdkc2ppNnBGQ253czdiTF92eS1BbEVnRVdQcFVqVG5SRnFwUVNSQmZiMkhpXzhlSUl6a0Y1YUpJUHp0R1c5TW1sT3kzbFE0Y0FOWUdvb1V1dmRWMkF3QzNIQ05GRXh0clE1VlJZc1RWYTJYT3FLc0tjMXc2cVpZczVuMHVtbVhtTWozemxzQVVhTkpPamNrMEZGNHpZX1kxWE5zam9oX29jbjZLRjVvY0c1TXRwSF81VdIBxAFBVV95cUxNb3B1SUtEU3JLR0VLVUxrSUJPbXB2Q21QeWxOTlV2end4WnVKa0JyWnVWSUZRUXA0ei1HM05tUTcyOTBCb0RiT2V2UDFnNS12bXlkc2hnd0tMTWlBSENjV1pGQVdPejBqb3ZYNEo2b3Nod3p4Mk5ydUJOaHV6Y2EweXhsZWRaSF9tcmNMNGhzOUU5bkVhUzVqYThWSnhjRmpHQkJreVBmZXpidkFWbkNYSkp2SWcwUFdhZ1BCMGVYTDhKdW5U?oc=5",
+      "imagen": null,
+      "fuente": "Listín Diario",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795320000000
+    },
+    {
+      "titulo": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie",
+      "resumen": "Game of Thrones tendrá un nuevo videojuego que permitirá cambiar el polémico final de la serie Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObk5obWFPMVpiWkdlTTBPY2czN3BDUXNVbXBqNjVnUWpfZGlTR2JGelpEQ3UzX1hPVDV0OUR6WnFrZUdTMW0xbHRUcGNMdnZtcHVTb0RjMjg4bXp3eDBkUllYOTFHVVZ2bV9mczJjSURyVE5wRjcxM2lsMkpscXVtMHU1ay10RWlLX3NqOFl5Q0RxdHpRWUItc3oxcmdPeUVVUGxwaS1PUUNhbEZtUnBJZktDUkJCTXZ2Z3BnaGpha290S001T0E?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795297556000
     },
     {
       "titulo": "En medio de la locura por GTA 6, la industria nacional celebró a los desarrolladores chilenos de videojuegos",
@@ -101,46 +141,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795270079000
-    },
-    {
-      "titulo": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado",
-      "resumen": "‘Grand Theft Auto’ satirizaba a EE. UU. Ahora la realidad lo ha superado The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdGZZR19wVTRhNWNXeDZhZGU0aktfR25QTlFtSTEtMnBJQkhBMVRYNHpmNXdWZkhDOHNzNHFNb1BvRHZNaWdHU05NT1BaUlZZa29DdDZlV1BQU2lmWVczemdwdC11cm8zODJlZjhBY0ZFaEc5UHdnT0JrSm9mR2Q4Y01maXdzaFM1OG42ZTZZSFp1MW8?oc=5",
-      "imagen": null,
-      "fuente": "The New York Times",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795251605000
-    },
-    {
-      "titulo": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija",
-      "resumen": "Adamari López “no permite” videojuegos en su casa: explica por qué no se los compra a su hija Univision",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNElOTTU4OGl5YmlHMEVzMDZGTXBpd3o3dk95UFA0anpMOV9kTEF3Ui1iTjcyZDdyWEpRRUQyRDlvclVWVi02a0dyd0tJS1hsN0hXZFhOVWdQc0EwdnlNRmE4dGh1SkZLWEhfdGdEOVZnRDJ5dDRHLXlaVzl3dnBVMkdZZFZRb2l3VElfWENNS2o3LWdjSnhXQkJfaVh6OUNJNDF4T3NQRVRsaFNGeVZOQmhiYlVnTFFKbFltNFloVXJNZnlpRUZnUTBn?oc=5",
-      "imagen": null,
-      "fuente": "Univision",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795190760000
-    },
-    {
-      "titulo": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria",
-      "resumen": "Videojuego GTA VI mueve 1.650 millones de dólares antes de lanzamiento y sorprende a la industria Diario Las Américas",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRHJRZkZYYnFxMmh3enF1UGtYVjMyWTBwLVZoX1VPaXVoeDZXSlZsU2FuMnFtWURlUXR3X3JqcEs4b1E0V3VfWk1mRHEtd2EzZGlZUF9ydVJxb0lUTEYzR2hwWHVnN0ZXVTRFVjFFeE8wY0NZQWFJRjVyYzUyb1BsQ193Q3hTR3U3TVlxdlI4MmY4RGMwQTgwTHJqYTlieGxGMjRqYzBWX3BMeE5Ba2c4aXhDY3AxUWtCZ3piNE1HdlJYUEpRb3fSAcsBQVVfeXFMTzdzcDQ3N05IaTFHNnBZMlpkbXZ4Ui10ZW9xY0JQVHZhSnQxZzJBRHJoWG1hckFQTEFUMmJUUFpOdFpWX2ZYbDU1bEhQYVhfVExQSWR4Tk9wRzVENl84MTByZHNMNDAxcndjQnI4VU1VUHV3eWJELW9RRml2QWxSM1VaMjlwaVNYZHNiZnIwVnAwUm1oQzVtTkV3aFVHZnlfSnVwWGtfSC04XzBXQ3ItMFlybjVJc1NEU05wM256TXNmeTYybTJMRUFOZlU?oc=5",
-      "imagen": null,
-      "fuente": "Diario Las Américas",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795181100000
-    },
-    {
-      "titulo": "¿Qué retos hubo para crear GTA 6? Diseñador de videojuegos lo explica",
-      "resumen": "¿Qué retos hubo para crear GTA 6? Diseñador de videojuegos lo explica CNN en Español",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVDh3T080eUplOXBTUXZFeHpnSkdSOGNHNGJVZk1WdVN2WU5oaWw4LUxSWlU0V2paWktQTk41SmJaOHI0REpoUm92a1NhYzNsSnczUjZiVE1kaVBIQ0M2Wm5QQnQ0ZUJOcl9CdEw1aGFoMUREcUhjOUNNSEdvaHVlMV8tZnNtY2s?oc=5",
-      "imagen": null,
-      "fuente": "CNN en Español",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795107022000
     },
     {
       "titulo": "LoL Esports |",
