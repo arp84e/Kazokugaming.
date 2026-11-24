@@ -1,46 +1,126 @@
 {
-  "generado": 1795500118701,
+  "generado": 1795542209994,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "Sakurai habla sobre una de las dificultades de crear videojuegos y reconoce que no todos entienden su propuesta",
-      "resumen": "Sakurai habla sobre una de las dificultades de crear videojuegos y reconoce que no todos entienden su propuesta LEVELUP",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSld2am9ZSDQ2Vl9xVWluY1B6TFNyZVM4TjU2cEhfdTlZZk9Nd3N0MDB0SGlsdUlSN1NKby1XX3J3ZEkyRGVCUG85a3lKMkxUSFpUVnU1SWQwR2kySmNINGIxQTZOYmVTREpsQ2FxME44MTQ0YUFDSjBXVWtza2tqcGowTHNBVExyU212bjJmdV9VVTNFMWl3NnRSS3dUckRWSDdabFNxa0VEa3JFZlhkVmdjTVRQNGs1bzZMX1VJdktpa0ZJNjMyQkgzT2hKQ003eWN3NXBRUWhaWF83VEE?oc=5",
+      "titulo": "Staryu brillante y Elgyem brillante son los protagonistas de Deseos crepusculares de Pokémon GO",
+      "resumen": "Staryu brillante y Elgyem brillante son los protagonistas de Deseos crepusculares de Pokémon GO Pokemon.com",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOWXozeDAxd1pyTmM3QVZRZ3NkTFo1OUN2Qng0Y19wbjF1eHltZC1RQkI3SGljcHM3aGFxMUQ3VTg0LUFsbXBJRkozbHd4b1N2RlNzN1ZWd3F3ZFlaTFdQbnQ5U3MwWTIyZjNzbzlWOUh5MGZMX1FWeXdzYlEwZThOWVRTbUk4c1VFZ0xuY3g1VGJSNV9LanYwMUVsTGtKbXc3R2tvc1NWTDMtd281NlFKdE80N3V0dlFVMFc0bnQwZ3k2ODVnbE1VdHpISQ?oc=5",
       "imagen": null,
-      "fuente": "LEVELUP",
+      "fuente": "Pokemon.com",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795496484000
+      "fecha": 1795539967000
     },
     {
-      "titulo": "GTA 6: cómo mejorar las estadísticas de fuerza, concentración y cardio de forma permanente",
-      "resumen": "ATENCIÓN SPOILERS: este post contiene detalles acerca de eventos secundarios de GTA 6. Ya os hemos contado en nuestra guía acerca de la fuer…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-como-mejorar-estadisticas-fuerza-concentracion-cardio-forma-permanente",
-      "imagen": "https://i.blogs.es/1a350d/lucia_caminos_01.0a7yqvewctkfp/1024_2000.jpeg",
+      "titulo": "Chile Game Conference reunió a la comunidad de videojuegos en la Plataforma Cultural de la U. de Chile",
+      "resumen": "Chile Game Conference reunió a la comunidad de videojuegos en la Plataforma Cultural de la U. de Chile Universidad de Chile",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUjk1R2w1UGVxTlZ0bjFENXdSWWdMNjFVLURtdmVzWjktSjQzUGEyRlhFaU1Xb3ZZYk96THJsUlV1QkRLakhBTnhnNzBMVm5jZmFyME1XUm5EOWFGY0k1cDJDb0dWTnl0YTlGY1I0dS12ZmwzRTNSUmZzRHYzeXVOeGRfU3I?oc=5",
+      "imagen": null,
+      "fuente": "Universidad de Chile",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795539825000
+    },
+    {
+      "titulo": "Wedbush mantiene acción de videojuegos en su lista tras lanzamiento - Investing.com México",
+      "resumen": "Wedbush mantiene acción de videojuegos en su lista tras lanzamiento Investing.com México - Finanzas, Bolsa y Forex",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWDBfaFNERTdXNzVqMmpPaTl2VDJQX3JMQk5EOUh2VVQ5Z3RHaU40SkthUGhyekpLU1QtYlVFeEU3TlFLQ2ZPUWR4U3Ytay1VckNFU3JQS3JWaU0yNmRLand4Zl9pbVBEZ0tTMVVYNkdCYmNpZnhhcWpFMXV0NzJhalZKNmIzZWpJWHBHYjRTNTdpOUs3RUNlcGNkRVpFZDJGYjk0cmNlQkpSOTNsZmJneXc2dnEtcDdLM01vWWFGdUo?oc=5",
+      "imagen": null,
+      "fuente": "Finanzas, Bolsa y Forex",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795538278000
+    },
+    {
+      "titulo": "No hay ni un dev que se crea lo que ha logrado GTA 6: \"Es el mayor logro artístico de la historia, lo digo en serio\"",
+      "resumen": "Lo que estamos viendo frente a nuestros ojos es muy difícil de creer con GTA 6. El portento gráfico que ha logrado Rockstar Games es absolut…",
+      "link": "https://www.vidaextra.com/accion/no-hay-dev-que-se-crea-que-ha-logrado-gta-6-mayor-logro-artistico-historia-digo-serio",
+      "imagen": "https://i.blogs.es/40d8d4/vice_city_27.0d2e-w_r93hmh/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795467649000
+      "fecha": 1795538022000
     },
     {
-      "titulo": "Último llamado a los gamers: Samsung recomienda los mejores setups para disfrutar los últimos lanzamientos de videojuegos de 2026",
-      "resumen": "Último llamado a los gamers: Samsung recomienda los mejores setups para disfrutar los últimos lanzamientos de videojuegos de 2026 PR Newswir…",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPQ3FGX3BtSjZwWDgtQkZYNHhTUEFEckcwWVhPd09PMmpyYmhoTE14cUI3SjlSQ090dmg4anFvSkVIUWxSaEtubVlWSFVVVFJMbEtJWVBTQ2JsN2tlZEhYMS1YUlNDUWF6MGEzYVZyV2o0QkJnM0xUWHFzTkY5T0xZYzFxVFNVU3pRQ1N4eEE4cmRuVnJQNzhjMDFQRVNITER1b1dFejNNZ0E2SWEwclRCTV9JVkZJbGRoQXZCeUZFZjZHRUVtUlB3WkJxQ015LUJqRXhjbGpHaWtnTDRPSHBJZHJhYVBPSGV2dUVZYlpmeXRmaldFdUFwRFk3UlpiNi1YcXNfSFdsQ1pNcUUyOHYzWWFna0std0ZlOUI1WUViSjY?oc=5",
-      "imagen": null,
-      "fuente": "PR Newswire",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795464660000
-    },
-    {
-      "titulo": "GTA 6: cómo funciona el entrenamiento físico. Consejos sobre cardio, fuerza y ​​concentración",
-      "resumen": "No es ninguna broma que tocará hacer más ejercicio en GTA 6 que en la vida real. Rockstar Games ha implementado un sistema físico y mental r…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-como-funciona-entrenamiento-fisico-consejos-cardio-fuerza-concentracion",
-      "imagen": "https://i.blogs.es/197dae/jason_duval_15.0oze53sounjp2/1024_2000.jpeg",
+      "titulo": "Steam busca el mejor juego de la década y para ello crea su propia línea temporal de GOTYs",
+      "resumen": "Se acerca una época en la que hay que hacer valoración de todos los videojuegos que se han publicado a lo largo de los últimos 12 meses para…",
+      "link": "https://www.vidaextra.com/pc/steam-busca-mejor-juego-decada-para-ello-crea-su-propia-linea-temporal-gotys",
+      "imagen": "https://i.blogs.es/c78b6c/tw3/1024_2000.jpeg",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795464049000
+      "fecha": 1795536061000
+    },
+    {
+      "titulo": "Se espera \"una bajada dramática\" en los precios de las memorias para mitad de 2027",
+      "resumen": "Los que estamos preocupados a la hora de actualizar nuestros PCs, consolas o cualquier tipo de dispositivo de electrónica de consumo que hag…",
+      "link": "https://www.vidaextra.com/hardware/se-espera-bajada-dramatica-precios-memorias-para-mitad-2027",
+      "imagen": "https://i.blogs.es/e9b53f/ssd/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795530182000
+    },
+    {
+      "titulo": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida",
+      "resumen": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBkLWluN3FidmtUcVQyRzN2SHhPSVlrNXRpWjg3Um9WcjRSUHpYaUNMbWxpamtIelhaOUx2emFfRzNWc2lNaDhEamhSb2N6d2hZU2dTMVJ6MVFSemtj0gFiQVVfeXFMUC1IenBPSmpZbjFqRlpCejB6ZjJWSjRPZmQ4LTBlVXBZQ2FwSmljVXdjMjhnQ0VLZFdwY200RWwzZW9hOF94VHpPRWVuaHVIaDhuWkpxOGpqLVVOYmNJellQTVE?oc=5",
+      "imagen": null,
+      "fuente": "BBC",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795519970000
+    },
+    {
+      "titulo": "GTA 6: Todos los códigos de las cajas fuertes",
+      "resumen": "Al jugar a GTA 6 es inevitable acabar asaltando algún banco, alguna joyería u otras instalaciones para robarlas y apoderarte de todas las pe…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-todos-codigos-cajas-fuertes",
+      "imagen": "https://i.blogs.es/7c56c9/gta-6-codigos/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795519852000
+    },
+    {
+      "titulo": "El CEO de tinyBuild cree que los desarrolladores no deben temer a los clones creados con IA: \"El game feel es imposible de copiar\"",
+      "resumen": "El aumento del uso de la IA en el sector tecnológico y de ocio se ha convertido en una preocupación muy seria para muchas de las personas qu…",
+      "link": "https://www.vidaextra.com/industria/ceo-tinybuild-cree-que-desarrolladores-no-deben-temer-a-clones-creados-ia-game-feel-imposible-copiar",
+      "imagen": "https://i.blogs.es/8512c5/kingsmakers/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795518294000
+    },
+    {
+      "titulo": "Strauss Zelnick (69), jefe de Take Two, sobre el mayor competidor de GTA 6: \"Es genial y pueden estar orgullosos\"",
+      "resumen": "Que GTA 6 se ha convertido en uno de los grandes acontecimientos de la industria del videojuego en esta década es indudable. Sin embargo, mu…",
+      "link": "https://www.vidaextra.com/accion/strauss-zelnick-69-jefe-take-two-mayor-competidor-gta-6-genial-pueden-estar-orgullosos",
+      "imagen": "https://i.blogs.es/c2601c/gta-6-zelda/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795514690000
+    },
+    {
+      "titulo": "Queen’s Domain celebra las 300.000 copias vendidas con el mejor mapa fan que nunca he visto",
+      "resumen": "En su momento llegué a decir que Queen's Domain era el mejor juego del año, a falta de jugar a GTA 6 y a Zelda Ocarina of Time Remake. Ahora…",
+      "link": "https://www.vidaextra.com/rpg/queen-s-domain-celebra-300-000-copias-vendidas-mejor-mapa-fan-que-nunca-he-visto",
+      "imagen": "https://i.blogs.es/fab319/queens/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795509173000
+    },
+    {
+      "titulo": "Un ex de Rockstar critica el capítulo 1 de GTA 6, pero detecta el inicio de la diversión: \"Ahí es cuando empieza la magia de GTA\"",
+      "resumen": "Ya tenemos en nuestras manos el ansiado GTA 6 y muchos han llegado a terminar la aventura de Vice City. Sin embargo, la mayoría todavía nos…",
+      "link": "https://www.vidaextra.com/accion/ex-rockstar-critica-capitulo-1-gta-6-detecta-inicio-diversion-ahi-cuando-empieza-magia-gta",
+      "imagen": "https://i.blogs.es/0ac989/jason_duval_02.1486-7_v40cn./1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795507254000
     },
     {
       "titulo": "Final del campeonato de España de Esports de Rocket League",
@@ -53,16 +133,6 @@
       "fecha": 1795464005000
     },
     {
-      "titulo": "Cómo conseguir más música para el coche en GTA 6 con las listas de reproducción secretas",
-      "resumen": "Mientras vas viajando por el inmenso mapa de GTA 6 puedes ponerte cualquiera de las emisoras de radio o escuchar podcasts para hacer más ame…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/como-conseguir-musica-para-coche-gta-6-listas-reproduccion-secretas",
-      "imagen": "https://i.blogs.es/fdc81d/gta-6-musica/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795460448000
-    },
-    {
       "titulo": "Chris Greeley, jefe global de Esports de LoL: \"España llevaba tiempo en nuestra lista y queríamos volver\"",
       "resumen": "Chris Greeley, jefe global de Esports de LoL: \"España llevaba tiempo en nuestra lista y queríamos volver\" MARCA",
       "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORk9BX24yNGFrQ1luc1I0MUkyejlQZnhiUFhaOGtKdDVxZVBlSWJGRW9BWGdRUEhibEI5NFdhWWNEb3pySEg3SnNVZlRKM1Mtb1ktQWdvT05rWld2dzlNVWdwYzhvbDZVdXJwT3FfLUFPdHFoYjVmZ19feDgzLW1Ra1dBTXlEbjRpT0RUNVUxTVF5UVphZUdmaF8xeFBIS0I1UUFuS2tDaC1UcFdJM2V6cHA1UjlGdFBfX00wR19jQ21KLVpua1g3V0NCZ2hxWGpBVUliSUZWakHSAdgBQVVfeXFMT29xV1JRRDc2WWRYczZIWFlwSkNyb1NEVUh6bFZfc0xVcHlodUJtR2pzY0NGWHJrckhjSTZDOEh6dEtXemRZdmxVaFVkdWlLRE5TOXo4a1hvZVVaWDFiQmtoNVlRVmtQS1dVS2hUZzYycHZDaWJ0NWk1MGhtTkQ3bHhTbkp4MFRrTWthU29VcjMyY3ZmTEQ3TVQ5ZW1adVNFTGZCVEZyM2dYb09jMkt6Z2N3YUNXa0ZyNHh2OXdLN3NRTEdjdHhQampTeTkzY3RuSzc5R2xJR2tH?oc=5",
@@ -73,104 +143,34 @@
       "fecha": 1795459443000
     },
     {
-      "titulo": "Perfiles criminales en GTA 6: cómo funcionan y afectan a Jason y Lucia",
-      "resumen": "Aunque es uno de los sistemas más importantes de todo GTA 6, lo cierto es que Rockstar Games no se ha explayado demasiado a la hora de expli…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/perfiles-criminales-gta-6-como-funcionan-afectan-a-jason-lucia",
-      "imagen": "https://i.blogs.es/be121b/lucia_caminos_08.08wo73uyjkhlk/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795458654000
-    },
-    {
-      "titulo": "¿Es mejor vender la mercancía cortada o la pura en el Capítulo 3 de GTA 6?",
-      "resumen": "Como ya os hemos ido comentando en las distintas guías de Grand Theft Auto 6, hay varias decisiones en el juego que afectan en cierta medida…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/mejor-vender-mercancia-cortada-pura-capitulo-3-gta-6",
-      "imagen": "https://i.blogs.es/469413/gta/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795456009000
-    },
-    {
-      "titulo": "Tras cinco años, Poncle todavía me tiene enganchado: su juego en una mano y una piña colada en la otra",
-      "resumen": "Cuando pasen meses o años, nos preguntaremos: ¿Dónde estabas durante el lanzamiento de Grand Theft Auto 6?, ¿qué hacías exactamente? La resp…",
-      "link": "https://www.vidaextra.com/otros-generos/cinco-anos-poncle-todavia-me-tiene-enganchado-su-juego-mano-pina-colada-otra",
-      "imagen": "https://i.blogs.es/36c256/vampire-survivors/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795455167000
-    },
-    {
-      "titulo": "Videojuegos, tecnología y audición: la importancia de reconocer los cambios auditivos después de jugar",
-      "resumen": "Videojuegos, tecnología y audición: la importancia de reconocer los cambios auditivos después de jugar Howl.Link",
-      "link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9Oa3d2SDN5SkUxOERWQ1hSV0h4bzhkYXdaQUl6YXEyQXFDek9EZ0x2bU1sQzZaNXVkQlk0?oc=5",
+      "titulo": "Según el WSJ, Amodei sugirió recurrir a videojuegos si el desempleo por la IA provocaba conflictos",
+      "resumen": "Según el WSJ, Amodei sugirió recurrir a videojuegos si el desempleo por la IA provocaba conflictos https://fomoera.com/",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9NTVFPMVFxMEN1TXR6Y1NkcW5oWmpaOWlBcjBKQ0VGOXJMOFFMZlBhbG5qdWJzOV9saVM2VWdfc18xeW00dngwd29YN0NuZHJGNnRBckEyZEFSenJNX3RZSjd3cTFFY3JaLWc?oc=5",
       "imagen": null,
-      "fuente": "Howl.Link",
+      "fuente": "https://fomoera.com/",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795455023000
+      "fecha": 1795408800000
     },
     {
-      "titulo": "Ojo, porque GTA 6 ya tiene su primer parche: todo lo que cambia en la actualización de Vice City en PS5 y Xbox Series",
-      "resumen": "Sabíamos que este momento llegaría y así ha sido. Rockstar Games acaba de publicar el primer parche para GTA 6, lo que se traduce en que el…",
-      "link": "https://www.vidaextra.com/accion/ojo-porque-gta-6-tiene-su-primer-parche-todo-que-cambia-actualizacion-vice-city-ps5-xbox-series",
-      "imagen": "https://i.blogs.es/bb922b/lucia_caminos_02.16n.5umvlu_48/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795450837000
-    },
-    {
-      "titulo": "No solo se verán afectados los editores de «países no amistosos»: las autoridades rusas quieren obligar nuevamente a las empresas de videojuegos a obtener licencias de distribución",
-      "resumen": "No solo se verán afectados los editores de «países no amistosos»: las autoridades rusas quieren obligar nuevamente a las empresas de videoju…",
-      "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNOUxESDR3Wi1vOGs4YU5sN1hPRHM2TUdXc0w0a3Jsa2pPRGJJVm0tY3lWckRpRTVJS29nS0t2bm9iOHNYM0dpbXBDRlBFNFdsUmpYcldlYjRWaUF3QnF4M2h5cWFWT3hUS2RnbE9peWMyeGx4dUdjbGJZUVN6ZWNsUk4tRmJZMTBibnItdGJvbGFHeUJKQ2lBZWU1M3lmNmhFRlhlQXc4UlBnbUVuanVTa1IwZXZDRjNDMmlKM2FjTVNJYUw4WmsyRUJZU2dwYmdyM3ljc0tHNlh5OWF5bDlXTnVheEZja2lGdGZ1VEZOU2lYMDMwcERpOGRNemIwczVHSHNfZ1ktTVg0SE1XYm1fdzhQNElaZ9IBmwJBVV95cUxPaTUwMlpldEw2ZGh1ZjAtOERnTTJ0U1ZyVV9XTEgtTl9jbTlPemw3SHFpTDNSU0lqRXJ6MG9NMG84U3dCbW8tOHd4NGlkRjhjQXl3Q251RDNIcUNCRnNHc0IxSWstLVdoOU9QbXp6blJqMkdGNzk2R3VzMGFEVERzZDJxMjFzaTgzOG1OZTBwQWZCdlZoRFlvbTRCRmtuY2pOaXFUVDVuOGF5Zk9tVTh1dXdRbjZBZDlTZzV2d0VubmpGZXhDNmctbjYxeTlQRWVGTzRjMFkwWE4tQTg3S1dZU3NhU0RTZjNmOWpDRUtNc00teE01dEM5YmpVbzNULU1nOVVUZTN5dXBuUlRxU0dCNjhOYUJ0cWdqSGJB?oc=5",
+      "titulo": "GTA 6 podría causar muchos divorcios: coach de relaciones advierte sobre los excesos al jugar videojuegos",
+      "resumen": "GTA 6 podría causar muchos divorcios: coach de relaciones advierte sobre los excesos al jugar videojuegos Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVEVsOWhrVG5JUkF3UkJEUUljWjBvY3RoV2ZYUFd2TUg0MEQtX2ljdFdzdGgzODJJS0NlMm0zYkZkRDZJbjJaZWNEXzYxSzhiRFcyNkdZellDZ3N5NElLcWtxR2pidmx2RDNlUmU4RXFadzYyTmFiZnNxQ21Cc1YtNHVR?oc=5",
       "imagen": null,
-      "fuente": "iXBT.games",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795447380000
+      "fecha": 1795388400000
     },
     {
-      "titulo": "GTA VI reabre el debate sobre el acceso de los menores a videojuegos violentos",
-      "resumen": "GTA VI reabre el debate sobre el acceso de los menores a videojuegos violentos Magisnet",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUGRYZE9wdFZZTmp1emU4X0NvRVVnVG1tcTVSYzRKWUdFZ3JLS2pxWER2NFllZW5ZbEpySnh2ZnJ4OG04NUlfbHNCTVlZSUd3NndROFFlQkx0OWhJaEVwMHk2RENpb1V6OWxhNXZDTlNBUmowUXh5Zi1sS3B5ZGNKb0dhVGZZa3g1SUhiNDBVVkxLWHU2NG4xSGhrUThBWG53bXpGZlRXSUE2dXpScWswQjdR?oc=5",
+      "titulo": "Director de Marketing de KRÜ: \"creemos que tenemos los méritos necesarios [...] para seguir haciendo crecer VALORANT en Latinoamérica\"",
+      "resumen": "Director de Marketing de KRÜ: \"creemos que tenemos los méritos necesarios [...] para seguir haciendo crecer VALORANT en Latinoamérica\" Sheep…",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPdFFMR0pDeFhsQzJpMmtKd2RhQXQ3VUxJemM2RmNZbzNwNkpXX1ZRWldvWmJmMk1NRHZ0T0lZZ3B3RThXMkFtd0NRRXVoZm1BMDh4R3FVczcxcW1JNXAwRW0wMXlpaTBXdUxKMTdMNEN1enE4RXdwZUJhVDhQNWtQQ3BDbkViNktMWDFrUllUVnpEUFlnaHktOGVfSkN0b2JZbTZLYUFiT2xGWXFCdFI4UERqQnJMb0dWY05YTjBKc0ZHRzUzek5aUnZGRzVDTm1jSkk4WFJB?oc=5",
       "imagen": null,
-      "fuente": "Magisnet",
+      "fuente": "Sheep Esports",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795444392000
-    },
-    {
-      "titulo": "Assassin's Creed volverá en diciembre con una nueva historia oficial por su 20.º aniversario, pero la mayoría no podremos verla",
-      "resumen": "La saga Assassin's Creed lleva casi 20 años recorriendo la historia y llevándonos a escenarios increíbles, desde la Grecia Antigua y los saq…",
-      "link": "https://www.vidaextra.com/cultura/assassin-s-creed-volvera-diciembre-nueva-historia-oficial-su-20-aniversario-mayoria-no-podremos-verla",
-      "imagen": "https://i.blogs.es/5a5077/assassins-creed/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795444369000
-    },
-    {
-      "titulo": "China abre la puerta al cine y los videojuegos surcoreanos, pero los conciertos de K-pop siguen en el aire",
-      "resumen": "China abre la puerta al cine y los videojuegos surcoreanos, pero los conciertos de K-pop siguen en el aire Yahoo Finanzas",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQLW1YV1FnUjdDSXJ3WkVXZzdFNEp3cUJEMlBxUldDTmF2dWItSWg3WHV0NkkxMlM1bjk0YUlmR1gyNk1TZ0JXOW55cWdiSWNJcWtlSEItQmJYc2NPdHhBR1VaTzc0N19NdDdnTHhmR2J4Z01iaXNVUkRSM1ItaExLOTkzVC1NWmttVkZ1NjNzVjduQTJ3ekE?oc=5",
-      "imagen": null,
-      "fuente": "Yahoo Finanzas",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795440582000
-    },
-    {
-      "titulo": "LoL Esports |",
-      "resumen": "LoL Esports | LoL Esports",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsSEVTeGVZYjQxZzBHNXVCbXd5cVdwaV9WMnJMVWR2Q1ptLTZ1T05sOFF5blMteWp3UHhELW9aY0QwNnViVzh5NThaTjFXbGZFT2o3UXlQMjlpQTdTYnNqZjhB?oc=5",
-      "imagen": null,
-      "fuente": "LoL Esports",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1791183600000
+      "fecha": 1792047600000
     }
   ]
 }
