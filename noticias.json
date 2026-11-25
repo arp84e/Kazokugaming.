@@ -1,106 +1,126 @@
 {
-  "generado": 1795573634275,
+  "generado": 1795611235160,
   "fuentesConError": [],
   "noticias": [
     {
-      "titulo": "El reglamento M‑D llega a Pokémon Champions",
-      "resumen": "El reglamento M‑D llega a Pokémon Champions Pokemon.com",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPU3BmT3N3SUpULUpqSVVhSVhKMXBuaGw4dFVoa2RIc2MzVWN1ZTFrUEEtLUpWSW95Y1lERFI3endCWHFzR0lIOWhoR2NjeEdBZk9RZWRMMkZCMU1nUW5YbzFmdzRNcWpWaWNzdUJtZ0RNaVlmelBieVFyazNyX1M3YW5FX2xjdw?oc=5",
+      "titulo": "Hace 12 días, un desarrollador lanzó su primer juego en Steam. Hoy celebra un éxito rotundo, a pesar de haber admitido que usó la inteligencia artificial",
+      "resumen": "Da la impresión de que el lanzamiento de GTA 6 ha eclipsado a otros que se han producido a lo largo de los últimos días, pero ese no ha sido…",
+      "link": "https://www.vidaextra.com/estrategia/hace-12-dias-desarrollador-lanzo-su-primer-juego-steam-hoy-celebra-exito-rotundo-a-pesar-haber-admitido-que-uso-inteligencia-artificial",
+      "imagen": "https://i.blogs.es/e7ea3e/slotbound/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795610054000
+    },
+    {
+      "titulo": "El estudio \"anti-crunch\" de los veteranos de COD, Titanfall y Apex Legends cierra sus puertas sin lanzar ni un juego",
+      "resumen": "Fue en el 2020 cuando un puñado de veteranos de Call of Duty, Titanfall y Apex Legends anunciaron la creación de Gravity Well, un estudio qu…",
+      "link": "https://www.vidaextra.com/industria/estudio-anti-crunch-veteranos-cod-titanfall-apex-legends-cierra-sus-puertas-lanzar-juego",
+      "imagen": "https://i.blogs.es/d99e42/captura-de-pantalla-2026-11-25-114854/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795608018000
+    },
+    {
+      "titulo": "Rockstar cierra una iniciativa para crear una versión no oficial de GTA 6 para PC",
+      "resumen": "Una de las búsquedas más insistentes asociadas a GTA VI en Google es su lanzamiento en PC, así como un interés más que evidente en cualquier…",
+      "link": "https://www.vidaextra.com/accion/rockstar-cierra-iniciativa-para-crear-version-no-oficial-gta-6-para-pc",
+      "imagen": "https://i.blogs.es/e6547d/lucia/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795605980000
+    },
+    {
+      "titulo": "CD Projekt Red asegura que habrá un salto similar entre The Witcher 3 y The Witcher 4 al que hemos visto con GTA 5 y GTA 6",
+      "resumen": "Grand Theft Auto 6 es el evento de la década y un hito para los libros de historia de los videojuegos, pero ni siquiera eso es suficiente pa…",
+      "link": "https://www.vidaextra.com/rpg/cd-projekt-red-asegura-que-habra-salto-similar-the-witcher-3-the-witcher-4-al-que-hemos-visto-gta-5-gta-6",
+      "imagen": "https://i.blogs.es/f10074/the-witcher-4/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795602898000
+    },
+    {
+      "titulo": "Todo lo que puedes perder antes de terminar el Capítulo 2 de GTA 6",
+      "resumen": "La trama de GTA 6 transcurre al ritmo al que quiera cada uno, porque entre las diferentes misiones se puede explorar libremente todos los ri…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/todo-que-puedes-perder-antes-terminar-capitulo-2-gta-6",
+      "imagen": "https://i.blogs.es/9ffee6/gta-6-motel-starlet/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795600861000
+    },
+    {
+      "titulo": "Cómo mejorar tu cuenta de BuckMe y beneficios de ampliar el Plan Familiar en GTA 6",
+      "resumen": "Después de que Lucía salga de prisión en el Capítulo 1, una de las primeras cosas que harás como pareja es abrir una cuenta común en el banc…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/como-mejorar-tu-cuenta-buckme-beneficios-ampliar-plan-familiar-gta-6",
+      "imagen": "https://i.blogs.es/e50f09/grand-theft-auto-vi_20261125102333/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795599060000
+    },
+    {
+      "titulo": "Final Fantasy VII Revelation empieza a desvelar sus secretos y confirma un detalle importante sobre el final de la trilogía",
+      "resumen": "Final Fantasy VII Revelation empieza a desvelar sus secretos y confirma un detalle importante sobre el final de la trilogía Kotaku en Españo…",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxORUJucEtaN0RNWjUyckt4SmpWV0RudFc4bjAyOTNSZjZ5R1JkM3dxRnl5SWJ4NGtpczEySGNEWG54ZWVTZVJRRUwwa2FMWjVnOEhjdV9sOGlLMGhybm1kYWxKcHJZZldGMWtiT2pDcU5BZXhlSVFKT2s1N19fLUZ0Rlo2TWlNd2l5SHVZSTRoYWV1eFVSRUdRSWt4UERuRU1XbnlsWlJoX01rdVQwUW1uVHk5enQ1c0NUcTJRb0M5WUplWUFuX0FiUXlFZTdYV3IyTE5qMXNYMTVMUXlJQm90b0o2RHNSZklURkxxLQ?oc=5",
       "imagen": null,
-      "fuente": "Pokemon.com",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795573035000
+      "fecha": 1795597339000
     },
     {
-      "titulo": "Chile Game Conference reunió a la comunidad de videojuegos en la Plataforma Cultural de la U. de Chile",
-      "resumen": "Chile Game Conference reunió a la comunidad de videojuegos en la Plataforma Cultural de la U. de Chile Universidad de Chile",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNaE9DYW5sRW1BVTBROGdvZXdxX1hndzRNT1VfOHZKQURzeHJLVm5mdkRrSmdkdnhFc29BTDI4eHI5NkVkN3B3YnJ5X2N5ODJvY0ZvdVVzY1lZLUZ5ZjNfRHdOaDZrWC1uSWxPWUJCa24tSHBkajk2enlYMHBVcXdLeE1Meno1dw?oc=5",
+      "titulo": "Nintendo Switch 2 recibe una actualización inesperada que mejora la experiencia de los amantes de GameCube",
+      "resumen": "Nintendo Switch 2 recibe una actualización inesperada que mejora la experiencia de los amantes de GameCube Kotaku en Español",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQOEFtRUlic0haWnNzWHRDam1WRHVZUW5fbkJ5M0MtWTNRZURLSkozUnZxQndRS3FEVm5GYlMtUWRGZE5tNFBBazhraXdSUDRTYTltQk5oMzZUX2RIRC10eXU0V0pxT3Jvb1RiVUNRYzZHTmd6dmp1YlZkU3hrajNLeUZKVWVTWk1ZNlY4R1V5OG1UYVRDNVUtX3FKWW9JVUpVSHNHbC1wRC1GcWFaemtrS0Ntc1FPMDl2VV8tT3BDZkhydjZJYWRtYVdyOWZpaV9kZ0RuRTdn?oc=5",
       "imagen": null,
-      "fuente": "Universidad de Chile",
+      "fuente": "Kotaku en Español",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795567414000
+      "fecha": 1795597048000
     },
     {
-      "titulo": "El inesperado cameo en una de las misiones principales de GTA VI que ha dejado atónitos a más de un fan de la compañía",
-      "resumen": "A lo largo de estos días, millones de jugadores se han pateado media Leonida para disfrutar del esperadísimo GTA VI, una entrega que no solo…",
-      "link": "https://www.vidaextra.com/accion/inesperado-cameo-misiones-principales-gta-vi-que-ha-dejado-atonitos-a-fan-compania",
-      "imagen": "https://i.blogs.es/a67a8b/gta/1024_2000.jpeg",
+      "titulo": "Esta máquina recreativa de Time Crisis es pura nostalgia: tiene dos pistolas, pedal y vuelve este Black Friday a uno de sus mejores precios",
+      "resumen": "Aunque hay varias formas de rejugar títulos clásicos, pocas hay mejores que con una máquina recreativa. Las hay compactas o incluso modelos…",
+      "link": "https://www.vidaextra.com/seleccion/esta-maquina-recreativa-time-crisis-pura-nostalgia-tiene-dos-pistolas-pedal-vuelve-este-black-friday-a-uno-sus-mejores-precios",
+      "imagen": "https://i.blogs.es/93bea9/arcade-time-crisis-en-ciudad-retro/1024_2000.png",
       "fuente": "Vida Extra",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795554062000
+      "fecha": 1795595459000
     },
     {
-      "titulo": "Un veterano de Naughty Dog se rinde ante GTA VI: “Llevo 19 años creando videojuegos y esto es como un Bugatti para un niño victoriano”",
-      "resumen": "Un veterano de Naughty Dog se rinde ante GTA VI: “Llevo 19 años creando videojuegos y esto es como un Bugatti para un niño victoriano” 3DJue…",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQbVhabV9VWGVJYWI1U0lOTllEeDZmUWxnSlhEREl4SkhBSzh3bnFRS2ZMX3ZqZXVkTkdRX2NTSjJrMXM0a0h1R0hvM0NmdW4xZTFJcklsY1B6cHhUdngzbTI2VXZFOHQzUUppQlc5Zk1kcS05MHZQa0M0RWRQWjRCZWtoZDNBZEZnZWZjbjZELWRHNmxQbGJVSkJ5d2RwVlR3NmM5WlZHMVdLU19zNHM4QlpXVHJNbWt0b3MxdUJoTlVTcC00dnlqdkN6UlQzOGx1VFpiU2lIOG90bkZGTWfSAeMBQVVfeXFMTUJaU20yTldVQUFwRG1CNE1sVGQ1WUlCdC1icW54cldBNmxKT2FVU2xQSUFaZy1TQS1RRW9EQ1FWSkE3WEpxWmg5OHJLS0syVUZKRDVlLWpDdDZrZi1vT1ZjQjZ2dnk5Mk1jQlpwZE5BVlhyNXlXUTRacWNQM1FqTGV1RGFxcE9GVldURGE3UXRGeVZCbDBEdG0zOWgwUWxpanZLcF9WZldrQjlabFlHWlpaM3pZZDgwWldLeEhPVXltWmxZN0ZmT3hjMTlMRnFTQjBIWUZEaUFIZi1wWEs5N2FIMkU?oc=5",
+      "titulo": "Romance y sexo en GTA 6: Cómo tener una relación íntima y desbloquear las escenas entre Jason y Lucía",
+      "resumen": "Jason y Lucía son los grandes protagonistas de GTA 6, pero su relación va mucho más allá de formar una pareja de criminales dispuesta a atra…",
+      "link": "https://www.vidaextra.com/guias-y-trucos/romance-sexo-gta-6-como-tener-relacion-intima-desbloquear-escenas-jason-lucia",
+      "imagen": "https://i.blogs.es/3b750e/gta6-jason-lucia-romance-01/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795593600000
+    },
+    {
+      "titulo": "GTA 6: quiénes son los músicos argentinos que participan en el videojuego del momento",
+      "resumen": "GTA 6: quiénes son los músicos argentinos que participan en el videojuego del momento Yahoo en Español Vida y Estilo",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeEdqSWd2aURhdnlDODlQRE85MWZtNXBwWlpBNWRFOUY1SVRzdjY1SkpmZ2phSmEzSHhSbXdKOE5mMnZfUGdHRjlqd2d0WDA1UkplMGRORkZLdVRrVlRMb0VkaDN2OE9neTRSQVV5VFdrcFB3X0ZVR0xyX1JMeURiYTZ5ZExpTmFkVnhlZHY0MnlYLWFDS0p5Yg?oc=5",
       "imagen": null,
-      "fuente": "3DJuegos México",
+      "fuente": "Yahoo en Español Vida y Estilo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795550465000
+      "fecha": 1795562739000
     },
     {
-      "titulo": "Qué sabemos de Project Helix y cómo puede cambiar para siempre la industria de los videojuegos",
-      "resumen": "Qué sabemos de Project Helix y cómo puede cambiar para siempre la industria de los videojuegos Blogthinkbig.com",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1MaVBuUFZFelB0M2lsdjZEV041TGZCV3ViQThEZkFYbjhJVjhBXzFEX2UzU0xUalB6SC0xTldxdWhtb0pvbmk5My1QcWtHRHoxbzNGM0lOZGF0Q21fTnZaZkZiZlpqOW5YWjBpVEY4Tm5EMFVxYWF0eFJEMjg?oc=5",
+      "titulo": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida",
+      "resumen": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUGtLU1ZGT01ZaGdQczdob00tWWxTS2Eyb0NXX3FhLUxNSXZUaVo2dzZHekpQZnQyekhZUlpCUUpaMEY4RDFuZ2FjejAzMmxmQy1hRURNWXgxZk5RU052cE5iRTV2Qmwzc25Wd3hWV1dkRV9aRXJKWnNGQ2VBWHp0enZ6eDhKNVZaZnVGbjVDY1FFbVRtenZRUllzQm9JUQ?oc=5",
       "imagen": null,
-      "fuente": "Blogthinkbig.com",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795548860000
-    },
-    {
-      "titulo": "Me parece genial que Massive de Ubisoft quiera convertirse en A24, pero hay un problema: hacer buenos videojuegos",
-      "resumen": "Nadie puede negar que la imagen y las finanzas de Ubisoft llevan años en caída libre. La compañía se ha enfrentado a una reestructuración to…",
-      "link": "https://www.vidaextra.com/industria/me-parece-genial-que-massive-ubisoft-quiera-convertirse-a24-hay-problema-hacer-buenos-videojuegos",
-      "imagen": "https://i.blogs.es/9ad072/splinter-cell/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795547218000
-    },
-    {
-      "titulo": "GTA 6: cómo conseguir el baile especial de Vicki y evitar perderlo",
-      "resumen": "En GTA 6 es posible interactuar con una larga lista de personajes, entre los que se encuentra Vicki. Esta joven de estética gótica vive en e…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-como-conseguir-baile-especial-vicki-evitar-perderlo",
-      "imagen": "https://i.blogs.es/08db75/vicki-gta-6/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795545061000
-    },
-    {
-      "titulo": "No hay ni un dev que se crea lo que ha logrado GTA 6: \"Es el mayor logro artístico de la historia, lo digo en serio\"",
-      "resumen": "Lo que estamos viendo frente a nuestros ojos es muy difícil de creer con GTA 6. El portento gráfico que ha logrado Rockstar Games es absolut…",
-      "link": "https://www.vidaextra.com/accion/no-hay-dev-que-se-crea-que-ha-logrado-gta-6-mayor-logro-artistico-historia-digo-serio",
-      "imagen": "https://i.blogs.es/40d8d4/vice_city_27.0d2e-w_r93hmh/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795538022000
-    },
-    {
-      "titulo": "Steam busca el mejor juego de la década y para ello crea su propia línea temporal de GOTYs",
-      "resumen": "Se acerca una época en la que hay que hacer valoración de todos los videojuegos que se han publicado a lo largo de los últimos 12 meses para…",
-      "link": "https://www.vidaextra.com/pc/steam-busca-mejor-juego-decada-para-ello-crea-su-propia-linea-temporal-gotys",
-      "imagen": "https://i.blogs.es/c78b6c/tw3/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795536061000
-    },
-    {
-      "titulo": "Se espera \"una bajada dramática\" en los precios de las memorias para mitad de 2027",
-      "resumen": "Los que estamos preocupados a la hora de actualizar nuestros PCs, consolas o cualquier tipo de dispositivo de electrónica de consumo que hag…",
-      "link": "https://www.vidaextra.com/hardware/se-espera-bajada-dramatica-precios-memorias-para-mitad-2027",
-      "imagen": "https://i.blogs.es/e9b53f/ssd/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795530182000
+      "fecha": 1795520176000
     },
     {
       "titulo": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida",
@@ -111,26 +131,6 @@
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
       "fecha": 1795519970000
-    },
-    {
-      "titulo": "GTA 6: Todos los códigos de las cajas fuertes",
-      "resumen": "Al jugar a GTA 6 es inevitable acabar asaltando algún banco, alguna joyería u otras instalaciones para robarlas y apoderarte de todas las pe…",
-      "link": "https://www.vidaextra.com/guias-y-trucos/gta-6-todos-codigos-cajas-fuertes",
-      "imagen": "https://i.blogs.es/7c56c9/gta-6-codigos/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795519852000
-    },
-    {
-      "titulo": "El CEO de tinyBuild cree que los desarrolladores no deben temer a los clones creados con IA: \"El game feel es imposible de copiar\"",
-      "resumen": "El aumento del uso de la IA en el sector tecnológico y de ocio se ha convertido en una preocupación muy seria para muchas de las personas qu…",
-      "link": "https://www.vidaextra.com/industria/ceo-tinybuild-cree-que-desarrolladores-no-deben-temer-a-clones-creados-ia-game-feel-imposible-copiar",
-      "imagen": "https://i.blogs.es/8512c5/kingsmakers/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795518294000
     },
     {
       "titulo": "Chris Greeley, jefe global de Esports de LoL: \"España llevaba tiempo en nuestra lista y queríamos volver\"",
@@ -153,24 +153,24 @@
       "fecha": 1795446005000
     },
     {
-      "titulo": "GTA 6 podría causar muchos divorcios: coach de relaciones advierte sobre los excesos al jugar videojuegos",
-      "resumen": "GTA 6 podría causar muchos divorcios: coach de relaciones advierte sobre los excesos al jugar videojuegos Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVEVsOWhrVG5JUkF3UkJEUUljWjBvY3RoV2ZYUFd2TUg0MEQtX2ljdFdzdGgzODJJS0NlMm0zYkZkRDZJbjJaZWNEXzYxSzhiRFcyNkdZellDZ3N5NElLcWtxR2pidmx2RDNlUmU4RXFadzYyTmFiZnNxQ21Cc1YtNHVR?oc=5",
+      "titulo": "La IA pone fecha al declive de las consolas de videojuegos",
+      "resumen": "La IA pone fecha al declive de las consolas de videojuegos Xataka",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQlBXcFBlakRiLUQxczA0OUU5U3E3VEhkWkpkTFF5UTlwdXk4NUljazR6QVNYdDNyZUdCTVlQLVM5VmNSNnpGQ3pDRmUwNHFlMVljQkpIY3pvTkRyTklPek9mNXNtYkdjajdHZFVqblNtMTZUcWxCdTlSZWhMUXJLTkpFbFZmVFnSAYwBQVVfeXFMT3BDMDU0ZDNlbUhTSUpoU3V4R3l6aXlCU1ZrSlRyRlBnbmE0ZEdLeENUNnFTWnBfZTNaZEpqSGpaU2NPTDBvVXZUTE85THJYSVhUNGNPYkNuTzU4RlFZb1NPOTg1N1MxRy1BNVNsX3BKcktaei05bXJKcExmWHhnT09IOV8ycUtycHNDazI?oc=5",
       "imagen": null,
-      "fuente": "Yahoo",
+      "fuente": "Xataka",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795388400000
+      "fecha": 1792393200000
     },
     {
-      "titulo": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista",
-      "resumen": "EWC - Faisal Bin Homran, Chief Product Officer de Esports Foundation | Entrevista IGN Latinoamérica",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQangxZUJBelRVbnNnQ3VKYUJyaUh3NnhRLWo5eGMwcldDdGthb0J1ZmY3aXJPTHc4NWFTRm1QTGJ3MXp5TGItdFFPUWNYR0ZDSmo5cHNjcDl1X29feFNXaE15dVI5b2VCRmdjOVVvSXZtMlY2Z1MyUEFGeXo4U19pSy00cS1kLUN2aEJ3c3gxU0N2V1VqeVRQSlNGaTIyQmFkWjRBSFNsNmVNV0xCYlE?oc=5",
+      "titulo": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT",
+      "resumen": "La UCAM representará a España en los UNIVERSITY Esports Masters 2026 de League of Legends y VALORANT UCAM Deportes",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZ1FIT2ZFcDZ2emhDSWJoazJsUGJqNlZaMTkzWDdDNF84MkFwOUZUSUktVm9qSUg1N1VrZEUzSGpsR2VpMHlhV2hXSVFhUVlaNUZZQmRleE9BWmRKTU5yZENqc2Faci12aEFnUGtDOUZDUHVmUXJKZVduVFQ1eGt0d3FoSVdCUF9Gc0VRU1lOOXdqd056V1FHeXByYTRmRmRaRjRiUzhaaTladWZFWHRlZ2czX01tdGkxaXY5NWdWNA?oc=5",
       "imagen": null,
-      "fuente": "IGN Latinoamérica",
+      "fuente": "UCAM Deportes",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1784185200000
+      "fecha": 1783494000000
     }
   ]
 }
