@@ -1,7 +1,57 @@
 {
-  "generado": 1795706061194,
+  "generado": 1795737132125,
   "fuentesConError": [],
   "noticias": [
+    {
+      "titulo": "Rockstar habla sobre ESE secreto inicial que escondieron durante años en GTA 6",
+      "resumen": "ATENCIÓN SPOILERS: este post contiene detalles acerca de la trama inicial de GTA 6. Han sido años y años viendo tráilers, adelantos, imágene…",
+      "link": "https://www.vidaextra.com/accion/rockstar-habla-ese-secreto-inicial-que-escondieron-durante-anos-gta-6",
+      "imagen": "https://i.blogs.es/a846f8/jason_and_lucia_14.10e7v.06pcm_t/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795716026000
+    },
+    {
+      "titulo": "EA Sports FC ha resucitado con la IA a un emblemático narrador de fútbol, pero la familia lo considera \"un emotivo homenaje\"",
+      "resumen": "Electronic Arts ha sido la última compañía que le ha parecido muy buena idea sacar partido de la inteligencia artificial para una de las últ…",
+      "link": "https://www.vidaextra.com/deportes/ea-sports-fc-ha-resucitado-ia-a-emblematico-narrador-futbol-familia-considera-emotivo-homenaje",
+      "imagen": "https://i.blogs.es/9148fe/john-motson/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795714225000
+    },
+    {
+      "titulo": "Hideki Kamiya estaría encantado de hacer un Castlevania que \"sería increíble\" si Konami le deja",
+      "resumen": "Además de dedicarse al desarrollo de videojuegos, Hideki Kamiya quiere abarcar más frente y eso le llevó a hacerse creador de contenido con…",
+      "link": "https://www.vidaextra.com/accion/hideki-kamiya-estaria-encantado-hacer-castlevania-que-seria-increible-konami-le-deja",
+      "imagen": "https://i.blogs.es/22a959/castlevania/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795710629000
+    },
+    {
+      "titulo": "El DLC de Hollow Knight: Silksong se mostrará al fin mañana",
+      "resumen": "Después de tanto silencio, rumores, memes y lo que ha parecido una penitencia impuesta por Team Cherry, por fin tenemos fecha para volver a…",
+      "link": "https://www.vidaextra.com/aventura-plataformas/dlc-hollow-knight-silksong-se-mostrara-al-fin-manana",
+      "imagen": "https://i.blogs.es/c90ad0/silksong/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795708826000
+    },
+    {
+      "titulo": "\"Mierda, estamos en un lío\": Rockstar tembló al enseñar por primera vez el controvertido perfil criminal de GTA 6",
+      "resumen": "Aunque no hayáis jugado hasta ahora a GTA 6, seguro que habéis escuchado hablar del perfil criminal de Jason y Lucia. Hablamos de un sistema…",
+      "link": "https://www.vidaextra.com/accion/mierda-estamos-lio-rockstar-temblo-al-ensenar-primera-vez-controvertido-perfil-criminal-gta-6",
+      "imagen": "https://i.blogs.es/bc57f0/jason_and_lucia_15.0m-_zb-mcy2zr/1024_2000.jpeg",
+      "fuente": "Vida Extra",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795707018000
+    },
     {
       "titulo": "GTA 6: ubicación de los 18 coches de lujo de Randy",
       "resumen": "En el capítulo 3 de GTA 6 os iréis adentrando poco a poco en el mundo de los coches de lujo. Y es que, mientras que para Moses solo podíais…",
@@ -43,74 +93,14 @@
       "fecha": 1795696339000
     },
     {
-      "titulo": "Ken Kutaragi, padre de PlayStation: \"Quería que Microsoft hiciera XBOX y amo a Nintendo\"",
-      "resumen": "Pocas personas son tan importantes para la historia de los videojuegos, en especial las consolas, que Ken Kutaragi. El japonés fundó PlaySta…",
-      "link": "https://www.vidaextra.com/industria/ken-kutaragi-padre-playstation-queria-que-microsoft-hiciera-xbox-amo-a-nintendo",
-      "imagen": "https://i.blogs.es/83058e/kutaragi/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795693099000
-    },
-    {
-      "titulo": "La vuelta de Jensen Huang no son necesariamente buenas noticias y Nvidia podría retrasar su serie 60 de tarjetas gráficas",
-      "resumen": "El regreso de Jensen Huang a la dirección de NVIDIA no ha cambiado poco el panorama del hardware y todo apunta a que la escasez de tarjetas…",
-      "link": "https://www.vidaextra.com/industria/vuelta-jensen-huang-no-necesariamente-buenas-noticias-nvidia-podria-retrasar-su-serie-60-tarjetas-graficas",
-      "imagen": "https://i.blogs.es/505410/nvidia1/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795691060000
-    },
-    {
-      "titulo": "Esta casa de GTA VI tuvo su primera aparición en 2021: Rockstar nos dio una pista en el remaster de San Andreas y su interior es una locura conspiranoica",
-      "resumen": "Para sorpresa de nadie, Rockstar ha escondido cientos (por no decir miles) de guiños y easter eggs que muchos jugadores han ido descubriendo…",
-      "link": "https://www.vidaextra.com/accion/esta-casa-gta-vi-tuvo-su-primera-aparicion-2021-rockstar-nos-dio-pista-remaster-san-andreas-su-interior-locura-conspiranoica",
-      "imagen": "https://i.blogs.es/88ea68/gta/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795689022000
-    },
-    {
-      "titulo": "La verdadera Dino Crisis de Capcom llega con el fin del soporte y la extinción total de su juego de dinosaurios",
-      "resumen": "Pareciera que el lanzamiento de Grand Theft Auto 6 ha solucionado todos los problemas de la industria del videojuego, pero nada más lejos de…",
-      "link": "https://www.vidaextra.com/accion/verdadera-dino-crisis-capcom-llega-fin-soporte-extincion-total-su-juego-dinosaurios",
-      "imagen": "https://i.blogs.es/766d00/exoprimal/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795685541000
-    },
-    {
-      "titulo": "Activision podría haber soltado qué franquicia va a revivir en una oferta de trabajo... Antes de borrarlo",
-      "resumen": "Las grandes compañías de videojuegos cada vez se pillan menos los dedos. Nada de IPs nuevas, todos los esfuerzos dedicados a las que ya func…",
-      "link": "https://www.vidaextra.com/aventura-plataformas/activision-podria-haber-soltado-que-franquicia-va-a-revivir-oferta-trabajo-antes-borrarlo",
-      "imagen": "https://i.blogs.es/7a41f7/banjo/1024_2000.jpeg",
-      "fuente": "Vida Extra",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795683379000
-    },
-    {
-      "titulo": "Incluyen canción de Elvis Crespo en videojuego Grand Theft Auto VI",
-      "resumen": "Incluyen canción de Elvis Crespo en videojuego Grand Theft Auto VI NotiCel",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY2V2bUpWaHlsUDJGckU2eEp6Tk9DaHI0WU5DRkRDQU92LWpmcktYNkVSYmFodDllVTlpV1c4MHdOX1hoVkk4MXVDQ3RLaWlPV01KQ1h6cW12SFNfRlZQalpLcG15eF9RT2pJYTBNTkxVbmlHNTVDdW43QWRuTlVTVDNwM0FkUnprUGZ3OExpS3o0WnFhb09uNEdxTHJMV1lhYXNtMWxWeV9yZG9jcGtYNm1tN29YZw?oc=5",
+      "titulo": "Grand Theft Auto VI impulsa viajes y hoteles para jugar, según Hotels.com",
+      "resumen": "Grand Theft Auto VI impulsa viajes y hoteles para jugar, según Hotels.com Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQcjdaLWZTX3M4S1hVY05vMjViTmV0bE5IUVNEb00tTEhEQnYwa1E4QjJJbkdoRFRTQ2IzOEhYQXRhb1M1Vi1GWFJFcU1oN3dmUDJIdzVqNk8tNnZ2M3ZTMExPT2JBWGhDNmhlRlR0Rk1PZi02cHR6VWVNdWd5LW41Nw?oc=5",
       "imagen": null,
-      "fuente": "NotiCel",
+      "fuente": "Yahoo",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795623539000
-    },
-    {
-      "titulo": "“GTA VI no es una plataforma para niños”, advirtió una experta en crianza digital",
-      "resumen": "“GTA VI no es una plataforma para niños”, advirtió una experta en crianza digital Infobae",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTVNGSHdLanllc2lMNG1OS0c1SEZHcXRQb0NsZ25JRWlaaGJRdUxpUm85eE45V2I2S1Fvb094eGNCeTQ0Y0MxWUlkNExqZGlIdi0tUS1LMXN4Y2ZacWdSSzl6dDNjekUtcm1obUJwUV9JdTZuU3JHYk1JaVExUmVWWFU5SHdnd1g2eGx6SGt4NlhJZ0dCSjRvdXRtQXdFeU5KMklrc3JqRDd4X0t0ZzZGZ2N2WWxnbHdlWWFKYdIB1wFBVV95cUxPUGd1Qlp4VkZ5YjVHWFFqRnRxZVRiWUs3UFhReUZveGt6LW95OFk5S2NXTnZqMmVtUGp1NDRhOWttRE1XdThKUE52VUs4aE9UM2hXVDVKajBvaXVKb1lWU2NBVjhpODJmTlVYMkRSTUtUaUc3RGhaNGVGRmdSc1hrT0ZVSmFfOFNiNjRWaGRFLXZiNGp0M2Nlc1Yya2hQVkIwd25vMUlXSk40ME9rTExhUS1WX19sMzZ2ZWstandqTGFuaHo4UHk5Q2Vpc0NFRjlxS2VHLWtnVQ?oc=5",
-      "imagen": null,
-      "fuente": "Infobae",
-      "categoria": "Videojuegos",
-      "color": "bg-emerald-600",
-      "fecha": 1795614000000
+      "fecha": 1795691656000
     },
     {
       "titulo": "Nintendo Switch 2 recibe una actualización inesperada que mejora la experiencia de los amantes de GameCube",
@@ -124,13 +114,23 @@
     },
     {
       "titulo": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida",
-      "resumen": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUGtLU1ZGT01ZaGdQczdob00tWWxTS2Eyb0NXX3FhLUxNSXZUaVo2dzZHekpQZnQyekhZUlpCUUpaMEY4RDFuZ2FjejAzMmxmQy1hRURNWXgxZk5RU052cE5iRTV2Qmwzc25Wd3hWV1dkRV9aRXJKWnNGQ2VBWHp0enZ6eDhKNVZaZnVGbjVDY1FFbVRtenZRUllzQm9JUQ?oc=5",
+      "resumen": "Cómo un adolescente aficionado a los videojuegos y su madre ayudaron a rescatar a una chica que llevaba más de un año desaparecida BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBkLWluN3FidmtUcVQyRzN2SHhPSVlrNXRpWjg3Um9WcjRSUHpYaUNMbWxpamtIelhaOUx2emFfRzNWc2lNaDhEamhSb2N6d2hZU2dTMVJ6MVFSemtj0gFiQVVfeXFMUC1IenBPSmpZbjFqRlpCejB6ZjJWSjRPZmQ4LTBlVXBZQ2FwSmljVXdjMjhnQ0VLZFdwY200RWwzZW9hOF94VHpPRWVuaHVIaDhuWkpxOGpqLVVOYmNJellQTVE?oc=5",
       "imagen": null,
-      "fuente": "Yahoo",
+      "fuente": "BBC",
       "categoria": "Videojuegos",
       "color": "bg-emerald-600",
-      "fecha": 1795520176000
+      "fecha": 1795519970000
+    },
+    {
+      "titulo": "El videojuego que mezcla Stardew Valley con Harry Potter acaba de dar la noticia que sus seguidores esperaban desde hace una década",
+      "resumen": "El videojuego que mezcla Stardew Valley con Harry Potter acaba de dar la noticia que sus seguidores esperaban desde hace una década Kotaku e…",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOdzM3QmdTcTlWS19hTHB4cGVRVHhIbDZ4c25jZm5mSjlodnpfMWNGeFdHQ0t4VlQ1QWtuUmZ5cllPOVFJTVlmMGtxREozNFRsMkc4WXp0Y2FZMVlFTVppckptdlF1WkVrRjJLdVdCQXBQOWZnWmpzR3hBcEdnUmJDV1RHTnhxc3ZJMlNNQWg1eE14MzZrdGg3YU8zNGMwV29iTmNacGVqcXdBR3Q0MUt4VVdZUVR2QVFzZUNEbW0yaDhYTHJ2MW83VVMzN1lZcGdKcXA3MkF3TW9HOFloaDlZc2FkbUhsLW0wVVp2ZjNsbDJyWjNjY2NB?oc=5",
+      "imagen": null,
+      "fuente": "Kotaku en Español",
+      "categoria": "Videojuegos",
+      "color": "bg-emerald-600",
+      "fecha": 1795507200000
     },
     {
       "titulo": "Chris Greeley, jefe global de Esports de LoL: \"España llevaba tiempo en nuestra lista y queríamos volver\"",
